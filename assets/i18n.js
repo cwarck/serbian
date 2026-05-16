@@ -64,7 +64,7 @@ window.I18N = {
     'about.body.p2': 'Everything renders as live HTML — no PDFs, no screenshots — so you can copy a word, search inside it, share a link to a single case, or read it on a phone in a tram in Belgrade.',
     'about.pull': '"A reference you actually want to open."',
 
-    'foot.copy': '© Atlas Srpski — a quiet study',
+    'foot.copy': '© 2026 Atlas Srpski · Content <a href="https://creativecommons.org/licenses/by/4.0/deed.en" rel="license noopener" target="_blank">CC BY 4.0</a>',
     'foot.repo': 'Source',
     'foot.contact': 'Contact',
 
@@ -176,7 +176,7 @@ window.I18N = {
     'about.body.p2': 'Всё рендерится живым HTML — никаких PDF, никаких скриншотов — слово можно скопировать, по странице можно искать, ссылкой на один падеж можно поделиться, а читать всё это можно в трамвае в Белграде.',
     'about.pull': '«Справочник, который и правда хочется открыть».',
 
-    'foot.copy': '© Атлас Сербского — тихий кабинетный труд',
+    'foot.copy': '© 2026 Атлас Сербского · Контент под <a href="https://creativecommons.org/licenses/by/4.0/deed.ru" rel="license noopener" target="_blank">CC BY 4.0</a>',
     'foot.repo': 'Исходники',
     'foot.contact': 'Контакт',
 
