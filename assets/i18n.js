@@ -54,7 +54,6 @@ window.I18N = {
 
     'card.action': 'Open chart',
     'card.soon': 'In progress',
-    'tag.ready': 'Ready',
     'tag.soon': 'Soon',
 
     'about.eyebrow': '§02 — Notes from the desk',
@@ -166,7 +165,6 @@ window.I18N = {
 
     'card.action': 'Открыть',
     'card.soon': 'В работе',
-    'tag.ready': 'Готово',
     'tag.soon': 'Скоро',
 
     'about.eyebrow': '§02 — Записки с письменного стола',

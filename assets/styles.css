@@ -478,7 +478,6 @@ section { position: relative; }
   padding: .25rem .55rem;
   border-radius: 999px;
 }
-.tag.ready { color: var(--accent); border-color: var(--accent); }
 
 /* -----------------------------------------------------------
    About / notes block
