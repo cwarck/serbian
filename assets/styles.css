@@ -650,7 +650,7 @@ section { position: relative; }
 }
 .letter .cyr { color: var(--ink); }
 .letter .sep { color: var(--ink-faint); font-size: .55em; padding-bottom: .3em; }
-.letter .lat { color: var(--accent); font-style: italic; }
+.letter .lat { color: var(--accent); }
 
 .letter .ipa {
   font-family: var(--ff-mono);
