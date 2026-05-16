@@ -456,6 +456,9 @@ section { position: relative; }
   border-top: 1px solid var(--hairline);
   border-left: 1px solid var(--hairline);
 }
+@media (min-width: 1600px) {
+  .chart-grid { grid-template-columns: repeat(4, 1fr); }
+}
 
 .card {
   position: relative;
