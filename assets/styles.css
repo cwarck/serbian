@@ -163,6 +163,7 @@ section { position: relative; }
   backdrop-filter: blur(14px) saturate(140%);
   -webkit-backdrop-filter: blur(14px) saturate(140%);
   border-bottom: 1px solid var(--hairline-soft);
+  padding-top: env(safe-area-inset-top);
 }
 .nav-inner {
   display: flex; align-items: center; gap: 1.5rem;
@@ -947,7 +948,7 @@ section { position: relative; }
 /* Case nav strip */
 .case-nav {
   position: sticky;
-  top: 68px;
+  top: calc(68px + env(safe-area-inset-top));
   z-index: 20;
   background: color-mix(in oklab, var(--paper) 92%, transparent);
   backdrop-filter: blur(10px);
