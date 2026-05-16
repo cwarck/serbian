@@ -96,7 +96,11 @@ const CASES = [
   {
     key: 'case.1',
     abbr: 'NOM',
-    endings: { m:['profesor','-∅'], f:['žena','-a'], n:['selo','-o'] },
+    endings: {
+      m: { sg:['profesor','-∅'],   pl:['profesori','-i']  },
+      f: { sg:['žena','-a'],        pl:['žene','-e']        },
+      n: { sg:['selo','-o'],        pl:['sela','-a']        },
+    },
     examples: [
       { sr:'<mark>Profesor</mark> čita knjigu.', en:'The professor reads a book.', ru:'Профессор читает книгу.' },
       { sr:'<mark>Žena</mark> peva.',             en:'The woman sings.',           ru:'Женщина поёт.' },
@@ -107,7 +111,11 @@ const CASES = [
   {
     key: 'case.2',
     abbr: 'GEN',
-    endings: { m:['profesora','-a'], f:['žene','-e'], n:['sela','-a'] },
+    endings: {
+      m: { sg:['profesora','-a'],  pl:['profesora','-a']  },
+      f: { sg:['žene','-e'],        pl:['žena','-∅']        },
+      n: { sg:['sela','-a'],        pl:['sela','-a']        },
+    },
     examples: [
       { sr:'Knjiga <mark>profesora</mark>.',       en:'The professor\'s book.',         ru:'Книга профессора.' },
       { sr:'Stižem iz <mark>grada</mark>.',         en:'I\'m arriving from the city.',   ru:'Я приезжаю из города.' },
@@ -118,7 +126,11 @@ const CASES = [
   {
     key: 'case.3',
     abbr: 'DAT',
-    endings: { m:['profesoru','-u'], f:['ženi','-i'], n:['selu','-u'] },
+    endings: {
+      m: { sg:['profesoru','-u'],  pl:['profesorima','-ima'] },
+      f: { sg:['ženi','-i'],        pl:['ženama','-ama']       },
+      n: { sg:['selu','-u'],        pl:['selima','-ima']       },
+    },
     examples: [
       { sr:'Dajem knjigu <mark>profesoru</mark>.', en:'I give the book to the professor.', ru:'Я даю книгу профессору.' },
       { sr:'Idem k <mark>moru</mark>.',             en:'I\'m going to the sea.',            ru:'Я еду к морю.' },
@@ -129,7 +141,11 @@ const CASES = [
   {
     key: 'case.4',
     abbr: 'AKU',
-    endings: { m:['profesora','-a / -∅'], f:['ženu','-u'], n:['selo','-o'] },
+    endings: {
+      m: { sg:['profesora','-a / -∅'], pl:['profesore','-e'] },
+      f: { sg:['ženu','-u'],            pl:['žene','-e']       },
+      n: { sg:['selo','-o'],            pl:['sela','-a']       },
+    },
     examples: [
       { sr:'Vidim <mark>profesora</mark>.',         en:'I see the professor.',            ru:'Я вижу профессора.' },
       { sr:'Čitam <mark>knjigu</mark>.',            en:'I\'m reading a book.',            ru:'Я читаю книгу.' },
@@ -140,7 +156,11 @@ const CASES = [
   {
     key: 'case.5',
     abbr: 'VOK',
-    endings: { m:['profesore','-e / -u'], f:['ženo','-o'], n:['selo','-o'] },
+    endings: {
+      m: { sg:['profesore','-e / -u'], pl:['profesori','-i'] },
+      f: { sg:['ženo','-o'],            pl:['žene','-e']       },
+      n: { sg:['selo','-o'],            pl:['sela','-a']       },
+    },
     examples: [
       { sr:'<mark>Profesore</mark>, dobar dan!',    en:'Professor, hello!',                ru:'Профессор, добрый день!' },
       { sr:'<mark>Marija</mark>, gde si?',           en:'Marija, where are you?',           ru:'Мария, ты где?' },
@@ -151,7 +171,11 @@ const CASES = [
   {
     key: 'case.6',
     abbr: 'INS',
-    endings: { m:['profesorom','-om'], f:['ženom','-om'], n:['selom','-om'] },
+    endings: {
+      m: { sg:['profesorom','-om'], pl:['profesorima','-ima'] },
+      f: { sg:['ženom','-om'],       pl:['ženama','-ama']       },
+      n: { sg:['selom','-om'],       pl:['selima','-ima']       },
+    },
     examples: [
       { sr:'Putujem <mark>autobusom</mark>.',        en:'I\'m traveling by bus.',           ru:'Я еду на автобусе.' },
       { sr:'Idem sa <mark>profesorom</mark>.',       en:'I go with the professor.',         ru:'Я иду с профессором.' },
@@ -162,7 +186,11 @@ const CASES = [
   {
     key: 'case.7',
     abbr: 'LOK',
-    endings: { m:['profesoru','-u'], f:['ženi','-i'], n:['selu','-u'] },
+    endings: {
+      m: { sg:['profesoru','-u'],   pl:['profesorima','-ima'] },
+      f: { sg:['ženi','-i'],         pl:['ženama','-ama']       },
+      n: { sg:['selu','-u'],         pl:['selima','-ima']       },
+    },
     examples: [
       { sr:'Knjiga je na <mark>stolu</mark>.',       en:'The book is on the table.',        ru:'Книга на столе.' },
       { sr:'Govorim o <mark>profesoru</mark>.',      en:'I\'m speaking about the professor.', ru:'Я говорю о профессоре.' },
@@ -223,20 +251,24 @@ function renderCases() {
         <div class="case-body">
           <div class="endings">
             <table>
-              <caption>${d['cases.endings'] || 'Noun endings — singular'}</caption>
+              <caption>${d['cases.endings'] || 'Noun endings'}</caption>
               <thead>
                 <tr>
+                  <th></th>
                   <th>${d['cases.gender.m'] || 'Masculine'}</th>
                   <th>${d['cases.gender.f'] || 'Feminine'}</th>
                   <th>${d['cases.gender.n'] || 'Neuter'}</th>
                 </tr>
               </thead>
               <tbody>
+                ${['sg','pl'].map(n => `
                 <tr>
-                  <td>${c.endings.m[0]} <span class="end">${c.endings.m[1]}</span></td>
-                  <td>${c.endings.f[0]} <span class="end">${c.endings.f[1]}</span></td>
-                  <td>${c.endings.n[0]} <span class="end">${c.endings.n[1]}</span></td>
+                  <th scope="row" class="num">${d['cases.number.' + n] || (n === 'sg' ? 'Sg' : 'Pl')}</th>
+                  <td>${c.endings.m[n][0]} <span class="end">${c.endings.m[n][1]}</span></td>
+                  <td>${c.endings.f[n][0]} <span class="end">${c.endings.f[n][1]}</span></td>
+                  <td>${c.endings.n[n][0]} <span class="end">${c.endings.n[n][1]}</span></td>
                 </tr>
+                `).join('')}
               </tbody>
             </table>
           </div>

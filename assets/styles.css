@@ -846,7 +846,13 @@ section { position: relative; }
   color: var(--accent);
   font-style: italic;
 }
-.endings tr:last-child td { border-bottom: 0; }
+.endings th.num {
+  width: 1%;
+  white-space: nowrap;
+  padding-right: 1.25rem;
+}
+.endings tr:last-child td,
+.endings tr:last-child th { border-bottom: 0; }
 
 .examples {
   display: grid;
