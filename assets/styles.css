@@ -453,8 +453,19 @@ section { position: relative; }
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr));
   gap: 0;
-  border: 1px solid var(--hairline);
+  border-top: 1px solid var(--hairline);
+  border-left: 1px solid var(--hairline);
+  position: relative;
 }
+.chart-grid::before,
+.chart-grid::after {
+  content: "";
+  position: absolute;
+  background: var(--hairline);
+  pointer-events: none;
+}
+.chart-grid::before { left: 0; right: 0; bottom: 0; height: 1px; }
+.chart-grid::after  { top: 0; bottom: 0; right: 0; width: 1px; }
 @media (min-width: 1600px) {
   .chart-grid { grid-template-columns: repeat(4, 1fr); }
 }
@@ -684,8 +695,19 @@ section { position: relative; }
 .alph-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
-  border: 1px solid var(--hairline);
+  border-top: 1px solid var(--hairline);
+  border-left: 1px solid var(--hairline);
+  position: relative;
 }
+.alph-grid::before,
+.alph-grid::after {
+  content: "";
+  position: absolute;
+  background: var(--hairline);
+  pointer-events: none;
+}
+.alph-grid::before { left: 0; right: 0; bottom: 0; height: 1px; }
+.alph-grid::after  { top: 0; bottom: 0; right: 0; width: 1px; }
 
 .letter {
   position: relative;
