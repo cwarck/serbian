@@ -617,19 +617,19 @@ section { position: relative; }
 
 .alph-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
   border-top: 1px solid var(--hairline);
   border-left: 1px solid var(--hairline);
 }
 
 .letter {
   position: relative;
-  padding: 1.6rem 1.4rem 1.4rem;
+  padding: 1.3rem 1.15rem 1.2rem;
   border-right: 1px solid var(--hairline);
   border-bottom: 1px solid var(--hairline);
   display: flex; flex-direction: column;
-  gap: .35rem;
-  min-height: 220px;
+  gap: .3rem;
+  min-height: 200px;
   background: var(--paper);
   transition: background .25s;
   overflow: hidden;
@@ -641,12 +641,13 @@ section { position: relative; }
   font-size: .68rem; color: var(--ink-faint); letter-spacing: .14em;
 }
 .letter .glyphs {
-  display: flex; align-items: baseline; gap: .6rem;
+  display: flex; align-items: baseline; gap: .45rem;
   font-family: var(--ff-display);
   font-weight: 300;
-  font-size: clamp(2.6rem, 4vw, 3.4rem);
+  font-size: clamp(2rem, 2.6vw, 2.6rem);
   line-height: 1;
   letter-spacing: -.025em;
+  white-space: nowrap;
 }
 .letter .cyr { color: var(--ink); }
 .letter .sep { color: var(--ink-faint); font-size: .55em; padding-bottom: .3em; }
