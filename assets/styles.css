@@ -600,6 +600,8 @@ section { position: relative; }
   display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: space-between;
 }
 .foot a:hover { color: var(--accent); }
+.foot-icon { display: inline-flex; vertical-align: middle; line-height: 0; }
+.foot-icon svg { display: block; }
 
 /* -----------------------------------------------------------
    Chart pages — shared
