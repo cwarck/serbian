@@ -611,7 +611,7 @@ section { position: relative; }
   border-radius: 50%; vertical-align: middle;
   margin-right: .55rem;
 }
-.alph-legend .dot.uniq { background: var(--accent); }
+.alph-legend .dot.unique { background: var(--accent); }
 .alph-legend .dot.shared { background: var(--cool); }
 .alph-legend .dot.diff { background: var(--gold); }
 
