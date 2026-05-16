@@ -235,8 +235,11 @@ section { position: relative; }
 :root:not([data-theme="light"]) .theme-btn .moon { display: block; }
 
 @media (max-width: 720px) {
+  .brand .mono { display: none; }
+
   .nav-toggle {
     display: inline-flex;
+    flex: 0 0 40px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
