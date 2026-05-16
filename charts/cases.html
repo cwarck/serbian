@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="The seven Serbian grammatical cases — endings, questions, prepositions, and example sentences.">
+<title>Seven cases — Atlas Srpski</title>
+
+<script>
+  (function(){
+    try{
+      var t = localStorage.getItem('as_theme');
+      if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+    }catch(e){}
+  })();
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="shell nav-inner">
+    <a href="../index.html" class="brand">
+      <span class="brand-mark">A.</span>
+      <span data-i18n="nav.brand">Atlas Srpski</span>
+      <span class="mono" data-i18n="nav.brand.tag">A field guide</span>
+    </a>
+    <nav class="nav-links">
+      <a href="../index.html#charts" data-i18n="nav.charts">Charts</a>
+      <a href="../index.html#about" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="nav-controls">
+      <button class="chip" data-lang-chip="en" aria-pressed="true">EN</button>
+      <button class="chip" data-lang-chip="ru" aria-pressed="false">RU</button>
+    </div>
+    <button class="theme-btn" data-theme-toggle aria-label="Toggle theme">
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"></path></svg>
+    </button>
+  </div>
+</header>
+
+<section class="chart-head shell">
+  <div class="glyph-bg br" aria-hidden="true" style="font-size:min(46vw,580px);bottom:-7vw;right:-3vw;transform:rotate(4deg);">Пп</div>
+  <div class="reveal">
+    <a href="../index.html#charts" class="back" data-i18n="cases.back">← Back to all charts</a>
+    <h1>
+      <span data-i18n="cases.title.line1">Seven</span>
+      <em data-i18n="cases.title.em">cases.</em>
+    </h1>
+    <p class="subtitle" data-i18n="cases.subtitle">Chart 02 · Padeži</p>
+  </div>
+  <div class="reveal" style="transition-delay:.15s">
+    <p class="intro" data-i18n="cases.intro">A Serbian noun changes its ending to show its job in a sentence. There are seven such jobs — seven cases. Each comes with a question word, a typical set of prepositions, and a feel.</p>
+  </div>
+</section>
+
+<nav class="case-nav" aria-label="Cases">
+  <div class="shell case-nav-inner" id="caseNav"></div>
+</nav>
+
+<section class="cases-section">
+  <div class="shell">
+    <div class="case-list" id="caseList"></div>
+  </div>
+</section>
+
+<footer class="foot shell">
+  <span data-i18n="foot.copy">© Atlas Srpski — a quiet study</span>
+  <span>
+    <a href="#" data-i18n="foot.repo">Source</a>
+    &nbsp;·&nbsp;
+    <a href="#" data-i18n="foot.contact">Contact</a>
+  </span>
+</footer>
+
+<script src="../assets/i18n.js"></script>
+
+<script>
+/* Cases — data is structural; user-facing text comes from window.I18N (name, q) per case key. */
+
+/* Example noun paradigm used throughout: profesor (m), žena (f), selo (n).
+   Endings shown as base + accented ending part where useful. */
+
+const CASES = [
+  {
+    key: 'case.1',
+    abbr: 'NOM',
+    endings: { m:['profesor','-∅'], f:['žena','-a'], n:['selo','-o'] },
+    examples: [
+      { sr:'<mark>Profesor</mark> čita knjigu.', en:'The professor reads a book.', ru:'Профессор читает книгу.' },
+      { sr:'<mark>Žena</mark> peva.',             en:'The woman sings.',           ru:'Женщина поёт.' },
+      { sr:'<mark>Selo</mark> je tiho.',          en:'The village is quiet.',      ru:'Деревня тихая.' },
+    ],
+    preps: []
+  },
+  {
+    key: 'case.2',
+    abbr: 'GEN',
+    endings: { m:['profesora','-a'], f:['žene','-e'], n:['sela','-a'] },
+    examples: [
+      { sr:'Knjiga <mark>profesora</mark>.',       en:'The professor\'s book.',         ru:'Книга профессора.' },
+      { sr:'Stižem iz <mark>grada</mark>.',         en:'I\'m arriving from the city.',   ru:'Я приезжаю из города.' },
+      { sr:'Nemam <mark>vremena</mark>.',           en:'I have no time.',                ru:'У меня нет времени.' },
+    ],
+    preps: ['od','iz','do','kod','bez','oko','posle','pre','blizu','iza']
+  },
+  {
+    key: 'case.3',
+    abbr: 'DAT',
+    endings: { m:['profesoru','-u'], f:['ženi','-i'], n:['selu','-u'] },
+    examples: [
+      { sr:'Dajem knjigu <mark>profesoru</mark>.', en:'I give the book to the professor.', ru:'Я даю книгу профессору.' },
+      { sr:'Idem k <mark>moru</mark>.',             en:'I\'m going to the sea.',            ru:'Я еду к морю.' },
+      { sr:'Pomažem <mark>prijateljici</mark>.',    en:'I\'m helping a friend (f.).',       ru:'Я помогаю подруге.' },
+    ],
+    preps: ['k','ka','prema','nasuprot']
+  },
+  {
+    key: 'case.4',
+    abbr: 'AKU',
+    endings: { m:['profesora','-a / -∅'], f:['ženu','-u'], n:['selo','-o'] },
+    examples: [
+      { sr:'Vidim <mark>profesora</mark>.',         en:'I see the professor.',            ru:'Я вижу профессора.' },
+      { sr:'Čitam <mark>knjigu</mark>.',            en:'I\'m reading a book.',            ru:'Я читаю книгу.' },
+      { sr:'Idem u <mark>grad</mark>.',             en:'I\'m going to the city.',         ru:'Я еду в город.' },
+    ],
+    preps: ['u','na','za','kroz','niz','uz','pod','pred','među','nad']
+  },
+  {
+    key: 'case.5',
+    abbr: 'VOK',
+    endings: { m:['profesore','-e / -u'], f:['ženo','-o'], n:['selo','-o'] },
+    examples: [
+      { sr:'<mark>Profesore</mark>, dobar dan!',    en:'Professor, hello!',                ru:'Профессор, добрый день!' },
+      { sr:'<mark>Marija</mark>, gde si?',           en:'Marija, where are you?',           ru:'Мария, ты где?' },
+      { sr:'O, <mark>prijatelju</mark>!',           en:'Oh, my friend!',                   ru:'О, друг мой!' },
+    ],
+    preps: []
+  },
+  {
+    key: 'case.6',
+    abbr: 'INS',
+    endings: { m:['profesorom','-om'], f:['ženom','-om'], n:['selom','-om'] },
+    examples: [
+      { sr:'Putujem <mark>autobusom</mark>.',        en:'I\'m traveling by bus.',           ru:'Я еду на автобусе.' },
+      { sr:'Idem sa <mark>profesorom</mark>.',       en:'I go with the professor.',         ru:'Я иду с профессором.' },
+      { sr:'Pišem <mark>olovkom</mark>.',            en:'I write with a pencil.',           ru:'Я пишу карандашом.' },
+    ],
+    preps: ['s','sa','pod','pred','nad','među','za']
+  },
+  {
+    key: 'case.7',
+    abbr: 'LOK',
+    endings: { m:['profesoru','-u'], f:['ženi','-i'], n:['selu','-u'] },
+    examples: [
+      { sr:'Knjiga je na <mark>stolu</mark>.',       en:'The book is on the table.',        ru:'Книга на столе.' },
+      { sr:'Govorim o <mark>profesoru</mark>.',      en:'I\'m speaking about the professor.', ru:'Я говорю о профессоре.' },
+      { sr:'Živim u <mark>Beogradu</mark>.',         en:'I live in Belgrade.',              ru:'Я живу в Белграде.' },
+    ],
+    preps: ['u','na','o','po','pri']
+  },
+];
+
+function dict() {
+  const lang = document.documentElement.getAttribute('lang') || 'en';
+  return (window.I18N && window.I18N[lang]) || {};
+}
+
+function tCases(key) {
+  return dict()[key] || '';
+}
+
+function renderCaseNav() {
+  const nav = document.getElementById('caseNav');
+  if (!nav) return;
+  nav.innerHTML = CASES.map((c, i) => `
+    <a href="#${c.key.replace(/\./g,'-')}">
+      <span class="n">0${i+1}</span>${tCases(c.key + '.name')}
+    </a>
+  `).join('');
+}
+
+function renderCases() {
+  const list = document.getElementById('caseList');
+  const d = dict();
+  if (!list) return;
+  list.innerHTML = CASES.map((c, i) => {
+    const order = String(i+1).padStart(2,'0');
+    const name  = d[c.key + '.name'] || '';
+    const local = d[c.key + '.local'] || '';
+    const q     = d[c.key + '.q'] || '';
+    const lang  = document.documentElement.getAttribute('lang') || 'en';
+    const exHTML = c.examples.map(ex => `
+      <div class="ex">
+        <div class="sr">${ex.sr}</div>
+        <div class="tr">${ex[lang] || ex.en}</div>
+      </div>
+    `).join('');
+    const prepHTML = c.preps.length === 0 ? '' : `
+      <div class="preps">
+        <span class="label">${d['cases.preps'] || 'Used with'}</span>
+        ${c.preps.map(p => `<span class="prep">${p}</span>`).join('')}
+      </div>
+    `;
+    return `
+      <article class="case" id="${c.key.replace(/\./g,'-')}">
+        <header class="case-head">
+          <span class="order">№ ${order} · ${c.abbr}</span>
+          <h3>${name}<em>${local}</em></h3>
+          <p class="q">${q}</p>
+        </header>
+        <div class="case-body">
+          <div class="endings">
+            <table>
+              <caption>${d['cases.endings'] || 'Noun endings — singular'}</caption>
+              <thead>
+                <tr>
+                  <th>${d['cases.gender.m'] || 'Masculine'}</th>
+                  <th>${d['cases.gender.f'] || 'Feminine'}</th>
+                  <th>${d['cases.gender.n'] || 'Neuter'}</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>${c.endings.m[0]} <span class="end">${c.endings.m[1]}</span></td>
+                  <td>${c.endings.f[0]} <span class="end">${c.endings.f[1]}</span></td>
+                  <td>${c.endings.n[0]} <span class="end">${c.endings.n[1]}</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div>
+            <p class="mono" style="font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-muted);margin:0 0 .4rem;">${d['cases.examples'] || 'In the wild'}</p>
+            <div class="examples">${exHTML}</div>
+            ${prepHTML}
+          </div>
+        </div>
+      </article>
+    `;
+  }).join('');
+}
+
+function renderAll() { renderCaseNav(); renderCases(); }
+
+document.addEventListener('langchange', renderAll);
+renderAll();
+</script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

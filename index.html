@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Atlas Srpski — charts and cheat sheets for learners of the Serbian language. Available in English and Russian.">
+<title>Atlas Srpski — Serbian, illuminated.</title>
+
+<!-- Prevent theme flash -->
+<script>
+  (function(){
+    try{
+      var t = localStorage.getItem('as_theme');
+      if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+    }catch(e){}
+  })();
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<!-- ============================================================
+     NAV
+     ============================================================ -->
+<header class="nav">
+  <div class="shell nav-inner">
+    <a href="/" class="brand" aria-label="Atlas Srpski — home">
+      <span class="brand-mark">A.</span>
+      <span data-i18n="nav.brand">Atlas Srpski</span>
+      <span class="mono" data-i18n="nav.brand.tag">A field guide</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#charts" data-i18n="nav.charts">Charts</a>
+      <a href="#about" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="nav-controls" role="group" aria-label="Language">
+      <button class="chip" data-lang-chip="en" aria-pressed="true">EN</button>
+      <button class="chip" data-lang-chip="ru" aria-pressed="false">RU</button>
+    </div>
+    <button class="theme-btn" data-theme-toggle aria-label="Toggle theme" data-i18n-attr="aria-label:nav.theme">
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
+        <circle cx="12" cy="12" r="4"></circle>
+        <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+      </svg>
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"></path>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="hero">
+  <div class="glyph-bg tl" aria-hidden="true">Љ</div>
+  <div class="glyph-bg br" aria-hidden="true">ђ</div>
+
+  <div class="shell hero-grid">
+    <div class="reveal">
+      <p class="eyebrow" data-i18n="hero.eyebrow">A visual reference for the Serbian language</p>
+      <h1 class="display">
+        <span data-i18n="hero.title.line1">Serbian,</span>
+        <em data-i18n="hero.title.em">illuminated.</em>
+        <span class="small" data-i18n="hero.title.small">Charts &amp; cheat sheets for the curious learner.</span>
+      </h1>
+    </div>
+    <div class="hero-meta reveal" style="transition-delay:.15s">
+      <p class="lede" data-i18n="hero.lede">Two alphabets, seven cases, a maze of prepositions — laid out on paper, the way a reference book should be.</p>
+      <div class="hero-stats">
+        <div>
+          <span class="num">30</span>
+          <span class="label" data-i18n="hero.stats.alpha">Letters in each alphabet</span>
+        </div>
+        <div>
+          <span class="num">07</span>
+          <span class="label" data-i18n="hero.stats.cases">Grammatical cases</span>
+        </div>
+        <div>
+          <span class="num">06</span>
+          <span class="label" data-i18n="hero.stats.tenses">Verb tenses to know</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHART INDEX
+     ============================================================ -->
+<section id="charts" class="charts">
+  <div class="shell">
+    <div class="section-head reveal">
+      <span class="num" data-i18n="charts.eyebrow">§01 — The library</span>
+      <h2>
+        <span data-i18n="charts.heading">Charts &amp;</span>
+        <em data-i18n="charts.heading.em">cheat sheets</em>
+      </h2>
+      <span class="meta" data-i18n="charts.meta">Updated monthly</span>
+    </div>
+
+    <div class="chart-grid">
+
+      <a class="card reveal" href="charts/alphabet.html">
+        <span class="tag ready" data-i18n="tag.ready">Ready</span>
+        <span class="num">№ 01</span>
+        <h3>
+          <span data-i18n="card.alphabet.title">The two</span>
+          <em data-i18n="card.alphabet.titleEm">alphabets</em>
+        </h3>
+        <p class="desc" data-i18n="card.alphabet.desc">Cyrillic and Latin side by side. 30 letters, one IPA value each, no surprises after you learn them.</p>
+        <span class="arrow">
+          <span data-i18n="card.action">Open chart</span>
+          <svg viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1"><path d="M0 6h22M16 1l6 5-6 5"/></svg>
+        </span>
+        <span class="glyph" aria-hidden="true">Аа</span>
+      </a>
+
+      <a class="card reveal" href="charts/cases.html" style="transition-delay:.05s">
+        <span class="tag ready" data-i18n="tag.ready">Ready</span>
+        <span class="num">№ 02</span>
+        <h3>
+          <span data-i18n="card.cases.title">Seven</span>
+          <em data-i18n="card.cases.titleEm">cases</em>
+        </h3>
+        <p class="desc" data-i18n="card.cases.desc">Endings, questions, prepositions, and example sentences for every noun case — laid out so the pattern shows.</p>
+        <span class="arrow">
+          <span data-i18n="card.action">Open chart</span>
+          <svg viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1"><path d="M0 6h22M16 1l6 5-6 5"/></svg>
+        </span>
+        <span class="glyph" aria-hidden="true">Пп</span>
+      </a>
+
+      <div class="card coming-soon reveal" style="transition-delay:.1s">
+        <span class="tag" data-i18n="tag.soon">Soon</span>
+        <span class="num">№ 03</span>
+        <h3>
+          <span data-i18n="card.verbs.title">Verbs &amp;</span>
+          <em data-i18n="card.verbs.titleEm">conjugation</em>
+        </h3>
+        <p class="desc" data-i18n="card.verbs.desc">Present, past, future, aorist, imperfect. Aspect pairs. Irregular forms you actually meet.</p>
+        <span class="arrow">
+          <span data-i18n="card.soon">In progress</span>
+        </span>
+        <span class="glyph" aria-hidden="true">Гг</span>
+      </div>
+
+      <div class="card coming-soon reveal" style="transition-delay:.15s">
+        <span class="tag" data-i18n="tag.soon">Soon</span>
+        <span class="num">№ 04</span>
+        <h3>
+          <span data-i18n="card.pronouns.title">Pronouns &amp;</span>
+          <em data-i18n="card.pronouns.titleEm">their forms</em>
+        </h3>
+        <p class="desc" data-i18n="card.pronouns.desc">Personal, possessive, reflexive, demonstrative — declined across all seven cases.</p>
+        <span class="arrow">
+          <span data-i18n="card.soon">In progress</span>
+        </span>
+        <span class="glyph" aria-hidden="true">Јј</span>
+      </div>
+
+      <div class="card coming-soon reveal" style="transition-delay:.2s">
+        <span class="tag" data-i18n="tag.soon">Soon</span>
+        <span class="num">№ 05</span>
+        <h3>
+          <span data-i18n="card.prepositions.title">Prepositions,</span>
+          <em data-i18n="card.prepositions.titleEm">visualized</em>
+        </h3>
+        <p class="desc" data-i18n="card.prepositions.desc">A spatial map of u, na, iz, sa, kod, pored… and which case each one demands.</p>
+        <span class="arrow">
+          <span data-i18n="card.soon">In progress</span>
+        </span>
+        <span class="glyph" aria-hidden="true">→</span>
+      </div>
+
+      <div class="card coming-soon reveal" style="transition-delay:.25s">
+        <span class="tag" data-i18n="tag.soon">Soon</span>
+        <span class="num">№ 06</span>
+        <h3>
+          <span data-i18n="card.numbers.title">Numbers &amp;</span>
+          <em data-i18n="card.numbers.titleEm">counting</em>
+        </h3>
+        <p class="desc" data-i18n="card.numbers.desc">Cardinal, ordinal, and the case agreement rule that trips up every learner.</p>
+        <span class="arrow">
+          <span data-i18n="card.soon">In progress</span>
+        </span>
+        <span class="glyph" aria-hidden="true">12</span>
+      </div>
+
+      <div class="card coming-soon reveal" style="transition-delay:.3s">
+        <span class="tag" data-i18n="tag.soon">Soon</span>
+        <span class="num">№ 07</span>
+        <h3>
+          <span data-i18n="card.aspect.title">Verb</span>
+          <em data-i18n="card.aspect.titleEm">aspect pairs</em>
+        </h3>
+        <p class="desc" data-i18n="card.aspect.desc">Perfective and imperfective — when each one belongs in a sentence, with side-by-side examples.</p>
+        <span class="arrow">
+          <span data-i18n="card.soon">In progress</span>
+        </span>
+        <span class="glyph" aria-hidden="true">⇌</span>
+      </div>
+
+      <div class="card coming-soon reveal" style="transition-delay:.35s">
+        <span class="tag" data-i18n="tag.soon">Soon</span>
+        <span class="num">№ 08</span>
+        <h3>
+          <span data-i18n="card.stress.title">Pitch &amp;</span>
+          <em data-i18n="card.stress.titleEm">stress</em>
+        </h3>
+        <p class="desc" data-i18n="card.stress.desc">The four Serbian accents — short rising, short falling, long rising, long falling — with audio cues.</p>
+        <span class="arrow">
+          <span data-i18n="card.soon">In progress</span>
+        </span>
+        <span class="glyph" aria-hidden="true">á</span>
+      </div>
+
+      <div class="card coming-soon reveal" style="transition-delay:.4s">
+        <span class="tag" data-i18n="tag.soon">Soon</span>
+        <span class="num">№ 09</span>
+        <h3>
+          <span data-i18n="card.falseFriends.title">False</span>
+          <em data-i18n="card.falseFriends.titleEm">friends</em>
+        </h3>
+        <p class="desc" data-i18n="card.falseFriends.desc">Words that sound Russian but mean something else entirely. Essential for the Slavic-speaking learner.</p>
+        <span class="arrow">
+          <span data-i18n="card.soon">In progress</span>
+        </span>
+        <span class="glyph" aria-hidden="true">≠</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ABOUT
+     ============================================================ -->
+<section id="about" class="charts">
+  <div class="shell">
+    <div class="section-head reveal">
+      <span class="num" data-i18n="about.eyebrow">§02 — Notes from the desk</span>
+      <h2>
+        <span data-i18n="about.title.line1">Built for the way</span>
+        <em data-i18n="about.title.em">language actually sticks.</em>
+      </h2>
+      <span class="meta">2026</span>
+    </div>
+
+    <div class="about reveal">
+      <div>
+        <p class="pull" data-i18n="about.pull">"A reference you actually want to open."</p>
+      </div>
+      <div class="about-body">
+        <p data-i18n="about.body.p1">Most language references throw a wall of tables at you and hope something lands. <strong>Atlas Srpski</strong> is the opposite: each chart commits to one idea and presents it with enough room to breathe, in two alphabets, in two interface languages, on any device you happen to be holding.</p>
+        <p data-i18n="about.body.p2">Everything renders as live HTML — no PDFs, no screenshots — so you can copy a word, search inside it, share a link to a single case, or read it on a phone in a tram in Belgrade.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="foot shell">
+  <span data-i18n="foot.copy">© Atlas Srpski — a quiet study</span>
+  <span>
+    <a href="#" data-i18n="foot.repo">Source</a>
+    &nbsp;·&nbsp;
+    <a href="#" data-i18n="foot.contact">Contact</a>
+  </span>
+</footer>
+
+<script src="assets/i18n.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
