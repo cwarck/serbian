@@ -285,8 +285,18 @@ function renderCases() {
 
 function renderAll() { renderCaseNav(); renderCases(); }
 
-document.addEventListener('langchange', renderAll);
+function updateStickyOffset() {
+  const header = document.querySelector('header.nav');
+  const caseNav = document.querySelector('.case-nav');
+  const h = (header ? header.offsetHeight : 0) + (caseNav ? caseNav.offsetHeight : 0);
+  document.documentElement.style.setProperty('--sticky-offset', h + 'px');
+}
+
+document.addEventListener('langchange', () => { renderAll(); updateStickyOffset(); });
+window.addEventListener('resize', updateStickyOffset);
+window.addEventListener('load', updateStickyOffset);
 renderAll();
+updateStickyOffset();
 </script>
 <script src="../assets/app.js"></script>
 </body>

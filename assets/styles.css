@@ -764,6 +764,7 @@ section { position: relative; }
 }
 
 .case {
+  scroll-margin-top: calc(var(--sticky-offset, 120px) + .5rem);
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
