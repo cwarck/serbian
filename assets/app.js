@@ -71,6 +71,38 @@
     applyTheme(next);
   }
 
+  /* ---------- mobile nav ---------- */
+
+  function setupNavToggle() {
+    const toggle = document.querySelector('.nav-toggle');
+    const panel = document.querySelector('.nav-collapse');
+    if (!toggle || !panel) return;
+
+    function setOpen(open) {
+      toggle.setAttribute('aria-expanded', String(open));
+      panel.setAttribute('data-open', String(open));
+    }
+
+    toggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      setOpen(toggle.getAttribute('aria-expanded') !== 'true');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (toggle.getAttribute('aria-expanded') !== 'true') return;
+      if (e.target.closest('.nav-collapse') || e.target.closest('.nav-toggle')) return;
+      setOpen(false);
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') setOpen(false);
+    });
+
+    panel.querySelectorAll('.nav-links a, [data-lang-chip]').forEach((el) => {
+      el.addEventListener('click', () => setOpen(false));
+    });
+  }
+
   /* ---------- reveal on scroll ---------- */
 
   function setupReveal() {
@@ -115,6 +147,7 @@
       btn.addEventListener('click', toggleTheme);
     });
 
+    setupNavToggle();
     setupReveal();
   }
 

@@ -28,18 +28,25 @@
       <span data-i18n="nav.brand">Atlas Srpski</span>
       <span class="mono" data-i18n="nav.brand.tag">A field guide</span>
     </a>
-    <nav class="nav-links">
-      <a href="../index.html#charts" data-i18n="nav.charts">Charts</a>
-      <a href="../index.html#about" data-i18n="nav.about">About</a>
-    </nav>
-    <div class="nav-controls">
-      <button class="chip" data-lang-chip="en" aria-pressed="true">EN</button>
-      <button class="chip" data-lang-chip="ru" aria-pressed="false">RU</button>
-    </div>
-    <button class="theme-btn" data-theme-toggle aria-label="Toggle theme">
-      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
-      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"></path></svg>
+    <button class="nav-toggle" type="button" aria-controls="navCollapse" aria-expanded="false" aria-label="Menu" data-i18n-attr="aria-label:nav.menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
     </button>
+    <div class="nav-collapse" id="navCollapse" data-open="false">
+      <nav class="nav-links" aria-label="Primary">
+        <a href="../index.html#charts" data-i18n="nav.charts">Charts</a>
+        <a href="../index.html#about" data-i18n="nav.about">About</a>
+      </nav>
+      <div class="nav-controls" role="group" aria-label="Language">
+        <button class="chip" data-lang-chip="en" aria-pressed="true">EN</button>
+        <button class="chip" data-lang-chip="ru" aria-pressed="false">RU</button>
+      </div>
+      <button class="theme-btn" data-theme-toggle aria-label="Toggle theme" data-i18n-attr="aria-label:nav.theme">
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"></path></svg>
+      </button>
+    </div>
   </div>
 </header>
 

@@ -9,6 +9,7 @@ window.I18N = {
     'nav.charts': 'Charts',
     'nav.about': 'About',
     'nav.theme': 'Toggle theme',
+    'nav.menu': 'Menu',
 
     'hero.eyebrow': 'A visual reference for the Serbian language',
     'hero.title.line1': 'Serbian,',
@@ -120,6 +121,7 @@ window.I18N = {
     'nav.charts': 'Таблицы',
     'nav.about': 'О проекте',
     'nav.theme': 'Сменить тему',
+    'nav.menu': 'Меню',
 
     'hero.eyebrow': 'Визуальный справочник по сербскому языку',
     'hero.title.line1': 'Сербский,',
