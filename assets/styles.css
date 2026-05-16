@@ -31,8 +31,8 @@
   --ff-body:      'Spectral', Georgia, serif;
   --ff-mono:      'JetBrains Mono', ui-monospace, monospace;
 
-  --pad-x:        clamp(1.25rem, 5vw, 5.5rem);
-  --max-w:        1480px;
+  --pad-x:        clamp(1.25rem, 4.5vw, 6rem);
+  --max-w:        none;
   --max-prose:    62ch;
 
   --rad:          2px;
@@ -451,7 +451,7 @@ section { position: relative; }
 
 .chart-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr));
   gap: 0;
   border-top: 1px solid var(--hairline);
   border-left: 1px solid var(--hairline);
