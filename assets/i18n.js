@@ -23,7 +23,6 @@ window.I18N = {
     'charts.eyebrow': '§01 — The library',
     'charts.heading': 'Charts &',
     'charts.heading.em': 'cheat sheets',
-    'charts.meta': 'Updated monthly',
 
     'card.alphabet.title': 'The two',
     'card.alphabet.titleEm': 'alphabets',
@@ -135,7 +134,6 @@ window.I18N = {
     'charts.eyebrow': '§01 — Библиотека',
     'charts.heading': 'Таблицы и',
     'charts.heading.em': 'шпаргалки',
-    'charts.meta': 'Обновляется ежемесячно',
 
     'card.alphabet.title': 'Два',
     'card.alphabet.titleEm': 'алфавита',
