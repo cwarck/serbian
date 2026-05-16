@@ -3,7 +3,7 @@
    Editorial-modernist take on a Serbian language reference.
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 /* -----------------------------------------------------------
    Tokens
@@ -27,8 +27,8 @@
   --shadow:       rgba(28,22,18,.06);
   --grain-op:     .035;
 
-  --ff-display:   'Fraunces', Georgia, serif;
-  --ff-body:      'Newsreader', Georgia, serif;
+  --ff-display:   'Spectral', Georgia, serif;
+  --ff-body:      'Spectral', Georgia, serif;
   --ff-mono:      'JetBrains Mono', ui-monospace, monospace;
 
   --pad-x:        clamp(1.25rem, 5vw, 5.5rem);
@@ -274,13 +274,11 @@ section { position: relative; }
   font-size: clamp(3rem, 9.5vw, 8rem);
   line-height: .94;
   letter-spacing: -.035em;
-  font-variation-settings: "opsz" 144, "SOFT" 30;
 }
 .display em {
   font-style: italic;
   font-weight: 300;
   color: var(--accent);
-  font-variation-settings: "opsz" 144, "SOFT" 100;
 }
 .display .small {
   display: block;
@@ -302,7 +300,6 @@ section { position: relative; }
   color: var(--ink-soft);
   max-width: 36ch;
   font-style: italic;
-  font-variation-settings: "opsz" 36;
 }
 .hero-stats {
   display: grid; grid-template-columns: repeat(3, 1fr);
@@ -339,7 +336,6 @@ section { position: relative; }
   pointer-events: none;
   line-height: .8;
   letter-spacing: -.08em;
-  font-variation-settings: "opsz" 144, "SOFT" 100;
 }
 :root[data-theme="dark"] .glyph-bg,
 :root:not([data-theme="light"]) .glyph-bg { opacity: .07; }
@@ -423,7 +419,6 @@ section { position: relative; }
   font-size: clamp(1.6rem, 2.5vw, 2.1rem);
   letter-spacing: -.018em;
   margin: .8rem 0 .35rem;
-  font-variation-settings: "opsz" 72, "SOFT" 40;
 }
 .card h3 em { font-style: italic; color: var(--accent); font-weight: 300; }
 .card .desc {
@@ -463,7 +458,6 @@ section { position: relative; }
   pointer-events: none;
   z-index: -1;
   transition: transform .8s cubic-bezier(.2,.7,.2,1), opacity .35s;
-  font-variation-settings: "opsz" 144, "SOFT" 100;
 }
 .card:hover .glyph { transform: rotate(-6deg) scale(1.08); opacity: .09; }
 :root[data-theme="dark"] .card:hover .glyph,
@@ -505,7 +499,6 @@ section { position: relative; }
   font-weight: 300;
   letter-spacing: -.025em;
   line-height: 1.02;
-  font-variation-settings: "opsz" 144, "SOFT" 60;
 }
 .about-title em { font-style: italic; color: var(--accent); }
 .about-body {
@@ -529,7 +522,6 @@ section { position: relative; }
   border-left: 2px solid var(--accent);
   padding: .5rem 0 .5rem 1.4rem;
   margin: 2rem 0;
-  font-variation-settings: "opsz" 72, "SOFT" 100;
 }
 
 /* -----------------------------------------------------------
@@ -576,9 +568,8 @@ section { position: relative; }
   font-weight: 300;
   letter-spacing: -.03em;
   line-height: 1;
-  font-variation-settings: "opsz" 144, "SOFT" 40;
 }
-.chart-head h1 em { font-style: italic; color: var(--accent); font-weight: 300; font-variation-settings: "opsz" 144, "SOFT" 100; }
+.chart-head h1 em { font-style: italic; color: var(--accent); font-weight: 300; }
 .chart-head .subtitle {
   font-family: var(--ff-mono);
   font-size: .82rem;
@@ -656,11 +647,10 @@ section { position: relative; }
   font-size: clamp(2.6rem, 4vw, 3.4rem);
   line-height: 1;
   letter-spacing: -.025em;
-  font-variation-settings: "opsz" 144, "SOFT" 60;
 }
 .letter .cyr { color: var(--ink); }
 .letter .sep { color: var(--ink-faint); font-size: .55em; padding-bottom: .3em; }
-.letter .lat { color: var(--accent); font-style: italic; font-variation-settings: "opsz" 144, "SOFT" 100; }
+.letter .lat { color: var(--accent); font-style: italic; }
 
 .letter .ipa {
   font-family: var(--ff-mono);
@@ -733,9 +723,8 @@ section { position: relative; }
   font-weight: 300;
   letter-spacing: -.025em;
   line-height: .98;
-  font-variation-settings: "opsz" 144, "SOFT" 60;
 }
-.case-head h3 em { font-style: italic; color: var(--ink-soft); display: block; font-size: .55em; margin-top: .35em; letter-spacing: -.01em; font-variation-settings: "opsz" 72, "SOFT" 100; }
+.case-head h3 em { font-style: italic; color: var(--ink-soft); display: block; font-size: .55em; margin-top: .35em; letter-spacing: -.01em; }
 .case-head .q {
   font-family: var(--ff-body);
   font-style: italic;
@@ -787,12 +776,10 @@ section { position: relative; }
   font-size: 1.25rem;
   font-weight: 350;
   color: var(--ink);
-  font-variation-settings: "opsz" 36, "SOFT" 30;
 }
 .endings td .end {
   color: var(--accent);
   font-style: italic;
-  font-variation-settings: "opsz" 36, "SOFT" 100;
 }
 .endings tr:last-child td { border-bottom: 0; }
 
@@ -815,14 +802,12 @@ section { position: relative; }
   font-weight: 350;
   color: var(--ink);
   line-height: 1.35;
-  font-variation-settings: "opsz" 36;
 }
 .ex .sr mark {
   background: var(--highlight);
   color: var(--accent);
   font-style: italic;
   padding: 0 .15em;
-  font-variation-settings: "opsz" 36, "SOFT" 100;
 }
 .ex .tr {
   font-family: var(--ff-body);
@@ -852,7 +837,6 @@ section { position: relative; }
   border: 1px solid var(--hairline);
   border-radius: 999px;
   background: var(--paper);
-  font-variation-settings: "opsz" 36, "SOFT" 100;
 }
 
 /* Case nav strip */
