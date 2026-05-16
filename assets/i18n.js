@@ -65,7 +65,7 @@ window.I18N = {
 
     'foot.copy': '© 2026 Atlas Srpski · Content <a href="https://creativecommons.org/licenses/by/4.0/deed.en" rel="license noopener" target="_blank">CC BY 4.0</a>',
     'foot.repo': 'Source',
-    'foot.contact': 'Contact',
+    'foot.author': 'by Ilya Akimov',
 
     /* Alphabet page */
     'alph.back': 'Back to all charts',
@@ -178,7 +178,7 @@ window.I18N = {
 
     'foot.copy': '© 2026 Атлас Сербского · Контент под <a href="https://creativecommons.org/licenses/by/4.0/deed.ru" rel="license noopener" target="_blank">CC BY 4.0</a>',
     'foot.repo': 'Исходники',
-    'foot.contact': 'Контакт',
+    'foot.author': 'Илья Акимов',
 
     /* Alphabet */
     'alph.back': 'Ко всем таблицам',
