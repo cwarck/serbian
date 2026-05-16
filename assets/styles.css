@@ -373,7 +373,7 @@ section { position: relative; }
 .hero-stats > div { display: flex; flex-direction: column; gap: .15rem; }
 .hero-stats .num {
   font-family: var(--ff-display);
-  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-size: clamp(1.5rem, 1.1rem + 1.2vw, 2.75rem);
   font-feature-settings: "onum" 0, "lnum";
   color: var(--accent);
   font-weight: 400;
@@ -423,7 +423,7 @@ section { position: relative; }
   letter-spacing: .12em;
 }
 .section-head h2 {
-  font-size: clamp(1.8rem, 3.5vw, 3rem);
+  font-size: clamp(1.8rem, 1.2rem + 2vw, 4rem);
   font-weight: 350;
   letter-spacing: -.02em;
 }
@@ -453,8 +453,7 @@ section { position: relative; }
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr));
   gap: 0;
-  border-top: 1px solid var(--hairline);
-  border-left: 1px solid var(--hairline);
+  border: 1px solid var(--hairline);
 }
 @media (min-width: 1600px) {
   .chart-grid { grid-template-columns: repeat(4, 1fr); }
@@ -553,9 +552,10 @@ section { position: relative; }
   display: grid;
   grid-template-columns: 1fr;
   gap: 2.5rem;
+  max-width: 1480px;
 }
 @media (min-width: 920px) {
-  .about { grid-template-columns: .9fr 1.4fr; gap: 5rem; }
+  .about { grid-template-columns: .9fr 1.4fr; gap: clamp(3rem, 4vw, 6rem); }
 }
 .about-title {
   font-family: var(--ff-display);
@@ -684,8 +684,7 @@ section { position: relative; }
 .alph-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
-  border-top: 1px solid var(--hairline);
-  border-left: 1px solid var(--hairline);
+  border: 1px solid var(--hairline);
 }
 
 .letter {
