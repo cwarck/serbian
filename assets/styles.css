@@ -670,7 +670,10 @@ section { position: relative; }
   line-height: 1.4;
   color: var(--ink-soft);
 }
-.letter .example .word { font-weight: 500; color: var(--ink); }
+.letter .example .word { font-weight: 500; color: var(--ink); display: inline-flex; align-items: baseline; gap: .35rem; flex-wrap: wrap; }
+.letter .example .word-cyr { color: var(--ink); }
+.letter .example .word-sep { color: var(--ink-faint); }
+.letter .example .word-lat { color: var(--accent); font-style: normal; }
 .letter .example .tr { font-style: italic; color: var(--ink-muted); display: block; font-size: .85rem; margin-top: .15rem; }
 
 .letter[data-kind="unique"]::after,
