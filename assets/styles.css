@@ -898,9 +898,20 @@ section { position: relative; }
 }
 
 /* Endings — endings-only table */
-.endings-head {
-  display: grid; gap: .35rem;
+.endings-head,
+.notes-head {
+  display: block;
+  padding-bottom: .85rem;
   margin-bottom: 1.4rem;
+  border-bottom: 1px solid var(--hairline);
+}
+.endings-head .eyebrow::before,
+.notes-head .eyebrow::before {
+  display: none;
+}
+.endings-head .eyebrow,
+.notes-head .eyebrow {
+  gap: 0;
 }
 .endings table {
   width: 100%;
@@ -989,7 +1000,6 @@ section { position: relative; }
   background: var(--paper-deep);
   border-left: 2px solid var(--tone, var(--accent));
 }
-.notes-head { margin-bottom: 1.4rem; }
 
 .notes-list { display: grid; gap: 1.6rem; }
 .note-item {
