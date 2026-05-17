@@ -100,6 +100,18 @@
       <div class="extra-table" id="extraTable"></div>
     </section>
 
+    <section class="case-extra reveal" id="extra-wrinkles" aria-label="Wrinkles and exceptions">
+      <header class="extra-head">
+        <span class="eyebrow" data-i18n="cases.wrinkles.eyebrow">Tucked-away rules</span>
+        <h2>
+          <span data-i18n="cases.wrinkles.title.line1">Wrinkles</span>
+          <em data-i18n="cases.wrinkles.title.em">worth knowing.</em>
+        </h2>
+        <p class="extra-intro" data-i18n="cases.wrinkles.intro"></p>
+      </header>
+      <div class="wrinkle-grid" id="wrinkleGrid"></div>
+    </section>
+
     <section class="case-extra pairs reveal" id="extra-pairs" aria-label="Reverse pairs">
       <header class="extra-head">
         <span class="eyebrow" data-i18n="cases.pairs.eyebrow">Mirrored prepositions</span>
@@ -345,6 +357,61 @@ const IDECL = {
   pl:    ['ljubavi',  'ljubavi',  'ljubavima','ljubavi',  'ljubavi',   'ljubavima', 'ljubavima'],
 };
 
+const WRINKLES = [
+  {
+    key: 'wrinkle.fleeting',
+    examples: [
+      { from:'pas',    to:'psa',    en:'dog · of the dog',          ru:'пёс · собаки' },
+      { from:'posao',  to:'posla',  en:'job · of the job',          ru:'дело · дела' },
+      { from:'otac',   to:'oca',    en:'father · of the father',    ru:'отец · отца' },
+      { from:'vredan', to:'vredni', en:'hardworking (m.sg) · m.pl', ru:'усердный (м.р., ед.) · мн.ч.' },
+    ],
+  },
+  {
+    key: 'wrinkle.a-insert',
+    examples: [
+      { from:'sestra',   to:'sestara',   en:'sister · of sisters (gen. pl.)', ru:'сестра · сестёр (род. мн.)' },
+      { from:'pismo',    to:'pisama',    en:'letter · of letters',             ru:'письмо · писем' },
+      { from:'viljuška', to:'viljušaka', en:'fork · of forks',                 ru:'вилка · вилок' },
+      { from:'staklo',   to:'stakala',   en:'glass · of glasses',              ru:'стекло · стёкол' },
+    ],
+  },
+  {
+    key: 'wrinkle.ov-ev',
+    examples: [
+      { from:'sin',  to:'sinovi',  en:'son · sons',                  ru:'сын · сыновья' },
+      { from:'grad', to:'gradovi', en:'city · cities',               ru:'город · города' },
+      { from:'muž',  to:'muževi',  en:'husband · husbands (soft → -ev-)', ru:'муж · мужья (мягк. → -ev-)' },
+      { from:'dan',  to:'dani',    en:'day · days (exception, plain -i)', ru:'день · дни (исключение, просто -i)' },
+    ],
+  },
+  {
+    key: 'wrinkle.iju',
+    examples: [
+      { from:'oko',  to:'očiju',   en:'eye · of eyes',     ru:'глаз · глаз (род. мн.)' },
+      { from:'uho',  to:'ušiju',   en:'ear · of ears',     ru:'ухо · ушей' },
+      { from:'gost', to:'gostiju', en:'guest · of guests', ru:'гость · гостей' },
+      { from:'prst', to:'prstiju', en:'finger · of fingers', ru:'палец · пальцев' },
+    ],
+  },
+  {
+    key: 'wrinkle.irregulars',
+    wide: true,
+    examples: [
+      { from:'brat',  to:'braća',    en:'brother → brothers (f.sg collective)', ru:'брат → братья (соб., ж.р., ед.)' },
+      { from:'čovek', to:'ljudi',    en:'person → people (whole new word)',     ru:'человек → люди (новое слово)' },
+      { from:'dete',  to:'deca',     en:'child → children (f.sg collective)',   ru:'ребёнок → дети (соб., ж.р., ед.)' },
+      { from:'drvo',  to:'drveta',   en:'tree → of the tree (stem extends)',    ru:'дерево → дерева (основа удлиняется)' },
+      { from:'ime',   to:'imena',    en:'name → names (n-stem extension)',      ru:'имя → имена (наращение -n-)' },
+      { from:'vreme', to:'vremena',  en:'time → times (n-stem extension)',      ru:'время → времена (наращение -n-)' },
+      { from:'ruka',  to:'ruku',     en:'hand → of hands (special gen. pl.)',   ru:'рука → рук (особый род. мн.)' },
+      { from:'noga',  to:'nogu',     en:'leg → of legs (special gen. pl.)',     ru:'нога → ног (особый род. мн.)' },
+      { from:'sat',   to:'sati',     en:'hour → hours (no -ov- infix)',         ru:'час → часы (без -ov-)' },
+      { from:'nebo',  to:'nebesa',   en:'sky → skies (s-stem extension)',       ru:'небо → небеса (наращение -s-)' },
+    ],
+  },
+];
+
 const PAIRS = [
   { a:{p:'iz', case:'GEN', en:'out of',      ru:'из (откуда)'},
     b:{p:'u',  case:'AKU', en:'into',         ru:'в (куда)'},
@@ -544,6 +611,32 @@ function renderIDecl() {
   `;
 }
 
+function renderWrinkles() {
+  const grid = document.getElementById('wrinkleGrid');
+  if (!grid) return;
+  const d = dict();
+  const lang = currentLang();
+  grid.innerHTML = WRINKLES.map(w => {
+    const title = d[w.key + '.title'] || '';
+    const intro = d[w.key + '.intro'] || '';
+    const items = w.examples.map(ex => `
+      <li>
+        <span class="from">${ex.from}</span>
+        <span class="arrow" aria-hidden="true">→</span>
+        <span class="to">${ex.to}</span>
+        <span class="gloss">${ex[lang] || ex.en}</span>
+      </li>
+    `).join('');
+    return `
+      <article class="wrinkle${w.wide ? ' wide' : ''}">
+        <h3>${title}</h3>
+        <p class="lede">${intro}</p>
+        <ul class="wrinkle-list">${items}</ul>
+      </article>
+    `;
+  }).join('');
+}
+
 function renderPairs() {
   const ul = document.getElementById('pairList');
   if (!ul) return;
@@ -573,6 +666,7 @@ function renderAll() {
   renderSystemStrip();
   renderCases();
   renderIDecl();
+  renderWrinkles();
   renderPairs();
 }
 
