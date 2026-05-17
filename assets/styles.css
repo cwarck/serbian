@@ -639,7 +639,14 @@ section { position: relative; }
   display: inline-flex; align-items: center; gap: .5rem;
   margin-bottom: 1.5rem;
 }
+.chart-head .back::before {
+  content: "←";
+  font-size: 1em;
+  letter-spacing: 0;
+  transition: transform .2s ease;
+}
 .chart-head .back:hover { color: var(--accent); }
+.chart-head .back:hover::before { transform: translateX(-.2em); }
 .chart-head h1 {
   font-family: var(--ff-display);
   font-size: clamp(2.6rem, 7vw, 5.5rem);
