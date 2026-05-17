@@ -712,7 +712,6 @@ section { position: relative; }
 }
 
 .strip-note,
-.endings-note,
 .extra-intro {
   font-family: var(--ff-body);
   font-style: italic;
