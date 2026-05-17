@@ -137,8 +137,10 @@ section { position: relative; }
   padding-block: 1.1rem;
   position: relative;
 }
-.nav-collapse { display: contents; }
-.nav-toggle { display: none; }
+.nav-actions {
+  display: inline-flex; align-items: center; gap: .75rem;
+  margin-left: auto;
+}
 .brand {
   display: inline-flex; align-items: baseline; gap: .55rem;
   font-family: var(--ff-display);
@@ -152,23 +154,6 @@ section { position: relative; }
   font-weight: 300;
   color: var(--accent);
 }
-.nav-links {
-  display: flex; gap: 1.5rem; margin-left: auto;
-  font-family: var(--ff-mono);
-  font-size: var(--fs-meta);
-  text-transform: uppercase;
-  letter-spacing: .08em;
-  color: var(--ink-soft);
-}
-.nav-links a { position: relative; padding-block: .25rem; }
-.nav-links a::after {
-  content: ""; position: absolute; left: 0; right: 0; bottom: -2px;
-  height: 1px; background: var(--accent);
-  transform: scaleX(0); transform-origin: left;
-  transition: transform .35s cubic-bezier(.2,.6,.2,1);
-}
-.nav-links a:hover::after { transform: scaleX(1); }
-
 .nav-controls {
   display: inline-flex; align-items: center; gap: .25rem;
   border: 1px solid var(--hairline);
@@ -178,6 +163,7 @@ section { position: relative; }
 .chip {
   font-family: var(--ff-mono);
   font-size: var(--fs-meta); letter-spacing: .08em; text-transform: uppercase;
+  line-height: 1;
   padding: .7rem 1rem;
   border-radius: 999px;
   color: var(--ink-muted);
@@ -203,65 +189,12 @@ section { position: relative; }
 :root[data-theme="dark"] .theme-btn .moon,
 :root:not([data-theme="light"]) .theme-btn .moon { display: block; }
 
-@media (max-width: 720px) {
-  .nav-toggle {
-    display: inline-flex;
-    flex: 0 0 44px;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-left: auto;
-    width: 44px; height: 44px;
-    border: 1px solid var(--hairline);
-    border-radius: 50%;
-    color: var(--ink-soft);
-    transition: background .25s, color .25s;
-  }
-  .nav-toggle:hover { background: var(--paper-deep); color: var(--ink); }
-  .nav-toggle .bar {
-    display: block;
-    width: 16px; height: 1.4px;
-    background: currentColor;
-    border-radius: 2px;
-    transition: transform .28s cubic-bezier(.2,.7,.2,1), opacity .2s;
-  }
-  .nav-toggle .bar + .bar { margin-top: 4px; }
-  .nav-toggle[aria-expanded="true"] .bar:nth-child(1) { transform: translateY(5.4px) rotate(45deg); }
-  .nav-toggle[aria-expanded="true"] .bar:nth-child(2) { opacity: 0; }
-  .nav-toggle[aria-expanded="true"] .bar:nth-child(3) { transform: translateY(-5.4px) rotate(-45deg); }
-
-  .nav-collapse {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.25rem;
-    position: absolute;
-    top: 100%; left: 0; right: 0;
-    padding: 1.4rem var(--pad-x) 1.6rem;
-    background: color-mix(in oklab, var(--paper) 96%, transparent);
-    backdrop-filter: blur(14px) saturate(140%);
-    -webkit-backdrop-filter: blur(14px) saturate(140%);
-    border-bottom: 1px solid var(--hairline);
-    box-shadow: 0 10px 24px var(--shadow);
-    opacity: 0;
-    transform: translateY(-6px);
-    pointer-events: none;
-    transition: opacity .25s ease, transform .25s ease;
-  }
-  .nav-collapse[data-open="true"] {
-    opacity: 1;
-    transform: none;
-    pointer-events: auto;
-  }
-  .nav-collapse .nav-links {
-    display: flex;
-    flex-direction: column;
-    gap: .9rem;
-    margin: 0;
-    font-size: 1.05rem;
-    color: var(--ink);
-  }
-  .nav-collapse .nav-links a { padding-block: .15rem; }
+@media (max-width: 420px) {
+  .nav-inner { gap: .5rem; }
+  .nav-actions { gap: .4rem; }
+  .chip { padding: .55rem .7rem; }
+  .theme-btn { width: 38px; height: 38px; }
+  .theme-btn svg { width: 15px; height: 15px; }
 }
 
 /* -----------------------------------------------------------
@@ -469,51 +402,6 @@ section { position: relative; }
 }
 .upcoming-list em { font-style: italic; color: var(--accent); }
 .upcoming-list .sep { color: var(--ink-faint); }
-
-/* -----------------------------------------------------------
-   About / notes block
-   ----------------------------------------------------------- */
-
-.about {
-  padding-block: clamp(3rem, 7vw, 6rem);
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2.5rem;
-  max-width: 1480px;
-}
-@media (min-width: 920px) {
-  .about { grid-template-columns: .9fr 1.4fr; gap: clamp(3rem, 4vw, 6rem); }
-}
-.about-title {
-  font-family: var(--ff-display);
-  font-size: clamp(2rem, 4vw, 3.4rem);
-  font-weight: 300;
-  letter-spacing: -.025em;
-  line-height: 1.02;
-}
-.about-title em { font-style: italic; color: var(--accent); }
-.about-body {
-  font-size: clamp(1.1rem, .95rem + .45vw, 1.4rem);
-  line-height: 1.65;
-  color: var(--ink-soft);
-  max-width: 62ch;
-}
-.about-body p + p { margin-top: 1.1em; }
-.about-body strong { color: var(--ink); font-weight: 600; }
-
-/* Pull-quote variant */
-.pull {
-  font-family: var(--ff-display);
-  font-style: italic;
-  font-size: clamp(1.4rem, 2.2vw, 1.9rem);
-  font-weight: 300;
-  color: var(--ink);
-  line-height: 1.35;
-  letter-spacing: -.01em;
-  border-left: 2px solid var(--accent);
-  padding: .5rem 0 .5rem 1.4rem;
-  margin: 2rem 0;
-}
 
 /* -----------------------------------------------------------
    Footer

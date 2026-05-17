@@ -5,10 +5,7 @@ window.I18N = {
   en: {
     'meta.lang': 'English',
     'nav.brand': 'Atlas Srpski',
-    'nav.charts': 'Charts',
-    'nav.about': 'About',
     'nav.theme': 'Toggle theme',
-    'nav.menu': 'Menu',
 
     'hero.eyebrow': 'A visual reference for the Serbian language',
     'hero.title.line1': 'Serbian,',
@@ -40,12 +37,6 @@ window.I18N = {
 
     'card.action': 'Open chart',
     'upcoming.label': 'Coming soon',
-
-    'about.title.line1': 'Built for the way',
-    'about.title.em': 'language actually sticks.',
-    'about.body.p1': 'Most language references throw a wall of tables at you and hope something lands. <strong>Atlas Srpski</strong> is the opposite: each chart commits to one idea and presents it with enough room to breathe, in two alphabets, in two interface languages, on any device you happen to be holding.',
-    'about.body.p2': 'Everything renders as live HTML — no PDFs, no screenshots — so you can copy a word, search inside it, share a link to a single case, or read it on a phone in a tram in Belgrade.',
-    'about.pull': '"A reference you actually want to open."',
 
     'foot.copy': '© 2026 Atlas Srpski · Content <a href="https://creativecommons.org/licenses/by/4.0/deed.en" rel="license noopener" target="_blank">CC BY 4.0</a>',
     'foot.repo': 'Source',
@@ -105,10 +96,7 @@ window.I18N = {
   ru: {
     'meta.lang': 'Русский',
     'nav.brand': 'Атлас Сербского',
-    'nav.charts': 'Таблицы',
-    'nav.about': 'О проекте',
     'nav.theme': 'Сменить тему',
-    'nav.menu': 'Меню',
 
     'hero.eyebrow': 'Визуальный справочник по сербскому языку',
     'hero.title.line1': 'Сербский,',
@@ -140,12 +128,6 @@ window.I18N = {
 
     'card.action': 'Открыть',
     'upcoming.label': 'Скоро',
-
-    'about.title.line1': 'Сделано под то, как язык',
-    'about.title.em': 'на самом деле усваивается.',
-    'about.body.p1': 'Большинство языковых справочников вываливают на читателя ворох таблиц в надежде, что хоть что-то да зацепится. <strong>Атлас Сербского</strong> устроен наоборот: каждая таблица посвящена одной идее, и у этой идеи есть пространство — в двух алфавитах, на двух языках интерфейса, на любом экране, который оказался под рукой.',
-    'about.body.p2': 'Здесь всё — живой HTML, без PDF и скриншотов: слово можно скопировать, по тексту — искать, на отдельный падеж — дать ссылку, а прочесть всё это можно с телефона хоть в белградском трамвае.',
-    'about.pull': '«Справочник, который и правда хочется открыть».',
 
     'foot.copy': '© 2026 Атлас Сербского · Контент под <a href="https://creativecommons.org/licenses/by/4.0/deed.ru" rel="license noopener" target="_blank">CC BY 4.0</a>',
     'foot.repo': 'Исходники',
