@@ -811,52 +811,6 @@ section { position: relative; }
 }
 
 /* -----------------------------------------------------------
-   Stem key — the three reference nouns
-   ----------------------------------------------------------- */
-.stem-key {
-  padding-top: clamp(2rem, 4vw, 3rem);
-}
-.stem-key header { margin-bottom: 1.5rem; display: grid; gap: .3rem; }
-
-.stem-list {
-  list-style: none; padding: 0; margin: 0;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0;
-  border-top: 1px solid var(--hairline);
-  border-bottom: 1px solid var(--hairline);
-}
-@media (min-width: 640px) {
-  .stem-list { grid-template-columns: repeat(3, 1fr); }
-}
-.stem {
-  padding: 1.4rem 1.2rem;
-  border-bottom: 1px solid var(--hairline-soft);
-  display: grid; gap: .25rem;
-}
-.stem:last-child { border-bottom: 0; }
-@media (min-width: 640px) {
-  .stem { border-bottom: 0; border-right: 1px solid var(--hairline-soft); }
-  .stem:last-child { border-right: 0; }
-}
-.stem em {
-  font-family: var(--ff-display);
-  font-style: italic;
-  font-weight: 300;
-  font-size: clamp(1.7rem, 1.3rem + .9vw, 2.4rem);
-  color: var(--ink);
-  letter-spacing: -.015em;
-  line-height: 1;
-}
-.stem span {
-  font-family: var(--ff-mono);
-  font-size: var(--fs-meta);
-  letter-spacing: .16em;
-  text-transform: uppercase;
-  color: var(--ink-muted);
-}
-
-/* -----------------------------------------------------------
    Case list — long-form per-case cards
    ----------------------------------------------------------- */
 .case-list {
@@ -934,7 +888,12 @@ section { position: relative; }
 }
 .case-head .q strong { font-style: normal; font-weight: 500; color: var(--tone, var(--accent)); }
 
-.case-body { display: grid; grid-template-columns: 1fr; gap: clamp(2rem, 4vw, 3rem); }
+.case-body {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2rem, 4vw, 3rem);
+  align-items: start;
+}
 @media (min-width: 1280px) {
   .case-body { grid-template-columns: minmax(360px, 1fr) 1fr; gap: 3.5rem; }
 }
@@ -1024,46 +983,63 @@ section { position: relative; }
   color: var(--ink-muted);
 }
 
-/* Per-case sound-change notes */
+/* Per-case sound-change notes — each rule gets its own block */
 .case-notes {
-  margin-top: 1.6rem;
-  padding: 1.2rem 1.3rem;
+  margin-top: 1.8rem;
+  padding: 1.5rem 1.6rem 1.6rem;
   background: var(--paper-deep);
   border-left: 2px solid var(--tone, var(--accent));
 }
-.case-notes .eyebrow {
-  font-family: var(--ff-mono);
-  font-size: var(--fs-meta);
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  color: var(--ink-muted);
-  display: block;
-  margin-bottom: .8rem;
-}
-.case-notes .eyebrow::before { display: none; }
-.case-notes ol {
-  list-style: none;
-  padding: 0; margin: 0;
-  display: grid;
-  gap: .8rem;
-  counter-reset: n;
-}
-.case-notes li {
-  display: grid;
-  grid-template-columns: 1.4em 1fr;
-  gap: .5rem;
-  font-family: var(--ff-body);
-  font-size: clamp(.95rem, .88rem + .2vw, 1.08rem);
-  line-height: 1.55;
-  color: var(--ink-soft);
+.notes-head { margin-bottom: 1.4rem; }
+
+.notes-list { display: grid; gap: 1.6rem; }
+.note-item {
   scroll-margin-top: calc(var(--sticky-offset, 120px) + 1rem);
+  padding-top: 1.6rem;
+  border-top: 1px dashed var(--hairline-soft);
 }
-.case-notes li strong { color: var(--ink); font-weight: 600; }
-.note-mark {
+.note-item:first-child { padding-top: 0; border-top: 0; }
+.note-title {
+  font-family: var(--ff-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.1rem, 1rem + .35vw, 1.35rem);
+  letter-spacing: -.012em;
+  line-height: 1.25;
+  color: var(--ink);
+  margin: 0 0 .6rem;
+}
+.note-body {
+  font-family: var(--ff-body);
+  font-size: clamp(.98rem, .9rem + .25vw, 1.13rem);
+  line-height: 1.6;
+  color: var(--ink-soft);
+  margin: 0;
+  max-width: 56ch;
+}
+.note-pairs {
+  list-style: none; padding: 0;
+  margin: .95rem 0 0;
+  display: flex; flex-wrap: wrap;
+  gap: .35rem 1.4rem;
+}
+.note-pairs li {
+  display: inline-flex;
+  align-items: baseline;
+  gap: .4rem;
+  font-family: var(--ff-display);
+  font-style: italic;
+  font-size: clamp(1rem, .92rem + .25vw, 1.18rem);
+  line-height: 1.4;
+}
+.note-pairs .from { color: var(--ink); }
+.note-pairs .arrow {
   font-family: var(--ff-mono);
-  font-size: .9em;
-  color: var(--tone, var(--accent));
+  font-style: normal;
+  font-size: .82em;
+  color: var(--ink-faint);
 }
+.note-pairs .to { color: var(--tone, var(--accent)); }
 
 /* Right side — examples + prepositions */
 .case-right { display: grid; gap: 2.4rem; }

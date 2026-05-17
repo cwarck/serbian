@@ -62,7 +62,7 @@ window.I18N = {
     'cases.subtitle': 'Chart 02 · Padeži',
     'cases.intro': 'A Serbian noun changes its ending to show its job in a sentence. There are seven such jobs — seven cases. Each comes with a question word, a typical set of prepositions, and a feel.',
     'cases.endings': 'Endings',
-    'cases.endings.note': 'Drop these onto the three stems above.',
+    'cases.endings.note': 'Just the tail of the word — attached to <em>profesor</em> (m), <em>žena</em> (f), <em>selo</em> (n) in the examples below.',
     'cases.examples': 'In the wild',
     'cases.preps': 'Used with',
     'cases.preps.none': 'No prepositions — this case stands on its own.',
@@ -78,12 +78,6 @@ window.I18N = {
 
     'cases.overview.eyebrow': 'At a glance',
     'cases.overview.note': 'Seven roles a noun can play. The signature ending is the masculine singular — a fingerprint of each case.',
-
-    'cases.stem.eyebrow': 'Reference paradigm',
-    'cases.stem.note': 'Three nouns carry the whole chart. Their endings change; their stems don\'t.',
-    'cases.stem.m': '<em>profesor</em><span>professor · masc.</span>',
-    'cases.stem.f': '<em>žena</em><span>woman · fem.</span>',
-    'cases.stem.n': '<em>selo</em><span>village · neut.</span>',
 
     'cases.extra.eyebrow': 'A second class',
     'cases.extra.title.line1': 'Feminines',
@@ -202,7 +196,7 @@ window.I18N = {
     'cases.subtitle': 'Таблица 02 · Падежи',
     'cases.intro': 'Сербское существительное меняет окончание, чтобы показать свою роль в предложении. Таких ролей семь — семь падежей. У каждого есть вопрос, набор «своих» предлогов и характерное ощущение.',
     'cases.endings': 'Окончания',
-    'cases.endings.note': 'Прибавляй к трём основам, указанным выше.',
+    'cases.endings.note': 'Только «хвост» слова — крепится к <em>profesor</em> (м.р.), <em>žena</em> (ж.р.), <em>selo</em> (ср.р.). Увидишь в примерах ниже.',
     'cases.examples': 'В живой речи',
     'cases.preps': 'С предлогами',
     'cases.preps.none': 'Без предлогов — этот падеж работает сам по себе.',
@@ -218,12 +212,6 @@ window.I18N = {
 
     'cases.overview.eyebrow': 'Семь падежей разом',
     'cases.overview.note': 'Семь ролей, в которых может оказаться существительное. Окончание-подпись — мужской род в единственном числе.',
-
-    'cases.stem.eyebrow': 'Эталонная парадигма',
-    'cases.stem.note': 'Три существительных тянут всю таблицу. Меняются окончания, основы — нет.',
-    'cases.stem.m': '<em>profesor</em><span>профессор · м.р.</span>',
-    'cases.stem.f': '<em>žena</em><span>женщина · ж.р.</span>',
-    'cases.stem.n': '<em>selo</em><span>деревня · ср.р.</span>',
 
     'cases.extra.eyebrow': 'Второй класс',
     'cases.extra.title.line1': 'Женский род',

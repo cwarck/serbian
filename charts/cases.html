@@ -73,18 +73,6 @@
       <ol class="system-grid" id="systemGrid"></ol>
     </section>
 
-    <section class="stem-key reveal" aria-label="Reference paradigm">
-      <header>
-        <span class="eyebrow" data-i18n="cases.stem.eyebrow">Reference paradigm</span>
-        <p class="strip-note" data-i18n="cases.stem.note">Three nouns carry the whole chart. Their endings change; their stems don't.</p>
-      </header>
-      <ul class="stem-list">
-        <li class="stem stem-m" data-i18n="cases.stem.m"></li>
-        <li class="stem stem-f" data-i18n="cases.stem.f"></li>
-        <li class="stem stem-n" data-i18n="cases.stem.n"></li>
-      </ul>
-    </section>
-
     <div class="case-list" id="caseList"></div>
 
     <section class="case-extra reveal" id="extra-ideclension" aria-label="Second feminine class">
@@ -161,8 +149,11 @@ const CASES = [
     },
     notes: {
       'sib-i': {
-        en: '<strong>Sibilarization.</strong> When -i meets k / g / h, the consonant softens: junak → junaci, jezik → jezici, monah → monasi.',
-        ru: '<strong>Сибиляризация.</strong> Перед -i k / g / h превращаются в c / z / s: junak → junaci, jezik → jezici, monah → monasi.'
+        titleEn: 'k, g, h soften before -i',
+        titleRu: 'k, g, h смягчаются перед -i',
+        bodyEn: 'These three hard consonants don\'t sit comfortably next to a bright -i. They shift to softer cousins — c, z, s — that match the vowel better.',
+        bodyRu: 'Этим трём твёрдым согласным неудобно стоять перед «светлым» -i. Они меняются на мягких родственников — c, z, s — которым с -i легче.',
+        pairs: [['junak','junaci'],['jezik','jezici'],['monah','monasi']]
       }
     },
     examples: [
@@ -211,8 +202,11 @@ const CASES = [
     },
     notes: {
       'sib-i': {
-        en: '<strong>Sibilarization.</strong> When -i meets k / g / h, the consonant softens: knjiga → knjizi, ruka → ruci, Amerika → Americi.',
-        ru: '<strong>Сибиляризация.</strong> Перед -i k / g / h становятся c / z / s: knjiga → knjizi, ruka → ruci, Amerika → Americi.'
+        titleEn: 'k, g, h soften before the -i ending',
+        titleRu: 'k, g, h смягчаются перед -i',
+        bodyEn: 'When the feminine singular ending -i lands on a stem ending in k, g, or h, those hard consonants shift to c, z, s — softer sounds that sit better next to the -i.',
+        bodyRu: 'Когда женское окончание -i падает на основу, оканчивающуюся на k, g или h, эти твёрдые согласные меняются на c, z, s — более мягкие звуки, которые лучше ладят с -i.',
+        pairs: [['knjiga','knjizi'],['ruka','ruci'],['Amerika','Americi']]
       }
     },
     examples: [
@@ -277,12 +271,18 @@ const CASES = [
     },
     notes: {
       'palatal': {
-        en: '<strong>Palatalization.</strong> If the stem ends in k / g / h, the consonant turns into č / ž / š before -e: junak → junače, Bog → Bože, duh → duše.',
-        ru: '<strong>Палатализация.</strong> Если основа на k / g / h, перед -e они становятся č / ž / š: junak → junače, Bog → Bože, duh → duše.'
+        titleEn: 'k, g, h turn into č, ž, š when calling out',
+        titleRu: 'k, g, h превращаются в č, ž, š при обращении',
+        bodyEn: 'When you address someone whose word ends in k, g, or h, those consonants shift to their soft cousins — č, ž, š — before the -e ending. The hard sounds soften because you\'re calling, not stating.',
+        bodyRu: 'Когда зовут кого-то, чьё имя или должность оканчивается на k, g, h, эти согласные меняются на мягких родственников — č, ž, š — перед окончанием -e. Звук размягчается, потому что это окрик, а не утверждение.',
+        pairs: [['junak','junače'],['Bog','Bože'],['duh','duše']]
       },
       'soft': {
-        en: '<strong>Soft-consonant alternant.</strong> After a soft consonant (c, ć, č, đ, dž, j, lj, nj, š, ž), the ending is -u, not -e: prijatelj → prijatelju, mladić → mladiću.',
-        ru: '<strong>После мягкого согласного.</strong> После c, ć, č, đ, dž, j, lj, nj, š, ž окончание -u, а не -e: prijatelj → prijatelju, mladić → mladiću.'
+        titleEn: 'After soft consonants, use -u instead of -e',
+        titleRu: 'После мягких согласных — -u вместо -e',
+        bodyEn: 'If the word already ends in a soft consonant — c, ć, č, đ, dž, j, lj, nj, š, ž — adding a soft -e on top would feel doubled. The ending switches to -u instead.',
+        bodyRu: 'Если слово уже оканчивается на мягкий согласный — c, ć, č, đ, dž, j, lj, nj, š, ž — добавлять сверху мягкое -e было бы излишеством. Окончание становится -u.',
+        pairs: [['prijatelj','prijatelju'],['mladić','mladiću'],['muž','mužu']]
       }
     },
     examples: [
@@ -303,8 +303,11 @@ const CASES = [
     },
     notes: {
       'soft-em': {
-        en: '<strong>Soft-consonant alternant.</strong> After a soft consonant (c, ć, č, đ, dž, j, lj, nj, š, ž), -om becomes -em: muž → mužem, nož → nožem, mesec → mesecem.',
-        ru: '<strong>После мягкого согласного.</strong> После c, ć, č, đ, dž, j, lj, nj, š, ž -om становится -em: muž → mužem, nož → nožem, mesec → mesecem.'
+        titleEn: 'After soft consonants, -om becomes -em',
+        titleRu: 'После мягких согласных -om становится -em',
+        bodyEn: 'The round -om feels heavy when it follows a soft consonant (c, ć, č, đ, dž, j, lj, nj, š, ž). It thins to -em so the word stays balanced — soft consonant, soft vowel.',
+        bodyRu: 'Округлое -om кажется тяжёлым после мягкого согласного (c, ć, č, đ, dž, j, lj, nj, š, ž). Оно превращается в -em, чтобы слово оставалось лёгким — мягкий согласный, мягкий гласный.',
+        pairs: [['muž','mužem'],['nož','nožem'],['mesec','mesecem']]
       }
     },
     examples: [
@@ -332,8 +335,11 @@ const CASES = [
     },
     notes: {
       'sib-i': {
-        en: '<strong>Sibilarization.</strong> Same -i as Dative singular, same trigger: k / g / h → c / z / s before -i (ruka → ruci, knjiga → knjizi).',
-        ru: '<strong>Сибиляризация.</strong> То же -i, что и в Дательном: k / g / h → c / z / s перед -i (ruka → ruci, knjiga → knjizi).'
+        titleEn: 'k, g, h soften before -i (same as Dative)',
+        titleRu: 'k, g, h смягчаются перед -i (как в Дательном)',
+        bodyEn: 'The Locative singular ending for feminines is -i — exactly the same as Dative. Same ending, same softening: k, g, h become c, z, s when they meet it.',
+        bodyRu: 'Окончание Предложного для женского рода единственного — то же -i, что и в Дательном. То же окончание, то же смягчение: k, g, h становятся c, z, s.',
+        pairs: [['ruka','ruci'],['knjiga','knjizi'],['Amerika','Americi']]
       }
     },
     examples: [
@@ -510,12 +516,29 @@ function renderCases() {
     const noteEntries = Object.entries(c.notes || {});
     const notesHTML = noteEntries.length === 0 ? '' : `
       <aside class="case-notes" aria-label="${d['cases.notes'] || 'Sound changes'}">
-        <span class="eyebrow">${d['cases.notes'] || 'Sound changes'}</span>
-        <ol>
-          ${noteEntries.map(([id, body]) => `
-            <li id="${caseId}-n-${id}"><span class="note-mark">¹</span><span>${body[lang] || body.en}</span></li>
-          `).join('')}
-        </ol>
+        <header class="notes-head">
+          <span class="eyebrow">${d['cases.notes'] || 'Sound changes'}</span>
+        </header>
+        <div class="notes-list">
+          ${noteEntries.map(([id, note]) => {
+            const title = lang === 'ru' ? note.titleRu : note.titleEn;
+            const body  = lang === 'ru' ? note.bodyRu  : note.bodyEn;
+            const pairs = (note.pairs || []).map(p => `
+              <li>
+                <span class="from">${p[0]}</span>
+                <span class="arrow" aria-hidden="true">→</span>
+                <span class="to">${p[1]}</span>
+              </li>
+            `).join('');
+            return `
+              <article class="note-item" id="${caseId}-n-${id}">
+                <h4 class="note-title">${title}</h4>
+                <p class="note-body">${body}</p>
+                ${pairs ? `<ul class="note-pairs">${pairs}</ul>` : ''}
+              </article>
+            `;
+          }).join('')}
+        </div>
       </aside>
     `;
 
