@@ -690,7 +690,7 @@ section { position: relative; }
   font-style: italic;
   color: var(--ink-muted);
   display: block;
-  font-size: clamp(.82rem, .78rem + .12vw, .92rem);
+  font-size: clamp(.95rem, .88rem + .2vw, 1.1rem);
   margin-top: .35rem;
   line-height: 1.3;
 }
