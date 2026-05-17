@@ -593,16 +593,12 @@ section { position: relative; }
   padding-block: clamp(2.5rem, 6vw, 5rem);
 }
 
-.alph-toolbar {
-  display: flex; flex-wrap: wrap; gap: 1rem;
-  align-items: center; justify-content: space-between;
-  padding-bottom: 2rem;
-}
 .alph-legend {
   display: flex; gap: 1.4rem; flex-wrap: wrap;
   font-family: var(--ff-mono);
   font-size: var(--fs-meta); letter-spacing: .12em; text-transform: uppercase;
   color: var(--ink-muted);
+  padding-bottom: 2rem;
 }
 .alph-legend .dot {
   display: inline-block; width: 9px; height: 9px;
