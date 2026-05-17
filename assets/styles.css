@@ -299,15 +299,6 @@ section { position: relative; }
   font-weight: 200;
   color: var(--accent);
 }
-.display .small {
-  display: block;
-  font-size: .42em;
-  letter-spacing: -.02em;
-  font-weight: 300;
-  color: var(--ink-soft);
-  margin-top: .35em;
-}
-
 .lede {
   font-family: var(--ff-body);
   font-size: clamp(1.1rem, .95rem + .55vw, 1.4rem);

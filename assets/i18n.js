@@ -13,7 +13,6 @@ window.I18N = {
     'hero.eyebrow': 'A visual reference for the Serbian language',
     'hero.title.line1': 'Serbian,',
     'hero.title.em': 'illuminated.',
-    'hero.title.small': 'Charts & cheat sheets for the curious learner.',
 
     'charts.heading': 'Charts &',
     'charts.heading.em': 'cheat sheets',
@@ -122,7 +121,6 @@ window.I18N = {
     'hero.eyebrow': 'Визуальный справочник по сербскому языку',
     'hero.title.line1': 'Сербский,',
     'hero.title.em': 'разъяснённый.',
-    'hero.title.small': 'Таблицы и шпаргалки для любопытного ученика.',
 
     'charts.heading': 'Таблицы и',
     'charts.heading.em': 'шпаргалки',
