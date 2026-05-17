@@ -15,10 +15,6 @@ window.I18N = {
     'hero.title.line1': 'Serbian,',
     'hero.title.em': 'illuminated.',
     'hero.title.small': 'Charts & cheat sheets for the curious learner.',
-    'hero.lede': 'Two alphabets, seven cases, a maze of prepositions — laid out on paper, the way a reference book should be.',
-    'hero.stats.alpha': 'Letters in each alphabet',
-    'hero.stats.cases': 'Grammatical cases',
-    'hero.stats.tenses': 'Verb tenses to know',
 
     'charts.eyebrow': '§01 — The library',
     'charts.heading': 'Charts &',
@@ -131,10 +127,6 @@ window.I18N = {
     'hero.title.line1': 'Сербский,',
     'hero.title.em': 'разъяснённый.',
     'hero.title.small': 'Таблицы и шпаргалки для любопытного ученика.',
-    'hero.lede': 'Два алфавита, семь падежей, лабиринт предлогов — разложено по полочкам, как и положено справочнику.',
-    'hero.stats.alpha': 'Букв в каждом алфавите',
-    'hero.stats.cases': 'Грамматических падежей',
-    'hero.stats.tenses': 'Глагольных времён',
 
     'charts.eyebrow': '§01 — Библиотека',
     'charts.heading': 'Таблицы и',
