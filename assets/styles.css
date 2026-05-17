@@ -154,8 +154,10 @@ section { position: relative; }
 }
 .nav-links {
   display: flex; gap: 1.5rem; margin-left: auto;
-  font-family: var(--ff-body);
-  font-size: .92rem;
+  font-family: var(--ff-mono);
+  font-size: var(--fs-meta);
+  text-transform: uppercase;
+  letter-spacing: .08em;
   color: var(--ink-soft);
 }
 .nav-links a { position: relative; padding-block: .25rem; }
