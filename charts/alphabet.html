@@ -79,6 +79,13 @@
   </div>
 </section>
 
+<div class="tip-pop" id="tipPop" role="dialog" aria-modal="false" hidden>
+  <div class="tip-pop-card">
+    <p class="tip-pop-body" id="tipPopBody"></p>
+    <button type="button" class="tip-pop-close" aria-label="Close" data-i18n-attr="aria-label:alph.tip.close">×</button>
+  </div>
+</div>
+
 <footer class="foot shell">
   <span data-i18n="foot.copy">© 2026 Atlas Srpski · Content <a href="https://creativecommons.org/licenses/by/4.0/deed.en" rel="license noopener" target="_blank">CC BY 4.0</a></span>
   <span>
@@ -101,7 +108,11 @@ const ALPHABET = [
   { n: 3,  cyr:'В в', lat:'V v',  ipa:'/ʋ/',   wCyr:'вода',    wLat:'voda',    kind:'diff',   tr:{en:'water',    ru:'вода'} },
   { n: 4,  cyr:'Г г', lat:'G g',  ipa:'/ɡ/',   wCyr:'гора',    wLat:'gora',    kind:'shared', tr:{en:'mountain', ru:'гора'} },
   { n: 5,  cyr:'Д д', lat:'D d',  ipa:'/d/',   wCyr:'дом',     wLat:'dom',     kind:'shared', tr:{en:'home',     ru:'дом'} },
-  { n: 6,  cyr:'Ђ ђ', lat:'Đ đ',  ipa:'/dʑ/',  wCyr:'ђак',     wLat:'đak',     kind:'unique', tr:{en:'pupil',    ru:'ученик'} },
+  { n: 6,  cyr:'Ђ ђ', lat:'Đ đ',  ipa:'/dʑ/',  wCyr:'ђак',     wLat:'đak',     kind:'unique', tr:{en:'pupil',    ru:'ученик'},
+    tip:{
+      en:'A soft sound between “d” and “j”. Imagine the gentle “dy” sound some people use in <em>duke</em>. Your tongue stays close to the roof of the mouth, making it soft and smooth.',
+      ru:'Мягкий звук между «дь» и «дж». Представь очень мягкое «д» в слове «дядя». Язык прижимается к нёбу, поэтому звук получается «нежным».'
+    } },
   { n: 7,  cyr:'Е е', lat:'E e',  ipa:'/e/',   wCyr:'европа',  wLat:'evropa',  kind:'shared', tr:{en:'Europe',   ru:'Европа'} },
   { n: 8,  cyr:'Ж ж', lat:'Ž ž',  ipa:'/ʒ/',   wCyr:'жена',    wLat:'žena',    kind:'shared', tr:{en:'woman',    ru:'женщина'} },
   { n: 9,  cyr:'З з', lat:'Z z',  ipa:'/z/',   wCyr:'зима',    wLat:'zima',    kind:'shared', tr:{en:'winter',   ru:'зима'} },
@@ -118,13 +129,25 @@ const ALPHABET = [
   { n:20,  cyr:'Р р', lat:'R r',  ipa:'/r/',   wCyr:'река',    wLat:'reka',    kind:'diff',   tr:{en:'river',    ru:'река'} },
   { n:21,  cyr:'С с', lat:'S s',  ipa:'/s/',   wCyr:'сир',     wLat:'sir',     kind:'diff',   tr:{en:'cheese',   ru:'сыр'} },
   { n:22,  cyr:'Т т', lat:'T t',  ipa:'/t/',   wCyr:'телефон', wLat:'telefon', kind:'shared', tr:{en:'phone',    ru:'телефон'} },
-  { n:23,  cyr:'Ћ ћ', lat:'Ć ć',  ipa:'/tɕ/',  wCyr:'ћуран',   wLat:'ćuran',   kind:'unique', tr:{en:'turkey',   ru:'индюк'} },
+  { n:23,  cyr:'Ћ ћ', lat:'Ć ć',  ipa:'/tɕ/',  wCyr:'ћуран',   wLat:'ćuran',   kind:'unique', tr:{en:'turkey',   ru:'индюк'},
+    tip:{
+      en:'A soft version of “ch”. Imagine starting with a tiny “t” before the “ch” sound. It feels lighter and gentler than a normal English “ch”.',
+      ru:'Мягкая версия «ч». Как будто ты одновременно говоришь «ть» и «ч». Звук лёгкий и «тонкий».'
+    } },
   { n:24,  cyr:'У у', lat:'U u',  ipa:'/u/',   wCyr:'улица',   wLat:'ulica',   kind:'diff',   tr:{en:'street',   ru:'улица'} },
   { n:25,  cyr:'Ф ф', lat:'F f',  ipa:'/f/',   wCyr:'фабрика', wLat:'fabrika', kind:'shared', tr:{en:'factory',  ru:'фабрика'} },
   { n:26,  cyr:'Х х', lat:'H h',  ipa:'/x/',   wCyr:'хладно',  wLat:'hladno',  kind:'diff',   tr:{en:'cold',     ru:'холодно'} },
   { n:27,  cyr:'Ц ц', lat:'C c',  ipa:'/ts/',  wCyr:'цвет',    wLat:'cvet',    kind:'shared', tr:{en:'flower',   ru:'цветок'} },
-  { n:28,  cyr:'Ч ч', lat:'Č č',  ipa:'/tʃ/',  wCyr:'час',     wLat:'čas',     kind:'shared', tr:{en:'lesson',   ru:'час·урок'} },
-  { n:29,  cyr:'Џ џ', lat:'Dž dž',ipa:'/dʒ/',  wCyr:'џеп',     wLat:'džep',    kind:'unique', tr:{en:'pocket',   ru:'карман'} },
+  { n:28,  cyr:'Ч ч', lat:'Č č',  ipa:'/tʃ/',  wCyr:'час',     wLat:'čas',     kind:'shared', tr:{en:'lesson',   ru:'час·урок'},
+    tip:{
+      en:'Like the “ch” in <em>chocolate</em>. A strong and crisp sound.',
+      ru:'Похоже на русский «ч» в слове «чай», но чуть твёрже и чётче.'
+    } },
+  { n:29,  cyr:'Џ џ', lat:'Dž dž',ipa:'/dʒ/',  wCyr:'џеп',     wLat:'džep',    kind:'unique', tr:{en:'pocket',   ru:'карман'},
+    tip:{
+      en:'The same sound as “j” in <em>jam</em>. Strong, voiced, and easy to hear.',
+      ru:'Просто «дж», как в слове «джаз». Твёрдый и звонкий звук.'
+    } },
   { n:30,  cyr:'Ш ш', lat:'Š š',  ipa:'/ʃ/',   wCyr:'шума',    wLat:'šuma',    kind:'shared', tr:{en:'forest',   ru:'лес'} },
 ];
 
@@ -132,19 +155,27 @@ function currentLang() {
   return document.documentElement.getAttribute('lang') || 'en';
 }
 
+function tipLabel(lang) {
+  return (window.I18N && window.I18N[lang] && window.I18N[lang]['alph.tip.cta']) || 'how to say it';
+}
+
 function renderAlphabet() {
   const lang = currentLang();
   const grid = document.getElementById('alphGrid');
   if (!grid) return;
-  grid.innerHTML = ALPHABET.map(L => `
-    <article class="letter" data-kind="${L.kind}">
+  const cta = tipLabel(lang);
+  grid.innerHTML = ALPHABET.map((L, i) => `
+    <article class="letter" data-kind="${L.kind}"${L.tip ? ' data-has-tip="true"' : ''}>
       <span class="order">№ ${String(L.n).padStart(2,'0')}</span>
       <div class="glyphs">
         <span class="cyr">${L.cyr}</span>
         <span class="sep">·</span>
         <span class="lat">${L.lat}</span>
       </div>
-      <span class="ipa">${L.ipa}</span>
+      <div class="ipa-row">
+        <span class="ipa">${L.ipa}</span>
+        ${L.tip ? `<button class="tip-chip" type="button" aria-haspopup="dialog" aria-expanded="false" data-tip-idx="${i}"><span class="tip-chip-dot" aria-hidden="true"></span><span class="tip-chip-label">${cta}</span></button>` : ''}
+      </div>
       <div class="example">
         <span class="word">
           <span class="word-cyr">${L.wCyr}</span>
@@ -156,6 +187,78 @@ function renderAlphabet() {
     </article>
   `).join('');
 }
+
+/* Pronunciation tip popover */
+(function setupTipPopover(){
+  const pop = document.getElementById('tipPop');
+  if (!pop) return;
+  const bodyEl    = pop.querySelector('#tipPopBody');
+  const closeBtn  = pop.querySelector('.tip-pop-close');
+  let activeChip = null;
+
+  function position() {
+    if (!activeChip) return;
+    const r = activeChip.getBoundingClientRect();
+    const sx = window.scrollX || window.pageXOffset;
+    const sy = window.scrollY || window.pageYOffset;
+    // measure popover
+    pop.style.left = '0px'; pop.style.top = '0px';
+    const pw = pop.offsetWidth, ph = pop.offsetHeight;
+    const gutter = 12;
+    const vw = document.documentElement.clientWidth;
+    // horizontal: align to chip center, clamp to viewport
+    let left = r.left + sx + r.width/2 - pw/2;
+    left = Math.max(sx + gutter, Math.min(left, sx + vw - pw - gutter));
+    // vertical: prefer below; flip above if not enough room
+    const spaceBelow = window.innerHeight - r.bottom;
+    const placeAbove = spaceBelow < ph + gutter && r.top > ph + gutter;
+    const top = placeAbove ? r.top + sy - ph - 8 : r.bottom + sy + 8;
+    pop.style.left = left + 'px';
+    pop.style.top  = top  + 'px';
+    pop.dataset.placement = placeAbove ? 'above' : 'below';
+  }
+
+  function open(chip) {
+    const idx = +chip.dataset.tipIdx;
+    const L = ALPHABET[idx];
+    if (!L || !L.tip) return;
+    const lang = currentLang();
+    if (activeChip && activeChip !== chip) activeChip.setAttribute('aria-expanded','false');
+    activeChip = chip;
+    chip.setAttribute('aria-expanded','true');
+    bodyEl.innerHTML    = L.tip[lang] || L.tip.en;
+    pop.hidden = false;
+    requestAnimationFrame(() => {
+      position();
+      pop.classList.add('is-open');
+    });
+  }
+
+  function close() {
+    if (!activeChip) return;
+    activeChip.setAttribute('aria-expanded','false');
+    activeChip = null;
+    pop.classList.remove('is-open');
+    pop.hidden = true;
+  }
+
+  document.addEventListener('click', (e) => {
+    const chip = e.target.closest('.tip-chip');
+    if (chip) {
+      e.preventDefault();
+      if (activeChip === chip) { close(); } else { open(chip); }
+      return;
+    }
+    if (!pop.hidden && !pop.contains(e.target)) close();
+  });
+
+  closeBtn.addEventListener('click', close);
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+  window.addEventListener('resize', () => { if (!pop.hidden) position(); });
+  window.addEventListener('scroll', () => { if (!pop.hidden) position(); }, { passive: true });
+
+  document.addEventListener('langchange', close);
+})();
 
 document.addEventListener('langchange', renderAlphabet);
 renderAlphabet();

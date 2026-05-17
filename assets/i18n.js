@@ -76,6 +76,9 @@ window.I18N = {
     'alph.legend.unique': 'Unique to Serbian',
     'alph.legend.shared': 'Shared with other Slavic',
     'alph.legend.diff': 'Looks Latin, sounds different',
+    'alph.tip.cta': 'how to say it',
+    'alph.tip.heading': 'How to say it',
+    'alph.tip.close': 'Close',
 
     /* Cases page */
     'cases.back': 'Back to all charts',
@@ -189,6 +192,9 @@ window.I18N = {
     'alph.legend.unique': 'Только в сербском',
     'alph.legend.shared': 'Есть в других славянских',
     'alph.legend.diff': 'Выглядит как латиница — звучит иначе',
+    'alph.tip.cta': 'как произнести',
+    'alph.tip.heading': 'Как произнести',
+    'alph.tip.close': 'Закрыть',
 
     /* Cases */
     'cases.back': 'Ко всем таблицам',

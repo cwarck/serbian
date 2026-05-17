@@ -745,12 +745,19 @@ section { position: relative; }
 .letter .sep { color: var(--ink-faint); font-size: .55em; padding-bottom: .3em; }
 .letter .lat { color: var(--accent); }
 
+.letter .ipa-row {
+  display: flex;
+  align-items: center;
+  gap: .9rem;
+  flex-wrap: wrap;
+  margin-top: .3rem;
+}
 .letter .ipa {
   font-family: var(--ff-mono);
   font-size: .8rem;
+  line-height: 1;
   color: var(--ink-muted);
   letter-spacing: .04em;
-  margin-top: .3rem;
 }
 
 .letter .example {
@@ -778,6 +785,97 @@ section { position: relative; }
 .letter[data-kind="unique"]::after { background: var(--accent); }
 .letter[data-kind="shared"]::after { background: var(--cool); }
 .letter[data-kind="diff"]::after { background: var(--gold); }
+
+/* Pronunciation tip — chip on the card */
+.letter .tip-chip {
+  display: inline-flex; align-items: center; gap: .4rem;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  font-family: var(--ff-mono);
+  font-size: .62rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  cursor: pointer;
+  line-height: 1;
+}
+.letter .tip-chip .tip-chip-label {
+  text-decoration: underline dashed currentColor;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-skip-ink: auto;
+  transition: text-decoration-style .15s, color .15s;
+}
+.letter .tip-chip .tip-chip-dot {
+  width: 5px; height: 5px; border-radius: 50%;
+  background: currentColor;
+  display: inline-block;
+  opacity: .75;
+}
+.letter .tip-chip:hover .tip-chip-label,
+.letter .tip-chip:focus-visible .tip-chip-label,
+.letter .tip-chip[aria-expanded="true"] .tip-chip-label {
+  text-decoration-style: solid;
+}
+.letter .tip-chip:focus-visible {
+  outline: 1px dashed var(--accent);
+  outline-offset: 3px;
+}
+
+/* Pronunciation tip — popover */
+.tip-pop {
+  position: absolute;
+  z-index: 50;
+  width: min(320px, calc(100vw - 24px));
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity .15s ease, transform .15s ease;
+  pointer-events: none;
+}
+.tip-pop.is-open {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.tip-pop[data-placement="above"] {
+  transform: translateY(-4px);
+}
+.tip-pop[data-placement="above"].is-open {
+  transform: translateY(0);
+}
+.tip-pop-card {
+  position: relative;
+  background: var(--paper);
+  border: 1px solid var(--hairline);
+  border-radius: var(--rad);
+  padding: .95rem 2.2rem .95rem 1.1rem;
+  box-shadow: 0 1px 0 var(--hairline-soft), 0 18px 38px -22px var(--shadow), 0 8px 18px -16px var(--shadow);
+}
+.tip-pop-body {
+  margin: 0;
+  font-family: var(--ff-body);
+  font-size: clamp(.95rem, .88rem + .15vw, 1.05rem);
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+.tip-pop-body strong { color: var(--ink); font-weight: 600; }
+.tip-pop-body em { color: var(--accent); font-style: normal; font-family: var(--ff-display); font-size: 1.05em; }
+.tip-pop-close {
+  position: absolute;
+  top: .35rem; right: .55rem;
+  width: 1.6rem; height: 1.6rem;
+  background: transparent;
+  border: 0;
+  color: var(--ink-faint);
+  font-size: 1.3rem;
+  line-height: 1;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: color .15s, background .15s;
+}
+.tip-pop-close:hover { color: var(--ink); background: var(--paper-deep); }
+.tip-pop-close:focus-visible { outline: 1px dashed var(--accent); outline-offset: 2px; }
 
 /* -----------------------------------------------------------
    Cases (declension)
