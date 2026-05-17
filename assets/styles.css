@@ -91,7 +91,7 @@ img, svg { display: block; max-width: 100%; }
 
 h1, h2, h3, h4, h5 {
   font-family: var(--ff-display);
-  font-weight: 350;
+  font-weight: 300;
   letter-spacing: -.02em;
   line-height: 1.05;
   margin: 0;
@@ -289,21 +289,21 @@ section { position: relative; }
 
 .display {
   font-family: var(--ff-display);
-  font-weight: 300;
+  font-weight: 200;
   font-size: clamp(3rem, 9.5vw, 8rem);
   line-height: .94;
   letter-spacing: -.035em;
 }
 .display em {
   font-style: italic;
-  font-weight: 300;
+  font-weight: 200;
   color: var(--accent);
 }
 .display .small {
   display: block;
   font-size: .42em;
   letter-spacing: -.02em;
-  font-weight: 350;
+  font-weight: 300;
   color: var(--ink-soft);
   margin-top: .35em;
 }
@@ -349,10 +349,10 @@ section { position: relative; }
 }
 .section-head h2 {
   font-size: clamp(1.8rem, 1.2rem + 2vw, 4rem);
-  font-weight: 350;
+  font-weight: 200;
   letter-spacing: -.02em;
 }
-.section-head h2 em { font-style: italic; color: var(--ink-soft); font-weight: 300; }
+.section-head h2 em { font-style: italic; color: var(--ink-soft); font-weight: 200; }
 
 /* -----------------------------------------------------------
    Chart index (landing)
@@ -397,7 +397,7 @@ section { position: relative; }
 }
 .card h3 {
   font-family: var(--ff-display);
-  font-weight: 350;
+  font-weight: 300;
   font-size: clamp(1.6rem, 1.25rem + 1vw, 2.4rem);
   letter-spacing: -.018em;
   margin: 0 0 .35rem;
@@ -490,7 +490,7 @@ section { position: relative; }
   max-width: 62ch;
 }
 .about-body p + p { margin-top: 1.1em; }
-.about-body strong { color: var(--ink); font-weight: 500; }
+.about-body strong { color: var(--ink); font-weight: 600; }
 
 /* Pull-quote variant */
 .pull {
@@ -554,11 +554,11 @@ section { position: relative; }
 .chart-head h1 {
   font-family: var(--ff-display);
   font-size: clamp(2.6rem, 7vw, 5.5rem);
-  font-weight: 300;
+  font-weight: 200;
   letter-spacing: -.03em;
   line-height: 1;
 }
-.chart-head h1 em { font-style: italic; color: var(--accent); font-weight: 300; }
+.chart-head h1 em { font-style: italic; color: var(--accent); font-weight: 200; }
 .chart-head .subtitle {
   font-family: var(--ff-mono);
   font-size: var(--fs-meta);
@@ -836,7 +836,7 @@ section { position: relative; }
   line-height: 1.45;
   max-width: 28ch;
 }
-.case-head .q strong { font-style: normal; font-weight: 500; color: var(--accent); }
+.case-head .q strong { font-style: normal; font-weight: 600; color: var(--accent); }
 
 .case-body { display: grid; grid-template-columns: 1fr; gap: 2rem; }
 
@@ -879,7 +879,7 @@ section { position: relative; }
 .endings td {
   font-family: var(--ff-display);
   font-size: clamp(1.25rem, 1.1rem + .4vw, 1.55rem);
-  font-weight: 350;
+  font-weight: 300;
   color: var(--ink);
 }
 .endings td .end {
@@ -910,7 +910,7 @@ section { position: relative; }
 .ex .sr {
   font-family: var(--ff-display);
   font-size: clamp(1.15rem, .95rem + .55vw, 1.6rem);
-  font-weight: 350;
+  font-weight: 300;
   color: var(--ink);
   line-height: 1.35;
 }
