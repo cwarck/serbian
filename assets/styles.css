@@ -341,17 +341,9 @@ section { position: relative; }
    ----------------------------------------------------------- */
 
 .section-head {
-  display: grid; grid-template-columns: auto 1fr auto; gap: 1.5rem;
-  align-items: end;
   padding-bottom: 1.8rem;
   border-bottom: 1px solid var(--hairline);
   margin-bottom: 2.5rem;
-}
-.section-head .num {
-  font-family: var(--ff-mono);
-  font-size: var(--fs-meta);
-  color: var(--accent);
-  letter-spacing: .12em;
 }
 .section-head h2 {
   font-size: clamp(1.8rem, 1.2rem + 2vw, 4rem);
@@ -359,18 +351,6 @@ section { position: relative; }
   letter-spacing: -.02em;
 }
 .section-head h2 em { font-style: italic; color: var(--ink-soft); font-weight: 300; }
-.section-head .meta {
-  font-family: var(--ff-mono);
-  font-size: var(--fs-meta);
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  color: var(--ink-muted);
-  white-space: nowrap;
-}
-@media (max-width: 720px) {
-  .section-head { grid-template-columns: 1fr; gap: .8rem; }
-  .section-head .meta { display: none; }
-}
 
 /* -----------------------------------------------------------
    Chart index (landing)
@@ -413,18 +393,12 @@ section { position: relative; }
   overflow: hidden;
   isolation: isolate;
 }
-.card .num {
-  font-family: var(--ff-mono);
-  font-size: var(--fs-meta);
-  color: var(--ink-muted);
-  letter-spacing: .14em;
-}
 .card h3 {
   font-family: var(--ff-display);
   font-weight: 350;
   font-size: clamp(1.6rem, 1.25rem + 1vw, 2.4rem);
   letter-spacing: -.018em;
-  margin: .8rem 0 .35rem;
+  margin: 0 0 .35rem;
 }
 .card h3 em { font-style: italic; color: var(--accent); font-weight: 300; }
 .card .desc {

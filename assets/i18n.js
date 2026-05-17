@@ -15,7 +15,6 @@ window.I18N = {
     'hero.title.em': 'illuminated.',
     'hero.title.small': 'Charts & cheat sheets for the curious learner.',
 
-    'charts.eyebrow': '§01 — The library',
     'charts.heading': 'Charts &',
     'charts.heading.em': 'cheat sheets',
 
@@ -51,7 +50,6 @@ window.I18N = {
     'card.soon': 'In progress',
     'tag.soon': 'Soon',
 
-    'about.eyebrow': '§02 — Notes from the desk',
     'about.title.line1': 'Built for the way',
     'about.title.em': 'language actually sticks.',
     'about.body.p1': 'Most language references throw a wall of tables at you and hope something lands. <strong>Atlas Srpski</strong> is the opposite: each chart commits to one idea and presents it with enough room to breathe, in two alphabets, in two interface languages, on any device you happen to be holding.',
@@ -126,7 +124,6 @@ window.I18N = {
     'hero.title.em': 'разъяснённый.',
     'hero.title.small': 'Таблицы и шпаргалки для любопытного ученика.',
 
-    'charts.eyebrow': '§01 — Библиотека',
     'charts.heading': 'Таблицы и',
     'charts.heading.em': 'шпаргалки',
 
@@ -162,7 +159,6 @@ window.I18N = {
     'card.soon': 'В работе',
     'tag.soon': 'Скоро',
 
-    'about.eyebrow': '§02 — Записки с письменного стола',
     'about.title.line1': 'Сделано под то, как язык',
     'about.title.em': 'на самом деле усваивается.',
     'about.body.p1': 'Большинство языковых справочников вываливают на читателя ворох таблиц в надежде, что хоть что-то да зацепится. <strong>Атлас Сербского</strong> устроен наоборот: каждая таблица посвящена одной идее, и у этой идеи есть пространство — в двух алфавитах, на двух языках интерфейса, на любом экране, который оказался под рукой.',
