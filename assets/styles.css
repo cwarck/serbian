@@ -9,22 +9,24 @@
    Tokens
    ----------------------------------------------------------- */
 
-:root, :root[data-theme="light"] {
-  --paper:        #F4EEE2;
-  --paper-deep:   #ECE3D0;
-  --paper-mark:   #DCCFB4;
-  --ink:          #1B1612;
-  --ink-soft:     #3A2F25;
-  --ink-muted:    #6B5D4D;
-  --ink-faint:    #857560;
-  --accent:       #A8401C;
-  --accent-warm:  #C26B3B;
-  --cool:         #1F4940;
-  --gold:         #B0892C;
-  --hairline:     #CFC2A6;
-  --hairline-soft:#E0D5BB;
-  --highlight:    rgba(168,64,28,.08);
-  --shadow:       rgba(28,22,18,.06);
+:root {
+  color-scheme:   light dark;
+
+  --paper:        light-dark(#F4EEE2, #110D0A);
+  --paper-deep:   light-dark(#ECE3D0, #1A1410);
+  --paper-mark:   light-dark(#DCCFB4, #251D17);
+  --ink:          light-dark(#1B1612, #EFE4D0);
+  --ink-soft:     light-dark(#3A2F25, #D6C6AA);
+  --ink-muted:    light-dark(#6B5D4D, #9C8C72);
+  --ink-faint:    light-dark(#857560, #6B5C44);
+  --accent:       light-dark(#A8401C, #E27A4F);
+  --accent-warm:  light-dark(#C26B3B, #F0A26F);
+  --cool:         light-dark(#1F4940, #71B9AC);
+  --gold:         light-dark(#B0892C, #D9B358);
+  --hairline:     light-dark(#CFC2A6, #3B2F23);
+  --hairline-soft:light-dark(#E0D5BB, #2A2218);
+  --highlight:    light-dark(rgba(168,64,28,.08), rgba(226,122,79,.10));
+  --shadow:       light-dark(rgba(28,22,18,.06), rgba(0,0,0,.4));
   --grain-op:     .035;
 
   --ff-display:   'Spectral', Georgia, serif;
@@ -38,49 +40,12 @@
   --max-prose:    62ch;
 
   --rad:          2px;
-  color-scheme:   light;
 }
 
+:root[data-theme="light"] { color-scheme: light; }
+:root[data-theme="dark"]  { color-scheme: dark; --grain-op: .06; }
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --paper:        #110D0A;
-    --paper-deep:   #1A1410;
-    --paper-mark:   #251D17;
-    --ink:          #EFE4D0;
-    --ink-soft:     #D6C6AA;
-    --ink-muted:    #9C8C72;
-    --ink-faint:    #6B5C44;
-    --accent:       #E27A4F;
-    --accent-warm:  #F0A26F;
-    --cool:         #71B9AC;
-    --gold:         #D9B358;
-    --hairline:     #3B2F23;
-    --hairline-soft:#2A2218;
-    --highlight:    rgba(226,122,79,.10);
-    --shadow:       rgba(0,0,0,.4);
-    --grain-op:     .06;
-    color-scheme:   dark;
-  }
-}
-
-:root[data-theme="dark"] {
-  --paper:        #110D0A;
-  --paper-deep:   #1A1410;
-  --paper-mark:   #251D17;
-  --ink:          #EFE4D0;
-  --ink-soft:     #D6C6AA;
-  --ink-muted:    #9C8C72;
-  --ink-faint:    #6B5C44;
-  --accent:       #E27A4F;
-  --accent-warm:  #F0A26F;
-  --cool:         #71B9AC;
-  --gold:         #D9B358;
-  --hairline:     #3B2F23;
-  --hairline-soft:#2A2218;
-  --highlight:    rgba(226,122,79,.10);
-  --shadow:       rgba(0,0,0,.4);
-  --grain-op:     .06;
-  color-scheme:   dark;
+  :root:not([data-theme="light"]) { --grain-op: .06; }
 }
 
 /* -----------------------------------------------------------
