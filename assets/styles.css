@@ -146,7 +146,6 @@ section { position: relative; }
   letter-spacing: -.01em;
   font-feature-settings: "ss01";
 }
-.brand .mono { font-family: var(--ff-mono); font-size: .68em; color: var(--ink-muted); letter-spacing: .12em; text-transform: uppercase; }
 .brand-mark {
   font-family: var(--ff-display);
   font-style: italic;
@@ -203,8 +202,6 @@ section { position: relative; }
 :root:not([data-theme="light"]) .theme-btn .moon { display: block; }
 
 @media (max-width: 720px) {
-  .brand .mono { display: none; }
-
   .nav-toggle {
     display: inline-flex;
     flex: 0 0 44px;

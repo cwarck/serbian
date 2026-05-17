@@ -5,7 +5,6 @@ window.I18N = {
   en: {
     'meta.lang': 'English',
     'nav.brand': 'Atlas Srpski',
-    'nav.brand.tag': 'A field guide',
     'nav.charts': 'Charts',
     'nav.about': 'About',
     'nav.theme': 'Toggle theme',
@@ -117,7 +116,6 @@ window.I18N = {
   ru: {
     'meta.lang': 'Русский',
     'nav.brand': 'Атлас Сербского',
-    'nav.brand.tag': 'Полевой справочник',
     'nav.charts': 'Таблицы',
     'nav.about': 'О проекте',
     'nav.theme': 'Сменить тему',
