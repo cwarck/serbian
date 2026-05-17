@@ -620,7 +620,7 @@ section { position: relative; }
   border-left: 1px solid var(--hairline);
   position: relative;
 }
-@media (min-width: 540px)  { .alph-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 380px)  { .alph-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 820px)  { .alph-grid { grid-template-columns: repeat(3, 1fr); } }
 @media (min-width: 1200px) { .alph-grid { grid-template-columns: repeat(5, 1fr); } }
 @media (min-width: 1800px) { .alph-grid { grid-template-columns: repeat(6, 1fr); } }
