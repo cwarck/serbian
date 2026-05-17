@@ -64,7 +64,54 @@
 
 <section class="cases-section">
   <div class="shell">
+
+    <section class="system-strip reveal" aria-label="Cases overview">
+      <header class="strip-head">
+        <span class="eyebrow" data-i18n="cases.overview.eyebrow">At a glance</span>
+        <p class="strip-note" data-i18n="cases.overview.note">Seven roles a noun can play. The signature ending is the masculine singular — a fingerprint of each case.</p>
+      </header>
+      <ol class="system-grid" id="systemGrid"></ol>
+    </section>
+
+    <section class="stem-key reveal" aria-label="Reference paradigm">
+      <header>
+        <span class="eyebrow" data-i18n="cases.stem.eyebrow">Reference paradigm</span>
+        <p class="strip-note" data-i18n="cases.stem.note">Three nouns carry the whole chart. Their endings change; their stems don't.</p>
+      </header>
+      <ul class="stem-list">
+        <li class="stem stem-m" data-i18n="cases.stem.m"></li>
+        <li class="stem stem-f" data-i18n="cases.stem.f"></li>
+        <li class="stem stem-n" data-i18n="cases.stem.n"></li>
+      </ul>
+    </section>
+
     <div class="case-list" id="caseList"></div>
+
+    <section class="case-extra reveal" id="extra-ideclension" aria-label="Second feminine class">
+      <header class="extra-head">
+        <span class="eyebrow" data-i18n="cases.extra.eyebrow">A second class</span>
+        <h2>
+          <span data-i18n="cases.extra.title.line1">Feminines</span>
+          <em data-i18n="cases.extra.title.em">without -a.</em>
+        </h2>
+        <p class="extra-intro" data-i18n="cases.extra.intro"></p>
+        <p class="extra-stem" data-i18n="cases.extra.stem"></p>
+      </header>
+      <div class="extra-table" id="extraTable"></div>
+    </section>
+
+    <section class="case-extra pairs reveal" id="extra-pairs" aria-label="Reverse pairs">
+      <header class="extra-head">
+        <span class="eyebrow" data-i18n="cases.pairs.eyebrow">Mirrored prepositions</span>
+        <h2>
+          <span data-i18n="cases.pairs.title.line1">Reverse pairs,</span>
+          <em data-i18n="cases.pairs.title.em">across cases.</em>
+        </h2>
+        <p class="extra-intro" data-i18n="cases.pairs.intro"></p>
+      </header>
+      <ul class="pair-list" id="pairList"></ul>
+    </section>
+
   </div>
 </section>
 
@@ -80,171 +127,366 @@
 <script src="../assets/i18n.js"></script>
 
 <script>
-/* Cases — data is structural; user-facing text comes from window.I18N (name, q) per case key. */
+/* Cases — data is structural; UI text comes from window.I18N per case key.
+   Endings shown as the ending only (-a, not "žena -a"). Shared / animacy /
+   sound-change overlays surface the system, not the noise. */
 
-/* Example noun paradigm used throughout: profesor (m), žena (f), selo (n).
-   Endings shown as base + accented ending part where useful. */
+/* Cell shape:
+     string         e.g. '-a'
+     { v, same }    ending value + "same as X" marker  (X = NOM | GEN | DAT)
+     { v, n }       ending + footnote id (resolved against .notes below)
+     { split: [{label,v,same}, ...] }   animacy / soft-consonant alternation
+*/
 
 const CASES = [
   {
-    key: 'case.1',
-    abbr: 'NOM',
+    key: 'case.1', abbr: 'NOM', tone: 'nom',
+    sigEnding: '-∅',
     endings: {
-      m: { sg:['profesor','-∅'],   pl:['profesori','-i']  },
-      f: { sg:['žena','-a'],        pl:['žene','-e']        },
-      n: { sg:['selo','-o'],        pl:['sela','-a']        },
+      m: { sg: '-∅',               pl: { v:'-i', n:'sib-i' } },
+      f: { sg: '-a',                pl: '-e' },
+      n: { sg: '-o',                pl: '-a' },
+    },
+    notes: {
+      'sib-i': {
+        en: '<strong>Sibilarization.</strong> When -i meets k / g / h, the consonant softens: junak → junaci, jezik → jezici, monah → monasi.',
+        ru: '<strong>Сибиляризация.</strong> Перед -i k / g / h превращаются в c / z / s: junak → junaci, jezik → jezici, monah → monasi.'
+      }
     },
     examples: [
-      { sr:'<mark>Profesor</mark> čita knjigu.', en:'The professor reads a book.', ru:'Профессор читает книгу.' },
-      { sr:'<mark>Žena</mark> peva.',             en:'The woman sings.',           ru:'Женщина поёт.' },
-      { sr:'<mark>Selo</mark> je tiho.',          en:'The village is quiet.',      ru:'Деревня тихая.' },
+      { sr:'<mark>Dobar profesor</mark> čita knjigu.', en:'A good professor reads a book.', ru:'Хороший профессор читает книгу.' },
+      { sr:'<mark>Žena</mark> peva.',                   en:'The woman sings.',               ru:'Женщина поёт.' },
+      { sr:'<mark>Selo</mark> je tiho.',                en:'The village is quiet.',          ru:'Деревня тихая.' },
     ],
     preps: []
   },
+
   {
-    key: 'case.2',
-    abbr: 'GEN',
+    key: 'case.2', abbr: 'GEN', tone: 'gen',
+    sigEnding: '-a',
     endings: {
-      m: { sg:['profesora','-a'],  pl:['profesora','-a']  },
-      f: { sg:['žene','-e'],        pl:['žena','-∅']        },
-      n: { sg:['sela','-a'],        pl:['sela','-a']        },
+      m: { sg: '-a',                pl: '-a' },
+      f: { sg: '-e',                pl: '-∅' },
+      n: { sg: '-a',                pl: '-a' },
     },
+    notes: {},
     examples: [
-      { sr:'Knjiga <mark>profesora</mark>.',       en:'The professor\'s book.',         ru:'Книга профессора.' },
-      { sr:'Stižem iz <mark>grada</mark>.',         en:'I\'m arriving from the city.',   ru:'Я приезжаю из города.' },
-      { sr:'Nemam <mark>vremena</mark>.',           en:'I have no time.',                ru:'У меня нет времени.' },
+      { sr:'Knjiga <mark>profesora</mark>.',     en:'The professor\'s book.',       ru:'Книга профессора.' },
+      { sr:'Stižem iz <mark>grada</mark>.',       en:'I\'m arriving from the city.', ru:'Я приезжаю из города.' },
+      { sr:'Nemam <mark>vremena</mark>.',         en:'I have no time.',              ru:'У меня нет времени.' },
     ],
-    preps: ['od','iz','do','kod','bez','oko','posle','pre','blizu','iza']
+    preps: [
+      { p:'od',    en:'from (a person, a starting point)',    ru:'от (человека, начальной точки)' },
+      { p:'do',    en:'to / up to (a destination, a limit)',  ru:'до (предела, конечной точки)' },
+      { p:'iz',    en:'out of, from inside',                  ru:'из (изнутри)' },
+      { p:'kod',   en:'at (someone\'s place), by, near',      ru:'у (кого-то), возле' },
+      { p:'bez',   en:'without',                              ru:'без' },
+      { p:'oko',   en:'around, about',                        ru:'вокруг, около' },
+      { p:'posle', en:'after',                                ru:'после' },
+      { p:'pre',   en:'before',                               ru:'до, перед' },
+      { p:'blizu', en:'close to',                             ru:'близ, рядом с' },
+      { p:'iza',   en:'behind',                               ru:'за, позади' },
+    ]
   },
+
   {
-    key: 'case.3',
-    abbr: 'DAT',
+    key: 'case.3', abbr: 'DAT', tone: 'dat',
+    sigEnding: '-u',
     endings: {
-      m: { sg:['profesoru','-u'],  pl:['profesorima','-ima'] },
-      f: { sg:['ženi','-i'],        pl:['ženama','-ama']       },
-      n: { sg:['selu','-u'],        pl:['selima','-ima']       },
+      m: { sg: '-u',                pl: '-ima' },
+      f: { sg: { v:'-i', n:'sib-i' }, pl: '-ama' },
+      n: { sg: '-u',                pl: '-ima' },
+    },
+    notes: {
+      'sib-i': {
+        en: '<strong>Sibilarization.</strong> When -i meets k / g / h, the consonant softens: knjiga → knjizi, ruka → ruci, Amerika → Americi.',
+        ru: '<strong>Сибиляризация.</strong> Перед -i k / g / h становятся c / z / s: knjiga → knjizi, ruka → ruci, Amerika → Americi.'
+      }
     },
     examples: [
       { sr:'Dajem knjigu <mark>profesoru</mark>.', en:'I give the book to the professor.', ru:'Я даю книгу профессору.' },
       { sr:'Idem k <mark>moru</mark>.',             en:'I\'m going to the sea.',            ru:'Я еду к морю.' },
       { sr:'Pomažem <mark>prijateljici</mark>.',    en:'I\'m helping a friend (f.).',       ru:'Я помогаю подруге.' },
     ],
-    preps: ['k','ka','prema','nasuprot']
+    preps: [
+      { p:'k, ka',     en:'towards (a destination, a person)',  ru:'к (направлению, к кому-либо)' },
+      { p:'prema',     en:'toward, facing',                     ru:'к, по направлению к' },
+      { p:'nasuprot',  en:'opposite, across from',              ru:'напротив' },
+    ]
   },
+
   {
-    key: 'case.4',
-    abbr: 'AKU',
+    key: 'case.4', abbr: 'AKU', tone: 'aku',
+    sigEnding: '-a / -∅',
     endings: {
-      m: { sg:['profesora','-a / -∅'], pl:['profesore','-e'] },
-      f: { sg:['ženu','-u'],            pl:['žene','-e']       },
-      n: { sg:['selo','-o'],            pl:['sela','-a']       },
+      m: {
+        sg: { split: [
+          { label:'cases.animacy.alive', v:'-a', same:'GEN' },
+          { label:'cases.animacy.thing', v:'-∅', same:'NOM' },
+        ] },
+        pl: '-e'
+      },
+      f: { sg: '-u',                pl: '-e' },
+      n: { sg: { v:'-o', same:'NOM' }, pl: { v:'-a', same:'NOM' } },
     },
+    notes: {},
     examples: [
-      { sr:'Vidim <mark>profesora</mark>.',         en:'I see the professor.',            ru:'Я вижу профессора.' },
-      { sr:'Čitam <mark>knjigu</mark>.',            en:'I\'m reading a book.',            ru:'Я читаю книгу.' },
-      { sr:'Idem u <mark>grad</mark>.',             en:'I\'m going to the city.',         ru:'Я еду в город.' },
+      { sr:'Vidim <mark>profesora</mark>.', en:'I see the professor. <em>(living → -a, like Gen)</em>', ru:'Я вижу профессора. <em>(одуш. → -a, как Род.)</em>' },
+      { sr:'Vidim <mark>grad</mark>.',       en:'I see the city. <em>(non-living → -∅, like Nom)</em>', ru:'Я вижу город. <em>(неодуш. → -∅, как Им.)</em>' },
+      { sr:'Idem u <mark>grad</mark>.',      en:'I\'m going to the city. <em>(motion: u + Acc)</em>',  ru:'Я еду в город. <em>(движение: u + Acc)</em>' },
     ],
-    preps: ['u','na','za','kroz','niz','uz','pod','pred','među','nad']
+    preps: [
+      { p:'u',     en:'into (with motion verbs)',          ru:'в (при движении)' },
+      { p:'na',    en:'onto (with motion verbs)',          ru:'на (при движении)' },
+      { p:'za',    en:'for, after (a duration / a goal)',  ru:'за, на (срок, цель)' },
+      { p:'kroz',  en:'through',                           ru:'сквозь, через' },
+      { p:'niz',   en:'down (along)',                      ru:'вниз по' },
+      { p:'uz',    en:'up (along), beside',                ru:'вверх по, вдоль' },
+      { p:'pod',   en:'under (with motion: going under)',  ru:'под (при движении)' },
+      { p:'pred',  en:'in front of (with motion)',         ru:'перед (при движении)' },
+      { p:'među',  en:'among (with motion)',               ru:'между, среди (при движении)' },
+      { p:'nad',   en:'over (with motion)',                ru:'над (при движении)' },
+    ]
   },
+
   {
-    key: 'case.5',
-    abbr: 'VOK',
+    key: 'case.5', abbr: 'VOK', tone: 'vok',
+    sigEnding: '-e / -u',
     endings: {
-      m: { sg:['profesore','-e / -u'], pl:['profesori','-i'] },
-      f: { sg:['ženo','-o'],            pl:['žene','-e']       },
-      n: { sg:['selo','-o'],            pl:['sela','-a']       },
+      m: {
+        sg: { split: [
+          { v:'-e', n:'palatal' },
+          { v:'-u', n:'soft' },
+        ] },
+        pl: { v:'-i', same:'NOM' }
+      },
+      f: { sg: '-o',                pl: { v:'-e', same:'NOM' } },
+      n: { sg: { v:'-o', same:'NOM' }, pl: { v:'-a', same:'NOM' } },
+    },
+    notes: {
+      'palatal': {
+        en: '<strong>Palatalization.</strong> If the stem ends in k / g / h, the consonant turns into č / ž / š before -e: junak → junače, Bog → Bože, duh → duše.',
+        ru: '<strong>Палатализация.</strong> Если основа на k / g / h, перед -e они становятся č / ž / š: junak → junače, Bog → Bože, duh → duše.'
+      },
+      'soft': {
+        en: '<strong>Soft-consonant alternant.</strong> After a soft consonant (c, ć, č, đ, dž, j, lj, nj, š, ž), the ending is -u, not -e: prijatelj → prijatelju, mladić → mladiću.',
+        ru: '<strong>После мягкого согласного.</strong> После c, ć, č, đ, dž, j, lj, nj, š, ž окончание -u, а не -e: prijatelj → prijatelju, mladić → mladiću.'
+      }
     },
     examples: [
-      { sr:'<mark>Profesore</mark>, dobar dan!',    en:'Professor, hello!',                ru:'Профессор, добрый день!' },
-      { sr:'<mark>Marija</mark>, gde si?',           en:'Marija, where are you?',           ru:'Мария, ты где?' },
-      { sr:'O, <mark>prijatelju</mark>!',           en:'Oh, my friend!',                   ru:'О, друг мой!' },
+      { sr:'<mark>Profesore</mark>, dobar dan!', en:'Professor, hello!',         ru:'Профессор, добрый день!' },
+      { sr:'<mark>Marija</mark>, gde si?',         en:'Marija, where are you?',    ru:'Мария, ты где?' },
+      { sr:'O, <mark>prijatelju</mark>!',         en:'Oh, my friend!',            ru:'О, друг мой!' },
     ],
     preps: []
   },
+
   {
-    key: 'case.6',
-    abbr: 'INS',
+    key: 'case.6', abbr: 'INS', tone: 'ins',
+    sigEnding: '-om',
     endings: {
-      m: { sg:['profesorom','-om'], pl:['profesorima','-ima'] },
-      f: { sg:['ženom','-om'],       pl:['ženama','-ama']       },
-      n: { sg:['selom','-om'],       pl:['selima','-ima']       },
+      m: { sg: { v:'-om', n:'soft-em' }, pl: '-ima' },
+      f: { sg: '-om',                     pl: '-ama' },
+      n: { sg: { v:'-om', n:'soft-em' }, pl: '-ima' },
+    },
+    notes: {
+      'soft-em': {
+        en: '<strong>Soft-consonant alternant.</strong> After a soft consonant (c, ć, č, đ, dž, j, lj, nj, š, ž), -om becomes -em: muž → mužem, nož → nožem, mesec → mesecem.',
+        ru: '<strong>После мягкого согласного.</strong> После c, ć, č, đ, dž, j, lj, nj, š, ž -om становится -em: muž → mužem, nož → nožem, mesec → mesecem.'
+      }
     },
     examples: [
-      { sr:'Putujem <mark>autobusom</mark>.',        en:'I\'m traveling by bus.',           ru:'Я еду на автобусе.' },
-      { sr:'Idem sa <mark>profesorom</mark>.',       en:'I go with the professor.',         ru:'Я иду с профессором.' },
-      { sr:'Pišem <mark>olovkom</mark>.',            en:'I write with a pencil.',           ru:'Я пишу карандашом.' },
+      { sr:'Putujem <mark>autobusom</mark>.',  en:'I\'m traveling by bus.',     ru:'Я еду на автобусе.' },
+      { sr:'Idem sa <mark>profesorom</mark>.', en:'I go with the professor.',   ru:'Я иду с профессором.' },
+      { sr:'<mark>Ponedeljkom</mark> radim.',  en:'On Mondays I work. <em>(recurring time)</em>', ru:'По понедельникам я работаю. <em>(регулярное время)</em>' },
     ],
-    preps: ['s','sa','pod','pred','nad','među','za']
+    preps: [
+      { p:'s, sa', en:'with (company)',                       ru:'с (вместе с)' },
+      { p:'pod',   en:'under (location, no motion)',          ru:'под (где, без движения)' },
+      { p:'pred',  en:'in front of (location, no motion)',    ru:'перед (где, без движения)' },
+      { p:'nad',   en:'over, above (location, no motion)',    ru:'над (где, без движения)' },
+      { p:'među',  en:'among (location, no motion)',          ru:'между, среди (где)' },
+      { p:'za',    en:'behind (location, no motion)',         ru:'за (где)' },
+    ]
   },
+
   {
-    key: 'case.7',
-    abbr: 'LOK',
+    key: 'case.7', abbr: 'LOK', tone: 'lok',
+    sigEnding: '-u',
     endings: {
-      m: { sg:['profesoru','-u'],   pl:['profesorima','-ima'] },
-      f: { sg:['ženi','-i'],         pl:['ženama','-ama']       },
-      n: { sg:['selu','-u'],         pl:['selima','-ima']       },
+      m: { sg: { v:'-u', same:'DAT' },               pl: { v:'-ima', same:'DAT' } },
+      f: { sg: { v:'-i', same:'DAT', n:'sib-i' },     pl: { v:'-ama', same:'DAT' } },
+      n: { sg: { v:'-u', same:'DAT' },               pl: { v:'-ima', same:'DAT' } },
+    },
+    notes: {
+      'sib-i': {
+        en: '<strong>Sibilarization.</strong> Same -i as Dative singular, same trigger: k / g / h → c / z / s before -i (ruka → ruci, knjiga → knjizi).',
+        ru: '<strong>Сибиляризация.</strong> То же -i, что и в Дательном: k / g / h → c / z / s перед -i (ruka → ruci, knjiga → knjizi).'
+      }
     },
     examples: [
-      { sr:'Knjiga je na <mark>stolu</mark>.',       en:'The book is on the table.',        ru:'Книга на столе.' },
-      { sr:'Govorim o <mark>profesoru</mark>.',      en:'I\'m speaking about the professor.', ru:'Я говорю о профессоре.' },
-      { sr:'Živim u <mark>Beogradu</mark>.',         en:'I live in Belgrade.',              ru:'Я живу в Белграде.' },
+      { sr:'Knjiga je na <mark>stolu</mark>.',      en:'The book is on the table. <em>(location)</em>',         ru:'Книга на столе. <em>(где)</em>' },
+      { sr:'Govorim o <mark>profesoru</mark>.',     en:'I\'m speaking about the professor. <em>(topic)</em>',   ru:'Я говорю о профессоре. <em>(о чём)</em>' },
+      { sr:'Živim u <mark>Beogradu</mark>.',         en:'I live in Belgrade. <em>(location: u + Loc, no motion)</em>', ru:'Я живу в Белграде. <em>(где: u + Loc, без движения)</em>' },
     ],
-    preps: ['u','na','o','po','pri']
+    preps: [
+      { p:'u',   en:'in (location), in (a month, a language)', ru:'в (где, в месяце, на языке)' },
+      { p:'na',  en:'on, at (a place / event); in (a language)', ru:'на (поверхности, событии); на (языке)' },
+      { p:'o',   en:'about (a topic)',                          ru:'о, об (теме разговора)' },
+      { p:'po',  en:'all over; according to',                   ru:'по (всему); согласно' },
+      { p:'pri', en:'by, attached to (formal)',                 ru:'при (книжное)' },
+    ]
   },
+];
+
+const IDECL = {
+  cases: ['NOM','GEN','DAT','AKU','VOK','INS','LOK'],
+  sg:    ['ljubav',   'ljubavi',  'ljubavi',  'ljubav',   'ljubavi',   'ljubavlju', 'ljubavi'],
+  pl:    ['ljubavi',  'ljubavi',  'ljubavima','ljubavi',  'ljubavi',   'ljubavima', 'ljubavima'],
+};
+
+const PAIRS = [
+  { a:{p:'iz', case:'GEN', en:'out of',      ru:'из (откуда)'},
+    b:{p:'u',  case:'AKU', en:'into',         ru:'в (куда)'},
+    en:'Source and destination of motion inside something.',
+    ru:'Откуда / куда — для движения внутрь.' },
+  { a:{p:'sa, s', case:'GEN', en:'off, down from', ru:'с (поверхности)'},
+    b:{p:'na',     case:'AKU', en:'onto',           ru:'на (поверхность)'},
+    en:'Source and destination of motion on top of a surface.',
+    ru:'Откуда / куда — для движения по поверхности.' },
+  { a:{p:'od', case:'GEN', en:'from (a starting point)', ru:'от (отправной точки)'},
+    b:{p:'do', case:'GEN', en:'to / up to (a limit)',     ru:'до (конечной точки)'},
+    en:'Two endpoints of a stretch — same case, opposite ends.',
+    ru:'Два конца отрезка — один падеж, разные направления.' },
 ];
 
 function dict() {
   const lang = document.documentElement.getAttribute('lang') || 'en';
   return (window.I18N && window.I18N[lang]) || {};
 }
+function tCases(key) { return dict()[key] || ''; }
+function currentLang() { return document.documentElement.getAttribute('lang') || 'en'; }
 
-function tCases(key) {
-  return dict()[key] || '';
-}
+function caseAnchor(key) { return key.replace(/\./g,'-'); }
 
 function renderCaseNav() {
   const nav = document.getElementById('caseNav');
   if (!nav) return;
   nav.innerHTML = CASES.map((c, i) => `
-    <a href="#${c.key.replace(/\./g,'-')}">
-      <span class="n">0${i+1}</span>${tCases(c.key + '.name')}
+    <a href="#${caseAnchor(c.key)}">
+      <span class="n">${String(i+1).padStart(2,'0')}</span>${tCases(c.key + '.name')}
     </a>
   `).join('');
+}
+
+function renderSystemStrip() {
+  const grid = document.getElementById('systemGrid');
+  if (!grid) return;
+  grid.innerHTML = CASES.map((c, i) => `
+    <li class="sys-cell" data-tone="${c.tone}">
+      <a href="#${caseAnchor(c.key)}">
+        <span class="sys-n">${String(i+1).padStart(2,'0')}</span>
+        <span class="sys-abbr">${c.abbr}</span>
+        <span class="sys-name">${tCases(c.key + '.name')}</span>
+        <span class="sys-sig">${c.sigEnding}</span>
+        <span class="sys-tag">${tCases(c.key + '.tagline')}</span>
+      </a>
+    </li>
+  `).join('');
+}
+
+/* Convert a cell entry into HTML for the endings table.
+   Always renders a `.cell` element. Footnote IDs are appended to the case-id
+   so anchors don't collide between cards. */
+function cellHTML(entry, gender, caseId) {
+  if (entry == null) return '<span class="cell"><span class="end">—</span></span>';
+  if (typeof entry === 'string') {
+    return `<span class="cell"><span class="end">${entry}</span></span>`;
+  }
+  if (entry.split) {
+    const d = dict();
+    const lines = entry.split.map(s => {
+      const label = s.label ? `<span class="cell-tag">${d[s.label] || s.label}</span>` : '';
+      const same  = s.same  ? `<span class="cell-same">${d['cases.same'] || '= same as'} ${s.same}</span>` : '';
+      const note  = s.n     ? `<sup class="cell-note"><a href="#${caseId}-n-${s.n}">¹</a></sup>` : '';
+      return `<span class="cell-row">${label}<span class="end">${s.v}${note}</span>${same}</span>`;
+    }).join('');
+    return `<span class="cell cell-split">${lines}</span>`;
+  }
+  const same = entry.same ? `<span class="cell-same">${dict()['cases.same'] || '= same as'} ${entry.same}</span>` : '';
+  const note = entry.n    ? `<sup class="cell-note"><a href="#${caseId}-n-${entry.n}">¹</a></sup>` : '';
+  return `<span class="cell"><span class="end">${entry.v}${note}</span>${same}</span>`;
 }
 
 function renderCases() {
   const list = document.getElementById('caseList');
   const d = dict();
   if (!list) return;
+  const lang = currentLang();
   list.innerHTML = CASES.map((c, i) => {
-    const order = String(i+1).padStart(2,'0');
-    const name  = d[c.key + '.name'] || '';
-    const local = d[c.key + '.local'] || '';
-    const q     = d[c.key + '.q'] || '';
-    const lang  = document.documentElement.getAttribute('lang') || 'en';
+    const order   = String(i+1).padStart(2,'0');
+    const caseId  = caseAnchor(c.key);
+    const name    = d[c.key + '.name']    || '';
+    const local   = d[c.key + '.local']   || '';
+    const tagline = d[c.key + '.tagline'] || '';
+    const q       = d[c.key + '.q']       || '';
+
+    const rowsHTML = ['sg','pl'].map(n => `
+      <tr>
+        <th scope="row" class="num">${d['cases.number.' + n] || (n === 'sg' ? 'Sg' : 'Pl')}</th>
+        <td>${cellHTML(c.endings.m[n], 'm', caseId)}</td>
+        <td>${cellHTML(c.endings.f[n], 'f', caseId)}</td>
+        <td>${cellHTML(c.endings.n[n], 'n', caseId)}</td>
+      </tr>
+    `).join('');
+
+    const noteEntries = Object.entries(c.notes || {});
+    const notesHTML = noteEntries.length === 0 ? '' : `
+      <aside class="case-notes" aria-label="${d['cases.notes'] || 'Sound changes'}">
+        <span class="eyebrow">${d['cases.notes'] || 'Sound changes'}</span>
+        <ol>
+          ${noteEntries.map(([id, body]) => `
+            <li id="${caseId}-n-${id}"><span class="note-mark">¹</span><span>${body[lang] || body.en}</span></li>
+          `).join('')}
+        </ol>
+      </aside>
+    `;
+
     const exHTML = c.examples.map(ex => `
       <div class="ex">
         <div class="sr">${ex.sr}</div>
         <div class="tr">${ex[lang] || ex.en}</div>
       </div>
     `).join('');
-    const prepHTML = c.preps.length === 0 ? '' : `
-      <div class="preps">
-        <span class="label">${d['cases.preps'] || 'Used with'}</span>
-        ${c.preps.map(p => `<span class="prep">${p}</span>`).join('')}
-      </div>
-    `;
+
+    const prepHTML = c.preps.length === 0
+      ? `<p class="preps-empty">${d['cases.preps.none'] || ''}</p>`
+      : `
+        <dl class="prep-list">
+          ${c.preps.map(pr => `
+            <div class="prep-row">
+              <dt class="prep-word">${pr.p}</dt>
+              <dd class="prep-mean">${pr[lang] || pr.en}</dd>
+            </div>
+          `).join('')}
+        </dl>
+      `;
+
     return `
-      <article class="case" id="${c.key.replace(/\./g,'-')}">
+      <article class="case" id="${caseId}" data-tone="${c.tone}">
         <header class="case-head">
           <span class="order">№ ${order} · ${c.abbr}</span>
           <h3>${name}<em>${local}</em></h3>
+          <p class="tagline">${tagline}</p>
           <p class="q">${q}</p>
         </header>
         <div class="case-body">
-          <div class="endings">
+          <section class="endings">
+            <header class="endings-head">
+              <span class="eyebrow">${d['cases.endings'] || 'Endings'}</span>
+              <p class="endings-note">${d['cases.endings.note'] || ''}</p>
+            </header>
             <table>
-              <caption>${d['cases.endings'] || 'Noun endings'}</caption>
               <thead>
                 <tr>
                   <th></th>
@@ -253,30 +495,86 @@ function renderCases() {
                   <th>${d['cases.gender.n'] || 'Neuter'}</th>
                 </tr>
               </thead>
-              <tbody>
-                ${['sg','pl'].map(n => `
-                <tr>
-                  <th scope="row" class="num">${d['cases.number.' + n] || (n === 'sg' ? 'Sg' : 'Pl')}</th>
-                  <td>${c.endings.m[n][0]} <span class="end">${c.endings.m[n][1]}</span></td>
-                  <td>${c.endings.f[n][0]} <span class="end">${c.endings.f[n][1]}</span></td>
-                  <td>${c.endings.n[n][0]} <span class="end">${c.endings.n[n][1]}</span></td>
-                </tr>
-                `).join('')}
-              </tbody>
+              <tbody>${rowsHTML}</tbody>
             </table>
-          </div>
-          <div>
-            <p class="case-label">${d['cases.examples'] || 'In the wild'}</p>
-            <div class="examples">${exHTML}</div>
-            ${prepHTML}
-          </div>
+            ${notesHTML}
+          </section>
+          <section class="case-right">
+            <section class="case-block">
+              <header class="endings-head">
+                <span class="eyebrow">${d['cases.examples'] || 'In the wild'}</span>
+              </header>
+              <div class="examples">${exHTML}</div>
+            </section>
+            <section class="case-block preps">
+              <header class="endings-head">
+                <span class="eyebrow">${d['cases.preps'] || 'Used with'}</span>
+              </header>
+              ${prepHTML}
+            </section>
+          </section>
         </div>
       </article>
     `;
   }).join('');
 }
 
-function renderAll() { renderCaseNav(); renderCases(); }
+function renderIDecl() {
+  const root = document.getElementById('extraTable');
+  if (!root) return;
+  const d = dict();
+  const rows = IDECL.cases.map((abbr, i) => `
+    <tr>
+      <th scope="row" class="num">${abbr}</th>
+      <td><span class="end">${IDECL.sg[i]}</span></td>
+      <td><span class="end">${IDECL.pl[i]}</span></td>
+    </tr>
+  `).join('');
+  root.innerHTML = `
+    <table class="i-decl">
+      <thead>
+        <tr>
+          <th></th>
+          <th>${d['cases.number.sg'] || 'Sg'}</th>
+          <th>${d['cases.number.pl'] || 'Pl'}</th>
+        </tr>
+      </thead>
+      <tbody>${rows}</tbody>
+    </table>
+  `;
+}
+
+function renderPairs() {
+  const ul = document.getElementById('pairList');
+  if (!ul) return;
+  const lang = currentLang();
+  ul.innerHTML = PAIRS.map(pair => `
+    <li class="pair">
+      <div class="pair-row">
+        <div class="pair-side">
+          <span class="pair-prep">${pair.a.p}</span>
+          <span class="pair-case">${pair.a.case}</span>
+          <span class="pair-gloss">${pair.a[lang] || pair.a.en}</span>
+        </div>
+        <span class="pair-arrow" aria-hidden="true">↔</span>
+        <div class="pair-side">
+          <span class="pair-prep">${pair.b.p}</span>
+          <span class="pair-case">${pair.b.case}</span>
+          <span class="pair-gloss">${pair.b[lang] || pair.b.en}</span>
+        </div>
+      </div>
+      <p class="pair-note">${pair[lang] || pair.en}</p>
+    </li>
+  `).join('');
+}
+
+function renderAll() {
+  renderCaseNav();
+  renderSystemStrip();
+  renderCases();
+  renderIDecl();
+  renderPairs();
+}
 
 function updateStickyOffset() {
   const header = document.querySelector('header.nav');
