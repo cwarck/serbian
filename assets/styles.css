@@ -618,8 +618,9 @@ section { position: relative; }
 }
 @media (min-width: 380px)  { .alph-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 820px)  { .alph-grid { grid-template-columns: repeat(3, 1fr); } }
-@media (min-width: 1200px) { .alph-grid { grid-template-columns: repeat(5, 1fr); } }
-@media (min-width: 1800px) { .alph-grid { grid-template-columns: repeat(6, 1fr); } }
+@media (min-width: 1100px) { .alph-grid { grid-template-columns: repeat(4, 1fr); } }
+@media (min-width: 1400px) { .alph-grid { grid-template-columns: repeat(5, 1fr); } }
+@media (min-width: 1900px) { .alph-grid { grid-template-columns: repeat(6, 1fr); } }
 .alph-grid::before,
 .alph-grid::after {
   content: "";
