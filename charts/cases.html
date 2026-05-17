@@ -463,7 +463,6 @@ function renderCaseStrip() {
   list.innerHTML = CASES.map((c, i) => `
     <li class="case-strip-cell" data-tone="${c.tone}">
       <a href="#${caseAnchor(c.key)}">
-        <span class="strip-n">${String(i+1).padStart(2,'0')}</span>
         <span class="strip-abbr">${c.abbr}</span>
         <span class="strip-name">${tCases(c.key + '.name')}</span>
       </a>
