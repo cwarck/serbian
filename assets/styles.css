@@ -210,7 +210,7 @@ section { position: relative; }
 .chip {
   font-family: var(--ff-mono);
   font-size: .82rem; letter-spacing: .08em; text-transform: uppercase;
-  padding: .42rem .8rem;
+  padding: .7rem 1rem;
   border-radius: 999px;
   color: var(--ink-muted);
   transition: background .25s, color .25s;
@@ -220,7 +220,7 @@ section { position: relative; }
 .chip[aria-pressed="true"]:hover { color: var(--paper); }
 
 .theme-btn {
-  width: 38px; height: 38px;
+  width: 44px; height: 44px;
   display: inline-grid; place-items: center;
   border-radius: 50%;
   border: 1px solid var(--hairline);
@@ -240,12 +240,12 @@ section { position: relative; }
 
   .nav-toggle {
     display: inline-flex;
-    flex: 0 0 40px;
+    flex: 0 0 44px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin-left: auto;
-    width: 40px; height: 40px;
+    width: 44px; height: 44px;
     border: 1px solid var(--hairline);
     border-radius: 50%;
     color: var(--ink-soft);
