@@ -31,6 +31,8 @@
   --ff-body:      'Spectral', Georgia, serif;
   --ff-mono:      'JetBrains Mono', ui-monospace, monospace;
 
+  --fs-meta:      clamp(.8rem, .72rem + .25vw, .92rem);
+
   --pad-x:        clamp(1.25rem, 4.5vw, 6rem);
   --max-w:        none;
   --max-prose:    62ch;
@@ -209,7 +211,7 @@ section { position: relative; }
 }
 .chip {
   font-family: var(--ff-mono);
-  font-size: .82rem; letter-spacing: .08em; text-transform: uppercase;
+  font-size: var(--fs-meta); letter-spacing: .08em; text-transform: uppercase;
   padding: .7rem 1rem;
   border-radius: 999px;
   color: var(--ink-muted);
@@ -319,7 +321,7 @@ section { position: relative; }
 
 .eyebrow {
   font-family: var(--ff-mono);
-  font-size: .82rem;
+  font-size: var(--fs-meta);
   letter-spacing: .22em;
   text-transform: uppercase;
   color: var(--ink-muted);
@@ -381,7 +383,7 @@ section { position: relative; }
 }
 .hero-stats .label {
   font-family: var(--ff-mono);
-  font-size: .8rem;
+  font-size: var(--fs-meta);
   letter-spacing: .16em;
   text-transform: uppercase;
   color: var(--ink-muted);
@@ -419,7 +421,7 @@ section { position: relative; }
 }
 .section-head .num {
   font-family: var(--ff-mono);
-  font-size: .82rem;
+  font-size: var(--fs-meta);
   color: var(--accent);
   letter-spacing: .12em;
 }
@@ -431,7 +433,7 @@ section { position: relative; }
 .section-head h2 em { font-style: italic; color: var(--ink-soft); font-weight: 300; }
 .section-head .meta {
   font-family: var(--ff-mono);
-  font-size: .82rem;
+  font-size: var(--fs-meta);
   letter-spacing: .14em;
   text-transform: uppercase;
   color: var(--ink-muted);
@@ -485,7 +487,7 @@ section { position: relative; }
 }
 .card .num {
   font-family: var(--ff-mono);
-  font-size: clamp(.82rem, .76rem + .15vw, .94rem);
+  font-size: var(--fs-meta);
   color: var(--ink-muted);
   letter-spacing: .14em;
 }
@@ -508,7 +510,7 @@ section { position: relative; }
   margin-top: auto;
   display: inline-flex; align-items: center; gap: .6rem;
   font-family: var(--ff-mono);
-  font-size: clamp(.82rem, .76rem + .15vw, .94rem);
+  font-size: var(--fs-meta);
   letter-spacing: .14em;
   text-transform: uppercase;
   color: var(--ink);
@@ -546,7 +548,7 @@ section { position: relative; }
 .tag {
   position: absolute; top: 1.4rem; right: 1.4rem;
   font-family: var(--ff-mono);
-  font-size: .78rem;
+  font-size: var(--fs-meta);
   letter-spacing: .18em;
   text-transform: uppercase;
   color: var(--ink-muted);
@@ -608,7 +610,7 @@ section { position: relative; }
   padding-block: 3rem 4rem;
   border-top: 1px solid var(--hairline);
   font-family: var(--ff-mono);
-  font-size: .82rem;
+  font-size: var(--fs-meta);
   letter-spacing: .1em;
   text-transform: uppercase;
   color: var(--ink-muted);
@@ -633,7 +635,7 @@ section { position: relative; }
   .chart-head { grid-template-columns: 1.5fr 1fr; align-items: end; gap: 4rem; }
 }
 .chart-head .back {
-  font-family: var(--ff-mono); font-size: .82rem;
+  font-family: var(--ff-mono); font-size: var(--fs-meta);
   letter-spacing: .14em; text-transform: uppercase;
   color: var(--ink-muted);
   display: inline-flex; align-items: center; gap: .5rem;
@@ -655,7 +657,7 @@ section { position: relative; }
 .chart-head h1 em { font-style: italic; color: var(--accent); font-weight: 300; }
 .chart-head .subtitle {
   font-family: var(--ff-mono);
-  font-size: .82rem;
+  font-size: var(--fs-meta);
   letter-spacing: .16em;
   text-transform: uppercase;
   color: var(--ink-muted);
@@ -686,7 +688,7 @@ section { position: relative; }
 .alph-legend {
   display: flex; gap: 1.4rem; flex-wrap: wrap;
   font-family: var(--ff-mono);
-  font-size: .8rem; letter-spacing: .12em; text-transform: uppercase;
+  font-size: var(--fs-meta); letter-spacing: .12em; text-transform: uppercase;
   color: var(--ink-muted);
 }
 .alph-legend .dot {
@@ -735,7 +737,7 @@ section { position: relative; }
 
 .letter .order {
   font-family: var(--ff-mono);
-  font-size: .8rem; color: var(--ink-faint); letter-spacing: .14em;
+  font-size: var(--fs-meta); color: var(--ink-faint); letter-spacing: .14em;
 }
 .letter .glyphs {
   display: flex; align-items: baseline; gap: .45rem;
@@ -759,7 +761,7 @@ section { position: relative; }
 }
 .letter .ipa {
   font-family: var(--ff-mono);
-  font-size: .8rem;
+  font-size: var(--fs-meta);
   line-height: 1;
   color: var(--ink-muted);
   letter-spacing: .04em;
@@ -798,7 +800,7 @@ section { position: relative; }
   background: transparent;
   border: 0;
   font-family: var(--ff-mono);
-  font-size: .78rem;
+  font-size: var(--fs-meta);
   letter-spacing: .14em;
   text-transform: uppercase;
   color: var(--accent);
@@ -911,7 +913,7 @@ section { position: relative; }
 
 .case-head .order {
   font-family: var(--ff-mono);
-  font-size: .82rem;
+  font-size: var(--fs-meta);
   letter-spacing: .14em;
   color: var(--accent);
   display: block;
@@ -951,7 +953,7 @@ section { position: relative; }
 .endings caption {
   text-align: left;
   font-family: var(--ff-mono);
-  font-size: .82rem;
+  font-size: var(--fs-meta);
   letter-spacing: .16em;
   text-transform: uppercase;
   color: var(--ink-muted);
@@ -968,7 +970,7 @@ section { position: relative; }
 }
 .endings th {
   font-family: var(--ff-mono);
-  font-size: .8rem;
+  font-size: var(--fs-meta);
   font-weight: 400;
   letter-spacing: .14em;
   text-transform: uppercase;
@@ -1031,7 +1033,7 @@ section { position: relative; }
 }
 .preps .label {
   font-family: var(--ff-mono);
-  font-size: .8rem;
+  font-size: var(--fs-meta);
   letter-spacing: .14em;
   text-transform: uppercase;
   color: var(--ink-muted);
@@ -1067,7 +1069,7 @@ section { position: relative; }
 .case-nav-inner::-webkit-scrollbar { display: none; }
 .case-nav a {
   font-family: var(--ff-mono);
-  font-size: .82rem;
+  font-size: var(--fs-meta);
   letter-spacing: .14em;
   text-transform: uppercase;
   color: var(--ink-muted);
