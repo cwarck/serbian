@@ -175,7 +175,7 @@ function renderAlphabet() {
       </div>
       <div class="ipa-row">
         <span class="ipa">${L.ipa}</span>
-        ${L.tip ? `<button class="tip-chip" type="button" aria-haspopup="dialog" aria-expanded="false" data-tip-idx="${i}"><span class="tip-chip-dot" aria-hidden="true"></span><span class="tip-chip-label">${cta}</span></button>` : ''}
+        ${L.tip ? `<button class="tip-chip" type="button" aria-haspopup="dialog" aria-expanded="false" aria-label="${cta}" data-tip-idx="${i}">?</button>` : ''}
       </div>
       <div class="example">
         <span class="word">

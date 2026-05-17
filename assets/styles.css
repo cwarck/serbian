@@ -709,41 +709,31 @@ section { position: relative; }
 .letter[data-kind="shared"]::before { background: var(--cool); }
 .letter[data-kind="diff"]::before { background: var(--gold); }
 
-/* Pronunciation tip — chip on the card */
+/* Pronunciation tip — small glyph on the card */
 .letter .tip-chip {
-  display: inline-flex; align-items: center; gap: .4rem;
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 1.15rem; height: 1.15rem;
   padding: 0;
   background: transparent;
-  border: 0;
+  border: 1px solid var(--hairline);
+  border-radius: 50%;
   font-family: var(--ff-mono);
-  font-size: var(--fs-meta);
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  color: var(--accent);
-  cursor: pointer;
+  font-size: .72rem;
+  font-weight: 500;
   line-height: 1;
+  color: var(--ink-muted);
+  cursor: pointer;
+  transition: color .15s, border-color .15s;
 }
-.letter .tip-chip .tip-chip-label {
-  text-decoration: underline dashed currentColor;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
-  text-decoration-skip-ink: auto;
-  transition: text-decoration-style .15s, color .15s;
-}
-.letter .tip-chip .tip-chip-dot {
-  width: 5px; height: 5px; border-radius: 50%;
-  background: currentColor;
-  display: inline-block;
-  opacity: .75;
-}
-.letter .tip-chip:hover .tip-chip-label,
-.letter .tip-chip:focus-visible .tip-chip-label,
-.letter .tip-chip[aria-expanded="true"] .tip-chip-label {
-  text-decoration-style: solid;
+.letter .tip-chip:hover,
+.letter .tip-chip:focus-visible,
+.letter .tip-chip[aria-expanded="true"] {
+  color: var(--ink);
+  border-color: var(--ink-muted);
 }
 .letter .tip-chip:focus-visible {
   outline: 1px dashed var(--accent);
-  outline-offset: 3px;
+  outline-offset: 2px;
 }
 
 /* Pronunciation tip — popover */
