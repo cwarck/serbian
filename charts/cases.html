@@ -58,20 +58,12 @@
   </div>
 </section>
 
-<nav class="case-nav" aria-label="Cases">
-  <div class="shell case-nav-inner" id="caseNav"></div>
+<nav class="case-strip" aria-label="Cases">
+  <ol class="case-strip-list" id="caseStripList"></ol>
 </nav>
 
 <section class="cases-section">
   <div class="shell">
-
-    <section class="system-strip reveal" aria-label="Cases overview">
-      <header class="strip-head">
-        <span class="eyebrow" data-i18n="cases.overview.eyebrow">At a glance</span>
-        <p class="strip-note" data-i18n="cases.overview.note">Seven roles a noun can play. The signature ending is the masculine singular — a fingerprint of each case.</p>
-      </header>
-      <ol class="system-grid" id="systemGrid"></ol>
-    </section>
 
     <div class="case-list" id="caseList"></div>
 
@@ -227,15 +219,23 @@ const CASES = [
     endings: {
       m: {
         sg: { split: [
-          { label:'cases.animacy.alive', v:'-a', same:'GEN' },
-          { label:'cases.animacy.thing', v:'-∅', same:'NOM' },
+          { v:'-a', n:'animacy' },
+          { v:'-∅', n:'animacy' },
         ] },
         pl: '-e'
       },
       f: { sg: '-u',                pl: '-e' },
       n: { sg: { v:'-o', same:'NOM' }, pl: { v:'-a', same:'NOM' } },
     },
-    notes: {},
+    notes: {
+      'animacy': {
+        titleEn: 'Living things vs everything else',
+        titleRu: 'Одушевлённые против всего остального',
+        bodyEn: 'In the masculine singular only, the accusative splits by whether the noun is alive. Living things (people, animals) take -a — the same shape as the genitive. Inanimate things take -∅ — the nominative form, unchanged. So you reuse two endings you already know.',
+        bodyRu: 'Только в мужском роде единственного числа винительный делится по одушевлённости. У живых (люди, животные) окончание -a — точно как в родительном. У неодушевлённых — -∅, как в именительном. То есть переиспользуются уже знакомые окончания.',
+        pairs: [['profesor','profesora'],['grad','grad']]
+      }
+    },
     examples: [
       { sr:'Vidim <mark>profesora</mark>.', en:'I see the professor. <em>(living → -a, like Gen)</em>', ru:'Я вижу профессора. <em>(одуш. → -a, как Род.)</em>' },
       { sr:'Vidim <mark>grad</mark>.',       en:'I see the city. <em>(non-living → -∅, like Nom)</em>', ru:'Я вижу город. <em>(неодуш. → -∅, как Им.)</em>' },
@@ -442,27 +442,30 @@ function currentLang() { return document.documentElement.getAttribute('lang') ||
 
 function caseAnchor(key) { return key.replace(/\./g,'-'); }
 
-function renderCaseNav() {
-  const nav = document.getElementById('caseNav');
-  if (!nav) return;
-  nav.innerHTML = CASES.map((c, i) => `
-    <a href="#${caseAnchor(c.key)}">
-      <span class="n">${String(i+1).padStart(2,'0')}</span>${tCases(c.key + '.name')}
-    </a>
-  `).join('');
+/* Spotlight changed letters in a sound-change pair: walk common prefix and
+   suffix from both ends, wrap the divergent middle in <span class="lit">.
+   Falls back to wrapping the whole word when the two share nothing. */
+function diffHL(a, b) {
+  const sa = String(a), sb = String(b);
+  let p = 0;
+  const minLen = Math.min(sa.length, sb.length);
+  while (p < minLen && sa[p] === sb[p]) p++;
+  let ea = sa.length, eb = sb.length;
+  while (ea > p && eb > p && sa[ea-1] === sb[eb-1]) { ea--; eb--; }
+  const wrap = (s, i, j) =>
+    s.slice(0, i) + (i < j ? `<span class="lit">${s.slice(i, j)}</span>` : '') + s.slice(j);
+  return { from: wrap(sa, p, ea), to: wrap(sb, p, eb) };
 }
 
-function renderSystemStrip() {
-  const grid = document.getElementById('systemGrid');
-  if (!grid) return;
-  grid.innerHTML = CASES.map((c, i) => `
-    <li class="sys-cell" data-tone="${c.tone}">
+function renderCaseStrip() {
+  const list = document.getElementById('caseStripList');
+  if (!list) return;
+  list.innerHTML = CASES.map((c, i) => `
+    <li class="case-strip-cell" data-tone="${c.tone}">
       <a href="#${caseAnchor(c.key)}">
-        <span class="sys-n">${String(i+1).padStart(2,'0')}</span>
-        <span class="sys-abbr">${c.abbr}</span>
-        <span class="sys-name">${tCases(c.key + '.name')}</span>
-        <span class="sys-sig">${c.sigEnding}</span>
-        <span class="sys-tag">${tCases(c.key + '.tagline')}</span>
+        <span class="strip-n">${String(i+1).padStart(2,'0')}</span>
+        <span class="strip-abbr">${c.abbr}</span>
+        <span class="strip-name">${tCases(c.key + '.name')}</span>
       </a>
     </li>
   `).join('');
@@ -476,18 +479,24 @@ function cellHTML(entry, gender, caseId) {
   if (typeof entry === 'string') {
     return `<span class="cell"><span class="end">${entry}</span></span>`;
   }
+  const noteMark = (id, num) =>
+    `<sup class="cell-note"><a href="#${caseId}-n-${id}" aria-label="see note">${num}</a></sup>`;
+
   if (entry.split) {
-    const d = dict();
-    const lines = entry.split.map(s => {
-      const label = s.label ? `<span class="cell-tag">${d[s.label] || s.label}</span>` : '';
-      const same  = s.same  ? `<span class="cell-same">${d['cases.same'] || '= same as'} ${s.same}</span>` : '';
-      const note  = s.n     ? `<sup class="cell-note"><a href="#${caseId}-n-${s.n}">¹</a></sup>` : '';
-      return `<span class="cell-row">${label}<span class="end">${s.v}${note}</span>${same}</span>`;
-    }).join('');
-    return `<span class="cell cell-split">${lines}</span>`;
+    const variants = entry.split;
+    /* If every variant points to the same note, hoist one marker to the end
+       so the cell reads `-a / -∅¹` rather than `-a¹ / -∅¹`. */
+    const sharedNote = variants.every(s => s.n && s.n === variants[0].n)
+      ? variants[0].n : null;
+    const ends = variants.map((s, idx) => {
+      const m = !sharedNote && s.n ? noteMark(s.n, idx + 1) : '';
+      return `<span class="end">${s.v}${m}</span>`;
+    }).join('<span class="cell-sep" aria-hidden="true">/</span>');
+    const tail = sharedNote ? noteMark(sharedNote, 1) : '';
+    return `<span class="cell cell-alt">${ends}${tail}</span>`;
   }
-  const same = entry.same ? `<span class="cell-same">${dict()['cases.same'] || '= same as'} ${entry.same}</span>` : '';
-  const note = entry.n    ? `<sup class="cell-note"><a href="#${caseId}-n-${entry.n}">¹</a></sup>` : '';
+  const same = entry.same ? `<span class="cell-same">= ${entry.same}</span>` : '';
+  const note = entry.n    ? noteMark(entry.n, 1) : '';
   return `<span class="cell"><span class="end">${entry.v}${note}</span>${same}</span>`;
 }
 
@@ -504,12 +513,34 @@ function renderCases() {
     const tagline = d[c.key + '.tagline'] || '';
     const q       = d[c.key + '.q']       || '';
 
+    /* If every singular and plural cell points to the same case via `same`,
+       hoist that into a one-line banner above the table and strip the
+       per-cell labels — clears the visual noise (notably the Locative). */
+    const allCells = ['sg','pl'].flatMap(n => ['m','f','n'].map(g => c.endings[g][n]));
+    const sameTargets = allCells.map(cell =>
+      (cell && typeof cell === 'object' && !cell.split) ? cell.same : null
+    );
+    const uniformSame = sameTargets.every(t => t && t === sameTargets[0]) ? sameTargets[0] : null;
+    const bannerHTML = uniformSame ? `
+      <p class="endings-banner">
+        ${d['cases.endings.banner'] || 'Endings: same as'}
+        <strong>${uniformSame}</strong>.
+      </p>` : '';
+
+    const cellHTMLClean = (entry, gender) => {
+      if (uniformSame && entry && typeof entry === 'object' && !entry.split) {
+        const { same, ...rest } = entry;
+        return cellHTML(rest, gender, caseId);
+      }
+      return cellHTML(entry, gender, caseId);
+    };
+
     const rowsHTML = ['sg','pl'].map(n => `
       <tr>
         <th scope="row" class="num">${d['cases.number.' + n] || (n === 'sg' ? 'Sg' : 'Pl')}</th>
-        <td>${cellHTML(c.endings.m[n], 'm', caseId)}</td>
-        <td>${cellHTML(c.endings.f[n], 'f', caseId)}</td>
-        <td>${cellHTML(c.endings.n[n], 'n', caseId)}</td>
+        <td>${cellHTMLClean(c.endings.m[n], 'm')}</td>
+        <td>${cellHTMLClean(c.endings.f[n], 'f')}</td>
+        <td>${cellHTMLClean(c.endings.n[n], 'n')}</td>
       </tr>
     `).join('');
 
@@ -523,13 +554,16 @@ function renderCases() {
           ${noteEntries.map(([id, note]) => {
             const title = lang === 'ru' ? note.titleRu : note.titleEn;
             const body  = lang === 'ru' ? note.bodyRu  : note.bodyEn;
-            const pairs = (note.pairs || []).map(p => `
-              <li>
-                <span class="from">${p[0]}</span>
-                <span class="arrow" aria-hidden="true">→</span>
-                <span class="to">${p[1]}</span>
-              </li>
-            `).join('');
+            const pairs = (note.pairs || []).map(p => {
+              const hl = diffHL(p[0], p[1]);
+              return `
+                <li>
+                  <span class="from">${hl.from}</span>
+                  <span class="arrow" aria-hidden="true">→</span>
+                  <span class="to">${hl.to}</span>
+                </li>
+              `;
+            }).join('');
             return `
               <article class="note-item" id="${caseId}-n-${id}">
                 <h4 class="note-title">${title}</h4>
@@ -565,7 +599,7 @@ function renderCases() {
     return `
       <article class="case" id="${caseId}" data-tone="${c.tone}">
         <header class="case-head">
-          <span class="order">№ ${order} · ${c.abbr}</span>
+          <span class="case-tag">${c.abbr}</span>
           <h3>${name}<em>${local}</em></h3>
           <p class="tagline">${tagline}</p>
           <p class="q">${q}</p>
@@ -575,6 +609,7 @@ function renderCases() {
             <header class="endings-head">
               <span class="eyebrow">${d['cases.endings'] || 'Endings'}</span>
             </header>
+            ${bannerHTML}
             <table>
               <thead>
                 <tr>
@@ -641,14 +676,17 @@ function renderWrinkles() {
   grid.innerHTML = WRINKLES.map(w => {
     const title = d[w.key + '.title'] || '';
     const intro = d[w.key + '.intro'] || '';
-    const items = w.examples.map(ex => `
-      <li>
-        <span class="from">${ex.from}</span>
-        <span class="arrow" aria-hidden="true">→</span>
-        <span class="to">${ex.to}</span>
-        <span class="gloss">${ex[lang] || ex.en}</span>
-      </li>
-    `).join('');
+    const items = w.examples.map(ex => {
+      const hl = diffHL(ex.from, ex.to);
+      return `
+        <li>
+          <span class="from">${hl.from}</span>
+          <span class="arrow" aria-hidden="true">→</span>
+          <span class="to">${hl.to}</span>
+          <span class="gloss">${ex[lang] || ex.en}</span>
+        </li>
+      `;
+    }).join('');
     return `
       <article class="wrinkle${w.wide ? ' wide' : ''}">
         <h3>${title}</h3>
@@ -684,8 +722,7 @@ function renderPairs() {
 }
 
 function renderAll() {
-  renderCaseNav();
-  renderSystemStrip();
+  renderCaseStrip();
   renderCases();
   renderIDecl();
   renderWrinkles();
@@ -694,16 +731,42 @@ function renderAll() {
 
 function updateStickyOffset() {
   const header = document.querySelector('header.nav');
-  const caseNav = document.querySelector('.case-nav');
-  const h = (header ? header.offsetHeight : 0) + (caseNav ? caseNav.offsetHeight : 0);
+  const strip  = document.querySelector('.case-strip');
+  const h = (header ? header.offsetHeight : 0) + (strip ? strip.offsetHeight : 0);
   document.documentElement.style.setProperty('--sticky-offset', h + 'px');
 }
 
-document.addEventListener('langchange', () => { renderAll(); updateStickyOffset(); });
+/* Scrollspy — colour the strip cell whose case is currently in view. */
+let spyObserver = null;
+function setupSpy() {
+  if (!('IntersectionObserver' in window)) return;
+  if (spyObserver) { spyObserver.disconnect(); spyObserver = null; }
+  const cases = document.querySelectorAll('.case');
+  if (!cases.length) return;
+  const cells = new Map();
+  document.querySelectorAll('.case-strip-cell a').forEach(a => {
+    const href = a.getAttribute('href') || '';
+    if (href.startsWith('#')) cells.set(href.slice(1), a.parentElement);
+  });
+  spyObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const cell = cells.get(e.target.id);
+      if (!cell) return;
+      document.querySelectorAll('.case-strip-cell.is-current')
+        .forEach(c => c.classList.remove('is-current'));
+      cell.classList.add('is-current');
+    });
+  }, { rootMargin: '-30% 0px -55% 0px', threshold: 0 });
+  cases.forEach(c => spyObserver.observe(c));
+}
+
+document.addEventListener('langchange', () => { renderAll(); updateStickyOffset(); setupSpy(); });
 window.addEventListener('resize', updateStickyOffset);
 window.addEventListener('load', updateStickyOffset);
 renderAll();
 updateStickyOffset();
+setupSpy();
 </script>
 <script src="../assets/app.js"></script>
 </body>
