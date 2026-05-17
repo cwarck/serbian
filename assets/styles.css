@@ -290,7 +290,7 @@ section { position: relative; }
 .display {
   font-family: var(--ff-display);
   font-weight: 200;
-  font-size: clamp(3rem, 9.5vw, 8rem);
+  font-size: clamp(3rem, 10vw, 10rem);
   line-height: .94;
   letter-spacing: -.035em;
 }
