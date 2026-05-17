@@ -168,7 +168,6 @@ function renderAlphabet() {
   const cta = tipLabel(lang);
   grid.innerHTML = ALPHABET.map((L, i) => `
     <article class="letter" data-kind="${L.kind}"${L.tip ? ' data-has-tip="true"' : ''}>
-      <span class="order">№ ${String(L.n).padStart(2,'0')}</span>
       <div class="glyphs">
         <span class="cyr">${L.cyr}</span>
         <span class="sep">·</span>

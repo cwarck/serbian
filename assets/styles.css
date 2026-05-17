@@ -637,10 +637,6 @@ section { position: relative; }
 }
 .letter:hover { background: var(--paper-deep); }
 
-.letter .order {
-  font-family: var(--ff-mono);
-  font-size: var(--fs-meta); color: var(--ink-faint); letter-spacing: .14em;
-}
 .letter .glyphs {
   display: flex; align-items: baseline; gap: .45rem;
   font-family: var(--ff-display);
