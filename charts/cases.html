@@ -140,6 +140,13 @@
   <p class="disclaimer" data-i18n="cases.stress.note"></p>
 </section>
 
+<div class="tip-pop case-pop" id="casePop" role="dialog" aria-modal="false" hidden>
+  <div class="tip-pop-card">
+    <div class="tip-pop-body" id="casePopBody"></div>
+    <button type="button" class="tip-pop-close" aria-label="Close">×</button>
+  </div>
+</div>
+
 <footer class="foot shell">
   <span data-i18n="foot.copy">© 2026 Atlas Srpski · Content <a href="https://creativecommons.org/licenses/by/4.0/deed.en" rel="license noopener" target="_blank">CC BY 4.0</a></span>
   <span>
@@ -473,12 +480,35 @@ const PAIRS = [
    softening (ženi is straight -i, not the ruka→ruci shift). */
 const CAST = [
   { gender: 'm', word: 'profesor',
-    forms: ['profesor','profesora','profesoru','profesora','profesore','profesorom','profesoru'] },
+    forms: {
+      sg: ['profesor','profesora','profesoru','profesora','profesore','profesorom','profesoru'],
+      pl: ['profesori','profesora','profesorima','profesore','profesori','profesorima','profesorima'],
+    } },
   { gender: 'f', word: 'žena',
-    forms: ['žena','žene','ženi','ženu','ženo','ženom','ženi'] },
+    forms: {
+      sg: ['žena','žene','ženi','ženu','ženo','ženom','ženi'],
+      pl: ['žene','žena','ženama','žene','žene','ženama','ženama'],
+    } },
   { gender: 'n', word: 'selo',
-    forms: ['selo','sela','selu','selo','selo','selom','selu'] },
+    forms: {
+      sg: ['selo','sela','selu','selo','selo','selom','selu'],
+      pl: ['sela','sela','selima','sela','sela','selima','selima'],
+    } },
 ];
+
+/* Overrides for cells that don't follow the cast trio directly — chiefly the
+   AKU and VOK splits, where the rule is ABOUT which subgroup the noun is in.
+   Each entry: { caseAbbr:gender:number → [{labelKey?, from, to}, ...] } */
+const VARIANT_EXAMPLES = {
+  'AKU:m:sg': [
+    { labelKey:'cases.aku.label.alive', from:'profesor', to:'profesora' },
+    { labelKey:'cases.aku.label.thing', from:'grad',     to:'grad'      },
+  ],
+  'VOK:m:sg': [
+    { from:'profesor',  to:'profesore'  },
+    { from:'prijatelj', to:'prijatelju' },
+  ],
+};
 
 function dict() {
   const lang = document.documentElement.getAttribute('lang') || 'en';
@@ -519,9 +549,9 @@ function renderCast() {
       `).join('')}
     </div>`;
   const bodyRows = CAST.map(cast => {
-    const cells = cast.forms.map((form, i) => {
+    const cells = cast.forms.sg.map((form, i) => {
       const c = CASES[i];
-      const base = cast.forms[0];
+      const base = cast.forms.sg[0];
       const hl = i === 0 ? cast.word : diffHL(base, form).to;
       return `
         <a class="cast-cell" data-tone="${c.tone}" href="#${caseAnchor(c.key)}" aria-label="${c.abbr}: ${form}">
@@ -541,8 +571,8 @@ function renderCast() {
 /* Three-chip anchor row inside each card — same trio, this case's form. */
 function castAnchorRowHTML(caseIndex, d) {
   const chips = CAST.map(cast => {
-    const base = cast.forms[0];
-    const form = cast.forms[caseIndex];
+    const base = cast.forms.sg[0];
+    const form = cast.forms.sg[caseIndex];
     const hl = caseIndex === 0 ? cast.word : diffHL(base, form).to;
     const label = d['cases.cast.label.' + cast.gender] || cast.gender.toUpperCase();
     return `
@@ -556,6 +586,48 @@ function castAnchorRowHTML(caseIndex, d) {
       <span class="anchor-eyebrow">${d['cases.anchor.label'] || 'In this case:'}</span>
       <ul class="anchor-chips">${chips}</ul>
     </section>`;
+}
+
+/* Resolve a popover's worth of word-pairs for a given cell.
+   Falls back to the cast trio when no specific override exists.
+   Returns [{ label?, from, to }, ...]. */
+function getCellExamples(caseIdx, gender, number) {
+  const c = CASES[caseIdx];
+  const key = `${c.abbr}:${gender}:${number}`;
+  if (VARIANT_EXAMPLES[key]) return VARIANT_EXAMPLES[key];
+  const cast = CAST.find(x => x.gender === gender);
+  if (!cast) return [];
+  const from = cast.forms.sg[0];
+  const to   = cast.forms[number][caseIdx];
+  return [{ from, to }];
+}
+
+function popoverHTML(caseIdx, gender, number) {
+  const d = dict();
+  const c = CASES[caseIdx];
+  const examples = getCellExamples(caseIdx, gender, number);
+  const caseName = d[c.key + '.name']    || c.abbr;
+  const genderName = d['cases.gender.' + gender] || gender;
+  const numberName = d['cases.number.' + number] || number;
+  const pairs = examples.map(ex => {
+    const hl = diffHL(ex.from, ex.to);
+    const label = ex.labelKey
+      ? `<span class="pop-label">${d[ex.labelKey] || ''}</span>`
+      : '';
+    return `
+      <div class="pop-pair">
+        ${label}
+        <span class="pop-from">${hl.from}</span>
+        <span class="pop-arrow" aria-hidden="true">→</span>
+        <span class="pop-to">${hl.to}</span>
+      </div>`;
+  }).join('');
+  return `
+    <p class="pop-heading" data-tone="${c.tone}">
+      <span class="pop-abbr">${c.abbr}</span>
+      <span class="pop-meta">${caseName} · ${genderName.toLowerCase()} · ${numberName.toLowerCase()}</span>
+    </p>
+    <div class="pop-pairs">${pairs}</div>`;
 }
 
 function renderCaseStrip() {
@@ -586,12 +658,13 @@ function renderBirdsEye() {
 }
 
 /* Convert a cell entry into HTML for the endings table.
-   Always renders a `.cell` element. Footnote IDs are appended to the case-id
-   so anchors don't collide between cards. */
-function cellHTML(entry, gender, caseId) {
-  if (entry == null) return '<span class="cell"><span class="end">—</span></span>';
+   Always renders a `.cell` element — a button when tappable, a span when
+   empty. Footnote IDs are appended to the case-id so anchors don't collide. */
+function cellHTML(entry, gender, caseId, caseIdx, number) {
+  if (entry == null) return '<span class="cell cell-empty"><span class="end">—</span></span>';
+  const data = `data-cell-trigger data-case-idx="${caseIdx}" data-gender="${gender}" data-number="${number}"`;
   if (typeof entry === 'string') {
-    return `<span class="cell"><span class="end">${entry}</span></span>`;
+    return `<button type="button" class="cell" ${data}><span class="end">${entry}</span></button>`;
   }
   const noteMark = (id, num) =>
     `<sup class="cell-note"><a href="#${caseId}-n-${id}" aria-label="see note">${num}</a></sup>`;
@@ -615,18 +688,18 @@ function cellHTML(entry, gender, caseId) {
           </span>`;
       }).join('');
       const tail = sharedNote ? noteMark(sharedNote, 1) : '';
-      return `<span class="cell cell-alt cell-alt-labeled">${rows}${tail}</span>`;
+      return `<button type="button" class="cell cell-alt cell-alt-labeled" ${data}>${rows}${tail}</button>`;
     }
     const ends = variants.map((s, idx) => {
       const m = !sharedNote && s.n ? noteMark(s.n, idx + 1) : '';
       return `<span class="end">${s.v}${m}</span>`;
     }).join('<span class="cell-sep" aria-hidden="true">/</span>');
     const tail = sharedNote ? noteMark(sharedNote, 1) : '';
-    return `<span class="cell cell-alt">${ends}${tail}</span>`;
+    return `<button type="button" class="cell cell-alt" ${data}>${ends}${tail}</button>`;
   }
   const same = entry.same ? `<span class="cell-same">= ${entry.same}</span>` : '';
   const note = entry.n    ? noteMark(entry.n, 1) : '';
-  return `<span class="cell"><span class="end">${entry.v}${note}</span>${same}</span>`;
+  return `<button type="button" class="cell" ${data}><span class="end">${entry.v}${note}</span>${same}</button>`;
 }
 
 function renderCases() {
@@ -663,20 +736,20 @@ function renderCases() {
         </p>`;
     }
 
-    const cellHTMLClean = (entry, gender) => {
+    const cellHTMLClean = (entry, gender, number) => {
       if (uniformSame && entry && typeof entry === 'object' && !entry.split) {
         const { same, ...rest } = entry;
-        return cellHTML(rest, gender, caseId);
+        return cellHTML(rest, gender, caseId, i, number);
       }
-      return cellHTML(entry, gender, caseId);
+      return cellHTML(entry, gender, caseId, i, number);
     };
 
     const rowsHTML = ['sg','pl'].map(n => `
       <tr>
         <th scope="row" class="num">${d['cases.number.' + n] || (n === 'sg' ? 'Sg' : 'Pl')}</th>
-        <td>${cellHTMLClean(c.endings.m[n], 'm')}</td>
-        <td>${cellHTMLClean(c.endings.f[n], 'f')}</td>
-        <td>${cellHTMLClean(c.endings.n[n], 'n')}</td>
+        <td>${cellHTMLClean(c.endings.m[n], 'm', n)}</td>
+        <td>${cellHTMLClean(c.endings.f[n], 'f', n)}</td>
+        <td>${cellHTMLClean(c.endings.n[n], 'n', n)}</td>
       </tr>
     `).join('');
 
@@ -874,6 +947,75 @@ function updateStickyOffset() {
   const h = (header ? header.offsetHeight : 0) + (strip ? strip.offsetHeight : 0);
   document.documentElement.style.setProperty('--sticky-offset', h + 'px');
 }
+
+/* Cell popovers — tap any endings cell to see the abstract ending become a
+   concrete word transformation. Reuses the .tip-pop / .tip-pop-card pattern
+   from the alphabet chart. */
+(function setupCellPopover(){
+  const pop = document.getElementById('casePop');
+  if (!pop) return;
+  const bodyEl   = pop.querySelector('#casePopBody');
+  const closeBtn = pop.querySelector('.tip-pop-close');
+  let active = null;
+
+  function position() {
+    if (!active) return;
+    const r = active.getBoundingClientRect();
+    const sx = window.scrollX || window.pageXOffset;
+    const sy = window.scrollY || window.pageYOffset;
+    pop.style.left = '0px'; pop.style.top = '0px';
+    const pw = pop.offsetWidth, ph = pop.offsetHeight;
+    const gutter = 12;
+    const vw = document.documentElement.clientWidth;
+    let left = r.left + sx + r.width/2 - pw/2;
+    left = Math.max(sx + gutter, Math.min(left, sx + vw - pw - gutter));
+    const spaceBelow = window.innerHeight - r.bottom;
+    const placeAbove = spaceBelow < ph + gutter && r.top > ph + gutter;
+    const top = placeAbove ? r.top + sy - ph - 8 : r.bottom + sy + 8;
+    pop.style.left = left + 'px';
+    pop.style.top  = top  + 'px';
+    pop.dataset.placement = placeAbove ? 'above' : 'below';
+  }
+
+  function open(trigger) {
+    const caseIdx = +trigger.getAttribute('data-case-idx');
+    const gender  = trigger.getAttribute('data-gender');
+    const number  = trigger.getAttribute('data-number');
+    if (isNaN(caseIdx) || !gender || !number) return;
+    const c = CASES[caseIdx];
+    pop.dataset.tone = c && c.tone || '';
+    if (active && active !== trigger) active.setAttribute('aria-expanded','false');
+    active = trigger;
+    trigger.setAttribute('aria-expanded','true');
+    bodyEl.innerHTML = popoverHTML(caseIdx, gender, number);
+    pop.hidden = false;
+    requestAnimationFrame(() => { position(); pop.classList.add('is-open'); });
+  }
+
+  function close() {
+    if (!active) return;
+    active.setAttribute('aria-expanded','false');
+    active = null;
+    pop.classList.remove('is-open');
+    pop.hidden = true;
+  }
+
+  document.addEventListener('click', (e) => {
+    const trigger = e.target.closest('[data-cell-trigger]');
+    if (trigger) {
+      e.preventDefault();
+      if (active === trigger) close(); else open(trigger);
+      return;
+    }
+    if (!pop.hidden && !pop.contains(e.target)) close();
+  });
+
+  closeBtn.addEventListener('click', close);
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+  window.addEventListener('resize', () => { if (!pop.hidden) position(); });
+  window.addEventListener('scroll', () => { if (!pop.hidden) position(); }, { passive: true });
+  document.addEventListener('langchange', close);
+})();
 
 /* Scrollspy — colour the strip cell whose case is currently in view. */
 let spyObserver = null;
