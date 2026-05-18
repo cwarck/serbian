@@ -64,7 +64,7 @@ window.I18N = {
     'cases.endings': 'Endings',
     'cases.endings.banner': 'Endings: same as',
     'cases.examples': 'In the wild',
-    'cases.preps': 'Used with',
+    'cases.preps': 'Prepositions',
     'cases.preps.none': 'No prepositions — this case stands on its own.',
     'cases.notes': 'Worth knowing',
     'cases.gender.m': 'Masculine',
