@@ -65,6 +65,21 @@
 <section class="cases-section">
   <div class="shell">
 
+    <section class="case-cast reveal" id="meetTheCast" aria-label="One noun in every case">
+      <header class="cast-head">
+        <span class="eyebrow" data-i18n="cases.cast.eyebrow">Meet the cast</span>
+        <h2>
+          <span data-i18n="cases.cast.title.line1">One word,</span>
+          <em data-i18n="cases.cast.title.em">seven shapes.</em>
+        </h2>
+        <p class="cast-intro" data-i18n="cases.cast.intro"></p>
+      </header>
+      <div class="cast-frame">
+        <div class="cast-scroll" id="castScroll" role="region" aria-label="Three nouns declined through seven cases" tabindex="0"></div>
+        <p class="cast-hint" data-i18n="cases.cast.hint" aria-hidden="true">Swipe across to see all seven forms →</p>
+      </div>
+    </section>
+
     <div class="case-list" id="caseList"></div>
 
     <section class="case-extra reveal" id="extra-ideclension" aria-label="Second feminine class">
@@ -433,6 +448,19 @@ const PAIRS = [
     ru:'Два конца отрезка — один падеж, разные направления.' },
 ];
 
+/* Three regular nouns walking through all seven cases.
+   Order matches CASES — NOM, GEN, DAT, AKU, VOK, INS, LOK.
+   Picked for full regularity: no fleeting-a, no -ov- infix, no sibilant
+   softening (ženi is straight -i, not the ruka→ruci shift). */
+const CAST = [
+  { gender: 'm', word: 'profesor',
+    forms: ['profesor','profesora','profesoru','profesora','profesore','profesorom','profesoru'] },
+  { gender: 'f', word: 'žena',
+    forms: ['žena','žene','ženi','ženu','ženo','ženom','ženi'] },
+  { gender: 'n', word: 'selo',
+    forms: ['selo','sela','selu','selo','selo','selom','selu'] },
+];
+
 function dict() {
   const lang = document.documentElement.getAttribute('lang') || 'en';
   return (window.I18N && window.I18N[lang]) || {};
@@ -455,6 +483,60 @@ function diffHL(a, b) {
   const wrap = (s, i, j) =>
     s.slice(0, i) + (i < j ? `<span class="lit">${s.slice(i, j)}</span>` : '') + s.slice(j);
   return { from: wrap(sa, p, ea), to: wrap(sb, p, eb) };
+}
+
+/* The CAST hero — three nouns × seven cases. Tap a cell to jump to that case. */
+function renderCast() {
+  const root = document.getElementById('castScroll');
+  if (!root) return;
+  const d = dict();
+  const headRow = `
+    <div class="cast-row cast-row-head" role="row">
+      <span class="cast-cell cast-cell-head" role="rowheader"></span>
+      ${CASES.map(c => `
+        <a class="cast-cell cast-cell-head" data-tone="${c.tone}" role="columnheader" href="#${caseAnchor(c.key)}">
+          <span class="cast-abbr">${c.abbr}</span>
+        </a>
+      `).join('')}
+    </div>`;
+  const bodyRows = CAST.map(cast => {
+    const cells = cast.forms.map((form, i) => {
+      const c = CASES[i];
+      const base = cast.forms[0];
+      const hl = i === 0 ? cast.word : diffHL(base, form).to;
+      return `
+        <a class="cast-cell" data-tone="${c.tone}" href="#${caseAnchor(c.key)}" aria-label="${c.abbr}: ${form}">
+          <span class="cast-form">${hl}</span>
+        </a>
+      `;
+    }).join('');
+    return `
+      <div class="cast-row" data-gender="${cast.gender}" role="row">
+        <span class="cast-cell cast-gender" role="rowheader">${d['cases.cast.label.' + cast.gender] || cast.gender.toUpperCase()}</span>
+        ${cells}
+      </div>`;
+  }).join('');
+  root.innerHTML = headRow + bodyRows;
+}
+
+/* Three-chip anchor row inside each card — same trio, this case's form. */
+function castAnchorRowHTML(caseIndex, d) {
+  const chips = CAST.map(cast => {
+    const base = cast.forms[0];
+    const form = cast.forms[caseIndex];
+    const hl = caseIndex === 0 ? cast.word : diffHL(base, form).to;
+    const label = d['cases.cast.label.' + cast.gender] || cast.gender.toUpperCase();
+    return `
+      <li class="anchor-chip" data-gender="${cast.gender}">
+        <span class="anchor-g">${label}</span>
+        <span class="anchor-form">${hl}</span>
+      </li>`;
+  }).join('');
+  return `
+    <section class="case-anchor" aria-label="The cast in this case">
+      <span class="anchor-eyebrow">${d['cases.anchor.label'] || 'In this case:'}</span>
+      <ul class="anchor-chips">${chips}</ul>
+    </section>`;
 }
 
 function renderCaseStrip() {
@@ -623,6 +705,7 @@ function renderCases() {
             ${notesHTML}
           </section>
           <section class="case-right">
+            ${castAnchorRowHTML(i, d)}
             <section class="case-block">
               <header class="endings-head">
                 <span class="eyebrow">${d['cases.examples'] || 'In the wild'}</span>
@@ -722,6 +805,7 @@ function renderPairs() {
 
 function renderAll() {
   renderCaseStrip();
+  renderCast();
   renderCases();
   renderIDecl();
   renderWrinkles();

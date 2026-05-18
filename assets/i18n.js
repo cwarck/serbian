@@ -75,6 +75,17 @@ window.I18N = {
     'cases.number.pl': 'Pl',
     'cases.same': 'same as',
 
+    'cases.cast.eyebrow': 'Meet the cast',
+    'cases.cast.title.line1': 'One word,',
+    'cases.cast.title.em': 'seven shapes.',
+    'cases.cast.intro': 'Three nouns — one masculine, one feminine, one neuter — walk through all seven cases. The stem stays put; the ending does the work. Tap any form to see it in context.',
+    'cases.cast.label.m': 'Masc.',
+    'cases.cast.label.f': 'Fem.',
+    'cases.cast.label.n': 'Neut.',
+    'cases.cast.hint': 'Swipe across to see all seven forms →',
+
+    'cases.anchor.label': 'In this case:',
+
     'cases.extra.eyebrow': 'A second class',
     'cases.extra.title.line1': 'Feminines',
     'cases.extra.title.em': 'without -a.',
@@ -204,6 +215,17 @@ window.I18N = {
     'cases.number.sg': 'Ед.',
     'cases.number.pl': 'Мн.',
     'cases.same': 'как у',
+
+    'cases.cast.eyebrow': 'Знакомьтесь — труппа',
+    'cases.cast.title.line1': 'Одно слово,',
+    'cases.cast.title.em': 'семь форм.',
+    'cases.cast.intro': 'Три существительных — мужского, женского и среднего рода — проходят по всем семи падежам. Основа не двигается; работает окончание. Нажми на любую форму, чтобы увидеть её в примере.',
+    'cases.cast.label.m': 'Муж.',
+    'cases.cast.label.f': 'Жен.',
+    'cases.cast.label.n': 'Ср.',
+    'cases.cast.hint': 'Проведи пальцем, чтобы увидеть все семь форм →',
+
+    'cases.anchor.label': 'В этом падеже:',
 
     'cases.extra.eyebrow': 'Второй класс',
     'cases.extra.title.line1': 'Женский род',
