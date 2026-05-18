@@ -120,7 +120,8 @@ window.I18N = {
     'cases.pairs.eyebrow': 'Mirrored prepositions',
     'cases.pairs.title.line1': 'Reverse pairs,',
     'cases.pairs.title.em': 'across cases.',
-    'cases.pairs.intro': 'Some prepositions come in couples — one going out, one going in. They take different cases on each side, because they describe different ends of the same motion.',
+    'cases.pairs.intro': 'Some prepositions take a <strong>different case for different meaning</strong>. The clearest demonstration that case isn\'t just decoration — it changes what a sentence says.',
+    'cases.pairs.featured.eyebrow': 'The sharpest pair',
 
     'cases.wrinkles.eyebrow': 'Tucked-away rules',
     'cases.wrinkles.title.line1': 'Wrinkles',
@@ -286,7 +287,8 @@ window.I18N = {
     'cases.pairs.eyebrow': 'Зеркальные предлоги',
     'cases.pairs.title.line1': 'Парные предлоги',
     'cases.pairs.title.em': 'между падежами.',
-    'cases.pairs.intro': 'Некоторые предлоги ходят парами — один наружу, второй внутрь. На каждой стороне свой падеж, потому что описываются разные концы одного движения.',
+    'cases.pairs.intro': 'Один и тот же предлог в разных падежах — <strong>разный смысл</strong>. Самое наглядное доказательство того, что падеж в сербском — не просто украшение, он меняет смысл фразы.',
+    'cases.pairs.featured.eyebrow': 'Самая важная пара',
 
     'cases.wrinkles.eyebrow': 'Спрятанные правила',
     'cases.wrinkles.title.line1': 'Шероховатости,',

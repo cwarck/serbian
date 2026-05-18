@@ -462,6 +462,15 @@ const WRINKLES = [
 ];
 
 const PAIRS = [
+  { a:{p:'u', case:'AKU', en:'into (motion)',  ru:'в (куда; движение)'},
+    b:{p:'u', case:'LOK', en:'in (location)',  ru:'в (где; статично)'},
+    en:'Same preposition, different case, different meaning. <em>Idem u grad</em> — I\'m going to the city. <em>Živim u gradu</em> — I live in the city.',
+    ru:'Один предлог, разный падеж, разный смысл. <em>Idem u grad</em> — еду в город. <em>Živim u gradu</em> — живу в городе.',
+    featured: true },
+  { a:{p:'na', case:'AKU', en:'onto (motion)', ru:'на (куда; движение)'},
+    b:{p:'na', case:'LOK', en:'on (location)', ru:'на (где; статично)'},
+    en:'Surfaces work the same way. <em>Stavi na sto</em> — put it on the table. <em>Knjiga je na stolu</em> — the book is on the table.',
+    ru:'То же самое для поверхностей. <em>Stavi na sto</em> — поставь на стол. <em>Knjiga je na stolu</em> — книга на столе.' },
   { a:{p:'iz', case:'GEN', en:'out of',      ru:'из (откуда)'},
     b:{p:'u',  case:'AKU', en:'into',         ru:'в (куда)'},
     en:'Source and destination of motion inside something.',
@@ -943,24 +952,31 @@ function renderPairs() {
   const ul = document.getElementById('pairList');
   if (!ul) return;
   const lang = currentLang();
-  ul.innerHTML = PAIRS.map(pair => `
-    <li class="pair">
-      <div class="pair-row">
-        <div class="pair-side">
-          <span class="pair-prep">${pair.a.p}</span>
-          <span class="pair-case">${pair.a.case}</span>
-          <span class="pair-gloss">${pair.a[lang] || pair.a.en}</span>
+  const d = dict();
+  ul.innerHTML = PAIRS.map(pair => {
+    const eyebrow = pair.featured
+      ? `<span class="pair-eyebrow">${d['cases.pairs.featured.eyebrow'] || ''}</span>`
+      : '';
+    return `
+      <li class="pair${pair.featured ? ' pair-featured' : ''}"
+          ${pair.featured ? `data-tone-a="${pair.a.case.toLowerCase()}" data-tone-b="${pair.b.case.toLowerCase()}"` : ''}>
+        ${eyebrow}
+        <div class="pair-row">
+          <div class="pair-side" data-tone="${pair.a.case.toLowerCase()}">
+            <span class="pair-prep">${pair.a.p}</span>
+            <span class="pair-case">${pair.a.case}</span>
+            <span class="pair-gloss">${pair.a[lang] || pair.a.en}</span>
+          </div>
+          <span class="pair-arrow" aria-hidden="true">↔</span>
+          <div class="pair-side" data-tone="${pair.b.case.toLowerCase()}">
+            <span class="pair-prep">${pair.b.p}</span>
+            <span class="pair-case">${pair.b.case}</span>
+            <span class="pair-gloss">${pair.b[lang] || pair.b.en}</span>
+          </div>
         </div>
-        <span class="pair-arrow" aria-hidden="true">↔</span>
-        <div class="pair-side">
-          <span class="pair-prep">${pair.b.p}</span>
-          <span class="pair-case">${pair.b.case}</span>
-          <span class="pair-gloss">${pair.b[lang] || pair.b.en}</span>
-        </div>
-      </div>
-      <p class="pair-note">${pair[lang] || pair.en}</p>
-    </li>
-  `).join('');
+        <p class="pair-note">${pair[lang] || pair.en}</p>
+      </li>`;
+  }).join('');
 }
 
 function renderAll() {
