@@ -1062,8 +1062,10 @@ function renderAll() {
 function updateStickyOffset() {
   const header = document.querySelector('header.nav');
   const strip  = document.querySelector('.case-strip');
-  const h = (header ? header.offsetHeight : 0) + (strip ? strip.offsetHeight : 0);
-  document.documentElement.style.setProperty('--sticky-offset', h + 'px');
+  const navHeight = header ? header.offsetHeight : 0;
+  const stickyOffset = navHeight + (strip ? strip.offsetHeight : 0);
+  document.documentElement.style.setProperty('--nav-height', navHeight + 'px');
+  document.documentElement.style.setProperty('--sticky-offset', stickyOffset + 'px');
 }
 
 /* Cell popovers — tap any endings cell to see the abstract ending become a

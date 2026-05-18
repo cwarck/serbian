@@ -856,7 +856,7 @@ section { position: relative; }
    ----------------------------------------------------------- */
 .case-strip {
   position: sticky;
-  top: calc(68px + env(safe-area-inset-top));
+  top: var(--nav-height, calc(68px + env(safe-area-inset-top)));
   z-index: 20;
   background: var(--paper);
   border-bottom: 1px solid var(--hairline);
