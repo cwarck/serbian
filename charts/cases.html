@@ -227,10 +227,11 @@ const CASES = [
   {
     key: 'case.3', abbr: 'DAT', tone: 'dat',
     sigEnding: '-u',
+    pluralBannerKey: 'cases.dat.plural.banner',
     endings: {
-      m: { sg: '-u',                pl: '-ima' },
-      f: { sg: { v:'-i', n:'sib-i' }, pl: '-ama' },
-      n: { sg: '-u',                pl: '-ima' },
+      m: { sg: '-u',                pl: { v:'-ima', share:['INS','LOK'] } },
+      f: { sg: { v:'-i', n:'sib-i' }, pl: { v:'-ama', share:['INS','LOK'] } },
+      n: { sg: '-u',                pl: { v:'-ima', share:['INS','LOK'] } },
     },
     notes: {
       'sib-i': {
@@ -337,10 +338,11 @@ const CASES = [
   {
     key: 'case.6', abbr: 'INS', tone: 'ins',
     sigEnding: '-om',
+    pluralBannerKey: 'cases.ins.plural.banner',
     endings: {
-      m: { sg: { v:'-om', n:'soft-em' }, pl: '-ima' },
-      f: { sg: '-om',                     pl: '-ama' },
-      n: { sg: { v:'-om', n:'soft-em' }, pl: '-ima' },
+      m: { sg: { v:'-om', n:'soft-em' }, pl: { v:'-ima', share:['DAT','LOK'] } },
+      f: { sg: '-om',                     pl: { v:'-ama', share:['DAT','LOK'] } },
+      n: { sg: { v:'-om', n:'soft-em' }, pl: { v:'-ima', share:['DAT','LOK'] } },
     },
     notes: {
       'soft-em': {
@@ -660,6 +662,20 @@ function renderBirdsEye() {
 /* Convert a cell entry into HTML for the endings table.
    Always renders a `.cell` element — a button when tappable, a span when
    empty. Footnote IDs are appended to the case-id so anchors don't collide. */
+function buildSharePills(entry) {
+  const targets = [];
+  if (entry && entry.same) targets.push(entry.same);
+  if (entry && Array.isArray(entry.share)) targets.push(...entry.share);
+  if (targets.length === 0) return '';
+  const pills = targets.map(t => `
+    <span class="cell-share" data-target="${t}">
+      <span class="share-dot" data-tone="${t.toLowerCase()}" aria-hidden="true"></span>
+      <span class="share-label">${t}</span>
+    </span>
+  `).join('');
+  return `<span class="cell-shares" aria-label="shared with">${pills}</span>`;
+}
+
 function cellHTML(entry, gender, caseId, caseIdx, number) {
   if (entry == null) return '<span class="cell cell-empty"><span class="end">—</span></span>';
   const data = `data-cell-trigger data-case-idx="${caseIdx}" data-gender="${gender}" data-number="${number}"`;
@@ -697,9 +713,9 @@ function cellHTML(entry, gender, caseId, caseIdx, number) {
     const tail = sharedNote ? noteMark(sharedNote, 1) : '';
     return `<button type="button" class="cell cell-alt" ${data}>${ends}${tail}</button>`;
   }
-  const same = entry.same ? `<span class="cell-same">= ${entry.same}</span>` : '';
-  const note = entry.n    ? noteMark(entry.n, 1) : '';
-  return `<button type="button" class="cell" ${data}><span class="end">${entry.v}${note}</span>${same}</button>`;
+  const pills = buildSharePills(entry);
+  const note = entry.n ? noteMark(entry.n, 1) : '';
+  return `<button type="button" class="cell" ${data}><span class="end">${entry.v}${note}</span>${pills}</button>`;
 }
 
 function renderCases() {
@@ -735,6 +751,10 @@ function renderCases() {
           <strong>${uniformSame}</strong>.
         </p>`;
     }
+    /* Additional plural-row banner (DAT/INS announce -ima/-ama syncretism). */
+    const pluralBannerHTML = (c.pluralBannerKey && d[c.pluralBannerKey])
+      ? `<p class="endings-banner endings-banner-custom endings-banner-plural">${d[c.pluralBannerKey]}</p>`
+      : '';
 
     const cellHTMLClean = (entry, gender, number) => {
       if (uniformSame && entry && typeof entry === 'object' && !entry.split) {
@@ -819,6 +839,7 @@ function renderCases() {
               <span class="eyebrow">${d['cases.endings'] || 'Endings'}</span>
             </header>
             ${bannerHTML}
+            ${pluralBannerHTML}
             <table>
               <thead>
                 <tr>

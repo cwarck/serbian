@@ -83,6 +83,10 @@ window.I18N = {
     'cases.aku.banner': '<strong>The Accusative steals.</strong> For masculine singular: <em>alive</em> things take the Genitive ending; <em>non-living</em> things take the Nominative. Two endings you already know — no new shape to learn.',
     'cases.aku.label.alive': 'alive',
     'cases.aku.label.thing': 'thing',
+
+    'cases.dat.plural.banner': '<strong>Plural shape, shared three ways.</strong> The plural endings (<em>-ima</em>, <em>-ama</em>, <em>-ima</em>) are also the plural endings of <em>INS</em> and <em>LOK</em>. Learn this row once, recognize it three times.',
+    'cases.ins.plural.banner': '<strong>Plural shape, shared three ways.</strong> The plural endings (<em>-ima</em>, <em>-ama</em>, <em>-ima</em>) are also the plural endings of <em>DAT</em> and <em>LOK</em>. Same row, three different cases.',
+    'cases.cell.share.label': 'same as',
     'cases.endings': 'Endings',
     'cases.endings.banner': 'Endings: same as',
     'cases.examples': 'In the wild',
@@ -245,6 +249,10 @@ window.I18N = {
     'cases.aku.banner': '<strong>Винительный — заимствует.</strong> В мужском роде единственного числа: <em>одушевлённые</em> берут окончание Родительного, <em>неодушевлённые</em> — Именительного. Никаких новых окончаний — оба уже знакомы.',
     'cases.aku.label.alive': 'живое',
     'cases.aku.label.thing': 'вещь',
+
+    'cases.dat.plural.banner': '<strong>Множественное — общее на три падежа.</strong> Окончания мн. ч. (<em>-ima</em>, <em>-ama</em>, <em>-ima</em>) совпадают с окончаниями <em>INS</em> и <em>LOK</em>. Выучил один ряд — узнаёшь его в трёх местах.',
+    'cases.ins.plural.banner': '<strong>Множественное — общее на три падежа.</strong> Окончания мн. ч. (<em>-ima</em>, <em>-ama</em>, <em>-ima</em>) совпадают с окончаниями <em>DAT</em> и <em>LOK</em>. Один ряд — три разных падежа.',
+    'cases.cell.share.label': 'как у',
     'cases.endings': 'Окончания',
     'cases.endings.banner': 'Окончания: как у',
     'cases.examples': 'В живой речи',
