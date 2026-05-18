@@ -194,7 +194,7 @@ const CASES = [
       }
     },
     examples: [
-      { sr:'<mark>Dobar profesor</mark> čita knjigu.', en:'A good professor reads a book.', ru:'Хороший профессор читает книгу.' },
+      { sr:'<mark>Dobar pilot</mark> proverava instrumente.', en:'A good pilot checks the instruments.', ru:'Хороший пилот проверяет приборы.' },
       { sr:'<mark>Žena</mark> peva.',                   en:'The woman sings.',               ru:'Женщина поёт.' },
       { sr:'<mark>Selo</mark> je tiho.',                en:'The village is quiet.',          ru:'Деревня тихая.' },
     ],
@@ -211,7 +211,7 @@ const CASES = [
     },
     notes: {},
     examples: [
-      { sr:'Knjiga <mark>profesora</mark>.',     en:'The professor\'s book.',       ru:'Книга профессора.' },
+      { sr:'Kaciga <mark>pilota</mark>.',        en:'The pilot\'s helmet.',         ru:'Шлем пилота.' },
       { sr:'Stižem iz <mark>grada</mark>.',       en:'I\'m arriving from the city.', ru:'Я приезжаю из города.' },
       { sr:'Nemam <mark>vremena</mark>.',         en:'I have no time.',              ru:'У меня нет времени.' },
     ],
@@ -248,7 +248,7 @@ const CASES = [
       }
     },
     examples: [
-      { sr:'Dajem knjigu <mark>profesoru</mark>.', en:'I give the book to the professor.', ru:'Я даю книгу профессору.' },
+      { sr:'Pokazujem kartu <mark>pilotu</mark>.', en:'I show the map to the pilot.',      ru:'Я показываю карту пилоту.' },
       { sr:'Idem k <mark>moru</mark>.',             en:'I\'m going to the sea.',            ru:'Я еду к морю.' },
       { sr:'Pomažem <mark>prijateljici</mark>.',    en:'I\'m helping a friend (f.).',       ru:'Я помогаю подруге.' },
     ],
@@ -280,11 +280,11 @@ const CASES = [
         titleRu: 'Одушевлённые против всего остального',
         bodyEn: 'In the masculine singular only, the accusative splits by whether the noun is alive. Living things (people, animals) take -a — the same shape as the genitive. Inanimate things take -∅ — the nominative form, unchanged. So you reuse two endings you already know.',
         bodyRu: 'Только в мужском роде единственного числа винительный делится по одушевлённости. У живых (люди, животные) окончание -a — точно как в родительном. У неодушевлённых — -∅, как в именительном. То есть переиспользуются уже знакомые окончания.',
-        pairs: [['profesor','profesora'],['grad','grad']]
+        pairs: [['pilot','pilota'],['grad','grad']]
       }
     },
     examples: [
-      { sr:'Vidim <mark>profesora</mark>.', en:'I see the professor. <em>(living → -a, like Gen)</em>', ru:'Я вижу профессора. <em>(одуш. → -a, как Род.)</em>' },
+      { sr:'Vidim <mark>pilota</mark>.',    en:'I see the pilot. <em>(living → -a, like Gen)</em>',     ru:'Я вижу пилота. <em>(одуш. → -a, как Род.)</em>' },
       { sr:'Vidim <mark>grad</mark>.',       en:'I see the city. <em>(non-living → -∅, like Nom)</em>', ru:'Я вижу город. <em>(неодуш. → -∅, как Им.)</em>' },
       { sr:'Idem u <mark>grad</mark>.',      en:'I\'m going to the city. <em>(motion: u + Acc)</em>',  ru:'Я еду в город. <em>(движение: u + Acc)</em>' },
     ],
@@ -333,7 +333,7 @@ const CASES = [
       }
     },
     examples: [
-      { sr:'<mark>Profesore</mark>, dobar dan!', en:'Professor, hello!',         ru:'Профессор, добрый день!' },
+      { sr:'<mark>Pilote</mark>, dobar dan!',    en:'Pilot, hello!',             ru:'Пилот, добрый день!' },
       { sr:'<mark>Marija</mark>, gde si?',         en:'Marija, where are you?',    ru:'Мария, ты где?' },
       { sr:'O, <mark>prijatelju</mark>!',         en:'Oh, my friend!',            ru:'О, друг мой!' },
     ],
@@ -360,7 +360,7 @@ const CASES = [
     },
     examples: [
       { sr:'Putujem <mark>autobusom</mark>.',  en:'I\'m traveling by bus.',     ru:'Я еду на автобусе.' },
-      { sr:'Idem sa <mark>profesorom</mark>.', en:'I go with the professor.',   ru:'Я иду с профессором.' },
+      { sr:'Letim sa <mark>pilotom</mark>.',    en:'I\'m flying with the pilot.', ru:'Я лечу с пилотом.' },
       { sr:'<mark>Ponedeljkom</mark> radim.',  en:'On Mondays I work. <em>(recurring time)</em>', ru:'По понедельникам я работаю. <em>(регулярное время)</em>' },
     ],
     preps: [
@@ -392,7 +392,7 @@ const CASES = [
     },
     examples: [
       { sr:'Knjiga je na <mark>stolu</mark>.',      en:'The book is on the table. <em>(location)</em>',         ru:'Книга на столе. <em>(где)</em>' },
-      { sr:'Govorim o <mark>profesoru</mark>.',     en:'I\'m speaking about the professor. <em>(topic)</em>',   ru:'Я говорю о профессоре. <em>(о чём)</em>' },
+      { sr:'Govorim o <mark>pilotu</mark>.',        en:'I\'m speaking about the pilot. <em>(topic)</em>',       ru:'Я говорю о пилоте. <em>(о чём)</em>' },
       { sr:'Živim u <mark>Beogradu</mark>.',         en:'I live in Belgrade. <em>(location: u + Loc, no motion)</em>', ru:'Я живу в Белграде. <em>(где: u + Loc, без движения)</em>' },
     ],
     preps: [
@@ -495,10 +495,10 @@ const PAIRS = [
    Picked for full regularity: no fleeting-a, no -ov- infix, no sibilant
    softening (ženi is straight -i, not the ruka→ruci shift). */
 const CAST = [
-  { gender: 'm', word: 'profesor',
+  { gender: 'm', word: 'pilot',
     forms: {
-      sg: ['profesor','profesora','profesoru','profesora','profesore','profesorom','profesoru'],
-      pl: ['profesori','profesora','profesorima','profesore','profesori','profesorima','profesorima'],
+      sg: ['pilot','pilota','pilotu','pilota','pilote','pilotom','pilotu'],
+      pl: ['piloti','pilota','pilotima','pilote','piloti','pilotima','pilotima'],
     } },
   { gender: 'f', word: 'žena',
     forms: {
@@ -517,11 +517,11 @@ const CAST = [
    Each entry: { caseAbbr:gender:number → [{labelKey?, from, to}, ...] } */
 const VARIANT_EXAMPLES = {
   'AKU:m:sg': [
-    { labelKey:'cases.aku.label.alive', from:'profesor', to:'profesora' },
+    { labelKey:'cases.aku.label.alive', from:'pilot',    to:'pilota'    },
     { labelKey:'cases.aku.label.thing', from:'grad',     to:'grad'      },
   ],
   'VOK:m:sg': [
-    { from:'profesor',  to:'profesore'  },
+    { from:'pilot',     to:'pilote'     },
     { from:'prijatelj', to:'prijatelju' },
   ],
 };

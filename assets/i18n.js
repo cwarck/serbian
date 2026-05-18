@@ -73,7 +73,7 @@ window.I18N = {
     'cases.birdseye.tag.lok': 'where',
     'cases.birdseye.flow': 'who → whose → to whom → what → hey, you → with what → where',
 
-    'cases.gender.intro': '<strong>How to tell a noun\'s gender</strong> — ends in <em>-a</em>, it\'s feminine (<em>žena</em>); ends in a consonant, masculine (<em>profesor</em>); ends in <em>-o</em> or <em>-e</em>, neuter (<em>selo</em>).',
+    'cases.gender.intro': '<strong>How to tell a noun\'s gender</strong> — ends in <em>-a</em>, it\'s feminine (<em>žena</em>); ends in a consonant, masculine (<em>pilot</em>); ends in <em>-o</em> or <em>-e</em>, neuter (<em>selo</em>).',
     'cases.legend.zero': '<strong>About <em>-∅</em></strong> — this symbol means <em>no ending</em>: the word stands in its bare form.',
     'cases.reassurance': '<strong>One last thing</strong> — Serbians will understand you even if your endings wobble. Cases sharpen your speech; they don\'t gatekeep it.',
 
@@ -254,7 +254,7 @@ window.I18N = {
     'cases.birdseye.tag.lok': 'где',
     'cases.birdseye.flow': 'кто → чьё → кому → что → эй, ты → чем → где',
 
-    'cases.gender.intro': '<strong>Как определить род существительного</strong> — оканчивается на <em>-a</em> — женский (<em>žena</em>); на согласный — мужской (<em>profesor</em>); на <em>-o</em> или <em>-e</em> — средний (<em>selo</em>).',
+    'cases.gender.intro': '<strong>Как определить род существительного</strong> — оканчивается на <em>-a</em> — женский (<em>žena</em>); на согласный — мужской (<em>pilot</em>); на <em>-o</em> или <em>-e</em> — средний (<em>selo</em>).',
     'cases.legend.zero': '<strong>О символе <em>-∅</em></strong> — это значит, что окончания нет: слово стоит в голой форме.',
     'cases.reassurance': '<strong>Напоследок</strong> — сербы поймут тебя, даже если окончания «плывут». Падежи нужны для точности, а не как пропуск к разговору.',
 
