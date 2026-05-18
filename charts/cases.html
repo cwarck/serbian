@@ -889,37 +889,17 @@ function renderCases() {
         <p class="bridge-text">${srGrammarHTML(bridgeText)}</p>
       </section>` : '';
 
-    /* Group preps by their `group` field — adjacent entries with the same
-       group share a semantic subheading. Preps without a group fall through
-       as a single unlabeled bucket, preserving the old flat-list layout. */
-    const groupedPreps = [];
-    let lastGroup = '__none__';
-    c.preps.forEach(pr => {
-      const g = pr.group || '';
-      if (g !== lastGroup) {
-        groupedPreps.push({ group: g, items: [] });
-        lastGroup = g;
-      }
-      groupedPreps[groupedPreps.length - 1].items.push(pr);
-    });
     const noPrepText = d['cases.preps.none.' + c.tone] || d['cases.preps.none'] || '';
     const prepHTML = c.preps.length === 0
       ? `<p class="preps-empty">${noPrepText}</p>`
       : `
         <dl class="prep-list">
-          ${groupedPreps.map(bucket => {
-            const label = bucket.group ? (d['cases.prep.group.' + bucket.group] || '') : '';
-            const header = label
-              ? `<div class="prep-group-head"><span class="prep-group-label">${label}</span></div>`
-              : '';
-            const rows = bucket.items.map(pr => `
-              <div class="prep-row">
-                <dt class="prep-word">${srText(pr.p)}</dt>
-                <dd class="prep-mean">${pr[lang] || pr.en}</dd>
-              </div>
-            `).join('');
-            return header + rows;
-          }).join('')}
+          ${c.preps.map(pr => `
+            <div class="prep-row">
+              <dt class="prep-word">${srText(pr.p)}</dt>
+              <dd class="prep-mean">${pr[lang] || pr.en}</dd>
+            </div>
+          `).join('')}
         </dl>
       `;
 
