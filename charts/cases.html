@@ -544,6 +544,15 @@ function srEmHTML(html) {
 function srStrongHTML(html) {
   return String(html).replace(/<strong>(.*?)<\/strong>/g, (_, inner) => `<strong>${srHTML(inner)}</strong>`);
 }
+function srGrammarHTML(html) {
+  const tokenPattern = /(?:k, g, h|c, z, s|č, ž, š|c, ć, č, đ, dž, j, lj, nj, š, ž|-ima\/-ama|-ima|-ama|-om|-em|-ov-|-ev-|-iju|-i|-e|-u|-a|\bod\b|\biz\b|\bkod\b|\bMarko\b|\bProfesore\b|\bbrate\b)/g;
+  return String(html)
+    .split(/(<[^>]+>|&[^;\s]+;)/g)
+    .map(part => (part.startsWith('<') || part.startsWith('&'))
+      ? part
+      : part.replace(tokenPattern, token => srText(token)))
+    .join('');
+}
 
 function caseAnchor(key) { return key.replace(/\./g,'-'); }
 
@@ -801,7 +810,7 @@ function renderCases() {
     const uniformSame = sameTargets.every(t => t && t === sameTargets[0]) ? sameTargets[0] : null;
     let bannerHTML = '';
     if (c.bannerKey && d[c.bannerKey]) {
-      bannerHTML = `<p class="endings-banner endings-banner-custom">${d[c.bannerKey]}</p>`;
+      bannerHTML = `<p class="endings-banner endings-banner-custom">${srGrammarHTML(d[c.bannerKey])}</p>`;
     } else if (uniformSame) {
       bannerHTML = `
         <p class="endings-banner">
@@ -811,7 +820,7 @@ function renderCases() {
     }
     /* Additional plural-row banner (DAT/INS announce -ima/-ama syncretism). */
     const pluralBannerHTML = (c.pluralBannerKey && d[c.pluralBannerKey])
-      ? `<p class="endings-banner endings-banner-custom endings-banner-plural">${d[c.pluralBannerKey]}</p>`
+      ? `<p class="endings-banner endings-banner-custom endings-banner-plural">${srGrammarHTML(d[c.pluralBannerKey])}</p>`
       : '';
 
     const cellHTMLClean = (entry, gender, number) => {
@@ -839,8 +848,8 @@ function renderCases() {
         </header>
         <div class="notes-list">
           ${noteEntries.map(([id, note]) => {
-            const title = lang === 'ru' ? note.titleRu : note.titleEn;
-            const body  = lang === 'ru' ? note.bodyRu  : note.bodyEn;
+            const title = srGrammarHTML(lang === 'ru' ? note.titleRu : note.titleEn);
+            const body  = srGrammarHTML(lang === 'ru' ? note.bodyRu  : note.bodyEn);
             const pairs = (note.pairs || []).map(p => {
               const hl = diffHL(p[0], p[1]);
               return `
@@ -877,7 +886,7 @@ function renderCases() {
     const bridgeHTML = bridgeText ? `
       <section class="case-bridge" aria-label="${d['cases.bridge.title'] || 'If you know Russian'}">
         <span class="bridge-eyebrow">${d['cases.bridge.title'] || ''}</span>
-        <p class="bridge-text">${bridgeText}</p>
+        <p class="bridge-text">${srGrammarHTML(bridgeText)}</p>
       </section>` : '';
 
     /* Group preps by their `group` field — adjacent entries with the same
