@@ -1715,6 +1715,41 @@ a.cast-cell-head:hover .cast-abbr { color: var(--ink); }
 }
 
 /* -----------------------------------------------------------
+   Per-card RU bridge — surfaces deltas for Russian speakers.
+   Only rendered when the dict has the entry (RU mode only).
+   ----------------------------------------------------------- */
+.case-bridge {
+  display: grid;
+  gap: .35rem;
+  padding: 1rem 1.1rem;
+  background: color-mix(in oklab, var(--tone, var(--accent)) 6%, transparent);
+  border-left: 2px solid var(--tone, var(--accent));
+  border-radius: 0 2px 2px 0;
+}
+.bridge-eyebrow {
+  font-family: var(--ff-mono);
+  font-size: .72rem;
+  font-weight: 500;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--tone, var(--accent));
+  line-height: 1;
+}
+.bridge-text {
+  font-family: var(--ff-body);
+  font-style: italic;
+  font-size: clamp(.95rem, .88rem + .2vw, 1.1rem);
+  line-height: 1.55;
+  color: var(--ink-soft);
+  margin: 0;
+}
+.bridge-text em {
+  font-style: italic;
+  color: var(--ink);
+  font-weight: 500;
+}
+
+/* -----------------------------------------------------------
    Anchor row inside each case card — the trio in this case's form.
    ----------------------------------------------------------- */
 .case-anchor {
