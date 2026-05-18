@@ -1,4 +1,4 @@
-/* Atlas Srpski — language + theme + reveal.
+/* Atlas Srpski — language + theme.
    Pure DOM, no framework, no build. Persist choices to localStorage. */
 
 (function () {
@@ -71,25 +71,6 @@
     applyTheme(next);
   }
 
-  /* ---------- reveal on scroll ---------- */
-
-  function setupReveal() {
-    const els = document.querySelectorAll('.reveal');
-    if (!('IntersectionObserver' in window) || els.length === 0) {
-      els.forEach((el) => el.classList.add('in'));
-      return;
-    }
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((e) => {
-        if (e.isIntersecting) {
-          e.target.classList.add('in');
-          io.unobserve(e.target);
-        }
-      });
-    }, { rootMargin: '0px 0px -10% 0px', threshold: .08 });
-    els.forEach((el) => io.observe(el));
-  }
-
   /* ---------- init ---------- */
 
   function init() {
@@ -114,8 +95,6 @@
     document.querySelectorAll('[data-theme-toggle]').forEach((btn) => {
       btn.addEventListener('click', toggleTheme);
     });
-
-    setupReveal();
   }
 
   // Run after DOM ready, but also after i18n.js has populated window.I18N.
