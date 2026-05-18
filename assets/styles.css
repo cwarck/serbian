@@ -1256,6 +1256,149 @@ section { position: relative; }
 }
 
 /* -----------------------------------------------------------
+   Bird's-eye opener — the system at a glance, before the deep dive.
+   Mobile: vertical list of 7 rows (abbr | tag); ≥720px: 7-col grid.
+   ----------------------------------------------------------- */
+.cases-birdseye {
+  padding-block: clamp(1.8rem, 4.5vw, 3rem);
+  border-bottom: 1px solid var(--hairline);
+}
+.birdseye-head {
+  margin-bottom: 1.3rem;
+  max-width: 64ch;
+}
+.birdseye-flow {
+  font-family: var(--ff-mono);
+  font-size: clamp(.78rem, .72rem + .15vw, .88rem);
+  letter-spacing: .08em;
+  color: var(--ink-muted);
+  margin: .6rem 0 0;
+  line-height: 1.6;
+}
+
+.birdseye-grid {
+  list-style: none;
+  margin: 0; padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  border-top: 1px solid var(--hairline);
+  border-left: 1px solid var(--hairline);
+}
+.birdseye-tile {
+  position: relative;
+  border-right: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+  background: var(--paper);
+  transition: background .25s;
+}
+.birdseye-tile::before {
+  content: "";
+  position: absolute;
+  top: 0; bottom: 0; left: 0;
+  width: 3px;
+  background: var(--tone, var(--accent));
+}
+.birdseye-tile a {
+  display: grid;
+  grid-template-columns: 4.4rem 1fr;
+  align-items: center;
+  gap: 1rem;
+  padding: .85rem 1rem .85rem 1.15rem;
+  min-height: 56px;
+  text-decoration: none;
+  color: inherit;
+}
+.birdseye-tile:hover { background: color-mix(in oklab, var(--tone, var(--accent)) 7%, transparent); }
+.birdseye-tile a:focus-visible {
+  outline: 1px dashed var(--tone, var(--accent));
+  outline-offset: -3px;
+}
+.bird-abbr {
+  font-family: var(--ff-mono);
+  font-size: .82rem;
+  font-weight: 500;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--tone, var(--accent));
+  line-height: 1;
+}
+.bird-tag {
+  font-family: var(--ff-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.05rem, .95rem + .3vw, 1.25rem);
+  color: var(--ink);
+  letter-spacing: -.005em;
+  line-height: 1.1;
+}
+
+@media (min-width: 720px) {
+  .birdseye-grid {
+    grid-template-columns: repeat(7, 1fr);
+  }
+  .birdseye-tile a {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    justify-items: start;
+    gap: .4rem;
+    padding: 1rem .9rem 1.15rem 1.15rem;
+    min-height: 76px;
+  }
+}
+
+.birdseye-meta {
+  display: grid;
+  margin-top: 1.6rem;
+  padding-top: 1.4rem;
+  border-top: 1px dashed var(--hairline-soft);
+}
+.meta-line {
+  font-family: var(--ff-body);
+  font-size: clamp(.95rem, .88rem + .2vw, 1.1rem);
+  line-height: 1.55;
+  color: var(--ink-soft);
+  padding: .55rem 0;
+  border-bottom: 1px dashed var(--hairline-soft);
+  margin: 0;
+}
+.meta-line:last-child { border-bottom: 0; }
+.meta-line strong {
+  font-family: var(--ff-mono);
+  font-weight: 500;
+  font-size: .8em;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-right: .35rem;
+}
+.meta-line em {
+  font-family: var(--ff-display);
+  font-style: italic;
+  color: var(--accent);
+  font-size: 1.05em;
+}
+
+/* -----------------------------------------------------------
+   Closing disclaimers (script note, stress note)
+   ----------------------------------------------------------- */
+.cases-disclaimers {
+  padding-block: clamp(1.6rem, 4vw, 2.5rem);
+  border-top: 1px solid var(--hairline-soft);
+  display: grid;
+  gap: .35rem;
+  max-width: var(--max-w);
+}
+.disclaimer {
+  font-family: var(--ff-body);
+  font-style: italic;
+  font-size: clamp(.85rem, .8rem + .15vw, .98rem);
+  color: var(--ink-faint);
+  line-height: 1.55;
+  margin: 0;
+  max-width: 64ch;
+}
+
+/* -----------------------------------------------------------
    Meet the cast — three nouns through all seven cases.
    Mobile-first: horizontal scroll with sticky gender column.
    ----------------------------------------------------------- */

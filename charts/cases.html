@@ -54,7 +54,20 @@
     <p class="subtitle" data-i18n="cases.subtitle">Chart 02 · Padeži</p>
   </div>
   <div class="reveal" style="transition-delay:.15s">
-    <p class="intro" data-i18n="cases.intro">A Serbian noun changes its ending to show its job in a sentence. There are seven such jobs — seven cases. Each comes with a question word, a typical set of prepositions, and a feel.</p>
+    <p class="intro" data-i18n="cases.intro">In English, <em>the dog bit the man</em> and <em>the man bit the dog</em> mean different things because of word order. Serbian glues a tiny tag onto each noun so word order can dance — the tag tells you who did what. Those tags are the seven cases.</p>
+  </div>
+</section>
+
+<section class="cases-birdseye shell" aria-label="System map">
+  <header class="birdseye-head reveal">
+    <span class="eyebrow" data-i18n="cases.birdseye.eyebrow">The story arc of a sentence</span>
+    <p class="birdseye-flow" data-i18n="cases.birdseye.flow">who → whose → to whom → what → hey, you → with what → where</p>
+  </header>
+  <ol class="birdseye-grid reveal" id="birdsEyeGrid"></ol>
+  <div class="birdseye-meta reveal" style="transition-delay:.1s">
+    <p class="meta-line" data-i18n="cases.gender.intro"></p>
+    <p class="meta-line" data-i18n="cases.legend.zero"></p>
+    <p class="meta-line" data-i18n="cases.reassurance"></p>
   </div>
 </section>
 
@@ -120,6 +133,11 @@
     </section>
 
   </div>
+</section>
+
+<section class="cases-disclaimers shell reveal" aria-label="Notes">
+  <p class="disclaimer" data-i18n="cases.script.note"></p>
+  <p class="disclaimer" data-i18n="cases.stress.note"></p>
 </section>
 
 <footer class="foot shell">
@@ -552,6 +570,20 @@ function renderCaseStrip() {
   `).join('');
 }
 
+function renderBirdsEye() {
+  const grid = document.getElementById('birdsEyeGrid');
+  if (!grid) return;
+  const d = dict();
+  grid.innerHTML = CASES.map(c => `
+    <li class="birdseye-tile" data-tone="${c.tone}">
+      <a href="#${caseAnchor(c.key)}">
+        <span class="bird-abbr">${c.abbr}</span>
+        <span class="bird-tag">${d['cases.birdseye.tag.' + c.tone] || ''}</span>
+      </a>
+    </li>
+  `).join('');
+}
+
 /* Convert a cell entry into HTML for the endings table.
    Always renders a `.cell` element. Footnote IDs are appended to the case-id
    so anchors don't collide between cards. */
@@ -805,6 +837,7 @@ function renderPairs() {
 
 function renderAll() {
   renderCaseStrip();
+  renderBirdsEye();
   renderCast();
   renderCases();
   renderIDecl();
