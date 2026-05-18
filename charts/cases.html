@@ -550,7 +550,36 @@ function renderCast() {
   const root = document.getElementById('castScroll');
   if (!root) return;
   const d = dict();
-  const headRow = `
+  const genderLabel = cast =>
+    d['cases.cast.label.' + cast.gender] || cast.gender.toUpperCase();
+
+  const mobileHeadRow = `
+    <div class="cast-row cast-row-head" role="row">
+      <span class="cast-cell cast-cell-head" role="rowheader"></span>
+      ${CAST.map(cast => `
+        <span class="cast-cell cast-cell-head cast-gender-head" role="columnheader">${genderLabel(cast)}</span>
+      `).join('')}
+    </div>`;
+  const mobileRows = CASES.map((c, i) => {
+    const cells = CAST.map(cast => {
+      const base = cast.forms.sg[0];
+      const form = cast.forms.sg[i];
+      const hl = i === 0 ? cast.word : diffHL(base, form).to;
+      return `
+        <a class="cast-cell" data-tone="${c.tone}" href="#${caseAnchor(c.key)}" aria-label="${c.abbr}, ${genderLabel(cast)}: ${form}">
+          <span class="cast-form">${hl}</span>
+        </a>`;
+    }).join('');
+    return `
+      <div class="cast-row" data-tone="${c.tone}" role="row">
+        <a class="cast-cell cast-case" data-tone="${c.tone}" role="rowheader" href="#${caseAnchor(c.key)}">
+          <span class="cast-abbr">${c.abbr}</span>
+        </a>
+        ${cells}
+      </div>`;
+  }).join('');
+
+  const wideHeadRow = `
     <div class="cast-row cast-row-head" role="row">
       <span class="cast-cell cast-cell-head" role="rowheader"></span>
       ${CASES.map(c => `
@@ -559,7 +588,7 @@ function renderCast() {
         </a>
       `).join('')}
     </div>`;
-  const bodyRows = CAST.map(cast => {
+  const wideRows = CAST.map(cast => {
     const cells = cast.forms.sg.map((form, i) => {
       const c = CASES[i];
       const base = cast.forms.sg[0];
@@ -572,11 +601,13 @@ function renderCast() {
     }).join('');
     return `
       <div class="cast-row" data-gender="${cast.gender}" role="row">
-        <span class="cast-cell cast-gender" role="rowheader">${d['cases.cast.label.' + cast.gender] || cast.gender.toUpperCase()}</span>
+        <span class="cast-cell cast-gender" role="rowheader">${genderLabel(cast)}</span>
         ${cells}
       </div>`;
   }).join('');
-  root.innerHTML = headRow + bodyRows;
+  root.innerHTML = `
+    <div class="cast-table cast-mobile" role="table" aria-label="Three nouns declined through seven cases">${mobileHeadRow}${mobileRows}</div>
+    <div class="cast-table cast-wide" role="table" aria-label="Three nouns declined through seven cases">${wideHeadRow}${wideRows}</div>`;
 }
 
 /* Three-chip anchor row inside each card — same trio, this case's form. */

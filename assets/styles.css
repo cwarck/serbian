@@ -1600,7 +1600,7 @@ button.cell:focus-visible {
 
 /* -----------------------------------------------------------
    Meet the cast — three nouns through all seven cases.
-   Mobile-first: horizontal scroll with sticky gender column.
+   Mobile-first: transposed so all genders stay visible.
    ----------------------------------------------------------- */
 .case-cast {
   padding: clamp(1.5rem, 4vw, 2.5rem) 0 clamp(2rem, 5vw, 3rem);
@@ -1633,23 +1633,25 @@ button.cell:focus-visible {
   position: relative;
 }
 .cast-scroll {
-  overflow-x: auto;
+  overflow-x: visible;
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
-  scroll-snap-type: x proximity;
   scrollbar-width: thin;
   border: 1px solid var(--hairline);
   background: color-mix(in oklab, var(--paper) 96%, transparent);
+}
+.cast-table {
   display: grid;
   grid-auto-rows: auto;
 }
+.cast-wide { display: none; }
 .cast-scroll:focus-visible {
   outline: 1px dashed var(--accent);
   outline-offset: 3px;
 }
 .cast-row {
   display: grid;
-  grid-template-columns: 4.4rem repeat(7, minmax(5rem, 1fr));
+  grid-template-columns: 3.75rem repeat(3, minmax(0, 1fr));
   align-items: stretch;
   border-bottom: 1px solid var(--hairline-soft);
 }
@@ -1660,13 +1662,13 @@ button.cell:focus-visible {
 }
 .cast-cell {
   display: flex; align-items: center; justify-content: flex-start;
-  padding: .85rem .75rem;
+  padding: .76rem .45rem;
   border-right: 1px solid var(--hairline-soft);
-  min-height: 56px;
+  min-height: 54px;
   text-decoration: none;
   color: inherit;
-  scroll-snap-align: start;
   transition: background .2s;
+  min-width: 0;
 }
 .cast-cell:last-child { border-right: 0; }
 a.cast-cell:hover { background: color-mix(in oklab, var(--tone, var(--accent)) 10%, transparent); }
@@ -1675,15 +1677,14 @@ a.cast-cell:focus-visible {
   outline-offset: -3px;
 }
 .cast-cell-head {
-  padding: .65rem .75rem;
+  padding: .65rem .45rem;
   min-height: 44px;
   align-items: center;
 }
 .cast-gender,
+.cast-case,
+.cast-gender-head,
 .cast-row-head .cast-cell-head:first-child {
-  position: sticky;
-  left: 0;
-  z-index: 2;
   background: var(--paper-deep);
   font-family: var(--ff-mono);
   font-size: .72rem;
@@ -1694,8 +1695,12 @@ a.cast-cell:focus-visible {
   border-right: 1px solid var(--hairline);
   justify-content: center;
 }
-.cast-row:not(.cast-row-head) .cast-gender {
-  background: color-mix(in oklab, var(--paper-deep) 70%, transparent);
+.cast-case {
+  color: var(--tone, var(--accent));
+  text-decoration: none;
+}
+.cast-gender-head {
+  background: var(--paper-deep);
 }
 .cast-abbr {
   font-family: var(--ff-mono);
@@ -1710,11 +1715,13 @@ a.cast-cell-head:hover .cast-abbr { color: var(--ink); }
   font-family: var(--ff-display);
   font-style: italic;
   font-weight: 300;
-  font-size: clamp(1.05rem, .9rem + .45vw, 1.35rem);
+  font-size: clamp(.94rem, .86rem + .3vw, 1.35rem);
   color: var(--ink);
   letter-spacing: -.005em;
   line-height: 1.1;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .cast-cell .lit {
   font-style: italic;
@@ -1725,6 +1732,7 @@ a.cast-cell-head:hover .cast-abbr { color: var(--ink); }
   border-radius: 2px;
 }
 .cast-hint {
+  display: none;
   font-family: var(--ff-mono);
   font-size: .72rem;
   letter-spacing: .12em;
@@ -1734,8 +1742,33 @@ a.cast-cell-head:hover .cast-abbr { color: var(--ink); }
   font-style: normal;
 }
 @media (min-width: 720px) {
+  .cast-scroll {
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+  }
+  .cast-mobile { display: none; }
+  .cast-wide { display: grid; }
   .cast-row { grid-template-columns: 5rem repeat(7, 1fr); }
-  .cast-cell { min-height: 64px; }
+  .cast-cell {
+    padding: .85rem .75rem;
+    min-height: 64px;
+    scroll-snap-align: start;
+  }
+  .cast-cell-head { padding: .65rem .75rem; }
+  .cast-gender,
+  .cast-wide .cast-row-head .cast-cell-head:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 2;
+  }
+  .cast-wide .cast-row:not(.cast-row-head) .cast-gender {
+    background: color-mix(in oklab, var(--paper-deep) 70%, transparent);
+  }
+  .cast-form {
+    font-size: clamp(1.05rem, .9rem + .45vw, 1.35rem);
+    overflow: visible;
+    text-overflow: clip;
+  }
   .cast-hint { display: none; }
 }
 @media (min-width: 980px) {
