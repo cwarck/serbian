@@ -79,6 +79,10 @@ window.I18N = {
 
     'cases.script.note': 'Serbian is written in both Cyrillic and Latin. This chart uses Latin for legibility; everything works the same in Cyrillic.',
     'cases.stress.note': 'Stress and pitch shift with some cases — that\'s its own story, not covered here.',
+
+    'cases.aku.banner': '<strong>The Accusative steals.</strong> For masculine singular: <em>alive</em> things take the Genitive ending; <em>non-living</em> things take the Nominative. Two endings you already know — no new shape to learn.',
+    'cases.aku.label.alive': 'alive',
+    'cases.aku.label.thing': 'thing',
     'cases.endings': 'Endings',
     'cases.endings.banner': 'Endings: same as',
     'cases.examples': 'In the wild',
@@ -237,6 +241,10 @@ window.I18N = {
 
     'cases.script.note': 'Сербский пишут и кириллицей, и латиницей. Здесь — латиница, для читаемости с экрана; в кириллице всё работает так же.',
     'cases.stress.note': 'Ударение и тон в некоторых падежах сдвигаются — это отдельная история, здесь её нет.',
+
+    'cases.aku.banner': '<strong>Винительный — заимствует.</strong> В мужском роде единственного числа: <em>одушевлённые</em> берут окончание Родительного, <em>неодушевлённые</em> — Именительного. Никаких новых окончаний — оба уже знакомы.',
+    'cases.aku.label.alive': 'живое',
+    'cases.aku.label.thing': 'вещь',
     'cases.endings': 'Окончания',
     'cases.endings.banner': 'Окончания: как у',
     'cases.examples': 'В живой речи',

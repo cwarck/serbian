@@ -987,6 +987,31 @@ section { position: relative; }
   color: var(--tone, var(--accent));
   margin-left: .25em;
 }
+/* Custom banner (e.g., Accusative animacy) carries its own copy and emphasis,
+   so it shouldn't inherit the "same as X" mono-cap treatment. */
+.endings-banner-custom {
+  font-style: normal;
+  color: var(--ink-soft);
+  padding: .75rem 1rem;
+  font-size: clamp(1rem, .92rem + .25vw, 1.15rem);
+  line-height: 1.5;
+}
+.endings-banner-custom strong {
+  font-family: var(--ff-display);
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: -.005em;
+  text-transform: none;
+  font-size: 1em;
+  color: var(--ink);
+  margin-left: 0;
+}
+.endings-banner-custom em {
+  font-family: var(--ff-display);
+  font-style: italic;
+  color: var(--tone, var(--accent));
+  font-weight: 500;
+}
 
 .endings table {
   width: 100%;
@@ -1088,6 +1113,29 @@ section { position: relative; }
   color: var(--ink-faint);
   line-height: 1;
   margin: 0 .15em;
+}
+/* Labeled alternation: a vertical stack like "alive: -a / thing: -∅",
+   where the label sits to the left of each ending so the rule reads inline. */
+.cell-alt-labeled {
+  flex-direction: column;
+  align-items: stretch;
+  gap: .4rem;
+}
+.cell-alt-labeled .end-row {
+  display: flex;
+  align-items: baseline;
+  gap: .55rem;
+}
+.cell-label {
+  font-family: var(--ff-mono);
+  font-size: .68rem;
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  line-height: 1;
+  min-width: 3.1rem;
+  flex: 0 0 auto;
 }
 @media (max-width: 520px) {
   .endings th, .endings td { padding: .65rem .55rem; }

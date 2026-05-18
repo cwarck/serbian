@@ -249,11 +249,12 @@ const CASES = [
   {
     key: 'case.4', abbr: 'AKU', tone: 'aku',
     sigEnding: '-a / -∅',
+    bannerKey: 'cases.aku.banner',
     endings: {
       m: {
         sg: { split: [
-          { v:'-a', n:'animacy' },
-          { v:'-∅', n:'animacy' },
+          { v:'-a', n:'animacy', labelKey:'cases.aku.label.alive' },
+          { v:'-∅', n:'animacy', labelKey:'cases.aku.label.thing' },
         ] },
         pl: '-e'
       },
@@ -601,6 +602,21 @@ function cellHTML(entry, gender, caseId) {
        so the cell reads `-a / -∅¹` rather than `-a¹ / -∅¹`. */
     const sharedNote = variants.every(s => s.n && s.n === variants[0].n)
       ? variants[0].n : null;
+    const hasLabels = variants.some(s => s.labelKey);
+    if (hasLabels) {
+      const d = dict();
+      const rows = variants.map((s, idx) => {
+        const label = s.labelKey ? (d[s.labelKey] || '') : '';
+        const m = !sharedNote && s.n ? noteMark(s.n, idx + 1) : '';
+        return `
+          <span class="end-row">
+            <span class="cell-label">${label}</span>
+            <span class="end">${s.v}${m}</span>
+          </span>`;
+      }).join('');
+      const tail = sharedNote ? noteMark(sharedNote, 1) : '';
+      return `<span class="cell cell-alt cell-alt-labeled">${rows}${tail}</span>`;
+    }
     const ends = variants.map((s, idx) => {
       const m = !sharedNote && s.n ? noteMark(s.n, idx + 1) : '';
       return `<span class="end">${s.v}${m}</span>`;
@@ -628,17 +644,24 @@ function renderCases() {
 
     /* If every singular and plural cell points to the same case via `same`,
        hoist that into a one-line banner above the table and strip the
-       per-cell labels — clears the visual noise (notably the Locative). */
+       per-cell labels — clears the visual noise (notably the Locative).
+       A case can also declare a custom banner via `bannerKey` (e.g., AKU
+       animacy), which takes precedence. */
     const allCells = ['sg','pl'].flatMap(n => ['m','f','n'].map(g => c.endings[g][n]));
     const sameTargets = allCells.map(cell =>
       (cell && typeof cell === 'object' && !cell.split) ? cell.same : null
     );
     const uniformSame = sameTargets.every(t => t && t === sameTargets[0]) ? sameTargets[0] : null;
-    const bannerHTML = uniformSame ? `
-      <p class="endings-banner">
-        ${d['cases.endings.banner'] || 'Endings: same as'}
-        <strong>${uniformSame}</strong>.
-      </p>` : '';
+    let bannerHTML = '';
+    if (c.bannerKey && d[c.bannerKey]) {
+      bannerHTML = `<p class="endings-banner endings-banner-custom">${d[c.bannerKey]}</p>`;
+    } else if (uniformSame) {
+      bannerHTML = `
+        <p class="endings-banner">
+          ${d['cases.endings.banner'] || 'Endings: same as'}
+          <strong>${uniformSame}</strong>.
+        </p>`;
+    }
 
     const cellHTMLClean = (entry, gender) => {
       if (uniformSame && entry && typeof entry === 'object' && !entry.split) {
