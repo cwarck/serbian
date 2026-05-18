@@ -644,9 +644,10 @@ function popoverHTML(caseIdx, gender, number) {
 function renderCaseStrip() {
   const list = document.getElementById('caseStripList');
   if (!list) return;
+  list.setAttribute('role', 'tablist');
   list.innerHTML = CASES.map((c, i) => `
-    <li class="case-strip-cell" data-tone="${c.tone}">
-      <a href="#${caseAnchor(c.key)}">
+    <li class="case-strip-cell" data-tone="${c.tone}" role="presentation">
+      <a href="#${caseAnchor(c.key)}" role="tab" aria-selected="false" aria-controls="${caseAnchor(c.key)}">
         <span class="strip-abbr">${c.abbr}</span>
         <span class="strip-name">${tCases(c.key + '.name')}</span>
       </a>
@@ -866,7 +867,7 @@ function renderCases() {
       `;
 
     return `
-      <article class="case" id="${caseId}" data-tone="${c.tone}">
+      <article class="case" id="${caseId}" data-tone="${c.tone}" role="tabpanel" tabindex="-1">
         <header class="case-head">
           <span class="case-tag">${c.abbr}</span>
           <h3>${name}<em title="${d['cases.local.tooltip'] || ''}">${local}</em></h3>
@@ -1086,37 +1087,69 @@ function updateStickyOffset() {
   document.addEventListener('langchange', close);
 })();
 
-/* Scrollspy — colour the strip cell whose case is currently in view. */
-let spyObserver = null;
-function setupSpy() {
-  if (!('IntersectionObserver' in window)) return;
-  if (spyObserver) { spyObserver.disconnect(); spyObserver = null; }
-  const cases = document.querySelectorAll('.case');
-  if (!cases.length) return;
-  const cells = new Map();
-  document.querySelectorAll('.case-strip-cell a').forEach(a => {
-    const href = a.getAttribute('href') || '';
-    if (href.startsWith('#')) cells.set(href.slice(1), a.parentElement);
-  });
-  spyObserver = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (!e.isIntersecting) return;
-      const cell = cells.get(e.target.id);
-      if (!cell) return;
-      document.querySelectorAll('.case-strip-cell.is-current')
-        .forEach(c => c.classList.remove('is-current'));
-      cell.classList.add('is-current');
-    });
-  }, { rootMargin: '-30% 0px -55% 0px', threshold: 0 });
-  cases.forEach(c => spyObserver.observe(c));
+/* Tabs — only one case article is visible at a time. The case-strip is the
+   tab bar; bird's-eye tiles, "Meet the cast" cells, and any `#case-N` link
+   also switch tabs. Footnote anchors (`#case-2-n-sib-i`) keep default behaviour. */
+function activeCaseFromHash() {
+  const h = (location.hash || '').replace(/^#/, '');
+  const idx = CASES.findIndex(c => caseAnchor(c.key) === h);
+  return idx >= 0 ? idx : 0;
 }
 
-document.addEventListener('langchange', () => { renderAll(); updateStickyOffset(); setupSpy(); });
+function showCase(idx, { scroll = false, smooth = true, updateHash = true } = {}) {
+  if (idx < 0 || idx >= CASES.length) idx = 0;
+  const targetId = caseAnchor(CASES[idx].key);
+  document.querySelectorAll('#caseList .case').forEach(el => {
+    el.classList.toggle('is-active', el.id === targetId);
+  });
+  document.querySelectorAll('.case-strip-cell').forEach(cell => {
+    const a = cell.querySelector('a');
+    const match = !!a && a.getAttribute('href') === '#' + targetId;
+    cell.classList.toggle('is-current', match);
+    if (a) a.setAttribute('aria-selected', match ? 'true' : 'false');
+  });
+  if (updateHash && location.hash !== '#' + targetId) {
+    history.pushState(null, '', '#' + targetId);
+  }
+  if (scroll) {
+    const el = document.getElementById(targetId);
+    if (el) {
+      const off = parseInt(getComputedStyle(document.documentElement)
+        .getPropertyValue('--sticky-offset')) || 0;
+      const top = el.getBoundingClientRect().top + window.scrollY - off - 12;
+      window.scrollTo({ top, behavior: smooth ? 'smooth' : 'auto' });
+    }
+  }
+}
+
+function setupTabs() {
+  document.addEventListener('click', (e) => {
+    if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    const a = e.target.closest('a');
+    if (!a) return;
+    const m = (a.getAttribute('href') || '').match(/^#(case-\d+)$/);
+    if (!m) return;
+    const idx = CASES.findIndex(c => caseAnchor(c.key) === m[1]);
+    if (idx < 0) return;
+    e.preventDefault();
+    showCase(idx, { scroll: true });
+  });
+  window.addEventListener('popstate', () => {
+    showCase(activeCaseFromHash(), { updateHash: false, scroll: true });
+  });
+}
+
+document.addEventListener('langchange', () => {
+  renderAll();
+  updateStickyOffset();
+  showCase(activeCaseFromHash(), { updateHash: false });
+});
 window.addEventListener('resize', updateStickyOffset);
 window.addEventListener('load', updateStickyOffset);
 renderAll();
 updateStickyOffset();
-setupSpy();
+setupTabs();
+showCase(activeCaseFromHash(), { scroll: !!location.hash, smooth: false, updateHash: false });
 </script>
 <script src="../assets/app.js"></script>
 </body>

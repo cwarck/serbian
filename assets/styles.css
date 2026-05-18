@@ -964,8 +964,19 @@ section { position: relative; }
   transition: opacity .4s;
 }
 .case:target::before { opacity: .85; }
+.case-list .case { display: none; }
+.case-list .case.is-active {
+  display: grid;
+  animation: caseTabFade .22s cubic-bezier(.2,.7,.2,1) both;
+}
+.case-list .case.is-active::before { opacity: .85; }
+@keyframes caseTabFade {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: none; }
+}
 @media (min-width: 980px) {
   .case { grid-template-columns: minmax(280px, 26%) 1fr; gap: 4rem; }
+  .case-list .case.is-active { grid-template-columns: minmax(280px, 26%) 1fr; }
 }
 
 .case-head { position: relative; }
