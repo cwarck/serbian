@@ -844,8 +844,9 @@ function renderCases() {
       }
       groupedPreps[groupedPreps.length - 1].items.push(pr);
     });
+    const noPrepText = d['cases.preps.none.' + c.tone] || d['cases.preps.none'] || '';
     const prepHTML = c.preps.length === 0
-      ? `<p class="preps-empty">${d['cases.preps.none'] || ''}</p>`
+      ? `<p class="preps-empty">${noPrepText}</p>`
       : `
         <dl class="prep-list">
           ${groupedPreps.map(bucket => {
@@ -868,7 +869,7 @@ function renderCases() {
       <article class="case" id="${caseId}" data-tone="${c.tone}">
         <header class="case-head">
           <span class="case-tag">${c.abbr}</span>
-          <h3>${name}<em>${local}</em></h3>
+          <h3>${name}<em title="${d['cases.local.tooltip'] || ''}">${local}</em></h3>
           <p class="tagline">${tagline}</p>
           <p class="q">${q}</p>
         </header>

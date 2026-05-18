@@ -1390,9 +1390,14 @@ button.cell:focus-visible {
 .preps-empty {
   font-family: var(--ff-body);
   font-style: italic;
-  color: var(--ink-faint);
+  color: var(--ink-soft);
   margin: 0;
+  padding: 1rem 1.1rem;
+  border-left: 2px solid var(--tone, var(--accent));
+  background: color-mix(in oklab, var(--tone, var(--accent)) 6%, transparent);
   font-size: clamp(.98rem, .9rem + .2vw, 1.1rem);
+  line-height: 1.5;
+  max-width: 48ch;
 }
 
 .prep-list {
