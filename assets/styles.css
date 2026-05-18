@@ -1401,6 +1401,20 @@ button.cell:focus-visible {
   gap: 0;
   margin: 0;
 }
+.prep-group-head {
+  padding: .85rem 0 .35rem;
+  border-bottom: 1px dashed var(--hairline-soft);
+}
+.prep-group-head:first-child { padding-top: 0; }
+.prep-group-label {
+  font-family: var(--ff-mono);
+  font-size: .68rem;
+  font-weight: 500;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--tone, var(--ink-muted));
+  display: inline-block;
+}
 .prep-row {
   display: grid;
   grid-template-columns: minmax(4.5rem, auto) 1fr;
