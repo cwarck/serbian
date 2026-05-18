@@ -28,7 +28,6 @@ Then open <http://localhost:8000>.
 
 ```
 index.html        # landing page
-typography.html   # type specimen
 charts/           # individual chart pages
 assets/           # styles, i18n, app js
 ```
