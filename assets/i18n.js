@@ -77,7 +77,7 @@ window.I18N = {
     'cases.legend.zero': '<strong>About <em>-∅</em></strong> — this symbol means <em>no ending</em>: the word stands in its bare form.',
     'cases.reassurance': '<strong>One last thing</strong> — Serbians will understand you even if your endings wobble. Cases sharpen your speech; they don\'t gatekeep it.',
 
-    'cases.script.note': 'Serbian is written in both Cyrillic and Latin. This chart uses Latin for legibility; everything works the same in Cyrillic.',
+    'cases.script.note': 'Serbian is written in both Cyrillic and Latin. Use the script toggle in the navbar to switch examples, endings, and prepositions.',
     'cases.stress.note': 'Stress and pitch shift with some cases — that\'s its own story, not covered here.',
 
     'cases.aku.banner': '<strong>The Accusative steals.</strong> For masculine singular: <em>alive</em> things take the Genitive ending; <em>non-living</em> things take the Nominative. Two endings you already know — no new shape to learn.',
@@ -258,7 +258,7 @@ window.I18N = {
     'cases.legend.zero': '<strong>О символе <em>-∅</em></strong> — это значит, что окончания нет: слово стоит в голой форме.',
     'cases.reassurance': '<strong>Напоследок</strong> — сербы поймут тебя, даже если окончания «плывут». Падежи нужны для точности, а не как пропуск к разговору.',
 
-    'cases.script.note': 'Сербский пишут и кириллицей, и латиницей. Здесь — латиница, для читаемости с экрана; в кириллице всё работает так же.',
+    'cases.script.note': 'Сербский пишется кириллицей и латиницей. Переключатель письма в навигации меняет примеры, окончания и предлоги.',
     'cases.stress.note': 'Ударение и тон в некоторых падежах сдвигаются — это отдельная история, здесь её нет.',
 
     'cases.aku.banner': '<strong>Винительный — заимствует.</strong> В мужском роде единственного числа: <em>одушевлённые</em> берут окончание Родительного, <em>неодушевлённые</em> — Именительного. Никаких новых окончаний — оба уже знакомы.',

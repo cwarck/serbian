@@ -169,6 +169,14 @@ section { position: relative; }
 .chip[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
 .chip:hover { color: var(--ink); }
 .chip[aria-pressed="true"]:hover { color: var(--paper); }
+.script-chip {
+  min-width: 2.45rem;
+  padding-inline: .8rem;
+  font-family: var(--ff-display);
+  font-size: 1.02rem;
+  letter-spacing: 0;
+  text-transform: none;
+}
 
 .theme-btn {
   width: 44px; height: 44px;
@@ -186,12 +194,32 @@ section { position: relative; }
 :root[data-theme="dark"] .theme-btn .moon,
 :root:not([data-theme="light"]) .theme-btn .moon { display: block; }
 
+@media (max-width: 560px) {
+  .nav-inner { gap: .75rem; }
+  .brand span[data-i18n="nav.brand"] { display: none; }
+  .brand-mark { font-size: 1.35rem; }
+}
+
 @media (max-width: 420px) {
   .nav-inner { gap: .5rem; }
   .nav-actions { gap: .4rem; }
   .chip { padding: .55rem .7rem; }
+  .script-chip {
+    min-width: 2rem;
+    padding-inline: .52rem;
+    font-size: .98rem;
+  }
   .theme-btn { width: 38px; height: 38px; }
   .theme-btn svg { width: 15px; height: 15px; }
+}
+
+@media (max-width: 360px) {
+  .nav-inner { padding-block: .85rem; }
+  .nav-actions { gap: .3rem; }
+  .nav-controls { gap: .15rem; padding: 2px; }
+  .chip { padding: .48rem .58rem; }
+  .script-chip { min-width: 1.85rem; padding-inline: .42rem; }
+  .theme-btn { width: 34px; height: 34px; }
 }
 
 /* -----------------------------------------------------------

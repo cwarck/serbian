@@ -32,6 +32,10 @@
         <button class="chip" data-lang-chip="en" aria-pressed="true">EN</button>
         <button class="chip" data-lang-chip="ru" aria-pressed="false">RU</button>
       </div>
+      <div class="nav-controls script-controls" role="group" aria-label="Serbian script">
+        <button class="chip script-chip" data-script-chip="lat" aria-pressed="true" aria-label="Use Latin script">Ć</button>
+        <button class="chip script-chip" data-script-chip="cyr" aria-pressed="false" aria-label="Use Cyrillic script">Ћ</button>
+      </div>
       <button class="theme-btn" data-theme-toggle aria-label="Toggle theme" data-i18n-attr="aria-label:nav.theme">
         <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
         <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"></path></svg>
@@ -157,6 +161,7 @@
 </footer>
 
 <script src="../assets/i18n.js"></script>
+<script src="../assets/app.js"></script>
 
 <script>
 /* Cases — data is structural; UI text comes from window.I18N per case key.
@@ -527,6 +532,18 @@ function dict() {
 }
 function tCases(key) { return dict()[key] || ''; }
 function currentLang() { return document.documentElement.getAttribute('lang') || 'en'; }
+function srText(text) {
+  return window.AtlasSrpski ? window.AtlasSrpski.sr(text) : String(text);
+}
+function srHTML(html) {
+  return window.AtlasSrpski ? window.AtlasSrpski.srHTML(html) : String(html);
+}
+function srEmHTML(html) {
+  return String(html).replace(/<em>(.*?)<\/em>/g, (_, inner) => `<em>${srHTML(inner)}</em>`);
+}
+function srStrongHTML(html) {
+  return String(html).replace(/<strong>(.*?)<\/strong>/g, (_, inner) => `<strong>${srHTML(inner)}</strong>`);
+}
 
 function caseAnchor(key) { return key.replace(/\./g,'-'); }
 
@@ -566,8 +583,8 @@ function renderCast() {
       const form = cast.forms.sg[i];
       const hl = i === 0 ? cast.word : diffHL(base, form).to;
       return `
-        <a class="cast-cell" data-tone="${c.tone}" href="#${caseAnchor(c.key)}" aria-label="${c.abbr}, ${genderLabel(cast)}: ${form}">
-          <span class="cast-form">${hl}</span>
+        <a class="cast-cell" data-tone="${c.tone}" href="#${caseAnchor(c.key)}" aria-label="${c.abbr}, ${genderLabel(cast)}: ${srText(form)}">
+          <span class="cast-form">${srHTML(hl)}</span>
         </a>`;
     }).join('');
     return `
@@ -594,8 +611,8 @@ function renderCast() {
       const base = cast.forms.sg[0];
       const hl = i === 0 ? cast.word : diffHL(base, form).to;
       return `
-        <a class="cast-cell" data-tone="${c.tone}" href="#${caseAnchor(c.key)}" aria-label="${c.abbr}: ${form}">
-          <span class="cast-form">${hl}</span>
+        <a class="cast-cell" data-tone="${c.tone}" href="#${caseAnchor(c.key)}" aria-label="${c.abbr}: ${srText(form)}">
+          <span class="cast-form">${srHTML(hl)}</span>
         </a>
       `;
     }).join('');
@@ -620,7 +637,7 @@ function castAnchorRowHTML(caseIndex, d) {
     return `
       <li class="anchor-chip" data-gender="${cast.gender}">
         <span class="anchor-g">${label}</span>
-        <span class="anchor-form">${hl}</span>
+        <span class="anchor-form">${srHTML(hl)}</span>
       </li>`;
   }).join('');
   return `
@@ -659,9 +676,9 @@ function popoverHTML(caseIdx, gender, number) {
     return `
       <div class="pop-pair">
         ${label}
-        <span class="pop-from">${hl.from}</span>
+        <span class="pop-from">${srHTML(hl.from)}</span>
         <span class="pop-arrow" aria-hidden="true">→</span>
-        <span class="pop-to">${hl.to}</span>
+        <span class="pop-to">${srHTML(hl.to)}</span>
       </div>`;
   }).join('');
   return `
@@ -721,7 +738,7 @@ function cellHTML(entry, gender, caseId, caseIdx, number) {
   if (entry == null) return '<span class="cell cell-empty"><span class="end">—</span></span>';
   const data = `data-cell-trigger data-case-idx="${caseIdx}" data-gender="${gender}" data-number="${number}"`;
   if (typeof entry === 'string') {
-    return `<button type="button" class="cell" ${data}><span class="end">${entry}</span></button>`;
+    return `<button type="button" class="cell" ${data}><span class="end">${srText(entry)}</span></button>`;
   }
   const noteMark = (id, num) =>
     `<sup class="cell-note"><a href="#${caseId}-n-${id}" aria-label="see note">${num}</a></sup>`;
@@ -741,7 +758,7 @@ function cellHTML(entry, gender, caseId, caseIdx, number) {
         return `
           <span class="end-row">
             <span class="cell-label">${label}</span>
-            <span class="end">${s.v}${m}</span>
+            <span class="end">${srText(s.v)}${m}</span>
           </span>`;
       }).join('');
       const tail = sharedNote ? noteMark(sharedNote, 1) : '';
@@ -749,14 +766,14 @@ function cellHTML(entry, gender, caseId, caseIdx, number) {
     }
     const ends = variants.map((s, idx) => {
       const m = !sharedNote && s.n ? noteMark(s.n, idx + 1) : '';
-      return `<span class="end">${s.v}${m}</span>`;
+      return `<span class="end">${srText(s.v)}${m}</span>`;
     }).join('<span class="cell-sep" aria-hidden="true">/</span>');
     const tail = sharedNote ? noteMark(sharedNote, 1) : '';
     return `<button type="button" class="cell cell-alt" ${data}>${ends}${tail}</button>`;
   }
   const pills = buildSharePills(entry);
   const note = entry.n ? noteMark(entry.n, 1) : '';
-  return `<button type="button" class="cell" ${data}><span class="end">${entry.v}${note}</span>${pills}</button>`;
+  return `<button type="button" class="cell" ${data}><span class="end">${srText(entry.v)}${note}</span>${pills}</button>`;
 }
 
 function renderCases() {
@@ -768,9 +785,9 @@ function renderCases() {
     const order   = String(i+1).padStart(2,'0');
     const caseId  = caseAnchor(c.key);
     const name    = d[c.key + '.name']    || '';
-    const local   = d[c.key + '.local']   || '';
+    const local   = srText(d[c.key + '.local'] || '');
     const tagline = d[c.key + '.tagline'] || '';
-    const q       = d[c.key + '.q']       || '';
+    const q       = srStrongHTML(d[c.key + '.q'] || '');
 
     /* If every singular and plural cell points to the same case via `same`,
        hoist that into a one-line banner above the table and strip the
@@ -828,9 +845,9 @@ function renderCases() {
               const hl = diffHL(p[0], p[1]);
               return `
                 <li>
-                  <span class="from">${hl.from}</span>
+                  <span class="from">${srHTML(hl.from)}</span>
                   <span class="arrow" aria-hidden="true">→</span>
-                  <span class="to">${hl.to}</span>
+                  <span class="to">${srHTML(hl.to)}</span>
                 </li>
               `;
             }).join('');
@@ -848,7 +865,7 @@ function renderCases() {
 
     const exHTML = c.examples.map(ex => `
       <div class="ex">
-        <div class="sr">${ex.sr}</div>
+        <div class="sr">${srHTML(ex.sr)}</div>
         <div class="tr">${ex[lang] || ex.en}</div>
       </div>
     `).join('');
@@ -888,7 +905,7 @@ function renderCases() {
               : '';
             const rows = bucket.items.map(pr => `
               <div class="prep-row">
-                <dt class="prep-word">${pr.p}</dt>
+                <dt class="prep-word">${srText(pr.p)}</dt>
                 <dd class="prep-mean">${pr[lang] || pr.en}</dd>
               </div>
             `).join('');
@@ -954,8 +971,8 @@ function renderIDecl() {
   const rows = IDECL.cases.map((abbr, i) => `
     <tr>
       <th scope="row" class="num">${abbr}</th>
-      <td><span class="end">${IDECL.sg[i]}</span></td>
-      <td><span class="end">${IDECL.pl[i]}</span></td>
+      <td><span class="end">${srText(IDECL.sg[i])}</span></td>
+      <td><span class="end">${srText(IDECL.pl[i])}</span></td>
     </tr>
   `).join('');
   root.innerHTML = `
@@ -984,9 +1001,9 @@ function renderWrinkles() {
       const hl = diffHL(ex.from, ex.to);
       return `
         <li>
-          <span class="from">${hl.from}</span>
+          <span class="from">${srHTML(hl.from)}</span>
           <span class="arrow" aria-hidden="true">→</span>
-          <span class="to">${hl.to}</span>
+          <span class="to">${srHTML(hl.to)}</span>
           <span class="gloss">${ex[lang] || ex.en}</span>
         </li>
       `;
@@ -1016,18 +1033,18 @@ function renderPairs() {
         ${eyebrow}
         <div class="pair-row">
           <div class="pair-side" data-tone="${pair.a.case.toLowerCase()}">
-            <span class="pair-prep">${pair.a.p}</span>
+            <span class="pair-prep">${srText(pair.a.p)}</span>
             <span class="pair-case">${pair.a.case}</span>
             <span class="pair-gloss">${pair.a[lang] || pair.a.en}</span>
           </div>
           <span class="pair-arrow" aria-hidden="true">↔</span>
           <div class="pair-side" data-tone="${pair.b.case.toLowerCase()}">
-            <span class="pair-prep">${pair.b.p}</span>
+            <span class="pair-prep">${srText(pair.b.p)}</span>
             <span class="pair-case">${pair.b.case}</span>
             <span class="pair-gloss">${pair.b[lang] || pair.b.en}</span>
           </div>
         </div>
-        <p class="pair-note">${pair[lang] || pair.en}</p>
+        <p class="pair-note">${srEmHTML(pair[lang] || pair.en)}</p>
       </li>`;
   }).join('');
 }
@@ -1175,6 +1192,11 @@ document.addEventListener('langchange', () => {
   updateStickyOffset();
   showCase(activeCaseFromHash(), { updateHash: false });
 });
+document.addEventListener('scriptchange', () => {
+  renderAll();
+  updateStickyOffset();
+  showCase(activeCaseFromHash(), { updateHash: false });
+});
 window.addEventListener('resize', updateStickyOffset);
 window.addEventListener('load', updateStickyOffset);
 renderAll();
@@ -1182,6 +1204,5 @@ updateStickyOffset();
 setupTabs();
 showCase(activeCaseFromHash(), { scroll: !!location.hash, smooth: false, updateHash: false });
 </script>
-<script src="../assets/app.js"></script>
 </body>
 </html>
