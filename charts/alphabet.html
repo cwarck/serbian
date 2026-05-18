@@ -208,15 +208,27 @@ function renderAlphabet() {
     pop.dataset.placement = placeAbove ? 'above' : 'below';
   }
 
-  function open(chip) {
-    const idx = +chip.dataset.tipIdx;
-    const L = ALPHABET[idx];
-    if (!L || !L.tip) return;
+  function getTipContent(trigger) {
     const lang = currentLang();
-    if (activeChip && activeChip !== chip) activeChip.setAttribute('aria-expanded','false');
-    activeChip = chip;
-    chip.setAttribute('aria-expanded','true');
-    bodyEl.innerHTML    = L.tip[lang] || L.tip.en;
+    if (trigger.dataset.tipIdx !== undefined) {
+      const L = ALPHABET[+trigger.dataset.tipIdx];
+      return (L && L.tip) ? (L.tip[lang] || L.tip.en) : null;
+    }
+    if (trigger.dataset.tipI18n) {
+      const key = trigger.dataset.tipI18n;
+      const dict = window.I18N || {};
+      return (dict[lang] && dict[lang][key]) || (dict.en && dict.en[key]) || null;
+    }
+    return null;
+  }
+
+  function open(trigger) {
+    const content = getTipContent(trigger);
+    if (!content) return;
+    if (activeChip && activeChip !== trigger) activeChip.setAttribute('aria-expanded','false');
+    activeChip = trigger;
+    trigger.setAttribute('aria-expanded','true');
+    bodyEl.innerHTML = content;
     pop.hidden = false;
     requestAnimationFrame(() => {
       position();
@@ -233,10 +245,10 @@ function renderAlphabet() {
   }
 
   document.addEventListener('click', (e) => {
-    const chip = e.target.closest('.tip-chip');
-    if (chip) {
+    const trigger = e.target.closest('.tip-chip, .hint-link');
+    if (trigger) {
       e.preventDefault();
-      if (activeChip === chip) { close(); } else { open(chip); }
+      if (activeChip === trigger) { close(); } else { open(trigger); }
       return;
     }
     if (!pop.hidden && !pop.contains(e.target)) close();

@@ -675,6 +675,35 @@ section { position: relative; }
 .tip-pop-close:hover { color: var(--ink); background: var(--paper-deep); }
 .tip-pop-close:focus-visible { outline: 1px dashed var(--accent); outline-offset: 2px; }
 
+/* Inline hint — looks like a link, opens a popover */
+.hint-link {
+  display: inline;
+  appearance: none;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  font-style: inherit;
+  color: inherit;
+  cursor: pointer;
+  text-decoration: underline dashed var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: .22em;
+  transition: color .18s ease, text-decoration-style .18s ease, text-decoration-color .18s ease;
+}
+.hint-link:hover,
+.hint-link:focus-visible,
+.hint-link[aria-expanded="true"] {
+  color: var(--accent);
+  text-decoration-style: solid;
+}
+.hint-link:focus-visible {
+  outline: 1px dashed var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
 /* -----------------------------------------------------------
    Cases (declension)
    ----------------------------------------------------------- */
