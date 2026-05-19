@@ -745,8 +745,7 @@ function buildSharePills(entry) {
   if (entry && Array.isArray(entry.share)) targets.push(...entry.share);
   if (targets.length === 0) return '';
   const pills = targets.map(t => `
-    <span class="cell-share" data-target="${t}">
-      <span class="share-dot" data-tone="${t.toLowerCase()}" aria-hidden="true"></span>
+    <span class="cell-share" data-target="${t}" data-tone="${t.toLowerCase()}">
       <span class="share-label">${t}</span>
     </span>
   `).join('');

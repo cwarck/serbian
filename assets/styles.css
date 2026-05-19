@@ -1222,24 +1222,19 @@ button.cell:focus-visible {
 .cell-share {
   display: inline-flex;
   align-items: center;
-  gap: .3rem;
   font-family: var(--ff-mono);
-  font-size: .6rem;
+  font-size: .72rem;
   font-weight: 500;
-  letter-spacing: .14em;
+  letter-spacing: .22em;
   text-transform: uppercase;
-  color: var(--ink-faint);
+  color: var(--tone, var(--accent));
+  background: color-mix(in oklab, var(--tone, var(--accent)) 10%, transparent);
+  padding: .32rem .5rem .31rem .54rem;
   line-height: 1;
   white-space: nowrap;
 }
-.share-dot {
-  width: 7px; height: 7px;
-  border-radius: 50%;
-  background: var(--tone, var(--accent));
-  flex: 0 0 auto;
-}
 .share-label {
-  letter-spacing: .14em;
+  letter-spacing: inherit;
 }
 .cell-note a {
   font-family: var(--ff-mono);
