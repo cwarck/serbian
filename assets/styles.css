@@ -622,8 +622,8 @@ section { position: relative; }
 .letter[data-kind="shared"]::before { background: var(--cool); }
 .letter[data-kind="diff"]::before { background: var(--gold); }
 
-/* Pronunciation tip — small glyph on the card */
-.letter .tip-chip {
+/* Small `?` glyph used by alphabet and case-note popovers */
+.tip-chip {
   display: inline-flex; align-items: center; justify-content: center;
   width: 1.15rem; height: 1.15rem;
   padding: 0;
@@ -637,14 +637,15 @@ section { position: relative; }
   color: var(--ink-muted);
   cursor: pointer;
   transition: color .15s, border-color .15s;
+  vertical-align: baseline;
 }
-.letter .tip-chip:hover,
-.letter .tip-chip:focus-visible,
-.letter .tip-chip[aria-expanded="true"] {
+.tip-chip:hover,
+.tip-chip:focus-visible,
+.tip-chip[aria-expanded="true"] {
   color: var(--ink);
   border-color: var(--ink-muted);
 }
-.letter .tip-chip:focus-visible {
+.tip-chip:focus-visible {
   outline: 1px dashed var(--accent);
   outline-offset: 2px;
 }
@@ -698,79 +699,13 @@ section { position: relative; }
 .tip-pop-close:hover { color: var(--ink); background: var(--paper-deep); }
 .tip-pop-close:focus-visible { outline: 1px dashed var(--accent); outline-offset: 2px; }
 
-/* Cases page — cell popover. Same .tip-pop shell, richer body. */
+/* Cases page — note popover. Same .tip-pop shell, richer body. */
 .case-pop .tip-pop-card {
   border-left: 2px solid var(--tone, var(--accent));
 }
 .case-pop .tip-pop-body {
   display: grid;
-  gap: .65rem;
-}
-.pop-heading {
-  margin: 0;
-  display: flex;
-  align-items: baseline;
-  gap: .6rem;
-  flex-wrap: wrap;
-}
-.pop-abbr {
-  font-family: var(--ff-mono);
-  font-size: .8rem;
-  font-weight: 500;
-  letter-spacing: .22em;
-  text-transform: uppercase;
-  color: var(--tone, var(--accent));
-  line-height: 1;
-}
-.pop-meta {
-  font-family: var(--ff-body);
-  font-style: italic;
-  font-size: .85rem;
-  color: var(--ink-faint);
-  line-height: 1;
-}
-.pop-pairs {
-  display: grid;
-  gap: .55rem;
-}
-.pop-pair {
-  display: flex;
-  align-items: baseline;
-  gap: .55rem;
-  flex-wrap: wrap;
-  font-family: var(--ff-display);
-  font-style: italic;
-  font-weight: 400;
-  font-size: clamp(1.25rem, 1.05rem + .55vw, 1.5rem);
-  color: var(--ink);
-  line-height: 1.2;
-}
-.pop-label {
-  font-family: var(--ff-mono);
-  font-style: normal;
-  font-weight: 500;
-  font-size: .68rem;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-  flex: 0 0 auto;
-  min-width: 3rem;
-  align-self: center;
-}
-.pop-from { color: var(--ink-muted); }
-.pop-arrow {
-  font-family: var(--ff-mono);
-  font-style: normal;
-  font-size: .7em;
-  color: var(--ink-faint);
-}
-.pop-to { color: var(--ink); }
-.pop-pair .lit {
-  font-weight: 600;
-  color: var(--tone, var(--accent));
-  background: color-mix(in oklab, var(--tone, var(--accent)) 14%, transparent);
-  padding: 0 .14em;
-  border-radius: 2px;
+  gap: .7rem;
 }
 
 /* Inline hint — looks like a link, opens a popover */
@@ -1068,19 +1003,16 @@ section { position: relative; }
 }
 
 /* Endings — endings-only table */
-.endings-head,
-.notes-head {
+.endings-head {
   display: block;
   padding-bottom: .85rem;
   margin-bottom: 1.4rem;
   border-bottom: 1px solid var(--hairline);
 }
-.endings-head .eyebrow::before,
-.notes-head .eyebrow::before {
+.endings-head .eyebrow::before {
   display: none;
 }
-.endings-head .eyebrow,
-.notes-head .eyebrow {
+.endings-head .eyebrow {
   gap: 0;
 }
 .endings table {
@@ -1136,24 +1068,6 @@ section { position: relative; }
   align-items: baseline;
   gap: .15rem .55rem;
 }
-/* Tappable cell — entire cell is a popover trigger.
-   Button is reset globally; here we only widen and add hover feedback. */
-button.cell {
-  width: 100%;
-  text-align: left;
-  min-height: 44px;
-  cursor: pointer;
-  transition: background .15s;
-  border-radius: 2px;
-}
-button.cell:hover {
-  background: color-mix(in oklab, var(--tone, var(--accent)) 7%, transparent);
-}
-button.cell:focus-visible {
-  outline: 2px solid var(--tone, var(--accent));
-  outline-offset: -2px;
-}
-.cell.cell-empty { cursor: default; }
 .cell .end {
   font-family: var(--ff-display);
   font-style: normal;
@@ -1162,15 +1076,6 @@ button.cell:focus-visible {
   color: var(--tone, var(--accent));
   line-height: 1;
   letter-spacing: -.01em;
-  white-space: nowrap;
-}
-.cell-same {
-  font-family: var(--ff-mono);
-  font-size: .68rem;
-  font-weight: 500;
-  letter-spacing: .16em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
   white-space: nowrap;
 }
 /* Per-cell syncretism pills — replace the old "= NOM" / "= DAT" text with
@@ -1199,18 +1104,9 @@ button.cell:focus-visible {
 .share-label {
   letter-spacing: inherit;
 }
-.cell-note a {
-  font-family: var(--ff-mono);
-  font-size: .55em;
-  color: var(--ink-muted);
-  margin-left: .12em;
-  text-decoration: none;
-  border-bottom: 1px dotted var(--ink-faint);
-  padding-left: .08em;
-}
-.cell-note a:hover {
-  color: var(--tone, var(--accent));
-  border-bottom-color: var(--tone, var(--accent));
+.cell-note {
+  margin-left: .22rem;
+  transform: translateY(-.2em);
 }
 /* Alternation cell: -a / -∅¹  — qualifier + identity moved to a note. */
 .cell-alt {
@@ -1259,21 +1155,6 @@ button.cell:focus-visible {
   .cell-sep               { font-size: 1.1rem; }
 }
 
-/* Per-case sound-change notes — each rule gets its own block */
-.case-notes {
-  margin-top: 1.8rem;
-  padding: 1.5rem 1.6rem 1.6rem;
-  background: var(--paper-deep);
-  border-left: 2px solid var(--tone, var(--accent));
-}
-
-.notes-list { display: grid; gap: 1.6rem; }
-.note-item {
-  scroll-margin-top: calc(var(--sticky-offset, 120px) + 1rem);
-  padding-top: 1.6rem;
-  border-top: 1px dashed var(--hairline-soft);
-}
-.note-item:first-child { padding-top: 0; border-top: 0; }
 .note-title {
   font-family: var(--ff-display);
   font-style: italic;

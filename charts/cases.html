@@ -433,20 +433,6 @@ const CAST = [
     } },
 ];
 
-/* Overrides for cells that don't follow the cast trio directly — chiefly the
-   AKU and VOK splits, where the rule is ABOUT which subgroup the noun is in.
-   Each entry: { caseAbbr:gender:number → [{labelKey?, from, to}, ...] } */
-const VARIANT_EXAMPLES = {
-  'AKU:m:sg': [
-    { labelKey:'cases.aku.label.alive', from:'pilot',    to:'pilota'    },
-    { labelKey:'cases.aku.label.thing', from:'grad',     to:'grad'      },
-  ],
-  'VOK:m:sg': [
-    { from:'pilot',     to:'pilote'     },
-    { from:'prijatelj', to:'prijatelju' },
-  ],
-};
-
 function dict() {
   const lang = document.documentElement.getAttribute('lang') || 'en';
   return (window.I18N && window.I18N[lang]) || {};
@@ -587,48 +573,6 @@ function castAnchorRowHTML(caseIndex, d) {
     </section>`;
 }
 
-/* Resolve a popover's worth of word-pairs for a given cell.
-   Falls back to the cast trio when no specific override exists.
-   Returns [{ label?, from, to }, ...]. */
-function getCellExamples(caseIdx, gender, number) {
-  const c = CASES[caseIdx];
-  const key = `${c.abbr}:${gender}:${number}`;
-  if (VARIANT_EXAMPLES[key]) return VARIANT_EXAMPLES[key];
-  const cast = CAST.find(x => x.gender === gender);
-  if (!cast) return [];
-  const from = cast.forms.sg[0];
-  const to   = cast.forms[number][caseIdx];
-  return [{ from, to }];
-}
-
-function popoverHTML(caseIdx, gender, number) {
-  const d = dict();
-  const c = CASES[caseIdx];
-  const examples = getCellExamples(caseIdx, gender, number);
-  const caseName = d[c.key + '.name']    || c.abbr;
-  const genderName = d['cases.gender.' + gender] || gender;
-  const numberName = d['cases.number.' + number] || number;
-  const pairs = examples.map(ex => {
-    const hl = diffHL(ex.from, ex.to);
-    const label = ex.labelKey
-      ? `<span class="pop-label">${d[ex.labelKey] || ''}</span>`
-      : '';
-    return `
-      <div class="pop-pair">
-        ${label}
-        <span class="pop-from">${srHTML(hl.from)}</span>
-        <span class="pop-arrow" aria-hidden="true">→</span>
-        <span class="pop-to">${srHTML(hl.to)}</span>
-      </div>`;
-  }).join('');
-  return `
-    <p class="pop-heading" data-tone="${c.tone}">
-      <span class="pop-abbr">${c.abbr}</span>
-      <span class="pop-meta">${caseName} · ${genderName.toLowerCase()} · ${numberName.toLowerCase()}</span>
-    </p>
-    <div class="pop-pairs">${pairs}</div>`;
-}
-
 function renderCaseStrip() {
   const list = document.getElementById('caseStripList');
   if (!list) return;
@@ -643,9 +587,31 @@ function renderCaseStrip() {
   `).join('');
 }
 
-/* Convert a cell entry into HTML for the endings table.
-   Always renders a `.cell` element — a button when tappable, a span when
-   empty. Footnote IDs are appended to the case-id so anchors don't collide. */
+function notePopoverHTML(caseIdx, noteId) {
+  const lang = currentLang();
+  const c = CASES[caseIdx];
+  const note = c && c.notes && c.notes[noteId];
+  if (!note) return '';
+  const title = srGrammarHTML(lang === 'ru' ? note.titleRu : note.titleEn);
+  const body  = srGrammarHTML(lang === 'ru' ? note.bodyRu  : note.bodyEn);
+  const pairs = (note.pairs || []).map(p => {
+    const hl = diffHL(p[0], p[1]);
+    return `
+      <li>
+        <span class="from">${srHTML(hl.from)}</span>
+        <span class="arrow" aria-hidden="true">→</span>
+        <span class="to">${srHTML(hl.to)}</span>
+      </li>`;
+  }).join('');
+  return `
+    <article class="note-pop">
+      <h4 class="note-title">${title}</h4>
+      <p class="note-body">${body}</p>
+      ${pairs ? `<ul class="note-pairs">${pairs}</ul>` : ''}
+    </article>`;
+}
+
+/* Convert a cell entry into HTML for the endings table. */
 function buildSharePills(entry) {
   const targets = [];
   if (entry && entry.same) targets.push(entry.same);
@@ -659,14 +625,18 @@ function buildSharePills(entry) {
   return `<span class="cell-shares" aria-label="shared with">${pills}</span>`;
 }
 
-function cellHTML(entry, gender, caseId, caseIdx, number) {
+function cellHTML(entry, caseIdx) {
   if (entry == null) return '<span class="cell cell-empty"><span class="end">—</span></span>';
-  const data = `data-cell-trigger data-case-idx="${caseIdx}" data-gender="${gender}" data-number="${number}"`;
   if (typeof entry === 'string') {
-    return `<button type="button" class="cell" ${data}><span class="end">${srText(entry)}</span></button>`;
+    return `<span class="cell"><span class="end">${srText(entry)}</span></span>`;
   }
-  const noteMark = (id, num) =>
-    `<sup class="cell-note"><a href="#${caseId}-n-${id}" aria-label="see note">${num}</a></sup>`;
+  const noteMark = (id) => {
+    const c = CASES[caseIdx];
+    const note = c && c.notes && c.notes[id];
+    const lang = currentLang();
+    const title = note ? srGrammarHTML(lang === 'ru' ? note.titleRu : note.titleEn).replace(/<[^>]*>/g, '') : 'see note';
+    return `<button type="button" class="tip-chip cell-note" aria-haspopup="dialog" aria-expanded="false" aria-label="${title}" data-note-trigger data-case-idx="${caseIdx}" data-note-id="${id}">?</button>`;
+  };
 
   if (entry.split) {
     const variants = entry.split;
@@ -679,26 +649,25 @@ function cellHTML(entry, gender, caseId, caseIdx, number) {
       const d = dict();
       const rows = variants.map((s, idx) => {
         const label = s.labelKey ? (d[s.labelKey] || '') : '';
-        const m = !sharedNote && s.n ? noteMark(s.n, idx + 1) : '';
+        const m = sharedNote && idx === variants.length - 1 ? noteMark(sharedNote) : !sharedNote && s.n ? noteMark(s.n) : '';
         return `
           <span class="end-row">
             <span class="cell-label">${label}</span>
             <span class="end">${srText(s.v)}${m}</span>
           </span>`;
       }).join('');
-      const tail = sharedNote ? noteMark(sharedNote, 1) : '';
-      return `<button type="button" class="cell cell-alt cell-alt-labeled" ${data}>${rows}${tail}</button>`;
+      return `<span class="cell cell-alt cell-alt-labeled">${rows}</span>`;
     }
     const ends = variants.map((s, idx) => {
-      const m = !sharedNote && s.n ? noteMark(s.n, idx + 1) : '';
+      const m = !sharedNote && s.n ? noteMark(s.n) : '';
       return `<span class="end">${srText(s.v)}${m}</span>`;
     }).join('<span class="cell-sep" aria-hidden="true">/</span>');
-    const tail = sharedNote ? noteMark(sharedNote, 1) : '';
-    return `<button type="button" class="cell cell-alt" ${data}>${ends}${tail}</button>`;
+    const tail = sharedNote ? noteMark(sharedNote) : '';
+    return `<span class="cell cell-alt">${ends}${tail}</span>`;
   }
   const pills = buildSharePills(entry);
-  const note = entry.n ? noteMark(entry.n, 1) : '';
-  return `<button type="button" class="cell" ${data}><span class="end">${srText(entry.v)}${note}</span>${pills}</button>`;
+  const note = entry.n ? noteMark(entry.n) : '';
+  return `<span class="cell"><span class="end">${srText(entry.v)}${note}</span>${pills}</span>`;
 }
 
 function renderCases() {
@@ -717,43 +686,11 @@ function renderCases() {
     const rowsHTML = ['sg','pl'].map(n => `
       <tr>
         <th scope="row" class="num">${d['cases.number.' + n] || (n === 'sg' ? 'Sg' : 'Pl')}</th>
-        <td>${cellHTML(c.endings.m[n], 'm', caseId, i, n)}</td>
-        <td>${cellHTML(c.endings.f[n], 'f', caseId, i, n)}</td>
-        <td>${cellHTML(c.endings.n[n], 'n', caseId, i, n)}</td>
+        <td>${cellHTML(c.endings.m[n], i)}</td>
+        <td>${cellHTML(c.endings.f[n], i)}</td>
+        <td>${cellHTML(c.endings.n[n], i)}</td>
       </tr>
     `).join('');
-
-    const noteEntries = Object.entries(c.notes || {});
-    const notesHTML = noteEntries.length === 0 ? '' : `
-      <aside class="case-notes" aria-label="${d['cases.notes'] || 'Sound changes'}">
-        <header class="notes-head">
-          <span class="eyebrow">${d['cases.notes'] || 'Sound changes'}</span>
-        </header>
-        <div class="notes-list">
-          ${noteEntries.map(([id, note]) => {
-            const title = srGrammarHTML(lang === 'ru' ? note.titleRu : note.titleEn);
-            const body  = srGrammarHTML(lang === 'ru' ? note.bodyRu  : note.bodyEn);
-            const pairs = (note.pairs || []).map(p => {
-              const hl = diffHL(p[0], p[1]);
-              return `
-                <li>
-                  <span class="from">${srHTML(hl.from)}</span>
-                  <span class="arrow" aria-hidden="true">→</span>
-                  <span class="to">${srHTML(hl.to)}</span>
-                </li>
-              `;
-            }).join('');
-            return `
-              <article class="note-item" id="${caseId}-n-${id}">
-                <h4 class="note-title">${title}</h4>
-                <p class="note-body">${body}</p>
-                ${pairs ? `<ul class="note-pairs">${pairs}</ul>` : ''}
-              </article>
-            `;
-          }).join('')}
-        </div>
-      </aside>
-    `;
 
     const exHTML = c.examples.map(ex => `
       <div class="ex">
@@ -802,7 +739,6 @@ function renderCases() {
               </thead>
               <tbody>${rowsHTML}</tbody>
             </table>
-            ${notesHTML}
           </section>
           <section class="case-right">
             ${castAnchorRowHTML(i, d)}
@@ -953,10 +889,9 @@ function setupCaseStripVisibility() {
   update();
 }
 
-/* Cell popovers — tap any endings cell to see the abstract ending become a
-   concrete word transformation. Reuses the .tip-pop / .tip-pop-card pattern
-   from the alphabet chart. */
-(function setupCellPopover(){
+/* Ending note popovers — same small `?` trigger and popover shell as the
+   alphabet chart. */
+(function setupNotePopover(){
   const pop = document.getElementById('casePop');
   if (!pop) return;
   const bodyEl   = pop.querySelector('#casePopBody');
@@ -984,15 +919,16 @@ function setupCaseStripVisibility() {
 
   function open(trigger) {
     const caseIdx = +trigger.getAttribute('data-case-idx');
-    const gender  = trigger.getAttribute('data-gender');
-    const number  = trigger.getAttribute('data-number');
-    if (isNaN(caseIdx) || !gender || !number) return;
+    const noteId  = trigger.getAttribute('data-note-id');
+    if (isNaN(caseIdx) || !noteId) return;
     const c = CASES[caseIdx];
+    const content = notePopoverHTML(caseIdx, noteId);
+    if (!content) return;
     pop.dataset.tone = c && c.tone || '';
     if (active && active !== trigger) active.setAttribute('aria-expanded','false');
     active = trigger;
     trigger.setAttribute('aria-expanded','true');
-    bodyEl.innerHTML = popoverHTML(caseIdx, gender, number);
+    bodyEl.innerHTML = content;
     pop.hidden = false;
     requestAnimationFrame(() => { position(); pop.classList.add('is-open'); });
   }
@@ -1006,7 +942,7 @@ function setupCaseStripVisibility() {
   }
 
   document.addEventListener('click', (e) => {
-    const trigger = e.target.closest('[data-cell-trigger]');
+    const trigger = e.target.closest('[data-note-trigger]');
     if (trigger) {
       e.preventDefault();
       if (active === trigger) close(); else open(trigger);
@@ -1024,7 +960,7 @@ function setupCaseStripVisibility() {
 
 /* Tabs — only one case article is visible at a time. The case-strip is the
    tab bar; bird's-eye tiles, "Meet the cast" cells, and any `#case-N` link
-   also switch tabs. Footnote anchors (`#case-2-n-sib-i`) keep default behaviour. */
+   also switch tabs. */
 function activeCaseFromHash() {
   const h = (location.hash || '').replace(/^#/, '');
   const idx = CASES.findIndex(c => caseAnchor(c.key) === h);
