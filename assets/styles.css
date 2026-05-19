@@ -469,7 +469,6 @@ section { position: relative; }
   margin-right: .55rem;
 }
 .alph-legend .dot.unique { background: var(--accent); }
-.alph-legend .dot.shared { background: var(--cool); }
 .alph-legend .dot.diff { background: var(--gold); }
 
 .alph-grid {
@@ -566,7 +565,6 @@ section { position: relative; }
   background: var(--hairline);
 }
 .letter[data-kind="unique"]::before { background: var(--accent); }
-.letter[data-kind="shared"]::before { background: var(--cool); }
 .letter[data-kind="diff"]::before { background: var(--gold); }
 
 /* Small `?` glyph used by alphabet and case-note popovers */

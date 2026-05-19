@@ -44,7 +44,6 @@ window.I18N = {
 
     /* Alphabet page */
     'alph.legend.unique': 'Unique to Serbian',
-    'alph.legend.shared': 'Shared with other Slavic',
     'alph.legend.diff': 'Looks Latin, sounds different',
     'alph.tip.cta': 'how to say it',
     'alph.tip.heading': 'How to say it',
@@ -175,7 +174,6 @@ window.I18N = {
 
     /* Alphabet */
     'alph.legend.unique': 'Только в сербском',
-    'alph.legend.shared': 'Есть в других славянских',
     'alph.legend.diff': 'Выглядит как латиница — звучит иначе',
     'alph.tip.cta': 'как произнести',
     'alph.tip.heading': 'Как произнести',
