@@ -996,10 +996,18 @@ section { position: relative; }
 }
 .case-list .case.is-active::before { opacity: .85; }
 @media (min-width: 980px) {
-  .case { grid-template-columns: minmax(280px, 26%) 1fr; gap: 4rem; }
+  .case {
+    grid-template-columns: minmax(280px, 26%) 1fr;
+    column-gap: 4rem;
+    row-gap: 1.8rem;
+  }
   .case-list .case.is-active { grid-template-columns: minmax(280px, 26%) 1fr; }
-  .case-head,
-  .case-bridge { grid-column: 1; }
+  .case-head { grid-column: 1; grid-row: 1; }
+  .case-bridge {
+    grid-column: 1;
+    grid-row: 2;
+    align-self: start;
+  }
   .case-body {
     grid-column: 2;
     grid-row: 1 / span 2;
@@ -1810,6 +1818,7 @@ a.cast-cell-head:hover .cast-abbr { color: var(--ink); }
   line-height: 1.6;
   color: var(--ink-soft);
   margin: 0;
+  max-width: 56ch;
 }
 .bridge-text em {
   font-style: italic;
