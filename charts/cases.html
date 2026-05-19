@@ -1068,6 +1068,62 @@ function updateStickyOffset() {
   document.documentElement.style.setProperty('--sticky-offset', stickyOffset + 'px');
 }
 
+/* Case strip visibility — the strip labels only the case card. Once readers
+   move into standalone extra sections, hide it on downward scroll and bring it
+   back as soon as they scroll up toward the case card again. */
+function setupCaseStripVisibility() {
+  const strip = document.querySelector('.case-strip');
+  const header = document.querySelector('header.nav');
+  if (!strip) return;
+
+  let lastY = window.scrollY || window.pageYOffset || 0;
+  let ticking = false;
+  let initialized = false;
+  let pointerFocused = false;
+
+  function setHidden(hidden) {
+    strip.classList.toggle('is-hidden', hidden);
+    strip.setAttribute('aria-hidden', hidden ? 'true' : 'false');
+    strip.querySelectorAll('a').forEach(a => { a.tabIndex = hidden ? -1 : 0; });
+  }
+
+  function update() {
+    ticking = false;
+    const y = window.scrollY || window.pageYOffset || 0;
+    const scrollingDown = y > lastY + 2;
+    const scrollingUp = y < lastY - 2;
+    const activeCase = document.querySelector('#caseList .case.is-active');
+    const headerHeight = header ? header.offsetHeight : 0;
+    const passedCaseCard = activeCase
+      ? activeCase.getBoundingClientRect().bottom <= headerHeight + 12
+      : false;
+
+    const keyboardFocusInStrip = strip.matches(':focus-within') && !pointerFocused;
+
+    if (scrollingUp || !passedCaseCard || keyboardFocusInStrip) {
+      setHidden(false);
+    } else if ((scrollingDown || !initialized) && passedCaseCard) {
+      setHidden(true);
+    }
+
+    lastY = y;
+    initialized = true;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(update);
+    }
+  }, { passive: true });
+  window.addEventListener('resize', update);
+  strip.addEventListener('pointerdown', () => { pointerFocused = true; });
+  strip.addEventListener('keydown', () => { pointerFocused = false; });
+  strip.addEventListener('focusin', () => setHidden(false));
+  strip.addEventListener('focusout', () => { pointerFocused = false; });
+  update();
+}
+
 /* Cell popovers — tap any endings cell to see the abstract ending become a
    concrete word transformation. Reuses the .tip-pop / .tip-pop-card pattern
    from the alphabet chart. */
@@ -1205,6 +1261,7 @@ renderAll();
 updateStickyOffset();
 setupTabs();
 showCase(activeCaseFromHash(), { scroll: !!location.hash, smooth: false, updateHash: false });
+setupCaseStripVisibility();
 </script>
 </body>
 </html>

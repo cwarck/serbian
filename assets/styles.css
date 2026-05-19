@@ -861,6 +861,13 @@ section { position: relative; }
   background: var(--paper);
   border-bottom: 1px solid var(--hairline);
   padding-inline: 0;
+  transition: transform .28s ease, opacity .2s ease;
+  will-change: transform;
+}
+.case-strip.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(calc(-100% - 1px));
 }
 .case-strip-list {
   list-style: none; margin: 0; padding: 0;
