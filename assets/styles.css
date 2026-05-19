@@ -28,6 +28,10 @@
   --highlight:    light-dark(rgba(168,64,28,.08), rgba(226,122,79,.10));
   --shadow:       light-dark(rgba(28,22,18,.06), rgba(0,0,0,.4));
 
+  --gender-m:     light-dark(#2C5074, #95B5D6);
+  --gender-f:     light-dark(#9E4A66, #E89AAD);
+  --gender-n:     light-dark(#8B6E3F, #D4BC7D);
+
   --ff-display:   'Spectral', Georgia, serif;
   --ff-body:      'Spectral', Georgia, serif;
   --ff-mono:      'JetBrains Mono', ui-monospace, monospace;
@@ -980,6 +984,15 @@ section { position: relative; }
   vertical-align: middle;
 }
 .endings th:last-child, .endings td:last-child { border-right: 0; }
+[data-gender="m"].cast-gender,
+[data-gender="m"].cast-gender-head,
+.endings thead th[data-gender="m"] { color: var(--gender-m); }
+[data-gender="f"].cast-gender,
+[data-gender="f"].cast-gender-head,
+.endings thead th[data-gender="f"] { color: var(--gender-f); }
+[data-gender="n"].cast-gender,
+[data-gender="n"].cast-gender-head,
+.endings thead th[data-gender="n"] { color: var(--gender-n); }
 .endings thead th {
   font-family: var(--ff-mono);
   font-size: .78rem;

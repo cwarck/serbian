@@ -489,13 +489,13 @@ function renderCast() {
   if (!root) return;
   const d = dict();
   const genderLabel = cast =>
-    d['cases.cast.label.' + cast.gender] || cast.gender.toUpperCase();
+    d['cases.gender.' + cast.gender] || cast.gender.toUpperCase();
 
   const mobileHeadRow = `
     <div class="cast-row cast-row-head" role="row">
       <span class="cast-cell cast-cell-head" role="rowheader"></span>
       ${CAST.map(cast => `
-        <span class="cast-cell cast-cell-head cast-gender-head" role="columnheader">${genderLabel(cast)}</span>
+        <span class="cast-cell cast-cell-head cast-gender-head" data-gender="${cast.gender}" role="columnheader">${genderLabel(cast)}</span>
       `).join('')}
     </div>`;
   const mobileRows = CASES.map((c, i) => {
@@ -539,7 +539,7 @@ function renderCast() {
     }).join('');
     return `
       <div class="cast-row" data-gender="${cast.gender}" role="row">
-        <span class="cast-cell cast-gender" role="rowheader">${genderLabel(cast)}</span>
+        <span class="cast-cell cast-gender" data-gender="${cast.gender}" role="rowheader">${genderLabel(cast)}</span>
         ${cells}
       </div>`;
   }).join('');
@@ -707,9 +707,9 @@ function renderCases() {
               <thead>
                 <tr>
                   <th></th>
-                  <th>${d['cases.gender.m'] || 'Masculine'}</th>
-                  <th>${d['cases.gender.f'] || 'Feminine'}</th>
-                  <th>${d['cases.gender.n'] || 'Neuter'}</th>
+                  <th data-gender="m">${d['cases.gender.m'] || 'M'}</th>
+                  <th data-gender="f">${d['cases.gender.f'] || 'F'}</th>
+                  <th data-gender="n">${d['cases.gender.n'] || 'N'}</th>
                 </tr>
               </thead>
               <tbody>${rowsHTML}</tbody>
