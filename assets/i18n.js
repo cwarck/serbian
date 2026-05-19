@@ -63,9 +63,6 @@ window.I18N = {
     'cases.subtitle': 'Chart 02 · Padeži',
     'cases.intro': 'In English, <em>the dog bit the man</em> and <em>the man bit the dog</em> mean different things because of word order. Serbian glues a tiny tag onto each noun so word order can dance — the tag tells you who did what. Those tags are the seven cases.',
 
-    'cases.script.note': 'Serbian is written in both Cyrillic and Latin. Use the script toggle in the navbar to switch examples, endings, and prepositions.',
-    'cases.stress.note': 'Stress and pitch shift with some cases — that\'s its own story, not covered here.',
-
     'cases.aku.label.alive': 'alive',
     'cases.aku.label.thing': 'thing',
 
@@ -203,9 +200,6 @@ window.I18N = {
     'cases.title.em': 'падежей.',
     'cases.subtitle': 'Таблица 02 · Падежи',
     'cases.intro': 'По-русски порядок слов гибкий — но окончания всё равно подсказывают, кто кого. По-сербски — то же самое: к каждому существительному «приклеивается» маленький ярлык, который говорит о его роли. Этих ярлыков семь — семь падежей.',
-
-    'cases.script.note': 'Сербский пишется кириллицей и латиницей. Переключатель письма в навигации меняет примеры, окончания и предлоги.',
-    'cases.stress.note': 'Ударение и тон в некоторых падежах сдвигаются — это отдельная история, здесь её нет.',
 
     'cases.aku.label.alive': 'живое',
     'cases.aku.label.thing': 'вещь',
