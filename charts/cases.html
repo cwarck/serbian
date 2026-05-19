@@ -834,18 +834,6 @@ function renderCases() {
       </div>
     `).join('');
 
-    /* If this case has a "from Russian" bridge defined in the current
-       dictionary, render it between examples and prepositions. The key is
-       only populated in RU mode, so EN visitors see nothing. */
-    const bridgeText = d[c.key + '.bridge'];
-    const bridgeHTML = bridgeText ? `
-      <section class="case-bridge case-notes" aria-label="${d['cases.bridge.title'] || 'If you know Russian'}">
-        <header class="notes-head">
-          <span class="eyebrow">${d['cases.bridge.title'] || ''}</span>
-        </header>
-        <p class="bridge-text note-body">${srGrammarHTML(bridgeText)}</p>
-      </section>` : '';
-
     const noPrepText = d['cases.preps.none.' + c.tone] || d['cases.preps.none'] || '';
     const prepHTML = c.preps.length === 0
       ? `<p class="preps-empty">${noPrepText}</p>`
@@ -869,7 +857,6 @@ function renderCases() {
             <p class="tagline">${tagline}</p>
             <p class="q">${q}</p>
           </header>
-          ${bridgeHTML}
         </div>
         <div class="case-body">
           <section class="endings">
