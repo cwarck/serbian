@@ -893,9 +893,11 @@ function renderCases() {
        only populated in RU mode, so EN visitors see nothing. */
     const bridgeText = d[c.key + '.bridge'];
     const bridgeHTML = bridgeText ? `
-      <section class="case-bridge" aria-label="${d['cases.bridge.title'] || 'If you know Russian'}">
-        <h4 class="bridge-title">${d['cases.bridge.title'] || ''}</h4>
-        <p class="bridge-text">${srGrammarHTML(bridgeText)}</p>
+      <section class="case-bridge case-notes" aria-label="${d['cases.bridge.title'] || 'If you know Russian'}">
+        <header class="notes-head">
+          <span class="eyebrow">${d['cases.bridge.title'] || ''}</span>
+        </header>
+        <p class="bridge-text note-body">${srGrammarHTML(bridgeText)}</p>
       </section>` : '';
 
     const noPrepText = d['cases.preps.none.' + c.tone] || d['cases.preps.none'] || '';
@@ -914,13 +916,15 @@ function renderCases() {
 
     return `
       <article class="case" id="${caseId}" data-tone="${c.tone}" role="tabpanel" tabindex="-1">
-        <header class="case-head">
-          <span class="case-tag">${c.abbr}</span>
-          <h3>${name}<em title="${d['cases.local.tooltip'] || ''}">${local}</em></h3>
-          <p class="tagline">${tagline}</p>
-          <p class="q">${q}</p>
-        </header>
-        ${bridgeHTML}
+        <div class="case-side">
+          <header class="case-head">
+            <span class="case-tag">${c.abbr}</span>
+            <h3>${name}<em title="${d['cases.local.tooltip'] || ''}">${local}</em></h3>
+            <p class="tagline">${tagline}</p>
+            <p class="q">${q}</p>
+          </header>
+          ${bridgeHTML}
+        </div>
         <div class="case-body">
           <section class="endings">
             <header class="endings-head">

@@ -1002,15 +1002,10 @@ section { position: relative; }
     row-gap: 1.8rem;
   }
   .case-list .case.is-active { grid-template-columns: minmax(280px, 26%) 1fr; }
-  .case-head { grid-column: 1; grid-row: 1; }
-  .case-bridge {
-    grid-column: 1;
-    grid-row: 2;
-    align-self: start;
-  }
+  .case-side { grid-column: 1; }
   .case-body {
     grid-column: 2;
-    grid-row: 1 / span 2;
+    grid-row: 1;
   }
 }
 
@@ -1791,39 +1786,6 @@ a.cast-cell-head:hover .cast-abbr { color: var(--ink); }
 }
 @media (min-width: 980px) {
   .cast-cell { padding: 1rem 1.1rem; min-height: 72px; }
-}
-
-/* -----------------------------------------------------------
-   Per-card RU bridge — surfaces deltas for Russian speakers.
-   Only rendered when the dict has the entry (RU mode only).
-   ----------------------------------------------------------- */
-.case-bridge {
-  padding: 1.5rem 1.6rem 1.6rem;
-  background: var(--paper-deep);
-  border-left: 2px solid var(--tone, var(--accent));
-}
-.bridge-title {
-  font-family: var(--ff-display);
-  font-style: italic;
-  font-weight: 400;
-  font-size: clamp(1.1rem, 1rem + .35vw, 1.35rem);
-  letter-spacing: -.012em;
-  line-height: 1.25;
-  color: var(--ink);
-  margin: 0 0 .6rem;
-}
-.bridge-text {
-  font-family: var(--ff-body);
-  font-size: clamp(.98rem, .9rem + .25vw, 1.13rem);
-  line-height: 1.6;
-  color: var(--ink-soft);
-  margin: 0;
-  max-width: 56ch;
-}
-.bridge-text em {
-  font-style: italic;
-  color: var(--ink);
-  font-weight: 500;
 }
 
 /* -----------------------------------------------------------
