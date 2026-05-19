@@ -97,12 +97,6 @@ window.I18N = {
     'cases.extra.intro': 'A whole second family of feminine nouns ends in a consonant: <em>ljubav</em>, <em>noć</em>, <em>stvar</em>, <em>reč</em>, <em>smrt</em>, <em>kost</em>. Same seven cases — slimmer endings. Learn one paradigm, read them all.',
     'cases.extra.stem': 'Paradigm: <em>ljubav</em> (love)',
 
-    'cases.pairs.eyebrow': 'Mirrored prepositions',
-    'cases.pairs.title.line1': 'Reverse pairs,',
-    'cases.pairs.title.em': 'across cases.',
-    'cases.pairs.intro': 'Some prepositions take a <strong>different case for different meaning</strong>. The clearest demonstration that case isn\'t just decoration — it changes what a sentence says.',
-    'cases.pairs.featured.eyebrow': 'The sharpest pair',
-
     'cases.wrinkles.eyebrow': 'Where the language remembers being older',
     'cases.wrinkles.title.line1': 'Old fingerprints,',
     'cases.wrinkles.title.em': 'still on the page.',
@@ -243,12 +237,6 @@ window.I18N = {
     'cases.extra.title.em': 'без окончания -a.',
     'cases.extra.intro': 'Целый второй класс женских существительных оканчивается на согласный: <em>ljubav</em>, <em>noć</em>, <em>stvar</em>, <em>reč</em>, <em>smrt</em>, <em>kost</em>. Падежей те же семь — окончания скромнее. Выучил одну парадигму — читаешь все.',
     'cases.extra.stem': 'Парадигма: <em>ljubav</em> (любовь)',
-
-    'cases.pairs.eyebrow': 'Зеркальные предлоги',
-    'cases.pairs.title.line1': 'Парные предлоги',
-    'cases.pairs.title.em': 'между падежами.',
-    'cases.pairs.intro': 'Один и тот же предлог в разных падежах — <strong>разный смысл</strong>. Самое наглядное доказательство того, что падеж в сербском — не просто украшение, он меняет смысл фразы.',
-    'cases.pairs.featured.eyebrow': 'Самая важная пара',
 
     'cases.wrinkles.eyebrow': 'Где язык помнит, что он старше',
     'cases.wrinkles.title.line1': 'Старые следы,',
