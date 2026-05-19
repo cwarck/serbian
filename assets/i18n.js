@@ -80,7 +80,6 @@ window.I18N = {
     'cases.cast.label.f': 'Fem.',
     'cases.cast.label.n': 'Neut.',
 
-    'cases.anchor.label': 'In this case:',
 
     'cases.extra.eyebrow': 'A second class',
     'cases.extra.title.line1': 'Feminines',
@@ -212,7 +211,6 @@ window.I18N = {
     'cases.cast.label.f': 'Жен.',
     'cases.cast.label.n': 'Ср.',
 
-    'cases.anchor.label': 'В этом падеже:',
 
     'cases.extra.eyebrow': 'Второй класс',
     'cases.extra.title.line1': 'Женский род',

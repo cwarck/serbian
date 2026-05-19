@@ -23,7 +23,7 @@
 
 <header class="nav">
   <div class="shell nav-inner">
-    <a href="../index.html#charts" class="brand">
+    <a href="/" class="brand">
       <span class="brand-mark">A.</span>
       <span data-i18n="nav.brand">Atlas Srpski</span>
     </a>
@@ -548,26 +548,6 @@ function renderCast() {
     <div class="cast-table cast-wide" role="table" aria-label="Three nouns declined through seven cases">${wideHeadRow}${wideRows}</div>`;
 }
 
-/* Three-chip anchor row inside each card — same trio, this case's form. */
-function castAnchorRowHTML(caseIndex, d) {
-  const chips = CAST.map(cast => {
-    const base = cast.forms.sg[0];
-    const form = cast.forms.sg[caseIndex];
-    const hl = caseIndex === 0 ? cast.word : diffHL(base, form).to;
-    const label = d['cases.cast.label.' + cast.gender] || cast.gender.toUpperCase();
-    return `
-      <li class="anchor-chip" data-gender="${cast.gender}">
-        <span class="anchor-g">${label}</span>
-        <span class="anchor-form">${srHTML(hl)}</span>
-      </li>`;
-  }).join('');
-  return `
-    <section class="case-anchor" aria-label="The cast in this case">
-      <span class="anchor-eyebrow">${d['cases.anchor.label'] || 'In this case:'}</span>
-      <ul class="anchor-chips">${chips}</ul>
-    </section>`;
-}
-
 function renderCaseStrip() {
   const list = document.getElementById('caseStripList');
   if (!list) return;
@@ -736,7 +716,6 @@ function renderCases() {
             </table>
           </section>
           <section class="case-right">
-            ${castAnchorRowHTML(i, d)}
             <section class="case-block">
               <header class="endings-head">
                 <span class="eyebrow">${d['cases.examples'] || 'In the wild'}</span>
