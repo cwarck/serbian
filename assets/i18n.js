@@ -63,20 +63,6 @@ window.I18N = {
     'cases.subtitle': 'Chart 02 · Padeži',
     'cases.intro': 'In English, <em>the dog bit the man</em> and <em>the man bit the dog</em> mean different things because of word order. Serbian glues a tiny tag onto each noun so word order can dance — the tag tells you who did what. Those tags are the seven cases.',
 
-    'cases.birdseye.eyebrow': 'The story arc of a sentence',
-    'cases.birdseye.tag.nom': 'doer',
-    'cases.birdseye.tag.gen': 'owner',
-    'cases.birdseye.tag.dat': 'receiver',
-    'cases.birdseye.tag.aku': 'target',
-    'cases.birdseye.tag.vok': 'hey, you',
-    'cases.birdseye.tag.ins': 'with what',
-    'cases.birdseye.tag.lok': 'where',
-    'cases.birdseye.flow': 'who → whose → to whom → what → hey, you → with what → where',
-
-    'cases.gender.intro': '<strong>How to tell a noun\'s gender</strong> — ends in <em>-a</em>, it\'s feminine (<em>žena</em>); ends in a consonant, masculine (<em>pilot</em>); ends in <em>-o</em> or <em>-e</em>, neuter (<em>selo</em>).',
-    'cases.legend.zero': '<strong>About <em>-∅</em></strong> — this symbol means <em>no ending</em>: the word stands in its bare form.',
-    'cases.reassurance': '<strong>One last thing</strong> — Serbians will understand you even if your endings wobble. Cases sharpen your speech; they don\'t gatekeep it.',
-
     'cases.script.note': 'Serbian is written in both Cyrillic and Latin. Use the script toggle in the navbar to switch examples, endings, and prepositions.',
     'cases.stress.note': 'Stress and pitch shift with some cases — that\'s its own story, not covered here.',
 
@@ -103,14 +89,9 @@ window.I18N = {
     'cases.number.pl': 'Pl',
     'cases.same': 'same as',
 
-    'cases.cast.eyebrow': 'Meet the cast',
-    'cases.cast.title.line1': 'One word,',
-    'cases.cast.title.em': 'seven shapes.',
-    'cases.cast.intro': 'Three nouns — one masculine, one feminine, one neuter — walk through all seven cases. The stem stays put; the ending does the work. Tap any form to see it in context.',
     'cases.cast.label.m': 'Masc.',
     'cases.cast.label.f': 'Fem.',
     'cases.cast.label.n': 'Neut.',
-    'cases.cast.hint': 'Swipe across to see all seven forms →',
 
     'cases.anchor.label': 'In this case:',
 
@@ -233,20 +214,6 @@ window.I18N = {
     'cases.subtitle': 'Таблица 02 · Падежи',
     'cases.intro': 'По-русски порядок слов гибкий — но окончания всё равно подсказывают, кто кого. По-сербски — то же самое: к каждому существительному «приклеивается» маленький ярлык, который говорит о его роли. Этих ярлыков семь — семь падежей.',
 
-    'cases.birdseye.eyebrow': 'Сюжетная дуга предложения',
-    'cases.birdseye.tag.nom': 'кто',
-    'cases.birdseye.tag.gen': 'чьё',
-    'cases.birdseye.tag.dat': 'кому',
-    'cases.birdseye.tag.aku': 'что',
-    'cases.birdseye.tag.vok': 'эй, ты',
-    'cases.birdseye.tag.ins': 'чем',
-    'cases.birdseye.tag.lok': 'где',
-    'cases.birdseye.flow': 'кто → чьё → кому → что → эй, ты → чем → где',
-
-    'cases.gender.intro': '<strong>Как определить род существительного</strong> — оканчивается на <em>-a</em> — женский (<em>žena</em>); на согласный — мужской (<em>pilot</em>); на <em>-o</em> или <em>-e</em> — средний (<em>selo</em>).',
-    'cases.legend.zero': '<strong>О символе <em>-∅</em></strong> — это значит, что окончания нет: слово стоит в голой форме.',
-    'cases.reassurance': '<strong>Напоследок</strong> — сербы поймут тебя, даже если окончания «плывут». Падежи нужны для точности, а не как пропуск к разговору.',
-
     'cases.script.note': 'Сербский пишется кириллицей и латиницей. Переключатель письма в навигации меняет примеры, окончания и предлоги.',
     'cases.stress.note': 'Ударение и тон в некоторых падежах сдвигаются — это отдельная история, здесь её нет.',
 
@@ -273,14 +240,9 @@ window.I18N = {
     'cases.number.pl': 'Мн.',
     'cases.same': 'как у',
 
-    'cases.cast.eyebrow': 'Знакомьтесь — труппа',
-    'cases.cast.title.line1': 'Одно слово,',
-    'cases.cast.title.em': 'семь форм.',
-    'cases.cast.intro': 'Три существительных — мужского, женского и среднего рода — проходят по всем семи падежам. Основа не двигается; работает окончание. Нажми на любую форму, чтобы увидеть её в примере.',
     'cases.cast.label.m': 'Муж.',
     'cases.cast.label.f': 'Жен.',
     'cases.cast.label.n': 'Ср.',
-    'cases.cast.hint': 'Проведи пальцем, чтобы увидеть все семь форм →',
 
     'cases.anchor.label': 'В этом падеже:',
 

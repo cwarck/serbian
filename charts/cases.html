@@ -62,19 +62,6 @@
   </div>
 </section>
 
-<section class="cases-birdseye shell" aria-label="System map">
-  <header class="birdseye-head reveal">
-    <span class="eyebrow" data-i18n="cases.birdseye.eyebrow">The story arc of a sentence</span>
-    <p class="birdseye-flow" data-i18n="cases.birdseye.flow">who → whose → to whom → what → hey, you → with what → where</p>
-  </header>
-  <ol class="birdseye-grid reveal" id="birdsEyeGrid"></ol>
-  <div class="birdseye-meta reveal" style="transition-delay:.1s">
-    <p class="meta-line" data-i18n="cases.gender.intro"></p>
-    <p class="meta-line" data-i18n="cases.legend.zero"></p>
-    <p class="meta-line" data-i18n="cases.reassurance"></p>
-  </div>
-</section>
-
 <nav class="case-strip" aria-label="Cases">
   <ol class="case-strip-list" id="caseStripList"></ol>
 </nav>
@@ -83,17 +70,8 @@
   <div class="shell">
 
     <section class="case-cast reveal" id="meetTheCast" aria-label="One noun in every case">
-      <header class="cast-head">
-        <span class="eyebrow" data-i18n="cases.cast.eyebrow">Meet the cast</span>
-        <h2>
-          <span data-i18n="cases.cast.title.line1">One word,</span>
-          <em data-i18n="cases.cast.title.em">seven shapes.</em>
-        </h2>
-        <p class="cast-intro" data-i18n="cases.cast.intro"></p>
-      </header>
       <div class="cast-frame">
         <div class="cast-scroll" id="castScroll" role="region" aria-label="Three nouns declined through seven cases" tabindex="0"></div>
-        <p class="cast-hint" data-i18n="cases.cast.hint" aria-hidden="true">Swipe across to see all seven forms →</p>
       </div>
     </section>
 
@@ -722,20 +700,6 @@ function renderCaseStrip() {
   `).join('');
 }
 
-function renderBirdsEye() {
-  const grid = document.getElementById('birdsEyeGrid');
-  if (!grid) return;
-  const d = dict();
-  grid.innerHTML = CASES.map(c => `
-    <li class="birdseye-tile" data-tone="${c.tone}">
-      <a href="#${caseAnchor(c.key)}">
-        <span class="bird-abbr">${c.abbr}</span>
-        <span class="bird-tag">${d['cases.birdseye.tag.' + c.tone] || ''}</span>
-      </a>
-    </li>
-  `).join('');
-}
-
 /* Convert a cell entry into HTML for the endings table.
    Always renders a `.cell` element — a button when tappable, a span when
    empty. Footnote IDs are appended to the case-id so anchors don't collide. */
@@ -1054,7 +1018,6 @@ function renderPairs() {
 function renderAll() {
   renderStaticGrammarTokens();
   renderCaseStrip();
-  renderBirdsEye();
   renderCast();
   renderCases();
   renderIDecl();
