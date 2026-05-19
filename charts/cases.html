@@ -192,7 +192,6 @@ const CASES = [
   {
     key: 'case.3', abbr: 'DAT', tone: 'dat',
     sigEnding: '-u',
-    pluralBannerKey: 'cases.dat.plural.banner',
     endings: {
       m: { sg: '-u',                pl: { v:'-ima', share:['INS','LOK'] } },
       f: { sg: { v:'-i', n:'sib-i' }, pl: { v:'-ama', share:['INS','LOK'] } },
@@ -222,7 +221,6 @@ const CASES = [
   {
     key: 'case.4', abbr: 'AKU', tone: 'aku',
     sigEnding: '-a / -∅',
-    bannerKey: 'cases.aku.banner',
     endings: {
       m: {
         sg: { split: [
@@ -303,7 +301,6 @@ const CASES = [
   {
     key: 'case.6', abbr: 'INS', tone: 'ins',
     sigEnding: '-om',
-    pluralBannerKey: 'cases.ins.plural.banner',
     endings: {
       m: { sg: { v:'-om', n:'soft-em' }, pl: { v:'-ima', share:['DAT','LOK'] } },
       f: { sg: '-om',                     pl: { v:'-ama', share:['DAT','LOK'] } },
@@ -753,45 +750,12 @@ function renderCases() {
     const tagline = d[c.key + '.tagline'] || '';
     const q       = srStrongHTML(d[c.key + '.q'] || '');
 
-    /* If every singular and plural cell points to the same case via `same`,
-       hoist that into a one-line banner above the table and strip the
-       per-cell labels — clears the visual noise (notably the Locative).
-       A case can also declare a custom banner via `bannerKey` (e.g., AKU
-       animacy), which takes precedence. */
-    const allCells = ['sg','pl'].flatMap(n => ['m','f','n'].map(g => c.endings[g][n]));
-    const sameTargets = allCells.map(cell =>
-      (cell && typeof cell === 'object' && !cell.split) ? cell.same : null
-    );
-    const uniformSame = sameTargets.every(t => t && t === sameTargets[0]) ? sameTargets[0] : null;
-    let bannerHTML = '';
-    if (c.bannerKey && d[c.bannerKey]) {
-      bannerHTML = `<p class="endings-banner endings-banner-custom">${srGrammarHTML(d[c.bannerKey])}</p>`;
-    } else if (uniformSame) {
-      bannerHTML = `
-        <p class="endings-banner">
-          ${d['cases.endings.banner'] || 'Endings: same as'}
-          <strong>${uniformSame}</strong>.
-        </p>`;
-    }
-    /* Additional plural-row banner (DAT/INS announce -ima/-ama syncretism). */
-    const pluralBannerHTML = (c.pluralBannerKey && d[c.pluralBannerKey])
-      ? `<p class="endings-banner endings-banner-custom endings-banner-plural">${srGrammarHTML(d[c.pluralBannerKey])}</p>`
-      : '';
-
-    const cellHTMLClean = (entry, gender, number) => {
-      if (uniformSame && entry && typeof entry === 'object' && !entry.split) {
-        const { same, ...rest } = entry;
-        return cellHTML(rest, gender, caseId, i, number);
-      }
-      return cellHTML(entry, gender, caseId, i, number);
-    };
-
     const rowsHTML = ['sg','pl'].map(n => `
       <tr>
         <th scope="row" class="num">${d['cases.number.' + n] || (n === 'sg' ? 'Sg' : 'Pl')}</th>
-        <td>${cellHTMLClean(c.endings.m[n], 'm', n)}</td>
-        <td>${cellHTMLClean(c.endings.f[n], 'f', n)}</td>
-        <td>${cellHTMLClean(c.endings.n[n], 'n', n)}</td>
+        <td>${cellHTML(c.endings.m[n], 'm', caseId, i, n)}</td>
+        <td>${cellHTML(c.endings.f[n], 'f', caseId, i, n)}</td>
+        <td>${cellHTML(c.endings.n[n], 'n', caseId, i, n)}</td>
       </tr>
     `).join('');
 
@@ -863,8 +827,6 @@ function renderCases() {
             <header class="endings-head">
               <span class="eyebrow">${d['cases.endings'] || 'Endings'}</span>
             </header>
-            ${bannerHTML}
-            ${pluralBannerHTML}
             <table>
               <thead>
                 <tr>
