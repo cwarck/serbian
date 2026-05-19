@@ -284,8 +284,6 @@ section { position: relative; }
 
 .glyph-bg.tl       { top: -3vw;    left: -1vw;  font-size: min(48vw, 600px); }
 .glyph-bg.br       { bottom: -8vw; right: -2vw; font-size: min(38vw, 480px); transform: rotate(8deg); }
-.glyph-bg.alpha    { bottom: -6vw; right: -4vw; font-size: min(50vw, 640px); transform: rotate(-6deg); }
-.glyph-bg.cases    { bottom: -7vw; right: -3vw; font-size: min(46vw, 580px); transform: rotate(4deg); }
 
 /* -----------------------------------------------------------
    Section heading
@@ -449,57 +447,6 @@ section { position: relative; }
 /* -----------------------------------------------------------
    Chart pages — shared
    ----------------------------------------------------------- */
-
-.chart-head {
-  padding-block: clamp(1.25rem, 5vw, 4.5rem) clamp(1.25rem, 4vw, 3.5rem);
-  border-bottom: 1px solid var(--hairline);
-  display: grid; grid-template-columns: 1fr; gap: clamp(.85rem, 2.5vw, 1.5rem);
-  position: relative;
-  overflow: hidden;
-}
-@media (min-width: 920px) {
-  .chart-head {
-    padding-block: clamp(2.5rem, 6vw, 4.5rem) clamp(2rem, 5vw, 3.5rem);
-    grid-template-columns: 1.5fr 1fr; align-items: end; gap: 4rem;
-  }
-}
-.chart-head .back {
-  font-family: var(--ff-mono); font-size: var(--fs-meta);
-  letter-spacing: .14em; text-transform: uppercase;
-  color: var(--ink-muted);
-  display: inline-flex; align-items: center; gap: .5rem;
-  margin-bottom: clamp(.75rem, 2.5vw, 1.5rem);
-}
-.chart-head .back svg {
-  width: 24px; height: 12px;
-  transition: transform .4s cubic-bezier(.2,.7,.2,1);
-}
-.chart-head .back:hover { color: var(--accent); }
-.chart-head .back:hover svg { transform: translateX(-8px); }
-.chart-head h1 {
-  font-family: var(--ff-display);
-  font-size: clamp(2.6rem, 7vw, 5.5rem);
-  font-weight: 200;
-  letter-spacing: -.03em;
-  line-height: 1;
-}
-.chart-head h1 em { font-style: italic; color: var(--accent); font-weight: 200; }
-.chart-head .subtitle {
-  font-family: var(--ff-mono);
-  font-size: var(--fs-meta);
-  letter-spacing: .16em;
-  text-transform: uppercase;
-  color: var(--ink-muted);
-  margin-top: clamp(.6rem, 2vw, 1.2rem);
-}
-.chart-head .intro {
-  font-family: var(--ff-body);
-  font-style: italic;
-  font-size: clamp(1.05rem, .9rem + .5vw, 1.3rem);
-  color: var(--ink-soft);
-  line-height: 1.55;
-  max-width: 42ch;
-}
 
 /* -----------------------------------------------------------
    Alphabet grid
