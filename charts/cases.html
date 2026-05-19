@@ -894,7 +894,7 @@ function renderCases() {
     const bridgeText = d[c.key + '.bridge'];
     const bridgeHTML = bridgeText ? `
       <section class="case-bridge" aria-label="${d['cases.bridge.title'] || 'If you know Russian'}">
-        <span class="bridge-eyebrow">${d['cases.bridge.title'] || ''}</span>
+        <h4 class="bridge-title">${d['cases.bridge.title'] || ''}</h4>
         <p class="bridge-text">${srGrammarHTML(bridgeText)}</p>
       </section>` : '';
 
@@ -920,6 +920,7 @@ function renderCases() {
           <p class="tagline">${tagline}</p>
           <p class="q">${q}</p>
         </header>
+        ${bridgeHTML}
         <div class="case-body">
           <section class="endings">
             <header class="endings-head">
@@ -948,7 +949,6 @@ function renderCases() {
               </header>
               <div class="examples">${exHTML}</div>
             </section>
-            ${bridgeHTML}
             <section class="case-block preps">
               <header class="endings-head">
                 <span class="eyebrow">${d['cases.preps'] || 'Used with'}</span>
