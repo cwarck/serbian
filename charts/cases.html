@@ -674,18 +674,20 @@ function renderCases() {
       </div>
     `).join('');
 
-    const noPrepText = d['cases.preps.none.' + c.tone] || d['cases.preps.none'] || '';
-    const prepHTML = c.preps.length === 0
-      ? `<p class="preps-empty">${noPrepText}</p>`
-      : `
-        <dl class="prep-list">
-          ${c.preps.map(pr => `
-            <div class="prep-row">
-              <dt class="prep-word">${srText(pr.p)}</dt>
-              <dd class="prep-mean">${pr[lang] || pr.en}</dd>
-            </div>
-          `).join('')}
-        </dl>
+    const prepHTML = c.preps.length === 0 ? '' : `
+        <section class="case-block preps">
+          <header class="endings-head">
+            <span class="eyebrow">${d['cases.preps'] || 'Used with'}</span>
+          </header>
+          <dl class="prep-list">
+            ${c.preps.map(pr => `
+              <div class="prep-row">
+                <dt class="prep-word">${srText(pr.p)}</dt>
+                <dd class="prep-mean">${pr[lang] || pr.en}</dd>
+              </div>
+            `).join('')}
+          </dl>
+        </section>
       `;
 
     return `
@@ -722,12 +724,7 @@ function renderCases() {
               </header>
               <div class="examples">${exHTML}</div>
             </section>
-            <section class="case-block preps">
-              <header class="endings-head">
-                <span class="eyebrow">${d['cases.preps'] || 'Used with'}</span>
-              </header>
-              ${prepHTML}
-            </section>
+            ${prepHTML}
           </section>
         </div>
       </article>
