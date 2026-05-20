@@ -951,6 +951,90 @@ section { position: relative; }
   .case-body { grid-template-columns: minmax(360px, 1fr) 1fr; gap: 3.5rem; }
 }
 
+/* -----------------------------------------------------------
+   Xlarge — all 7 cases side-by-side (each card is one mobile column).
+   Strip nav is redundant; cards stack their own internals vertically.
+   ----------------------------------------------------------- */
+@media (min-width: 1600px) {
+  /* Bleed the cases grid to the viewport — case-list IS the page width.
+     Long-form extras restore their own inline padding below. */
+  .cases-section { --pad-x: 0; }
+  .cases-section .case-extra { padding-inline: clamp(1.5rem, 4vw, 4rem); }
+
+  .case-strip { display: none; }
+
+  /* Master grid: 7 cols × 4 row tracks (case-head, endings, examples, preps).
+     Every nested container uses subgrid so each zone aligns across all cards. */
+  .case-list {
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    grid-template-rows: repeat(4, auto);
+    column-gap: 0;
+    row-gap: 2rem;
+    margin-top: clamp(2rem, 4vw, 3rem);
+  }
+
+  .case-list .case,
+  .case-list .case.is-active {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: subgrid;
+    grid-row: span 4;
+    row-gap: 0;
+    padding: 2.2rem 1.6rem;
+    border-bottom: 0;
+    border-right: 1px solid var(--hairline);
+  }
+  .case-list .case:last-child { border-right: 0; }
+
+  .case-list .case::before {
+    left: 0;
+    width: 100%;
+    opacity: .85;
+  }
+
+  .case-list .case .case-side { grid-column: 1; grid-row: 1; }
+  .case-list .case .case-body {
+    grid-column: 1;
+    grid-row: 2 / span 3;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: subgrid;
+    gap: 0;
+  }
+  .case-list .case .endings { grid-row: 1; }
+  .case-list .case .case-right {
+    grid-row: 2 / span 2;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: subgrid;
+    gap: 0;
+  }
+
+  .case-list .case-head h3 { font-size: 1.9rem; }
+  .case-list .case-head h3 em { font-size: .58em; margin-top: .3em; }
+  .case-list .case-head .tagline { font-size: 1.05rem; margin-top: .9rem; max-width: none; }
+  .case-list .case-head .q { font-size: 1.05rem; margin-top: .75rem; max-width: none; }
+  .case-list .case-head .case-tag { font-size: .76rem; letter-spacing: .24em; margin-bottom: .9rem; }
+
+  .case-list .endings th,
+  .case-list .endings td { padding: .7rem .55rem; }
+  .case-list .endings thead th { padding: .6rem .55rem; }
+  .case-list .endings tbody th.num { padding: .7rem .5rem; }
+  .case-list .endings thead th:first-child,
+  .case-list .endings tbody th.num { width: 2.4rem; }
+
+  .case-list .ex .sr { font-size: 1.05rem; }
+  .case-list .ex .tr { font-size: .94rem; }
+
+  .case-list .prep-row {
+    grid-template-columns: minmax(3.4rem, auto) 1fr;
+    gap: .9rem;
+    padding: .6rem 0;
+  }
+  .case-list .prep-word { font-size: 1.08rem; }
+  .case-list .prep-mean { font-size: .93rem; }
+}
+
 /* Endings — endings-only table */
 .endings-head {
   display: block;
