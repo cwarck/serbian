@@ -30,7 +30,7 @@
 
   --gender-m:     light-dark(#2C5074, #95B5D6);
   --gender-f:     light-dark(#9E4A66, #E89AAD);
-  --gender-n:     light-dark(#8B6E3F, #D4BC7D);
+  --gender-n:     var(--ink);
 
   --ff-display:   'Spectral', Georgia, serif;
   --ff-body:      'Spectral', Georgia, serif;
@@ -699,8 +699,8 @@ section { position: relative; }
 [data-tone="nom"] { --tone: light-dark(#A8401C, #E27A4F); } /* accent     */
 [data-tone="gen"] { --tone: light-dark(#1F4940, #71B9AC); } /* cool       */
 [data-tone="dat"] { --tone: light-dark(#B0892C, #D9B358); } /* gold       */
-[data-tone="aku"] { --tone: light-dark(#7E2F4F, #D17AA4); } /* mulberry   */
-[data-tone="vok"] { --tone: light-dark(#3B5C7E, #8FB5DE); } /* slate-blue */
+[data-tone="aku"] { --tone: light-dark(#6E3F94, #B58CD8); } /* violet     */
+[data-tone="vok"] { --tone: light-dark(#A8424A, #E27B7F); } /* crimson    */
 [data-tone="ins"] { --tone: light-dark(#5C4733, #C7A07A); } /* walnut     */
 [data-tone="lok"] { --tone: light-dark(#456C3A, #9ECB80); } /* moss       */
 
