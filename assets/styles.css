@@ -955,7 +955,7 @@ section { position: relative; }
    Xlarge — all 7 cases side-by-side (each card is one mobile column).
    Strip nav is redundant; cards stack their own internals vertically.
    ----------------------------------------------------------- */
-@media (min-width: 1600px) {
+@media (min-width: 2560px) {
   /* Bleed the cases grid to the viewport — case-list IS the page width.
      Long-form extras restore their own inline padding below. */
   .cases-section { --pad-x: 0; }
