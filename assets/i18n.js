@@ -114,7 +114,7 @@ window.I18N = {
 
   ru: {
     'meta.lang': 'Русский',
-    'nav.brand': 'Атлас Сербского',
+    'nav.brand': 'Atlas Srpski',
     'nav.theme': 'Сменить тему',
 
     'hero.eyebrow': 'Визуальный справочник по сербскому языку',
@@ -148,7 +148,7 @@ window.I18N = {
     'card.action': 'Открыть',
     'upcoming.label': 'Скоро',
 
-    'foot.copy': '© 2026 Атлас Сербского · Контент под <a href="https://creativecommons.org/licenses/by/4.0/deed.ru" rel="license noopener" target="_blank">CC BY 4.0</a>',
+    'foot.copy': '© 2026 Atlas Srpski · Контент под <a href="https://creativecommons.org/licenses/by/4.0/deed.ru" rel="license noopener" target="_blank">CC BY 4.0</a>',
     'foot.repo': 'Исходники',
     'foot.author': 'Илья Акимов',
 
