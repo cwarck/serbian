@@ -24,3 +24,13 @@ Reference: Levithan's A4 Serbian charts — every block is a labeled grid of fac
 
 - Commit per logical change.
 - Conventional commits.
+
+## Planned charts
+
+- Verbs & conjugation
+- Pronouns & their forms
+- Prepositions, visualized
+- Numbers & counting
+- Verb aspect pairs
+- Pitch & stress
+- False friends
