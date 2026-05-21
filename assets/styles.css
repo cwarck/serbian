@@ -705,35 +705,6 @@ section { position: relative; }
 [data-tone="lok"] { --tone: light-dark(#456C3A, #9ECB80); } /* moss       */
 
 /* -----------------------------------------------------------
-   Section heads inside the cases page — eyebrow + small note
-   ----------------------------------------------------------- */
-.cases-section .eyebrow {
-  font-family: var(--ff-mono);
-  font-size: var(--fs-meta);
-  letter-spacing: .22em;
-  text-transform: uppercase;
-  color: var(--ink-muted);
-  display: inline-flex; align-items: center; gap: 1.2rem;
-  margin-bottom: 0;
-}
-.cases-section .eyebrow::before {
-  content: ""; display: inline-block; width: 24px; height: 1px;
-  background: var(--tone, var(--accent));
-  flex: 0 0 auto;
-}
-
-.extra-intro {
-  font-family: var(--ff-body);
-  font-style: italic;
-  color: var(--ink-muted);
-  line-height: 1.55;
-  margin: .8rem 0 0;
-  max-width: 64ch;
-  font-size: clamp(1rem, .92rem + .2vw, 1.15rem);
-}
-.extra-intro em { color: var(--accent); font-style: italic; }
-
-/* -----------------------------------------------------------
    Case strip — colour-coded sticky nav.
    Mobile-first: all seven cells fit the viewport (no scroll).
    Wider screens reveal the name and number.
@@ -999,7 +970,6 @@ section { position: relative; }
    ----------------------------------------------------------- */
 @media (min-width: 1440px) {
   .cases-section { --pad-x: 0; }
-  .cases-section .case-extra { padding-inline: clamp(1.5rem, 4vw, 4rem); }
 
   .case-list {
     grid-template-columns:
@@ -1060,17 +1030,17 @@ section { position: relative; }
   }
 
   /* Case header column — tone strip on the left, compact typography */
-  .case-row .case-cell-head {
+  .case-row:not(.case-row-head) .case-cell-head {
     border-left: 4px solid var(--tone, var(--accent));
     padding-left: 1.1rem;
     background: color-mix(in oklab, var(--paper-deep) 35%, transparent);
   }
-  .case-row .case-cell-head h3 { font-size: 1.4rem; }
-  .case-row .case-cell-head h3 em { font-size: .58em; margin-top: .25em; }
-  .case-row .case-cell-head .case-tag { font-size: .72rem; letter-spacing: .22em; margin-bottom: .7rem; padding: .3rem .55rem; }
-  .case-row .case-cell-head .q { font-size: .95rem; margin-top: .65rem; max-width: none; }
+  .case-row:not(.case-row-head) .case-cell-head h3 { font-size: 1.4rem; }
+  .case-row:not(.case-row-head) .case-cell-head h3 em { font-size: .58em; margin-top: .25em; }
+  .case-row:not(.case-row-head) .case-cell-head .case-tag { font-size: .72rem; letter-spacing: .22em; margin-bottom: .7rem; padding: .3rem .55rem; }
+  .case-row:not(.case-row-head) .case-cell-head .q { font-size: .95rem; margin-top: .65rem; max-width: none; }
   /* Tagline is narrative — drop it on xlarge */
-  .case-row .case-cell-head .tagline { display: none; }
+  .case-row:not(.case-row-head) .case-cell-head .tagline { display: none; }
 
   /* Ending cells flat into the grid — drop the mobile frame's top/left,
      keep the grid right/bottom borders from .case-row > * */
@@ -1080,7 +1050,9 @@ section { position: relative; }
     background: transparent;
     gap: 0;
   }
-  .cell-axis { display: none; }
+  .case-row .cell-axis,
+  .case-row .case-cell-ex .cell-axis,
+  .case-row .case-cell-preps .cell-axis { display: none; }
 
   /* Examples + preps compact at xlarge */
   .case-row .case-cell-ex .examples,
@@ -1232,7 +1204,7 @@ section { position: relative; }
 .note-pairs .to { color: var(--ink-muted); }
 /* Spotlight on the changed letters — the whole point of the pair. */
 .note-pairs .lit,
-.wrinkle .lit {
+.wrinkle-list .lit {
   font-style: italic;
   font-weight: 600;
   color: var(--tone, var(--accent));
@@ -1240,8 +1212,8 @@ section { position: relative; }
   padding: 0 .14em;
   border-radius: 2px;
 }
-.wrinkle .from .lit { color: var(--tone, var(--accent)); }
-.wrinkle .to   .lit { color: var(--tone, var(--accent)); }
+.wrinkle-list .from .lit { color: var(--tone, var(--accent)); }
+.wrinkle-list .to   .lit { color: var(--tone, var(--accent)); }
 
 /* Examples + prepositions — used inside per-case cells */
 .examples {
@@ -1466,51 +1438,71 @@ a.cast-cell-head:hover .cast-abbr { color: var(--ink); }
 }
 
 /* -----------------------------------------------------------
-   Extra blocks — second feminine class and wrinkles
+   Off-paradigm pack — i-declension + five wrinkles as one grid.
+   Mobile: stack. 760px: two columns. 1440px: full-width six-column band.
    ----------------------------------------------------------- */
 .case-extra {
   padding-top: clamp(3rem, 6vw, 5rem);
 }
-.case-extra + .case-extra { padding-top: clamp(2.5rem, 5vw, 4rem); }
 
-.extra-head {
-  display: grid; gap: .6rem;
-  margin-bottom: 2rem;
-  max-width: 64ch;
+.extra-pack {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  border-top: 1px solid var(--hairline);
+  border-left: 1px solid var(--hairline);
 }
-.extra-head h2 {
+@media (min-width: 760px) {
+  .extra-pack { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1440px) {
+  .extra-pack { grid-template-columns: repeat(6, 1fr); }
+}
+
+.extra-panel {
+  border-right: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+  padding: 1.4rem 1.4rem 1.6rem;
+  background: var(--paper);
+  display: flex; flex-direction: column;
+  min-width: 0;
+}
+
+.extra-panel-head { margin: 0 0 1rem; }
+.extra-panel-title {
   font-family: var(--ff-display);
-  font-size: clamp(2.2rem, 1.4rem + 2.5vw, 4rem);
-  font-weight: 200;
-  letter-spacing: -.03em;
-  line-height: 1;
+  font-weight: 400;
+  font-size: clamp(1.15rem, .95rem + .4vw, 1.4rem);
+  letter-spacing: -.012em;
+  line-height: 1.2;
   margin: 0;
+  color: var(--ink);
 }
-.extra-head h2 em { font-style: italic; color: var(--accent); font-weight: 200; }
-.extra-stem {
+.extra-panel-sub {
+  display: block;
+  margin-top: .35rem;
   font-family: var(--ff-mono);
   font-size: var(--fs-meta);
   letter-spacing: .14em;
   text-transform: uppercase;
   color: var(--ink-muted);
-  margin: .4rem 0 0;
 }
-.extra-stem em {
+.extra-panel-sub em {
   font-family: var(--ff-display);
-  font-style: italic;
+  font-style: normal;
+  font-weight: 400;
   text-transform: none;
-  letter-spacing: -.01em;
-  font-size: 1.5em;
+  letter-spacing: -.005em;
+  font-size: 1.4em;
   color: var(--ink);
-  font-weight: 300;
-  margin-left: .5rem;
+  margin-right: .25em;
 }
+.extra-panel-body { min-width: 0; }
 
-.extra-table { max-width: 540px; }
+/* i-declension paradigm — Sg / Pl table */
 .i-decl {
   width: 100%;
   border-collapse: collapse;
-  border-top: 1px solid var(--hairline);
 }
 .i-decl thead th {
   font-family: var(--ff-mono);
@@ -1520,7 +1512,7 @@ a.cast-cell-head:hover .cast-abbr { color: var(--ink); }
   text-transform: uppercase;
   color: var(--ink-muted);
   text-align: left;
-  padding: .9rem 1rem .8rem 0;
+  padding: .2rem .6rem .6rem 0;
   border-bottom: 1px solid var(--hairline);
 }
 .i-decl tbody th.num {
@@ -1533,70 +1525,25 @@ a.cast-cell-head:hover .cast-abbr { color: var(--ink); }
   text-align: left;
   width: 1%;
   white-space: nowrap;
-  padding: 1rem 1.4rem 1rem 0;
+  padding: .7rem 1rem .7rem 0;
   border-bottom: 1px dashed var(--hairline-soft);
 }
 .i-decl tbody td {
-  padding: 1rem 1rem 1rem 0;
+  padding: .7rem .6rem .7rem 0;
   border-bottom: 1px dashed var(--hairline-soft);
 }
 .i-decl tbody td .end {
   font-family: var(--ff-display);
-  font-style: italic;
-  font-weight: 300;
-  font-size: clamp(1.25rem, 1.05rem + .55vw, 1.6rem);
+  font-style: normal;
+  font-weight: 400;
+  font-size: clamp(1.15rem, 1rem + .4vw, 1.45rem);
   color: var(--accent);
   letter-spacing: -.005em;
 }
 .i-decl tbody tr:last-child th,
 .i-decl tbody tr:last-child td { border-bottom: 0; }
 
-/* Wrinkles — small framed cards for cross-cutting patterns */
-.wrinkle-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0;
-  border-top: 1px solid var(--hairline);
-  border-left: 1px solid var(--hairline);
-}
-@media (min-width: 760px) {
-  .wrinkle-grid { grid-template-columns: repeat(2, 1fr); }
-}
-
-.wrinkle {
-  border-right: 1px solid var(--hairline);
-  border-bottom: 1px solid var(--hairline);
-  padding: 1.7rem 1.6rem 1.8rem;
-  background: var(--paper);
-  display: flex; flex-direction: column;
-}
-.wrinkle.wide { grid-column: 1 / -1; }
-
-.wrinkle h3 {
-  font-family: var(--ff-display);
-  font-style: italic;
-  font-weight: 300;
-  font-size: clamp(1.35rem, 1.05rem + .65vw, 1.7rem);
-  letter-spacing: -.018em;
-  line-height: 1.1;
-  margin: 0 0 .85rem;
-  color: var(--ink);
-}
-.wrinkle .lede {
-  font-family: var(--ff-body);
-  font-size: clamp(.98rem, .9rem + .25vw, 1.13rem);
-  line-height: 1.55;
-  color: var(--ink-soft);
-  margin: 0 0 1.25rem;
-  max-width: 52ch;
-}
-.wrinkle .lede em {
-  font-family: var(--ff-display);
-  font-style: italic;
-  color: var(--accent);
-  font-size: 1.05em;
-}
-
+/* Wrinkle list — from → to · gloss */
 .wrinkle-list {
   list-style: none;
   padding: 0; margin: 0;
@@ -1604,51 +1551,37 @@ a.cast-cell-head:hover .cast-abbr { color: var(--ink); }
   grid-template-columns: 1fr;
   gap: 0;
 }
-.wrinkle.wide .wrinkle-list {
-  grid-template-columns: 1fr;
-}
-@media (min-width: 980px) {
-  .wrinkle.wide .wrinkle-list { grid-template-columns: 1fr 1fr; column-gap: 2rem; }
-}
-
 .wrinkle-list li {
   display: flex;
   align-items: baseline;
   flex-wrap: wrap;
   gap: .55rem;
-  padding: .65rem 0;
+  padding: .6rem 0;
   border-bottom: 1px dashed var(--hairline-soft);
 }
 .wrinkle-list li:last-child { border-bottom: 0; }
-.wrinkle.wide .wrinkle-list li:nth-last-child(2):nth-child(odd) {
-  /* keep bottom border on second-to-last when it lives in a 2-col grid */
-}
 
-.wrinkle .from,
-.wrinkle .to {
+.wrinkle-list .from,
+.wrinkle-list .to {
   font-family: var(--ff-display);
-  font-style: italic;
+  font-style: normal;
   font-weight: 400;
-  font-size: clamp(1.05rem, .95rem + .25vw, 1.25rem);
+  font-size: clamp(1.05rem, .95rem + .2vw, 1.2rem);
   color: var(--ink-muted);
   letter-spacing: -.005em;
 }
-.wrinkle .arrow {
+.wrinkle-list .arrow {
   font-family: var(--ff-mono);
   font-size: .82em;
   color: var(--ink-faint);
 }
-.wrinkle .gloss {
+.wrinkle-list .gloss {
   font-family: var(--ff-body);
   font-style: italic;
-  font-size: clamp(.85rem, .8rem + .15vw, .98rem);
+  font-size: clamp(.82rem, .78rem + .12vw, .95rem);
   color: var(--ink-muted);
-  margin-left: auto;
   line-height: 1.4;
-  text-align: right;
-}
-@media (max-width: 560px) {
-  .wrinkle .gloss { margin-left: 0; text-align: left; width: 100%; }
+  width: 100%;
 }
 
 @media (prefers-reduced-motion: reduce) {

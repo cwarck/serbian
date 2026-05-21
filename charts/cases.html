@@ -59,29 +59,8 @@
 
     <div class="case-list" id="caseList"></div>
 
-    <section class="case-extra reveal" id="extra-ideclension" aria-label="Second feminine class">
-      <header class="extra-head">
-        <span class="eyebrow" data-i18n="cases.extra.eyebrow">A second class</span>
-        <h2>
-          <span data-i18n="cases.extra.title.line1">Feminines</span>
-          <em data-i18n="cases.extra.title.em">without -a.</em>
-        </h2>
-        <p class="extra-intro" data-i18n="cases.extra.intro"></p>
-        <p class="extra-stem" data-i18n="cases.extra.stem"></p>
-      </header>
-      <div class="extra-table" id="extraTable"></div>
-    </section>
-
-    <section class="case-extra reveal" id="extra-wrinkles" aria-label="Wrinkles and exceptions">
-      <header class="extra-head">
-        <span class="eyebrow" data-i18n="cases.wrinkles.eyebrow">Tucked-away rules</span>
-        <h2>
-          <span data-i18n="cases.wrinkles.title.line1">Wrinkles</span>
-          <em data-i18n="cases.wrinkles.title.em">worth knowing.</em>
-        </h2>
-        <p class="extra-intro" data-i18n="cases.wrinkles.intro"></p>
-      </header>
-      <div class="wrinkle-grid" id="wrinkleGrid"></div>
+    <section class="case-extra reveal" id="extra-pack" aria-label="Off-paradigm endings">
+      <div class="extra-pack" id="extraPack"></div>
     </section>
 
   </div>
@@ -390,7 +369,6 @@ const WRINKLES = [
   },
   {
     key: 'wrinkle.irregulars',
-    wide: true,
     examples: [
       { from:'brat',  to:'braća',    en:'brother → brothers (f.sg collective)', ru:'брат → братья (соб., ж.р., ед.)' },
       { from:'čovek', to:'ljudi',    en:'person → people (whole new word)',     ru:'человек → люди (новое слово)' },
@@ -740,39 +718,44 @@ function renderCases() {
   list.innerHTML = headerRow + caseRows;
 }
 
-function renderIDecl() {
-  const root = document.getElementById('extraTable');
+function renderExtras() {
+  const root = document.getElementById('extraPack');
   if (!root) return;
   const d = dict();
-  const rows = IDECL.cases.map((abbr, i) => `
+  const lang = currentLang();
+
+  const idRows = IDECL.cases.map((abbr, i) => `
     <tr>
       <th scope="row" class="num">${abbr}</th>
       <td><span class="end">${srText(IDECL.sg[i])}</span></td>
       <td><span class="end">${srText(IDECL.pl[i])}</span></td>
     </tr>
   `).join('');
-  root.innerHTML = `
-    <table class="i-decl">
-      <thead>
-        <tr>
-          <th></th>
-          <th>${d['cases.number.sg'] || 'Sg'}</th>
-          <th>${d['cases.number.pl'] || 'Pl'}</th>
-        </tr>
-      </thead>
-      <tbody>${rows}</tbody>
-    </table>
+  const idTitle = d['cases.extra.title'] || 'Feminines without -a';
+  const idGloss = d['cases.extra.gloss'] || '';
+  const idPanel = `
+    <article class="extra-panel extra-panel-idecl">
+      <header class="extra-panel-head">
+        <h3 class="extra-panel-title">${srGrammarHTML(idTitle)}</h3>
+        <span class="extra-panel-sub"><em>${srText('ljubav')}</em>${idGloss ? ' · ' + idGloss : ''}</span>
+      </header>
+      <div class="extra-panel-body">
+        <table class="i-decl">
+          <thead>
+            <tr>
+              <th></th>
+              <th>${d['cases.number.sg'] || 'Sg'}</th>
+              <th>${d['cases.number.pl'] || 'Pl'}</th>
+            </tr>
+          </thead>
+          <tbody>${idRows}</tbody>
+        </table>
+      </div>
+    </article>
   `;
-}
 
-function renderWrinkles() {
-  const grid = document.getElementById('wrinkleGrid');
-  if (!grid) return;
-  const d = dict();
-  const lang = currentLang();
-  grid.innerHTML = WRINKLES.map(w => {
+  const wrinklePanels = WRINKLES.map(w => {
     const title = d[w.key + '.title'] || '';
-    const intro = d[w.key + '.intro'] || '';
     const items = w.examples.map(ex => {
       const hl = diffHL(ex.from, ex.to);
       return `
@@ -785,13 +768,18 @@ function renderWrinkles() {
       `;
     }).join('');
     return `
-      <article class="wrinkle${w.wide ? ' wide' : ''}">
-        <h3>${title}</h3>
-        <p class="lede">${intro}</p>
-        <ul class="wrinkle-list">${items}</ul>
+      <article class="extra-panel">
+        <header class="extra-panel-head">
+          <h3 class="extra-panel-title">${srGrammarHTML(title)}</h3>
+        </header>
+        <div class="extra-panel-body">
+          <ul class="wrinkle-list">${items}</ul>
+        </div>
       </article>
     `;
   }).join('');
+
+  root.innerHTML = idPanel + wrinklePanels;
 }
 
 function renderAll() {
@@ -799,8 +787,7 @@ function renderAll() {
   renderCaseStrip();
   renderCast();
   renderCases();
-  renderIDecl();
-  renderWrinkles();
+  renderExtras();
 }
 
 function updateStickyOffset() {
@@ -813,8 +800,8 @@ function updateStickyOffset() {
 }
 
 /* Case strip visibility — labels the cases table only. Hide once the user
-   scrolls past the entire case-list (into the second-declension / wrinkles
-   sections); bring it back on any upward scroll. */
+   scrolls past the entire case-list (into the off-paradigm panel); bring it
+   back on any upward scroll. */
 function setupCaseStripVisibility() {
   const strip = document.querySelector('.case-strip');
   const header = document.querySelector('header.nav');
