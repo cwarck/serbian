@@ -971,6 +971,9 @@ section { position: relative; }
 @media (min-width: 1440px) {
   .cases-section { --pad-x: 0; }
 
+  /* The sticky case-row-head replaces the case-strip at this width */
+  .case-strip { display: none; }
+
   .case-list {
     grid-template-columns:
       minmax(180px, 1.1fr)
