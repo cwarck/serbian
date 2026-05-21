@@ -551,10 +551,9 @@ function renderCast() {
 function renderCaseStrip() {
   const list = document.getElementById('caseStripList');
   if (!list) return;
-  list.setAttribute('role', 'tablist');
-  list.innerHTML = CASES.map((c, i) => `
-    <li class="case-strip-cell" data-tone="${c.tone}" role="presentation">
-      <a href="#${caseAnchor(c.key)}" role="tab" aria-selected="false" aria-controls="${caseAnchor(c.key)}">
+  list.innerHTML = CASES.map((c) => `
+    <li class="case-strip-cell" data-tone="${c.tone}">
+      <a href="#${caseAnchor(c.key)}">
         <span class="strip-abbr">${c.abbr}</span>
         <span class="strip-name">${tCases(c.key + '.name')}</span>
       </a>
@@ -645,26 +644,61 @@ function cellHTML(entry, caseIdx) {
   return `<span class="cell"><span class="end">${srText(entry.v)}${note}</span>${pills}</span>`;
 }
 
+const ENDING_AXES = [
+  { key: 'm-sg', g: 'm', n: 'sg' },
+  { key: 'm-pl', g: 'm', n: 'pl' },
+  { key: 'f-sg', g: 'f', n: 'sg' },
+  { key: 'f-pl', g: 'f', n: 'pl' },
+  { key: 'n-sg', g: 'n', n: 'sg' },
+  { key: 'n-pl', g: 'n', n: 'pl' },
+];
+
+function axisLabel(ax, d) {
+  const gl = d['cases.gender.' + ax.g] || ax.g.toUpperCase();
+  const nl = d['cases.number.' + ax.n] || (ax.n === 'sg' ? 'Sg' : 'Pl');
+  return `${gl}.${nl}`;
+}
+
 function renderCases() {
   const list = document.getElementById('caseList');
   const d = dict();
   if (!list) return;
   const lang = currentLang();
-  list.innerHTML = CASES.map((c, i) => {
-    const order   = String(i+1).padStart(2,'0');
+  const exLabel    = d['cases.examples'] || 'In the wild';
+  const prepsLabel = d['cases.preps']    || 'Prepositions';
+
+  const headerRow = `
+    <div class="case-row case-row-head" aria-hidden="true">
+      <span class="case-cell case-cell-head"></span>
+      ${ENDING_AXES.map(ax => `
+        <span class="case-cell case-cell-col" data-gender="${ax.g}" data-axis="${ax.key}">${axisLabel(ax, d)}</span>
+      `).join('')}
+      <span class="case-cell case-cell-col case-cell-col-ex">${exLabel}</span>
+      <span class="case-cell case-cell-col case-cell-col-preps">${prepsLabel}</span>
+    </div>`;
+
+  const caseRows = CASES.map((c, i) => {
     const caseId  = caseAnchor(c.key);
     const name    = d[c.key + '.name']    || '';
     const local   = srText(d[c.key + '.local'] || '');
     const tagline = d[c.key + '.tagline'] || '';
     const q       = srStrongHTML(d[c.key + '.q'] || '');
 
-    const rowsHTML = ['sg','pl'].map(n => `
-      <tr>
-        <th scope="row" class="num">${d['cases.number.' + n] || (n === 'sg' ? 'Sg' : 'Pl')}</th>
-        <td>${cellHTML(c.endings.m[n], i)}</td>
-        <td>${cellHTML(c.endings.f[n], i)}</td>
-        <td>${cellHTML(c.endings.n[n], i)}</td>
-      </tr>
+    const headHTML = `
+      <div class="case-cell case-cell-head">
+        <header class="case-head">
+          <span class="case-tag">${c.abbr}</span>
+          <h3>${name}<em title="${d['cases.local.tooltip'] || ''}">${local}</em></h3>
+          <p class="q">${q}</p>
+          <p class="tagline">${tagline}</p>
+        </header>
+      </div>`;
+
+    const endCells = ENDING_AXES.map(ax => `
+      <div class="case-cell case-cell-end" data-axis="${ax.key}" data-gender="${ax.g}">
+        <span class="cell-axis">${axisLabel(ax, d)}</span>
+        ${cellHTML(c.endings[ax.g][ax.n], i)}
+      </div>
     `).join('');
 
     const exHTML = c.examples.map(ex => `
@@ -673,63 +707,37 @@ function renderCases() {
         <div class="tr">${srGrammarHTML(ex[lang] || ex.en)}</div>
       </div>
     `).join('');
+    const exCell = `
+      <div class="case-cell case-cell-ex">
+        <span class="cell-axis">${exLabel}</span>
+        <div class="examples">${exHTML}</div>
+      </div>`;
 
-    const prepHTML = c.preps.length === 0 ? '' : `
-        <section class="case-block preps">
-          <header class="endings-head">
-            <span class="eyebrow">${d['cases.preps'] || 'Used with'}</span>
-          </header>
-          <dl class="prep-list">
-            ${c.preps.map(pr => `
-              <div class="prep-row">
-                <dt class="prep-word">${srText(pr.p)}</dt>
-                <dd class="prep-mean">${pr[lang] || pr.en}</dd>
-              </div>
-            `).join('')}
-          </dl>
-        </section>
-      `;
+    const prepCell = c.preps.length === 0 ? `
+      <div class="case-cell case-cell-preps is-empty" aria-hidden="true"></div>
+    ` : `
+      <div class="case-cell case-cell-preps">
+        <span class="cell-axis">${prepsLabel}</span>
+        <dl class="prep-list">
+          ${c.preps.map(pr => `
+            <div class="prep-row">
+              <dt class="prep-word">${srText(pr.p)}</dt>
+              <dd class="prep-mean">${pr[lang] || pr.en}</dd>
+            </div>
+          `).join('')}
+        </dl>
+      </div>`;
 
     return `
-      <article class="case" id="${caseId}" data-tone="${c.tone}" role="tabpanel" tabindex="-1">
-        <div class="case-side">
-          <header class="case-head">
-            <span class="case-tag">${c.abbr}</span>
-            <h3>${name}<em title="${d['cases.local.tooltip'] || ''}">${local}</em></h3>
-            <p class="tagline">${tagline}</p>
-            <p class="q">${q}</p>
-          </header>
-        </div>
-        <div class="case-body">
-          <section class="endings">
-            <header class="endings-head">
-              <span class="eyebrow">${d['cases.endings'] || 'Endings'}</span>
-            </header>
-            <table>
-              <thead>
-                <tr>
-                  <th></th>
-                  <th data-gender="m">${d['cases.gender.m'] || 'M'}</th>
-                  <th data-gender="f">${d['cases.gender.f'] || 'F'}</th>
-                  <th data-gender="n">${d['cases.gender.n'] || 'N'}</th>
-                </tr>
-              </thead>
-              <tbody>${rowsHTML}</tbody>
-            </table>
-          </section>
-          <section class="case-right">
-            <section class="case-block">
-              <header class="endings-head">
-                <span class="eyebrow">${d['cases.examples'] || 'In the wild'}</span>
-              </header>
-              <div class="examples">${exHTML}</div>
-            </section>
-            ${prepHTML}
-          </section>
-        </div>
-      </article>
-    `;
+      <article class="case-row" id="${caseId}" data-tone="${c.tone}">
+        ${headHTML}
+        ${endCells}
+        ${exCell}
+        ${prepCell}
+      </article>`;
   }).join('');
+
+  list.innerHTML = headerRow + caseRows;
 }
 
 function renderIDecl() {
@@ -804,17 +812,17 @@ function updateStickyOffset() {
   document.documentElement.style.setProperty('--sticky-offset', stickyOffset + 'px');
 }
 
-/* Case strip visibility — the strip labels only the case card. Once readers
-   move into standalone extra sections, hide it on downward scroll and bring it
-   back as soon as they scroll up toward the case card again. */
+/* Case strip visibility — labels the cases table only. Hide once the user
+   scrolls past the entire case-list (into the second-declension / wrinkles
+   sections); bring it back on any upward scroll. */
 function setupCaseStripVisibility() {
   const strip = document.querySelector('.case-strip');
   const header = document.querySelector('header.nav');
-  if (!strip) return;
+  const list = document.getElementById('caseList');
+  if (!strip || !list) return;
 
   let lastY = window.scrollY || window.pageYOffset || 0;
   let ticking = false;
-  let initialized = false;
   let pointerFocused = false;
 
   function setHidden(hidden) {
@@ -828,22 +836,18 @@ function setupCaseStripVisibility() {
     const y = window.scrollY || window.pageYOffset || 0;
     const scrollingDown = y > lastY + 2;
     const scrollingUp = y < lastY - 2;
-    const activeCase = document.querySelector('#caseList .case.is-active');
     const headerHeight = header ? header.offsetHeight : 0;
-    const passedCaseCard = activeCase
-      ? activeCase.getBoundingClientRect().bottom <= headerHeight + 12
-      : false;
-
+    const listRect = list.getBoundingClientRect();
+    const passedList = listRect.bottom <= headerHeight + 12;
     const keyboardFocusInStrip = strip.matches(':focus-within') && !pointerFocused;
 
-    if (scrollingUp || !passedCaseCard || keyboardFocusInStrip) {
+    if (scrollingUp || !passedList || keyboardFocusInStrip) {
       setHidden(false);
-    } else if ((scrollingDown || !initialized) && passedCaseCard) {
+    } else if (scrollingDown && passedList) {
       setHidden(true);
     }
 
     lastY = y;
-    initialized = true;
   }
 
   window.addEventListener('scroll', () => {
@@ -857,6 +861,41 @@ function setupCaseStripVisibility() {
   strip.addEventListener('keydown', () => { pointerFocused = false; });
   strip.addEventListener('focusin', () => setHidden(false));
   strip.addEventListener('focusout', () => { pointerFocused = false; });
+  update();
+}
+
+/* Scroll-spy — mark the case-strip cell whose row is currently nearest the
+   top of the viewport (below the sticky header) as is-current. */
+function setupScrollSpy() {
+  const update = () => {
+    const cells = document.querySelectorAll('.case-strip-cell');
+    const rows = document.querySelectorAll('#caseList .case-row[id]');
+    if (!cells.length || !rows.length) return;
+    const off = parseInt(getComputedStyle(document.documentElement)
+      .getPropertyValue('--sticky-offset')) || 0;
+    const probe = off + 24;
+    let candidateId = rows[0].id;
+    for (const row of rows) {
+      if (row.getBoundingClientRect().top - probe <= 0) candidateId = row.id;
+      else break;
+    }
+    cells.forEach(cell => {
+      const a = cell.querySelector('a');
+      const match = !!a && a.getAttribute('href') === '#' + candidateId;
+      cell.classList.toggle('is-current', match);
+      if (a) a.setAttribute('aria-selected', match ? 'true' : 'false');
+    });
+  };
+
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => { ticking = false; update(); });
+  }, { passive: true });
+  window.addEventListener('resize', update);
+  document.addEventListener('langchange', update);
+  document.addEventListener('scriptchange', update);
   update();
 }
 
@@ -929,75 +968,20 @@ function setupCaseStripVisibility() {
   document.addEventListener('langchange', close);
 })();
 
-/* Tabs — only one case article is visible at a time. The case-strip is the
-   tab bar; bird's-eye tiles, "Meet the cast" cells, and any `#case-N` link
-   also switch tabs. */
-function activeCaseFromHash() {
-  const h = (location.hash || '').replace(/^#/, '');
-  const idx = CASES.findIndex(c => caseAnchor(c.key) === h);
-  return idx >= 0 ? idx : 0;
-}
-
-function showCase(idx, { scroll = false, smooth = true, updateHash = true } = {}) {
-  if (idx < 0 || idx >= CASES.length) idx = 0;
-  const targetId = caseAnchor(CASES[idx].key);
-  document.querySelectorAll('#caseList .case').forEach(el => {
-    el.classList.toggle('is-active', el.id === targetId);
-  });
-  document.querySelectorAll('.case-strip-cell').forEach(cell => {
-    const a = cell.querySelector('a');
-    const match = !!a && a.getAttribute('href') === '#' + targetId;
-    cell.classList.toggle('is-current', match);
-    if (a) a.setAttribute('aria-selected', match ? 'true' : 'false');
-  });
-  if (updateHash && location.hash !== '#' + targetId) {
-    history.pushState(null, '', '#' + targetId);
-  }
-  if (scroll) {
-    const el = document.getElementById(targetId);
-    if (el) {
-      const off = parseInt(getComputedStyle(document.documentElement)
-        .getPropertyValue('--sticky-offset')) || 0;
-      const top = el.getBoundingClientRect().top + window.scrollY - off - 12;
-      window.scrollTo({ top, behavior: smooth ? 'smooth' : 'auto' });
-    }
-  }
-}
-
-function setupTabs() {
-  document.addEventListener('click', (e) => {
-    if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
-    const a = e.target.closest('a');
-    if (!a) return;
-    const m = (a.getAttribute('href') || '').match(/^#(case-\d+)$/);
-    if (!m) return;
-    const idx = CASES.findIndex(c => caseAnchor(c.key) === m[1]);
-    if (idx < 0) return;
-    e.preventDefault();
-    showCase(idx, { scroll: true });
-  });
-  window.addEventListener('popstate', () => {
-    showCase(activeCaseFromHash(), { updateHash: false, scroll: true });
-  });
-}
-
 document.addEventListener('langchange', () => {
   renderAll();
   updateStickyOffset();
-  showCase(activeCaseFromHash(), { updateHash: false });
 });
 document.addEventListener('scriptchange', () => {
   renderAll();
   updateStickyOffset();
-  showCase(activeCaseFromHash(), { updateHash: false });
 });
 window.addEventListener('resize', updateStickyOffset);
 window.addEventListener('load', updateStickyOffset);
 renderAll();
 updateStickyOffset();
-setupTabs();
-showCase(activeCaseFromHash(), { scroll: !!location.hash, smooth: false, updateHash: false });
 setupCaseStripVisibility();
+setupScrollSpy();
 </script>
 </body>
 </html>
