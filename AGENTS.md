@@ -54,8 +54,6 @@ The scale is the rulebook. Pick a role; the token decides the size.
 
 ## Planned charts
 
-- Verbs & conjugation
-- Pronouns & their forms
 - Prepositions, visualized
 - Numbers & counting
 - Verb aspect pairs
