@@ -955,10 +955,10 @@ section { position: relative; }
 
   .case-list {
     grid-template-columns:
-      minmax(180px, 1.1fr)
+      minmax(220px, 1.6fr)
       repeat(6, minmax(82px, .9fr))
       minmax(260px, 1.8fr)
-      minmax(280px, 1.8fr);
+      minmax(180px, 1fr);
     border-top: 1px solid var(--hairline);
     border-left: 1px solid var(--hairline);
   }
