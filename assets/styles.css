@@ -1563,6 +1563,311 @@ a.cast-cell-head:hover .cast-abbr { color: var(--ink); }
 }
 
 /* -----------------------------------------------------------
+   Pronouns
+   ----------------------------------------------------------- */
+
+.pron-section {
+  padding-block: clamp(2rem, 5vw, 4rem) clamp(3rem, 6vw, 5rem);
+}
+
+[data-tone="pron-personal"] { --tone: light-dark(#2C5074, #95B5D6); }
+[data-tone="pron-poss"] { --tone: light-dark(#7A4B23, #D8A063); }
+[data-tone="pron-demo"] { --tone: light-dark(#1F4940, #71B9AC); }
+[data-tone="pron-question"] { --tone: light-dark(#A8401C, #E27A4F); }
+
+.pron-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  border-top: 1px solid var(--hairline);
+  border-left: 1px solid var(--hairline);
+  position: relative;
+}
+.pron-layout::before,
+.pron-layout::after {
+  content: "";
+  position: absolute;
+  background: var(--hairline);
+  pointer-events: none;
+}
+.pron-layout::before { left: 0; right: 0; bottom: 0; height: 1px; }
+.pron-layout::after { top: 0; bottom: 0; right: 0; width: 1px; }
+
+.pron-panel {
+  min-width: 0;
+  border-right: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+  background: var(--paper);
+  padding: 1.25rem 1.05rem 1.35rem;
+  display: grid;
+  align-content: start;
+  gap: 1.15rem;
+}
+.pron-panel::before {
+  content: "";
+  display: block;
+  height: 3px;
+  background: var(--tone, var(--accent));
+  margin: -1.25rem -1.05rem .05rem;
+}
+.pron-panel-head {
+  display: grid;
+  gap: .45rem;
+}
+.pron-kicker,
+.pron-panel h4,
+.pron-person-label,
+.pron-mini-head,
+.pron-row-label,
+.pron-kw-head,
+.pron-kw-row > span:first-child {
+  font-family: var(--ff-mono);
+  font-size: var(--fs-label);
+  font-weight: 500;
+  letter-spacing: var(--track-label);
+  line-height: 1;
+  text-transform: uppercase;
+}
+.pron-kicker,
+.pron-panel h4,
+.pron-person-label,
+.pron-mini-head,
+.pron-row-label,
+.pron-kw-head,
+.pron-kw-row > span:first-child {
+  color: var(--ink-muted);
+}
+.pron-panel-head h3 {
+  font-size: var(--fs-title);
+  line-height: var(--lh-snug);
+  color: var(--tone, var(--accent));
+}
+
+.pron-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.pron-table thead { display: none; }
+.pron-table tbody,
+.pron-table tr,
+.pron-table th,
+.pron-table td {
+  display: block;
+}
+.pron-table tr {
+  border-top: 1px solid var(--hairline-soft);
+  padding-block: .75rem;
+}
+.pron-table tr:first-child { border-top: 0; padding-top: 0; }
+.pron-table th {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: .55rem;
+  text-align: left;
+}
+.pron-table td {
+  display: grid;
+  grid-template-columns: minmax(5.75rem, .8fr) minmax(0, 1fr);
+  align-items: baseline;
+  gap: .8rem;
+  padding: .52rem 0;
+  border-top: 1px dashed var(--hairline-soft);
+}
+.pron-table td::before {
+  content: attr(data-label);
+  font-family: var(--ff-mono);
+  font-size: var(--fs-label);
+  font-weight: 500;
+  letter-spacing: var(--track-label);
+  line-height: 1;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.pron-subject,
+.pron-long,
+.pron-short,
+.pron-dash,
+.pron-form,
+.pron-gender-row span,
+.pron-kw-row > span:not(:first-child) {
+  font-family: var(--ff-display);
+  font-size: var(--fs-lead);
+  font-weight: 300;
+  line-height: var(--lh-snug);
+  letter-spacing: 0;
+}
+.pron-subject,
+.pron-long,
+.pron-form,
+.pron-gender-row span,
+.pron-kw-row > span:not(:first-child) {
+  color: var(--tone, var(--accent));
+}
+.pron-short {
+  color: var(--cool);
+}
+.pron-comma,
+.pron-dash {
+  color: var(--ink-muted);
+}
+.pron-table tr[data-band="self"] .pron-subject,
+.pron-table tr[data-band="self"] .pron-long {
+  color: var(--accent);
+}
+
+.pron-rule-row {
+  display: grid;
+  gap: .65rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--hairline);
+}
+.pron-rule-row p,
+.pron-poss-card p {
+  margin: 0;
+  font-size: var(--fs-caption);
+  line-height: var(--lh-prose);
+  color: var(--ink-muted);
+}
+.pron-rule-row strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.pron-card-grid,
+.pron-demo-pack,
+.pron-question-pack {
+  display: grid;
+  gap: 1.1rem;
+}
+.pron-mini-head {
+  display: grid;
+  grid-template-columns: minmax(5.8rem, .8fr) repeat(3, minmax(0, 1fr));
+  gap: .6rem;
+  padding-bottom: .5rem;
+  border-bottom: 1px solid var(--hairline-soft);
+}
+.pron-mini-head span:not(:first-child) {
+  color: var(--tone, var(--accent));
+}
+.pron-poss-card {
+  display: grid;
+  gap: .45rem;
+  padding-bottom: .85rem;
+  border-bottom: 1px dashed var(--hairline-soft);
+}
+.pron-poss-card:last-child { border-bottom: 0; padding-bottom: 0; }
+.pron-poss-card h4 {
+  margin: 0;
+}
+.pron-gender-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .6rem;
+}
+.pron-gender-row span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.pron-demo-group,
+.pron-question-block {
+  display: grid;
+  gap: .65rem;
+}
+.pron-matrix {
+  display: grid;
+  border-top: 1px solid var(--hairline-soft);
+}
+.pron-matrix-row {
+  display: grid;
+  grid-template-columns: minmax(5.8rem, .8fr) repeat(3, minmax(0, 1fr));
+  gap: .6rem;
+  align-items: baseline;
+  padding: .72rem 0;
+  border-bottom: 1px dashed var(--hairline-soft);
+}
+.pron-matrix-row:last-child { border-bottom: 0; }
+.pron-form {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.pron-kw-table {
+  display: grid;
+  border-top: 1px solid var(--hairline-soft);
+}
+.pron-kw-head,
+.pron-kw-row {
+  display: grid;
+  grid-template-columns: minmax(7.5rem, 1fr) repeat(2, minmax(0, .8fr));
+  gap: .6rem;
+  align-items: baseline;
+}
+.pron-kw-head {
+  padding: 0 0 .5rem;
+  border-bottom: 1px solid var(--hairline-soft);
+}
+.pron-kw-head span:not(:first-child) {
+  color: var(--tone, var(--accent));
+}
+.pron-kw-row {
+  padding: .72rem 0;
+  border-bottom: 1px dashed var(--hairline-soft);
+}
+.pron-kw-row:last-child { border-bottom: 0; }
+
+@media (min-width: 760px) {
+  .pron-layout { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .pron-personal { grid-column: 1 / -1; }
+  .pron-table {
+    display: table;
+    table-layout: fixed;
+  }
+  .pron-table thead { display: table-header-group; }
+  .pron-table tbody { display: table-row-group; }
+  .pron-table tr { display: table-row; padding: 0; border-top: 0; }
+  .pron-table th,
+  .pron-table td {
+    display: table-cell;
+    padding: .74rem .7rem;
+    border-top: 1px solid var(--hairline-soft);
+    border-right: 1px solid var(--hairline-soft);
+    vertical-align: baseline;
+  }
+  .pron-table th:last-child,
+  .pron-table td:last-child {
+    border-right: 0;
+  }
+  .pron-table thead th {
+    font-family: var(--ff-mono);
+    font-size: var(--fs-label);
+    font-weight: 500;
+    letter-spacing: var(--track-label);
+    line-height: 1;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    text-align: left;
+    border-top: 0;
+    border-bottom: 1px solid var(--hairline);
+  }
+  .pron-table tbody th {
+    width: 18%;
+  }
+  .pron-table td::before { content: none; }
+  .pron-table th {
+    justify-content: flex-start;
+    padding-bottom: .74rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .pron-layout { grid-template-columns: 1.35fr 1fr; }
+  .pron-personal { grid-row: span 3; grid-column: auto; }
+}
+
+/* -----------------------------------------------------------
    Verbs (conjugation)
    ----------------------------------------------------------- */
 

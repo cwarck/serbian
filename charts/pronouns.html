@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Serbian pronouns chart: personal forms, possessives, demonstratives, and ko/šta questions.">
+<title>Pronouns & forms - Atlas Srpski</title>
+
+<script>
+  (function(){
+    try{
+      var t = localStorage.getItem('as_theme');
+      if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+    }catch(e){}
+  })();
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="shell nav-inner">
+    <a href="/" class="brand">
+      <span class="brand-mark">A.</span>
+      <span data-i18n="nav.brand">Atlas Srpski</span>
+    </a>
+    <div class="nav-actions">
+      <div class="nav-controls" role="group" aria-label="Language">
+        <button class="chip" data-lang-chip="en" aria-pressed="true">EN</button>
+        <button class="chip" data-lang-chip="ru" aria-pressed="false">RU</button>
+      </div>
+      <div class="nav-controls script-controls" role="group" aria-label="Serbian script">
+        <button class="chip script-chip" data-script-chip="lat" aria-pressed="true" aria-label="Use Latin script">Ć</button>
+        <button class="chip script-chip" data-script-chip="cyr" aria-pressed="false" aria-label="Use Cyrillic script">Ћ</button>
+      </div>
+      <button class="theme-btn" data-theme-toggle aria-label="Toggle theme" data-i18n-attr="aria-label:nav.theme">
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"></path></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="pron-section" aria-label="Serbian pronouns and their forms">
+  <div class="shell">
+    <div class="pron-layout reveal">
+      <section class="pron-panel pron-personal" data-tone="pron-personal">
+        <header class="pron-panel-head">
+          <span class="pron-kicker" data-i18n="pron.personal.kicker">Core grid</span>
+          <h3 data-i18n="pron.personal.title">Personal pronouns</h3>
+        </header>
+        <div class="pron-table-wrap" id="personalPronouns"></div>
+      </section>
+
+      <section class="pron-panel" data-tone="pron-poss">
+        <header class="pron-panel-head">
+          <span class="pron-kicker" data-i18n="pron.possessive.kicker">Adjective forms</span>
+          <h3 data-i18n="pron.possessive.title">Possessives</h3>
+        </header>
+        <div class="pron-card-grid" id="possessives"></div>
+      </section>
+
+      <section class="pron-panel" data-tone="pron-demo">
+        <header class="pron-panel-head">
+          <span class="pron-kicker" data-i18n="pron.demo.kicker">Near / middle / far</span>
+          <h3 data-i18n="pron.demo.title">Demonstratives</h3>
+        </header>
+        <div class="pron-demo-pack" id="demonstratives"></div>
+      </section>
+
+      <section class="pron-panel" data-tone="pron-question">
+        <header class="pron-panel-head">
+          <span class="pron-kicker" data-i18n="pron.question.kicker">Question words</span>
+          <h3 data-i18n="pron.question.title">Who, what, whose?</h3>
+        </header>
+        <div class="pron-question-pack" id="questions"></div>
+      </section>
+    </div>
+  </div>
+</section>
+
+<footer class="foot shell">
+  <span data-i18n="foot.copy">© 2026 Atlas Srpski · Content <a href="https://creativecommons.org/licenses/by/4.0/deed.en" rel="license noopener" target="_blank">CC BY 4.0</a></span>
+  <span>
+    <a href="https://github.com/cwarck/serbian" rel="noopener" target="_blank" class="foot-icon" aria-label="Source" data-i18n-attr="aria-label:foot.repo"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg></a>
+    &nbsp;·&nbsp;
+    <a href="https://ilyaakimov.com" rel="noopener" target="_blank" data-i18n="foot.author">by Ilya Akimov</a>
+  </span>
+</footer>
+
+<script src="../assets/i18n.js"></script>
+<script src="../assets/app.js"></script>
+
+<script>
+const PERSONAL = [
+  { band:'self', label:'pron.self', subject:'-', object:'sebe, se', datloc:'sebi, si', inst:'sobom', poss:'svoj' },
+  { band:'sg', label:'pron.1sg', subject:'ja', object:'mene, me', datloc:'meni, mi', inst:'mnom', poss:'moj' },
+  { band:'sg', label:'pron.2sg', subject:'ti', object:'tebe, te', datloc:'tebi, ti', inst:'tobom', poss:'tvoj' },
+  { band:'sg', label:'pron.3msg', subject:'on', object:'njega, ga', datloc:'njemu, mu', inst:'njim', poss:'njegov' },
+  { band:'sg', label:'pron.3nsg', subject:'ono', object:'njega, ga', datloc:'njemu, mu', inst:'njim', poss:'njegov' },
+  { band:'sg', label:'pron.3fsg', subject:'ona', object:'nju / nje, je / ju', datloc:'njoj, joj', inst:'njom', poss:'njen' },
+  { band:'pl', label:'pron.1pl', subject:'mi', object:'nas', datloc:'nama, nam', inst:'nama', poss:'naš' },
+  { band:'pl', label:'pron.2pl', subject:'vi', object:'vas', datloc:'vama, vam', inst:'vama', poss:'vaš' },
+  { band:'pl', label:'pron.3mpl', subject:'oni', object:'njih, ih', datloc:'njima, im', inst:'njima', poss:'njihov' },
+  { band:'pl', label:'pron.3npl', subject:'ona', object:'njih, ih', datloc:'njima, im', inst:'njima', poss:'njihov' },
+  { band:'pl', label:'pron.3fpl', subject:'one', object:'njih, ih', datloc:'njima, im', inst:'njima', poss:'njihov' },
+];
+
+const POSSESSIVES = [
+  { owner:'pron.self.owner', forms:['svoj', 'svoje', 'svoja'], note:'pron.self.note' },
+  { owner:'pron.my', forms:['moj', 'moje', 'moja'] },
+  { owner:'pron.your.sg', forms:['tvoj', 'tvoje', 'tvoja'] },
+  { owner:'pron.his.its', forms:['njegov', 'njegovo', 'njegova'] },
+  { owner:'pron.her', forms:['njen', 'njeno', 'njena'] },
+  { owner:'pron.our', forms:['naš', 'naše', 'naša'] },
+  { owner:'pron.your.pl', forms:['vaš', 'vaše', 'vaša'] },
+  { owner:'pron.their', forms:['njihov', 'njihovo', 'njihova'] },
+];
+
+const DEMOS = [
+  {
+    title:'pron.demo.sg',
+    rows:[
+      { key:'pron.this', forms:['ovaj', 'ovo', 'ova'] },
+      { key:'pron.that', forms:['taj', 'to', 'ta'] },
+      { key:'pron.over.there', forms:['onaj', 'ono', 'ona'] },
+    ]
+  },
+  {
+    title:'pron.demo.pl',
+    rows:[
+      { key:'pron.these', forms:['ovi', 'ova', 'ove'] },
+      { key:'pron.those', forms:['ti', 'ta', 'te'] },
+      { key:'pron.those.far', forms:['oni', 'ona', 'one'] },
+    ]
+  }
+];
+
+const QUESTIONS = {
+  whose: [
+    { label:'pron.sg', forms:['čiji', 'čije', 'čija'] },
+    { label:'pron.pl', forms:['čiji', 'čija', 'čije'] },
+  ],
+  whoWhat: [
+    { key:'case.1.name', who:'ko', what:'šta' },
+    { key:'case.4.name', who:'koga', what:'šta' },
+    { key:'case.2.name', who:'koga', what:'čega' },
+    { key:'pron.datloc', who:'kome', what:'čemu' },
+    { key:'case.6.name', who:'kim', what:'čim' },
+  ]
+};
+
+function dict() {
+  const lang = document.documentElement.getAttribute('lang') || 'en';
+  return (window.I18N && window.I18N[lang]) || {};
+}
+function t(key) { return dict()[key] || key; }
+function srText(text) {
+  return window.AtlasSrpski ? window.AtlasSrpski.sr(text) : String(text);
+}
+
+function personalCell(value) {
+  if (value === '-') return '<span class="pron-dash">-</span>';
+  const parts = value.split(',').map(part => part.trim());
+  return parts.map((part, idx) => `
+    <span class="${idx === 0 ? 'pron-long' : 'pron-short'}">${srText(part)}</span>
+  `).join('<span class="pron-comma">,</span> ');
+}
+
+function renderPersonal() {
+  const root = document.getElementById('personalPronouns');
+  if (!root) return;
+  const columns = [
+    ['pron.subject', 'subject'],
+    ['pron.accgen', 'object'],
+    ['pron.datloc', 'datloc'],
+    ['case.6.name', 'inst'],
+    ['pron.poss.short', 'poss'],
+  ];
+  const rows = PERSONAL.map(row => `
+    <tr data-band="${row.band}">
+      <th scope="row">
+        <span class="pron-person-label">${t(row.label)}</span>
+        <span class="pron-subject">${srText(row.subject)}</span>
+      </th>
+      ${columns.slice(1).map(([key, prop]) => `<td data-label="${t(key)}">${personalCell(row[prop])}</td>`).join('')}
+    </tr>
+  `).join('');
+
+  root.innerHTML = `
+    <table class="pron-table">
+      <thead>
+        <tr>
+          ${columns.map(([key]) => `<th scope="col">${t(key)}</th>`).join('')}
+        </tr>
+      </thead>
+      <tbody>${rows}</tbody>
+    </table>
+    <div class="pron-rule-row">
+      <p><strong>${t('pron.long.short')}</strong> ${t('pron.long.short.rule')}</p>
+      <p><strong>${srText('svoj')}</strong> ${t('pron.svoj.rule')}</p>
+    </div>
+  `;
+}
+
+function renderPossessives() {
+  const root = document.getElementById('possessives');
+  if (!root) return;
+  root.innerHTML = `
+    <div class="pron-mini-head" aria-hidden="true">
+      <span></span><span>${t('cases.gender.m')}</span><span>${t('cases.gender.n')}</span><span>${t('cases.gender.f')}</span>
+    </div>
+    ${POSSESSIVES.map(item => `
+      <article class="pron-poss-card">
+        <h4>${t(item.owner)}</h4>
+        <div class="pron-gender-row">
+          ${item.forms.map(form => `<span>${srText(form)}</span>`).join('')}
+        </div>
+        ${item.note ? `<p>${t(item.note)}</p>` : ''}
+      </article>
+    `).join('')}
+  `;
+}
+
+function genderHead() {
+  return `<div class="pron-mini-head pron-genders" aria-hidden="true">
+    <span></span><span>${t('cases.gender.m')}</span><span>${t('cases.gender.n')}</span><span>${t('cases.gender.f')}</span>
+  </div>`;
+}
+
+function renderDemonstratives() {
+  const root = document.getElementById('demonstratives');
+  if (!root) return;
+  root.innerHTML = DEMOS.map(group => `
+    <section class="pron-demo-group">
+      <h4>${t(group.title)}</h4>
+      ${genderHead()}
+      <div class="pron-matrix">
+        ${group.rows.map(row => `
+          <div class="pron-matrix-row">
+            <span class="pron-row-label">${t(row.key)}</span>
+            ${row.forms.map(form => `<span class="pron-form">${srText(form)}</span>`).join('')}
+          </div>
+        `).join('')}
+      </div>
+    </section>
+  `).join('') + `
+    <div class="pron-rule-row">
+      <p><strong>${srText('Ovo je...')}</strong> ${t('pron.demo.predicate')}</p>
+      <p><strong>${srText('Ovaj pas')}</strong> ${t('pron.demo.noun.rule')}</p>
+    </div>
+  `;
+}
+
+function renderQuestions() {
+  const root = document.getElementById('questions');
+  if (!root) return;
+  root.innerHTML = `
+    <section class="pron-question-block">
+      <h4>${t('pron.whose')}</h4>
+      ${genderHead()}
+      <div class="pron-matrix">
+        ${QUESTIONS.whose.map(row => `
+          <div class="pron-matrix-row">
+            <span class="pron-row-label">${t(row.label)}</span>
+            ${row.forms.map(form => `<span class="pron-form">${srText(form)}</span>`).join('')}
+          </div>
+        `).join('')}
+      </div>
+    </section>
+    <section class="pron-question-block">
+      <h4>${t('pron.who.what')}</h4>
+      <div class="pron-kw-table">
+        <div class="pron-kw-head"><span></span><span>${t('pron.who')}</span><span>${t('pron.what')}</span></div>
+        ${QUESTIONS.whoWhat.map(row => `
+          <div class="pron-kw-row">
+            <span>${t(row.key)}</span>
+            <span>${srText(row.who)}</span>
+            <span>${srText(row.what)}</span>
+          </div>
+        `).join('')}
+      </div>
+    </section>
+  `;
+}
+
+function renderPronouns() {
+  renderPersonal();
+  renderPossessives();
+  renderDemonstratives();
+  renderQuestions();
+}
+
+document.addEventListener('langchange', renderPronouns);
+document.addEventListener('scriptchange', renderPronouns);
+renderPronouns();
+</script>
+</body>
+</html>

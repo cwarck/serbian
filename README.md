@@ -8,7 +8,9 @@ A static site. No build step, no PDFs, no screenshots — just HTML, CSS, and a 
 
 - **The two alphabets** — Cyrillic and Latin, side by side, with IPA and example words.
 - **Seven cases** — endings, questions, prepositions, example sentences.
-- More on the way: verbs, pronouns, prepositions, numbers, aspect, pitch, false friends.
+- **Verbs & conjugation** — present buckets, irregulars, past and future.
+- **Pronouns & their forms** — personal forms, possessives, demonstratives, and question words.
+- More on the way: prepositions, numbers, aspect, pitch, false friends.
 
 ## Features
 
