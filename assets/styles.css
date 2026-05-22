@@ -1017,10 +1017,14 @@ section { position: relative; }
     padding-left: 1.1rem;
     background: color-mix(in oklab, var(--paper-deep) 35%, transparent);
   }
-  .case-row:not(.case-row-head) .case-cell-head h3 { font-size: var(--fs-title); }
+  .case-row:not(.case-row-head) .case-cell-head h3 {
+    font-size: var(--fs-lead);
+    letter-spacing: -.012em;
+    line-height: 1.05;
+  }
   .case-row:not(.case-row-head) .case-cell-head h3 em { font-size: var(--fs-caption); margin-top: .25em; }
   .case-row:not(.case-row-head) .case-cell-head .case-tag { margin-bottom: .7rem; padding: .3rem .55rem; }
-  .case-row:not(.case-row-head) .case-cell-head .q { font-size: var(--fs-body); margin-top: .65rem; max-width: none; }
+  .case-row:not(.case-row-head) .case-cell-head .q { font-size: var(--fs-caption); margin-top: .65rem; max-width: none; }
   /* Tagline is narrative — drop it on xlarge */
   .case-row:not(.case-row-head) .case-cell-head .tagline { display: none; }
 
@@ -1432,9 +1436,6 @@ a.cast-cell-head:hover .cast-abbr { color: var(--ink); }
 @media (min-width: 760px) {
   .extra-pack { grid-template-columns: repeat(2, 1fr); }
 }
-@media (min-width: 1440px) {
-  .extra-pack { grid-template-columns: repeat(6, 1fr); }
-}
 
 .extra-panel {
   border-right: 1px solid var(--hairline);
@@ -1451,6 +1452,7 @@ a.cast-cell-head:hover .cast-abbr { color: var(--ink); }
   letter-spacing: -.012em;
   line-height: 1.2;
 }
+.extra-panel-title .lit { white-space: nowrap; }
 .extra-panel-sub {
   display: block;
   margin-top: .35rem;
@@ -1555,6 +1557,36 @@ a.cast-cell-head:hover .cast-abbr { color: var(--ink); }
   color: var(--ink-muted);
   line-height: 1.4;
   width: 100%;
+}
+
+@media (min-width: 1440px) {
+  .extra-pack { grid-template-columns: repeat(6, 1fr); }
+
+  .extra-panel {
+    padding: 1.1rem 1rem 1.25rem;
+  }
+
+  .extra-panel-head { margin-bottom: .85rem; }
+
+  .extra-panel-title {
+    font-size: var(--fs-lead);
+    line-height: 1.12;
+    letter-spacing: -.005em;
+  }
+
+  .extra-panel-sub {
+    margin-top: .5rem;
+    line-height: 1.2;
+  }
+
+  .i-decl tbody th.num,
+  .i-decl tbody td {
+    padding-block: .55rem;
+  }
+
+  .i-decl tbody td .end {
+    font-size: var(--fs-body);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
