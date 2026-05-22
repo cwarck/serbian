@@ -1046,13 +1046,7 @@ section { position: relative; }
   .case-row .case-cell-ex .ex { padding: .6rem 0; }
   .case-row .case-cell-ex .ex .sr { font-size: var(--fs-body); }
   .case-row .case-cell-ex .ex .tr { font-size: var(--fs-caption); }
-  .case-row .case-cell-preps .prep-row {
-    grid-template-columns: minmax(3.2rem, auto) 1fr;
-    gap: .8rem;
-    padding: .5rem 0;
-  }
-  .case-row .case-cell-preps .prep-word { font-size: var(--fs-body); }
-  .case-row .case-cell-preps .prep-mean { font-size: var(--fs-caption); }
+  .case-row .case-cell-preps .prep-list { font-size: var(--fs-body); }
 }
 
 .cell {
@@ -1242,36 +1236,15 @@ section { position: relative; }
   margin-left: .35em;
 }
 
-/* Preposition list — structured key/value, not chip cloud */
+/* Preposition list — tone-colored inline run; meanings live on the
+   future Prepositions chart, so this side stays a quick name index. */
 .prep-list {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0;
-  margin: 0;
-}
-.prep-row {
-  display: grid;
-  grid-template-columns: minmax(4.5rem, auto) 1fr;
-  gap: 1.2rem;
-  padding: .7rem 0;
-  border-bottom: 1px dashed var(--hairline-soft);
-  align-items: baseline;
-}
-.prep-row:last-child { border-bottom: 0; }
-.prep-word {
   font-family: var(--ff-display);
-  font-style: italic;
   font-weight: 400;
   font-size: var(--fs-lead);
   color: var(--tone, var(--accent));
   letter-spacing: -.005em;
-  margin: 0;
-}
-.prep-mean {
-  font-family: var(--ff-body);
-  color: var(--ink-soft);
-  font-size: var(--fs-body);
-  line-height: 1.45;
+  line-height: var(--lh-prose);
   margin: 0;
 }
 

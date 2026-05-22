@@ -137,18 +137,7 @@ const CASES = [
       { sr:'Stižem iz <mark>grada</mark>.',       en:'I\'m arriving from the city.', ru:'Я приезжаю из города.' },
       { sr:'Nemam <mark>vremena</mark>.',         en:'I have no time.',              ru:'У меня нет времени.' },
     ],
-    preps: [
-      { p:'od',    en:'from (a person, a starting point)',    ru:'от (человека, начальной точки)', group:'origin' },
-      { p:'iz',    en:'out of, from inside',                  ru:'из (изнутри)',                    group:'origin' },
-      { p:'do',    en:'to / up to (a destination, a limit)',  ru:'до (предела, конечной точки)',    group:'origin' },
-      { p:'kod',   en:'at (someone\'s place), by, near',      ru:'у (кого-то), возле',              group:'position' },
-      { p:'blizu', en:'close to',                             ru:'близ, рядом с',                   group:'position' },
-      { p:'iza',   en:'behind',                               ru:'за, позади',                      group:'position' },
-      { p:'oko',   en:'around, about',                        ru:'вокруг, около',                   group:'position' },
-      { p:'bez',   en:'without',                              ru:'без',                             group:'absence' },
-      { p:'pre',   en:'before',                               ru:'до, перед',                       group:'absence' },
-      { p:'posle', en:'after',                                ru:'после',                           group:'absence' },
-    ]
+    preps: ['od','iz','do','kod','blizu','iza','oko','bez','pre','posle']
   },
 
   {
@@ -173,11 +162,7 @@ const CASES = [
       { sr:'Idem k <mark>moru</mark>.',             en:'I\'m going to the sea.',            ru:'Я еду к морю.' },
       { sr:'Pomažem <mark>prijateljici</mark>.',    en:'I\'m helping a friend (f.).',       ru:'Я помогаю подруге.' },
     ],
-    preps: [
-      { p:'k, ka',     en:'towards (a destination, a person)',  ru:'к (направлению, к кому-либо)' },
-      { p:'prema',     en:'toward, facing',                     ru:'к, по направлению к' },
-      { p:'nasuprot',  en:'opposite, across from',              ru:'напротив' },
-    ]
+    preps: ['k/ka','prema','nasuprot']
   },
 
   {
@@ -208,18 +193,7 @@ const CASES = [
       { sr:'Vidim <mark>grad</mark>.',       en:'I see the city. <em>(non-living → -∅, like Nom)</em>', ru:'Я вижу город. <em>(неодуш. → -∅, как Им.)</em>' },
       { sr:'Idem u <mark>grad</mark>.',      en:'I\'m going to the city. <em>(motion: u + Acc)</em>',  ru:'Я еду в город. <em>(движение: u + Acc)</em>' },
     ],
-    preps: [
-      { p:'u',     en:'into (with motion verbs)',          ru:'в (при движении)',                    group:'motion-flow' },
-      { p:'na',    en:'onto (with motion verbs)',          ru:'на (при движении)',                   group:'motion-flow' },
-      { p:'kroz',  en:'through',                           ru:'сквозь, через',                        group:'motion-flow' },
-      { p:'niz',   en:'down (along)',                      ru:'вниз по',                              group:'motion-flow' },
-      { p:'uz',    en:'up (along), beside',                ru:'вверх по, вдоль',                       group:'motion-flow' },
-      { p:'pod',   en:'under (with motion: going under)',  ru:'под (при движении)',                  group:'motion-position' },
-      { p:'pred',  en:'in front of (with motion)',         ru:'перед (при движении)',                group:'motion-position' },
-      { p:'nad',   en:'over (with motion)',                ru:'над (при движении)',                  group:'motion-position' },
-      { p:'među',  en:'among (with motion)',               ru:'между, среди (при движении)',          group:'motion-position' },
-      { p:'za',    en:'for, after (a duration / a goal)',  ru:'за, на (срок, цель)',                  group:'purpose-time' },
-    ]
+    preps: ['u','na','kroz','niz','uz','pod','pred','nad','među','za']
   },
 
   {
@@ -282,14 +256,7 @@ const CASES = [
       { sr:'Letim sa <mark>pilotom</mark>.',    en:'I\'m flying with the pilot.', ru:'Я лечу с пилотом.' },
       { sr:'<mark>Ponedeljkom</mark> radim.',  en:'On Mondays I work. <em>(recurring time)</em>', ru:'По понедельникам я работаю. <em>(регулярное время)</em>' },
     ],
-    preps: [
-      { p:'s, sa', en:'with (company)',                       ru:'с (вместе с)',                  group:'company' },
-      { p:'pod',   en:'under (location, no motion)',          ru:'под (где, без движения)',       group:'static' },
-      { p:'pred',  en:'in front of (location, no motion)',    ru:'перед (где, без движения)',     group:'static' },
-      { p:'nad',   en:'over, above (location, no motion)',    ru:'над (где, без движения)',       group:'static' },
-      { p:'među',  en:'among (location, no motion)',          ru:'между, среди (где)',            group:'static' },
-      { p:'za',    en:'behind (location, no motion)',         ru:'за (где)',                       group:'static' },
-    ]
+    preps: ['s/sa','pod','pred','nad','među','za']
   },
 
   {
@@ -314,13 +281,7 @@ const CASES = [
       { sr:'Govorim o <mark>pilotu</mark>.',        en:'I\'m speaking about the pilot. <em>(topic)</em>',       ru:'Я говорю о пилоте. <em>(о чём)</em>' },
       { sr:'Živim u <mark>Beogradu</mark>.',         en:'I live in Belgrade. <em>(location: u + Loc, no motion)</em>', ru:'Я живу в Белграде. <em>(где: u + Loc, без движения)</em>' },
     ],
-    preps: [
-      { p:'u',   en:'in (location), in (a month, a language)', ru:'в (где, в месяце, на языке)',          group:'location' },
-      { p:'na',  en:'on, at (a place / event); in (a language)', ru:'на (поверхности, событии); на (языке)', group:'location' },
-      { p:'o',   en:'about (a topic)',                          ru:'о, об (теме разговора)',              group:'topic' },
-      { p:'po',  en:'all over; according to',                   ru:'по (всему); согласно',                group:'topic' },
-      { p:'pri', en:'by, attached to (formal)',                 ru:'при (книжное)',                       group:'topic' },
-    ]
+    preps: ['u','na','o','po','pri']
   },
 ];
 
@@ -696,14 +657,7 @@ function renderCases() {
     ` : `
       <div class="case-cell case-cell-preps">
         <span class="cell-axis">${prepsLabel}</span>
-        <dl class="prep-list">
-          ${c.preps.map(pr => `
-            <div class="prep-row">
-              <dt class="prep-word">${srText(pr.p)}</dt>
-              <dd class="prep-mean">${pr[lang] || pr.en}</dd>
-            </div>
-          `).join('')}
-        </dl>
+        <p class="prep-list">${c.preps.map(p => srText(p)).join(', ')}</p>
       </div>`;
 
     return `
