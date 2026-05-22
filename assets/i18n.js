@@ -20,6 +20,9 @@ window.I18N = {
     'card.cases.title': 'Seven',
     'card.cases.titleEm': 'cases',
     'card.cases.desc': 'Endings, questions, prepositions, and example sentences for every noun case — laid out so the pattern shows.',
+    'card.verbs.title': 'Verbs &',
+    'card.verbs.titleEm': 'conjugation',
+    'card.verbs.desc': 'Present endings, core irregulars, past participles, and future forms in one mobile-first grid.',
 
     'card.action': 'Open chart',
 
@@ -33,6 +36,31 @@ window.I18N = {
     'alph.tip.cta': 'how to say it',
     'alph.tip.heading': 'How to say it',
     'alph.tip.close': 'Close',
+
+    /* Verbs page */
+    'verbs.present': 'Present',
+    'verbs.tense': 'Tense',
+    'verbs.endings': 'Endings',
+    'verbs.inf.cues': 'Inf cues',
+    'verbs.common': 'Common verbs',
+    'verbs.irregulars': 'Irregular',
+    'verbs.negative': 'Negative',
+    'verbs.full.forms': 'full forms',
+    'verbs.past': 'Past',
+    'verbs.future': 'Future',
+    'verbs.formula': 'Formula',
+    'verbs.placement': 'Placement',
+    'verbs.participle': 'Participle',
+    'verbs.orthography': 'Placement / spelling',
+    'verbs.merged': 'Merged forms',
+    'verbs.ici.exception': '-ći verbs',
+    'verbs.se.rule': 'se follows the first stressed word.',
+    'past.msg': 'M sg',
+    'past.fsg': 'F sg',
+    'past.nsg': 'N sg',
+    'past.mpl': 'M/mixed pl',
+    'past.fpl': 'F pl',
+    'past.npl': 'N pl',
 
     /* Cases page */
     'cases.back': 'Back to all charts',
@@ -115,6 +143,9 @@ window.I18N = {
     'card.cases.title': 'Семь',
     'card.cases.titleEm': 'падежей',
     'card.cases.desc': 'Окончания, вопросы, предлоги и примеры для каждого падежа — так, чтобы система была видна с первого взгляда.',
+    'card.verbs.title': 'Глаголы и',
+    'card.verbs.titleEm': 'спряжение',
+    'card.verbs.desc': 'Настоящее время, главные исключения, прошедшее и будущее — в одной таблице для телефона.',
 
     'card.action': 'Открыть',
 
@@ -128,6 +159,31 @@ window.I18N = {
     'alph.tip.cta': 'как произнести',
     'alph.tip.heading': 'Как произнести',
     'alph.tip.close': 'Закрыть',
+
+    /* Verbs */
+    'verbs.present': 'Настоящее',
+    'verbs.tense': 'Время',
+    'verbs.endings': 'Окончания',
+    'verbs.inf.cues': 'Инф. подсказки',
+    'verbs.common': 'Частые глаголы',
+    'verbs.irregulars': 'Исключения',
+    'verbs.negative': 'Отрицание',
+    'verbs.full.forms': 'полные формы',
+    'verbs.past': 'Прошедшее',
+    'verbs.future': 'Будущее',
+    'verbs.formula': 'Формула',
+    'verbs.placement': 'Порядок',
+    'verbs.participle': 'Причастие',
+    'verbs.orthography': 'Порядок / письмо',
+    'verbs.merged': 'Слитные формы',
+    'verbs.ici.exception': 'Глаголы на -ći',
+    'verbs.se.rule': 'se стоит после первого ударного слова.',
+    'past.msg': 'М ед.',
+    'past.fsg': 'Ж ед.',
+    'past.nsg': 'С ед.',
+    'past.mpl': 'М/смеш. мн.',
+    'past.fpl': 'Ж мн.',
+    'past.npl': 'С мн.',
 
     /* Cases */
     'cases.back': 'Ко всем таблицам',
