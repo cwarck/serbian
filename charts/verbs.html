@@ -150,7 +150,7 @@ const IRREGULARS = [
 ];
 
 const PAST = {
-  formula: ['sam/si/je/smo/ste/su', '+', 'past participle'],
+  formula: [{ sr:'sam/si/je/smo/ste/su' }, { text:'+' }, { key:'verbs.term.pastParticiple' }],
   examples: [
     { sr:'Gledao sam film.', en:'I watched a film. (m.)', ru:'Я смотрел фильм. (м.)' },
     { sr:'Ja sam gledao film.', en:'I watched a film.', ru:'Я смотрел фильм.' },
@@ -168,7 +168,7 @@ const PAST = {
 };
 
 const FUTURE = {
-  formula: ['ću/ćeš/će/ćemo/ćete/će', '+', 'infinitive'],
+  formula: [{ sr:'ću/ćeš/će/ćemo/ćete/će' }, { text:'+' }, { key:'verbs.term.infinitive' }],
   examples: [
     { sr:'Ja ću raditi.', en:'I will work.', ru:'Я буду работать.' },
     { sr:'Radiću.', en:'I will work.', ru:'Я буду работать.' },
@@ -227,6 +227,14 @@ function examplesHTML(examples) {
       <span class="tr">${srGrammarHTML(ex[lang] || ex.en)}</span>
     </div>
   `).join('');
+}
+
+function formulaHTML(parts) {
+  return parts.map(part => {
+    if (part.sr) return srText(part.sr);
+    if (part.key) return t(part.key);
+    return part.text || '';
+  }).join(' ');
 }
 
 function renderRegularGroup(group) {
@@ -297,7 +305,7 @@ function renderPast() {
       </header>
       <section class="verb-block">
         <h4>${t('verbs.formula')}</h4>
-        <p class="verb-formula">${PAST.formula.map(part => srText(part)).join(' ')}</p>
+        <p class="verb-formula">${formulaHTML(PAST.formula)}</p>
       </section>
       <section class="verb-block">
         <h4>${t('verbs.placement')}</h4>
@@ -327,7 +335,7 @@ function renderFuture() {
       </header>
       <section class="verb-block">
         <h4>${t('verbs.formula')}</h4>
-        <p class="verb-formula">${FUTURE.formula.map(part => srText(part)).join(' ')}</p>
+        <p class="verb-formula">${formulaHTML(FUTURE.formula)}</p>
       </section>
       <section class="verb-block">
         <h4>${t('verbs.orthography')}</h4>
