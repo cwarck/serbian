@@ -17,6 +17,7 @@ A static site. No build step, no PDFs, no screenshots — just HTML, CSS, and a 
 ## Features
 
 - Bilingual UI — English and Russian.
+- Serbian script toggle — Latin and Cyrillic.
 - Light and dark themes.
 - Mobile-friendly.
 
@@ -31,9 +32,14 @@ Then open <http://localhost:8000>.
 ## Structure
 
 ```
-index.html        # landing page
-charts/           # individual chart pages
-assets/           # styles, i18n, app js
+index.html               # chart index
+charts/alphabet.html     # alphabet chart
+charts/cases.html        # noun cases chart
+charts/verbs.html        # conjugation chart
+charts/aspect.html       # verb aspect pairs chart
+charts/pronouns.html     # pronouns chart
+charts/prepositions.html # prepositions chart
+assets/                  # styles, i18n, app js
 ```
 
 ## License
