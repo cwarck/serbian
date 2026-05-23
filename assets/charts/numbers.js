@@ -95,9 +95,9 @@ function renderOrdinals() {
       <div class="num-table num-ordinal-table">
         <div class="num-table-head">
           <span>${t('numbers.number')}</span>
-          <span>${t('cases.gender.m')}</span>
-          <span>${t('cases.gender.f')}</span>
-          <span>${t('cases.gender.n')}</span>
+          <span data-gender="m">${t('cases.gender.m')}</span>
+          <span data-gender="f">${t('cases.gender.f')}</span>
+          <span data-gender="n">${t('cases.gender.n')}</span>
         </div>
         ${ORDINALS.map(row => `
           <article class="num-table-row">

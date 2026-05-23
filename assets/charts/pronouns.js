@@ -7,6 +7,16 @@ function srText(text) {
   return window.AtlasSrpski ? window.AtlasSrpski.sr(text) : String(text);
 }
 
+function colHeader(key, tones) {
+  if (!tones.length) return t(key);
+  if (tones.length === 1) return `<span data-tone="${tones[0]}">${t(key)}</span>`;
+  return t(key).split('/').map((part, i) => {
+    const tone = tones[i];
+    const span = tone ? `<span data-tone="${tone}">${part.trim()}</span>` : part.trim();
+    return span;
+  }).join('<span class="pron-slash">/</span>');
+}
+
 function personalCell(value) {
   if (value === '-') return '<span class="pron-dash">-</span>';
   const parts = value.split(',').map(part => part.trim());
@@ -19,11 +29,11 @@ function renderPersonal() {
   const root = document.getElementById('personalPronouns');
   if (!root) return;
   const columns = [
-    ['pron.subject', 'subject'],
-    ['pron.accgen', 'object'],
-    ['pron.datloc', 'datloc'],
-    ['case.6.name', 'inst'],
-    ['pron.poss.short', 'poss'],
+    ['pron.subject', 'subject', ['nom']],
+    ['pron.accgen', 'object', ['aku', 'gen']],
+    ['pron.datloc', 'datloc', ['dat', 'lok']],
+    ['case.6.name', 'inst', ['ins']],
+    ['pron.poss.short', 'poss', []],
   ];
   const rows = PERSONAL.map(row => `
     <tr data-band="${row.band}">
@@ -39,7 +49,7 @@ function renderPersonal() {
     <table class="pron-table">
       <thead>
         <tr>
-          ${columns.map(([key]) => `<th scope="col">${t(key)}</th>`).join('')}
+          ${columns.map(([key, , tones = []]) => `<th scope="col">${colHeader(key, tones)}</th>`).join('')}
         </tr>
       </thead>
       <tbody>${rows}</tbody>
@@ -56,7 +66,7 @@ function renderPossessives() {
   if (!root) return;
   root.innerHTML = `
     <div class="pron-mini-head" aria-hidden="true">
-      <span></span><span>${t('cases.gender.m')}</span><span>${t('cases.gender.n')}</span><span>${t('cases.gender.f')}</span>
+      <span></span><span data-gender="m">${t('cases.gender.m')}</span><span data-gender="n">${t('cases.gender.n')}</span><span data-gender="f">${t('cases.gender.f')}</span>
     </div>
     ${POSSESSIVES.map(item => `
       <article class="pron-poss-card">
@@ -72,7 +82,7 @@ function renderPossessives() {
 
 function genderHead() {
   return `<div class="pron-mini-head pron-genders" aria-hidden="true">
-    <span></span><span>${t('cases.gender.m')}</span><span>${t('cases.gender.n')}</span><span>${t('cases.gender.f')}</span>
+    <span></span><span data-gender="m">${t('cases.gender.m')}</span><span data-gender="n">${t('cases.gender.n')}</span><span data-gender="f">${t('cases.gender.f')}</span>
   </div>`;
 }
 

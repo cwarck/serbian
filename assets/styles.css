@@ -654,6 +654,20 @@ section { position: relative; }
 [data-tone="ins"] { --tone: var(--tone-orange); }
 [data-tone="lok"] { --tone: var(--tone-green); }
 
+/* Case-toned spans inside the personal-pronouns column header
+   (combined labels like "ACC/GEN", "DAT/LOC" tone each half by case). */
+.pron-table thead [data-tone] { color: var(--tone); }
+.pron-table thead .pron-slash { color: var(--ink-faint); margin: 0 .15em; }
+
+/* Gender-toned labels in pronoun gender header rows and the numbers
+   ordinals table header. M = blue, F = magenta, N = ink. */
+.pron-mini-head [data-gender="m"],
+.num-table-head [data-gender="m"] { color: var(--gender-m); }
+.pron-mini-head [data-gender="f"],
+.num-table-head [data-gender="f"] { color: var(--gender-f); }
+.pron-mini-head [data-gender="n"],
+.num-table-head [data-gender="n"] { color: var(--gender-n); }
+
 /* -----------------------------------------------------------
    Case strip — colour-coded sticky nav.
    Mobile-first: all seven cells fit the viewport (no scroll).
