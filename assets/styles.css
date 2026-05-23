@@ -53,9 +53,7 @@
   --ink-muted:      light-dark(var(--fx-600), var(--fx-300));
   --ink-faint:      light-dark(var(--fx-500), var(--fx-500));
   --accent:         light-dark(var(--fx-orange-600), var(--fx-orange-400));
-  --accent-warm:    light-dark(var(--fx-red-600), var(--fx-red-400));
   --cool:           light-dark(var(--fx-cyan-600), var(--fx-cyan-400));
-  --gold:           light-dark(var(--fx-yellow-600), var(--fx-yellow-400));
   --hairline:       light-dark(var(--fx-150), var(--fx-850));
   --hairline-soft:  light-dark(var(--fx-100), var(--fx-900));
   --highlight:      light-dark(rgba(188,82,21,.09), rgba(218,112,44,.12));
@@ -428,12 +426,19 @@ section { position: relative; }
   padding-bottom: 2rem;
 }
 .alph-legend .dot {
-  display: inline-block; width: 9px; height: 9px;
-  border-radius: 50%; vertical-align: middle;
+  display: inline-block;
+  width: 3px; height: 14px;
+  vertical-align: middle;
   margin-right: .55rem;
+  background: var(--ink-soft);
 }
-.alph-legend .dot.unique { background: var(--accent); }
-.alph-legend .dot.diff { background: var(--gold); }
+.alph-legend .dot.diff {
+  background: repeating-linear-gradient(
+    to bottom,
+    var(--ink-soft) 0 3px,
+    transparent 3px 6px
+  );
+}
 
 .alph-grid {
   display: grid;
@@ -528,8 +533,14 @@ section { position: relative; }
   width: 3px;
   background: var(--hairline);
 }
-.letter[data-kind="unique"]::before { background: var(--accent); }
-.letter[data-kind="diff"]::before { background: var(--gold); }
+.letter[data-kind="unique"]::before { background: var(--ink-soft); }
+.letter[data-kind="diff"]::before {
+  background: repeating-linear-gradient(
+    to bottom,
+    var(--ink-soft) 0 4px,
+    transparent 4px 8px
+  );
+}
 
 /* Small `?` glyph used by alphabet and case-note popovers */
 .tip-chip {
@@ -625,14 +636,21 @@ section { position: relative; }
   padding-block: clamp(2rem, 5vw, 4rem) clamp(3rem, 6vw, 5rem);
 }
 
-/* Per-case tone colors: Flexoki accent pairs tuned for light/dark contrast. */
-[data-tone="nom"] { --tone: var(--tone-orange); }
+/* Per-case tone colors. One hue per case; no overlap with gender hues
+   (M = blue, F = magenta). NOM is unmarked — the dictionary form — so it
+   takes an ink-tone rather than an accent, distinguishing it visually
+   from the inflected cases. */
+[data-tone="nom"] { --tone: var(--ink-soft); }
 [data-tone="gen"] { --tone: var(--tone-cyan); }
 [data-tone="dat"] { --tone: var(--tone-yellow); }
 [data-tone="aku"] { --tone: var(--tone-purple); }
 [data-tone="vok"] { --tone: var(--tone-red); }
-[data-tone="ins"] { --tone: var(--tone-blue); }
+[data-tone="ins"] { --tone: var(--tone-orange); }
 [data-tone="lok"] { --tone: var(--tone-green); }
+
+/* Verb tense accent — present forms ride on the same orange family as
+   INS and the brand: the site-wide "active default" signal. */
+[data-tense="present"] { color: var(--accent); }
 
 /* -----------------------------------------------------------
    Case strip — colour-coded sticky nav.
@@ -2796,7 +2814,7 @@ a.cast-cell-head:hover .cast-abbr { color: var(--ink); }
 .prep-icon-cell[data-case="gen"] { --prep-dot: var(--tone-cyan); }
 .prep-icon-cell[data-case="dat"] { --prep-dot: var(--tone-yellow); }
 .prep-icon-cell[data-case="aku"] { --prep-dot: var(--tone-purple); }
-.prep-icon-cell[data-case="ins"] { --prep-dot: var(--tone-blue); }
+.prep-icon-cell[data-case="ins"] { --prep-dot: var(--tone-orange); }
 .prep-icon-cell[data-case="lok"] { --prep-dot: var(--tone-green); }
 
 .prep-icon {
@@ -2890,7 +2908,7 @@ a.cast-cell-head:hover .cast-abbr { color: var(--ink); }
 .prep-case[data-case="gen"] { --case-tone: var(--tone-cyan); }
 .prep-case[data-case="dat"] { --case-tone: var(--tone-yellow); }
 .prep-case[data-case="aku"] { --case-tone: var(--tone-purple); }
-.prep-case[data-case="ins"] { --case-tone: var(--tone-blue); }
+.prep-case[data-case="ins"] { --case-tone: var(--tone-orange); }
 .prep-case[data-case="lok"] { --case-tone: var(--tone-green); }
 
 .prep-meaning {
