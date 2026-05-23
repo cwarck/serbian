@@ -78,15 +78,15 @@ const PREP_GROUPS = [
       {
         prep: 'u', icon: 'in', tone: 'aku',
         uses: [
-          { case: 'aku', meaning: { en: 'into, to', ru: 'в, внутрь' }, sr: 'Idem u grad.', tr: { en: 'I am going into town.', ru: 'Я иду в город.' } },
-          { case: 'lok', meaning: { en: 'in, at', ru: 'в, внутри' }, sr: 'Živim u gradu.', tr: { en: 'I live in town.', ru: 'Я живу в городе.' } },
+          { case: 'aku', icon: 'into', meaning: { en: 'into, to', ru: 'в, внутрь' }, sr: 'Idem u grad.', tr: { en: 'I am going into town.', ru: 'Я иду в город.' } },
+          { case: 'lok', icon: 'in', meaning: { en: 'in, at', ru: 'в, внутри' }, sr: 'Živim u gradu.', tr: { en: 'I live in town.', ru: 'Я живу в городе.' } },
         ]
       },
       {
         prep: 'na', icon: 'on', tone: 'aku',
         uses: [
-          { case: 'aku', meaning: { en: 'onto, to', ru: 'на, на поверхность' }, sr: 'Stavljam knjigu na sto.', tr: { en: 'I put the book onto the table.', ru: 'Я кладу книгу на стол.' } },
-          { case: 'lok', meaning: { en: 'on, at', ru: 'на, на месте' }, sr: 'Knjiga je na stolu.', tr: { en: 'The book is on the table.', ru: 'Книга на столе.' } },
+          { case: 'aku', icon: 'onto', meaning: { en: 'onto, to', ru: 'на, на поверхность' }, sr: 'Stavljam knjigu na sto.', tr: { en: 'I put the book onto the table.', ru: 'Я кладу книгу на стол.' } },
+          { case: 'lok', icon: 'on', meaning: { en: 'on, at', ru: 'на, на месте' }, sr: 'Knjiga je na stolu.', tr: { en: 'The book is on the table.', ru: 'Книга на столе.' } },
         ]
       },
     ]
@@ -97,29 +97,36 @@ const PREP_GROUPS = [
       {
         prep: 'pod', icon: 'under', tone: 'ins',
         uses: [
-          { case: 'aku', meaning: { en: 'to under', ru: 'под, движение' }, sr: 'Mačka ide pod sto.', tr: { en: 'The cat goes under the table.', ru: 'Кошка идёт под стол.' } },
-          { case: 'ins', meaning: { en: 'under', ru: 'под, место' }, sr: 'Mačka je pod stolom.', tr: { en: 'The cat is under the table.', ru: 'Кошка под столом.' } },
+          { case: 'aku', icon: 'under-motion', meaning: { en: 'to under', ru: 'под, движение' }, sr: 'Mačka ide pod sto.', tr: { en: 'The cat goes under the table.', ru: 'Кошка идёт под стол.' } },
+          { case: 'ins', icon: 'under', meaning: { en: 'under', ru: 'под, место' }, sr: 'Mačka je pod stolom.', tr: { en: 'The cat is under the table.', ru: 'Кошка под столом.' } },
         ]
       },
       {
         prep: 'pred', icon: 'front', tone: 'ins',
         uses: [
-          { case: 'aku', meaning: { en: 'to in front of', ru: 'перед, движение' }, sr: 'Stajem pred kuću.', tr: { en: 'I step in front of the house.', ru: 'Я встаю перед домом.' } },
-          { case: 'ins', meaning: { en: 'in front of', ru: 'перед, место' }, sr: 'Stojim pred kućom.', tr: { en: 'I stand in front of the house.', ru: 'Я стою перед домом.' } },
+          { case: 'aku', icon: 'front-motion', meaning: { en: 'to in front of', ru: 'перед, движение' }, sr: 'Stajem pred kuću.', tr: { en: 'I step in front of the house.', ru: 'Я встаю перед домом.' } },
+          { case: 'ins', icon: 'front', meaning: { en: 'in front of', ru: 'перед, место' }, sr: 'Stojim pred kućom.', tr: { en: 'I stand in front of the house.', ru: 'Я стою перед домом.' } },
         ]
       },
       {
         prep: 'nad', icon: 'over', tone: 'ins',
         uses: [
-          { case: 'aku', meaning: { en: 'to above', ru: 'над, движение' }, sr: 'Podižem lampu nad sto.', tr: { en: 'I lift the lamp above the table.', ru: 'Я поднимаю лампу над стол.' } },
-          { case: 'ins', meaning: { en: 'above, over', ru: 'над, место' }, sr: 'Lampa je nad stolom.', tr: { en: 'The lamp is above the table.', ru: 'Лампа над столом.' } },
+          { case: 'aku', icon: 'over-motion', meaning: { en: 'to above', ru: 'над, движение' }, sr: 'Podižem lampu nad sto.', tr: { en: 'I lift the lamp above the table.', ru: 'Я поднимаю лампу над стол.' } },
+          { case: 'ins', icon: 'over', meaning: { en: 'above, over', ru: 'над, место' }, sr: 'Lampa je nad stolom.', tr: { en: 'The lamp is above the table.', ru: 'Лампа над столом.' } },
         ]
       },
       {
         prep: 'među', icon: 'between', tone: 'ins',
         uses: [
-          { case: 'aku', meaning: { en: 'to among, between', ru: 'между, движение' }, sr: 'Ulazim među ljude.', tr: { en: 'I go among the people.', ru: 'Я вхожу между людей.' } },
-          { case: 'ins', meaning: { en: 'among, between', ru: 'между, место' }, sr: 'Stojim među ljudima.', tr: { en: 'I stand among the people.', ru: 'Я стою между людьми.' } },
+          { case: 'aku', icon: 'between-motion', meaning: { en: 'to among, between', ru: 'между, движение' }, sr: 'Ulazim među ljude.', tr: { en: 'I go among the people.', ru: 'Я вхожу между людей.' } },
+          { case: 'ins', icon: 'between', meaning: { en: 'among, between', ru: 'между, место' }, sr: 'Stojim među ljudima.', tr: { en: 'I stand among the people.', ru: 'Я стою между людьми.' } },
+        ]
+      },
+      {
+        prep: 'za', icon: 'behind', tone: 'ins',
+        uses: [
+          { case: 'aku', icon: 'behind-motion', meaning: { en: 'to behind', ru: 'за, движение' }, sr: 'Sakrivam se za kuću.', tr: { en: 'I hide behind the house.', ru: 'Я прячусь за дом.' } },
+          { case: 'ins', icon: 'behind', meaning: { en: 'behind, at', ru: 'за, место' }, sr: 'Sedim za stolom.', tr: { en: 'I am sitting at the table.', ru: 'Я сижу за столом.' } },
         ]
       },
     ]
@@ -137,9 +144,24 @@ const PREP_GROUPS = [
     rows: [
       { prep: 'iz', icon: 'out', tone: 'gen', uses: [{ case: 'gen', meaning: { en: 'out of, from inside', ru: 'из, изнутри' }, sr: 'Izlazim iz kuće.', tr: { en: 'I leave the house.', ru: 'Я выхожу из дома.' } }] },
       { prep: 'od', icon: 'from', tone: 'gen', uses: [{ case: 'gen', meaning: { en: 'from, away from', ru: 'от' }, sr: 'Dolazim od prijatelja.', tr: { en: 'I am coming from a friend.', ru: 'Я иду от друга.' } }] },
+      { prep: 's/sa', icon: 'off', tone: 'gen', uses: [{ case: 'gen', icon: 'off', meaning: { en: 'from off, down from', ru: 'с, сверху/из' }, sr: 'Silazim sa autobusa.', tr: { en: 'I am getting off the bus.', ru: 'Я выхожу из автобуса.' } }] },
       { prep: 'do', icon: 'limit', tone: 'gen', uses: [{ case: 'gen', meaning: { en: 'up to, until', ru: 'до' }, sr: 'Idem do stanice.', tr: { en: 'I am going up to the station.', ru: 'Я иду до станции.' } }] },
       { prep: 'k/ka', icon: 'toward', tone: 'dat', uses: [{ case: 'dat', meaning: { en: 'toward, to', ru: 'к' }, sr: 'Idem ka gradu.', tr: { en: 'I am going toward town.', ru: 'Я иду к городу.' } }] },
       { prep: 'prema', icon: 'toward', tone: 'dat', uses: [{ case: 'dat', meaning: { en: 'toward, facing', ru: 'к, по направлению' }, sr: 'Okrenut sam prema moru.', tr: { en: 'I am turned toward the sea.', ru: 'Я повернут к морю.' } }] },
+    ]
+  },
+  {
+    key: 'prep.group.time',
+    rows: [
+      { prep: 'pre', icon: 'before', tone: 'gen', uses: [{ case: 'gen', meaning: { en: 'before', ru: 'до, перед' }, sr: 'Pre ručka pijem vodu.', tr: { en: 'Before lunch I drink water.', ru: 'Перед обедом я пью воду.' } }] },
+      { prep: 'posle', icon: 'after', tone: 'gen', uses: [{ case: 'gen', meaning: { en: 'after', ru: 'после' }, sr: 'Posle časa idem kući.', tr: { en: 'After class I go home.', ru: 'После урока я иду домой.' } }] },
+      {
+        prep: 'za', icon: 'future', tone: 'aku',
+        uses: [
+          { case: 'aku', icon: 'future', meaning: { en: 'in, for a span', ru: 'через, за срок' }, sr: 'Vraćam se za sat vremena.', tr: { en: 'I am coming back in an hour.', ru: 'Я вернусь через час.' } },
+          { case: 'aku', icon: 'for', meaning: { en: 'for, intended for', ru: 'для' }, sr: 'Poklon je za majku.', tr: { en: 'The gift is for mother.', ru: 'Подарок для мамы.' } },
+        ]
+      },
     ]
   },
   {
@@ -150,11 +172,11 @@ const PREP_GROUPS = [
       { prep: 'po', icon: 'around', tone: 'lok', uses: [{ case: 'lok', meaning: { en: 'around, by pattern', ru: 'по, вокруг' }, sr: 'Šetam po gradu.', tr: { en: 'I walk around town.', ru: 'Я гуляю по городу.' } }] },
       { prep: 'pri', icon: 'near', tone: 'lok', uses: [{ case: 'lok', meaning: { en: 'attached to, at', ru: 'при, у' }, sr: 'Radim pri školi.', tr: { en: 'I work at the school.', ru: 'Я работаю при школе.' } }] },
       { prep: 'bez', icon: 'without', tone: 'gen', uses: [{ case: 'gen', meaning: { en: 'without', ru: 'без' }, sr: 'Kafa bez šećera.', tr: { en: 'Coffee without sugar.', ru: 'Кофе без сахара.' } }] },
-      { prep: 'pre', icon: 'before', tone: 'gen', uses: [{ case: 'gen', meaning: { en: 'before', ru: 'до, перед' }, sr: 'Pre ručka pijem vodu.', tr: { en: 'Before lunch I drink water.', ru: 'Перед обедом я пью воду.' } }] },
-      { prep: 'posle', icon: 'after', tone: 'gen', uses: [{ case: 'gen', meaning: { en: 'after', ru: 'после' }, sr: 'Posle časa idem kući.', tr: { en: 'After class I go home.', ru: 'После урока я иду домой.' } }] },
       { prep: 'kod', icon: 'near', tone: 'gen', uses: [{ case: 'gen', meaning: { en: "at someone's place", ru: 'у, возле' }, sr: 'Spavam kod brata.', tr: { en: "I sleep at my brother's place.", ru: 'Я ночую у брата.' } }] },
+      { prep: 'blizu', icon: 'near', tone: 'gen', uses: [{ case: 'gen', meaning: { en: 'near', ru: 'близко к' }, sr: 'Stan je blizu centra.', tr: { en: 'The apartment is near the center.', ru: 'Квартира близко к центру.' } }] },
       { prep: 'oko', icon: 'around', tone: 'gen', uses: [{ case: 'gen', meaning: { en: 'around', ru: 'около, вокруг' }, sr: 'Sedimo oko stola.', tr: { en: 'We sit around the table.', ru: 'Мы сидим вокруг стола.' } }] },
       { prep: 'iza', icon: 'behind', tone: 'gen', uses: [{ case: 'gen', meaning: { en: 'behind', ru: 'за, позади' }, sr: 'Auto je iza kuće.', tr: { en: 'The car is behind the house.', ru: 'Машина за домом.' } }] },
+      { prep: 'nasuprot', icon: 'opposite', tone: 'dat', uses: [{ case: 'dat', meaning: { en: 'opposite', ru: 'напротив' }, sr: 'Sedim nasuprot bratu.', tr: { en: 'I sit opposite my brother.', ru: 'Я сижу напротив брата.' } }] },
     ]
   },
 ];
@@ -178,32 +200,57 @@ function iconSVG(kind) {
   const dashed = (d) => `<path class="prep-icon-dash" d="${d}"></path>`;
   const icons = {
     in: `${object}${dot(44,32)}`,
+    into: `${object}${dot(18,32)}${arrow('M26 32H45')}${head('M37 24L47 32L37 40')}`,
     on: `${object.replace('y="18"', 'y="28"')}${dot(44,24)}`,
+    onto: `${object.replace('y="18"', 'y="28"')}${dot(19,18)}${arrow('M27 18C34 18 38 21 42 25')}${head('M31 26L44 26L40 14')}`,
     under: `${object.replace('y="18"', 'y="10"')}${dot(44,52)}`,
+    'under-motion': `${object.replace('y="18"', 'y="10"')}${dot(18,52)}${arrow('M27 52H44')}${head('M36 44L46 52L36 60')}`,
     over: `${object.replace('y="18"', 'y="30"')}${dot(44,14)}`,
+    'over-motion': `${object.replace('y="18"', 'y="30"')}${dot(18,14)}${arrow('M27 14H44')}${head('M36 6L46 14L36 22')}`,
     front: `${object}${dot(22,32)}`,
+    'front-motion': `${object}${dot(14,32)}${arrow('M22 32H34')}${head('M26 24L36 32L26 40')}`,
     behind: `<rect class="prep-icon-object" x="28" y="18" width="28" height="28"></rect>${dot(58,36)}`,
+    'behind-motion': `<rect class="prep-icon-object" x="28" y="18" width="28" height="28"></rect>${dot(70,36)}${arrow('M68 36H56')}${head('M64 28L54 36L64 44')}`,
     between: `${line('M25 10V54M63 10V54')}${dot(44,32)}`,
+    'between-motion': `${line('M25 10V54M63 10V54')}${dot(14,32)}${arrow('M23 32H44')}${head('M36 24L46 32L36 40')}`,
     through: `${object}${arrow('M16 33H70')}${head('M62 25L72 33L62 41')}${dot(24,33)}`,
     up: `${dashed('M20 50L68 14')}${arrow('M28 44L60 20')}${head('M49 18L63 18L59 31')}${dot(24,48)}`,
     down: `${dashed('M20 14L68 50')}${arrow('M28 20L60 44')}${head('M59 33L63 47L49 44')}${dot(24,16)}`,
     out: `<rect class="prep-icon-object" x="20" y="26" width="26" height="26"></rect>${dot(28,39)}${arrow('M36 30C45 14 55 13 67 15')}${head('M58 8L71 15L58 22')}`,
+    off: `${object.replace('y="18"', 'y="28"')}${dot(44,24)}${arrow('M39 23C31 22 24 26 19 35')}${head('M17 23L18 38L31 31')}`,
     from: `${object}${dot(56,32)}${arrow('M48 32H16')}${head('M24 24L14 32L24 40')}`,
     toward: `${object}${dot(18,32)}${arrow('M28 32H66')}${head('M58 24L68 32L58 40')}`,
     limit: `${line('M62 12V52')}${dot(22,32)}${arrow('M32 32H58')}${head('M50 24L60 32L50 40')}`,
     with: `${dot(34,32)}${dot(54,32)}`,
+    for: `${dot(24,32)}${arrow('M34 32H64')}${head('M56 24L66 32L56 40')}`,
     about: `${object}${arrow('M27 21C35 8 58 9 65 23')}${head('M53 20L66 24L62 11')}`,
     around: `${object}${arrow('M22 32C22 12 66 12 66 32C66 52 22 52 22 32')}${head('M58 25L67 33L58 40')}`,
     near: `${object}${dot(20,32)}`,
+    opposite: `${object}${dot(14,32)}${dot(74,32)}${dashed('M23 32H65')}`,
     without: `${object}${dot(44,32)}${line('M26 52L62 12')}`,
     before: `${line('M20 32H68')}${dot(30,32)}${line('M48 18V46')}`,
     after: `${line('M20 32H68')}${line('M40 18V46')}${dot(58,32)}`,
+    future: `${line('M16 32H72')}${line('M40 18V46')}${dot(58,32)}${arrow('M45 32H70')}${head('M62 24L72 32L62 40')}`,
   };
   return `<svg class="prep-icon" viewBox="0 0 88 64" aria-hidden="true">${icons[kind] || icons.in}</svg>`;
 }
 
 function caseChip(use) {
   return `<span class="prep-case" data-case="${use.case}">${t(CASE_KEYS[use.case])}</span>`;
+}
+
+function visualHTML(row) {
+  const split = row.uses.length > 1 ? ' is-split' : '';
+  return `
+    <div class="prep-visual-pack${split}">
+      ${row.uses.map(use => `
+        <span class="prep-icon-cell" data-case="${use.case}">
+          ${iconSVG(use.icon || row.icon)}
+          <span class="sr-only">${t(CASE_KEYS[use.case])}</span>
+        </span>
+      `).join('')}
+    </div>
+  `;
 }
 
 function renderUse(use) {
@@ -231,7 +278,7 @@ function renderPrepChart() {
         <h3>${t(group.key)}</h3>
       </header>
       <div class="prep-table">
-        <div class="prep-table-head" aria-hidden="true">
+        <div class="prep-table-head">
           <span>${t('prep.col.visual')}</span>
           <span>${t('prep.col.prep')}</span>
           <span>${t('prep.col.case')}</span>
@@ -239,7 +286,7 @@ function renderPrepChart() {
         </div>
         ${group.rows.map(row => `
           <article class="prep-row" data-tone="${row.tone}">
-            <div class="prep-visual">${iconSVG(row.icon)}</div>
+            <div class="prep-visual">${visualHTML(row)}</div>
             <div class="prep-name">${srText(row.prep)}</div>
             <div class="prep-uses">${row.uses.map(renderUse).join('')}</div>
           </article>

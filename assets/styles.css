@@ -2187,11 +2187,37 @@ a.cast-cell-head:hover .cast-abbr { color: var(--ink); }
   min-width: 0;
 }
 
+.prep-visual-pack {
+  display: flex;
+  align-items: center;
+  gap: .35rem;
+}
+
+.prep-visual-pack.is-split {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.prep-icon-cell {
+  display: block;
+  --prep-dot: var(--tone, var(--accent));
+}
+
+.prep-icon-cell[data-case="gen"] { --prep-dot: light-dark(#1F4940, #71B9AC); }
+.prep-icon-cell[data-case="dat"] { --prep-dot: light-dark(#B0892C, #D9B358); }
+.prep-icon-cell[data-case="aku"] { --prep-dot: light-dark(#6E3F94, #B58CD8); }
+.prep-icon-cell[data-case="ins"] { --prep-dot: light-dark(#5C4733, #C7A07A); }
+.prep-icon-cell[data-case="lok"] { --prep-dot: light-dark(#456C3A, #9ECB80); }
+
 .prep-icon {
   width: 5rem;
   height: auto;
   color: var(--ink-muted);
   overflow: visible;
+}
+
+.prep-visual-pack.is-split .prep-icon {
+  width: 4.1rem;
 }
 
 .prep-icon-object,
@@ -2361,6 +2387,11 @@ a.cast-cell-head:hover .cast-abbr { color: var(--ink); }
     justify-content: center;
   }
 
+  .prep-visual-pack,
+  .prep-visual-pack.is-split {
+    align-items: center;
+  }
+
   .prep-name {
     display: flex;
     align-items: center;
@@ -2396,6 +2427,10 @@ a.cast-cell-head:hover .cast-abbr { color: var(--ink); }
 
   .prep-icon {
     width: 4.8rem;
+  }
+
+  .prep-visual-pack.is-split .prep-icon {
+    width: 4.1rem;
   }
 }
 
