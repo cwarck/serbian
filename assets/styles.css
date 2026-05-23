@@ -2127,6 +2127,7 @@ a.cast-cell-head:hover .cast-abbr { color: var(--ink); }
   font-size: var(--fs-lead);
   line-height: var(--lh-snug);
   color: var(--ink);
+  overflow-wrap: anywhere;
 }
 
 .num-word,
@@ -2291,6 +2292,14 @@ a.cast-cell-head:hover .cast-abbr { color: var(--ink); }
     display: block;
   }
 
+  .num-built[data-label] {
+    display: flex;
+  }
+
+  .num-examples[data-label] {
+    display: grid;
+  }
+
   .num-table-row > [data-label]::before {
     content: none;
   }
@@ -2304,6 +2313,18 @@ a.cast-cell-head:hover .cast-abbr { color: var(--ink); }
   .num-layout {
     grid-template-columns: repeat(4, minmax(0, 1fr));
     align-items: start;
+  }
+
+  .num-cardinals .num-mini-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .num-cardinals .num-mini {
+    border-right: 1px solid var(--hairline-soft);
+  }
+
+  .num-cardinals .num-mini:nth-child(2n) {
+    border-right: 0;
   }
 
   .num-builds,

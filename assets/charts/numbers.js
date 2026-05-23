@@ -16,18 +16,21 @@ function srParts(parts) {
 }
 
 function renderNumberGroup(group) {
+  const columns = 4;
+  const blanks = (columns - (group.rows.length % columns)) % columns;
+  const cells = group.rows.map(row => `
+    <article class="num-mini">
+      <span class="num-value">${row.n}</span>
+      <span class="num-word">${srText(row.sr)}</span>
+    </article>
+  `).join('') + Array.from({ length: blanks }, () => '<article class="num-mini num-mini-empty" aria-hidden="true"></article>').join('');
   return `
     <section class="num-panel num-cardinals" data-tone="${group.tone}">
       <header class="num-panel-head">
         <h3>${t(group.key)}</h3>
       </header>
       <div class="num-mini-grid">
-        ${group.rows.map(row => `
-          <article class="num-mini">
-            <span class="num-value">${row.n}</span>
-            <span class="num-word">${srText(row.sr)}</span>
-          </article>
-        `).join('')}
+        ${cells}
       </div>
     </section>
   `;
