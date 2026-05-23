@@ -425,19 +425,22 @@ section { position: relative; }
   color: var(--ink-muted);
   padding-bottom: 2rem;
 }
-.alph-legend .dot {
-  display: inline-block;
-  width: 3px; height: 14px;
-  vertical-align: middle;
+.alph-mark {
+  display: inline-grid;
+  place-items: center;
+  width: 2.35rem;
+  height: 1.35rem;
   margin-right: .55rem;
-  background: var(--ink-soft);
+  border: 1px solid var(--hairline);
+  font-size: var(--fs-label);
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1;
+  color: var(--ink-soft);
+  vertical-align: middle;
 }
-.alph-legend .dot.diff {
-  background: repeating-linear-gradient(
-    to bottom,
-    var(--ink-soft) 0 3px,
-    transparent 3px 6px
-  );
+.alph-mark.diff {
+  border-style: dashed;
 }
 
 .alph-grid {
@@ -464,12 +467,16 @@ section { position: relative; }
 
 .letter {
   position: relative;
-  padding: 1.3rem 1.15rem 1.3rem 1.4rem;
+  padding: 1.3rem 1.15rem;
   border-right: 1px solid var(--hairline);
   border-bottom: 1px solid var(--hairline);
   display: flex; flex-direction: column;
   background: var(--paper);
   overflow: hidden;
+}
+.letter[data-kind="unique"],
+.letter[data-kind="diff"] {
+  padding-right: 3.7rem;
 }
 
 .letter .glyphs {
@@ -526,20 +533,31 @@ section { position: relative; }
   line-height: var(--lh-snug);
 }
 
-.letter::before {
+.letter::after {
   content: "";
   position: absolute;
-  top: 0; bottom: 0; left: 0;
-  width: 3px;
-  background: var(--hairline);
+  top: 1.15rem;
+  right: 1.15rem;
+  display: none;
+  place-items: center;
+  width: 2.35rem;
+  height: 1.35rem;
+  border: 1px solid var(--hairline);
+  font-family: var(--ff-body);
+  font-size: var(--fs-label);
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1;
+  color: var(--ink-soft);
 }
-.letter[data-kind="unique"]::before { background: var(--ink-soft); }
-.letter[data-kind="diff"]::before {
-  background: repeating-linear-gradient(
-    to bottom,
-    var(--ink-soft) 0 4px,
-    transparent 4px 8px
-  );
+.letter[data-kind="unique"]::after {
+  content: "SR";
+  display: grid;
+}
+.letter[data-kind="diff"]::after {
+  content: "!=";
+  display: grid;
+  border-style: dashed;
 }
 
 /* Small `?` glyph used by alphabet and case-note popovers */
