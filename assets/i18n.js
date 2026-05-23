@@ -12,6 +12,8 @@ window.I18N = {
 
     'card.alphabet.title': 'Alphabet',
     'card.alphabet.note': 'Letters & scripts',
+    'card.numbers.title': 'Numbers',
+    'card.numbers.note': 'Counting',
     'card.cases.title': 'Cases',
     'card.cases.note': 'Noun endings',
     'card.verbs.title': 'Verbs',
@@ -75,6 +77,20 @@ window.I18N = {
     'aspect.signal': 'Signal',
     'aspect.example': 'Example',
     'aspect.note': 'note',
+
+    /* Numbers page */
+    'numbers.digits': '0-10',
+    'numbers.teens': '11-19',
+    'numbers.tens': 'Tens',
+    'numbers.hundreds': 'Hundreds',
+    'numbers.build': 'Build numbers',
+    'numbers.nouns': 'With nouns',
+    'numbers.ordinals': 'Ordinals',
+    'numbers.number': 'Number',
+    'numbers.parts': 'Parts',
+    'numbers.meaning': 'Meaning',
+    'numbers.pattern': 'Pattern',
+    'numbers.examples': 'Examples',
 
     /* Prepositions page */
     'prep.group.place': 'Place / motion',
@@ -214,6 +230,8 @@ window.I18N = {
 
     'card.alphabet.title': 'Алфавит',
     'card.alphabet.note': 'Буквы и письмо',
+    'card.numbers.title': 'Числа',
+    'card.numbers.note': 'Счёт',
     'card.cases.title': 'Падежи',
     'card.cases.note': 'Окончания',
     'card.verbs.title': 'Глаголы',
@@ -277,6 +295,20 @@ window.I18N = {
     'aspect.signal': 'Сигнал',
     'aspect.example': 'Пример',
     'aspect.note': 'заметка',
+
+    /* Numbers */
+    'numbers.digits': '0-10',
+    'numbers.teens': '11-19',
+    'numbers.tens': 'Десятки',
+    'numbers.hundreds': 'Сотни',
+    'numbers.build': 'Составные числа',
+    'numbers.nouns': 'С существительными',
+    'numbers.ordinals': 'Порядковые',
+    'numbers.number': 'Число',
+    'numbers.parts': 'Части',
+    'numbers.meaning': 'Значение',
+    'numbers.pattern': 'Схема',
+    'numbers.examples': 'Примеры',
 
     /* Prepositions */
     'prep.group.place': 'Место / движение',

@@ -7,12 +7,13 @@ A static site. No build step, no PDFs, no screenshots — just HTML, CSS, and a 
 ## What's in it
 
 - **The two alphabets** — Cyrillic and Latin, side by side, with IPA and example words.
+- **Numbers & counting** — cardinals, construction patterns, noun forms, and ordinals.
 - **Seven cases** — endings, questions, prepositions, example sentences.
 - **Verbs & conjugation** — present buckets, irregulars, past and future.
 - **Verb aspect pairs** — imperfective/perfective pairs, time behavior, prefix patterns, and common pairs.
 - **Pronouns & their forms** — personal forms, possessives, demonstratives, and question words.
 - **Prepositions & cases** — visual references for place, motion, path, source, time, and case behavior.
-- More on the way: numbers, pitch, false friends.
+- More on the way: pitch, false friends.
 
 ## Features
 
@@ -34,6 +35,7 @@ Then open <http://localhost:8000>.
 ```
 index.html               # chart index
 charts/alphabet.html     # alphabet chart
+charts/numbers.html      # numbers and counting chart
 charts/cases.html        # noun cases chart
 charts/verbs.html        # conjugation chart
 charts/aspect.html       # verb aspect pairs chart
