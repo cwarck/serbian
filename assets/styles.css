@@ -636,6 +636,12 @@ section { position: relative; }
   padding-block: clamp(2rem, 5vw, 4rem) clamp(3rem, 6vw, 5rem);
 }
 
+/* Baseline for any [data-tone]: ink-soft. Charts that don't carry
+   grammatical meaning in color (pronouns, numbers, aspect) inherit this
+   neutral tone; chart-specific overrides come below. :where() keeps the
+   baseline at 0 specificity so even un-qualified case rules trivially win. */
+:where([data-tone]) { --tone: var(--ink-soft); }
+
 /* Per-case tone colors. One hue per case; no overlap with gender hues
    (M = blue, F = magenta). NOM is unmarked — the dictionary form — so it
    takes an ink-tone rather than an accent, distinguishing it visually
@@ -647,10 +653,6 @@ section { position: relative; }
 [data-tone="vok"] { --tone: var(--tone-red); }
 [data-tone="ins"] { --tone: var(--tone-orange); }
 [data-tone="lok"] { --tone: var(--tone-green); }
-
-/* Verb tense accent — present forms ride on the same orange family as
-   INS and the brand: the site-wide "active default" signal. */
-[data-tense="present"] { color: var(--accent); }
 
 /* -----------------------------------------------------------
    Case strip — colour-coded sticky nav.
@@ -1548,11 +1550,6 @@ a.cast-cell-head:hover .cast-abbr { color: var(--ink); }
   padding-block: clamp(2rem, 5vw, 4rem) clamp(3rem, 6vw, 5rem);
 }
 
-[data-tone="pron-personal"] { --tone: var(--tone-blue); }
-[data-tone="pron-poss"] { --tone: var(--tone-orange); }
-[data-tone="pron-demo"] { --tone: var(--tone-cyan); }
-[data-tone="pron-question"] { --tone: var(--tone-red); }
-
 .pron-layout {
   display: grid;
   grid-template-columns: 1fr;
@@ -1853,13 +1850,14 @@ a.cast-cell-head:hover .cast-abbr { color: var(--ink); }
   padding-block: clamp(2rem, 5vw, 4rem) clamp(3rem, 6vw, 5rem);
 }
 
-[data-tone="im"] { --tone: var(--tone-orange); }
-[data-tone="am"] { --tone: var(--tone-cyan); }
-[data-tone="em"] { --tone: var(--tone-yellow); }
-[data-tone="jem"] { --tone: var(--tone-purple); }
-[data-tone="irr"] { --tone: var(--tone-red); }
-[data-tone="past"] { --tone: var(--tone-green); }
-[data-tone="future"] { --tone: var(--tone-blue); }
+/* Present forms (all four conjugation buckets + irregulars) share the
+   "active default" orange — same family as INS and the brand. Past and
+   future fall through to the ink-soft baseline. */
+[data-tone="im"],
+[data-tone="am"],
+[data-tone="em"],
+[data-tone="jem"],
+[data-tone="irr"] { --tone: var(--tone-orange); }
 
 .verb-grid {
   display: grid;
@@ -2125,14 +2123,6 @@ a.cast-cell-head:hover .cast-abbr { color: var(--ink); }
   padding-block: clamp(2rem, 5vw, 4rem) clamp(3rem, 6vw, 5rem);
 }
 
-[data-tone="num-digits"] { --tone: var(--tone-orange); }
-[data-tone="num-teens"] { --tone: var(--tone-blue); }
-[data-tone="num-tens"] { --tone: var(--tone-cyan); }
-[data-tone="num-hundreds"] { --tone: var(--tone-purple); }
-[data-tone="num-build"] { --tone: var(--tone-yellow); }
-[data-tone="num-noun"] { --tone: var(--tone-green); }
-[data-tone="num-ordinal"] { --tone: var(--tone-magenta); }
-
 .num-layout {
   display: grid;
   gap: clamp(1.6rem, 3vw, 2.6rem);
@@ -2397,19 +2387,6 @@ a.cast-cell-head:hover .cast-abbr { color: var(--ink); }
 .aspect-section {
   padding-block: clamp(2rem, 5vw, 4rem) clamp(3rem, 6vw, 5rem);
 }
-
-[data-tone="aspect-core"] { --tone: var(--tone-orange); }
-[data-tone="aspect-time"] { --tone: var(--tone-blue); }
-[data-tone="aspect-pattern"] { --tone: var(--tone-cyan); }
-[data-tone="aspect-prefix"] { --tone: var(--tone-purple); }
-[data-tone="aspect-pairs"] { --tone: var(--tone-yellow); }
-[data-tone="aspect-trap"] { --tone: var(--tone-magenta); }
-[data-tone="na"] { --tone: var(--tone-orange); }
-[data-tone="po"] { --tone: var(--tone-blue); }
-[data-tone="u"] { --tone: var(--tone-cyan); }
-[data-tone="iz"] { --tone: var(--tone-yellow); }
-[data-tone="do"] { --tone: var(--tone-purple); }
-[data-tone="pro"] { --tone: var(--tone-green); }
 
 .aspect-layout {
   display: grid;
