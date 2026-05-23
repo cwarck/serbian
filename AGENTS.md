@@ -41,7 +41,8 @@ The scale is the rulebook. Pick a role; the token decides the size.
 **Rules:**
 
 - Every `font-size` resolves to a token. No ad-hoc `clamp()`, no bare rem values, no em-relative sizes on inline tags. Exceptions: decorative background glyphs.
-- Three families, three weights: Spectral display (300), Spectral body (400, 500 for emphasis), JetBrains Mono (500). Weight 200 is reserved for `--fs-hero` only.
+- Three families, three weights: Source Serif 4 display (300), Source Serif 4 body (400, 500 for emphasis), JetBrains Mono (500). Weight 200 is reserved for `--fs-hero` only. Data cells at `--fs-lead` use body weight (400), not display — display weight is reserved for `h1`–`h5` and oversized brand/letter glyphs.
+- Source Serif 4 is variable on the `opsz` axis (8–60). `font-optical-sizing: auto` is enabled on `body`, so the browser maps `font-size` to the right optical cut automatically. Don't set `font-variation-settings: "opsz"` by hand.
 - Three line-heights: `1` for single-line labels (bare value), `var(--lh-snug)` (1.3) for titles, `var(--lh-prose)` (1.55) for prose.
 - Don't restate `font-family: var(--ff-display)` or `font-weight: 300` on `h1`–`h5` — the base reset already applies them.
 - Data cells get `font-feature-settings: "tnum"` (tabular numerals) when they contain digits.
