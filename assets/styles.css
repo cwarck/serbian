@@ -115,11 +115,6 @@ h4     { font-size: var(--fs-lead); }
 
 p { margin: 0 0 1.15em; }
 
-hr.rule {
-  border: 0; height: 1px; margin: 0;
-  background: var(--hairline);
-}
-
 /* -----------------------------------------------------------
    Layout primitives
    ----------------------------------------------------------- */
@@ -130,8 +125,6 @@ hr.rule {
   margin: 0 auto;
   padding-inline: var(--pad-x);
 }
-
-.bleed { width: 100%; }
 
 section { position: relative; }
 
@@ -587,35 +580,6 @@ section { position: relative; }
 .case-pop .tip-pop-body {
   display: grid;
   gap: .7rem;
-}
-
-/* Inline hint — looks like a link, opens a popover */
-.hint-link {
-  display: inline;
-  appearance: none;
-  background: transparent;
-  border: 0;
-  padding: 0;
-  margin: 0;
-  font: inherit;
-  font-style: inherit;
-  color: inherit;
-  cursor: pointer;
-  text-decoration: underline dashed var(--accent);
-  text-decoration-thickness: 1px;
-  text-underline-offset: .22em;
-  transition: color .18s ease, text-decoration-style .18s ease, text-decoration-color .18s ease;
-}
-.hint-link:hover,
-.hint-link:focus-visible,
-.hint-link[aria-expanded="true"] {
-  color: var(--accent);
-  text-decoration-style: solid;
-}
-.hint-link:focus-visible {
-  outline: 1px dashed var(--accent);
-  outline-offset: 3px;
-  border-radius: 2px;
 }
 
 /* -----------------------------------------------------------
@@ -2743,22 +2707,6 @@ a.cast-cell-head:hover .cast-abbr { color: var(--ink); }
    Utilities
    ----------------------------------------------------------- */
 
-.kbd {
-  font-family: var(--ff-mono);
-  font-size: var(--fs-caption);
-  padding: .1em .4em;
-  border: 1px solid var(--hairline);
-  border-radius: 4px;
-  background: var(--paper-deep);
-  color: var(--ink-soft);
-}
-.note {
-  font-family: var(--ff-body);
-  font-style: italic;
-  color: var(--ink-muted);
-  font-size: var(--fs-caption);
-}
-.mono { font-family: var(--ff-mono); }
 .sr-only {
   position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
   overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
