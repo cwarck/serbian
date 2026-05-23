@@ -10,7 +10,8 @@ A static site. No build step, no PDFs, no screenshots — just HTML, CSS, and a 
 - **Seven cases** — endings, questions, prepositions, example sentences.
 - **Verbs & conjugation** — present buckets, irregulars, past and future.
 - **Pronouns & their forms** — personal forms, possessives, demonstratives, and question words.
-- More on the way: prepositions, numbers, aspect, pitch, false friends.
+- **Prepositions & cases** — visual references for place, motion, path, source, time, and case behavior.
+- More on the way: numbers, aspect, pitch, false friends.
 
 ## Features
 

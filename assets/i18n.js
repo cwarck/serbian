@@ -26,6 +26,9 @@ window.I18N = {
     'card.pronouns.title': 'Pronouns &',
     'card.pronouns.titleEm': 'forms',
     'card.pronouns.desc': 'Personal forms, possessives, demonstratives, and question words in declension-ready grids.',
+    'card.prepositions.title': 'Prepositions &',
+    'card.prepositions.titleEm': 'cases',
+    'card.prepositions.desc': 'Visual references for motion, place, path, source, time, and the cases each preposition unlocks.',
 
     'card.action': 'Open chart',
 
@@ -66,6 +69,17 @@ window.I18N = {
     'past.mpl': 'M/mixed pl',
     'past.fpl': 'F pl',
     'past.npl': 'N pl',
+
+    /* Prepositions page */
+    'prep.group.place': 'Place / motion',
+    'prep.group.position': 'Position around',
+    'prep.group.path': 'Path',
+    'prep.group.source': 'Source / direction',
+    'prep.group.fixed': 'Fixed case',
+    'prep.col.visual': 'Visual',
+    'prep.col.prep': 'Preposition',
+    'prep.col.case': 'Case / meaning',
+    'prep.col.example': 'Example',
 
     /* Pronouns page */
     'pron.personal.kicker': 'Core grid',
@@ -207,6 +221,9 @@ window.I18N = {
     'card.pronouns.title': 'Местоимения и',
     'card.pronouns.titleEm': 'формы',
     'card.pronouns.desc': 'Личные формы, притяжательные, указательные и вопросительные слова в таблицах склонения.',
+    'card.prepositions.title': 'Предлоги и',
+    'card.prepositions.titleEm': 'падежи',
+    'card.prepositions.desc': 'Визуальные схемы для движения, места, пути, источника, времени и падежей после предлогов.',
 
     'card.action': 'Открыть',
 
@@ -247,6 +264,17 @@ window.I18N = {
     'past.mpl': 'М/смеш. мн.',
     'past.fpl': 'Ж мн.',
     'past.npl': 'С мн.',
+
+    /* Prepositions */
+    'prep.group.place': 'Место / движение',
+    'prep.group.position': 'Положение вокруг',
+    'prep.group.path': 'Путь',
+    'prep.group.source': 'Источник / направление',
+    'prep.group.fixed': 'Фиксированный падеж',
+    'prep.col.visual': 'Схема',
+    'prep.col.prep': 'Предлог',
+    'prep.col.case': 'Падеж / значение',
+    'prep.col.example': 'Пример',
 
     /* Pronouns */
     'pron.personal.kicker': 'Главная сетка',

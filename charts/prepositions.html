@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Serbian prepositions chart: visual references, case locks, motion/place contrasts, paths, source, and time.">
+<title>Prepositions - Atlas Srpski</title>
+
+<script>
+  (function(){
+    try{
+      var t = localStorage.getItem('as_theme');
+      if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+    }catch(e){}
+  })();
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="shell nav-inner">
+    <a href="/" class="brand">
+      <span class="brand-mark">A.</span>
+      <span data-i18n="nav.brand">Atlas Srpski</span>
+    </a>
+    <div class="nav-actions">
+      <div class="nav-controls" role="group" aria-label="Language">
+        <button class="chip" data-lang-chip="en" aria-pressed="true">EN</button>
+        <button class="chip" data-lang-chip="ru" aria-pressed="false">RU</button>
+      </div>
+      <div class="nav-controls script-controls" role="group" aria-label="Serbian script">
+        <button class="chip script-chip" data-script-chip="lat" aria-pressed="true" aria-label="Use Latin script">Ć</button>
+        <button class="chip script-chip" data-script-chip="cyr" aria-pressed="false" aria-label="Use Cyrillic script">Ћ</button>
+      </div>
+      <button class="theme-btn" data-theme-toggle aria-label="Toggle theme" data-i18n-attr="aria-label:nav.theme">
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"></path></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="prep-section" aria-label="Serbian prepositions">
+  <div class="shell">
+    <div class="prep-layout reveal" id="prepChart"></div>
+  </div>
+</section>
+
+<footer class="foot shell">
+  <span data-i18n="foot.copy">© 2026 Atlas Srpski · Content <a href="https://creativecommons.org/licenses/by/4.0/deed.en" rel="license noopener" target="_blank">CC BY 4.0</a></span>
+  <span>
+    <a href="https://github.com/cwarck/serbian" rel="noopener" target="_blank" class="foot-icon" aria-label="Source" data-i18n-attr="aria-label:foot.repo"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg></a>
+    &nbsp;·&nbsp;
+    <a href="https://ilyaakimov.com" rel="noopener" target="_blank" data-i18n="foot.author">by Ilya Akimov</a>
+  </span>
+</footer>
+
+<script src="../assets/i18n.js"></script>
+<script src="../assets/app.js"></script>
+
+<script>
+const CASE_KEYS = {
+  gen: 'case.2.name',
+  dat: 'case.3.name',
+  aku: 'case.4.name',
+  ins: 'case.6.name',
+  lok: 'case.7.name'
+};
+
+const PREP_GROUPS = [
+  {
+    key: 'prep.group.place',
+    rows: [
+      {
+        prep: 'u', icon: 'in', tone: 'aku',
+        uses: [
+          { case: 'aku', meaning: { en: 'into, to', ru: 'в, внутрь' }, sr: 'Idem u grad.', tr: { en: 'I am going into town.', ru: 'Я иду в город.' } },
+          { case: 'lok', meaning: { en: 'in, at', ru: 'в, внутри' }, sr: 'Živim u gradu.', tr: { en: 'I live in town.', ru: 'Я живу в городе.' } },
+        ]
+      },
+      {
+        prep: 'na', icon: 'on', tone: 'aku',
+        uses: [
+          { case: 'aku', meaning: { en: 'onto, to', ru: 'на, на поверхность' }, sr: 'Stavljam knjigu na sto.', tr: { en: 'I put the book onto the table.', ru: 'Я кладу книгу на стол.' } },
+          { case: 'lok', meaning: { en: 'on, at', ru: 'на, на месте' }, sr: 'Knjiga je na stolu.', tr: { en: 'The book is on the table.', ru: 'Книга на столе.' } },
+        ]
+      },
+    ]
+  },
+  {
+    key: 'prep.group.position',
+    rows: [
+      {
+        prep: 'pod', icon: 'under', tone: 'ins',
+        uses: [
+          { case: 'aku', meaning: { en: 'to under', ru: 'под, движение' }, sr: 'Mačka ide pod sto.', tr: { en: 'The cat goes under the table.', ru: 'Кошка идёт под стол.' } },
+          { case: 'ins', meaning: { en: 'under', ru: 'под, место' }, sr: 'Mačka je pod stolom.', tr: { en: 'The cat is under the table.', ru: 'Кошка под столом.' } },
+        ]
+      },
+      {
+        prep: 'pred', icon: 'front', tone: 'ins',
+        uses: [
+          { case: 'aku', meaning: { en: 'to in front of', ru: 'перед, движение' }, sr: 'Stajem pred kuću.', tr: { en: 'I step in front of the house.', ru: 'Я встаю перед домом.' } },
+          { case: 'ins', meaning: { en: 'in front of', ru: 'перед, место' }, sr: 'Stojim pred kućom.', tr: { en: 'I stand in front of the house.', ru: 'Я стою перед домом.' } },
+        ]
+      },
+      {
+        prep: 'nad', icon: 'over', tone: 'ins',
+        uses: [
+          { case: 'aku', meaning: { en: 'to above', ru: 'над, движение' }, sr: 'Podižem lampu nad sto.', tr: { en: 'I lift the lamp above the table.', ru: 'Я поднимаю лампу над стол.' } },
+          { case: 'ins', meaning: { en: 'above, over', ru: 'над, место' }, sr: 'Lampa je nad stolom.', tr: { en: 'The lamp is above the table.', ru: 'Лампа над столом.' } },
+        ]
+      },
+      {
+        prep: 'među', icon: 'between', tone: 'ins',
+        uses: [
+          { case: 'aku', meaning: { en: 'to among, between', ru: 'между, движение' }, sr: 'Ulazim među ljude.', tr: { en: 'I go among the people.', ru: 'Я вхожу между людей.' } },
+          { case: 'ins', meaning: { en: 'among, between', ru: 'между, место' }, sr: 'Stojim među ljudima.', tr: { en: 'I stand among the people.', ru: 'Я стою между людьми.' } },
+        ]
+      },
+    ]
+  },
+  {
+    key: 'prep.group.path',
+    rows: [
+      { prep: 'kroz', icon: 'through', tone: 'aku', uses: [{ case: 'aku', meaning: { en: 'through', ru: 'через, сквозь' }, sr: 'Idem kroz park.', tr: { en: 'I walk through the park.', ru: 'Я иду через парк.' } }] },
+      { prep: 'niz', icon: 'down', tone: 'aku', uses: [{ case: 'aku', meaning: { en: 'down along', ru: 'вниз по' }, sr: 'Idem niz ulicu.', tr: { en: 'I walk down the street.', ru: 'Я иду вниз по улице.' } }] },
+      { prep: 'uz', icon: 'up', tone: 'aku', uses: [{ case: 'aku', meaning: { en: 'up along', ru: 'вверх по' }, sr: 'Idem uz stepenice.', tr: { en: 'I go up the stairs.', ru: 'Я иду вверх по лестнице.' } }] },
+    ]
+  },
+  {
+    key: 'prep.group.source',
+    rows: [
+      { prep: 'iz', icon: 'out', tone: 'gen', uses: [{ case: 'gen', meaning: { en: 'out of, from inside', ru: 'из, изнутри' }, sr: 'Izlazim iz kuće.', tr: { en: 'I leave the house.', ru: 'Я выхожу из дома.' } }] },
+      { prep: 'od', icon: 'from', tone: 'gen', uses: [{ case: 'gen', meaning: { en: 'from, away from', ru: 'от' }, sr: 'Dolazim od prijatelja.', tr: { en: 'I am coming from a friend.', ru: 'Я иду от друга.' } }] },
+      { prep: 'do', icon: 'limit', tone: 'gen', uses: [{ case: 'gen', meaning: { en: 'up to, until', ru: 'до' }, sr: 'Idem do stanice.', tr: { en: 'I am going up to the station.', ru: 'Я иду до станции.' } }] },
+      { prep: 'k/ka', icon: 'toward', tone: 'dat', uses: [{ case: 'dat', meaning: { en: 'toward, to', ru: 'к' }, sr: 'Idem ka gradu.', tr: { en: 'I am going toward town.', ru: 'Я иду к городу.' } }] },
+      { prep: 'prema', icon: 'toward', tone: 'dat', uses: [{ case: 'dat', meaning: { en: 'toward, facing', ru: 'к, по направлению' }, sr: 'Okrenut sam prema moru.', tr: { en: 'I am turned toward the sea.', ru: 'Я повернут к морю.' } }] },
+    ]
+  },
+  {
+    key: 'prep.group.fixed',
+    rows: [
+      { prep: 's/sa', icon: 'with', tone: 'ins', uses: [{ case: 'ins', meaning: { en: 'with', ru: 'с, вместе' }, sr: 'Putujem sa sestrom.', tr: { en: 'I travel with my sister.', ru: 'Я путешествую с сестрой.' } }] },
+      { prep: 'o', icon: 'about', tone: 'lok', uses: [{ case: 'lok', meaning: { en: 'about, on a topic', ru: 'о, про' }, sr: 'Pričamo o filmu.', tr: { en: 'We talk about the film.', ru: 'Мы говорим о фильме.' } }] },
+      { prep: 'po', icon: 'around', tone: 'lok', uses: [{ case: 'lok', meaning: { en: 'around, by pattern', ru: 'по, вокруг' }, sr: 'Šetam po gradu.', tr: { en: 'I walk around town.', ru: 'Я гуляю по городу.' } }] },
+      { prep: 'pri', icon: 'near', tone: 'lok', uses: [{ case: 'lok', meaning: { en: 'attached to, at', ru: 'при, у' }, sr: 'Radim pri školi.', tr: { en: 'I work at the school.', ru: 'Я работаю при школе.' } }] },
+      { prep: 'bez', icon: 'without', tone: 'gen', uses: [{ case: 'gen', meaning: { en: 'without', ru: 'без' }, sr: 'Kafa bez šećera.', tr: { en: 'Coffee without sugar.', ru: 'Кофе без сахара.' } }] },
+      { prep: 'pre', icon: 'before', tone: 'gen', uses: [{ case: 'gen', meaning: { en: 'before', ru: 'до, перед' }, sr: 'Pre ručka pijem vodu.', tr: { en: 'Before lunch I drink water.', ru: 'Перед обедом я пью воду.' } }] },
+      { prep: 'posle', icon: 'after', tone: 'gen', uses: [{ case: 'gen', meaning: { en: 'after', ru: 'после' }, sr: 'Posle časa idem kući.', tr: { en: 'After class I go home.', ru: 'После урока я иду домой.' } }] },
+      { prep: 'kod', icon: 'near', tone: 'gen', uses: [{ case: 'gen', meaning: { en: "at someone's place", ru: 'у, возле' }, sr: 'Spavam kod brata.', tr: { en: "I sleep at my brother's place.", ru: 'Я ночую у брата.' } }] },
+      { prep: 'oko', icon: 'around', tone: 'gen', uses: [{ case: 'gen', meaning: { en: 'around', ru: 'около, вокруг' }, sr: 'Sedimo oko stola.', tr: { en: 'We sit around the table.', ru: 'Мы сидим вокруг стола.' } }] },
+      { prep: 'iza', icon: 'behind', tone: 'gen', uses: [{ case: 'gen', meaning: { en: 'behind', ru: 'за, позади' }, sr: 'Auto je iza kuće.', tr: { en: 'The car is behind the house.', ru: 'Машина за домом.' } }] },
+    ]
+  },
+];
+
+function dict() {
+  const lang = document.documentElement.getAttribute('lang') || 'en';
+  return (window.I18N && window.I18N[lang]) || {};
+}
+function t(key) { return dict()[key] || key; }
+function currentLang() { return document.documentElement.getAttribute('lang') || 'en'; }
+function srText(text) {
+  return window.AtlasSrpski ? window.AtlasSrpski.sr(text) : String(text);
+}
+
+function iconSVG(kind) {
+  const object = '<rect class="prep-icon-object" x="30" y="18" width="28" height="28"></rect>';
+  const dot = (x, y) => `<circle class="prep-icon-dot" cx="${x}" cy="${y}" r="9"></circle>`;
+  const arrow = (d) => `<path class="prep-icon-arrow" d="${d}"></path>`;
+  const head = (d) => `<path class="prep-icon-arrow" d="${d}"></path>`;
+  const line = (d) => `<path class="prep-icon-line" d="${d}"></path>`;
+  const dashed = (d) => `<path class="prep-icon-dash" d="${d}"></path>`;
+  const icons = {
+    in: `${object}${dot(44,32)}`,
+    on: `${object.replace('y="18"', 'y="28"')}${dot(44,24)}`,
+    under: `${object.replace('y="18"', 'y="10"')}${dot(44,52)}`,
+    over: `${object.replace('y="18"', 'y="30"')}${dot(44,14)}`,
+    front: `${object}${dot(22,32)}`,
+    behind: `<rect class="prep-icon-object" x="28" y="18" width="28" height="28"></rect>${dot(58,36)}`,
+    between: `${line('M25 10V54M63 10V54')}${dot(44,32)}`,
+    through: `${object}${arrow('M16 33H70')}${head('M62 25L72 33L62 41')}${dot(24,33)}`,
+    up: `${dashed('M20 50L68 14')}${arrow('M28 44L60 20')}${head('M49 18L63 18L59 31')}${dot(24,48)}`,
+    down: `${dashed('M20 14L68 50')}${arrow('M28 20L60 44')}${head('M59 33L63 47L49 44')}${dot(24,16)}`,
+    out: `<rect class="prep-icon-object" x="20" y="26" width="26" height="26"></rect>${dot(28,39)}${arrow('M36 30C45 14 55 13 67 15')}${head('M58 8L71 15L58 22')}`,
+    from: `${object}${dot(56,32)}${arrow('M48 32H16')}${head('M24 24L14 32L24 40')}`,
+    toward: `${object}${dot(18,32)}${arrow('M28 32H66')}${head('M58 24L68 32L58 40')}`,
+    limit: `${line('M62 12V52')}${dot(22,32)}${arrow('M32 32H58')}${head('M50 24L60 32L50 40')}`,
+    with: `${dot(34,32)}${dot(54,32)}`,
+    about: `${object}${arrow('M27 21C35 8 58 9 65 23')}${head('M53 20L66 24L62 11')}`,
+    around: `${object}${arrow('M22 32C22 12 66 12 66 32C66 52 22 52 22 32')}${head('M58 25L67 33L58 40')}`,
+    near: `${object}${dot(20,32)}`,
+    without: `${object}${dot(44,32)}${line('M26 52L62 12')}`,
+    before: `${line('M20 32H68')}${dot(30,32)}${line('M48 18V46')}`,
+    after: `${line('M20 32H68')}${line('M40 18V46')}${dot(58,32)}`,
+  };
+  return `<svg class="prep-icon" viewBox="0 0 88 64" aria-hidden="true">${icons[kind] || icons.in}</svg>`;
+}
+
+function caseChip(use) {
+  return `<span class="prep-case" data-case="${use.case}">${t(CASE_KEYS[use.case])}</span>`;
+}
+
+function renderUse(use) {
+  const lang = currentLang();
+  return `
+    <div class="prep-use" data-case="${use.case}">
+      <div class="prep-use-head">
+        ${caseChip(use)}
+        <span class="prep-meaning">${use.meaning[lang] || use.meaning.en}</span>
+      </div>
+      <div class="prep-example">
+        <span class="sr">${srText(use.sr)}</span>
+        <span class="tr">${use.tr[lang] || use.tr.en}</span>
+      </div>
+    </div>
+  `;
+}
+
+function renderPrepChart() {
+  const root = document.getElementById('prepChart');
+  if (!root) return;
+  root.innerHTML = PREP_GROUPS.map(group => `
+    <section class="prep-group">
+      <header class="prep-group-head">
+        <h3>${t(group.key)}</h3>
+      </header>
+      <div class="prep-table">
+        <div class="prep-table-head" aria-hidden="true">
+          <span>${t('prep.col.visual')}</span>
+          <span>${t('prep.col.prep')}</span>
+          <span>${t('prep.col.case')}</span>
+          <span>${t('prep.col.example')}</span>
+        </div>
+        ${group.rows.map(row => `
+          <article class="prep-row" data-tone="${row.tone}">
+            <div class="prep-visual">${iconSVG(row.icon)}</div>
+            <div class="prep-name">${srText(row.prep)}</div>
+            <div class="prep-uses">${row.uses.map(renderUse).join('')}</div>
+          </article>
+        `).join('')}
+      </div>
+    </section>
+  `).join('');
+}
+
+document.addEventListener('langchange', renderPrepChart);
+document.addEventListener('scriptchange', renderPrepChart);
+renderPrepChart();
+</script>
+</body>
+</html>
