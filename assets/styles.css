@@ -106,7 +106,10 @@ h1, h2, h3, h4, h5 {
   margin: 0;
   color: var(--ink);
 }
-h1, h2 { font-size: var(--fs-head); }
+h1, h2 {
+  font-size: var(--fs-head);
+  font-variation-settings: "opsz" 60;
+}
 h3     { font-size: var(--fs-title); }
 h4     { font-size: var(--fs-lead); }
 
@@ -176,7 +179,7 @@ section { position: relative; }
 .brand-mark {
   font-family: var(--ff-display);
   font-style: italic;
-  font-weight: 300;
+  font-weight: 500;
   color: var(--accent);
 }
 .nav-controls {
@@ -558,7 +561,7 @@ section { position: relative; }
   color: var(--ink-soft);
 }
 .tip-pop-body strong { color: var(--ink); font-weight: 600; }
-.tip-pop-body em { color: var(--accent); font-style: normal; font-family: var(--ff-display); }
+.tip-pop-body em { color: var(--accent); font-style: normal; font-family: var(--ff-display); font-weight: 500; }
 .tip-pop-close {
   position: absolute;
   top: .35rem; right: .55rem;
@@ -1161,6 +1164,7 @@ section { position: relative; }
 .ex .tr {
   font-family: var(--ff-body);
   font-style: italic;
+  font-weight: 500;
   color: var(--ink-muted);
   font-size: var(--fs-caption);
   line-height: 1.45;
@@ -1280,7 +1284,7 @@ a.cast-cell-head:hover .cast-abbr { color: var(--ink); }
 .cast-form {
   font-family: var(--ff-display);
   font-style: italic;
-  font-weight: 300;
+  font-weight: 500;
   font-size: var(--fs-body);
   color: var(--ink);
   letter-spacing: -.005em;
@@ -2017,6 +2021,7 @@ a.cast-cell-head:hover .cast-abbr { color: var(--ink); }
 .verb-example .tr {
   font-family: var(--ff-body);
   font-style: italic;
+  font-weight: 500;
   font-size: var(--fs-caption);
   line-height: var(--lh-snug);
   color: var(--ink-muted);
