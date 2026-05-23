@@ -29,6 +29,9 @@ window.I18N = {
     'card.prepositions.title': 'Prepositions &',
     'card.prepositions.titleEm': 'cases',
     'card.prepositions.desc': 'Visual references for motion, place, path, source, time, and the cases each preposition unlocks.',
+    'card.aspect.title': 'Verb aspect',
+    'card.aspect.titleEm': 'pairs',
+    'card.aspect.desc': 'Imperfective and perfective pairs: process, result, repetition, time behavior, and prefix patterns.',
 
     'card.action': 'Open chart',
 
@@ -225,6 +228,9 @@ window.I18N = {
     'card.prepositions.title': 'Предлоги и',
     'card.prepositions.titleEm': 'падежи',
     'card.prepositions.desc': 'Визуальные схемы для движения, места, пути, источника, времени и падежей после предлогов.',
+    'card.aspect.title': 'Виды глагола',
+    'card.aspect.titleEm': 'и пары',
+    'card.aspect.desc': 'Несовершенные и совершенные пары: процесс, результат, повтор, время и приставочные модели.',
 
     'card.action': 'Открыть',
 

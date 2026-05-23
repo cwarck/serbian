@@ -55,6 +55,5 @@ The scale is the rulebook. Pick a role; the token decides the size.
 ## Planned charts
 
 - Numbers & counting
-- Verb aspect pairs
 - Pitch & stress
 - False friends
