@@ -2306,14 +2306,18 @@ a.cast-cell-head:hover .cast-abbr { color: var(--ink); }
 
 @media (min-width: 920px) {
   .prep-group {
-    border-left: 1px solid var(--hairline);
+    border: 1px solid var(--hairline);
+    border-bottom: 0;
+  }
+
+  .prep-group-head {
+    padding: 1rem .9rem .85rem;
   }
 
   .prep-table-head {
     display: grid;
     grid-template-columns: 6.5rem 8.5rem minmax(15rem, 1fr) minmax(20rem, 1.55fr);
     background: var(--paper-deep);
-    border-right: 1px solid var(--hairline);
     border-bottom: 1px solid var(--hairline);
   }
 
@@ -2337,7 +2341,6 @@ a.cast-cell-head:hover .cast-abbr { color: var(--ink); }
     grid-template-columns: 6.5rem 8.5rem minmax(0, 1fr);
     gap: 0;
     padding: 0;
-    border-right: 1px solid var(--hairline);
     border-bottom: 1px solid var(--hairline);
   }
 
