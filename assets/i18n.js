@@ -73,6 +73,21 @@ window.I18N = {
     'past.fpl': 'F pl',
     'past.npl': 'N pl',
 
+    /* Aspect page */
+    'aspect.contrast': 'Core contrast',
+    'aspect.time': 'Time behavior',
+    'aspect.patterns': 'Pair patterns',
+    'aspect.prefixes': 'Prefix map',
+    'aspect.pairs': 'Common pairs',
+    'aspect.traps': 'Traps',
+    'aspect.imperfective': 'Imperfective',
+    'aspect.perfective': 'Perfective',
+    'aspect.meaning': 'Meaning',
+    'aspect.pattern': 'Pattern',
+    'aspect.signal': 'Signal',
+    'aspect.example': 'Example',
+    'aspect.note': 'note',
+
     /* Prepositions page */
     'prep.group.place': 'Place / motion',
     'prep.group.position': 'Position around',
@@ -271,6 +286,21 @@ window.I18N = {
     'past.mpl': 'М/смеш. мн.',
     'past.fpl': 'Ж мн.',
     'past.npl': 'С мн.',
+
+    /* Aspect */
+    'aspect.contrast': 'Главное различие',
+    'aspect.time': 'Поведение во времени',
+    'aspect.patterns': 'Типы пар',
+    'aspect.prefixes': 'Карта приставок',
+    'aspect.pairs': 'Частые пары',
+    'aspect.traps': 'Ловушки',
+    'aspect.imperfective': 'Несовершенный',
+    'aspect.perfective': 'Совершенный',
+    'aspect.meaning': 'Значение',
+    'aspect.pattern': 'Тип',
+    'aspect.signal': 'Сигнал',
+    'aspect.example': 'Пример',
+    'aspect.note': 'заметка',
 
     /* Prepositions */
     'prep.group.place': 'Место / движение',

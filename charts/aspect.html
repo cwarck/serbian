@@ -70,49 +70,6 @@
 <script src="../assets/app.js"></script>
 
 <script>
-const UI = {
-  en: {
-    contrast: 'Core contrast',
-    time: 'Time behavior',
-    patterns: 'Pair patterns',
-    prefixes: 'Prefix map',
-    pairs: 'Common pairs',
-    traps: 'Traps',
-    imperfective: 'Imperfective',
-    perfective: 'Perfective',
-    meaning: 'Meaning',
-    pattern: 'Pattern',
-    signal: 'Signal',
-    prefix: 'Prefix',
-    feel: 'Core feel',
-    examples: 'Pairs',
-    example: 'Example',
-    trap: 'Trap',
-    why: 'Why',
-    note: 'note'
-  },
-  ru: {
-    contrast: 'Главное различие',
-    time: 'Поведение во времени',
-    patterns: 'Типы пар',
-    prefixes: 'Карта приставок',
-    pairs: 'Частые пары',
-    traps: 'Ловушки',
-    imperfective: 'Несовершенный',
-    perfective: 'Совершенный',
-    meaning: 'Значение',
-    pattern: 'Тип',
-    signal: 'Сигнал',
-    prefix: 'Приставка',
-    feel: 'Смысловой жест',
-    examples: 'Пары',
-    example: 'Пример',
-    trap: 'Ловушка',
-    why: 'Почему',
-    note: 'заметка'
-  }
-};
-
 const CONTRAST = [
   {
     key: { en: 'Shape', ru: 'Форма' },
@@ -157,13 +114,13 @@ const TIME_ROWS = [
 
 const PATTERNS = [
   {
-    pattern: { en: 'bare -> prefixed', ru: 'без приставки -> с приставкой' },
+    pattern: { en: 'bare verb + prefix', ru: 'глагол + приставка' },
     imp: 'pisati',
     perf: 'napisati',
     signal: { en: 'finished text', ru: 'готовый текст' }
   },
   {
-    pattern: { en: 'perfective -> secondary imperfective', ru: 'сов. -> вторичный несов.' },
+    pattern: { en: 'secondary imperfective', ru: 'вторичный несов.' },
     imp: 'otvarati',
     perf: 'otvoriti',
     signal: { en: 'open repeatedly / be opening', ru: 'открывать не раз / в процессе' }
@@ -175,10 +132,10 @@ const PATTERNS = [
     signal: { en: 'buying vs one purchase', ru: 'покупать vs купить' }
   },
   {
-    pattern: { en: 'different root', ru: 'другой корень' },
-    imp: 'govoriti',
-    perf: 'reći',
-    signal: { en: 'speak vs say once', ru: 'говорить vs сказать' }
+    pattern: { en: 'stem-change pair', ru: 'пара с другой основой' },
+    imp: 'uzimati',
+    perf: 'uzeti',
+    signal: { en: 'taking vs one take', ru: 'брать vs взять' }
   }
 ];
 
@@ -218,7 +175,7 @@ const PREFIXES = [
   {
     prefix: 'do-',
     tone: 'do',
-    feel: { en: 'reach, finish up to', ru: 'дойти, довести до точки' },
+    feel: { en: 'reach, add up to', ru: 'дойти, добавить до точки' },
     pairs: ['dolaziti -> doći', 'nositi -> doneti', 'pisati -> dopisati'],
     note: {
       title: { en: 'Motion verbs compress patterns', ru: 'Глаголы движения сжимают схемы' },
@@ -266,7 +223,11 @@ const TRAPS = [
 ];
 
 function lang() { return document.documentElement.getAttribute('lang') || 'en'; }
-function ui(key) { return (UI[lang()] && UI[lang()][key]) || UI.en[key] || key; }
+function dict() {
+  return (window.I18N && window.I18N[lang()]) || {};
+}
+function t(key) { return dict()[key] || key; }
+function ui(key) { return t('aspect.' + key); }
 function pick(value) {
   if (typeof value === 'string') return value;
   return (value && (value[lang()] || value.en)) || '';
