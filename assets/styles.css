@@ -203,16 +203,18 @@ section { position: relative; }
 .chip:hover { color: var(--ink); }
 .chip[aria-pressed="true"]:hover { color: var(--paper); }
 .script-chip {
-  min-width: 2.45rem;
-  padding-inline: .8rem;
+  min-width: 3rem;
+  padding: .55rem 1rem;
   font-family: var(--ff-display);
   font-size: var(--fs-body);
+  font-weight: 500;
+  line-height: 1;
   letter-spacing: 0;
   text-transform: none;
 }
 
 .theme-btn {
-  width: 44px; height: 44px;
+  width: 42px; height: 42px;
   display: inline-grid; place-items: center;
   border-radius: 50%;
   border: 1px solid var(--hairline);
@@ -238,8 +240,8 @@ section { position: relative; }
   .nav-actions { gap: .4rem; }
   .chip { padding: .55rem .7rem; }
   .script-chip {
-    min-width: 2rem;
-    padding-inline: .52rem;
+    min-width: 2.4rem;
+    padding: .42rem .7rem;
   }
   .theme-btn { width: 38px; height: 38px; }
   .theme-btn svg { width: 15px; height: 15px; }
@@ -250,7 +252,7 @@ section { position: relative; }
   .nav-actions { gap: .3rem; }
   .nav-controls { gap: .15rem; padding: 2px; }
   .chip { padding: .48rem .58rem; }
-  .script-chip { min-width: 1.85rem; padding-inline: .42rem; }
+  .script-chip { min-width: 2.15rem; padding: .36rem .58rem; }
   .theme-btn { width: 34px; height: 34px; }
 }
 
