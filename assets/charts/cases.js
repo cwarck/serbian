@@ -15,9 +15,6 @@ function srText(text) {
 function srHTML(html) {
   return window.AtlasSrpski ? window.AtlasSrpski.srHTML(html) : String(html);
 }
-function srEmHTML(html) {
-  return String(html).replace(/<em>(.*?)<\/em>/g, (_, inner) => `<em>${srHTML(inner)}</em>`);
-}
 function srStrongHTML(html) {
   return String(html).replace(/<strong>(.*?)<\/strong>/g, (_, inner) => `<strong>${srHTML(inner)}</strong>`);
 }

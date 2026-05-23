@@ -70,11 +70,6 @@ function renderAlphabet() {
       const L = ALPHABET[+trigger.dataset.tipIdx];
       return (L && L.tip) ? (L.tip[lang] || L.tip.en) : null;
     }
-    if (trigger.dataset.tipI18n) {
-      const key = trigger.dataset.tipI18n;
-      const dict = window.I18N || {};
-      return (dict[lang] && dict[lang][key]) || (dict.en && dict.en[key]) || null;
-    }
     return null;
   }
 
@@ -101,7 +96,7 @@ function renderAlphabet() {
   }
 
   document.addEventListener('click', (e) => {
-    const trigger = e.target.closest('.tip-chip, .hint-link');
+    const trigger = e.target.closest('.tip-chip');
     if (trigger) {
       e.preventDefault();
       if (activeChip === trigger) { close(); } else { open(trigger); }
