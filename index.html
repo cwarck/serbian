@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Atlas Srpski — a visual reference for the Serbian language. Available in English and Russian.">
-<title>Atlas Srpski — Serbian, illuminated.</title>
+<meta name="description" content="Atlas Srpski — mobile-first Serbian language charts in English and Russian.">
+<title>Atlas Srpski — Serbian charts</title>
 
 <!-- Prevent theme flash -->
 <script>
@@ -54,118 +54,77 @@
 </header>
 
 <!-- ============================================================
-     HERO
-     ============================================================ -->
-<section class="hero">
-  <div class="glyph-bg tl" aria-hidden="true">Љ</div>
-  <div class="glyph-bg br" aria-hidden="true">ђ</div>
-
-  <div class="shell">
-    <div class="reveal">
-      <p class="eyebrow" data-i18n="hero.eyebrow">A visual reference for the Serbian language</p>
-      <h1 class="display">
-        <span data-i18n="hero.title.line1">Serbian,</span>
-        <em data-i18n="hero.title.em">illuminated.</em>
-      </h1>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
      CHART INDEX
      ============================================================ -->
-<section id="charts" class="charts">
-  <div class="shell">
-    <div class="section-head reveal">
-      <h2>
-        <span data-i18n="charts.heading">Charts &amp;</span>
-        <em data-i18n="charts.heading.em">cheat sheets</em>
-      </h2>
-    </div>
+<main id="content" class="home shell">
+  <header class="home-head reveal">
+    <h1 data-i18n="home.title">Charts</h1>
+  </header>
 
-    <div class="chart-grid">
+  <nav class="chart-index" aria-label="Charts" data-i18n-attr="aria-label:chart.index.label">
+    <ol class="chart-grid">
+      <li>
+        <a class="chart-card reveal" href="charts/alphabet.html">
+          <h2 data-i18n="card.alphabet.title">Alphabet</h2>
+          <span class="chart-note" data-i18n="card.alphabet.note">Letters & scripts</span>
+          <span class="chart-open" aria-hidden="true">
+            <svg viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><path d="M0 6h22M16 1l6 5-6 5"/></svg>
+          </span>
+        </a>
+      </li>
 
-      <a class="card reveal" href="charts/alphabet.html">
-        <h3>
-          <span data-i18n="card.alphabet.title">The two</span>
-          <em data-i18n="card.alphabet.titleEm">alphabets</em>
-        </h3>
-        <p class="desc" data-i18n="card.alphabet.desc">Cyrillic and Latin side by side. 30 letters, one IPA value each, no surprises after you learn them.</p>
-        <span class="arrow">
-          <span data-i18n="card.action">Open chart</span>
-          <svg viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1"><path d="M0 6h22M16 1l6 5-6 5"/></svg>
-        </span>
-        <span class="glyph" aria-hidden="true">Аа</span>
-      </a>
+      <li>
+        <a class="chart-card reveal" href="charts/cases.html" style="transition-delay:.05s">
+          <h2 data-i18n="card.cases.title">Cases</h2>
+          <span class="chart-note" data-i18n="card.cases.note">Noun endings</span>
+          <span class="chart-open" aria-hidden="true">
+            <svg viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><path d="M0 6h22M16 1l6 5-6 5"/></svg>
+          </span>
+        </a>
+      </li>
 
-      <a class="card reveal" href="charts/cases.html" style="transition-delay:.05s">
-        <h3>
-          <span data-i18n="card.cases.title">Seven</span>
-          <em data-i18n="card.cases.titleEm">cases</em>
-        </h3>
-        <p class="desc" data-i18n="card.cases.desc">Endings, questions, prepositions, and example sentences for every noun case — laid out so the pattern shows.</p>
-        <span class="arrow">
-          <span data-i18n="card.action">Open chart</span>
-          <svg viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1"><path d="M0 6h22M16 1l6 5-6 5"/></svg>
-        </span>
-        <span class="glyph" aria-hidden="true">Пп</span>
-      </a>
+      <li>
+        <a class="chart-card reveal" href="charts/verbs.html" style="transition-delay:.1s">
+          <h2 data-i18n="card.verbs.title">Verbs</h2>
+          <span class="chart-note" data-i18n="card.verbs.note">Conjugation</span>
+          <span class="chart-open" aria-hidden="true">
+            <svg viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><path d="M0 6h22M16 1l6 5-6 5"/></svg>
+          </span>
+        </a>
+      </li>
 
-      <a class="card reveal" href="charts/verbs.html" style="transition-delay:.1s">
-        <h3>
-          <span data-i18n="card.verbs.title">Verbs &amp;</span>
-          <em data-i18n="card.verbs.titleEm">conjugation</em>
-        </h3>
-        <p class="desc" data-i18n="card.verbs.desc">Present endings, core irregulars, past participles, and future forms in one mobile-first grid.</p>
-        <span class="arrow">
-          <span data-i18n="card.action">Open chart</span>
-          <svg viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1"><path d="M0 6h22M16 1l6 5-6 5"/></svg>
-        </span>
-        <span class="glyph" aria-hidden="true">Гл</span>
-      </a>
+      <li>
+        <a class="chart-card reveal" href="charts/pronouns.html" style="transition-delay:.15s">
+          <h2 data-i18n="card.pronouns.title">Pronouns</h2>
+          <span class="chart-note" data-i18n="card.pronouns.note">Forms</span>
+          <span class="chart-open" aria-hidden="true">
+            <svg viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><path d="M0 6h22M16 1l6 5-6 5"/></svg>
+          </span>
+        </a>
+      </li>
 
-      <a class="card reveal" href="charts/pronouns.html" style="transition-delay:.15s">
-        <h3>
-          <span data-i18n="card.pronouns.title">Pronouns &amp;</span>
-          <em data-i18n="card.pronouns.titleEm">forms</em>
-        </h3>
-        <p class="desc" data-i18n="card.pronouns.desc">Personal forms, possessives, demonstratives, and question words in declension-ready grids.</p>
-        <span class="arrow">
-          <span data-i18n="card.action">Open chart</span>
-          <svg viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1"><path d="M0 6h22M16 1l6 5-6 5"/></svg>
-        </span>
-        <span class="glyph" aria-hidden="true">Он</span>
-      </a>
+      <li>
+        <a class="chart-card reveal" href="charts/prepositions.html" style="transition-delay:.2s">
+          <h2 data-i18n="card.prepositions.title">Prepositions</h2>
+          <span class="chart-note" data-i18n="card.prepositions.note">Case locks</span>
+          <span class="chart-open" aria-hidden="true">
+            <svg viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><path d="M0 6h22M16 1l6 5-6 5"/></svg>
+          </span>
+        </a>
+      </li>
 
-      <a class="card reveal" href="charts/prepositions.html" style="transition-delay:.2s">
-        <h3>
-          <span data-i18n="card.prepositions.title">Prepositions &amp;</span>
-          <em data-i18n="card.prepositions.titleEm">cases</em>
-        </h3>
-        <p class="desc" data-i18n="card.prepositions.desc">Visual references for motion, place, path, source, time, and the cases each preposition unlocks.</p>
-        <span class="arrow">
-          <span data-i18n="card.action">Open chart</span>
-          <svg viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1"><path d="M0 6h22M16 1l6 5-6 5"/></svg>
-        </span>
-        <span class="glyph" aria-hidden="true">У</span>
-      </a>
-
-      <a class="card reveal" href="charts/aspect.html" style="transition-delay:.25s">
-        <h3>
-          <span data-i18n="card.aspect.title">Verb aspect</span>
-          <em data-i18n="card.aspect.titleEm">pairs</em>
-        </h3>
-        <p class="desc" data-i18n="card.aspect.desc">Imperfective and perfective pairs: process, result, repetition, time behavior, and prefix patterns.</p>
-        <span class="arrow">
-          <span data-i18n="card.action">Open chart</span>
-          <svg viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1"><path d="M0 6h22M16 1l6 5-6 5"/></svg>
-        </span>
-        <span class="glyph" aria-hidden="true">Св</span>
-      </a>
-
-    </div>
-  </div>
-</section>
+      <li>
+        <a class="chart-card reveal" href="charts/aspect.html" style="transition-delay:.25s">
+          <h2 data-i18n="card.aspect.title">Aspect</h2>
+          <span class="chart-note" data-i18n="card.aspect.note">Verb pairs</span>
+          <span class="chart-open" aria-hidden="true">
+            <svg viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><path d="M0 6h22M16 1l6 5-6 5"/></svg>
+          </span>
+        </a>
+      </li>
+    </ol>
+  </nav>
+</main>
 
 <!-- ============================================================
      FOOTER

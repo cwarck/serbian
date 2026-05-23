@@ -251,96 +251,33 @@ section { position: relative; }
 }
 
 /* -----------------------------------------------------------
-   Hero
+   Chart index
    ----------------------------------------------------------- */
 
-.hero {
-  position: relative;
-  padding-block: clamp(3rem, 8vw, 7rem) clamp(2.5rem, 6vw, 5rem);
-  overflow: hidden;
+.home {
+  padding-block: clamp(1.8rem, 5vw, 3.2rem) clamp(3rem, 7vw, 6rem);
 }
-.eyebrow {
-  font-family: var(--ff-mono);
-  font-size: var(--fs-label);
-  letter-spacing: var(--track-label);
-  text-transform: uppercase;
-  color: var(--ink-muted);
-  display: inline-flex; align-items: center; gap: .8rem;
-  margin-bottom: 1.6rem;
+.home-head {
+  padding-bottom: clamp(1rem, 3vw, 2rem);
 }
-.eyebrow::before {
-  content: ""; display: inline-block; width: 28px; height: 1px;
-  background: var(--accent);
+.home-head h1 {
+  font-size: var(--fs-head);
+  line-height: var(--lh-snug);
 }
-
-.display {
-  font-family: var(--ff-display);
-  font-weight: 200;
-  font-size: var(--fs-hero);
-  line-height: .94;
-  letter-spacing: var(--track-hero);
-}
-.display em {
-  font-style: italic;
-  font-weight: 200;
-  color: var(--accent);
-}
-.lede {
-  font-family: var(--ff-body);
-  font-size: var(--fs-lead);
-  line-height: 1.45;
-  color: var(--ink-soft);
-  max-width: 36ch;
-  font-style: italic;
-}
-
-/* Massive decorative Cyrillic */
-.glyph-bg {
-  position: absolute;
-  font-family: var(--ff-display);
-  font-style: italic;
-  font-weight: 200;
-  color: var(--ink);
-  opacity: .045;
-  user-select: none;
-  pointer-events: none;
-  line-height: .8;
-  letter-spacing: -.08em;
-}
-:root[data-theme="dark"] .glyph-bg,
-:root:not([data-theme="light"]) .glyph-bg { opacity: .07; }
-
-.glyph-bg.tl       { top: -3vw;    left: -1vw;  font-size: min(48vw, 600px); }
-.glyph-bg.br       { bottom: -8vw; right: -2vw; font-size: min(38vw, 480px); transform: rotate(8deg); }
-
-/* -----------------------------------------------------------
-   Section heading
-   ----------------------------------------------------------- */
-
-.section-head {
-  padding-bottom: 1.8rem;
-  border-bottom: 1px solid var(--hairline);
-  margin-bottom: 2.5rem;
-}
-.section-head h2 {
-  font-weight: 200;
-}
-.section-head h2 em { font-style: italic; color: var(--ink-soft); font-weight: 200; }
-
-/* -----------------------------------------------------------
-   Chart index (landing)
-   ----------------------------------------------------------- */
-
-.charts {
-  padding-block: clamp(3rem, 7vw, 6rem);
+.chart-index {
+  display: block;
 }
 
 .chart-grid {
+  counter-reset: chart;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
   gap: 0;
   border-top: 1px solid var(--hairline);
   border-left: 1px solid var(--hairline);
+  list-style: none;
+  margin: 0;
+  padding: 0;
   position: relative;
 }
 .chart-grid::before,
@@ -352,69 +289,70 @@ section { position: relative; }
 }
 .chart-grid::before { left: 0; right: 0; bottom: 0; height: 1px; }
 .chart-grid::after  { top: 0; bottom: 0; right: 0; width: 1px; }
-@media (min-width: 1600px) {
-  .chart-grid { grid-template-columns: repeat(5, 1fr); }
+@media (min-width: 980px) {
+  .chart-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (min-width: 1900px) {
+  .chart-grid { grid-template-columns: repeat(6, 1fr); }
 }
 
-.card {
+.chart-grid li {
+  counter-increment: chart;
+  min-width: 0;
+}
+.chart-card {
   position: relative;
-  display: flex; flex-direction: column;
-  padding: 2.2rem clamp(1.2rem, 2.5vw, 2.4rem) 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: .35rem;
+  min-height: clamp(8.8rem, 16vw, 14rem);
+  height: 100%;
+  padding: clamp(1rem, 2vw, 1.45rem) clamp(1rem, 2.4vw, 2rem);
   border-right: 1px solid var(--hairline);
   border-bottom: 1px solid var(--hairline);
   background: var(--paper);
   transition: background .35s, color .35s;
-  min-height: 280px;
-  overflow: hidden;
-  isolation: isolate;
 }
-.card h3 {
-  margin: 0 0 .35rem;
-}
-.card h3 em { font-style: italic; color: var(--accent); font-weight: 300; }
-.card .desc {
-  font-family: var(--ff-body);
-  color: var(--ink-soft);
-  font-size: var(--fs-body);
-  line-height: var(--lh-prose);
-  max-width: 42ch;
-}
-.card .arrow {
-  margin-top: auto;
-  display: inline-flex; align-items: center; gap: .6rem;
+.chart-card::before {
+  content: counter(chart, decimal-leading-zero);
   font-family: var(--ff-mono);
   font-size: var(--fs-label);
   letter-spacing: var(--track-label);
-  text-transform: uppercase;
-  color: var(--ink);
-  padding-top: 1.8rem;
+  line-height: 1;
+  color: var(--ink-muted);
+  font-feature-settings: "tnum";
 }
-.card .arrow svg {
+.chart-card h2 {
+  margin-top: auto;
+  font-size: var(--fs-title);
+  line-height: var(--lh-snug);
+}
+.chart-note {
+  font-size: var(--fs-lead);
+  line-height: var(--lh-snug);
+  color: var(--ink-soft);
+}
+.chart-open {
+  position: absolute;
+  top: clamp(1rem, 2vw, 1.45rem);
+  right: clamp(1rem, 2.4vw, 2rem);
+  color: var(--ink);
+}
+.chart-open svg {
   width: 24px; height: 12px;
   transition: transform .4s cubic-bezier(.2,.7,.2,1);
 }
-.card:hover .arrow svg { transform: translateX(8px); }
+.chart-card:hover .chart-open svg { transform: translateX(8px); }
+.chart-card:hover { background: var(--paper-deep); }
 
-/* Card decoration: oversized Cyrillic glyph */
-.card .glyph {
-  position: absolute;
-  bottom: -2rem; right: -1rem;
-  font-family: var(--ff-display);
-  font-style: italic;
-  font-weight: 200;
-  font-size: 10rem;
-  line-height: .8;
-  color: var(--ink);
-  opacity: .055;
-  pointer-events: none;
-  z-index: -1;
-  transition: transform .8s cubic-bezier(.2,.7,.2,1), opacity .35s;
+@media (max-width: 520px) {
+  .chart-grid {
+    grid-template-columns: 1fr;
+  }
+  .chart-card {
+    min-height: 8.4rem;
+  }
 }
-.card:hover .glyph { transform: rotate(-6deg) scale(1.08); opacity: .09; }
-:root[data-theme="dark"] .card:hover .glyph,
-:root:not([data-theme="light"]) .card:hover .glyph { opacity: .14; }
-
-.card:hover { background: var(--paper-deep); }
 
 /* -----------------------------------------------------------
    Footer
