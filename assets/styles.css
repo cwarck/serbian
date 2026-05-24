@@ -118,6 +118,7 @@ body {
   color: var(--ink);
   background: var(--paper);
   font-feature-settings: "kern", "liga", "onum";
+  font-language-override: "SRB";
   font-optical-sizing: auto;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
