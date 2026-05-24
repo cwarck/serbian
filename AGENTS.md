@@ -85,8 +85,3 @@ Flexoki accents, one hue per grammatical meaning. The full palette and semantic 
 
 - Commit per logical change.
 - Conventional commits.
-
-## Planned charts
-
-- Pitch & stress
-- False friends
