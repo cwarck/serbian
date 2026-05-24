@@ -88,11 +88,18 @@ function renderAlphabet() {
   }
 
   function close() {
-    if (!activeChip) return;
-    activeChip.setAttribute('aria-expanded','false');
+    const trigger = activeChip;
+    if (!trigger) return;
+    trigger.setAttribute('aria-expanded','false');
     activeChip = null;
     pop.classList.remove('is-open');
     pop.hidden = true;
+    return trigger;
+  }
+
+  function closeAndReturnFocus() {
+    const trigger = close();
+    if (trigger && document.contains(trigger)) trigger.focus({ preventScroll: true });
   }
 
   document.addEventListener('click', (e) => {
@@ -105,8 +112,12 @@ function renderAlphabet() {
     if (!pop.hidden && !pop.contains(e.target)) close();
   });
 
-  closeBtn.addEventListener('click', close);
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+  closeBtn.addEventListener('click', closeAndReturnFocus);
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Escape' || pop.hidden) return;
+    e.preventDefault();
+    closeAndReturnFocus();
+  });
   window.addEventListener('resize', () => { if (!pop.hidden) position(); });
   window.addEventListener('scroll', () => { if (!pop.hidden) position(); }, { passive: true });
 
