@@ -14,7 +14,7 @@ A static site. No build step, no PDFs, no screenshots — just HTML, CSS, and a 
 - **Pronouns & their forms** — personal forms, possessives, demonstratives, and question words.
 - **Prepositions & cases** — visual references for place, motion, path, source, time, and case behavior.
 - **Pitch & stress** — four accent marks, placement rules, vowel length, and common accent shifts.
-- More on the way: false friends.
+- **False friends** — Serbian words that look or sound like Russian/English but mean something else.
 
 ## Features
 
@@ -43,6 +43,7 @@ charts/aspect.html       # verb aspect pairs chart
 charts/pronouns.html     # pronouns chart
 charts/prepositions.html # prepositions chart
 charts/pitch-stress.html # pitch and stress chart
+charts/false-friends.html # false friends chart
 assets/                  # styles, i18n, app js
 ```
 
