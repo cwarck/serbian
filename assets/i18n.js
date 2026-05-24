@@ -24,6 +24,8 @@ window.I18N = {
     'card.prepositions.note': 'Case locks',
     'card.aspect.title': 'Aspect',
     'card.aspect.note': 'Verb pairs',
+    'card.pitch.title': 'Pitch & stress',
+    'card.pitch.note': 'Accent marks',
 
     'foot.copy': '© 2026 Atlas Srpski · Content <a href="https://creativecommons.org/licenses/by/4.0/deed.en" rel="license noopener" target="_blank">CC BY 4.0</a>',
     'foot.repo': 'Source',
@@ -77,6 +79,24 @@ window.I18N = {
     'aspect.signal': 'Signal',
     'aspect.example': 'Example',
     'aspect.note': 'note',
+
+    /* Pitch & stress page */
+    'pitch.accents': 'Four accents',
+    'pitch.rules': 'Placement rules',
+    'pitch.lengths': 'Length marks',
+    'pitch.paradigms': 'Accent shifts',
+    'pitch.priority': 'Learner priority',
+    'pitch.reading': 'Reading order',
+    'pitch.mark': 'Mark',
+    'pitch.length': 'Length',
+    'pitch.contour': 'Contour',
+    'pitch.pattern': 'Pattern',
+    'pitch.examples': 'Examples',
+    'pitch.slot': 'Slot',
+    'pitch.fact': 'Fact',
+    'pitch.type': 'Type',
+    'pitch.marks': 'Marks',
+    'pitch.note': 'note',
 
     /* Numbers page */
     'numbers.digits': '0-10',
@@ -242,6 +262,8 @@ window.I18N = {
     'card.prepositions.note': 'Падежи',
     'card.aspect.title': 'Вид',
     'card.aspect.note': 'Глагольные пары',
+    'card.pitch.title': 'Тон и ударение',
+    'card.pitch.note': 'Акцентные знаки',
 
     'foot.copy': '© 2026 Atlas Srpski · Контент под <a href="https://creativecommons.org/licenses/by/4.0/deed.ru" rel="license noopener" target="_blank">CC BY 4.0</a>',
     'foot.repo': 'Исходники',
@@ -295,6 +317,24 @@ window.I18N = {
     'aspect.signal': 'Сигнал',
     'aspect.example': 'Пример',
     'aspect.note': 'заметка',
+
+    /* Pitch & stress */
+    'pitch.accents': 'Четыре ударения',
+    'pitch.rules': 'Правила позиции',
+    'pitch.lengths': 'Знаки долготы',
+    'pitch.paradigms': 'Сдвиги ударения',
+    'pitch.priority': 'Приоритет',
+    'pitch.reading': 'Порядок чтения',
+    'pitch.mark': 'Знак',
+    'pitch.length': 'Долгота',
+    'pitch.contour': 'Тон',
+    'pitch.pattern': 'Схема',
+    'pitch.examples': 'Примеры',
+    'pitch.slot': 'Позиция',
+    'pitch.fact': 'Факт',
+    'pitch.type': 'Тип',
+    'pitch.marks': 'Знаки',
+    'pitch.note': 'заметка',
 
     /* Numbers */
     'numbers.digits': '0-10',

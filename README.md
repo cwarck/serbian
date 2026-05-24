@@ -13,7 +13,8 @@ A static site. No build step, no PDFs, no screenshots — just HTML, CSS, and a 
 - **Verb aspect pairs** — imperfective/perfective pairs, time behavior, prefix patterns, and common pairs.
 - **Pronouns & their forms** — personal forms, possessives, demonstratives, and question words.
 - **Prepositions & cases** — visual references for place, motion, path, source, time, and case behavior.
-- More on the way: pitch, false friends.
+- **Pitch & stress** — four accent marks, placement rules, vowel length, and common accent shifts.
+- More on the way: false friends.
 
 ## Features
 
@@ -41,6 +42,7 @@ charts/verbs.html        # conjugation chart
 charts/aspect.html       # verb aspect pairs chart
 charts/pronouns.html     # pronouns chart
 charts/prepositions.html # prepositions chart
+charts/pitch-stress.html # pitch and stress chart
 assets/                  # styles, i18n, app js
 ```
 

@@ -2752,6 +2752,439 @@ a.cast-cell-head:hover .cast-abbr { color: var(--ink); }
 }
 
 /* -----------------------------------------------------------
+   Pitch & stress
+   ----------------------------------------------------------- */
+
+.pitch-section {
+  padding-block: clamp(2rem, 5vw, 4rem) clamp(3rem, 6vw, 5rem);
+}
+
+.pitch-layout {
+  display: grid;
+  gap: clamp(1.6rem, 3vw, 2.6rem);
+}
+
+.pitch-group {
+  border-top: 1px solid var(--hairline);
+}
+
+.pitch-group-head {
+  padding-block: 1rem .85rem;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.pitch-group-head h3 {
+  font-size: var(--fs-title);
+  line-height: var(--lh-snug);
+  color: var(--ink);
+}
+
+.pitch-accent-head,
+.pitch-table-head {
+  display: none;
+}
+
+.pitch-accent-grid,
+.pitch-table,
+.pitch-paradigm-grid,
+.pitch-priority-list,
+.pitch-reading-list {
+  display: grid;
+}
+
+.pitch-accent-card,
+.pitch-table-row,
+.pitch-paradigm,
+.pitch-priority-row {
+  display: grid;
+  gap: .75rem;
+  padding: 1.05rem 0 1.15rem;
+  border-bottom: 1px solid var(--hairline-soft);
+}
+
+.pitch-accent-card:last-child,
+.pitch-table-row:last-child,
+.pitch-paradigm:last-child,
+.pitch-priority-row:last-child {
+  border-bottom-color: var(--hairline);
+}
+
+.pitch-mark {
+  font-family: var(--ff-display);
+  font-size: var(--fs-head);
+  font-weight: 300;
+  line-height: 1;
+  color: var(--accent);
+}
+
+.pitch-cell,
+.pitch-table-row p,
+.pitch-priority-row p,
+.pitch-reading-list p,
+.pitch-tip p {
+  margin: 0;
+  font-size: var(--fs-body);
+  line-height: var(--lh-prose);
+  color: var(--ink-muted);
+}
+
+.pitch-cell {
+  display: grid;
+  gap: .3rem;
+  min-width: 0;
+}
+
+.pitch-cell::before,
+.pitch-mark::before {
+  content: attr(data-label);
+  font-family: var(--ff-body);
+  font-size: var(--fs-label);
+  font-weight: 500;
+  letter-spacing: var(--track-label);
+  line-height: 1;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.pitch-mark::before {
+  display: block;
+  margin-bottom: .35rem;
+}
+
+.pitch-contour-cell {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+
+.pitch-contour-cell::before {
+  width: 100%;
+}
+
+.pitch-contour,
+.pitch-pattern,
+.pitch-rank {
+  font-family: var(--ff-body);
+  font-size: var(--fs-label);
+  font-weight: 500;
+  letter-spacing: var(--track-label);
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.pitch-marks span {
+  font-family: var(--ff-display);
+  font-size: var(--fs-lead);
+  font-weight: 400;
+  line-height: var(--lh-snug);
+  color: var(--accent);
+}
+
+.pitch-contour {
+  color: var(--ink);
+  padding-bottom: .18rem;
+  border-bottom: 2px solid var(--ink);
+}
+
+.pitch-accent-card[data-contour="rising"] .pitch-contour {
+  border-bottom-style: dashed;
+}
+
+.pitch-pattern,
+.pitch-rank {
+  color: var(--accent);
+}
+
+.pitch-examples,
+.pitch-sr-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .65rem 1rem;
+}
+
+.pitch-example {
+  display: grid;
+  gap: .08rem;
+  min-width: 0;
+}
+
+.pitch-example .sr,
+.pitch-sr-list span,
+.pitch-form,
+.pitch-paradigm-head h4 {
+  font-family: var(--ff-display);
+  font-size: var(--fs-lead);
+  font-weight: 400;
+  line-height: var(--lh-snug);
+  letter-spacing: 0;
+  color: var(--ink);
+}
+
+.pitch-example .tr,
+.pitch-paradigm-head span {
+  font-size: var(--fs-caption);
+  line-height: var(--lh-snug);
+  color: var(--ink-muted);
+}
+
+.pitch-table-row h4,
+.pitch-paradigm-head,
+.pitch-priority-row h4,
+.pitch-case {
+  font-family: var(--ff-body);
+  font-size: var(--fs-label);
+  font-weight: 500;
+  letter-spacing: var(--track-label);
+  line-height: 1;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+.pitch-table-row h4,
+.pitch-priority-row h4,
+.pitch-paradigm-head {
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+  flex-wrap: wrap;
+  margin: 0;
+}
+
+.pitch-paradigm-head h4 {
+  color: var(--accent);
+  text-transform: none;
+}
+
+.pitch-paradigm-head span {
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.pitch-paradigm-cells {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--hairline-soft);
+}
+
+.pitch-paradigm-cells > div,
+.pitch-reading-list li {
+  display: grid;
+  grid-template-columns: minmax(5.8rem, .8fr) minmax(0, 1fr);
+  gap: .8rem;
+  align-items: baseline;
+  padding: .72rem 0;
+  border-bottom: 1px dashed var(--hairline-soft);
+}
+
+.pitch-paradigm-cells > div:last-child,
+.pitch-reading-list li:last-child {
+  border-bottom: 0;
+}
+
+.pitch-form {
+  color: var(--ink);
+}
+
+.pitch-priority-row {
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: baseline;
+}
+
+.pitch-priority-row p {
+  grid-column: 2;
+}
+
+.pitch-rank {
+  color: var(--paper);
+  background: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 2rem;
+  block-size: 2rem;
+  font-feature-settings: "tnum";
+}
+
+.pitch-reading-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pitch-reading-list span {
+  font-family: var(--ff-body);
+  font-size: var(--fs-label);
+  font-weight: 500;
+  letter-spacing: var(--track-label);
+  line-height: 1;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-feature-settings: "tnum";
+}
+
+.pitch-pop .tip-pop-card {
+  border-left: 2px solid var(--accent);
+}
+
+.pitch-tip {
+  display: grid;
+  gap: .65rem;
+}
+
+.pitch-tip h4 {
+  margin: 0;
+  font-size: var(--fs-body);
+  line-height: var(--lh-snug);
+}
+
+@media (min-width: 760px) {
+  .pitch-group {
+    border: 1px solid var(--hairline);
+    border-bottom: 0;
+  }
+
+  .pitch-group-head {
+    padding: 1rem .9rem .85rem;
+  }
+
+  .pitch-accent-head,
+  .pitch-table-head {
+    display: grid;
+    background: var(--paper-deep);
+    border-bottom: 1px solid var(--hairline);
+  }
+
+  .pitch-accent-head {
+    grid-template-columns: minmax(5rem, .4fr) minmax(7rem, .55fr) minmax(8rem, .65fr) minmax(6rem, .45fr) minmax(0, 1.45fr);
+  }
+
+  .pitch-table-head,
+  .pitch-table-row {
+    grid-template-columns: minmax(10rem, .75fr) minmax(0, 1fr) minmax(0, 1.3fr);
+  }
+
+  .pitch-accent-head span,
+  .pitch-table-head span {
+    padding: .85rem .9rem;
+    border-right: 1px solid var(--hairline);
+    font-family: var(--ff-body);
+    font-size: var(--fs-label);
+    font-weight: 500;
+    letter-spacing: var(--track-label);
+    line-height: 1;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+  }
+
+  .pitch-accent-head span:last-child,
+  .pitch-table-head span:last-child {
+    border-right: 0;
+  }
+
+  .pitch-accent-card,
+  .pitch-table-row {
+    gap: 0;
+    padding: 0;
+    border-bottom: 1px solid var(--hairline);
+  }
+
+  .pitch-accent-card {
+    grid-template-columns: minmax(5rem, .4fr) minmax(7rem, .55fr) minmax(8rem, .65fr) minmax(6rem, .45fr) minmax(0, 1.45fr);
+  }
+
+  .pitch-mark,
+  .pitch-accent-card > .pitch-cell,
+  .pitch-table-row h4,
+  .pitch-table-row > p,
+  .pitch-table-row > div {
+    padding: .9rem;
+    border-right: 1px solid var(--hairline-soft);
+  }
+
+  .pitch-accent-card > *:last-child,
+  .pitch-table-row > *:last-child {
+    border-right: 0;
+  }
+
+  .pitch-cell {
+    display: block;
+  }
+
+  .pitch-marks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .45rem;
+  }
+
+  .pitch-cell::before,
+  .pitch-mark::before,
+  .pitch-contour-cell::before {
+    content: none;
+  }
+
+  .pitch-mark {
+    display: flex;
+    align-items: center;
+  }
+
+  .pitch-contour-cell {
+    display: flex;
+  }
+
+  .pitch-length-table .pitch-table-head,
+  .pitch-length-table .pitch-table-row {
+    grid-template-columns: minmax(10rem, .8fr) minmax(8rem, .55fr) minmax(0, 1.4fr);
+  }
+
+  .pitch-paradigm-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border-left: 1px solid var(--hairline-soft);
+  }
+
+  .pitch-priority-list {
+    grid-template-columns: 1fr;
+    border-left: 1px solid var(--hairline-soft);
+  }
+
+  .pitch-paradigm,
+  .pitch-priority-row {
+    padding: 1rem .9rem 1.1rem;
+    border-right: 1px solid var(--hairline-soft);
+    border-bottom: 1px solid var(--hairline);
+  }
+
+  .pitch-reading-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border-left: 1px solid var(--hairline-soft);
+  }
+
+  .pitch-reading-list li {
+    grid-template-columns: 1fr;
+    gap: .45rem;
+    padding: 1rem .9rem 1.1rem;
+    border-right: 1px solid var(--hairline-soft);
+    border-bottom: 1px solid var(--hairline);
+  }
+}
+
+@media (min-width: 1180px) {
+  .pitch-layout {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+  }
+
+  .pitch-accents,
+  .pitch-paradigms {
+    grid-column: 1 / -1;
+  }
+
+  .pitch-paradigm-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* -----------------------------------------------------------
    Prepositions
    ----------------------------------------------------------- */
 
