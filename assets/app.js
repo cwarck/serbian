@@ -8,14 +8,39 @@
 
   const supportedLangs = ['en', 'ru'];
   const supportedScripts = ['lat', 'cyr'];
-  const defaultLang = (() => {
-    const stored = localStorage.getItem(LS_LANG);
-    if (stored && supportedLangs.includes(stored)) return stored;
-    const nav = (navigator.language || 'en').slice(0, 2);
-    return supportedLangs.includes(nav) ? nav : 'en';
-  })();
+
+  function readStored(key) {
+    try {
+      return localStorage.getItem(key);
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function writeStored(key, value) {
+    try {
+      localStorage.setItem(key, value);
+    } catch (e) {}
+  }
+
+  function normalizeLang(value) {
+    const lang = String(value || '').toLowerCase().split(/[-_]/)[0];
+    return supportedLangs.includes(lang) ? lang : null;
+  }
+
+  function detectLang() {
+    const stored = normalizeLang(readStored(LS_LANG));
+    const nav = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ''];
+    if (stored) return stored;
+    for (const lang of nav) {
+      const normalized = normalizeLang(lang);
+      if (normalized) return normalized;
+    }
+    return 'en';
+  }
+
   const defaultScript = (() => {
-    const stored = localStorage.getItem(LS_SCRIPT);
+    const stored = readStored(LS_SCRIPT);
     return supportedScripts.includes(stored) ? stored : 'lat';
   })();
 
@@ -71,7 +96,7 @@
   }
 
   function currentScript() {
-    const stored = localStorage.getItem(LS_SCRIPT);
+    const stored = readStored(LS_SCRIPT);
     return supportedScripts.includes(stored) ? stored : defaultScript;
   }
 
@@ -101,12 +126,13 @@
 
   function setScript(script) {
     if (!supportedScripts.includes(script)) return;
-    localStorage.setItem(LS_SCRIPT, script);
+    writeStored(LS_SCRIPT, script);
     applyScript(script);
     document.dispatchEvent(new CustomEvent('scriptchange', { detail: { script } }));
   }
 
   window.AtlasSrpski = Object.assign(window.AtlasSrpski || {}, {
+    currentLang: detectLang,
     currentScript,
     sr,
     srHTML,
@@ -119,6 +145,7 @@
   function applyI18n(lang) {
     const dict = (window.I18N && window.I18N[lang]) || {};
     document.documentElement.setAttribute('lang', lang);
+    document.documentElement.setAttribute('data-lang-source', normalizeLang(readStored(LS_LANG)) ? 'stored' : 'auto');
 
     document.querySelectorAll('[data-i18n]').forEach((node) => {
       const key = node.getAttribute('data-i18n');
@@ -150,49 +177,64 @@
 
   function setLang(lang) {
     if (!supportedLangs.includes(lang)) return;
-    localStorage.setItem(LS_LANG, lang);
+    writeStored(LS_LANG, lang);
     applyI18n(lang);
     document.dispatchEvent(new CustomEvent('langchange', { detail: { lang } }));
   }
 
   /* ---------- theme ---------- */
 
+  let themeQuery = null;
+
+  function normalizeTheme(theme) {
+    return theme === 'light' || theme === 'dark' ? theme : null;
+  }
+
+  function getThemeQuery() {
+    if (!themeQuery && window.matchMedia) themeQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    return themeQuery;
+  }
+
+  function systemTheme() {
+    const query = getThemeQuery();
+    return query && query.matches ? 'dark' : 'light';
+  }
+
+  function storedTheme() {
+    return normalizeTheme(readStored(LS_THEME));
+  }
+
+  function detectedTheme() {
+    return storedTheme() || systemTheme();
+  }
+
   function applyTheme(theme) {
-    if (theme === 'light' || theme === 'dark') {
-      document.documentElement.setAttribute('data-theme', theme);
-    } else {
-      document.documentElement.removeAttribute('data-theme');
-    }
+    document.documentElement.setAttribute('data-theme', normalizeTheme(theme) || systemTheme());
+    document.documentElement.setAttribute('data-theme-source', storedTheme() ? 'stored' : 'auto');
   }
 
   function currentTheme() {
-    const stored = localStorage.getItem(LS_THEME);
-    if (stored === 'light' || stored === 'dark') return stored;
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    return detectedTheme();
   }
 
   function toggleTheme() {
     const next = currentTheme() === 'dark' ? 'light' : 'dark';
-    localStorage.setItem(LS_THEME, next);
+    writeStored(LS_THEME, next);
     applyTheme(next);
   }
 
   /* ---------- init ---------- */
 
   function init() {
-    // Theme — respect stored, else system. Listen for system changes only when no override.
-    const stored = localStorage.getItem(LS_THEME);
-    if (stored === 'light' || stored === 'dark') applyTheme(stored);
-    else applyTheme(null);
+    applyTheme(detectedTheme());
 
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener?.('change', () => {
-      if (!localStorage.getItem(LS_THEME)) applyTheme(null);
+    getThemeQuery()?.addEventListener?.('change', () => {
+      if (!storedTheme()) applyTheme(systemTheme());
     });
 
-    // Language — also notify data-driven renderers (alphabet/cases) so they pick up
-    // a non-default stored language on first paint.
-    applyI18n(defaultLang);
-    document.dispatchEvent(new CustomEvent('langchange', { detail: { lang: defaultLang } }));
+    const lang = detectLang();
+    applyI18n(lang);
+    document.dispatchEvent(new CustomEvent('langchange', { detail: { lang } }));
     applyScript(defaultScript);
     document.dispatchEvent(new CustomEvent('scriptchange', { detail: { script: defaultScript } }));
 

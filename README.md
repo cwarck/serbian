@@ -18,9 +18,9 @@ A static site. No build step, no PDFs, no screenshots — just HTML, CSS, and a 
 
 ## Features
 
-- Bilingual UI — English and Russian.
+- Bilingual UI — English and Russian, auto-detected from browser preferences.
 - Serbian script toggle — Latin and Cyrillic.
-- Light and dark themes.
+- Light and dark themes, auto-detected from system preferences.
 - Mobile-friendly.
 
 ## Run locally

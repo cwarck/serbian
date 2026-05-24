@@ -250,10 +250,8 @@ section { position: relative; }
 .theme-btn:hover { background: var(--paper-deep); color: var(--ink); }
 .theme-btn svg { width: 18px; height: 18px; }
 .theme-btn .moon { display: none; }
-:root[data-theme="dark"] .theme-btn .sun,
-:root:not([data-theme="light"]) .theme-btn .sun { display: none; }
-:root[data-theme="dark"] .theme-btn .moon,
-:root:not([data-theme="light"]) .theme-btn .moon { display: block; }
+:root[data-theme="dark"] .theme-btn .sun { display: none; }
+:root[data-theme="dark"] .theme-btn .moon { display: block; }
 
 @media (max-width: 560px) {
   .nav-inner { gap: .75rem; }
