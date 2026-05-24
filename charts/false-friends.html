@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Serbian false friends chart for Russian speakers: common Serbian words that look familiar but mean something else.">
+<title>False friends - Atlas Srpski</title>
+
+<script src="../assets/theme-init.js"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="shell nav-inner">
+    <a href="/" class="brand">
+      <span class="brand-mark">A.</span>
+      <span data-i18n="nav.brand">Atlas Srpski</span>
+    </a>
+    <div class="nav-actions">
+      <div class="nav-controls" role="group" aria-label="Language">
+        <button class="chip" data-lang-chip="en" aria-pressed="true">EN</button>
+        <button class="chip" data-lang-chip="ru" aria-pressed="false">RU</button>
+      </div>
+      <div class="nav-controls script-controls" role="group" aria-label="Serbian script">
+        <button class="chip script-chip" data-script-chip="lat" aria-pressed="true" aria-label="Use Latin script">Ć</button>
+        <button class="chip script-chip" data-script-chip="cyr" aria-pressed="false" aria-label="Use Cyrillic script">Ћ</button>
+      </div>
+      <button class="theme-btn" data-theme-toggle aria-label="Toggle theme" data-i18n-attr="aria-label:nav.theme">
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"></path></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="false-section" aria-label="Serbian false friends for Russian speakers">
+  <div class="shell">
+    <div class="false-layout reveal" id="falseFriendsChart"></div>
+  </div>
+</section>
+
+<footer class="foot shell">
+  <span data-i18n="foot.copy">© 2026 Atlas Srpski · Content <a href="https://creativecommons.org/licenses/by/4.0/deed.en" rel="license noopener" target="_blank">CC BY 4.0</a></span>
+  <span>
+    <a href="https://github.com/cwarck/serbian" rel="noopener" target="_blank" class="foot-icon" aria-label="Source" data-i18n-attr="aria-label:foot.repo"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8z"/></svg></a>
+    &nbsp;·&nbsp;
+    <a href="https://ilyaakimov.com" rel="noopener" target="_blank" data-i18n="foot.author">by Ilya Akimov</a>
+  </span>
+</footer>
+
+<script src="../assets/i18n.js"></script>
+<script src="../assets/app.js"></script>
+
+<script src="../assets/charts/false-friends-data.js"></script>
+<script src="../assets/charts/false-friends.js"></script>
+</body>
+</html>

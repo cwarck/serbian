@@ -26,6 +26,8 @@ window.I18N = {
     'card.aspect.note': 'Verb pairs',
     'card.pitch.title': 'Pitch & stress',
     'card.pitch.note': 'Accent marks',
+    'card.falseFriends.title': 'False friends',
+    'card.falseFriends.note': 'Russian traps',
 
     'foot.copy': '© 2026 Atlas Srpski · Content <a href="https://creativecommons.org/licenses/by/4.0/deed.en" rel="license noopener" target="_blank">CC BY 4.0</a>',
     'foot.repo': 'Source',
@@ -97,6 +99,16 @@ window.I18N = {
     'pitch.type': 'Type',
     'pitch.marks': 'Marks',
     'pitch.note': 'note',
+
+    /* False friends page */
+    'false.group.common': 'High-risk pairs',
+    'false.group.things': 'Objects & places',
+    'false.group.partial': 'Partial overlaps',
+    'false.col.sr': 'Serbian',
+    'false.col.means': 'Means in Russian',
+    'false.col.trap': 'Russian trap',
+    'false.col.example': 'Example',
+    'false.trap.label': 'not',
 
     /* Numbers page */
     'numbers.digits': '0-10',
@@ -264,6 +276,8 @@ window.I18N = {
     'card.aspect.note': 'Глагольные пары',
     'card.pitch.title': 'Тон и ударение',
     'card.pitch.note': 'Акцентные знаки',
+    'card.falseFriends.title': 'Ложные друзья',
+    'card.falseFriends.note': 'Русские ловушки',
 
     'foot.copy': '© 2026 Atlas Srpski · Контент под <a href="https://creativecommons.org/licenses/by/4.0/deed.ru" rel="license noopener" target="_blank">CC BY 4.0</a>',
     'foot.repo': 'Исходники',
@@ -335,6 +349,16 @@ window.I18N = {
     'pitch.type': 'Тип',
     'pitch.marks': 'Знаки',
     'pitch.note': 'заметка',
+
+    /* False friends */
+    'false.group.common': 'Частые ловушки',
+    'false.group.things': 'Предметы и места',
+    'false.group.partial': 'Частичные совпадения',
+    'false.col.sr': 'Сербское',
+    'false.col.means': 'Значит по-русски',
+    'false.col.trap': 'Русская ловушка',
+    'false.col.example': 'Пример',
+    'false.trap.label': 'не',
 
     /* Numbers */
     'numbers.digits': '0-10',
