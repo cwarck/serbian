@@ -226,8 +226,6 @@ section { position: relative; }
   transition: background .25s, color .25s;
 }
 .chip[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
-.chip:hover { color: var(--ink); }
-.chip[aria-pressed="true"]:hover { color: var(--paper); }
 .script-chip {
   min-width: 3rem;
   padding: .55rem 1rem;
@@ -247,7 +245,6 @@ section { position: relative; }
   color: var(--ink-soft);
   transition: background .25s, color .25s, transform .25s;
 }
-.theme-btn:hover { background: var(--paper-deep); color: var(--ink); }
 .theme-btn svg { width: 18px; height: 18px; }
 .theme-btn .moon { display: none; }
 :root[data-theme="dark"] .theme-btn .sun { display: none; }
@@ -372,9 +369,6 @@ section { position: relative; }
   width: 24px; height: 12px;
   transition: transform .4s cubic-bezier(.2,.7,.2,1);
 }
-.chart-card:hover .chart-open svg { transform: translateX(8px); }
-.chart-card:hover { background: var(--paper-deep); }
-
 @media (max-width: 520px) {
   .chart-grid {
     grid-template-columns: 1fr;
@@ -402,9 +396,27 @@ section { position: relative; }
   color: var(--ink-muted);
   display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: space-between;
 }
-.foot a:hover { color: var(--accent); }
 .foot-icon { display: inline-flex; vertical-align: middle; line-height: 0; }
 .foot-icon svg { display: block; }
+
+@media (hover: hover) and (pointer: fine) {
+  .chip:hover { color: var(--ink); }
+  .chip[aria-pressed="true"]:hover { color: var(--paper); }
+  .theme-btn:hover { background: var(--paper-deep); color: var(--ink); }
+  .chart-card:hover { background: var(--paper-deep); }
+  .chart-card:hover .chart-open svg { transform: translateX(8px); }
+  .foot a:hover { color: var(--accent); }
+  .tip-chip:hover {
+    color: var(--ink);
+    border-color: var(--ink-muted);
+  }
+  .tip-pop-close:hover { color: var(--ink); background: var(--paper-deep); }
+  .case-strip-cell:hover {
+    background: color-mix(in oklab, var(--tone, var(--accent)) 8%, transparent);
+  }
+  a.cast-cell:hover { background: color-mix(in oklab, var(--tone, var(--accent)) 10%, transparent); }
+  a.cast-cell-head:hover .cast-abbr { color: var(--ink); }
+}
 
 /* -----------------------------------------------------------
    Chart pages — shared
@@ -579,7 +591,6 @@ section { position: relative; }
   transition: color .15s, border-color .15s;
   vertical-align: baseline;
 }
-.tip-chip:hover,
 .tip-chip:focus-visible,
 .tip-chip[aria-expanded="true"] {
   color: var(--ink);
@@ -636,7 +647,6 @@ section { position: relative; }
   border-radius: 50%;
   transition: color .15s, background .15s;
 }
-.tip-pop-close:hover { color: var(--ink); background: var(--paper-deep); }
 .tip-pop-close:focus-visible { outline: 1px dashed var(--accent); outline-offset: 2px; }
 
 /* Cases page — note popover. Same .tip-pop shell, richer body. */
@@ -739,9 +749,6 @@ section { position: relative; }
   padding: .65rem .2rem .65rem;
   min-height: 52px;
   min-width: 0;
-}
-.case-strip-cell:hover {
-  background: color-mix(in oklab, var(--tone, var(--accent)) 8%, transparent);
 }
 .case-strip-cell.is-current {
   background: color-mix(in oklab, var(--tone, var(--accent)) 14%, transparent);
@@ -1312,7 +1319,6 @@ section { position: relative; }
   min-width: 0;
 }
 .cast-cell:last-child { border-right: 0; }
-a.cast-cell:hover { background: color-mix(in oklab, var(--tone, var(--accent)) 10%, transparent); }
 a.cast-cell:focus-visible {
   outline: 1px dashed var(--tone, var(--accent));
   outline-offset: -3px;
@@ -1351,7 +1357,6 @@ a.cast-cell:focus-visible {
   text-transform: uppercase;
   color: var(--tone, var(--accent));
 }
-a.cast-cell-head:hover .cast-abbr { color: var(--ink); }
 .cast-form {
   font-family: var(--ff-display);
   font-style: italic;
