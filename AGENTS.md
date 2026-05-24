@@ -83,5 +83,6 @@ Flexoki accents, one hue per grammatical meaning. The full palette and semantic 
 
 ## Development
 
+- Run `bun run validate` before committing changes.
 - Commit per logical change.
 - Conventional commits.
