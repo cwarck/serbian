@@ -75,6 +75,24 @@ function loadI18n() {
   return context.window.I18N;
 }
 
+function loadScriptConverter() {
+  const context = {
+    window: {},
+    console,
+    localStorage: { getItem: () => null, setItem: () => {} },
+    navigator: { languages: ['en'], language: 'en' },
+    document: {
+      readyState: 'loading',
+      addEventListener: () => {},
+      documentElement: { setAttribute: () => {} },
+      querySelectorAll: () => [],
+    },
+  };
+  vm.createContext(context);
+  vm.runInContext(read('assets/app.js'), context, { filename: 'assets/app.js' });
+  return context.window.AtlasSrpski;
+}
+
 function loadData(relPath, names) {
   const source = `${read(relPath)}\nglobalThis.__atlasData = { ${names.join(', ')} };`;
   const context = { console };
@@ -84,6 +102,7 @@ function loadData(relPath, names) {
 }
 
 const i18n = loadI18n();
+const scriptConverter = loadScriptConverter();
 const data = Object.fromEntries(
   Object.entries(chartDataFiles).map(([file, names]) => [file, loadData(file, names)])
 );
@@ -272,6 +291,171 @@ function validateTones() {
   expect(css.includes('--gender-f:       var(--tone-magenta);'), 'tones', 'feminine must use magenta');
   expect(css.includes('--gender-n:     var(--ink);'), 'tones', 'neuter must use ink');
   expect(/\[data-tone="im"\][\s\S]*\[data-tone="irr"\]\s*\{\s*--tone:\s*var\(--tone-orange\);/.test(css), 'tones', 'present verb family must share orange');
+}
+
+function convertSerbianHtml(value, convert) {
+  return String(value)
+    .split(/(<[^>]+>|&[^;\s]+;)/g)
+    .map(part => part.startsWith('<') || part.startsWith('&') ? part : convert(part))
+    .join('');
+}
+
+function validateSerbianLatin(value, scope) {
+  const source = String(value).normalize('NFC');
+  expect(convertSerbianHtml(source, scriptConverter.toLatin) === source, 'script', `${scope} must be Latin source`);
+
+  const roundtrip = convertSerbianHtml(
+    convertSerbianHtml(source, scriptConverter.toCyrillic),
+    scriptConverter.toLatin
+  );
+  expect(roundtrip === source, 'script', `${scope} loses Latin/Cyrillic roundtrip`);
+}
+
+function validateScriptPair(lat, cyr, scope) {
+  expect(scriptConverter.toCyrillic(lat) === cyr, 'script', `${scope} Latin to Cyrillic mismatch`);
+  expect(scriptConverter.toLatin(cyr) === lat, 'script', `${scope} Cyrillic to Latin mismatch`);
+}
+
+function eachString(value, callback) {
+  if (typeof value === 'string') callback(value);
+  else if (Array.isArray(value)) value.forEach(item => eachString(item, callback));
+  else if (isObject(value)) Object.values(value).forEach(item => eachString(item, callback));
+}
+
+function validateScriptConverter() {
+  const pairs = [
+    ['ljubav', 'љубав'],
+    ['Ljubav', 'Љубав'],
+    ['njiva', 'њива'],
+    ['Njegoš', 'Његош'],
+    ['džep', 'џеп'],
+    ['Džep', 'Џеп'],
+    ['ćuprija', 'ћуприја'],
+    ['đak', 'ђак'],
+  ];
+  pairs.forEach(([lat, cyr]) => validateScriptPair(lat, cyr, `converter ${lat}`));
+
+  ['gláva', 'nȅbo', 'sȑce', 'grȃdōvā', 'čokoláda'].forEach(sample => {
+    expect(
+      scriptConverter.toLatin(scriptConverter.toCyrillic(sample)) === sample,
+      'script',
+      `${sample} accent roundtrip failed`
+    );
+  });
+
+  const html = '<mark>Živim</mark> u Beogradu.';
+  expect(
+    convertSerbianHtml(convertSerbianHtml(html, scriptConverter.toCyrillic), scriptConverter.toLatin) === html,
+    'script',
+    'HTML Serbian roundtrip failed'
+  );
+}
+
+function validateSerbianContentScript() {
+  const alphabet = data['assets/charts/alphabet-data.js'].ALPHABET;
+  alphabet.forEach((row, index) => {
+    validateScriptPair(row.lat, row.cyr, `alphabet[${index}].letter`);
+    validateScriptPair(row.wLat, row.wCyr, `alphabet[${index}].word`);
+  });
+
+  const cases = data['assets/charts/cases-data.js'];
+  cases.CASES.forEach((row, caseIndex) => {
+    row.examples.forEach((example, exampleIndex) => {
+      validateSerbianLatin(example.sr, `cases[${caseIndex}].examples[${exampleIndex}].sr`);
+    });
+    Object.values(row.notes || {}).forEach((note, noteIndex) => {
+      note.pairs?.forEach((pair, pairIndex) => {
+        eachString(pair, value => validateSerbianLatin(value, `cases[${caseIndex}].notes[${noteIndex}].pairs[${pairIndex}]`));
+      });
+    });
+  });
+  [...cases.IDECL.sg, ...cases.IDECL.pl].forEach((value, index) => validateSerbianLatin(value, `cases.IDECL[${index}]`));
+  cases.WRINKLES.forEach((row, rowIndex) => {
+    row.examples.forEach((example, exampleIndex) => {
+      validateSerbianLatin(example.from, `wrinkles[${rowIndex}].examples[${exampleIndex}].from`);
+      validateSerbianLatin(example.to, `wrinkles[${rowIndex}].examples[${exampleIndex}].to`);
+    });
+  });
+  cases.CAST.forEach((row, rowIndex) => {
+    validateSerbianLatin(row.word, `cast[${rowIndex}].word`);
+    eachString(row.forms, value => validateSerbianLatin(value, `cast[${rowIndex}].forms`));
+  });
+
+  const numbers = data['assets/charts/numbers-data.js'];
+  numbers.NUMBER_GROUPS.forEach((group, groupIndex) => {
+    group.rows.forEach((row, rowIndex) => validateSerbianLatin(row.sr, `numberGroups[${groupIndex}].rows[${rowIndex}].sr`));
+  });
+  numbers.NUMBER_BUILDS.forEach((row, rowIndex) => eachString(row.parts, value => validateSerbianLatin(value, `numberBuilds[${rowIndex}].parts`)));
+  numbers.NOUN_COUNTS.forEach((row, rowIndex) => eachString(row.examples, value => validateSerbianLatin(value, `nounCounts[${rowIndex}].examples`)));
+  numbers.ORDINALS.forEach((row, rowIndex) => eachString(row.forms, value => validateSerbianLatin(value, `ordinals[${rowIndex}].forms`)));
+
+  const prep = data['assets/charts/prepositions-data.js'];
+  prep.PREP_GROUPS.forEach((group, groupIndex) => {
+    group.rows.forEach((row, rowIndex) => {
+      validateSerbianLatin(row.prep, `prepGroups[${groupIndex}].rows[${rowIndex}].prep`);
+      row.uses.forEach((use, useIndex) => validateSerbianLatin(use.sr, `prepGroups[${groupIndex}].rows[${rowIndex}].uses[${useIndex}].sr`));
+    });
+  });
+
+  const pronouns = data['assets/charts/pronouns-data.js'];
+  pronouns.PERSONAL.forEach((row, rowIndex) => {
+    ['subject', 'object', 'datloc', 'inst', 'poss'].forEach(field => validateSerbianLatin(row[field], `pronouns.personal[${rowIndex}].${field}`));
+  });
+  pronouns.POSSESSIVES.forEach((row, rowIndex) => eachString(row.forms, value => validateSerbianLatin(value, `pronouns.possessives[${rowIndex}].forms`)));
+  pronouns.DEMOS.forEach((group, groupIndex) => group.rows.forEach((row, rowIndex) => eachString(row.forms, value => validateSerbianLatin(value, `pronouns.demos[${groupIndex}].rows[${rowIndex}].forms`))));
+  pronouns.QUESTIONS.whose.forEach((row, rowIndex) => eachString(row.forms, value => validateSerbianLatin(value, `pronouns.questions.whose[${rowIndex}].forms`)));
+  pronouns.QUESTIONS.whoWhat.forEach((row, rowIndex) => ['who', 'what'].forEach(field => validateSerbianLatin(row[field], `pronouns.questions.whoWhat[${rowIndex}].${field}`)));
+
+  const verbs = data['assets/charts/verbs-data.js'];
+  verbs.PRONOUNS.forEach((row, rowIndex) => validateSerbianLatin(row.label, `verbs.pronouns[${rowIndex}].label`));
+  verbs.VERB_GROUPS.forEach((group, groupIndex) => {
+    eachString(group.endings, value => validateSerbianLatin(value, `verbGroups[${groupIndex}].endings`));
+    eachString(group.patterns, value => validateSerbianLatin(value, `verbGroups[${groupIndex}].patterns`));
+    eachString(group.verbs, value => validateSerbianLatin(value, `verbGroups[${groupIndex}].verbs`));
+    validateSerbianLatin(group.example.infinitive, `verbGroups[${groupIndex}].example.infinitive`);
+    eachString(group.example.forms, value => validateSerbianLatin(value, `verbGroups[${groupIndex}].example.forms`));
+  });
+  verbs.IRREGULARS.forEach((row, rowIndex) => {
+    ['title', 'forms', 'negative', 'full'].forEach(field => eachString(row[field], value => validateSerbianLatin(value, `irregulars[${rowIndex}].${field}`)));
+  });
+  [verbs.PAST, verbs.FUTURE].forEach((tense, tenseIndex) => {
+    tense.formula.forEach((part, partIndex) => {
+      if (part.sr) validateSerbianLatin(part.sr, `verbs.tense[${tenseIndex}].formula[${partIndex}].sr`);
+    });
+    tense.examples.forEach((example, exampleIndex) => validateSerbianLatin(example.sr, `verbs.tense[${tenseIndex}].examples[${exampleIndex}].sr`));
+  });
+  verbs.PAST.endings.forEach((row, rowIndex) => validateSerbianLatin(row.ending, `verbs.PAST.endings[${rowIndex}].ending`));
+  ['merged', 'exceptions', 'reflexive'].forEach(field => eachString(verbs.FUTURE[field], value => validateSerbianLatin(value, `verbs.FUTURE.${field}`)));
+
+  const aspect = data['assets/charts/aspect-data.js'];
+  aspect.CONTRAST.forEach((row, rowIndex) => ['impEx', 'perfEx'].forEach(field => validateSerbianLatin(row[field].sr, `aspect.contrast[${rowIndex}].${field}.sr`)));
+  aspect.TIME_ROWS.forEach((row, rowIndex) => ['imp', 'perf'].forEach(field => validateSerbianLatin(row[field].sr, `aspect.time[${rowIndex}].${field}.sr`)));
+  aspect.PATTERNS.forEach((row, rowIndex) => ['imp', 'perf'].forEach(field => validateSerbianLatin(row[field], `aspect.patterns[${rowIndex}].${field}`)));
+  aspect.PREFIXES.forEach((row, rowIndex) => {
+    validateSerbianLatin(row.prefix, `aspect.prefixes[${rowIndex}].prefix`);
+    eachString(row.pairs, value => validateSerbianLatin(value, `aspect.prefixes[${rowIndex}].pairs`));
+  });
+  aspect.COMMON_PAIRS.forEach((row, rowIndex) => {
+    ['imp', 'perf'].forEach(field => validateSerbianLatin(row[field], `aspect.commonPairs[${rowIndex}].${field}`));
+    validateSerbianLatin(row.ex.sr, `aspect.commonPairs[${rowIndex}].ex.sr`);
+  });
+
+  const pitch = data['assets/charts/pitch-stress-data.js'];
+  pitch.PITCH_ACCENTS.forEach((row, rowIndex) => row.examples.forEach((example, exampleIndex) => validateSerbianLatin(example.sr, `pitch.accents[${rowIndex}].examples[${exampleIndex}].sr`)));
+  pitch.PITCH_RULES.forEach((row, rowIndex) => eachString(row.examples, value => validateSerbianLatin(value, `pitch.rules[${rowIndex}].examples`)));
+  pitch.PITCH_LENGTH_ROWS.forEach((row, rowIndex) => row.examples.forEach((example, exampleIndex) => validateSerbianLatin(example.sr, `pitch.lengthRows[${rowIndex}].examples[${exampleIndex}].sr`)));
+  pitch.PITCH_PARADIGMS.forEach((row, rowIndex) => {
+    validateSerbianLatin(row.word.sr, `pitch.paradigms[${rowIndex}].word.sr`);
+    row.cells.forEach((cell, cellIndex) => validateSerbianLatin(cell.sr, `pitch.paradigms[${rowIndex}].cells[${cellIndex}].sr`));
+  });
+
+  const falseFriends = data['assets/charts/false-friends-data.js'];
+  falseFriends.FALSE_FRIEND_GROUPS.forEach((group, groupIndex) => {
+    group.rows.forEach((row, rowIndex) => {
+      validateSerbianLatin(row.sr, `falseFriends[${groupIndex}].rows[${rowIndex}].sr`);
+      validateSerbianLatin(row.ex.sr, `falseFriends[${groupIndex}].rows[${rowIndex}].ex.sr`);
+    });
+  });
 }
 
 function validateAlphabet() {
@@ -532,6 +716,8 @@ function validateDataShapes() {
 validateI18n();
 validateLinks();
 validateTones();
+validateScriptConverter();
+validateSerbianContentScript();
 validateDataShapes();
 
 if (errors.length) {

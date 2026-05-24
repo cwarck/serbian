@@ -84,7 +84,7 @@
   }
 
   function toCyrillic(text) {
-    return String(text)
+    return String(text).normalize('NFC')
       .replace(/dž|Dž|DŽ|lj|Lj|LJ|nj|Nj|NJ/g, cyrDigraphReplacement)
       .replace(/[àáāȁȃèéēȅȇìíīȉȋòóōȍȏùúūȕȗŕȑȓÀÁĀȀȂÈÉĒȄȆÌÍĪȈȊÒÓŌȌȎÙÚŪȔȖŔȐȒ]/g, ch => accentToCyrMap[ch] || ch)
       .replace(/[A-Za-zČĆĐŠŽčćđšž]/g, ch => latToCyrMap[ch] || ch);
@@ -92,7 +92,8 @@
 
   function toLatin(text) {
     return String(text)
-      .replace(/[А-ШЂЈЉЊЋЏа-шђјљњћџ]/g, ch => cyrToLatMap[ch] || ch);
+      .replace(/[А-ШЂЈЉЊЋЏа-шђјљњћџ]/g, ch => cyrToLatMap[ch] || ch)
+      .normalize('NFC');
   }
 
   function currentScript() {
