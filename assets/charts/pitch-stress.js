@@ -8,16 +8,13 @@ function pick(value) {
   if (typeof value === 'string') return value;
   return (value && (value[lang()] || value.en)) || '';
 }
-function srText(text) {
-  return window.AtlasSrpski ? window.AtlasSrpski.sr(text) : String(text);
-}
 function noteButton(id) {
   return `<button class="tip-chip pitch-note-btn" type="button" aria-haspopup="dialog" aria-expanded="false" aria-label="${ui('note')}" data-pitch-note="${id}">?</button>`;
 }
 function exampleHTML(ex) {
   return `
     <span class="pitch-example">
-      <span class="sr">${srText(ex.sr)}</span>
+      <span class="sr">${AtlasSrpski.sr(ex.sr)}</span>
       <span class="tr">${pick(ex.tr)}</span>
     </span>
   `;
@@ -26,7 +23,7 @@ function exampleListHTML(items) {
   return `<div class="pitch-examples">${items.map(exampleHTML).join('')}</div>`;
 }
 function srListHTML(items) {
-  return `<div class="pitch-sr-list">${items.map(item => `<span>${srText(item)}</span>`).join('')}</div>`;
+  return `<div class="pitch-sr-list">${items.map(item => `<span>${AtlasSrpski.sr(item)}</span>`).join('')}</div>`;
 }
 
 function renderAccents() {
@@ -106,7 +103,7 @@ function renderParadigms() {
         ${PITCH_PARADIGMS.map(row => `
           <article class="pitch-paradigm">
             <header class="pitch-paradigm-head">
-              <h4>${srText(row.word.sr)}</h4>
+              <h4>${AtlasSrpski.sr(row.word.sr)}</h4>
               <span>${pick(row.word.tr)}</span>
               ${noteButton(row.note)}
             </header>
@@ -114,7 +111,7 @@ function renderParadigms() {
               ${row.cells.map(cell => `
                 <div>
                   <span class="pitch-case">${cell.label}</span>
-                  <span class="pitch-form">${srText(cell.sr)}</span>
+                  <span class="pitch-form">${AtlasSrpski.sr(cell.sr)}</span>
                 </div>
               `).join('')}
             </div>

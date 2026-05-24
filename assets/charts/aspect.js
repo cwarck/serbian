@@ -8,19 +8,16 @@ function pick(value) {
   if (typeof value === 'string') return value;
   return (value && (value[lang()] || value.en)) || '';
 }
-function srText(text) {
-  return window.AtlasSrpski ? window.AtlasSrpski.sr(text) : String(text);
-}
 function srPair(pair) {
   return String(pair).split(/( -> | \/ )/g).map(part => {
     if (part === ' -> ' || part === ' / ') return `<span class="aspect-arrow">${part.trim()}</span>`;
-    return `<span>${srText(part)}</span>`;
+    return `<span>${AtlasSrpski.sr(part)}</span>`;
   }).join(' ');
 }
 function exampleHTML(ex) {
   return `
     <div class="aspect-example">
-      <span class="sr">${srText(ex.sr)}</span>
+      <span class="sr">${AtlasSrpski.sr(ex.sr)}</span>
       <span class="tr">${pick(ex)}</span>
     </div>
   `;
@@ -88,8 +85,8 @@ function renderPatterns() {
         ${PATTERNS.map(row => `
           <article class="aspect-table-row">
             <h4>${pick(row.pattern)}</h4>
-            <span class="aspect-form aspect-cell" data-label="${ui('imperfective')}">${srText(row.imp)}</span>
-            <span class="aspect-form aspect-cell" data-label="${ui('perfective')}">${srText(row.perf)}</span>
+            <span class="aspect-form aspect-cell" data-label="${ui('imperfective')}">${AtlasSrpski.sr(row.imp)}</span>
+            <span class="aspect-form aspect-cell" data-label="${ui('perfective')}">${AtlasSrpski.sr(row.perf)}</span>
             <p class="aspect-cell" data-label="${ui('signal')}">${pick(row.signal)}</p>
           </article>
         `).join('')}
@@ -106,7 +103,7 @@ function renderPrefixes() {
     return `
       <article class="aspect-prefix" data-tone="${row.tone}">
         <header class="aspect-prefix-head">
-          <h4>${srText(row.prefix)}</h4>
+          <h4>${AtlasSrpski.sr(row.prefix)}</h4>
           ${row.note ? noteButton(idx) : ''}
         </header>
         <p>${pick(row.feel)}</p>
@@ -135,8 +132,8 @@ function renderPairs() {
         ${COMMON_PAIRS.map(row => `
           <article class="aspect-table-row">
             <h4>${pick(row.meaning)}</h4>
-            <span class="aspect-form aspect-cell" data-label="${ui('imperfective')}">${srText(row.imp)}</span>
-            <span class="aspect-form aspect-cell" data-label="${ui('perfective')}">${srText(row.perf)}</span>
+            <span class="aspect-form aspect-cell" data-label="${ui('imperfective')}">${AtlasSrpski.sr(row.imp)}</span>
+            <span class="aspect-form aspect-cell" data-label="${ui('perfective')}">${AtlasSrpski.sr(row.perf)}</span>
             <div class="aspect-cell" data-label="${ui('example')}">${exampleHTML(row.ex)}</div>
           </article>
         `).join('')}

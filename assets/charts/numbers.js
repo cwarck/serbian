@@ -7,12 +7,8 @@ function pick(value) {
   if (typeof value === 'string') return value;
   return (value && (value[lang()] || value.en)) || '';
 }
-function srText(text) {
-  return window.AtlasSrpski ? window.AtlasSrpski.sr(text) : String(text);
-}
-
 function srParts(parts) {
-  return parts.map(part => `<span>${srText(part)}</span>`).join('<span class="num-plus">+</span>');
+  return parts.map(part => `<span>${AtlasSrpski.sr(part)}</span>`).join('<span class="num-plus">+</span>');
 }
 
 function renderNumberGroup(group) {
@@ -21,7 +17,7 @@ function renderNumberGroup(group) {
   const cells = group.rows.map(row => `
     <article class="num-mini">
       <span class="num-value">${row.n}</span>
-      <span class="num-word">${srText(row.sr)}</span>
+      <span class="num-word">${AtlasSrpski.sr(row.sr)}</span>
     </article>
   `).join('') + Array.from({ length: blanks }, () => '<article class="num-mini num-mini-empty" aria-hidden="true"></article>').join('');
   return `
@@ -77,7 +73,7 @@ function renderNounCounts() {
             <span class="num-value" data-label="${t('numbers.number')}">${row.n}</span>
             <span class="num-pattern" data-label="${t('numbers.pattern')}">${pick(row.pattern)}</span>
             <div class="num-examples" data-label="${t('numbers.examples')}">
-              ${row.examples.map(example => `<span>${srText(example)}</span>`).join('')}
+              ${row.examples.map(example => `<span>${AtlasSrpski.sr(example)}</span>`).join('')}
             </div>
           </article>
         `).join('')}
@@ -102,7 +98,7 @@ function renderOrdinals() {
         ${ORDINALS.map(row => `
           <article class="num-table-row">
             <span class="num-value" data-label="${t('numbers.number')}">${row.n}</span>
-            ${row.forms.map((form, idx) => `<span class="num-word" data-label="${t(['cases.gender.m', 'cases.gender.f', 'cases.gender.n'][idx])}">${srText(form)}</span>`).join('')}
+            ${row.forms.map((form, idx) => `<span class="num-word" data-label="${t(['cases.gender.m', 'cases.gender.f', 'cases.gender.n'][idx])}">${AtlasSrpski.sr(form)}</span>`).join('')}
           </article>
         `).join('')}
       </div>

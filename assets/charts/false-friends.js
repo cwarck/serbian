@@ -3,15 +3,11 @@ function dict() {
   return (window.I18N && window.I18N[lang]) || {};
 }
 function t(key) { return dict()[key] || key; }
-function srText(text) {
-  return window.AtlasSrpski ? window.AtlasSrpski.sr(text) : String(text);
-}
-
 function renderFalseRow(row) {
   return `
     <article class="false-row">
       <div class="false-word" data-label="${t('false.col.sr')}">
-        <span class="sr">${srText(row.sr)}</span>
+        <span class="sr">${AtlasSrpski.sr(row.sr)}</span>
       </div>
       <div class="false-cell false-means" data-label="${t('false.col.means')}">${row.means}</div>
       <div class="false-cell false-trap" data-label="${t('false.col.trap')}">
@@ -20,7 +16,7 @@ function renderFalseRow(row) {
         <small>${row.trapMeans}</small>
       </div>
       <div class="false-example" data-label="${t('false.col.example')}">
-        <span class="sr">${srText(row.ex.sr)}</span>
+        <span class="sr">${AtlasSrpski.sr(row.ex.sr)}</span>
         <span class="tr">${row.ex.ru}</span>
       </div>
     </article>

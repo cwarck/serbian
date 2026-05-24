@@ -4,10 +4,6 @@ function dict() {
 }
 function t(key) { return dict()[key] || key; }
 function currentLang() { return document.documentElement.getAttribute('lang') || 'en'; }
-function srText(text) {
-  return window.AtlasSrpski ? window.AtlasSrpski.sr(text) : String(text);
-}
-
 function iconSVG(kind) {
   const object = '<rect class="prep-icon-object" x="30" y="18" width="28" height="28"></rect>';
   const dot = (x, y) => `<circle class="prep-icon-dot" cx="${x}" cy="${y}" r="9"></circle>`;
@@ -79,7 +75,7 @@ function renderUse(use) {
         <span class="prep-meaning">${use.meaning[lang] || use.meaning.en}</span>
       </div>
       <div class="prep-example">
-        <span class="sr">${srText(use.sr)}</span>
+        <span class="sr">${AtlasSrpski.sr(use.sr)}</span>
         <span class="tr">${use.tr[lang] || use.tr.en}</span>
       </div>
     </div>
@@ -104,7 +100,7 @@ function renderPrepChart() {
         ${group.rows.map(row => `
           <article class="prep-row" data-tone="${row.tone}">
             <div class="prep-visual">${visualHTML(row)}</div>
-            <div class="prep-name">${srText(row.prep)}</div>
+            <div class="prep-name">${AtlasSrpski.sr(row.prep)}</div>
             <div class="prep-uses">${row.uses.map(renderUse).join('')}</div>
           </article>
         `).join('')}

@@ -9,17 +9,8 @@ function dict() {
 }
 function tCases(key) { return dict()[key] || ''; }
 function currentLang() { return document.documentElement.getAttribute('lang') || 'en'; }
-function srText(text) {
-  return window.AtlasSrpski ? window.AtlasSrpski.sr(text) : String(text);
-}
-function srHTML(html) {
-  return window.AtlasSrpski ? window.AtlasSrpski.srHTML(html) : String(html);
-}
 function srStrongHTML(html) {
-  return String(html).replace(/<strong>(.*?)<\/strong>/g, (_, inner) => `<strong>${srHTML(inner)}</strong>`);
-}
-function srGrammarHTML(html) {
-  return window.AtlasSrpski ? window.AtlasSrpski.srGrammarHTML(html) : String(html);
+  return String(html).replace(/<strong>(.*?)<\/strong>/g, (_, inner) => `<strong>${AtlasSrpski.srHTML(inner)}</strong>`);
 }
 function renderStaticGrammarTokens() {
   const lang = currentLang();
@@ -28,7 +19,7 @@ function renderStaticGrammarTokens() {
       node.setAttribute('data-sr-grammar-source', node.innerHTML);
       node.setAttribute('data-sr-grammar-lang', lang);
     }
-    node.innerHTML = srGrammarHTML(node.getAttribute('data-sr-grammar-source') || node.innerHTML);
+    node.innerHTML = AtlasSrpski.srGrammarHTML(node.getAttribute('data-sr-grammar-source') || node.innerHTML);
   });
 }
 
@@ -70,8 +61,8 @@ function renderCast() {
       const form = cast.forms.sg[i];
       const hl = i === 0 ? cast.word : diffHL(base, form).to;
       return `
-        <a class="cast-cell" data-tone="${c.tone}" href="#${caseAnchor(c.key)}" aria-label="${c.abbr}, ${genderLabel(cast)}: ${srText(form)}">
-          <span class="cast-form">${srHTML(hl)}</span>
+        <a class="cast-cell" data-tone="${c.tone}" href="#${caseAnchor(c.key)}" aria-label="${c.abbr}, ${genderLabel(cast)}: ${AtlasSrpski.sr(form)}">
+          <span class="cast-form">${AtlasSrpski.srHTML(hl)}</span>
         </a>`;
     }).join('');
     return `
@@ -98,8 +89,8 @@ function renderCast() {
       const base = cast.forms.sg[0];
       const hl = i === 0 ? cast.word : diffHL(base, form).to;
       return `
-        <a class="cast-cell" data-tone="${c.tone}" href="#${caseAnchor(c.key)}" aria-label="${c.abbr}: ${srText(form)}">
-          <span class="cast-form">${srHTML(hl)}</span>
+        <a class="cast-cell" data-tone="${c.tone}" href="#${caseAnchor(c.key)}" aria-label="${c.abbr}: ${AtlasSrpski.sr(form)}">
+          <span class="cast-form">${AtlasSrpski.srHTML(hl)}</span>
         </a>
       `;
     }).join('');
@@ -132,15 +123,15 @@ function notePopoverHTML(caseIdx, noteId) {
   const c = CASES[caseIdx];
   const note = c && c.notes && c.notes[noteId];
   if (!note) return '';
-  const title = srGrammarHTML(lang === 'ru' ? note.titleRu : note.titleEn);
-  const body  = srGrammarHTML(lang === 'ru' ? note.bodyRu  : note.bodyEn);
+  const title = AtlasSrpski.srGrammarHTML(lang === 'ru' ? note.titleRu : note.titleEn);
+  const body  = AtlasSrpski.srGrammarHTML(lang === 'ru' ? note.bodyRu  : note.bodyEn);
   const pairs = (note.pairs || []).map(p => {
     const hl = diffHL(p[0], p[1]);
     return `
       <li>
-        <span class="from">${srHTML(hl.from)}</span>
+        <span class="from">${AtlasSrpski.srHTML(hl.from)}</span>
         <span class="arrow" aria-hidden="true">→</span>
-        <span class="to">${srHTML(hl.to)}</span>
+        <span class="to">${AtlasSrpski.srHTML(hl.to)}</span>
       </li>`;
   }).join('');
   return `
@@ -168,13 +159,13 @@ function buildSharePills(entry) {
 function cellHTML(entry, caseIdx) {
   if (entry == null) return '<span class="cell cell-empty"><span class="end">—</span></span>';
   if (typeof entry === 'string') {
-    return `<span class="cell"><span class="end">${srText(entry)}</span></span>`;
+    return `<span class="cell"><span class="end">${AtlasSrpski.sr(entry)}</span></span>`;
   }
   const noteMark = (id) => {
     const c = CASES[caseIdx];
     const note = c && c.notes && c.notes[id];
     const lang = currentLang();
-    const title = note ? srGrammarHTML(lang === 'ru' ? note.titleRu : note.titleEn).replace(/<[^>]*>/g, '') : 'see note';
+    const title = note ? AtlasSrpski.srGrammarHTML(lang === 'ru' ? note.titleRu : note.titleEn).replace(/<[^>]*>/g, '') : 'see note';
     return `<button type="button" class="tip-chip cell-note" aria-haspopup="dialog" aria-expanded="false" aria-label="${title}" data-note-trigger data-case-idx="${caseIdx}" data-note-id="${id}">?</button>`;
   };
 
@@ -193,21 +184,21 @@ function cellHTML(entry, caseIdx) {
         return `
           <span class="end-row">
             <span class="cell-label">${label}</span>
-            <span class="end">${srText(s.v)}${m}</span>
+            <span class="end">${AtlasSrpski.sr(s.v)}${m}</span>
           </span>`;
       }).join('');
       return `<span class="cell cell-alt cell-alt-labeled">${rows}</span>`;
     }
     const ends = variants.map((s, idx) => {
       const m = !sharedNote && s.n ? noteMark(s.n) : '';
-      return `<span class="end">${srText(s.v)}${m}</span>`;
+      return `<span class="end">${AtlasSrpski.sr(s.v)}${m}</span>`;
     }).join('<span class="cell-sep" aria-hidden="true">/</span>');
     const tail = sharedNote ? noteMark(sharedNote) : '';
     return `<span class="cell cell-alt">${ends}${tail}</span>`;
   }
   const pills = buildSharePills(entry);
   const note = entry.n ? noteMark(entry.n) : '';
-  return `<span class="cell"><span class="end">${srText(entry.v)}${note}</span>${pills}</span>`;
+  return `<span class="cell"><span class="end">${AtlasSrpski.sr(entry.v)}${note}</span>${pills}</span>`;
 }
 
 function axisLabel(ax, d) {
@@ -237,7 +228,7 @@ function renderCases() {
   const caseRows = CASES.map((c, i) => {
     const caseId  = caseAnchor(c.key);
     const name    = d[c.key + '.name']    || '';
-    const local   = srText(d[c.key + '.local'] || '');
+    const local   = AtlasSrpski.sr(d[c.key + '.local'] || '');
     const tagline = d[c.key + '.tagline'] || '';
     const q       = srStrongHTML(d[c.key + '.q'] || '');
 
@@ -260,8 +251,8 @@ function renderCases() {
 
     const exHTML = c.examples.map(ex => `
       <div class="ex">
-        <div class="sr">${srHTML(ex.sr)}</div>
-        <div class="tr">${srGrammarHTML(ex[lang] || ex.en)}</div>
+        <div class="sr">${AtlasSrpski.srHTML(ex.sr)}</div>
+        <div class="tr">${AtlasSrpski.srGrammarHTML(ex[lang] || ex.en)}</div>
       </div>
     `).join('');
     const exCell = `
@@ -275,7 +266,7 @@ function renderCases() {
     ` : `
       <div class="case-cell case-cell-preps">
         <span class="cell-axis">${prepsLabel}</span>
-        <p class="prep-list">${c.preps.map(p => srText(p)).join(', ')}</p>
+        <p class="prep-list">${c.preps.map(p => AtlasSrpski.sr(p)).join(', ')}</p>
       </div>`;
 
     return `
@@ -299,8 +290,8 @@ function renderExtras() {
   const idRows = IDECL.cases.map((abbr, i) => `
     <tr>
       <th scope="row" class="num">${abbr}</th>
-      <td><span class="end">${srText(IDECL.sg[i])}</span></td>
-      <td><span class="end">${srText(IDECL.pl[i])}</span></td>
+      <td><span class="end">${AtlasSrpski.sr(IDECL.sg[i])}</span></td>
+      <td><span class="end">${AtlasSrpski.sr(IDECL.pl[i])}</span></td>
     </tr>
   `).join('');
   const idTitle = d['cases.extra.title'] || 'Feminines without -a';
@@ -308,8 +299,8 @@ function renderExtras() {
   const idPanel = `
     <article class="extra-panel extra-panel-idecl">
       <header class="extra-panel-head">
-        <h3 class="extra-panel-title">${srGrammarHTML(idTitle)}</h3>
-        <span class="extra-panel-sub"><em>${srText('ljubav')}</em>${idGloss ? ' · ' + idGloss : ''}</span>
+        <h3 class="extra-panel-title">${AtlasSrpski.srGrammarHTML(idTitle)}</h3>
+        <span class="extra-panel-sub"><em>${AtlasSrpski.sr('ljubav')}</em>${idGloss ? ' · ' + idGloss : ''}</span>
       </header>
       <div class="extra-panel-body">
         <table class="i-decl">
@@ -332,17 +323,17 @@ function renderExtras() {
       const hl = diffHL(ex.from, ex.to);
       return `
         <li>
-          <span class="from">${srHTML(hl.from)}</span>
+          <span class="from">${AtlasSrpski.srHTML(hl.from)}</span>
           <span class="arrow" aria-hidden="true">→</span>
-          <span class="to">${srHTML(hl.to)}</span>
-          <span class="gloss">${srGrammarHTML(ex[lang] || ex.en)}</span>
+          <span class="to">${AtlasSrpski.srHTML(hl.to)}</span>
+          <span class="gloss">${AtlasSrpski.srGrammarHTML(ex[lang] || ex.en)}</span>
         </li>
       `;
     }).join('');
     return `
       <article class="extra-panel">
         <header class="extra-panel-head">
-          <h3 class="extra-panel-title">${srGrammarHTML(title)}</h3>
+          <h3 class="extra-panel-title">${AtlasSrpski.srGrammarHTML(title)}</h3>
         </header>
         <div class="extra-panel-body">
           <ul class="wrinkle-list">${items}</ul>
