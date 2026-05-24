@@ -149,6 +149,10 @@ h4     { font-size: var(--fs-lead); }
 
 p { margin: 0 0 1.15em; }
 
+/* <i> marks inline Serbian tokens in foreign-language prose so the script
+   converter can find them. It's a structural marker, not visual emphasis. */
+i { font-style: inherit; }
+
 /* -----------------------------------------------------------
    Layout primitives
    ----------------------------------------------------------- */

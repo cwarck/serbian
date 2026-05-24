@@ -19,13 +19,7 @@ function srStrongHTML(html) {
   return String(html).replace(/<strong>(.*?)<\/strong>/g, (_, inner) => `<strong>${srHTML(inner)}</strong>`);
 }
 function srGrammarHTML(html) {
-  const tokenPattern = /(?:k, g, h|c, z, s|č, ž, š|c, ć, č, đ, dž, j, lj, nj, š, ž|-ima\/-ama|-ima|-ama|-om|-em|-ov-|-ev-|-iju|-i|-e|-u|-a|\bPadeži\b|žena|\bpilot\b|\bselo\b|\bljubav\b|\bnoć\b|\bstvar\b|\breč\b|\bsmrt\b|\bkost\b|\bod\b|\biz\b|\bkod\b|\bMarko\b|\bProfesore\b|\bbrate\b)/g;
-  return String(html)
-    .split(/(<[^>]+>|&[^;\s]+;)/g)
-    .map(part => (part.startsWith('<') || part.startsWith('&'))
-      ? part
-      : part.replace(tokenPattern, token => srText(token)))
-    .join('');
+  return window.AtlasSrpski ? window.AtlasSrpski.srGrammarHTML(html) : String(html);
 }
 function renderStaticGrammarTokens() {
   const lang = currentLang();

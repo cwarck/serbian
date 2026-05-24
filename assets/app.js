@@ -112,6 +112,29 @@
       .join('');
   }
 
+  /* Convert Serbian tokens inline in foreign prose: wrap each Serbian word or
+     ending in <i>...</i> in the i18n source, and only that text flips script.
+     Everything outside the marker stays in its native language. */
+  function srGrammarHTML(html) {
+    let depth = 0;
+    return String(html)
+      .split(/(<[^>]+>|&[^;\s]+;)/g)
+      .map(part => {
+        if (!part) return part;
+        if (part.startsWith('&')) return part;
+        if (part.startsWith('<')) {
+          const m = part.match(/^<\s*(\/?)\s*([a-z][a-z0-9]*)/i);
+          if (m && m[2].toLowerCase() === 'i') {
+            if (m[1]) depth = Math.max(0, depth - 1);
+            else if (!/\/\s*>\s*$/.test(part)) depth++;
+          }
+          return part;
+        }
+        return depth > 0 ? sr(part) : part;
+      })
+      .join('');
+  }
+
   function applyScript(script) {
     const normalized = supportedScripts.includes(script) ? script : 'lat';
     document.documentElement.setAttribute('data-script', normalized);
@@ -137,6 +160,7 @@
     currentScript,
     sr,
     srHTML,
+    srGrammarHTML,
     toCyrillic,
     toLatin
   });

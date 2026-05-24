@@ -59,7 +59,7 @@ window.I18N = {
     'verbs.orthography': 'Placement / spelling',
     'verbs.merged': 'Merged forms',
     'verbs.ici.exception': '-ći verbs',
-    'verbs.se.rule': 'se follows the first stressed word.',
+    'verbs.se.rule': '<i>se</i> follows the first stressed word.',
     'past.msg': 'M sg',
     'past.fsg': 'F sg',
     'past.nsg': 'N sg',
@@ -213,13 +213,13 @@ window.I18N = {
     'cases.same': 'same as',
 
 
-    'cases.extra.title': 'Feminines without -a',
+    'cases.extra.title': 'Feminines without <i>-a</i>',
     'cases.extra.gloss': 'love',
 
     'wrinkle.fleeting.title': 'Vanishing vowel',
-    'wrinkle.a-insert.title': 'Spacer -a in gen. pl.',
-    'wrinkle.ov-ev.title': '-ov- / -ev- plural',
-    'wrinkle.iju.title': 'Old -iju plural',
+    'wrinkle.a-insert.title': 'Spacer <i>-a</i> in gen. pl.',
+    'wrinkle.ov-ev.title': '<i>-ov-</i> / <i>-ev-</i> plural',
+    'wrinkle.iju.title': 'Old <i>-iju</i> plural',
     'wrinkle.irregulars.title': 'Irregulars',
 
     'case.1.name': 'Nominative',
@@ -309,7 +309,7 @@ window.I18N = {
     'verbs.orthography': 'Порядок / письмо',
     'verbs.merged': 'Слитные формы',
     'verbs.ici.exception': 'Глаголы на -ći',
-    'verbs.se.rule': 'se стоит после первого ударного слова.',
+    'verbs.se.rule': '<i>se</i> стоит после первого ударного слова.',
     'past.msg': 'М ед.',
     'past.fsg': 'Ж ед.',
     'past.nsg': 'С ед.',
@@ -464,13 +464,13 @@ window.I18N = {
 
 
 
-    'cases.extra.title': 'Женский род без -a',
+    'cases.extra.title': 'Женский род без <i>-a</i>',
     'cases.extra.gloss': 'любовь',
 
     'wrinkle.fleeting.title': 'Беглая гласная',
-    'wrinkle.a-insert.title': 'Вставная -a в род. мн.',
-    'wrinkle.ov-ev.title': '-ov- / -ev- во мн. ч.',
-    'wrinkle.iju.title': 'Старое -iju',
+    'wrinkle.a-insert.title': 'Вставная <i>-a</i> в род. мн.',
+    'wrinkle.ov-ev.title': '<i>-ov-</i> / <i>-ev-</i> во мн. ч.',
+    'wrinkle.iju.title': 'Старое <i>-iju</i>',
     'wrinkle.irregulars.title': 'Исключения',
 
     'case.1.name': 'Именительный',

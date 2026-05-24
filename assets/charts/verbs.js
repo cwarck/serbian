@@ -11,13 +11,7 @@ function srHTML(html) {
   return window.AtlasSrpski ? window.AtlasSrpski.srHTML(html) : String(html);
 }
 function srGrammarHTML(html) {
-  const tokenPattern = /(?:sam\/si\/je\/smo\/ste\/su|ću\/ćeš\/će\/ćemo\/ćete\/će|on\/ona\/ono|oni\/one\/ona|-ovati|-ivati|-avati|-jem|-ješ|-jemo|-jete|-aju|-imo|-ite|-amo|-ate|-emo|-ete|-iti|-eti|-ati|-ći|-im|-iš|-am|-aš|-em|-eš|-ju|-e|-u|-o|-la|-lo|-li|-le|\bse\b|\bbiti\b|\bhteti\b|\bmoći\b|\braditi\b|\bRadiću\b|\bradiću\b|\bradićeš\b|\bradiće\b|\bići\b|\bdoći\b)/g;
-  return String(html)
-    .split(/(<[^>]+>|&[^;\s]+;)/g)
-    .map(part => (part.startsWith('<') || part.startsWith('&'))
-      ? part
-      : part.replace(tokenPattern, token => srText(token)))
-    .join('');
+  return window.AtlasSrpski ? window.AtlasSrpski.srGrammarHTML(html) : String(html);
 }
 
 function pronounRows(values, cls) {
