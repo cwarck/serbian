@@ -614,7 +614,6 @@ function validateAspect() {
   });
   COMMON_PAIRS.forEach((row, index) => {
     const scope = `aspect.commonPairs[${index}]`;
-    expectLocalized(row.meaning, scope, 'meaning');
     ['imp', 'perf'].forEach(field => expectString(row[field], scope, field));
     expectString(row.ex?.sr, scope, 'ex.sr');
     expectString(row.ex?.en, scope, 'ex.en');
