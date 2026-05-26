@@ -96,6 +96,11 @@
       .normalize('NFC');
   }
 
+  const diacriticToPlain = { 'š':'s', 'č':'c', 'ć':'c', 'ž':'z', 'đ':'dj', 'Š':'S', 'Č':'C', 'Ć':'C', 'Ž':'Z', 'Đ':'Dj' };
+  function stripDiacritics(text) {
+    return String(text).split('').map(ch => diacriticToPlain[ch] || ch).join('');
+  }
+
   function currentScript() {
     const stored = readStored(LS_SCRIPT);
     return supportedScripts.includes(stored) ? stored : defaultScript;
@@ -155,6 +160,32 @@
     document.dispatchEvent(new CustomEvent('scriptchange', { detail: { script } }));
   }
 
+  /* ---------- glossary ---------- */
+
+  const glossary = {
+    get(lemma) {
+      const dict = window.GLOSSARY;
+      return (dict && Object.hasOwn(dict, lemma)) ? dict[lemma] : null;
+    },
+    has(lemma) {
+      const dict = window.GLOSSARY;
+      return !!(dict && Object.hasOwn(dict, lemma));
+    },
+    gloss(lemma, lang) {
+      const entry = glossary.get(lemma);
+      if (!entry || !entry.gloss) return lemma;
+      const key = lang === 'ru' ? 'ru' : 'en';
+      return entry.gloss[key] || entry.gloss.en || entry.gloss.ru || lemma;
+    },
+    cyr(lemma) {
+      return toCyrillic(lemma);
+    },
+    slug(lemma) {
+      const entry = glossary.get(lemma);
+      return (entry && entry.slug) ? entry.slug : stripDiacritics(lemma);
+    },
+  };
+
   window.AtlasSrpski = Object.assign(window.AtlasSrpski || {}, {
     currentLang: detectLang,
     currentScript,
@@ -162,7 +193,9 @@
     srHTML,
     srGrammarHTML,
     toCyrillic,
-    toLatin
+    toLatin,
+    stripDiacritics,
+    glossary,
   });
 
   /* ---------- i18n ---------- */
