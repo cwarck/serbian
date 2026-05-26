@@ -2043,6 +2043,27 @@ a.cast-cell:focus-visible {
   font-weight: 400;
   letter-spacing: 0;
 }
+.verb-list-glossed {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 0.35rem;
+}
+.verb-list-glossed li {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6em;
+  flex-wrap: wrap;
+}
+.verb-list-glossed .verb-lemma {
+  font-family: var(--ff-display);
+  font-size: var(--fs-lead);
+  color: var(--ink);
+}
+.verb-list-glossed .verb-gloss {
+  font-size: var(--fs-caption);
+  color: var(--ink-soft);
+}
 .verb-note,
 .verb-negative p {
   font-size: var(--fs-body);

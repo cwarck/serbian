@@ -58,7 +58,14 @@ function renderRegularGroup(group) {
       </section>
       <section class="verb-block">
         <h4>${t('verbs.common')}</h4>
-        <p class="verb-list">${group.verbs.map(verb => AtlasSrpski.sr(verb)).join(', ')}</p>
+        <ul class="verb-list verb-list-glossed">
+          ${group.verbs.map(verb => `
+            <li>
+              <span class="verb-lemma">${AtlasSrpski.sr(verb)}</span>
+              <span class="verb-gloss">${AtlasSrpski.glossary.gloss(verb, currentLang())}</span>
+            </li>
+          `).join('')}
+        </ul>
       </section>
       <section class="verb-block verb-block-example">
         <h4>${AtlasSrpski.sr(group.example.infinitive)}</h4>
