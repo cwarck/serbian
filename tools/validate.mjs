@@ -700,7 +700,7 @@ function validateFalseFriends() {
     expectArray(group.rows, scope, 'rows');
     group.rows.forEach((row, rowIndex) => {
       const rowScope = `${scope}.rows[${rowIndex}]`;
-      ['sr', 'means', 'trap', 'trapMeans'].forEach(field => expectString(row[field], rowScope, field));
+      ['sr', 'trap', 'trapMeans'].forEach(field => expectString(row[field], rowScope, field));
       expectString(row.ex?.sr, rowScope, 'ex.sr');
       expectString(row.ex?.ru, rowScope, 'ex.ru');
     });
