@@ -1,6 +1,6 @@
-function lang() { return document.documentElement.getAttribute('lang') || 'en'; }
 function dict() {
-  return (window.I18N && window.I18N[lang()]) || {};
+  const lang = document.documentElement.getAttribute('lang') || 'en';
+  return (window.I18N && window.I18N[lang]) || {};
 }
 function t(key) { return dict()[key] || key; }
 function renderFalseRow(row) {
@@ -9,7 +9,7 @@ function renderFalseRow(row) {
       <div class="false-word" data-label="${t('false.col.sr')}">
         <span class="sr">${AtlasSrpski.sr(row.sr)}</span>
       </div>
-      <div class="false-cell false-means" data-label="${t('false.col.means')}">${AtlasSrpski.glossary.gloss(row.sr, lang())}</div>
+      <div class="false-cell false-means" data-label="${t('false.col.means')}">${row.means}</div>
       <div class="false-cell false-trap" data-label="${t('false.col.trap')}">
         <span class="false-not">${t('false.trap.label')}</span>
         <span>${row.trap}</span>
