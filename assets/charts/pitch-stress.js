@@ -8,6 +8,26 @@ function pick(value) {
   if (typeof value === 'string') return value;
   return (value && (value[lang()] || value.en)) || '';
 }
+const PITCH_TO_PLAIN = {
+  'à':'a','á':'a','ā':'a','ȁ':'a','ȃ':'a',
+  'è':'e','é':'e','ē':'e','ȅ':'e','ȇ':'e',
+  'ì':'i','í':'i','ī':'i','ȉ':'i','ȋ':'i',
+  'ò':'o','ó':'o','ō':'o','ȍ':'o','ȏ':'o',
+  'ù':'u','ú':'u','ū':'u','ȕ':'u','ȗ':'u',
+  'ŕ':'r','ȑ':'r','ȓ':'r',
+  'À':'A','Á':'A','Ā':'A','Ȁ':'A','Ȃ':'A',
+  'È':'E','É':'E','Ē':'E','Ȅ':'E','Ȇ':'E',
+  'Ì':'I','Í':'I','Ī':'I','Ȉ':'I','Ȋ':'I',
+  'Ò':'O','Ó':'O','Ō':'O','Ȍ':'O','Ȏ':'O',
+  'Ù':'U','Ú':'U','Ū':'U','Ȕ':'U','Ȗ':'U',
+  'Ŕ':'R','Ȑ':'R','Ȓ':'R',
+};
+function stripPitch(text) {
+  return String(text).split('').map(ch => PITCH_TO_PLAIN[ch] || ch).join('');
+}
+function exampleGloss(ex) {
+  return ex.tr ? pick(ex.tr) : AtlasSrpski.glossary.gloss(stripPitch(ex.sr), lang());
+}
 function noteButton(id) {
   return `<button class="tip-chip pitch-note-btn" type="button" aria-haspopup="dialog" aria-expanded="false" aria-label="${ui('note')}" data-pitch-note="${id}">?</button>`;
 }
@@ -15,7 +35,7 @@ function exampleHTML(ex) {
   return `
     <span class="pitch-example">
       <span class="sr">${AtlasSrpski.sr(ex.sr)}</span>
-      <span class="tr">${pick(ex.tr)}</span>
+      <span class="tr">${exampleGloss(ex)}</span>
     </span>
   `;
 }
@@ -104,7 +124,7 @@ function renderParadigms() {
           <article class="pitch-paradigm">
             <header class="pitch-paradigm-head">
               <h4>${AtlasSrpski.sr(row.word.sr)}</h4>
-              <span>${pick(row.word.tr)}</span>
+              <span>${exampleGloss(row.word)}</span>
               ${noteButton(row.note)}
             </header>
             <div class="pitch-paradigm-cells">

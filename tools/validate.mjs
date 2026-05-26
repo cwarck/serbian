@@ -636,7 +636,7 @@ function validatePitch() {
     expectArray(row.examples, scope, 'examples');
     row.examples.forEach((example, exIndex) => {
       expectString(example.sr, `${scope}.examples[${exIndex}]`, 'sr');
-      expectTranslation(example.tr, `${scope}.examples[${exIndex}]`);
+      if (example.tr) expectTranslation(example.tr, `${scope}.examples[${exIndex}]`);
     });
   });
   for (const [name, rows] of Object.entries(chart).filter(([name, value]) => name !== 'PITCH_NOTES' && Array.isArray(value))) {

@@ -6,8 +6,8 @@ const PITCH_ACCENTS = [
     contour: { en: 'falling', ru: 'нисходящий' },
     pattern: 'HL',
     examples: [
-      { sr: 'nȅbo', tr: { en: 'sky', ru: 'небо' } },
-      { sr: 'sȑce', tr: { en: 'heart', ru: 'сердце' } }
+      { sr: 'nȅbo' },
+      { sr: 'sȑce' }
     ],
     note: 'falling'
   },
@@ -18,8 +18,8 @@ const PITCH_ACCENTS = [
     contour: { en: 'rising', ru: 'восходящий' },
     pattern: 'LH',
     examples: [
-      { sr: 'vòda', tr: { en: 'water', ru: 'вода' } },
-      { sr: 'màskara', tr: { en: 'mascara', ru: 'тушь' } }
+      { sr: 'vòda' },
+      { sr: 'màskara' }
     ],
     note: 'rising'
   },
@@ -30,8 +30,8 @@ const PITCH_ACCENTS = [
     contour: { en: 'falling', ru: 'нисходящий' },
     pattern: 'H-L',
     examples: [
-      { sr: 'pȋvo', tr: { en: 'beer', ru: 'пиво' } },
-      { sr: 'grȃd', tr: { en: 'city', ru: 'город' } }
+      { sr: 'pȋvo' },
+      { sr: 'grȃd' }
     ],
     note: 'falling'
   },
@@ -42,8 +42,8 @@ const PITCH_ACCENTS = [
     contour: { en: 'rising', ru: 'восходящий' },
     pattern: 'L-H',
     examples: [
-      { sr: 'gláva', tr: { en: 'head', ru: 'голова' } },
-      { sr: 'čokoláda', tr: { en: 'chocolate', ru: 'шоколад' } }
+      { sr: 'gláva' },
+      { sr: 'čokoláda' }
     ],
     note: 'rising'
   }
@@ -81,23 +81,23 @@ const PITCH_LENGTH_ROWS = [
     label: { en: 'short stressed', ru: 'краткий ударный' },
     marks: ['ȁ', 'à'],
     examples: [
-      { sr: 'nȅbo', tr: { en: 'sky', ru: 'небо' } },
-      { sr: 'vòda', tr: { en: 'water', ru: 'вода' } }
+      { sr: 'nȅbo' },
+      { sr: 'vòda' }
     ]
   },
   {
     label: { en: 'long stressed', ru: 'долгий ударный' },
     marks: ['ȃ', 'á'],
     examples: [
-      { sr: 'pȋvo', tr: { en: 'beer', ru: 'пиво' } },
-      { sr: 'gláva', tr: { en: 'head', ru: 'голова' } }
+      { sr: 'pȋvo' },
+      { sr: 'gláva' }
     ]
   },
   {
     label: { en: 'long unstressed', ru: 'долгий без ударения' },
     marks: ['ā'],
     examples: [
-      { sr: 'dèvōjka', tr: { en: 'girl', ru: 'девушка' } },
+      { sr: 'dèvōjka' },
       { sr: 'lȍnācā', tr: { en: 'pots, gen. pl.', ru: 'кастрюль, род. мн.' } }
     ],
     note: 'length'
@@ -106,7 +106,7 @@ const PITCH_LENGTH_ROWS = [
 
 const PITCH_PARADIGMS = [
   {
-    word: { sr: 'lȍnac', tr: { en: 'pot', ru: 'кастрюля' } },
+    word: { sr: 'lȍnac' },
     cells: [
       { label: 'NOM SG', sr: 'lȍnac' },
       { label: 'GEN SG', sr: 'lónca' },
@@ -116,7 +116,7 @@ const PITCH_PARADIGMS = [
     note: 'mobile'
   },
   {
-    word: { sr: 'grȃd', tr: { en: 'city', ru: 'город' } },
+    word: { sr: 'grȃd' },
     cells: [
       { label: 'NOM SG', sr: 'grȃd' },
       { label: 'GEN SG', sr: 'grȃda' },
