@@ -28,7 +28,7 @@ function renderAlphabet() {
           <span class="word-sep">·</span>
           <span class="word-lat">${L.wLat}</span>
         </span>
-        <span class="tr">${L.tr[lang]}</span>
+        <span class="tr">${AtlasSrpski.glossary.gloss(L.wLat, lang)}</span>
       </div>
     </article>
   `).join('');

@@ -475,7 +475,6 @@ function validateAlphabet() {
     expect(row.n === index + 1, scope, `n must be ${index + 1}`);
     ['cyr', 'lat', 'ipa', 'wCyr', 'wLat', 'kind'].forEach(field => expectString(row[field], scope, field));
     expect(['unique', 'shared', 'diff'].includes(row.kind), scope, 'kind must be unique/shared/diff');
-    expectTranslation(row.tr, scope);
     if (row.tip) expectTranslation(row.tip, scope, 'tip');
   });
 }
