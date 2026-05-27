@@ -131,7 +131,7 @@ function renderPairs() {
         </div>
         ${COMMON_PAIRS.map(row => `
           <article class="aspect-table-row">
-            <h4>${pick(row.meaning)}</h4>
+            <h4>${AtlasSrpski.glossary.gloss(row.imp, lang())}</h4>
             <span class="aspect-form aspect-cell" data-label="${ui('imperfective')}">${AtlasSrpski.sr(row.imp)}</span>
             <span class="aspect-form aspect-cell" data-label="${ui('perfective')}">${AtlasSrpski.sr(row.perf)}</span>
             <div class="aspect-cell" data-label="${ui('example')}">${exampleHTML(row.ex)}</div>

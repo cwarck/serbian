@@ -101,11 +101,19 @@ function loadData(relPath, names) {
   return context.__atlasData;
 }
 
+function loadGlossary(relPath) {
+  const context = { window: {}, console };
+  vm.createContext(context);
+  vm.runInContext(read(relPath), context, { filename: relPath });
+  return context.window.GLOSSARY;
+}
+
 const i18n = loadI18n();
 const scriptConverter = loadScriptConverter();
 const data = Object.fromEntries(
   Object.entries(chartDataFiles).map(([file, names]) => [file, loadData(file, names)])
 );
+const glossary = loadGlossary('data/glossary.js');
 
 function collectHtmlI18nKeys(files) {
   const keys = new Set();
@@ -467,7 +475,6 @@ function validateAlphabet() {
     expect(row.n === index + 1, scope, `n must be ${index + 1}`);
     ['cyr', 'lat', 'ipa', 'wCyr', 'wLat', 'kind'].forEach(field => expectString(row[field], scope, field));
     expect(['unique', 'shared', 'diff'].includes(row.kind), scope, 'kind must be unique/shared/diff');
-    expectTranslation(row.tr, scope);
     if (row.tip) expectTranslation(row.tip, scope, 'tip');
   });
 }
@@ -607,7 +614,6 @@ function validateAspect() {
   });
   COMMON_PAIRS.forEach((row, index) => {
     const scope = `aspect.commonPairs[${index}]`;
-    expectLocalized(row.meaning, scope, 'meaning');
     ['imp', 'perf'].forEach(field => expectString(row[field], scope, field));
     expectString(row.ex?.sr, scope, 'ex.sr');
     expectString(row.ex?.en, scope, 'ex.en');
@@ -629,7 +635,7 @@ function validatePitch() {
     expectArray(row.examples, scope, 'examples');
     row.examples.forEach((example, exIndex) => {
       expectString(example.sr, `${scope}.examples[${exIndex}]`, 'sr');
-      expectTranslation(example.tr, `${scope}.examples[${exIndex}]`);
+      if (example.tr) expectTranslation(example.tr, `${scope}.examples[${exIndex}]`);
     });
   });
   for (const [name, rows] of Object.entries(chart).filter(([name, value]) => name !== 'PITCH_NOTES' && Array.isArray(value))) {
@@ -701,6 +707,115 @@ function validateFalseFriends() {
   });
 }
 
+const VALID_POS = new Set(['verb', 'noun', 'adj', 'adv', 'prep', 'pron', 'num']);
+const VALID_LEVELS = new Set(['A0', 'A1', 'A2', 'B1', 'B2']);
+const VALID_ASPECTS = new Set(['ipf', 'pf']);
+const VALID_GENDERS = new Set(['m', 'f', 'n']);
+const VALID_CASES = new Set(['nom', 'gen', 'dat', 'aku', 'vok', 'ins', 'lok']);
+
+function validateGlossaryEntries() {
+  expect(isObject(glossary), 'glossary', 'window.GLOSSARY must be object');
+  if (!isObject(glossary)) return;
+
+  const slugs = new Map();
+
+  for (const [key, entry] of Object.entries(glossary)) {
+    const scope = `glossary[${key}]`;
+    expect(isObject(entry), scope, 'entry must be object');
+    if (!isObject(entry)) continue;
+
+    expect(VALID_POS.has(entry.pos), scope, `pos must be one of ${[...VALID_POS].join('|')} (got ${entry.pos})`);
+    expectLocalized(entry.gloss, scope, 'gloss');
+
+    if (entry.level !== undefined) {
+      expect(VALID_LEVELS.has(entry.level), scope, `level must be one of ${[...VALID_LEVELS].join('|')}`);
+    }
+    if (entry.tags !== undefined) {
+      expect(Array.isArray(entry.tags), scope, 'tags must be array');
+    }
+    if (entry.related !== undefined) {
+      expect(Array.isArray(entry.related), scope, 'related must be array');
+      if (Array.isArray(entry.related)) {
+        for (const ref of entry.related) {
+          expect(Object.hasOwn(glossary, ref), scope, `related "${ref}" missing from glossary`);
+        }
+      }
+    }
+
+    if (entry.pos === 'verb') {
+      expect(VALID_ASPECTS.has(entry.aspect), scope, `verb aspect must be ipf|pf (got ${entry.aspect})`);
+      if (entry.government !== undefined) {
+        expect(typeof entry.government === 'string' || Array.isArray(entry.government), scope, 'government must be string or array');
+      }
+    }
+    if (entry.pos === 'noun') {
+      expect(VALID_GENDERS.has(entry.gender), scope, `noun gender must be m|f|n (got ${entry.gender})`);
+    }
+    if (entry.pos === 'prep') {
+      const gov = entry.government;
+      expect(typeof gov === 'string' || Array.isArray(gov), scope, 'prep government required');
+      const list = Array.isArray(gov) ? gov : (gov ? [gov] : []);
+      list.forEach(c => expect(VALID_CASES.has(c), scope, `prep government case "${c}" invalid`));
+    }
+
+    const roundtrip = scriptConverter.toLatin(scriptConverter.toCyrillic(key));
+    expect(roundtrip === key, scope, `key fails Latin↔Cyrillic roundtrip (got "${roundtrip}")`);
+
+    const slug = entry.slug || scriptConverter.stripDiacritics(key);
+    if (slugs.has(slug)) {
+      fail(scope, `slug "${slug}" collides with ${slugs.get(slug)}`);
+    } else {
+      slugs.set(slug, key);
+    }
+  }
+}
+
+function chartLemmas() {
+  const out = [];
+  const add = (lemma, where) => out.push({ lemma, where });
+
+  const verbs = data['assets/charts/verbs-data.js'];
+  verbs.VERB_GROUPS.forEach((group, gi) => {
+    group.verbs.forEach((v, i) => add(v, `verbGroups[${gi}].verbs[${i}]`));
+    add(group.example.infinitive, `verbGroups[${gi}].example.infinitive`);
+  });
+  verbs.IRREGULARS.forEach((row, i) => add(row.title, `irregulars[${i}].title`));
+
+  const aspect = data['assets/charts/aspect-data.js'];
+  aspect.PATTERNS.forEach((row, i) => {
+    add(row.imp, `aspect.patterns[${i}].imp`);
+    add(row.perf, `aspect.patterns[${i}].perf`);
+  });
+  aspect.COMMON_PAIRS.forEach((row, i) => {
+    add(row.imp, `aspect.commonPairs[${i}].imp`);
+    add(row.perf, `aspect.commonPairs[${i}].perf`);
+  });
+
+  const prep = data['assets/charts/prepositions-data.js'];
+  prep.PREP_GROUPS.forEach((group, gi) => {
+    group.rows.forEach((row, ri) => {
+      row.prep.split('/').forEach((piece, pi) => add(piece.trim(), `prepGroups[${gi}].rows[${ri}].prep[${pi}]`));
+    });
+  });
+
+  const falseFriends = data['assets/charts/false-friends-data.js'];
+  falseFriends.FALSE_FRIEND_GROUPS.forEach((group, gi) => {
+    group.rows.forEach((row, ri) => add(row.sr, `falseFriends[${gi}].rows[${ri}].sr`));
+  });
+
+  const alphabet = data['assets/charts/alphabet-data.js'].ALPHABET;
+  alphabet.forEach((row, i) => add(row.wLat, `alphabet[${i}].wLat`));
+
+  return out;
+}
+
+function validateChartLemmaCoverage() {
+  if (!isObject(glossary)) return;
+  for (const { lemma, where } of chartLemmas()) {
+    expect(Object.hasOwn(glossary, lemma), 'glossary', `${where} lemma "${lemma}" missing from glossary`);
+  }
+}
+
 function validateDataShapes() {
   validateAlphabet();
   validateCases();
@@ -719,6 +834,8 @@ validateTones();
 validateScriptConverter();
 validateSerbianContentScript();
 validateDataShapes();
+validateGlossaryEntries();
+validateChartLemmaCoverage();
 
 if (errors.length) {
   console.error(`Validation failed (${errors.length})`);

@@ -96,6 +96,11 @@
       .normalize('NFC');
   }
 
+  const diacriticToPlain = { 'š':'s', 'č':'c', 'ć':'c', 'ž':'z', 'đ':'dj', 'Š':'S', 'Č':'C', 'Ć':'C', 'Ž':'Z', 'Đ':'Dj' };
+  function stripDiacritics(text) {
+    return String(text).split('').map(ch => diacriticToPlain[ch] || ch).join('');
+  }
+
   function currentScript() {
     const stored = readStored(LS_SCRIPT);
     return supportedScripts.includes(stored) ? stored : defaultScript;
@@ -155,6 +160,20 @@
     document.dispatchEvent(new CustomEvent('scriptchange', { detail: { script } }));
   }
 
+  /* ---------- glossary ---------- */
+
+  const glossary = {
+    get(lemma) {
+      const dict = window.GLOSSARY;
+      return (dict && Object.hasOwn(dict, lemma)) ? dict[lemma] : null;
+    },
+    gloss(lemma, lang) {
+      const entry = glossary.get(lemma);
+      if (!entry) return lemma;
+      return entry.gloss[lang === 'ru' ? 'ru' : 'en'];
+    },
+  };
+
   window.AtlasSrpski = Object.assign(window.AtlasSrpski || {}, {
     currentLang: detectLang,
     currentScript,
@@ -162,7 +181,9 @@
     srHTML,
     srGrammarHTML,
     toCyrillic,
-    toLatin
+    toLatin,
+    stripDiacritics,
+    glossary,
   });
 
   /* ---------- i18n ---------- */

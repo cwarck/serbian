@@ -119,16 +119,16 @@ const PREFIXES = [
 ];
 
 const COMMON_PAIRS = [
-  { meaning: { en: 'work / do', ru: 'делать' }, imp: 'raditi', perf: 'uraditi', ex: { sr: 'Uradio sam domaći.', en: 'I did the homework.', ru: 'Я сделал домашку.' } },
-  { meaning: { en: 'write', ru: 'писать' }, imp: 'pisati', perf: 'napisati', ex: { sr: 'Napisala je mejl.', en: 'She wrote an email.', ru: 'Она написала письмо.' } },
-  { meaning: { en: 'read', ru: 'читать' }, imp: 'čitati', perf: 'pročitati', ex: { sr: 'Pročitao sam knjigu.', en: 'I finished the book.', ru: 'Я прочитал книгу.' } },
-  { meaning: { en: 'watch / look', ru: 'смотреть' }, imp: 'gledati', perf: 'pogledati', ex: { sr: 'Pogledaj ovo.', en: 'Look at this.', ru: 'Посмотри на это.' } },
-  { meaning: { en: 'learn', ru: 'учить' }, imp: 'učiti', perf: 'naučiti', ex: { sr: 'Naučili smo padeže.', en: 'We learned the cases.', ru: 'Мы выучили падежи.' } },
-  { meaning: { en: 'buy', ru: 'покупать' }, imp: 'kupovati', perf: 'kupiti', ex: { sr: 'Kupio sam kartu.', en: 'I bought a ticket.', ru: 'Я купил билет.' } },
-  { meaning: { en: 'take', ru: 'брать' }, imp: 'uzimati', perf: 'uzeti', ex: { sr: 'Uzmi vodu.', en: 'Take some water.', ru: 'Возьми воду.' } },
-  { meaning: { en: 'give', ru: 'давать' }, imp: 'davati', perf: 'dati', ex: { sr: 'Dao mi je ključ.', en: 'He gave me the key.', ru: 'Он дал мне ключ.' } },
-  { meaning: { en: 'open', ru: 'открывать' }, imp: 'otvarati', perf: 'otvoriti', ex: { sr: 'Otvorila je vrata.', en: 'She opened the door.', ru: 'Она открыла дверь.' } },
-  { meaning: { en: 'forget', ru: 'забывать' }, imp: 'zaboravljati', perf: 'zaboraviti', ex: { sr: 'Zaboravio sam ime.', en: 'I forgot the name.', ru: 'Я забыл имя.' } }
+  { imp: 'raditi', perf: 'uraditi', ex: { sr: 'Uradio sam domaći.', en: 'I did the homework.', ru: 'Я сделал домашку.' } },
+  { imp: 'pisati', perf: 'napisati', ex: { sr: 'Napisala je mejl.', en: 'She wrote an email.', ru: 'Она написала письмо.' } },
+  { imp: 'čitati', perf: 'pročitati', ex: { sr: 'Pročitao sam knjigu.', en: 'I finished the book.', ru: 'Я прочитал книгу.' } },
+  { imp: 'gledati', perf: 'pogledati', ex: { sr: 'Pogledaj ovo.', en: 'Look at this.', ru: 'Посмотри на это.' } },
+  { imp: 'učiti', perf: 'naučiti', ex: { sr: 'Naučili smo padeže.', en: 'We learned the cases.', ru: 'Мы выучили падежи.' } },
+  { imp: 'kupovati', perf: 'kupiti', ex: { sr: 'Kupio sam kartu.', en: 'I bought a ticket.', ru: 'Я купил билет.' } },
+  { imp: 'uzimati', perf: 'uzeti', ex: { sr: 'Uzmi vodu.', en: 'Take some water.', ru: 'Возьми воду.' } },
+  { imp: 'davati', perf: 'dati', ex: { sr: 'Dao mi je ključ.', en: 'He gave me the key.', ru: 'Он дал мне ключ.' } },
+  { imp: 'otvarati', perf: 'otvoriti', ex: { sr: 'Otvorila je vrata.', en: 'She opened the door.', ru: 'Она открыла дверь.' } },
+  { imp: 'zaboravljati', perf: 'zaboraviti', ex: { sr: 'Zaboravio sam ime.', en: 'I forgot the name.', ru: 'Я забыл имя.' } }
 ];
 
 const TRAPS = [
