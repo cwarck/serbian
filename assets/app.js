@@ -169,9 +169,8 @@
     },
     gloss(lemma, lang) {
       const entry = glossary.get(lemma);
-      if (!entry || !entry.gloss) return lemma;
-      const key = lang === 'ru' ? 'ru' : 'en';
-      return entry.gloss[key] || entry.gloss.en || entry.gloss.ru || lemma;
+      if (!entry) return lemma;
+      return entry.gloss[lang === 'ru' ? 'ru' : 'en'];
     },
   };
 
