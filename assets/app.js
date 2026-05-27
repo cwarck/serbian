@@ -167,22 +167,11 @@
       const dict = window.GLOSSARY;
       return (dict && Object.hasOwn(dict, lemma)) ? dict[lemma] : null;
     },
-    has(lemma) {
-      const dict = window.GLOSSARY;
-      return !!(dict && Object.hasOwn(dict, lemma));
-    },
     gloss(lemma, lang) {
       const entry = glossary.get(lemma);
       if (!entry || !entry.gloss) return lemma;
       const key = lang === 'ru' ? 'ru' : 'en';
       return entry.gloss[key] || entry.gloss.en || entry.gloss.ru || lemma;
-    },
-    cyr(lemma) {
-      return toCyrillic(lemma);
-    },
-    slug(lemma) {
-      const entry = glossary.get(lemma);
-      return (entry && entry.slug) ? entry.slug : stripDiacritics(lemma);
     },
   };
 
