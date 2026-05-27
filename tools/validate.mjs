@@ -713,11 +713,6 @@ const VALID_ASPECTS = new Set(['ipf', 'pf']);
 const VALID_GENDERS = new Set(['m', 'f', 'n']);
 const VALID_CASES = new Set(['nom', 'gen', 'dat', 'aku', 'vok', 'ins', 'lok']);
 
-function stripDiacriticsKey(text) {
-  const map = { 'š':'s', 'č':'c', 'ć':'c', 'ž':'z', 'đ':'dj', 'Š':'S', 'Č':'C', 'Ć':'C', 'Ž':'Z', 'Đ':'Dj' };
-  return String(text).split('').map(ch => map[ch] || ch).join('');
-}
-
 function validateGlossaryEntries() {
   expect(isObject(glossary), 'glossary', 'window.GLOSSARY must be object');
   if (!isObject(glossary)) return;
@@ -766,7 +761,7 @@ function validateGlossaryEntries() {
     const roundtrip = scriptConverter.toLatin(scriptConverter.toCyrillic(key));
     expect(roundtrip === key, scope, `key fails Latin↔Cyrillic roundtrip (got "${roundtrip}")`);
 
-    const slug = entry.slug || stripDiacriticsKey(key);
+    const slug = entry.slug || scriptConverter.stripDiacritics(key);
     if (slugs.has(slug)) {
       fail(scope, `slug "${slug}" collides with ${slugs.get(slug)}`);
     } else {
