@@ -53,99 +53,81 @@
     <h1 data-i18n="home.title">Charts</h1>
   </header>
 
-  <nav class="chart-index" aria-label="Charts" data-i18n-attr="aria-label:chart.index.label">
-    <ol class="chart-grid">
-      <li>
-        <a class="chart-card reveal" href="charts/alphabet.html">
-          <h2 data-i18n="card.alphabet.title">Alphabet</h2>
-          <span class="chart-note" data-i18n="card.alphabet.note">Letters & scripts</span>
-          <span class="chart-open" aria-hidden="true">
-            <svg viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><path d="M0 6h22M16 1l6 5-6 5"/></svg>
-          </span>
-        </a>
-      </li>
+  <ol class="chart-grid" aria-label="Charts" data-i18n-attr="aria-label:chart.index.label">
 
-      <li>
-        <a class="chart-card reveal" href="charts/numbers.html" style="transition-delay:.05s">
-          <h2 data-i18n="card.numbers.title">Numbers</h2>
-          <span class="chart-note" data-i18n="card.numbers.note">Counting</span>
-          <span class="chart-open" aria-hidden="true">
-            <svg viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><path d="M0 6h22M16 1l6 5-6 5"/></svg>
-          </span>
-        </a>
-      </li>
+    <li><a class="chart-card" href="charts/alphabet.html">
+      <span class="chart-glyph" data-chart="alphabet" data-sr-script aria-hidden="true">Aa</span>
+      <span class="chart-meta">
+        <h2 data-i18n="card.alphabet.title">Alphabet</h2>
+        <span class="chart-note" data-i18n="card.alphabet.note">Letters &amp; scripts</span>
+      </span>
+    </a></li>
 
-      <li>
-        <a class="chart-card reveal" href="charts/cases.html" style="transition-delay:.1s">
-          <h2 data-i18n="card.cases.title">Cases</h2>
-          <span class="chart-note" data-i18n="card.cases.note">Noun endings</span>
-          <span class="chart-open" aria-hidden="true">
-            <svg viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><path d="M0 6h22M16 1l6 5-6 5"/></svg>
-          </span>
-        </a>
-      </li>
+    <li><a class="chart-card" href="charts/numbers.html">
+      <span class="chart-glyph" data-chart="numbers" data-sr-script aria-hidden="true">1·2·3</span>
+      <span class="chart-meta">
+        <h2 data-i18n="card.numbers.title">Numbers</h2>
+        <span class="chart-note" data-i18n="card.numbers.note">Counting</span>
+      </span>
+    </a></li>
 
-      <li>
-        <a class="chart-card reveal" href="charts/verbs.html" style="transition-delay:.15s">
-          <h2 data-i18n="card.verbs.title">Verbs</h2>
-          <span class="chart-note" data-i18n="card.verbs.note">Conjugation</span>
-          <span class="chart-open" aria-hidden="true">
-            <svg viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><path d="M0 6h22M16 1l6 5-6 5"/></svg>
-          </span>
-        </a>
-      </li>
+    <li><a class="chart-card" href="charts/cases.html">
+      <span class="chart-glyph" data-chart="cases" data-sr-script aria-hidden="true">Ko? Šta?</span>
+      <span class="chart-meta">
+        <h2 data-i18n="card.cases.title">Cases</h2>
+        <span class="chart-note" data-i18n="card.cases.note">Noun endings</span>
+      </span>
+    </a></li>
 
-      <li>
-        <a class="chart-card reveal" href="charts/pronouns.html" style="transition-delay:.2s">
-          <h2 data-i18n="card.pronouns.title">Pronouns</h2>
-          <span class="chart-note" data-i18n="card.pronouns.note">Forms</span>
-          <span class="chart-open" aria-hidden="true">
-            <svg viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><path d="M0 6h22M16 1l6 5-6 5"/></svg>
-          </span>
-        </a>
-      </li>
+    <li><a class="chart-card" href="charts/verbs.html">
+      <span class="chart-glyph" data-chart="verbs" data-sr-script aria-hidden="true">-am</span>
+      <span class="chart-meta">
+        <h2 data-i18n="card.verbs.title">Verbs</h2>
+        <span class="chart-note" data-i18n="card.verbs.note">Conjugation</span>
+      </span>
+    </a></li>
 
-      <li>
-        <a class="chart-card reveal" href="charts/prepositions.html" style="transition-delay:.25s">
-          <h2 data-i18n="card.prepositions.title">Prepositions</h2>
-          <span class="chart-note" data-i18n="card.prepositions.note">Case locks</span>
-          <span class="chart-open" aria-hidden="true">
-            <svg viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><path d="M0 6h22M16 1l6 5-6 5"/></svg>
-          </span>
-        </a>
-      </li>
+    <li><a class="chart-card" href="charts/pronouns.html">
+      <span class="chart-glyph" data-chart="pronouns" data-sr-script aria-hidden="true">ja, ti</span>
+      <span class="chart-meta">
+        <h2 data-i18n="card.pronouns.title">Pronouns</h2>
+        <span class="chart-note" data-i18n="card.pronouns.note">Forms</span>
+      </span>
+    </a></li>
 
-      <li>
-        <a class="chart-card reveal" href="charts/aspect.html" style="transition-delay:.3s">
-          <h2 data-i18n="card.aspect.title">Aspect</h2>
-          <span class="chart-note" data-i18n="card.aspect.note">Verb pairs</span>
-          <span class="chart-open" aria-hidden="true">
-            <svg viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><path d="M0 6h22M16 1l6 5-6 5"/></svg>
-          </span>
-        </a>
-      </li>
+    <li><a class="chart-card" href="charts/prepositions.html">
+      <span class="chart-glyph" data-chart="prepositions" data-sr-script aria-hidden="true">u·na·o</span>
+      <span class="chart-meta">
+        <h2 data-i18n="card.prepositions.title">Prepositions</h2>
+        <span class="chart-note" data-i18n="card.prepositions.note">Case locks</span>
+      </span>
+    </a></li>
 
-      <li>
-        <a class="chart-card reveal" href="charts/pitch-stress.html" style="transition-delay:.35s">
-          <h2 data-i18n="card.pitch.title">Pitch & stress</h2>
-          <span class="chart-note" data-i18n="card.pitch.note">Accent marks</span>
-          <span class="chart-open" aria-hidden="true">
-            <svg viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><path d="M0 6h22M16 1l6 5-6 5"/></svg>
-          </span>
-        </a>
-      </li>
+    <li><a class="chart-card" href="charts/aspect.html">
+      <span class="chart-glyph" data-chart="aspect" data-sr-script aria-hidden="true">Vid</span>
+      <span class="chart-meta">
+        <h2 data-i18n="card.aspect.title">Aspect</h2>
+        <span class="chart-note" data-i18n="card.aspect.note">Verb pairs</span>
+      </span>
+    </a></li>
 
-      <li data-lang-only="ru">
-        <a class="chart-card reveal" href="charts/false-friends.html" style="transition-delay:.4s">
-          <h2 data-i18n="card.falseFriends.title">False friends</h2>
-          <span class="chart-note" data-i18n="card.falseFriends.note">Russian traps</span>
-          <span class="chart-open" aria-hidden="true">
-            <svg viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><path d="M0 6h22M16 1l6 5-6 5"/></svg>
-          </span>
-        </a>
-      </li>
-    </ol>
-  </nav>
+    <li><a class="chart-card" href="charts/pitch-stress.html">
+      <span class="chart-glyph" data-chart="pitch" aria-hidden="true">à&nbsp;á&nbsp;ȁ&nbsp;â</span>
+      <span class="chart-meta">
+        <h2 data-i18n="card.pitch.title">Pitch &amp; stress</h2>
+        <span class="chart-note" data-i18n="card.pitch.note">Accent marks</span>
+      </span>
+    </a></li>
+
+    <li data-lang-only="ru"><a class="chart-card" href="charts/false-friends.html">
+      <span class="chart-glyph" data-chart="false" data-sr-script aria-hidden="true">≠</span>
+      <span class="chart-meta">
+        <h2 data-i18n="card.falseFriends.title">False friends</h2>
+        <span class="chart-note" data-i18n="card.falseFriends.note">Russian traps</span>
+      </span>
+    </a></li>
+
+  </ol>
 </main>
 
 <!-- ============================================================

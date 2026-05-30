@@ -296,91 +296,76 @@ section { position: relative; }
   font-size: var(--fs-head);
   line-height: var(--lh-snug);
 }
-.chart-index {
-  display: block;
-}
-
 .chart-grid {
-  counter-reset: chart;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
-  gap: 0;
-  border-top: 1px solid var(--hairline);
-  border-left: 1px solid var(--hairline);
+  grid-template-columns: 1fr;
   list-style: none;
   margin: 0;
   padding: 0;
-  position: relative;
+  border-top: 1px solid var(--hairline);
+  border-left: 1px solid var(--hairline);
 }
-.chart-grid::before,
-.chart-grid::after {
-  content: "";
-  position: absolute;
-  background: var(--hairline);
-  pointer-events: none;
-}
-.chart-grid::before { left: 0; right: 0; bottom: 0; height: 1px; }
-.chart-grid::after  { top: 0; bottom: 0; right: 0; width: 1px; }
-@media (min-width: 980px) {
-  .chart-grid { grid-template-columns: repeat(3, 1fr); }
-}
-@media (min-width: 1900px) {
-  .chart-grid { grid-template-columns: repeat(6, 1fr); }
-}
+@media (min-width: 620px) { .chart-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 960px) { .chart-grid { grid-template-columns: repeat(3, 1fr); } }
+.chart-grid li { min-width: 0; }
 
-.chart-grid li {
-  counter-increment: chart;
-  min-width: 0;
-}
 .chart-card {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: .35rem;
-  min-height: clamp(8.8rem, 16vw, 14rem);
+  justify-content: space-between;
+  gap: 1.4rem;
   height: 100%;
-  padding: clamp(1rem, 2vw, 1.45rem) clamp(1rem, 2.4vw, 2rem);
+  min-height: clamp(13rem, 20vw, 17rem);
+  padding: clamp(1.4rem, 2.8vw, 2.2rem);
+  background: var(--paper);
   border-right: 1px solid var(--hairline);
   border-bottom: 1px solid var(--hairline);
-  background: var(--paper);
-  transition: background .35s, color .35s;
+  transition: background .25s;
+  overflow: hidden;
+  isolation: isolate;
 }
-.chart-card::before {
-  content: counter(chart, decimal-leading-zero);
-  font-family: var(--ff-body);
-  font-size: var(--fs-label);
-  letter-spacing: var(--track-label);
-  line-height: 1;
-  color: var(--ink-muted);
+
+.chart-glyph {
+  font-family: var(--ff-display);
+  font-weight: 300;
+  font-size: clamp(3.4rem, 1.8rem + 6vw, 6rem);
+  line-height: .9;
+  letter-spacing: -.02em;
+  color: var(--ink);
+  font-variation-settings: "opsz" 60;
   font-feature-settings: "tnum";
+  white-space: nowrap;
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  overflow: hidden;
 }
+.chart-glyph[data-chart="verbs"]    { color: var(--tone-orange); }
+.chart-glyph[data-chart="aspect"],
+.chart-glyph[data-chart="pronouns"] { font-style: italic; font-weight: 400; }
+.chart-glyph[data-chart="cases"] {
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(2.2rem, 1.4rem + 3vw, 3.6rem);
+}
+.chart-glyph[data-chart="pitch"] {
+  font-size: clamp(2.4rem, 1.4rem + 4vw, 4.2rem);
+  letter-spacing: .08em;
+}
+
+.chart-meta { display: flex; flex-direction: column; gap: .3rem; }
 .chart-card h2 {
-  margin-top: auto;
   font-size: var(--fs-title);
   line-height: var(--lh-snug);
 }
 .chart-note {
-  font-size: var(--fs-lead);
-  line-height: var(--lh-snug);
+  font-family: var(--ff-body);
+  font-size: var(--fs-caption);
+  line-height: 1.45;
   color: var(--ink-soft);
-}
-.chart-open {
-  position: absolute;
-  top: clamp(1rem, 2vw, 1.45rem);
-  right: clamp(1rem, 2.4vw, 2rem);
-  color: var(--ink);
-}
-.chart-open svg {
-  width: 24px; height: 12px;
-  transition: transform .4s cubic-bezier(.2,.7,.2,1);
-}
-@media (max-width: 520px) {
-  .chart-grid {
-    grid-template-columns: 1fr;
-  }
-  .chart-card {
-    min-height: 8.4rem;
-  }
+  margin: 0;
+  max-width: 30ch;
 }
 
 :root:not([lang="ru"]) [data-lang-only="ru"] {
@@ -409,7 +394,6 @@ section { position: relative; }
   .chip[aria-pressed="true"]:hover { color: var(--paper); }
   .theme-btn:hover { background: var(--paper-deep); color: var(--ink); }
   .chart-card:hover { background: var(--paper-deep); }
-  .chart-card:hover .chart-open svg { transform: translateX(8px); }
   .foot a:hover { color: var(--accent); }
   .tip-chip:hover {
     color: var(--ink);
