@@ -29,9 +29,9 @@ window.I18N = {
     'card.falseFriends.title': 'False friends',
     'card.falseFriends.note': 'Russian traps',
 
-    'foot.copy': '© 2026 Atlas Srpski · Content <a href="https://creativecommons.org/licenses/by/4.0/deed.en" rel="license noopener" target="_blank">CC BY 4.0</a>',
+    'foot.copy': '© Atlas Srpski · <a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener" target="_blank">CC BY 4.0</a>',
     'foot.repo': 'Source',
-    'foot.author': 'by Ilya Akimov',
+    'foot.author': 'Ilya Akimov',
 
     /* Alphabet page */
     'alph.legend.unique': 'Unique to Serbian',
@@ -279,7 +279,7 @@ window.I18N = {
     'card.falseFriends.title': 'Ложные друзья',
     'card.falseFriends.note': 'Русские ловушки',
 
-    'foot.copy': '© 2026 Atlas Srpski · Контент под <a href="https://creativecommons.org/licenses/by/4.0/deed.ru" rel="license noopener" target="_blank">CC BY 4.0</a>',
+    'foot.copy': '© Atlas Srpski · <a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener" target="_blank">CC BY 4.0</a>',
     'foot.repo': 'Исходники',
     'foot.author': 'Илья Акимов',
 

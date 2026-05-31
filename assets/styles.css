@@ -57,7 +57,7 @@
   --hairline:       light-dark(var(--fx-150), var(--fx-850));
   --hairline-soft:  light-dark(var(--fx-100), var(--fx-900));
   --highlight:      light-dark(rgba(188,82,21,.09), rgba(218,112,44,.12));
-  --shadow:         light-dark(rgba(16,15,15,.08), rgba(0,0,0,.46));
+  --shadow:         light-dark(rgba(16,15,15,.08), rgba(16,15,15,.46));
 
   --tone-red:       light-dark(var(--fx-red-600), var(--fx-red-400));
   --tone-orange:    light-dark(var(--fx-orange-600), var(--fx-orange-400));
@@ -127,7 +127,13 @@ body {
 
 ::selection { background: var(--accent); color: var(--paper); }
 
-a { color: inherit; text-decoration: none; }
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: .2em;
+}
+.brand, .chart-card, .foot-icon { text-decoration: none; }
 button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; padding: 0; }
 
 img, svg { display: block; max-width: 100%; }
@@ -250,10 +256,11 @@ section { position: relative; }
   color: var(--ink-soft);
   transition: background .25s, color .25s, transform .25s;
 }
-.theme-btn svg { width: 18px; height: 18px; }
-.theme-btn .moon { display: none; }
-:root[data-theme="dark"] .theme-btn .sun { display: none; }
-:root[data-theme="dark"] .theme-btn .moon { display: block; }
+.theme-btn svg {
+  width: 18px; height: 18px;
+  transition: transform .35s ease;
+}
+:root[data-theme="dark"] .theme-btn svg { transform: rotate(180deg); }
 
 @media (max-width: 560px) {
   .nav-inner { gap: .75rem; }
@@ -342,13 +349,7 @@ section { position: relative; }
   overflow: hidden;
 }
 .chart-glyph[data-chart="verbs"]    { color: var(--tone-orange); }
-.chart-glyph[data-chart="aspect"],
-.chart-glyph[data-chart="pronouns"] { font-style: italic; font-weight: 400; }
-.chart-glyph[data-chart="cases"] {
-  font-style: italic;
-  font-weight: 400;
-  font-size: clamp(2.2rem, 1.4rem + 3vw, 3.6rem);
-}
+.chart-glyph b { color: var(--tone-orange); font-weight: inherit; }
 .chart-glyph[data-chart="pitch"] {
   font-size: clamp(2.4rem, 1.4rem + 4vw, 4.2rem);
   letter-spacing: .08em;
