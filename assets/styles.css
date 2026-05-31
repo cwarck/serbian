@@ -349,13 +349,7 @@ section { position: relative; }
   overflow: hidden;
 }
 .chart-glyph[data-chart="verbs"]    { color: var(--tone-orange); }
-.chart-glyph[data-chart="aspect"],
-.chart-glyph[data-chart="pronouns"] { font-style: italic; font-weight: 400; }
-.chart-glyph[data-chart="cases"] {
-  font-style: italic;
-  font-weight: 400;
-  font-size: clamp(2.2rem, 1.4rem + 3vw, 3.6rem);
-}
+.chart-glyph b { color: var(--tone-orange); font-weight: inherit; }
 .chart-glyph[data-chart="pitch"] {
   font-size: clamp(2.4rem, 1.4rem + 4vw, 4.2rem);
   letter-spacing: .08em;

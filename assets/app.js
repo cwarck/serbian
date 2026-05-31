@@ -143,9 +143,14 @@
   function applyScript(script) {
     const normalized = supportedScripts.includes(script) ? script : 'lat';
     document.documentElement.setAttribute('data-script', normalized);
+    const convert = normalized === 'cyr' ? toCyrillic : toLatin;
+    const convertHTML = (html) => String(html)
+      .split(/(<[^>]+>|&[^;\s]+;)/g)
+      .map(part => (part.startsWith('<') || part.startsWith('&')) ? part : convert(part))
+      .join('');
     document.querySelectorAll('[data-sr-script]').forEach((node) => {
       const source = node.getAttribute('data-sr-source') || node.innerHTML;
-      node.innerHTML = normalized === 'cyr' ? toCyrillic(source) : toLatin(source);
+      node.innerHTML = convertHTML(source);
     });
     document.querySelectorAll('[data-script-chip]').forEach((chip) => {
       const s = chip.getAttribute('data-script-chip');
