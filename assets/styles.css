@@ -57,7 +57,7 @@
   --hairline:       light-dark(var(--fx-150), var(--fx-850));
   --hairline-soft:  light-dark(var(--fx-100), var(--fx-900));
   --highlight:      light-dark(rgba(188,82,21,.09), rgba(218,112,44,.12));
-  --shadow:         light-dark(rgba(16,15,15,.08), rgba(0,0,0,.46));
+  --shadow:         light-dark(rgba(16,15,15,.08), rgba(16,15,15,.46));
 
   --tone-red:       light-dark(var(--fx-red-600), var(--fx-red-400));
   --tone-orange:    light-dark(var(--fx-orange-600), var(--fx-orange-400));
