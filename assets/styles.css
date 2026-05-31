@@ -250,10 +250,11 @@ section { position: relative; }
   color: var(--ink-soft);
   transition: background .25s, color .25s, transform .25s;
 }
-.theme-btn svg { width: 18px; height: 18px; }
-.theme-btn .moon { display: none; }
-:root[data-theme="dark"] .theme-btn .sun { display: none; }
-:root[data-theme="dark"] .theme-btn .moon { display: block; }
+.theme-btn svg {
+  width: 18px; height: 18px;
+  transition: transform .35s ease;
+}
+:root[data-theme="dark"] .theme-btn svg { transform: rotate(180deg); }
 
 @media (max-width: 560px) {
   .nav-inner { gap: .75rem; }
