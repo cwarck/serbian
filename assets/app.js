@@ -180,8 +180,6 @@
   };
 
   window.AtlasSrpski = Object.assign(window.AtlasSrpski || {}, {
-    currentLang: detectLang,
-    currentScript,
     sr,
     srHTML,
     srGrammarHTML,

@@ -3,7 +3,6 @@
 
 window.I18N = {
   en: {
-    'meta.lang': 'English',
     'nav.brand': 'Atlas Srpski',
     'nav.theme': 'Toggle theme',
 
@@ -37,7 +36,6 @@ window.I18N = {
     'alph.legend.unique': 'Unique to Serbian',
     'alph.legend.diff': 'Looks Latin, sounds different',
     'alph.tip.cta': 'how to say it',
-    'alph.tip.heading': 'How to say it',
     'alph.tip.close': 'Close',
 
     /* Verbs page */
@@ -190,27 +188,17 @@ window.I18N = {
     'pron.pl': 'Plural',
 
     /* Cases page */
-    'cases.back': 'Back to all charts',
-    'cases.title.line1': 'Seven',
-    'cases.title.em': 'cases.',
-    'cases.subtitle': 'Chart 02 · Padeži',
-    'cases.intro': 'In English, <em>the dog bit the man</em> and <em>the man bit the dog</em> mean different things because of word order. Serbian glues a tiny tag onto each noun so word order can dance — the tag tells you who did what. Those tags are the seven cases.',
-
     'cases.aku.label.alive': 'alive',
     'cases.aku.label.thing': 'thing',
 
-    'cases.cell.share.label': 'same as',
-    'cases.endings': 'Endings',
     'cases.examples': 'In the wild',
     'cases.preps': 'Prepositions',
     'cases.local.tooltip': 'Serbian name for this case',
-    'cases.notes': 'Worth knowing',
     'cases.gender.m': 'M',
     'cases.gender.f': 'F',
     'cases.gender.n': 'N',
     'cases.number.sg': 'Sg',
     'cases.number.pl': 'Pl',
-    'cases.same': 'same as',
 
 
     'cases.extra.title': 'Feminines without <i>-a</i>',
@@ -253,7 +241,6 @@ window.I18N = {
   },
 
   ru: {
-    'meta.lang': 'Русский',
     'nav.brand': 'Atlas Srpski',
     'nav.theme': 'Сменить тему',
 
@@ -287,7 +274,6 @@ window.I18N = {
     'alph.legend.unique': 'Только в сербском',
     'alph.legend.diff': 'Выглядит как латиница — звучит иначе',
     'alph.tip.cta': 'как произнести',
-    'alph.tip.heading': 'Как произнести',
     'alph.tip.close': 'Закрыть',
 
     /* Verbs */
@@ -440,27 +426,17 @@ window.I18N = {
     'pron.pl': 'Мн.',
 
     /* Cases */
-    'cases.back': 'Ко всем таблицам',
-    'cases.title.line1': 'Семь',
-    'cases.title.em': 'падежей.',
-    'cases.subtitle': 'Таблица 02 · Падежи',
-    'cases.intro': 'По-русски порядок слов гибкий — но окончания всё равно подсказывают, кто кого. По-сербски — то же самое: к каждому существительному «приклеивается» маленький ярлык, который говорит о его роли. Этих ярлыков семь — семь падежей.',
-
     'cases.aku.label.alive': 'живое',
     'cases.aku.label.thing': 'вещь',
 
-    'cases.cell.share.label': 'как у',
-    'cases.endings': 'Окончания',
     'cases.examples': 'В живой речи',
     'cases.preps': 'Предлоги',
     'cases.local.tooltip': 'Сербское название падежа',
-    'cases.notes': 'Стоит знать',
     'cases.gender.m': 'М',
     'cases.gender.f': 'Ж',
     'cases.gender.n': 'С',
     'cases.number.sg': 'Ед.',
     'cases.number.pl': 'Мн.',
-    'cases.same': 'как у',
 
 
 
