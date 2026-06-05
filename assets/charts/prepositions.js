@@ -49,7 +49,7 @@ function iconSVG(kind) {
 }
 
 function caseChip(use) {
-  return `<span class="prep-case" data-case="${use.case}">${t(CASE_KEYS[use.case])}</span>`;
+  return `<span class="prep-case" data-case="${use.case}">${PREP_CASE_ABBR[use.case] || t(CASE_KEYS[use.case])}</span>`;
 }
 
 function visualHTML(row) {

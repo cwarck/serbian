@@ -3419,7 +3419,7 @@ a.cast-cell:focus-visible {
 
   .prep-table-head {
     display: grid;
-    grid-template-columns: 6.5rem 8.5rem minmax(15rem, 1fr) minmax(20rem, 1.55fr);
+    grid-template-columns: 6.5rem 10rem minmax(15rem, 1fr) minmax(20rem, 1.55fr);
     background: var(--paper-deep);
     border-bottom: 1px solid var(--hairline);
   }
@@ -3441,7 +3441,7 @@ a.cast-cell:focus-visible {
   }
 
   .prep-row {
-    grid-template-columns: 6.5rem 8.5rem minmax(0, 1fr);
+    grid-template-columns: 6.5rem 10rem minmax(0, 1fr);
     gap: 0;
     padding: 0;
     border-bottom: 1px solid var(--hairline);

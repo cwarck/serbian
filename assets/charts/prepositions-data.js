@@ -6,6 +6,14 @@ const CASE_KEYS = {
   lok: 'case.7.name'
 };
 
+const PREP_CASE_ABBR = {
+  gen: 'GEN',
+  dat: 'DAT',
+  aku: 'AKU',
+  ins: 'INS',
+  lok: 'LOK'
+};
+
 const PREP_GROUPS = [
   {
     key: 'prep.group.place',
