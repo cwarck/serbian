@@ -34,16 +34,15 @@ The scale is the rulebook. Pick a role; the token decides the size.
 | `--fs-lead`    | Example sentences, data cells, lead paragraph |
 | `--fs-title`   | `h3`, panel/card title                        |
 | `--fs-head`    | `h2`, case name                               |
-| `--fs-hero`    | Home page hero only                           |
 
-`--track-label` (`.075em`) for ALL-CAPS labels. `--track-display` (`-.02em`) for headings. `--track-hero` (`-.035em`) for `--fs-hero` only.
+`--track-label` (`.075em`) for ALL-CAPS labels. `--track-display` (`-.02em`) for headings.
 
 **Rules:**
 
 - Every `font-size` resolves to a token. No ad-hoc `clamp()`, no bare rem values, no em-relative sizes on inline tags. Exceptions: decorative background glyphs.
-- One family, three weights: Source Serif 4 display (300), Source Serif 4 body (400, 500 for emphasis). Weight 200 is reserved for `--fs-hero` only. Data cells at `--fs-lead` use body weight (400), not display — display weight is reserved for `h1`–`h5` and oversized brand/letter glyphs. ALL-CAPS labels (`--fs-label`) use body weight 500 with `--track-label` tracking.
+- One family, three weights: Source Serif 4 display (300), Source Serif 4 body (400, 500 for emphasis). Data cells at `--fs-lead` use body weight (400), not display — display weight is reserved for `h1`–`h5` and oversized brand/letter glyphs. ALL-CAPS labels (`--fs-label`) use body weight 500 with `--track-label` tracking.
 - Source Serif 4 is variable on the `opsz` axis (8–60). `font-optical-sizing: auto` is enabled on `body`, so the browser maps `font-size` to the right optical cut automatically. Don't set `font-variation-settings: "opsz"` by hand — except `h1, h2`, which are pinned to `"opsz" 60` (Display cut) to recover editorial contrast at head sizes.
-- Three line-heights: `1` for single-line labels (bare value), `var(--lh-snug)` (1.3) for titles, `var(--lh-prose)` (1.55) for prose.
+- Three line-heights: `1` for single-line labels (bare value), `var(--lh-snug)` (1.3) for titles, `var(--lh-prose)` (1.55) for prose. Exception: `h1`–`h5` keep the tighter heading reset (`1.05`); decorative glyphs set their own.
 - Don't restate `font-family: var(--ff-display)` or `font-weight: 300` on `h1`–`h5` — the base reset already applies them.
 - Data cells get `font-feature-settings: "tnum"` (tabular numerals) when they contain digits.
 - If a place "needs" a size off the scale, the role is wrong, not the size.

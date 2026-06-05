@@ -51,18 +51,18 @@
   --ink:            light-dark(var(--fx-black), var(--fx-50));
   --ink-soft:       light-dark(var(--fx-700), var(--fx-100));
   --ink-muted:      light-dark(var(--fx-600), var(--fx-300));
-  --ink-faint:      light-dark(var(--fx-500), var(--fx-500));
+  --ink-faint:      light-dark(#74736E, var(--fx-500)); /* fx-500 #878580 = 3.59:1 on cream (sub-AA); #74736E = 4.62:1, still faintest tier below ink-muted */
   --accent:         light-dark(var(--fx-orange-600), var(--fx-orange-400));
-  --cool:           light-dark(var(--fx-cyan-600), var(--fx-cyan-400));
+  --cool:           light-dark(#238078, var(--fx-cyan-400)); /* AA as reading text: cyan-600 #24837B = 4.43:1, #238078 = 4.60:1 */
   --hairline:       light-dark(var(--fx-150), var(--fx-850));
   --hairline-soft:  light-dark(var(--fx-100), var(--fx-900));
   --shadow:         light-dark(rgba(16,15,15,.08), rgba(16,15,15,.46));
 
-  --tone-red:       light-dark(var(--fx-red-600), var(--fx-red-400));
+  --tone-red:       light-dark(var(--fx-red-600), #D25247); /* dark: red-400 #D14D41 = 4.42:1 as text; #D25247 = 4.61:1 */
   --tone-orange:    light-dark(var(--fx-orange-600), var(--fx-orange-400));
-  --tone-yellow:    light-dark(var(--fx-yellow-600), var(--fx-yellow-400));
-  --tone-green:     light-dark(var(--fx-green-600), var(--fx-green-400));
-  --tone-cyan:      light-dark(var(--fx-cyan-600), var(--fx-cyan-400));
+  --tone-yellow:    light-dark(#916E01, var(--fx-yellow-400)); /* light: yellow-600 #AD8301 = 3.39:1 as text; #916E01 = 4.60:1 */
+  --tone-green:     light-dark(#637C0B, var(--fx-green-400)); /* light: green-600 #66800B = 4.39:1 as text; #637C0B = 4.60:1 */
+  --tone-cyan:      light-dark(#238078, var(--fx-cyan-400)); /* light: cyan-600 #24837B = 4.43:1 as text; #238078 = 4.60:1 */
   --tone-blue:      light-dark(var(--fx-blue-600), var(--fx-blue-400));
   --tone-purple:    light-dark(var(--fx-purple-600), var(--fx-purple-400));
   --tone-magenta:   light-dark(var(--fx-magenta-600), var(--fx-magenta-400));
@@ -80,11 +80,9 @@
   --fs-lead:      clamp(1.28rem, 1.1rem + .48vw, 1.58rem);
   --fs-title:     clamp(1.5rem, 1.22rem + .75vw, 2.05rem);
   --fs-head:      clamp(2.1rem, 1.5rem + 1.7vw, 3.3rem);
-  --fs-hero:      clamp(3rem, 1rem + 9vw, 10rem);
 
   --track-label:    .075em;
   --track-display: -.02em;
-  --track-hero:    -.035em;
 
   --lh-snug:  1.3;
   --lh-prose: 1.55;
@@ -260,6 +258,19 @@ section { position: relative; }
 }
 :root[data-theme="dark"] .theme-btn svg { transform: rotate(180deg); }
 
+/* Keyboard focus — the house dashed-accent ring, applied to the primary
+   controls that previously fell back to the unstyled UA default. */
+.brand:focus-visible,
+.chip:focus-visible,
+.script-chip:focus-visible,
+.theme-btn:focus-visible,
+.chart-card:focus-visible,
+.case-strip-cell a:focus-visible,
+.foot a:focus-visible {
+  outline: 1px dashed var(--accent);
+  outline-offset: 2px;
+}
+
 @media (max-width: 560px) {
   .nav-inner { gap: .75rem; }
   .brand span[data-i18n="nav.brand"] { display: none; }
@@ -361,7 +372,7 @@ section { position: relative; }
 .chart-note {
   font-family: var(--ff-body);
   font-size: var(--fs-caption);
-  line-height: 1.45;
+  line-height: var(--lh-prose);
   color: var(--ink-soft);
   margin: 0;
   max-width: 30ch;
@@ -491,7 +502,7 @@ section { position: relative; }
   white-space: nowrap;
 }
 .letter .cyr { color: var(--ink); }
-.letter .sep { color: var(--ink-faint); font-size: .55em; padding-bottom: .3em; }
+.letter .sep { color: var(--ink-faint); font-size: var(--fs-caption); padding-bottom: .3em; }
 .letter .lat { color: var(--accent); }
 
 .letter .ipa-row {
@@ -521,7 +532,7 @@ section { position: relative; }
   align-items: baseline;
   gap: .35rem;
   flex-wrap: wrap;
-  line-height: 1.2;
+  line-height: var(--lh-snug);
 }
 .letter .example .word-cyr { color: var(--ink); }
 .letter .example .word-sep { color: var(--ink-faint); }
@@ -620,7 +631,7 @@ section { position: relative; }
   line-height: var(--lh-prose);
   color: var(--ink-soft);
 }
-.tip-pop-body strong { color: var(--ink); font-weight: 600; }
+.tip-pop-body strong { color: var(--ink); font-weight: 500; }
 .tip-pop-body em { color: var(--accent); font-style: normal; font-family: var(--ff-display); font-weight: 500; }
 .tip-pop-close {
   position: absolute;
@@ -766,7 +777,7 @@ section { position: relative; }
     font-weight: 300;
     font-size: var(--fs-caption);
     color: var(--ink-soft);
-    line-height: 1.1;
+    line-height: 1;
     margin-top: .25rem;
     max-width: 100%;
     overflow: hidden;
@@ -896,7 +907,7 @@ section { position: relative; }
   font-size: var(--fs-body);
   color: var(--ink);
   margin: 1.1rem 0 0;
-  line-height: 1.4;
+  line-height: var(--lh-prose);
   max-width: 32ch;
 }
 .case-cell-head .q {
@@ -905,7 +916,7 @@ section { position: relative; }
   color: var(--ink-soft);
   font-size: var(--fs-lead);
   margin: .9rem 0 0;
-  line-height: 1.45;
+  line-height: var(--lh-prose);
   max-width: 34ch;
 }
 .case-cell-head .q strong { font-style: normal; font-weight: 500; color: var(--tone, var(--accent)); }
@@ -1028,7 +1039,7 @@ section { position: relative; }
   .case-row:not(.case-row-head) .case-cell-head h3 {
     font-size: var(--fs-lead);
     letter-spacing: -.012em;
-    line-height: 1.05;
+    line-height: 1;
   }
   .case-row:not(.case-row-head) .case-cell-head h3 em { font-size: var(--fs-caption); margin-top: .25em; }
   .case-row:not(.case-row-head) .case-cell-head .case-tag { margin-bottom: .7rem; padding: .3rem .55rem; }
@@ -1151,7 +1162,7 @@ section { position: relative; }
   font-style: italic;
   font-weight: 400;
   letter-spacing: -.012em;
-  line-height: 1.25;
+  line-height: var(--lh-snug);
   margin: 0 0 .6rem;
 }
 .note-body {
@@ -1175,7 +1186,7 @@ section { position: relative; }
   font-family: var(--ff-display);
   font-style: italic;
   font-size: var(--fs-body);
-  line-height: 1.4;
+  line-height: var(--lh-snug);
 }
 .note-pairs .from { color: var(--ink-muted); }
 .note-pairs .arrow {
@@ -1189,7 +1200,7 @@ section { position: relative; }
 .note-pairs .lit,
 .wrinkle-list .lit {
   font-style: italic;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--tone, var(--accent));
   background: color-mix(in oklab, var(--tone, var(--accent)) 14%, transparent);
   padding: 0 .14em;
@@ -1218,7 +1229,7 @@ section { position: relative; }
   font-size: var(--fs-lead);
   font-weight: 400;
   color: var(--ink);
-  line-height: 1.35;
+  line-height: var(--lh-prose);
 }
 .ex .sr mark {
   background: color-mix(in oklab, var(--tone, var(--accent)) 14%, transparent);
@@ -1233,7 +1244,7 @@ section { position: relative; }
   font-weight: 500;
   color: var(--ink-muted);
   font-size: var(--fs-caption);
-  line-height: 1.45;
+  line-height: var(--lh-prose);
 }
 .ex .tr em {
   font-style: normal;
@@ -1352,14 +1363,14 @@ a.cast-cell:focus-visible {
   font-size: var(--fs-body);
   color: var(--ink);
   letter-spacing: -.005em;
-  line-height: 1.1;
+  line-height: 1;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 .cast-cell .lit {
   font-style: italic;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--tone, var(--accent));
   background: color-mix(in oklab, var(--tone, var(--accent)) 14%, transparent);
   padding: 0 .14em;
@@ -1430,7 +1441,7 @@ a.cast-cell:focus-visible {
 .extra-panel-title {
   font-weight: 400;
   letter-spacing: -.012em;
-  line-height: 1.2;
+  line-height: var(--lh-snug);
 }
 .extra-panel-title .lit { white-space: nowrap; }
 .extra-panel-sub {
@@ -1535,7 +1546,7 @@ a.cast-cell:focus-visible {
   font-style: italic;
   font-size: var(--fs-caption);
   color: var(--ink-muted);
-  line-height: 1.4;
+  line-height: var(--lh-prose);
   width: 100%;
 }
 
@@ -1550,13 +1561,13 @@ a.cast-cell:focus-visible {
 
   .extra-panel-title {
     font-size: var(--fs-lead);
-    line-height: 1.12;
+    line-height: var(--lh-snug);
     letter-spacing: -.005em;
   }
 
   .extra-panel-sub {
     margin-top: .5rem;
-    line-height: 1.2;
+    line-height: 1;
   }
 
   .i-decl tbody th.num,
