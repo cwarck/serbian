@@ -3221,6 +3221,12 @@ a.cast-cell:focus-visible {
 
 .prep-layout {
   display: grid;
+  align-items: start;
+  gap: clamp(1.6rem, 3vw, 2.6rem);
+}
+
+.prep-column {
+  display: grid;
   gap: clamp(1.6rem, 3vw, 2.6rem);
 }
 
@@ -3508,6 +3514,32 @@ a.cast-cell:focus-visible {
 
   .prep-visual-pack.is-split .prep-icon {
     width: 4.1rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .prep-layout {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .prep-table-head {
+    grid-template-columns: 5.5rem 10rem minmax(10rem, .9fr) minmax(14rem, 1.25fr);
+  }
+
+  .prep-row {
+    grid-template-columns: 5.5rem 10rem minmax(0, 1fr);
+  }
+
+  .prep-use {
+    grid-template-columns: minmax(10rem, .9fr) minmax(14rem, 1.25fr);
+  }
+
+  .prep-icon {
+    width: 4.6rem;
+  }
+
+  .prep-visual-pack.is-split .prep-icon {
+    width: 3.8rem;
   }
 }
 

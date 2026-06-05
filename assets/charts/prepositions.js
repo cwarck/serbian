@@ -82,10 +82,10 @@ function renderUse(use) {
   `;
 }
 
-function renderPrepChart() {
-  const root = document.getElementById('prepChart');
-  if (!root) return;
-  root.innerHTML = PREP_GROUPS.map(group => `
+const PREP_WIDE_QUERY = '(min-width: 1440px)';
+
+function renderGroup(group) {
+  return `
     <section class="prep-group">
       <header class="prep-group-head">
         <h3>${t(group.key)}</h3>
@@ -106,9 +106,26 @@ function renderPrepChart() {
         `).join('')}
       </div>
     </section>
+  `;
+}
+
+function renderPrepChart() {
+  const root = document.getElementById('prepChart');
+  if (!root) return;
+  const groups = PREP_GROUPS.map(renderGroup);
+  const isWide = window.matchMedia(PREP_WIDE_QUERY).matches;
+  if (!isWide) {
+    root.innerHTML = groups.join('');
+    return;
+  }
+  root.innerHTML = [0, 1].map(column => `
+    <div class="prep-column">
+      ${groups.filter((_, index) => index % 2 === column).join('')}
+    </div>
   `).join('');
 }
 
 document.addEventListener('langchange', renderPrepChart);
 document.addEventListener('scriptchange', renderPrepChart);
+window.matchMedia(PREP_WIDE_QUERY).addEventListener('change', renderPrepChart);
 renderPrepChart();
