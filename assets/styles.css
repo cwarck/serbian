@@ -67,11 +67,7 @@
   --tone-cyan:      light-dark(#238078, var(--fx-cyan-400)); /* light: cyan-600 #24837B = 4.43:1 as text; #238078 = 4.60:1 */
   --tone-blue:      light-dark(var(--fx-blue-600), var(--fx-blue-400));
   --tone-purple:    light-dark(var(--fx-purple-600), var(--fx-purple-400));
-  --tone-magenta:   light-dark(var(--fx-magenta-600), var(--fx-magenta-400));
-
-  --gender-m:       var(--tone-blue);
-  --gender-f:       var(--tone-magenta);
-  --gender-n:     var(--ink);
+  --tone-magenta:   light-dark(var(--fx-magenta-600), var(--fx-magenta-400)); /* unassigned — reserve for a future cross-chart axis */
 
   /* Two voices: serif carries the language (Serbian specimens, headings),
      sans carries the apparatus (labels, captions, UI, prose around the data). */
@@ -677,10 +673,9 @@ section { position: relative; }
    baseline at 0 specificity so even un-qualified case rules trivially win. */
 :where([data-tone]) { --tone: var(--ink-soft); }
 
-/* Per-case tone colors. One hue per case; no overlap with gender hues
-   (M = blue, F = magenta). NOM is unmarked — the dictionary form — so it
-   takes an ink-tone rather than an accent, distinguishing it visually
-   from the inflected cases. */
+/* Per-case tone colors. One hue per case. NOM is unmarked — the
+   dictionary form — so it takes an ink-tone rather than an accent,
+   distinguishing it visually from the inflected cases. */
 [data-tone="nom"] { --tone: var(--ink-soft); }
 [data-tone="gen"] { --tone: var(--tone-cyan); }
 [data-tone="dat"] { --tone: var(--tone-yellow); }
@@ -694,14 +689,10 @@ section { position: relative; }
 .pron-table thead [data-tone] { color: var(--tone); }
 .pron-table thead .pron-slash { color: var(--ink-faint); margin: 0 .15em; }
 
-/* Gender-toned labels in pronoun gender header rows and the numbers
-   ordinals table header. M = blue, F = magenta, N = ink. */
-.pron-mini-head [data-gender="m"],
-.num-table-head [data-gender="m"] { color: var(--gender-m); }
-.pron-mini-head [data-gender="f"],
-.num-table-head [data-gender="f"] { color: var(--gender-f); }
-.pron-mini-head [data-gender="n"],
-.num-table-head [data-gender="n"] { color: var(--gender-n); }
+/* Gender axis labels carry no hue — position + label carry the axis.
+   Full ink sets them off from the muted apparatus labels around them. */
+.pron-mini-head [data-gender],
+.num-table-head [data-gender] { color: var(--ink); }
 
 /* -----------------------------------------------------------
    Case strip — colour-coded sticky nav.
@@ -946,9 +937,7 @@ section { position: relative; }
   color: var(--ink-faint);
   line-height: 1;
 }
-.case-cell-end[data-gender="m"] .cell-axis { color: var(--gender-m); }
-.case-cell-end[data-gender="f"] .cell-axis { color: var(--gender-f); }
-.case-cell-end[data-gender="n"] .cell-axis { color: var(--gender-n); }
+.case-cell-end[data-gender] .cell-axis { color: var(--ink); }
 
 .case-cell-ex .cell-axis,
 .case-cell-preps .cell-axis {
@@ -961,13 +950,9 @@ section { position: relative; }
 .case-cell-ex .examples,
 .case-cell-preps .prep-list { max-width: 60ch; }
 
-/* Gender accent on header row column labels (xlarge only) */
-[data-gender="m"].cast-gender,
-[data-gender="m"].cast-gender-head { color: var(--gender-m); }
-[data-gender="f"].cast-gender,
-[data-gender="f"].cast-gender-head { color: var(--gender-f); }
-[data-gender="n"].cast-gender,
-[data-gender="n"].cast-gender-head { color: var(--gender-n); }
+/* Gender row/column labels in the case tables — full ink, no hue */
+[data-gender].cast-gender,
+[data-gender].cast-gender-head { color: var(--ink); }
 
 /* -----------------------------------------------------------
    Xlarge — render every case as one row of a master 9-col grid.
@@ -1027,9 +1012,7 @@ section { position: relative; }
     line-height: 1;
     padding: .9rem 1rem;
   }
-  .case-row-head [data-gender="m"] { color: var(--gender-m); }
-  .case-row-head [data-gender="f"] { color: var(--gender-f); }
-  .case-row-head [data-gender="n"] { color: var(--gender-n); }
+  .case-row-head [data-gender] { color: var(--ink); }
 
   /* Empty prep cells must occupy the column so the grid stays aligned */
   .case-cell-preps.is-empty {

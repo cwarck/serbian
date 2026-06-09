@@ -291,13 +291,10 @@ function validateTones() {
     if (!color) continue;
     expect(!usedColors.has(color), 'tones', `${tone} duplicates ${usedColors.get(color)} color ${color}`);
     usedColors.set(color, tone);
-    expect(color !== 'var(--tone-blue)', 'tones', `${tone} collides with masculine blue`);
-    expect(color !== 'var(--tone-magenta)', 'tones', `${tone} collides with feminine magenta`);
   }
 
-  expect(css.includes('--gender-m:       var(--tone-blue);'), 'tones', 'masculine must use blue');
-  expect(css.includes('--gender-f:       var(--tone-magenta);'), 'tones', 'feminine must use magenta');
-  expect(css.includes('--gender-n:     var(--ink);'), 'tones', 'neuter must use ink');
+  expect(!css.includes('--gender-'), 'tones', 'genders carry no hue — ink typography only');
+  expect(!/\[data-gender="[mnf]"\][^{]*\{[^}]*color:/.test(css), 'tones', 'gender labels must not be colored per-gender');
   expect(/\[data-tone="im"\][\s\S]*\[data-tone="irr"\]\s*\{\s*--tone:\s*var\(--tone-orange\);/.test(css), 'tones', 'present verb family must share orange');
 }
 
