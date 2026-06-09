@@ -52,35 +52,35 @@ The scale is the rulebook. Pick a role; the token decides the size.
 
 ## Colors
 
-Flexoki accents, one hue per grammatical meaning. The full palette and semantic aliases live in `assets/styles.css` `:root` (`--fx-*` scale → `--tone-*` semantic).
+Flexoki accents, one hue per meaning. Orange is the brand's marker ink and carries zero grammatical meaning; the six inflected cases each own one of the remaining accents. The full palette and semantic aliases live in `assets/styles.css` `:root` (`--fx-*` scale → `--tone-*` semantic).
 
 **Semantic map** (site-wide, single meaning per hue):
 
-| Hue       | Meaning                                                                                  |
-| --------- | ---------------------------------------------------------------------------------------- |
-| red       | VOK                                                                                      |
-| orange    | INS — also brand mark, paradigm-letter highlights, verb present family ("active default") |
-| yellow    | DAT                                                                                      |
-| green     | LOK                                                                                      |
-| cyan      | GEN                                                                                      |
-| blue      | M (masculine)                                                                            |
-| purple    | AKU                                                                                      |
-| magenta   | F (feminine)                                                                             |
-| ink-tones | NOM, N (neuter), body text, alphabet stripes, non-grammatical categories                 |
+| Hue       | Meaning                                                                                     |
+| --------- | ------------------------------------------------------------------------------------------- |
+| orange    | brand/marker ink — brand mark, `::selection`, focus rings, hovers, index highlights, paradigm-letter highlights, verb present family. Never a grammatical category |
+| red       | VOK                                                                                         |
+| yellow    | DAT                                                                                         |
+| green     | LOK                                                                                         |
+| cyan      | GEN                                                                                         |
+| blue      | INS                                                                                         |
+| purple    | AKU                                                                                         |
+| magenta   | unassigned — reserved for a future cross-chart axis                                         |
+| ink-tones | NOM, genders (M/N/F), body text, alphabet stripes, non-grammatical categories               |
 
 **Mechanisms:**
 
-- **Case tone.** Set `data-tone="nom|gen|dat|aku|vok|ins|lok"` on the element. The `[data-tone]` block in `styles.css` resolves `--tone` to the right Flexoki accent; descendant elements pull through `color: var(--tone, var(--accent))`. A `:where([data-tone])` baseline maps any other tone value to `--ink-soft`, so legacy chart-internal categories quietly fall to neutral.
+- **Case tone.** Set `data-tone="nom|gen|dat|aku|vok|ins|lok"` on the element. The `[data-tone]` block in `styles.css` resolves `--tone` to the right Flexoki accent; descendant elements pull through `color: var(--tone, var(--accent))`. A `:where([data-tone])` baseline maps any other tone value to `--ink-soft`, so legacy chart-internal categories quietly fall to neutral. The `var(--accent)` fallback paints tone-less elements brand orange by design — that is the marker ink, not a case.
 - **Combined case labels** (e.g., "Acc / Gen" in pronouns). Split the label on `/` and wrap each half in its own `data-tone` span. See `colHeader()` in `assets/charts/pronouns.js`.
-- **Gender tone.** Set `data-gender="m|n|f"` on the labelled element. Scoped CSS in `.pron-mini-head` and `.num-table-head` picks up `--gender-m/n/f`.
-- **Verb present forms.** All four present-tense conjugation buckets plus irregulars share orange via `[data-tone]` values `im|am|em|jem|irr`. Past and future fall to the ink-soft baseline.
+- **Gender labels.** Set `data-gender="m|n|f"` on the labelled element. Genders carry no hue — scoped CSS renders the labels in full ink (`--ink`), one step above the muted apparatus labels around them. Position + label carry the axis.
+- **Verb present forms.** All four present-tense conjugation buckets plus irregulars share the brand orange via `[data-tone]` values `im|am|em|jem|irr` — marker ink ("here's the live paradigm"), not a grammatical hue. Past and future fall to the ink-soft baseline.
 
 **Rules:**
 
 - NOM is unmarked — it takes an ink-tone, not an accent. NOM is the dictionary form; the other six cases inflect from it.
-- A case hue must not collide with M (blue) or F (magenta). The eight Flexoki accents partition cleanly: 6 inflected cases + 2 genders.
-- One hue, one meaning. If a new chart needs a categorical color, check first whether the category genuinely is a case or gender. If it isn't, prefer ink-tones or typographic differentiation (line style, weight, position) over a fresh hue.
-- Pronouns, numbers, and aspect charts carry no per-category color. Only the cross-chart axes (case, gender) get hues; chart-internal categories use ink.
+- Orange is brand-only. No grammatical category may claim it — a case mapped to `--tone-orange` would read as chrome, and chrome would read as grammar.
+- One hue, one meaning. If a new chart needs a categorical color, check first whether the category genuinely is a case. If it isn't, prefer ink-tones or typographic differentiation (line style, weight, position) over a fresh hue. Magenta stays in reserve — don't spend it casually.
+- Pronouns, numbers, and aspect charts carry no per-category color. Only the case axis gets hues; genders and chart-internal categories use ink.
 - Alphabet uses line-style differentiation (solid vs dashed ink stripe), not color. The "unique to Serbian" and "looks Latin, sounds different" categories sit outside the grammatical color system.
 
 ## Development
