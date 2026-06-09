@@ -302,6 +302,14 @@ function validateTones() {
 
   expect(!css.includes('--gender-'), 'tones', 'genders carry no hue — ink typography only');
   expect(!/\[data-gender="[mnf]"\][^{]*\{[^}]*color:/.test(css), 'tones', 'gender labels must not be colored per-gender');
+
+  // Case hues may only be spent through the data-tone / data-case maps — any
+  // other selector using one is a chart-internal category wearing grammar
+  const caseHue = /var\(--tone-(red|yellow|green|cyan|blue|purple|magenta)\)/;
+  for (const line of css.split('\n')) {
+    if (!caseHue.test(line)) continue;
+    expect(/\[data-(tone|case)=/.test(line), 'tones', `case hue outside data-tone/data-case maps: ${line.trim()}`);
+  }
   expect(/\[data-tone="im"\][\s\S]*\[data-tone="irr"\]\s*\{\s*--tone:\s*var\(--tone-orange\);/.test(css), 'tones', 'present verb family must share orange');
 }
 

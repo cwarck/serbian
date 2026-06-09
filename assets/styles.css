@@ -55,7 +55,6 @@
   --ink-muted:      light-dark(var(--fx-600), var(--fx-300));
   --ink-faint:      light-dark(#74736E, var(--fx-500)); /* fx-500 #878580 = 3.59:1 on cream (sub-AA); #74736E = 4.62:1, still faintest tier below ink-muted */
   --accent:         light-dark(var(--fx-orange-600), var(--fx-orange-400));
-  --cool:           light-dark(#238078, var(--fx-cyan-400)); /* AA as reading text: cyan-600 #24837B = 4.43:1, #238078 = 4.60:1 */
   --hairline:       light-dark(var(--fx-150), var(--fx-850));
   --hairline-soft:  light-dark(var(--fx-100), var(--fx-900));
   --shadow:         light-dark(rgba(16,15,15,.08), rgba(16,15,15,.46));
@@ -1709,9 +1708,9 @@ a.cast-cell:focus-visible {
 .pron-kw-row > span:not(:first-child) {
   color: var(--tone, var(--accent));
 }
-.pron-short {
-  color: var(--cool);
-}
+/* Short (clitic) forms step down one ink tone — position after the comma
+   plus the legend carry the long/short axis; no hue (cyan would read GEN). */
+.pron-short,
 .pron-comma,
 .pron-dash {
   color: var(--ink-muted);
