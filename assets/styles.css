@@ -673,15 +673,16 @@ section { position: relative; }
    baseline at 0 specificity so even un-qualified case rules trivially win. */
 :where([data-tone]) { --tone: var(--ink-soft); }
 
-/* Per-case tone colors. One hue per case. NOM is unmarked — the
-   dictionary form — so it takes an ink-tone rather than an accent,
-   distinguishing it visually from the inflected cases. */
+/* Per-case tone colors. One hue per case; orange is brand/marker ink and
+   never a case. NOM is unmarked — the dictionary form — so it takes an
+   ink-tone rather than an accent, distinguishing it visually from the
+   inflected cases. */
 [data-tone="nom"] { --tone: var(--ink-soft); }
 [data-tone="gen"] { --tone: var(--tone-cyan); }
 [data-tone="dat"] { --tone: var(--tone-yellow); }
 [data-tone="aku"] { --tone: var(--tone-purple); }
 [data-tone="vok"] { --tone: var(--tone-red); }
-[data-tone="ins"] { --tone: var(--tone-orange); }
+[data-tone="ins"] { --tone: var(--tone-blue); }
 [data-tone="lok"] { --tone: var(--tone-green); }
 
 /* Case-toned spans inside the personal-pronouns column header
@@ -1886,7 +1887,7 @@ a.cast-cell:focus-visible {
 }
 
 /* Present forms (all four conjugation buckets + irregulars) share the
-   "active default" orange — same family as INS and the brand. Past and
+   brand marker orange — chrome ink, not a grammatical hue. Past and
    future fall through to the ink-soft baseline. */
 [data-tone="im"],
 [data-tone="am"],

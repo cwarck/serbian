@@ -276,7 +276,7 @@ function validateTones() {
     dat: 'var(--tone-yellow)',
     aku: 'var(--tone-purple)',
     vok: 'var(--tone-red)',
-    ins: 'var(--tone-orange)',
+    ins: 'var(--tone-blue)',
     lok: 'var(--tone-green)',
   };
 
@@ -291,6 +291,7 @@ function validateTones() {
     if (!color) continue;
     expect(!usedColors.has(color), 'tones', `${tone} duplicates ${usedColors.get(color)} color ${color}`);
     usedColors.set(color, tone);
+    expect(color !== 'var(--tone-orange)', 'tones', `${tone} claims brand orange`);
   }
 
   expect(!css.includes('--gender-'), 'tones', 'genders carry no hue — ink typography only');
