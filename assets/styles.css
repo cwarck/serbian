@@ -1791,7 +1791,6 @@ a.cast-cell:focus-visible {
 }
 .pron-gender-row span {
   min-width: 0;
-  overflow-wrap: anywhere;
 }
 
 .pron-demo-group,
@@ -1814,7 +1813,6 @@ a.cast-cell:focus-visible {
 .pron-matrix-row:last-child { border-bottom: 0; }
 .pron-form {
   min-width: 0;
-  overflow-wrap: anywhere;
 }
 
 .pron-kw-table {
@@ -1994,7 +1992,6 @@ a.cast-cell:focus-visible {
 }
 .verb-pron {
   color: var(--ink-faint);
-  overflow-wrap: anywhere;
 }
 .verb-form {
   font-family: var(--ff-display);
@@ -2246,7 +2243,6 @@ a.cast-cell:focus-visible {
   font-size: var(--fs-lead);
   line-height: var(--lh-snug);
   color: var(--ink);
-  overflow-wrap: anywhere;
 }
 
 .num-word,
@@ -2446,6 +2442,12 @@ a.cast-cell:focus-visible {
     border-right: 0;
   }
 
+  /* Quarter-width panels: 10-char words ("sedamdeset") must fit a half-panel
+     cell without breaking mid-word, so cardinals drop to body size here. */
+  .num-cardinals .num-word {
+    font-size: var(--fs-body);
+  }
+
   .num-builds,
   .num-nouns,
   .num-ordinals {
@@ -2630,7 +2632,6 @@ a.cast-cell:focus-visible {
   flex-wrap: wrap;
   gap: .45rem;
   min-width: 0;
-  overflow-wrap: anywhere;
 }
 
 .aspect-arrow {
@@ -3348,7 +3349,6 @@ a.cast-cell:focus-visible {
   font-weight: 300;
   line-height: 1;
   color: var(--tone, var(--accent));
-  overflow-wrap: anywhere;
 }
 
 .prep-uses {
@@ -3628,7 +3628,6 @@ a.cast-cell:focus-visible {
   line-height: 1;
   letter-spacing: var(--track-display);
   color: var(--accent);
-  overflow-wrap: anywhere;
 }
 
 .false-cell {
