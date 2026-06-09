@@ -40,7 +40,10 @@ The scale is the rulebook. Pick a role; the token decides the size.
 **Rules:**
 
 - Every `font-size` resolves to a token. No ad-hoc `clamp()`, no bare rem values, no em-relative sizes on inline tags. Exceptions: decorative background glyphs.
-- One family, three weights: Source Serif 4 display (300), Source Serif 4 body (400, 500 for emphasis). Data cells at `--fs-lead` use body weight (400), not display — display weight is reserved for `h1`–`h5` and oversized brand/letter glyphs. ALL-CAPS labels (`--fs-label`) use body weight 500 with `--track-label` tracking.
+- Two families, two voices. Source Serif 4 (`--ff-display`) carries the language: Serbian specimens (data cells, example sentences, endings, declined forms), `h1`–`h5`, oversized brand/letter glyphs. Source Sans 3 (`--ff-body`) carries the apparatus: ALL-CAPS labels, captions, translations, glosses, prose, UI controls.
+- Weights: serif 300 only for `h1`–`h5` and oversized glyphs; Serbian data cells use serif 400 (500 for emphasis). Sans apparatus is 400 (500 for ALL-CAPS labels and emphasis). ALL-CAPS labels (`--fs-label`) use sans 500 with `--track-label` tracking.
+- `<i>` marks inline Serbian tokens in foreign prose (the script-converter hook); base CSS renders them in the serif voice automatically. Any new Serbian-bearing selector must pin `font-family: var(--ff-display)` — specimens must never fall to the sans default.
+- Both families must keep Serbian Cyrillic `locl` support — `font-language-override: "SRB"` on `body` renders Serbian italic alternates (п → ū-form, т → ш̄-form). Source Serif 4 and Source Sans 3 pass; test any replacement face before swapping.
 - Source Serif 4 is variable on the `opsz` axis (8–60). `font-optical-sizing: auto` is enabled on `body`, so the browser maps `font-size` to the right optical cut automatically. Don't set `font-variation-settings: "opsz"` by hand — except `h1, h2`, which are pinned to `"opsz" 60` (Display cut) to recover editorial contrast at head sizes.
 - Three line-heights: `1` for single-line labels (bare value), `var(--lh-snug)` (1.3) for titles, `var(--lh-prose)` (1.55) for prose. Exception: `h1`–`h5` keep the tighter heading reset (`1.05`); decorative glyphs set their own.
 - Don't restate `font-family: var(--ff-display)` or `font-weight: 300` on `h1`–`h5` — the base reset already applies them.

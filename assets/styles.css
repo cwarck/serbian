@@ -1,9 +1,11 @@
 /* ============================================================
    Atlas Srpski design system
-   Flexoki paper/ink palette, Source Serif, mobile-first charts.
+   Flexoki paper/ink palette, mobile-first charts.
+   Source Serif 4 = specimen voice (Serbian, headings),
+   Source Sans 3 = apparatus voice (labels, captions, UI).
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap');
 
 /* -----------------------------------------------------------
    Tokens
@@ -71,8 +73,10 @@
   --gender-f:       var(--tone-magenta);
   --gender-n:     var(--ink);
 
+  /* Two voices: serif carries the language (Serbian specimens, headings),
+     sans carries the apparatus (labels, captions, UI, prose around the data). */
   --ff-display:   'Source Serif 4', Georgia, serif;
-  --ff-body:      'Source Serif 4', Georgia, serif;
+  --ff-body:      'Source Sans 3', system-ui, sans-serif;
 
   --fs-label:     clamp(.82rem, .78rem + .14vw, .94rem);
   --fs-caption:   clamp(.96rem, .9rem + .2vw, 1.12rem);
@@ -152,8 +156,9 @@ h4     { font-size: var(--fs-lead); }
 p { margin: 0 0 1.15em; }
 
 /* <i> marks inline Serbian tokens in foreign-language prose so the script
-   converter can find them. It's a structural marker, not visual emphasis. */
-i { font-style: inherit; }
+   converter can find them. It's a structural marker, not visual emphasis —
+   but the token itself is a specimen, so it renders in the serif voice. */
+i { font-style: inherit; font-family: var(--ff-display); }
 
 /* -----------------------------------------------------------
    Layout primitives
@@ -526,6 +531,7 @@ section { position: relative; }
   line-height: var(--lh-snug);
 }
 .letter .example .word {
+  font-family: var(--ff-display);
   font-size: var(--fs-body);
   font-weight: 500;
   display: inline-flex;
@@ -912,7 +918,7 @@ section { position: relative; }
   max-width: 32ch;
 }
 .case-cell-head .q {
-  font-family: var(--ff-body);
+  font-family: var(--ff-display);
   font-style: italic;
   color: var(--ink-soft);
   font-size: var(--fs-lead);
@@ -2246,7 +2252,8 @@ a.cast-cell:focus-visible {
 }
 
 .num-word,
-.num-built {
+.num-built,
+.num-examples span {
   font-family: var(--ff-display);
   font-weight: 400;
   letter-spacing: 0;
@@ -2591,6 +2598,7 @@ a.cast-cell:focus-visible {
   color: var(--ink-muted);
 }
 
+.aspect-example .sr,
 .aspect-form,
 .aspect-prefix-head h4,
 .aspect-prefix li {
@@ -3345,6 +3353,7 @@ a.cast-cell:focus-visible {
 
 .prep-name {
   align-self: center;
+  font-family: var(--ff-display);
   font-size: var(--fs-head);
   font-weight: 300;
   line-height: 1;
@@ -3412,6 +3421,7 @@ a.cast-cell:focus-visible {
 }
 
 .prep-example .sr {
+  font-family: var(--ff-display);
   font-size: var(--fs-lead);
   line-height: var(--lh-snug);
   color: var(--ink);
@@ -3676,6 +3686,7 @@ a.cast-cell:focus-visible {
 }
 
 .false-example .sr {
+  font-family: var(--ff-display);
   font-size: var(--fs-lead);
   line-height: var(--lh-snug);
   color: var(--ink);
