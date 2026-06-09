@@ -748,6 +748,7 @@ section { position: relative; }
   padding: .65rem .2rem .65rem;
   min-height: 52px;
   min-width: 0;
+  text-decoration: none;
 }
 .case-strip-cell.is-current {
   background: color-mix(in oklab, var(--tone, var(--accent)) 14%, transparent);
