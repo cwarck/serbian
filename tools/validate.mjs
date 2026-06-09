@@ -294,6 +294,12 @@ function validateTones() {
     expect(color !== 'var(--tone-orange)', 'tones', `${tone} claims brand orange`);
   }
 
+  // Parallel case maps (e.g. prepositions data-case) must agree with the canonical tones
+  for (const match of css.matchAll(/\[data-case="([^"]+)"\]\s*\{\s*--[\w-]+:\s*([^;]+);/g)) {
+    const [, caseKey, value] = match;
+    expect(expected[caseKey] === value.trim(), 'tones', `data-case ${caseKey} must map to ${expected[caseKey]}`);
+  }
+
   expect(!css.includes('--gender-'), 'tones', 'genders carry no hue — ink typography only');
   expect(!/\[data-gender="[mnf]"\][^{]*\{[^}]*color:/.test(css), 'tones', 'gender labels must not be colored per-gender');
   expect(/\[data-tone="im"\][\s\S]*\[data-tone="irr"\]\s*\{\s*--tone:\s*var\(--tone-orange\);/.test(css), 'tones', 'present verb family must share orange');
