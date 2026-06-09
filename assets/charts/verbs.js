@@ -68,7 +68,7 @@ function renderRegularGroup(group) {
         </ul>
       </section>
       <section class="verb-block verb-block-example">
-        <h4>${AtlasSrpski.sr(group.example.infinitive)}</h4>
+        <h4 class="sr-head">${AtlasSrpski.sr(group.example.infinitive)}</h4>
         <div class="verb-example-grid">
           ${pronounRows(group.example.forms, 'verb-example-row')}
         </div>
@@ -81,7 +81,7 @@ function renderIrregulars() {
   const minis = IRREGULARS.map((item, idx) => `
     <section class="verb-mini">
       <header class="verb-mini-head">
-        <h4>${AtlasSrpski.sr(item.title)}</h4>
+        <h4 class="sr-head">${AtlasSrpski.sr(item.title)}</h4>
         ${item.full ? `<button class="tip-chip" type="button" aria-haspopup="dialog" aria-expanded="false" aria-label="${t('verbs.full.forms')}" data-verb-tip="${idx}">?</button>` : ''}
       </header>
       <div class="verb-example-grid">
@@ -160,7 +160,7 @@ function renderFuture() {
         <p class="verb-list">${FUTURE.exceptions.map(item => AtlasSrpski.sr(item)).join(', ')}</p>
       </section>
       <section class="verb-block verb-reflexive">
-        <h4>${AtlasSrpski.sr('se')}</h4>
+        <h4 class="sr-head">${AtlasSrpski.sr('se')}</h4>
         <p class="verb-note">${AtlasSrpski.srGrammarHTML(t('verbs.se.rule'))}</p>
         <div class="verb-examples">${FUTURE.reflexive.map(sr => `<div class="verb-example"><span class="sr">${AtlasSrpski.sr(sr)}</span></div>`).join('')}</div>
       </section>

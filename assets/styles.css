@@ -1953,19 +1953,23 @@ a.cast-cell:focus-visible {
 }
 .verb-kicker,
 .verb-col h4,
-.verb-sub,
-.verb-pron {
+.verb-sub {
   font-family: var(--ff-body);
   font-size: var(--fs-label);
   font-weight: 500;
   letter-spacing: var(--track-label);
   line-height: 1;
   text-transform: uppercase;
-}
-.verb-kicker,
-.verb-col h4,
-.verb-sub {
   color: var(--ink-muted);
+}
+/* h4s that hold a Serbian lemma (raditi, biti, se) speak in the specimen
+   voice, not the caps-label apparatus voice. */
+.verb-col h4.sr-head {
+  font-family: var(--ff-display);
+  font-size: var(--fs-body);
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
 }
 .verb-col-head h3 {
   font-size: var(--fs-title);
@@ -1996,7 +2000,12 @@ a.cast-cell:focus-visible {
 .verb-participle-grid > div:last-child {
   border-bottom: 0;
 }
+/* Serbian pronoun labels (ja, ti, on/ona/ono) — specimen voice, lowercase. */
 .verb-pron {
+  font-family: var(--ff-display);
+  font-style: italic;
+  font-size: var(--fs-caption);
+  line-height: var(--lh-snug);
   color: var(--ink-faint);
 }
 .verb-form {
@@ -2026,12 +2035,11 @@ a.cast-cell:focus-visible {
   min-height: 2.2rem;
   padding: .42rem .62rem;
   border: 1px solid var(--hairline-soft);
-  font-family: var(--ff-body);
-  font-size: var(--fs-label);
-  font-weight: 500;
-  letter-spacing: var(--track-label);
+  font-family: var(--ff-display);
+  font-size: var(--fs-body);
+  font-weight: 400;
+  letter-spacing: 0;
   line-height: 1;
-  text-transform: uppercase;
   color: var(--tone, var(--accent));
   background: color-mix(in oklab, var(--tone, var(--accent)) 8%, transparent);
 }
@@ -2074,6 +2082,10 @@ a.cast-cell:focus-visible {
 .verb-note,
 .verb-negative p {
   font-size: var(--fs-body);
+}
+/* Negative paradigm (nisam, nisi…) is Serbian data, not prose. */
+.verb-negative p {
+  font-family: var(--ff-display);
 }
 .verb-formula {
   color: var(--tone, var(--accent));
@@ -3673,6 +3685,11 @@ a.cast-cell:focus-visible {
   padding: .34rem .48rem .32rem;
 }
 
+/* The Russian look-alike word is language-as-object — specimen voice.
+   Its gloss (<small>) stays in the sans apparatus voice. */
+.false-trap > span:not(.false-not) {
+  font-family: var(--ff-display);
+}
 .false-trap small {
   flex-basis: 100%;
   font-size: var(--fs-caption);

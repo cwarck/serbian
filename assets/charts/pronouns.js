@@ -55,7 +55,7 @@ function renderPersonal() {
     </table>
     <div class="pron-rule-row">
       <p><strong>${t('pron.long.short')}</strong> ${t('pron.long.short.rule')}</p>
-      <p><strong>${AtlasSrpski.sr('svoj')}</strong> ${t('pron.svoj.rule')}</p>
+      <p><strong><i>${AtlasSrpski.sr('svoj')}</i></strong> ${t('pron.svoj.rule')}</p>
     </div>
   `;
 }
@@ -103,8 +103,8 @@ function renderDemonstratives() {
     </section>
   `).join('') + `
     <div class="pron-rule-row">
-      <p><strong>${AtlasSrpski.sr('Ovo je...')}</strong> ${t('pron.demo.predicate')}</p>
-      <p><strong>${AtlasSrpski.sr('Ovaj pas')}</strong> ${t('pron.demo.noun.rule')}</p>
+      <p><strong><i>${AtlasSrpski.sr('Ovo je...')}</i></strong> ${t('pron.demo.predicate')}</p>
+      <p><strong><i>${AtlasSrpski.sr('Ovaj pas')}</i></strong> ${t('pron.demo.noun.rule')}</p>
     </div>
   `;
 }
