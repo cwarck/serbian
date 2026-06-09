@@ -1726,6 +1726,15 @@ a.cast-cell:focus-visible {
 .pron-dash {
   color: var(--ink-muted);
 }
+/* One grid item per cell on mobile — keeps "long, short" pairs together
+   instead of letting each span take its own grid track. */
+.pron-pair {
+  min-width: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: .2rem .45rem;
+}
 .pron-table tr[data-band="self"] .pron-subject,
 .pron-table tr[data-band="self"] .pron-long {
   color: var(--accent);

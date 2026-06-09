@@ -16,9 +16,12 @@ function colHeader(key, tones) {
 function personalCell(value) {
   if (value === '-') return '<span class="pron-dash">-</span>';
   const parts = value.split(',').map(part => part.trim());
-  return parts.map((part, idx) => `
-    <span class="${idx === 0 ? 'pron-long' : 'pron-short'}">${AtlasSrpski.sr(part)}</span>
-  `).join('<span class="pron-comma">,</span> ');
+  const forms = parts.map((part, idx) => {
+    const cls = idx === 0 ? 'pron-long' : 'pron-short';
+    const comma = idx < parts.length - 1 ? '<span class="pron-comma">,</span>' : '';
+    return `<span class="${cls}">${AtlasSrpski.sr(part)}${comma}</span>`;
+  });
+  return `<span class="pron-pair">${forms.join(' ')}</span>`;
 }
 
 function renderPersonal() {
