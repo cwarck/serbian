@@ -7,8 +7,8 @@ function currentLang() { return document.documentElement.getAttribute('lang') ||
 function pronounRows(values, cls) {
   return PRONOUNS.map(p => `
     <div class="${cls}">
-      <span class="verb-pron">${AtlasSrpski.sr(p.label)}</span>
-      <span class="verb-form">${AtlasSrpski.sr(values[p.key])}</span>
+      <span class="verb-pron">${SerbianFyi.sr(p.label)}</span>
+      <span class="verb-form">${SerbianFyi.sr(values[p.key])}</span>
     </div>
   `).join('');
 }
@@ -16,8 +16,8 @@ function pronounRows(values, cls) {
 function formRows(forms, cls) {
   return forms.map((form, i) => `
     <div class="${cls}">
-      <span class="verb-pron">${AtlasSrpski.sr(PRONOUNS[i].label)}</span>
-      <span class="verb-form">${AtlasSrpski.sr(form)}</span>
+      <span class="verb-pron">${SerbianFyi.sr(PRONOUNS[i].label)}</span>
+      <span class="verb-form">${SerbianFyi.sr(form)}</span>
     </div>
   `).join('');
 }
@@ -26,15 +26,15 @@ function examplesHTML(examples) {
   const lang = currentLang();
   return examples.map(ex => `
     <div class="verb-example">
-      <span class="sr">${AtlasSrpski.sr(ex.sr)}</span>
-      <span class="tr">${AtlasSrpski.srGrammarHTML(ex[lang] || ex.en)}</span>
+      <span class="sr">${SerbianFyi.sr(ex.sr)}</span>
+      <span class="tr">${SerbianFyi.srGrammarHTML(ex[lang] || ex.en)}</span>
     </div>
   `).join('');
 }
 
 function formulaHTML(parts) {
   return parts.map(part => {
-    if (part.sr) return AtlasSrpski.sr(part.sr);
+    if (part.sr) return SerbianFyi.sr(part.sr);
     if (part.key) return t(part.key);
     return part.text || '';
   }).join(' ');
@@ -53,7 +53,7 @@ function renderRegularGroup(group) {
       <section class="verb-block">
         <h4>${t('verbs.inf.cues')}</h4>
         <div class="verb-patterns">
-          ${group.patterns.map(pattern => `<span class="verb-pattern">${AtlasSrpski.sr(pattern)}</span>`).join('')}
+          ${group.patterns.map(pattern => `<span class="verb-pattern">${SerbianFyi.sr(pattern)}</span>`).join('')}
         </div>
       </section>
       <section class="verb-block">
@@ -61,14 +61,14 @@ function renderRegularGroup(group) {
         <ul class="verb-list verb-list-glossed">
           ${group.verbs.map(verb => `
             <li>
-              <span class="verb-lemma">${AtlasSrpski.sr(verb)}</span>
-              <span class="verb-gloss">${AtlasSrpski.glossary.gloss(verb, currentLang())}</span>
+              <span class="verb-lemma">${SerbianFyi.sr(verb)}</span>
+              <span class="verb-gloss">${SerbianFyi.glossary.gloss(verb, currentLang())}</span>
             </li>
           `).join('')}
         </ul>
       </section>
       <section class="verb-block verb-block-example">
-        <h4 class="sr-head">${AtlasSrpski.sr(group.example.infinitive)}</h4>
+        <h4 class="sr-head">${SerbianFyi.sr(group.example.infinitive)}</h4>
         <div class="verb-example-grid">
           ${pronounRows(group.example.forms, 'verb-example-row')}
         </div>
@@ -81,7 +81,7 @@ function renderIrregulars() {
   const minis = IRREGULARS.map((item, idx) => `
     <section class="verb-mini">
       <header class="verb-mini-head">
-        <h4 class="sr-head">${AtlasSrpski.sr(item.title)}</h4>
+        <h4 class="sr-head">${SerbianFyi.sr(item.title)}</h4>
         ${item.full ? `<button class="tip-chip" type="button" aria-haspopup="dialog" aria-expanded="false" aria-label="${t('verbs.full.forms')}" data-verb-tip="${idx}">?</button>` : ''}
       </header>
       <div class="verb-example-grid">
@@ -90,7 +90,7 @@ function renderIrregulars() {
       ${item.negative.length ? `
         <div class="verb-negative">
           <span class="verb-sub">${t('verbs.negative')}</span>
-          <p>${item.negative.map(form => AtlasSrpski.sr(form)).join(', ')}</p>
+          <p>${item.negative.map(form => SerbianFyi.sr(form)).join(', ')}</p>
         </div>` : ''}
     </section>
   `).join('');
@@ -127,7 +127,7 @@ function renderPast() {
           ${PAST.endings.map(item => `
             <div>
               <span class="verb-sub">${t(item.key)}</span>
-              <span class="verb-form">${AtlasSrpski.sr(item.ending)}</span>
+              <span class="verb-form">${SerbianFyi.sr(item.ending)}</span>
             </div>
           `).join('')}
         </div>
@@ -153,16 +153,16 @@ function renderFuture() {
       </section>
       <section class="verb-block">
         <h4>${t('verbs.merged')}</h4>
-        <p class="verb-list">${FUTURE.merged.map(item => AtlasSrpski.sr(item)).join(', ')}</p>
+        <p class="verb-list">${FUTURE.merged.map(item => SerbianFyi.sr(item)).join(', ')}</p>
       </section>
       <section class="verb-block">
         <h4>${t('verbs.ici.exception')}</h4>
-        <p class="verb-list">${FUTURE.exceptions.map(item => AtlasSrpski.sr(item)).join(', ')}</p>
+        <p class="verb-list">${FUTURE.exceptions.map(item => SerbianFyi.sr(item)).join(', ')}</p>
       </section>
       <section class="verb-block verb-reflexive">
-        <h4 class="sr-head">${AtlasSrpski.sr('se')}</h4>
-        <p class="verb-note">${AtlasSrpski.srGrammarHTML(t('verbs.se.rule'))}</p>
-        <div class="verb-examples">${FUTURE.reflexive.map(sr => `<div class="verb-example"><span class="sr">${AtlasSrpski.sr(sr)}</span></div>`).join('')}</div>
+        <h4 class="sr-head">${SerbianFyi.sr('se')}</h4>
+        <p class="verb-note">${SerbianFyi.srGrammarHTML(t('verbs.se.rule'))}</p>
+        <div class="verb-examples">${FUTURE.reflexive.map(sr => `<div class="verb-example"><span class="sr">${SerbianFyi.sr(sr)}</span></div>`).join('')}</div>
       </section>
     </article>
   `;
@@ -212,7 +212,7 @@ function renderVerbs() {
     trigger.setAttribute('aria-expanded', 'true');
     bodyEl.innerHTML = `
       <article class="verb-tip">
-        <h4>${AtlasSrpski.sr(item.title)} · ${t('verbs.full.forms')}</h4>
+        <h4>${SerbianFyi.sr(item.title)} · ${t('verbs.full.forms')}</h4>
         <div class="verb-example-grid">${formRows(item.full, 'verb-example-row')}</div>
       </article>
     `;

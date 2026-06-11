@@ -1,4 +1,4 @@
-/* Atlas Srpski — language + theme.
+/* serbian.fyi — language + theme.
    Pure DOM, no framework, no build. Persist choices to localStorage. */
 
 (function () {
@@ -179,7 +179,7 @@
     },
   };
 
-  window.AtlasSrpski = Object.assign(window.AtlasSrpski || {}, {
+  window.SerbianFyi = Object.assign(window.SerbianFyi || {}, {
     sr,
     srHTML,
     srGrammarHTML,

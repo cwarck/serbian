@@ -90,15 +90,15 @@ function loadScriptConverter() {
   };
   vm.createContext(context);
   vm.runInContext(read('assets/app.js'), context, { filename: 'assets/app.js' });
-  return context.window.AtlasSrpski;
+  return context.window.SerbianFyi;
 }
 
 function loadData(relPath, names) {
-  const source = `${read(relPath)}\nglobalThis.__atlasData = { ${names.join(', ')} };`;
+  const source = `${read(relPath)}\nglobalThis.__chartData = { ${names.join(', ')} };`;
   const context = { console };
   vm.createContext(context);
   vm.runInContext(source, context, { filename: relPath });
-  return context.__atlasData;
+  return context.__chartData;
 }
 
 function loadGlossary(relPath) {

@@ -1,4 +1,4 @@
-# Atlas Srpski
+# serbian.fyi
 
 Charts and cheat sheets for learners of the Serbian language.
 

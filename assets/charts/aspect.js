@@ -11,13 +11,13 @@ function pick(value) {
 function srPair(pair) {
   return String(pair).split(/( -> | \/ )/g).map(part => {
     if (part === ' -> ' || part === ' / ') return `<span class="aspect-arrow">${part.trim()}</span>`;
-    return `<span>${AtlasSrpski.sr(part)}</span>`;
+    return `<span>${SerbianFyi.sr(part)}</span>`;
   }).join(' ');
 }
 function exampleHTML(ex) {
   return `
     <div class="aspect-example">
-      <span class="sr">${AtlasSrpski.sr(ex.sr)}</span>
+      <span class="sr">${SerbianFyi.sr(ex.sr)}</span>
       <span class="tr">${pick(ex)}</span>
     </div>
   `;
@@ -85,8 +85,8 @@ function renderPatterns() {
         ${PATTERNS.map(row => `
           <article class="aspect-table-row">
             <h4>${pick(row.pattern)}</h4>
-            <span class="aspect-form aspect-cell" data-label="${ui('imperfective')}">${AtlasSrpski.sr(row.imp)}</span>
-            <span class="aspect-form aspect-cell" data-label="${ui('perfective')}">${AtlasSrpski.sr(row.perf)}</span>
+            <span class="aspect-form aspect-cell" data-label="${ui('imperfective')}">${SerbianFyi.sr(row.imp)}</span>
+            <span class="aspect-form aspect-cell" data-label="${ui('perfective')}">${SerbianFyi.sr(row.perf)}</span>
             <p class="aspect-cell" data-label="${ui('signal')}">${pick(row.signal)}</p>
           </article>
         `).join('')}
@@ -103,7 +103,7 @@ function renderPrefixes() {
     return `
       <article class="aspect-prefix" data-tone="${row.tone}">
         <header class="aspect-prefix-head">
-          <h4>${AtlasSrpski.sr(row.prefix)}</h4>
+          <h4>${SerbianFyi.sr(row.prefix)}</h4>
           ${row.note ? noteButton(idx) : ''}
         </header>
         <p>${pick(row.feel)}</p>
@@ -131,9 +131,9 @@ function renderPairs() {
         </div>
         ${COMMON_PAIRS.map(row => `
           <article class="aspect-table-row">
-            <h4>${AtlasSrpski.glossary.gloss(row.imp, lang())}</h4>
-            <span class="aspect-form aspect-cell" data-label="${ui('imperfective')}">${AtlasSrpski.sr(row.imp)}</span>
-            <span class="aspect-form aspect-cell" data-label="${ui('perfective')}">${AtlasSrpski.sr(row.perf)}</span>
+            <h4>${SerbianFyi.glossary.gloss(row.imp, lang())}</h4>
+            <span class="aspect-form aspect-cell" data-label="${ui('imperfective')}">${SerbianFyi.sr(row.imp)}</span>
+            <span class="aspect-form aspect-cell" data-label="${ui('perfective')}">${SerbianFyi.sr(row.perf)}</span>
             <div class="aspect-cell" data-label="${ui('example')}">${exampleHTML(row.ex)}</div>
           </article>
         `).join('')}

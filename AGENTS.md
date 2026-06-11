@@ -5,6 +5,15 @@
 Mobile-first cheat sheets. Replace pinch-zoom PDFs, not write a textbook.
 Reference: Levithan's A4 Serbian charts — every block is a labeled grid of facts.
 
+## Brand
+
+- Name = domain: **serbian.fyi**. Written identity is lowercase `serbian.fyi` everywhere.
+- Mark: `s.` monogram in Source Serif 4 italic, weight 500, marker orange (`.brand-mark`). The nav pairs it with the full name; mobile collapses to the monogram alone. The favicon is the same `s.` glyph (`favicon.svg`).
+- Minimal kit by design: domain + monogram only. No mascot, no taglines.
+- Every `<title>` carries the word "Serbian" — the domain itself doubles as the keyword.
+- CC BY attribution is the URL: `© serbian.fyi · CC BY 4.0` — the credit links home (`foot.copy` in `assets/i18n.js`).
+- The site JS namespace is `window.SerbianFyi`.
+
 ## Content
 
 - Show WHAT, not WHY. Labels over story arcs.

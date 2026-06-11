@@ -19,7 +19,7 @@ function personalCell(value) {
   const forms = parts.map((part, idx) => {
     const cls = idx === 0 ? 'pron-long' : 'pron-short';
     const comma = idx < parts.length - 1 ? '<span class="pron-comma">,</span>' : '';
-    return `<span class="${cls}">${AtlasSrpski.sr(part)}${comma}</span>`;
+    return `<span class="${cls}">${SerbianFyi.sr(part)}${comma}</span>`;
   });
   return `<span class="pron-pair">${forms.join(' ')}</span>`;
 }
@@ -38,7 +38,7 @@ function renderPersonal() {
     <tr data-band="${row.band}">
       <th scope="row">
         <span class="pron-person-label">${t(row.label)}</span>
-        <span class="pron-subject">${AtlasSrpski.sr(row.subject)}</span>
+        <span class="pron-subject">${SerbianFyi.sr(row.subject)}</span>
       </th>
       ${columns.slice(1).map(([key, prop]) => `<td data-label="${t(key)}">${personalCell(row[prop])}</td>`).join('')}
     </tr>
@@ -55,7 +55,7 @@ function renderPersonal() {
     </table>
     <div class="pron-rule-row">
       <p><strong>${t('pron.long.short')}</strong> ${t('pron.long.short.rule')}</p>
-      <p><strong><i>${AtlasSrpski.sr('svoj')}</i></strong> ${t('pron.svoj.rule')}</p>
+      <p><strong><i>${SerbianFyi.sr('svoj')}</i></strong> ${t('pron.svoj.rule')}</p>
     </div>
   `;
 }
@@ -71,7 +71,7 @@ function renderPossessives() {
       <article class="pron-poss-card">
         <h4>${t(item.owner)}</h4>
         <div class="pron-gender-row">
-          ${item.forms.map(form => `<span>${AtlasSrpski.sr(form)}</span>`).join('')}
+          ${item.forms.map(form => `<span>${SerbianFyi.sr(form)}</span>`).join('')}
         </div>
         ${item.note ? `<p>${t(item.note)}</p>` : ''}
       </article>
@@ -96,15 +96,15 @@ function renderDemonstratives() {
         ${group.rows.map(row => `
           <div class="pron-matrix-row">
             <span class="pron-row-label">${t(row.key)}</span>
-            ${row.forms.map(form => `<span class="pron-form">${AtlasSrpski.sr(form)}</span>`).join('')}
+            ${row.forms.map(form => `<span class="pron-form">${SerbianFyi.sr(form)}</span>`).join('')}
           </div>
         `).join('')}
       </div>
     </section>
   `).join('') + `
     <div class="pron-rule-row">
-      <p><strong><i>${AtlasSrpski.sr('Ovo je...')}</i></strong> ${t('pron.demo.predicate')}</p>
-      <p><strong><i>${AtlasSrpski.sr('Ovaj pas')}</i></strong> ${t('pron.demo.noun.rule')}</p>
+      <p><strong><i>${SerbianFyi.sr('Ovo je...')}</i></strong> ${t('pron.demo.predicate')}</p>
+      <p><strong><i>${SerbianFyi.sr('Ovaj pas')}</i></strong> ${t('pron.demo.noun.rule')}</p>
     </div>
   `;
 }
@@ -120,7 +120,7 @@ function renderQuestions() {
         ${QUESTIONS.whose.map(row => `
           <div class="pron-matrix-row">
             <span class="pron-row-label">${t(row.label)}</span>
-            ${row.forms.map(form => `<span class="pron-form">${AtlasSrpski.sr(form)}</span>`).join('')}
+            ${row.forms.map(form => `<span class="pron-form">${SerbianFyi.sr(form)}</span>`).join('')}
           </div>
         `).join('')}
       </div>
@@ -132,8 +132,8 @@ function renderQuestions() {
         ${QUESTIONS.whoWhat.map(row => `
           <div class="pron-kw-row">
             <span>${t(row.key)}</span>
-            <span>${AtlasSrpski.sr(row.who)}</span>
-            <span>${AtlasSrpski.sr(row.what)}</span>
+            <span>${SerbianFyi.sr(row.who)}</span>
+            <span>${SerbianFyi.sr(row.what)}</span>
           </div>
         `).join('')}
       </div>

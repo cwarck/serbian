@@ -1,9 +1,9 @@
-/* Atlas Srpski — translation dictionary.
+/* serbian.fyi — translation dictionary.
    Keys use dot-notation; pages reference them via data-i18n attributes. */
 
 window.I18N = {
   en: {
-    'nav.brand': 'Atlas Srpski',
+    'nav.brand': 'serbian.fyi',
     'nav.theme': 'Toggle theme',
 
     'home.title': 'Charts',
@@ -28,7 +28,7 @@ window.I18N = {
     'card.falseFriends.title': 'False friends',
     'card.falseFriends.note': 'Russian traps',
 
-    'foot.copy': '© Atlas Srpski · <a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener" target="_blank">CC BY 4.0</a>',
+    'foot.copy': '© <a href="/">serbian.fyi</a> · <a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener" target="_blank">CC BY 4.0</a>',
     'foot.repo': 'Source',
     'foot.author': 'Ilya Akimov',
 
@@ -241,7 +241,7 @@ window.I18N = {
   },
 
   ru: {
-    'nav.brand': 'Atlas Srpski',
+    'nav.brand': 'serbian.fyi',
     'nav.theme': 'Сменить тему',
 
     'home.title': 'Таблицы',
@@ -266,7 +266,7 @@ window.I18N = {
     'card.falseFriends.title': 'Ложные друзья',
     'card.falseFriends.note': 'Русские ловушки',
 
-    'foot.copy': '© Atlas Srpski · <a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener" target="_blank">CC BY 4.0</a>',
+    'foot.copy': '© <a href="/">serbian.fyi</a> · <a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener" target="_blank">CC BY 4.0</a>',
     'foot.repo': 'Исходники',
     'foot.author': 'Илья Акимов',
 

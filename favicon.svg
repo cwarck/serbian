@@ -3,5 +3,5 @@
     .m { fill: #BC5215; font: italic 500 26px Georgia, "Times New Roman", serif; }
     @media (prefers-color-scheme: dark) { .m { fill: #DA702C; } }
   </style>
-  <text class="m" x="14.5" y="24" text-anchor="middle">A.</text>
+  <text class="m" x="14.5" y="24" text-anchor="middle">s.</text>
 </svg>

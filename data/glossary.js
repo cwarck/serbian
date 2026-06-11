@@ -1,5 +1,5 @@
 /* Canonical Serbian lemma lookup.
-   Keyed by Latin lemma. Cyrillic form derived via AtlasSrpski.toCyrillic.
+   Keyed by Latin lemma. Cyrillic form derived via SerbianFyi.toCyrillic.
    Required: pos, gloss.en, gloss.ru.
    POS-conditional: aspect (verbs), gender + animate (nouns), government (verbs/preps).
    Optional: level (A0|A1|A2|B1|B2), tags, related, slug.
