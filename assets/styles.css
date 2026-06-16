@@ -291,9 +291,11 @@ section { position: relative; }
 }
 @media (min-width: 620px) {
   .chart-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 960px) {
+  .chart-grid { grid-template-columns: repeat(3, 1fr); }
   .chart-grid .flagship { grid-column: span 2; }
 }
-@media (min-width: 960px) { .chart-grid { grid-template-columns: repeat(3, 1fr); } }
 .chart-grid li { min-width: 0; }
 
 .chart-card {
@@ -347,6 +349,22 @@ section { position: relative; }
   color: var(--ink-soft);
   margin: 0;
   max-width: 30ch;
+}
+
+/* Mobile (below the 2-col breakpoint): the tall hero card is mostly air in a
+   single column. Collapse to a short row — chart name only; glyph and note
+   dropped. */
+@media (max-width: 619.98px) {
+  .chart-card {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 0;
+    padding: .95rem clamp(1.1rem, 4vw, 1.4rem);
+  }
+  .chart-glyph { display: none; }
+  .chart-meta { flex: 1 1 auto; min-width: 0; }
+  .chart-note { display: none; }
 }
 
 :root:not([lang="ru"]) [data-lang-only="ru"] {
