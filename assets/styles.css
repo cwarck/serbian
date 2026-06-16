@@ -209,12 +209,7 @@ section { position: relative; }
   letter-spacing: -.01em;
   font-feature-settings: "ss01";
 }
-.brand-mark {
-  font-family: var(--ff-display);
-  font-style: italic;
-  font-weight: 500;
-  color: var(--accent);
-}
+.brand-tld { color: var(--accent); }
 .nav-controls {
   display: inline-flex; align-items: center; gap: .25rem;
   border: 1px solid var(--hairline);
@@ -258,7 +253,6 @@ section { position: relative; }
 
 @media (max-width: 560px) {
   .nav-inner { gap: .75rem; }
-  .brand-mark { font-size: var(--fs-lead); }
 }
 
 @media (max-width: 420px) {

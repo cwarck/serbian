@@ -8,8 +8,8 @@ Reference: Levithan's A4 Serbian charts — every block is a labeled grid of fac
 ## Brand
 
 - Name = domain: **serbian.fyi**. Written identity is lowercase `serbian.fyi` everywhere.
-- Mark: `s.` monogram in Source Serif 4 italic, weight 500, marker orange (`.brand-mark`). The nav pairs it with the full name; mobile collapses to the monogram alone. The favicon is the same `s.` glyph (`favicon.svg`).
-- Minimal kit by design: domain + monogram only. No mascot, no taglines.
+- Wordmark: full `serbian.fyi` set in Source Serif 4. `serbian` in ink, the `.fyi` TLD in marker orange (`.brand-tld`) — the only brand-orange in the masthead. Same wordmark at every width; no monogram. The favicon stays the `s.` glyph (`favicon.svg`) — the only place the monogram survives.
+- Minimal kit by design: domain wordmark only. No mascot, no taglines.
 - Every `<title>` carries the word "Serbian" — the domain itself doubles as the keyword.
 - CC BY attribution is the URL: `© serbian.fyi · CC BY 4.0` — the credit links home (`foot.copy` in `assets/i18n.js`).
 - The site JS namespace is `window.SerbianFyi`.

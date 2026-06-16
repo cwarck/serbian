@@ -3,7 +3,7 @@
 
 window.I18N = {
   en: {
-    'nav.brand': 'serbian.fyi',
+    'nav.brand': 'serbian<span class="brand-tld">.fyi</span>',
     'nav.settings': 'Settings',
     'settings.language': 'Language',
     'settings.script': 'Script',
@@ -253,7 +253,7 @@ window.I18N = {
   },
 
   ru: {
-    'nav.brand': 'serbian.fyi',
+    'nav.brand': 'serbian<span class="brand-tld">.fyi</span>',
     'nav.settings': 'Настройки',
     'settings.language': 'Язык',
     'settings.script': 'Письмо',
