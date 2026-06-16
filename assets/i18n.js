@@ -18,7 +18,6 @@ window.I18N = {
     'cases.syncretism.on': 'On',
     'cases.syncretism.off': 'Off',
 
-    'home.title': 'Charts',
     'chart.index.label': 'Charts',
 
     'card.alphabet.title': 'Alphabet',
@@ -268,7 +267,6 @@ window.I18N = {
     'cases.syncretism.on': 'Вкл',
     'cases.syncretism.off': 'Выкл',
 
-    'home.title': 'Таблицы',
     'chart.index.label': 'Таблицы',
 
     'card.alphabet.title': 'Алфавит',

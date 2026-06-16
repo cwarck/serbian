@@ -280,13 +280,6 @@ section { position: relative; }
 .home {
   padding-block: clamp(1.8rem, 5vw, 3.2rem) clamp(3rem, 7vw, 6rem);
 }
-.home-head {
-  padding-bottom: clamp(1rem, 3vw, 2rem);
-}
-.home-head h1 {
-  font-size: var(--fs-head);
-  line-height: var(--lh-snug);
-}
 .chart-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -296,7 +289,10 @@ section { position: relative; }
   border-top: 1px solid var(--hairline);
   border-left: 1px solid var(--hairline);
 }
-@media (min-width: 620px) { .chart-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 620px) {
+  .chart-grid { grid-template-columns: repeat(2, 1fr); }
+  .chart-grid .flagship { grid-column: span 2; }
+}
 @media (min-width: 960px) { .chart-grid { grid-template-columns: repeat(3, 1fr); } }
 .chart-grid li { min-width: 0; }
 
