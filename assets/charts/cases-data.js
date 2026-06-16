@@ -4,9 +4,10 @@
 
 /* Cell shape:
      string         e.g. '-a'
-     { v, same }    ending value + "same as X" marker  (X = NOM | GEN | DAT)
-     { v, n }       ending + footnote id (resolved against .notes below)
-     { split: [{label,v,same}, ...] }   animacy / soft-consonant alternation
+     { v, n }       ending value + footnote id (resolved against .notes below)
+     { split: [{labelKey, v, n}, ...] }   animacy / soft-consonant alternation
+   Syncretism ("= DAT" echoes + source chips) is derived at render time by
+   computeSyncretism() in cases.js — never annotated here.
 */
 
 const CASES = [
@@ -56,9 +57,9 @@ const CASES = [
     key: 'case.3', abbr: 'DAT', tone: 'dat',
     sigEnding: '-u',
     endings: {
-      m: { sg: '-u',                pl: { v:'-ima', share:['INS','LOK'] } },
-      f: { sg: { v:'-i', n:'sib-i' }, pl: { v:'-ama', share:['INS','LOK'] } },
-      n: { sg: '-u',                pl: { v:'-ima', share:['INS','LOK'] } },
+      m: { sg: '-u',                pl: '-ima' },
+      f: { sg: { v:'-i', n:'sib-i' }, pl: '-ama' },
+      n: { sg: '-u',                pl: '-ima' },
     },
     notes: {
       'sib-i': {
@@ -89,7 +90,7 @@ const CASES = [
         pl: '-e'
       },
       f: { sg: '-u',                pl: '-e' },
-      n: { sg: { v:'-o', same:'NOM' }, pl: { v:'-a', same:'NOM' } },
+      n: { sg: '-o', pl: '-a' },
     },
     notes: {
       'animacy': {
@@ -117,10 +118,10 @@ const CASES = [
           { v:'-e', n:'palatal' },
           { v:'-u', n:'soft' },
         ] },
-        pl: { v:'-i', same:'NOM' }
+        pl: '-i'
       },
-      f: { sg: '-o',                pl: { v:'-e', same:'NOM' } },
-      n: { sg: { v:'-o', same:'NOM' }, pl: { v:'-a', same:'NOM' } },
+      f: { sg: '-o',                pl: '-e' },
+      n: { sg: '-o', pl: '-a' },
     },
     notes: {
       'palatal': {
@@ -150,9 +151,9 @@ const CASES = [
     key: 'case.6', abbr: 'INS', tone: 'ins',
     sigEnding: '-om',
     endings: {
-      m: { sg: { v:'-om', n:'soft-em' }, pl: { v:'-ima', share:['DAT','LOK'] } },
-      f: { sg: '-om',                     pl: { v:'-ama', share:['DAT','LOK'] } },
-      n: { sg: { v:'-om', n:'soft-em' }, pl: { v:'-ima', share:['DAT','LOK'] } },
+      m: { sg: { v:'-om', n:'soft-em' }, pl: '-ima' },
+      f: { sg: '-om',                     pl: '-ama' },
+      n: { sg: { v:'-om', n:'soft-em' }, pl: '-ima' },
     },
     notes: {
       'soft-em': {
@@ -175,9 +176,9 @@ const CASES = [
     key: 'case.7', abbr: 'LOK', tone: 'lok',
     sigEnding: '-u',
     endings: {
-      m: { sg: { v:'-u', same:'DAT' },               pl: { v:'-ima', same:'DAT' } },
-      f: { sg: { v:'-i', same:'DAT', n:'sib-i' },     pl: { v:'-ama', same:'DAT' } },
-      n: { sg: { v:'-u', same:'DAT' },               pl: { v:'-ima', same:'DAT' } },
+      m: { sg: '-u',               pl: '-ima' },
+      f: { sg: { v:'-i', n:'sib-i' }, pl: '-ama' },
+      n: { sg: '-u',               pl: '-ima' },
     },
     notes: {
       'sib-i': {

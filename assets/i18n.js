@@ -4,7 +4,19 @@
 window.I18N = {
   en: {
     'nav.brand': 'serbian.fyi',
-    'nav.theme': 'Toggle theme',
+    'nav.settings': 'Settings',
+    'settings.language': 'Language',
+    'settings.script': 'Script',
+    'settings.theme': 'Theme',
+    'settings.theme.system': 'Auto',
+    'settings.theme.light': 'Light',
+    'settings.theme.dark': 'Dark',
+    'cases.detail': 'Mode',
+    'cases.detail.basic': 'Simple',
+    'cases.detail.detailed': 'Detailed',
+    'cases.syncretism': 'Shared endings',
+    'cases.syncretism.on': 'On',
+    'cases.syncretism.off': 'Off',
 
     'home.title': 'Charts',
     'chart.index.label': 'Charts',
@@ -242,7 +254,19 @@ window.I18N = {
 
   ru: {
     'nav.brand': 'serbian.fyi',
-    'nav.theme': 'Сменить тему',
+    'nav.settings': 'Настройки',
+    'settings.language': 'Язык',
+    'settings.script': 'Письмо',
+    'settings.theme': 'Тема',
+    'settings.theme.system': 'Авто',
+    'settings.theme.light': 'Светлая',
+    'settings.theme.dark': 'Тёмная',
+    'cases.detail': 'Режим',
+    'cases.detail.basic': 'Просто',
+    'cases.detail.detailed': 'Подробно',
+    'cases.syncretism': 'Общие окончания',
+    'cases.syncretism.on': 'Вкл',
+    'cases.syncretism.off': 'Выкл',
 
     'home.title': 'Таблицы',
     'chart.index.label': 'Таблицы',

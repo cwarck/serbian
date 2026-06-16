@@ -23,6 +23,12 @@
     } catch (e) {}
   }
 
+  function removeStored(key) {
+    try {
+      localStorage.removeItem(key);
+    } catch (e) {}
+  }
+
   function normalizeLang(value) {
     const lang = String(value || '').toLowerCase().split(/[-_]/)[0];
     return supportedLangs.includes(lang) ? lang : null;
@@ -260,16 +266,153 @@
   function applyTheme(theme) {
     document.documentElement.setAttribute('data-theme', normalizeTheme(theme) || systemTheme());
     document.documentElement.setAttribute('data-theme-source', storedTheme() ? 'stored' : 'auto');
+    applyThemeChips();
   }
 
-  function currentTheme() {
-    return detectedTheme();
+  /* The user's explicit choice: 'system' (follow the OS — the default), 'light'
+     or 'dark'. Light/dark persist; system clears the stored override. */
+  function currentThemeChoice() {
+    return storedTheme() || 'system';
   }
 
-  function toggleTheme() {
-    const next = currentTheme() === 'dark' ? 'light' : 'dark';
-    writeStored(LS_THEME, next);
-    applyTheme(next);
+  function applyThemeChips() {
+    const choice = currentThemeChoice();
+    document.querySelectorAll('[data-theme-chip]').forEach((chip) => {
+      chip.setAttribute('aria-pressed', String(chip.getAttribute('data-theme-chip') === choice));
+    });
+  }
+
+  function setTheme(choice) {
+    if (choice === 'system') {
+      removeStored(LS_THEME);
+      applyTheme(systemTheme());
+    } else if (normalizeTheme(choice)) {
+      writeStored(LS_THEME, choice);
+      applyTheme(choice);
+    }
+  }
+
+  /* ---------- settings menu ---------- */
+
+  /* Consolidate the masthead toggles behind one button + floating panel.
+     Controls are RELOCATED (not recreated), so the data-attribute wiring in
+     init() keeps working. Page scripts append page-specific rows to the
+     exposed `SerbianFyi.settingsExtras` slot (e.g. the cases Detail toggle). */
+  const SLIDERS_SVG = `
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+      <line x1="4" y1="9" x2="20" y2="9"></line>
+      <line x1="4" y1="15" x2="20" y2="15"></line>
+      <circle cx="15" cy="9" r="2.3"></circle>
+      <circle cx="9" cy="15" r="2.3"></circle>
+    </svg>`;
+
+  function buildSettingsMenu() {
+    const actions = document.querySelector('.nav-inner .nav-actions');
+    if (!actions || actions.querySelector('[data-settings-toggle]')) return;
+
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'settings-btn';
+    btn.setAttribute('data-settings-toggle', '');
+    btn.setAttribute('aria-haspopup', 'dialog');
+    btn.setAttribute('aria-expanded', 'false');
+    btn.setAttribute('aria-label', 'Settings');
+    btn.setAttribute('data-i18n-attr', 'aria-label:nav.settings');
+    btn.innerHTML = SLIDERS_SVG;
+
+    const menu = document.createElement('div');
+    menu.className = 'settings-menu';
+    menu.id = 'settingsMenu';
+    menu.hidden = true;
+    menu.setAttribute('role', 'dialog');
+    menu.setAttribute('aria-label', 'Settings');
+    menu.setAttribute('data-i18n-attr', 'aria-label:nav.settings');
+    const card = document.createElement('div');
+    card.className = 'settings-menu-card';
+    menu.appendChild(card);
+
+    const addRow = (labelKey, control) => {
+      const row = document.createElement('div');
+      row.className = 'settings-row';
+      const label = document.createElement('span');
+      label.className = 'settings-label';
+      label.setAttribute('data-i18n', labelKey);
+      row.appendChild(label);
+      if (control) row.appendChild(control);
+      card.appendChild(row);
+    };
+
+    const langGroup = actions.querySelector('.nav-controls:not(.script-controls)');
+    const scriptGroup = actions.querySelector('.script-controls');
+
+    if (langGroup) {
+      // Static endonyms — never translated.
+      langGroup.querySelectorAll('[data-lang-chip]').forEach((chip) => {
+        chip.textContent = chip.getAttribute('data-lang-chip') === 'ru' ? 'Русский' : 'English';
+      });
+      addRow('settings.language', langGroup);
+    }
+    if (scriptGroup) addRow('settings.script', scriptGroup);
+
+    const themeGroup = document.createElement('div');
+    themeGroup.className = 'nav-controls';
+    themeGroup.setAttribute('role', 'group');
+    ['system', 'dark', 'light'].forEach((v) => {
+      const chip = document.createElement('button');
+      chip.type = 'button';
+      chip.className = 'chip';
+      chip.setAttribute('data-theme-chip', v);
+      chip.setAttribute('data-i18n', 'settings.theme.' + v);
+      chip.textContent = v;
+      themeGroup.appendChild(chip);
+    });
+    addRow('settings.theme', themeGroup);
+
+    const extras = document.createElement('div');
+    extras.className = 'settings-extras';
+    extras.id = 'settingsExtras';
+    card.appendChild(extras);
+
+    actions.appendChild(btn);
+    document.body.appendChild(menu);
+
+    window.SerbianFyi = window.SerbianFyi || {};
+    window.SerbianFyi.settingsExtras = extras;
+
+    wireSettingsMenu(btn, menu, card);
+  }
+
+  function wireSettingsMenu(btn, menu, card) {
+    let open = false;
+    const position = () => {
+      const r = btn.getBoundingClientRect();
+      const gutter = 12;
+      const cardW = card.offsetWidth || 280;
+      let left = r.right - cardW;
+      left = Math.max(gutter, Math.min(left, window.innerWidth - cardW - gutter));
+      menu.style.left = left + 'px';
+      menu.style.top = (r.bottom + 8) + 'px';
+    };
+    const setOpen = (next) => {
+      open = next;
+      btn.setAttribute('aria-expanded', String(open));
+      if (open) {
+        menu.hidden = false;
+        requestAnimationFrame(() => { position(); menu.classList.add('is-open'); });
+      } else {
+        menu.classList.remove('is-open');
+        menu.hidden = true;
+      }
+    };
+    btn.addEventListener('click', (e) => { e.stopPropagation(); setOpen(!open); });
+    document.addEventListener('click', (e) => {
+      if (open && !menu.contains(e.target) && !btn.contains(e.target)) setOpen(false);
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && open) { setOpen(false); btn.focus({ preventScroll: true }); }
+    });
+    window.addEventListener('resize', () => { if (open) position(); });
+    window.addEventListener('scroll', () => { if (open) position(); }, { passive: true });
   }
 
   /* ---------- init ---------- */
@@ -280,6 +423,9 @@
     getThemeQuery()?.addEventListener?.('change', () => {
       if (!storedTheme()) applyTheme(systemTheme());
     });
+
+    buildSettingsMenu();
+    applyThemeChips();
 
     const lang = detectLang();
     applyI18n(lang);
@@ -294,8 +440,8 @@
     document.querySelectorAll('[data-script-chip]').forEach((chip) => {
       chip.addEventListener('click', () => setScript(chip.getAttribute('data-script-chip')));
     });
-    document.querySelectorAll('[data-theme-toggle]').forEach((btn) => {
-      btn.addEventListener('click', toggleTheme);
+    document.querySelectorAll('[data-theme-chip]').forEach((chip) => {
+      chip.addEventListener('click', () => setTheme(chip.getAttribute('data-theme-chip')));
     });
   }
 

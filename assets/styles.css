@@ -244,26 +244,11 @@ section { position: relative; }
   text-transform: none;
 }
 
-.theme-btn {
-  width: 42px; height: 42px;
-  display: inline-grid; place-items: center;
-  border-radius: 50%;
-  border: 1px solid var(--hairline);
-  color: var(--ink-soft);
-  transition: background .25s, color .25s, transform .25s;
-}
-.theme-btn svg {
-  width: 18px; height: 18px;
-  transition: transform .35s ease;
-}
-:root[data-theme="dark"] .theme-btn svg { transform: rotate(180deg); }
-
 /* Keyboard focus — the house dashed-accent ring, applied to the primary
    controls that previously fell back to the unstyled UA default. */
 .brand:focus-visible,
 .chip:focus-visible,
 .script-chip:focus-visible,
-.theme-btn:focus-visible,
 .chart-card:focus-visible,
 .case-strip-cell a:focus-visible,
 .foot a:focus-visible {
@@ -273,7 +258,6 @@ section { position: relative; }
 
 @media (max-width: 560px) {
   .nav-inner { gap: .75rem; }
-  .brand span[data-i18n="nav.brand"] { display: none; }
   .brand-mark { font-size: var(--fs-lead); }
 }
 
@@ -285,8 +269,6 @@ section { position: relative; }
     min-width: 2.4rem;
     padding: .42rem .7rem;
   }
-  .theme-btn { width: 38px; height: 38px; }
-  .theme-btn svg { width: 15px; height: 15px; }
 }
 
 @media (max-width: 360px) {
@@ -295,7 +277,6 @@ section { position: relative; }
   .nav-controls { gap: .15rem; padding: 2px; }
   .chip { padding: .48rem .58rem; }
   .script-chip { min-width: 2.15rem; padding: .36rem .58rem; }
-  .theme-btn { width: 34px; height: 34px; }
 }
 
 /* -----------------------------------------------------------
@@ -402,7 +383,6 @@ section { position: relative; }
 @media (hover: hover) and (pointer: fine) {
   .chip:hover { color: var(--ink); }
   .chip[aria-pressed="true"]:hover { color: var(--paper); }
-  .theme-btn:hover { background: var(--paper-deep); color: var(--ink); }
   .chart-card:hover { background: var(--paper-deep); }
   .foot a:hover { color: var(--accent); }
   .tip-chip:hover {
@@ -1143,6 +1123,126 @@ section { position: relative; }
   min-width: 3.1rem;
   flex: 0 0 auto;
 }
+/* ── Syncretism recession ─────────────────────────────────────────────
+   When <body> carries .is-syncretism (the "Shared endings" setting), an
+   ending that merely repeats a shape an earlier case already introduced
+   recedes to ink so only the genuinely-new endings keep their hue — in the
+   grid (.end.is-echo + a tone chip naming its source case), in the CAST hero
+   (the echo cell drops its changed-ending highlight), and on the Basic-mode
+   signature endings. With it off, the source chips hide. */
+body.is-syncretism .end.is-echo {
+  color: var(--ink-faint);
+}
+body.is-syncretism .cast-cell.is-echo .lit {
+  color: var(--ink-faint);
+  background: transparent;
+}
+/* Echo cast cells stack the source chip under the form (the columns are too
+   narrow for an inline chip); compact it so two lines fit the cell. */
+body.is-syncretism .cast-cell.is-echo {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: .25rem;
+}
+.cast-cell .cell-shares { margin-left: 0; }
+.cast-cell .cell-share { padding: .16rem .38rem; }
+body:not(.is-syncretism) .cell-shares {
+  display: none;
+}
+
+/* ── Basic / Detailed mode (cases) ────────────────────────────────────
+   Basic hides the cast hero + off-paradigm packs and renders slim rows:
+   case head + signature ending + one example. */
+[data-detail="basic"] #meetTheCast,
+[data-detail="basic"] #extra-pack { display: none; }
+
+.case-row-slim {
+  display: flex;
+  flex-direction: column;
+  gap: .55rem;
+}
+.case-slim-body {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: .5rem 1.4rem;
+}
+.case-sig {
+  display: inline-flex;
+  align-items: baseline;
+  gap: .4rem;
+}
+.case-sig .end {
+  font-family: var(--ff-display);
+  font-weight: 400;
+  font-size: var(--fs-title);
+  color: var(--tone, var(--accent));
+  line-height: 1;
+  letter-spacing: -.01em;
+}
+
+/* ── Settings menu ─────────────────────────────────────────────────────
+   One masthead button opens a small floating panel with every site toggle.
+   Non-modal; scales/fades up from the trigger (reduced-motion reset applies). */
+.settings-btn {
+  width: 42px; height: 42px;
+  display: inline-grid; place-items: center;
+  border-radius: 50%;
+  border: 1px solid var(--hairline);
+  color: var(--ink-soft);
+  transition: background .25s, color .25s;
+}
+.settings-btn svg { width: 19px; height: 19px; }
+.settings-btn svg circle { fill: var(--paper); }
+.settings-btn[aria-expanded="true"] { background: var(--paper-deep); color: var(--ink); }
+
+.settings-menu {
+  position: fixed;
+  z-index: 1200;
+  opacity: 0;
+  transform: scale(.97) translateY(-6px);
+  transform-origin: top right;
+  transition: opacity .16s ease, transform .16s ease;
+  pointer-events: none;
+}
+.settings-menu.is-open {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+.settings-menu-card {
+  width: min(280px, calc(100vw - 24px));
+  background: var(--paper-deep);
+  border: 1px solid var(--hairline);
+  border-radius: 12px;
+  box-shadow: 0 1px 0 var(--hairline-soft), 0 18px 38px -22px var(--shadow), 0 8px 18px -16px var(--shadow);
+  padding: .35rem .65rem;
+}
+/* Each setting stacks: name (an eyebrow label) over its control, both left-
+   aligned. A divider sits between settings. */
+.settings-row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .55rem;
+  padding: .8rem .15rem;
+  border-top: 1px solid var(--hairline-soft);
+}
+.settings-menu-card > .settings-row:first-child { border-top: 0; }
+.settings-label {
+  font-family: var(--ff-body);
+  font-size: var(--fs-label);
+  font-weight: 500;
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  line-height: 1;
+}
+/* Compact chips inside the panel; a too-wide group wraps within its capsule. */
+.settings-menu .nav-controls { flex-wrap: wrap; gap: .15rem; }
+.settings-menu .chip { padding: .5rem .7rem; }
+
 @media (max-width: 520px) {
   .case-cell-end { padding: .6rem .65rem .65rem; }
   .case-row { gap: .75rem; }
