@@ -228,22 +228,11 @@ section { position: relative; }
   transition: background .25s, color .25s;
 }
 .chip[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
-.script-chip {
-  min-width: 3rem;
-  padding: .55rem 1rem;
-  font-family: var(--ff-display);
-  font-size: var(--fs-body);
-  font-weight: 500;
-  line-height: 1;
-  letter-spacing: 0;
-  text-transform: none;
-}
 
 /* Keyboard focus — the house dashed-accent ring, applied to the primary
    controls that previously fell back to the unstyled UA default. */
 .brand:focus-visible,
 .chip:focus-visible,
-.script-chip:focus-visible,
 .chart-card:focus-visible,
 .case-strip-cell a:focus-visible,
 .foot a:focus-visible {
@@ -259,10 +248,6 @@ section { position: relative; }
   .nav-inner { gap: .5rem; }
   .nav-actions { gap: .4rem; }
   .chip { padding: .55rem .7rem; }
-  .script-chip {
-    min-width: 2.4rem;
-    padding: .42rem .7rem;
-  }
 }
 
 @media (max-width: 360px) {
@@ -270,7 +255,6 @@ section { position: relative; }
   .nav-actions { gap: .3rem; }
   .nav-controls { gap: .15rem; padding: 2px; }
   .chip { padding: .48rem .58rem; }
-  .script-chip { min-width: 2.15rem; padding: .36rem .58rem; }
 }
 
 /* -----------------------------------------------------------
