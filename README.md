@@ -2,8 +2,6 @@
 
 Charts and cheat sheets for learners of the Serbian language.
 
-A static site. No build step, no PDFs, no screenshots — just HTML, CSS, and a sprinkle of JS.
-
 ## What's in it
 
 - **The two alphabets** — Cyrillic and Latin, side by side, with IPA and example words.
@@ -30,22 +28,6 @@ python3 -m http.server 8000
 ```
 
 Then open <http://localhost:8000>.
-
-## Structure
-
-```
-index.html               # chart index
-charts/alphabet.html     # alphabet chart
-charts/numbers.html      # numbers and counting chart
-charts/cases.html        # noun cases chart
-charts/verbs.html        # conjugation chart
-charts/aspect.html       # verb aspect pairs chart
-charts/pronouns.html     # pronouns chart
-charts/prepositions.html # prepositions chart
-charts/pitch-stress.html # pitch and stress chart
-charts/false-friends.html # false friends chart
-assets/                  # styles, i18n, app js
-```
 
 ## License
 
