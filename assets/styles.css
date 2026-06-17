@@ -3634,6 +3634,65 @@ a.cast-cell:focus-visible {
   color: var(--ink-muted);
 }
 
+/* Inline preposition trigger — a clickable token in a case's prep list that
+   opens the shared preposition card. Keeps the list's case tone; a dashed
+   underline signals it's live, strengthening on hover / while open. */
+.prep-trigger {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  background: none;
+  border: 0;
+  padding: 0 .06em;
+  border-radius: 3px;
+  text-decoration: underline dashed color-mix(in oklab, currentColor 40%, transparent);
+  text-underline-offset: .22em;
+  text-decoration-thickness: 1px;
+  transition: background .15s, text-decoration-color .15s;
+}
+.prep-trigger:hover,
+.prep-trigger[aria-expanded="true"] {
+  background: color-mix(in oklab, var(--tone, var(--accent)) 12%, transparent);
+  text-decoration-color: currentColor;
+}
+
+/* Preposition card — the shared popover's prep variant. One entry per lemma;
+   every use stacked and tinted by its own case (gen/dat/aku/ins/lok). */
+/* Widen the shell itself (not just the card) so position()'s clamp — which
+   measures the .tip-pop wrapper — keeps the card on-screen near an edge. */
+.prep-pop { width: min(360px, calc(100vw - 24px)); }
+.prep-pop .tip-pop-card {
+  max-height: min(72vh, 540px);
+  overflow-y: auto;
+}
+.prep-card { display: grid; gap: .9rem; }
+.prep-card-name {
+  font-family: var(--ff-display);
+  font-weight: 500;
+  font-size: var(--fs-head);
+  line-height: 1;
+  color: var(--ink);
+}
+.prep-card-uses { display: grid; gap: .9rem; }
+.prep-card-use {
+  display: grid;
+  grid-template-columns: 4.4rem minmax(0, 1fr);
+  align-items: start;
+  column-gap: .9rem;
+  padding-top: .9rem;
+  border-top: 1px dashed var(--hairline-soft);
+}
+.prep-card-use:first-child { padding-top: 0; border-top: 0; }
+/* The icon sits with the label row; bump it well past the chart's inline size. */
+.prep-card-use .prep-icon-cell { padding-top: .1rem; }
+.prep-card-use .prep-icon { width: 4.4rem; }
+.prep-card-use-text { display: grid; gap: .35rem; min-width: 0; }
+/* Neutralise the chart's ≥920px wide-layout bleed (border-right + cell padding
+   on .prep-use-head/.prep-example) — the card reuses those classes. */
+.prep-card-use .prep-use-head,
+.prep-card-use .prep-example { padding: 0; border: 0; }
+.prep-card-use .prep-example .sr { font-size: var(--fs-lead); }
+
 @media (min-width: 920px) {
   .prep-group {
     border: 1px solid var(--hairline);

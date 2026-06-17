@@ -51,7 +51,7 @@ window.I18N = {
     'alph.legend.unique': 'Unique to Serbian',
     'alph.legend.diff': 'Looks Latin, sounds different',
     'alph.tip.cta': 'how to say it',
-    'alph.tip.close': 'Close',
+    'pop.close': 'Close',
 
     /* Verbs page */
     'verbs.present': 'Present',
@@ -301,7 +301,7 @@ window.I18N = {
     'alph.legend.unique': 'Только в сербском',
     'alph.legend.diff': 'Выглядит как латиница — звучит иначе',
     'alph.tip.cta': 'как произнести',
-    'alph.tip.close': 'Закрыть',
+    'pop.close': 'Закрыть',
 
     /* Verbs */
     'verbs.present': 'Настоящее',

@@ -25,6 +25,17 @@ function renderStaticGrammarTokens() {
 
 function caseAnchor(key) { return key.replace(/\./g,'-'); }
 
+/* A preposition in the case's prep list. If the shared prep card knows this
+   lemma, render a clickable trigger that opens the card in place; otherwise
+   fall back to plain text (no dead affordance). */
+function prepToken(p) {
+  const sr = SerbianFyi.sr(p);
+  const known = window.SerbianFyi && SerbianFyi.prep && SerbianFyi.prep.lookup(p);
+  return known
+    ? `<button type="button" class="prep-trigger" data-prep="${p}" aria-expanded="false">${sr}</button>`
+    : sr;
+}
+
 /* ── View settings (persisted), surfaced as rows in the site settings menu.
    detail: basic (head + signature ending + one example) vs detailed (full
    grid + off-paradigm packs); sync: syncretism recession on/off. ── */
@@ -317,7 +328,7 @@ function renderCases() {
     ` : `
       <div class="case-cell case-cell-preps">
         <span class="cell-axis">${prepsLabel}</span>
-        <p class="prep-list">${c.preps.map(p => SerbianFyi.sr(p)).join(', ')}</p>
+        <p class="prep-list">${c.preps.map(prepToken).join(', ')}</p>
       </div>`;
 
     return `
@@ -499,85 +510,27 @@ function setupScrollSpy() {
   update();
 }
 
-/* Ending note popovers — same small `?` trigger and popover shell as the
-   alphabet chart. */
-(function setupNotePopover(){
-  const pop = document.getElementById('casePop');
-  if (!pop) return;
-  const bodyEl   = pop.querySelector('#casePopBody');
-  const closeBtn = pop.querySelector('.tip-pop-close');
-  let active = null;
+/* Ending note popovers + inline preposition cards — both ride the shared
+   popover shell (SerbianFyi.popover). The note keeps its case tone; the prep
+   card colours each use by its own case, so its shell stays tone-less. */
+SerbianFyi.popover.register({
+  match: '[data-note-trigger]',
+  variant: 'case-pop',
+  render: (t) => {
+    const caseIdx = +t.getAttribute('data-case-idx');
+    const noteId = t.getAttribute('data-note-id');
+    return (isNaN(caseIdx) || !noteId) ? '' : notePopoverHTML(caseIdx, noteId);
+  },
+  tone: (t) => (CASES[+t.getAttribute('data-case-idx')] || {}).tone || '',
+});
 
-  function position() {
-    if (!active) return;
-    const r = active.getBoundingClientRect();
-    const sx = window.scrollX || window.pageXOffset;
-    const sy = window.scrollY || window.pageYOffset;
-    pop.style.left = '0px'; pop.style.top = '0px';
-    const pw = pop.offsetWidth, ph = pop.offsetHeight;
-    const gutter = 12;
-    const vw = document.documentElement.clientWidth;
-    let left = r.left + sx + r.width/2 - pw/2;
-    left = Math.max(sx + gutter, Math.min(left, sx + vw - pw - gutter));
-    const spaceBelow = window.innerHeight - r.bottom;
-    const placeAbove = spaceBelow < ph + gutter && r.top > ph + gutter;
-    const top = placeAbove ? r.top + sy - ph - 8 : r.bottom + sy + 8;
-    pop.style.left = left + 'px';
-    pop.style.top  = top  + 'px';
-    pop.dataset.placement = placeAbove ? 'above' : 'below';
-  }
-
-  function open(trigger) {
-    const caseIdx = +trigger.getAttribute('data-case-idx');
-    const noteId  = trigger.getAttribute('data-note-id');
-    if (isNaN(caseIdx) || !noteId) return;
-    const c = CASES[caseIdx];
-    const content = notePopoverHTML(caseIdx, noteId);
-    if (!content) return;
-    pop.dataset.tone = c && c.tone || '';
-    if (active && active !== trigger) active.setAttribute('aria-expanded','false');
-    active = trigger;
-    trigger.setAttribute('aria-expanded','true');
-    bodyEl.innerHTML = content;
-    pop.hidden = false;
-    requestAnimationFrame(() => { position(); pop.classList.add('is-open'); });
-  }
-
-  function close() {
-    const trigger = active;
-    if (!trigger) return;
-    trigger.setAttribute('aria-expanded','false');
-    active = null;
-    pop.classList.remove('is-open');
-    pop.hidden = true;
-    return trigger;
-  }
-
-  function closeAndReturnFocus() {
-    const trigger = close();
-    if (trigger && document.contains(trigger)) trigger.focus({ preventScroll: true });
-  }
-
-  document.addEventListener('click', (e) => {
-    const trigger = e.target.closest('[data-note-trigger]');
-    if (trigger) {
-      e.preventDefault();
-      if (active === trigger) close(); else open(trigger);
-      return;
-    }
-    if (!pop.hidden && !pop.contains(e.target)) close();
+if (window.SerbianFyi && SerbianFyi.prep) {
+  SerbianFyi.popover.register({
+    match: '[data-prep]',
+    variant: 'prep-pop',
+    render: (t) => SerbianFyi.prep.renderCard(t.getAttribute('data-prep')),
   });
-
-  closeBtn.addEventListener('click', closeAndReturnFocus);
-  document.addEventListener('keydown', (e) => {
-    if (e.key !== 'Escape' || pop.hidden) return;
-    e.preventDefault();
-    closeAndReturnFocus();
-  });
-  window.addEventListener('resize', () => { if (!pop.hidden) position(); });
-  window.addEventListener('scroll', () => { if (!pop.hidden) position(); }, { passive: true });
-  document.addEventListener('langchange', close);
-})();
+}
 
 /* Example disclosure — unfold the hidden example under its case meta.
    Delegated so it survives re-render; state is per-render (collapsed default). */

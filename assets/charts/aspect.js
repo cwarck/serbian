@@ -171,81 +171,21 @@ function renderAspect() {
   ].join('');
 }
 
-(function setupAspectPopover(){
-  const pop = document.getElementById('aspectPop');
-  if (!pop) return;
-  const bodyEl = pop.querySelector('#aspectPopBody');
-  const closeBtn = pop.querySelector('.tip-pop-close');
-  let active = null;
-
-  function notes() {
-    return PREFIXES.filter(item => item.note).map(item => item.note);
-  }
-  function position() {
-    if (!active) return;
-    const r = active.getBoundingClientRect();
-    const sx = window.scrollX || window.pageXOffset;
-    const sy = window.scrollY || window.pageYOffset;
-    pop.style.left = '0px'; pop.style.top = '0px';
-    const pw = pop.offsetWidth, ph = pop.offsetHeight;
-    const gutter = 12;
-    const vw = document.documentElement.clientWidth;
-    let left = r.left + sx + r.width / 2 - pw / 2;
-    left = Math.max(sx + gutter, Math.min(left, sx + vw - pw - gutter));
-    const spaceBelow = window.innerHeight - r.bottom;
-    const placeAbove = spaceBelow < ph + gutter && r.top > ph + gutter;
-    pop.style.left = left + 'px';
-    pop.style.top = (placeAbove ? r.top + sy - ph - 8 : r.bottom + sy + 8) + 'px';
-    pop.dataset.placement = placeAbove ? 'above' : 'below';
-  }
-  function open(trigger) {
-    const note = notes()[+trigger.getAttribute('data-aspect-note')];
-    if (!note) return;
-    if (active && active !== trigger) active.setAttribute('aria-expanded', 'false');
-    active = trigger;
-    trigger.setAttribute('aria-expanded', 'true');
-    bodyEl.innerHTML = `
+/* Prefix-note popover — rides the shared popover shell. */
+SerbianFyi.popover.register({
+  match: '[data-aspect-note]',
+  variant: 'aspect-pop',
+  render: (t) => {
+    const notes = PREFIXES.filter(item => item.note).map(item => item.note);
+    const note = notes[+t.getAttribute('data-aspect-note')];
+    return note ? `
       <article class="aspect-tip">
         <h4>${pick(note.title)}</h4>
         <p>${pick(note.body)}</p>
       </article>
-    `;
-    pop.hidden = false;
-    requestAnimationFrame(() => { position(); pop.classList.add('is-open'); });
-  }
-  function close() {
-    const trigger = active;
-    if (!trigger) return;
-    trigger.setAttribute('aria-expanded', 'false');
-    active = null;
-    pop.classList.remove('is-open');
-    pop.hidden = true;
-    return trigger;
-  }
-  function closeAndReturnFocus() {
-    const trigger = close();
-    if (trigger && document.contains(trigger)) trigger.focus({ preventScroll: true });
-  }
-  document.addEventListener('click', (e) => {
-    const trigger = e.target.closest('[data-aspect-note]');
-    if (trigger) {
-      e.preventDefault();
-      if (active === trigger) close(); else open(trigger);
-      return;
-    }
-    if (!pop.hidden && !pop.contains(e.target)) close();
-  });
-  closeBtn.addEventListener('click', closeAndReturnFocus);
-  document.addEventListener('keydown', (e) => {
-    if (e.key !== 'Escape' || pop.hidden) return;
-    e.preventDefault();
-    closeAndReturnFocus();
-  });
-  window.addEventListener('resize', () => { if (!pop.hidden) position(); });
-  window.addEventListener('scroll', () => { if (!pop.hidden) position(); }, { passive: true });
-  document.addEventListener('langchange', close);
-  document.addEventListener('scriptchange', close);
-})();
+    ` : '';
+  },
+});
 
 document.addEventListener('langchange', renderAspect);
 document.addEventListener('scriptchange', renderAspect);

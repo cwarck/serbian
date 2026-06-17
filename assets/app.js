@@ -185,6 +185,129 @@
     },
   };
 
+  /* ---------- popover ----------
+     One floating `.tip-pop` shell, shared site-wide. Charts register a
+     { match, render, variant?, tone? } descriptor instead of hand-rolling
+     their own open/close/position/dismiss logic (this used to be copy-pasted
+     across five charts). A delegated click finds the first matching trigger,
+     renders its content, and toggles the shell. */
+  const popover = (() => {
+    let pop, bodyEl, active = null;
+    const registry = [];
+
+    function ensure() {
+      if (pop) return;
+      pop = document.createElement('div');
+      pop.className = 'tip-pop';
+      pop.setAttribute('role', 'dialog');
+      pop.setAttribute('aria-modal', 'false');
+      pop.hidden = true;
+      pop.innerHTML =
+        '<div class="tip-pop-card">' +
+          '<div class="tip-pop-body"></div>' +
+          '<button type="button" class="tip-pop-close" data-i18n-attr="aria-label:pop.close" aria-label="Close">×</button>' +
+        '</div>';
+      bodyEl = pop.querySelector('.tip-pop-body');
+      const closeBtn = pop.querySelector('.tip-pop-close');
+      closeBtn.addEventListener('click', closeAndReturnFocus);
+      // Localise the close label now (the panel is built lazily, after the
+      // initial applyI18n); later language switches re-run applyI18n.
+      const lang = document.documentElement.getAttribute('lang') || 'en';
+      const label = window.I18N && window.I18N[lang] && window.I18N[lang]['pop.close'];
+      if (label) closeBtn.setAttribute('aria-label', label);
+      document.body.appendChild(pop);
+      attachListeners();
+    }
+
+    // Attached once, on first register() — i.e. only in a browser. Keeps the
+    // IIFE side-effect-free at module eval (the validator runs it head-less).
+    function attachListeners() {
+      document.addEventListener('click', (e) => {
+        const hit = registry.length ? findMatch(e.target) : null;
+        if (hit) {
+          e.preventDefault();
+          if (active === hit.trigger) close(); else open(hit.trigger, hit.reg);
+          return;
+        }
+        if (pop && !pop.hidden && !pop.contains(e.target)) close();
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key !== 'Escape' || !pop || pop.hidden) return;
+        e.preventDefault();
+        closeAndReturnFocus();
+      });
+      window.addEventListener('resize', () => { if (pop && !pop.hidden) position(); });
+      window.addEventListener('scroll', () => { if (pop && !pop.hidden) position(); }, { passive: true });
+      document.addEventListener('langchange', () => { if (pop) close(); });
+      document.addEventListener('scriptchange', () => { if (pop) close(); });
+    }
+
+    function position() {
+      if (!active) return;
+      const r = active.getBoundingClientRect();
+      const sx = window.scrollX || window.pageXOffset;
+      const sy = window.scrollY || window.pageYOffset;
+      pop.style.left = '0px'; pop.style.top = '0px';
+      const pw = pop.offsetWidth, ph = pop.offsetHeight;
+      const gutter = 12;
+      const vw = document.documentElement.clientWidth;
+      let left = r.left + sx + r.width / 2 - pw / 2;
+      left = Math.max(sx + gutter, Math.min(left, sx + vw - pw - gutter));
+      const spaceBelow = window.innerHeight - r.bottom;
+      const placeAbove = spaceBelow < ph + gutter && r.top > ph + gutter;
+      let top = placeAbove ? r.top + sy - ph - 8 : r.bottom + sy + 8;
+      // Clamp into the visible viewport so an edge/tall popover never clips;
+      // if it's taller than the viewport, pin to the top and let it scroll.
+      const minTop = sy + gutter;
+      const maxTop = sy + window.innerHeight - ph - gutter;
+      top = maxTop >= minTop ? Math.max(minTop, Math.min(top, maxTop)) : minTop;
+      pop.style.left = left + 'px';
+      pop.style.top = top + 'px';
+      pop.dataset.placement = placeAbove ? 'above' : 'below';
+    }
+
+    function open(trigger, reg) {
+      const content = reg.render(trigger);
+      if (!content) return;
+      pop.className = 'tip-pop' + (reg.variant ? ' ' + reg.variant : '');
+      pop.dataset.tone = (reg.tone && reg.tone(trigger)) || '';
+      if (active && active !== trigger) active.setAttribute('aria-expanded', 'false');
+      active = trigger;
+      trigger.setAttribute('aria-expanded', 'true');
+      bodyEl.innerHTML = content;
+      pop.hidden = false;
+      requestAnimationFrame(() => { position(); pop.classList.add('is-open'); });
+    }
+
+    function close() {
+      const trigger = active;
+      if (!trigger) return null;
+      trigger.setAttribute('aria-expanded', 'false');
+      active = null;
+      pop.classList.remove('is-open');
+      pop.hidden = true;
+      return trigger;
+    }
+
+    function closeAndReturnFocus() {
+      const trigger = close();
+      if (trigger && document.contains(trigger)) trigger.focus({ preventScroll: true });
+    }
+
+    function findMatch(target) {
+      for (const reg of registry) {
+        const trigger = target.closest(reg.match);
+        if (trigger) return { trigger, reg };
+      }
+      return null;
+    }
+
+    return {
+      register(descriptor) { ensure(); registry.push(descriptor); },
+      close: () => { if (pop) close(); },
+    };
+  })();
+
   window.SerbianFyi = Object.assign(window.SerbianFyi || {}, {
     sr,
     srHTML,
@@ -193,6 +316,7 @@
     toLatin,
     stripDiacritics,
     glossary,
+    popover,
   });
 
   /* ---------- i18n ---------- */
