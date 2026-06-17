@@ -3548,13 +3548,16 @@ a.cast-cell:focus-visible {
   vector-effect: non-scaling-stroke;
 }
 
+/* The row name stays neutral ink — a dual-case prep (pod/pred/nad…) carries one
+   row tone, so colouring the name would read as a single phantom case. Case
+   colour lives on the per-use icon dots and chips instead. */
 .prep-name {
   align-self: center;
   font-family: var(--ff-display);
   font-size: var(--fs-head);
   font-weight: 300;
   line-height: 1;
-  color: var(--tone, var(--accent));
+  color: var(--ink);
 }
 
 .prep-uses {
