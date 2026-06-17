@@ -704,7 +704,7 @@ section { position: relative; }
   content: "";
   position: absolute;
   top: 0; left: 0; right: 0; height: 3px;
-  background: var(--tone, var(--accent));
+  background: var(--tone, var(--ink-soft));
   opacity: .85;
 }
 .case-strip-cell a {
@@ -719,7 +719,7 @@ section { position: relative; }
   text-decoration: none;
 }
 .case-strip-cell.is-current {
-  background: color-mix(in oklab, var(--tone, var(--accent)) 14%, transparent);
+  background: color-mix(in oklab, var(--tone, var(--ink-soft)) 14%, transparent);
 }
 .case-strip-cell.is-current::before { height: 4px; opacity: 1; }
 
@@ -730,7 +730,7 @@ section { position: relative; }
   font-weight: 500;
   letter-spacing: var(--track-label);
   text-transform: uppercase;
-  color: var(--tone, var(--accent));
+  color: var(--tone, var(--ink-soft));
   line-height: 1;
 }
 
@@ -795,7 +795,7 @@ section { position: relative; }
   top: 0; left: calc(-1 * var(--pad-x));
   width: calc(100% + 2 * var(--pad-x));
   height: 3px;
-  background: var(--tone, var(--accent));
+  background: var(--tone, var(--ink-soft));
   opacity: .85;
 }
 
@@ -861,8 +861,8 @@ section { position: relative; }
   font-weight: 500;
   letter-spacing: var(--track-label);
   text-transform: uppercase;
-  color: var(--tone, var(--accent));
-  background: color-mix(in oklab, var(--tone, var(--accent)) 10%, transparent);
+  color: var(--tone, var(--ink-soft));
+  background: color-mix(in oklab, var(--tone, var(--ink-soft)) 10%, transparent);
   padding: .35rem .75rem;
   line-height: 1;
 }
@@ -906,7 +906,7 @@ section { position: relative; }
   line-height: var(--lh-prose);
   max-width: 34ch;
 }
-.case-cell-head .q strong { font-family: var(--ff-display); font-style: normal; font-weight: 500; color: var(--tone, var(--accent)); }
+.case-cell-head .q strong { font-family: var(--ff-display); font-style: normal; font-weight: 500; color: var(--tone, var(--ink-soft)); }
 
 /* Each ending cell — small framed block with its own axis label */
 .case-cell-end {
@@ -1014,7 +1014,7 @@ section { position: relative; }
 
   /* Case header column — tone strip on the left, compact typography */
   .case-row:not(.case-row-head) .case-cell-head {
-    border-left: 4px solid var(--tone, var(--accent));
+    border-left: 4px solid var(--tone, var(--ink-soft));
     padding-left: 1.1rem;
     background: color-mix(in oklab, var(--paper-deep) 35%, transparent);
   }
@@ -1063,7 +1063,7 @@ section { position: relative; }
   font-style: normal;
   font-weight: 400;
   font-size: var(--fs-lead);
-  color: var(--tone, var(--accent));
+  color: var(--tone, var(--ink-soft));
   line-height: 1;
   letter-spacing: -.01em;
   white-space: nowrap;
@@ -1085,8 +1085,8 @@ section { position: relative; }
   font-weight: 500;
   letter-spacing: var(--track-label);
   text-transform: uppercase;
-  color: var(--tone, var(--accent));
-  background: color-mix(in oklab, var(--tone, var(--accent)) 10%, transparent);
+  color: var(--tone, var(--ink-soft));
+  background: color-mix(in oklab, var(--tone, var(--ink-soft)) 10%, transparent);
   padding: .32rem .5rem .31rem .54rem;
   line-height: 1;
   white-space: nowrap;
@@ -1407,14 +1407,14 @@ body:not(.is-syncretism) .cell-shares {
 .note-pairs .lit {
   font-style: italic;
   font-weight: 500;
-  color: var(--tone, var(--accent));
-  background: color-mix(in oklab, var(--tone, var(--accent)) 14%, transparent);
+  color: var(--tone, var(--ink-soft));
+  background: color-mix(in oklab, var(--tone, var(--ink-soft)) 14%, transparent);
   padding: 0 .14em;
   border-radius: 2px;
 }
 /* Extra-table changed letters: colored regular serif, no tint, no italic —
    the hue alone marks the change (inherits serif/normal/400 from .from/.to). */
-.wrinkle-list .lit { color: var(--tone, var(--accent)); }
+.wrinkle-list .lit { color: var(--tone, var(--ink-soft)); }
 
 /* Examples + prepositions — used inside per-case cells */
 .examples {
@@ -1442,7 +1442,7 @@ body:not(.is-syncretism) .cell-shares {
    the hue alone lifts it from the sentence (overrides the UA mark default). */
 .ex .sr mark {
   background: transparent;
-  color: var(--tone, var(--accent));
+  color: var(--tone, var(--ink-soft));
 }
 .ex .tr {
   font-family: var(--ff-body);
@@ -1468,7 +1468,7 @@ body:not(.is-syncretism) .cell-shares {
   font-family: var(--ff-display);
   font-weight: 400;
   font-size: var(--fs-lead);
-  color: var(--tone, var(--accent));
+  color: var(--tone, var(--ink-soft));
   letter-spacing: -.005em;
   line-height: var(--lh-prose);
   margin: 0;
@@ -1548,7 +1548,7 @@ a.cast-cell:focus-visible {
   justify-content: center;
 }
 .cast-case {
-  color: var(--tone, var(--accent));
+  color: var(--tone, var(--ink-soft));
   text-decoration: none;
 }
 .cast-gender-head {
@@ -1570,7 +1570,7 @@ a.cast-cell:focus-visible {
    marks where the word inflected. */
 .cast-cell .lit {
   font-weight: 500;
-  color: var(--tone, var(--accent));
+  color: var(--tone, var(--ink-soft));
 }
 @media (min-width: 720px) {
   .cast-scroll {
@@ -1816,7 +1816,7 @@ a.cast-cell:focus-visible {
   content: "";
   display: block;
   height: 3px;
-  background: var(--tone, var(--accent));
+  background: var(--tone, var(--ink-soft));
   margin: -1.25rem -1.05rem .05rem;
 }
 .pron-panel-head {
@@ -1849,7 +1849,7 @@ a.cast-cell:focus-visible {
 .pron-panel-head h3 {
   font-size: var(--fs-title);
   line-height: var(--lh-snug);
-  color: var(--tone, var(--accent));
+  color: var(--tone, var(--ink-soft));
 }
 
 .pron-table {
@@ -1912,7 +1912,7 @@ a.cast-cell:focus-visible {
 .pron-form,
 .pron-gender-row span,
 .pron-kw-row > span:not(:first-child) {
-  color: var(--tone, var(--accent));
+  color: var(--tone, var(--ink-soft));
 }
 /* Short (clitic) forms step down one ink tone — position after the comma
    plus the legend carry the long/short axis; no hue (cyan would read GEN). */
@@ -1967,7 +1967,7 @@ a.cast-cell:focus-visible {
   border-bottom: 1px solid var(--hairline-soft);
 }
 .pron-mini-head span:not(:first-child) {
-  color: var(--tone, var(--accent));
+  color: var(--tone, var(--ink-soft));
 }
 .pron-poss-card {
   display: grid;
@@ -2026,7 +2026,7 @@ a.cast-cell:focus-visible {
   border-bottom: 1px solid var(--hairline-soft);
 }
 .pron-kw-head span:not(:first-child) {
-  color: var(--tone, var(--accent));
+  color: var(--tone, var(--ink-soft));
 }
 .pron-kw-row {
   padding: .72rem 0;
@@ -2132,7 +2132,7 @@ a.cast-cell:focus-visible {
   content: "";
   display: block;
   height: 3px;
-  background: var(--tone, var(--accent));
+  background: var(--tone, var(--ink-soft));
   margin: -1.25rem -1.05rem .05rem;
 }
 
@@ -2163,7 +2163,7 @@ a.cast-cell:focus-visible {
 .verb-col-head h3 {
   font-size: var(--fs-title);
   line-height: var(--lh-snug);
-  color: var(--tone, var(--accent));
+  color: var(--tone, var(--ink-soft));
 }
 
 .verb-endings,
@@ -2202,7 +2202,7 @@ a.cast-cell:focus-visible {
   font-size: var(--fs-lead);
   font-weight: 400;
   line-height: var(--lh-snug);
-  color: var(--tone, var(--accent));
+  color: var(--tone, var(--ink-soft));
   letter-spacing: 0;
 }
 
@@ -2229,8 +2229,8 @@ a.cast-cell:focus-visible {
   font-weight: 400;
   letter-spacing: 0;
   line-height: 1;
-  color: var(--tone, var(--accent));
-  background: color-mix(in oklab, var(--tone, var(--accent)) 8%, transparent);
+  color: var(--tone, var(--ink-soft));
+  background: color-mix(in oklab, var(--tone, var(--ink-soft)) 8%, transparent);
 }
 .verb-list,
 .verb-formula,
@@ -2277,7 +2277,7 @@ a.cast-cell:focus-visible {
   font-family: var(--ff-display);
 }
 .verb-formula {
-  color: var(--tone, var(--accent));
+  color: var(--tone, var(--ink-soft));
 }
 
 .verb-mini-list {
@@ -2298,7 +2298,7 @@ a.cast-cell:focus-visible {
   gap: .55rem;
 }
 .verb-mini-head h4 {
-  color: var(--tone, var(--accent));
+  color: var(--tone, var(--ink-soft));
 }
 .verb-negative {
   display: grid;
@@ -2413,7 +2413,7 @@ a.cast-cell:focus-visible {
 .num-panel-head h3 {
   font-size: var(--fs-title);
   line-height: var(--lh-snug);
-  color: var(--tone, var(--accent));
+  color: var(--tone, var(--ink-soft));
 }
 
 .num-mini-grid,
@@ -2465,7 +2465,7 @@ a.cast-cell:focus-visible {
   flex-wrap: wrap;
   align-items: baseline;
   gap: .35rem;
-  color: var(--tone, var(--accent));
+  color: var(--tone, var(--ink-soft));
 }
 
 .num-plus {
@@ -2506,7 +2506,7 @@ a.cast-cell:focus-visible {
   letter-spacing: var(--track-label);
   line-height: 1;
   text-transform: uppercase;
-  color: var(--tone, var(--accent));
+  color: var(--tone, var(--ink-soft));
 }
 
 .num-pattern,
@@ -2526,7 +2526,7 @@ a.cast-cell:focus-visible {
 }
 
 .num-ordinal-table .num-word {
-  color: var(--tone, var(--accent));
+  color: var(--tone, var(--ink-soft));
 }
 
 @media (min-width: 700px) {
@@ -2684,7 +2684,7 @@ a.cast-cell:focus-visible {
 .aspect-group-head h3 {
   font-size: var(--fs-title);
   line-height: var(--lh-snug);
-  color: var(--tone, var(--accent));
+  color: var(--tone, var(--ink-soft));
 }
 
 .aspect-compare-head,
@@ -2748,7 +2748,7 @@ a.cast-cell:focus-visible {
   letter-spacing: var(--track-label);
   line-height: 1;
   text-transform: uppercase;
-  color: var(--tone, var(--accent));
+  color: var(--tone, var(--ink-soft));
 }
 
 .aspect-side {
@@ -2766,7 +2766,7 @@ a.cast-cell:focus-visible {
   letter-spacing: var(--track-label);
   line-height: 1;
   text-transform: uppercase;
-  color: var(--tone, var(--accent));
+  color: var(--tone, var(--ink-soft));
 }
 
 .aspect-side p,
@@ -2810,7 +2810,7 @@ a.cast-cell:focus-visible {
 
 .aspect-form,
 .aspect-prefix-head h4 {
-  color: var(--tone, var(--accent));
+  color: var(--tone, var(--ink-soft));
 }
 
 .aspect-table-row {
@@ -3479,7 +3479,7 @@ a.cast-cell:focus-visible {
   gap: .85rem 1rem;
   padding: 1.05rem 0 1.15rem;
   border-bottom: 1px solid var(--hairline-soft);
-  --prep-dot: var(--tone, var(--accent));
+  --prep-dot: var(--tone, var(--ink-soft));
 }
 
 .prep-row:last-child {
@@ -3503,7 +3503,7 @@ a.cast-cell:focus-visible {
 
 .prep-icon-cell {
   display: block;
-  --prep-dot: var(--tone, var(--accent));
+  --prep-dot: var(--tone, var(--ink-soft));
 }
 
 .prep-icon-cell[data-case="gen"] { --prep-dot: var(--tone-cyan); }
@@ -3595,8 +3595,8 @@ a.cast-cell:focus-visible {
   letter-spacing: var(--track-label);
   line-height: 1;
   text-transform: uppercase;
-  color: var(--case-tone, var(--tone, var(--accent)));
-  background: color-mix(in oklab, var(--case-tone, var(--tone, var(--accent))) 12%, transparent);
+  color: var(--case-tone, var(--tone, var(--ink-soft)));
+  background: color-mix(in oklab, var(--case-tone, var(--tone, var(--ink-soft))) 12%, transparent);
   padding: .36rem .52rem .34rem;
 }
 
