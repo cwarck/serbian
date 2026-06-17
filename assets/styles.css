@@ -1930,10 +1930,6 @@ a.cast-cell:focus-visible {
   align-items: baseline;
   gap: .2rem .45rem;
 }
-.pron-table tr[data-band="self"] .pron-subject,
-.pron-table tr[data-band="self"] .pron-long {
-  color: var(--accent);
-}
 
 .pron-rule-row {
   display: grid;
