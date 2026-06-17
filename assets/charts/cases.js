@@ -30,6 +30,7 @@ function caseAnchor(key) { return key.replace(/\./g,'-'); }
    grid + off-paradigm packs); sync: syncretism recession on/off. ── */
 const LS_DETAIL = 'as_detail';
 const LS_SYNC = 'as_syncretism';
+const LS_HINT = 'as_hint_detail';
 function lsGet(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
 function lsSet(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
 function detailMode() { return lsGet(LS_DETAIL) === 'detailed' ? 'detailed' : 'basic'; }
@@ -50,79 +51,6 @@ function diffHL(a, b) {
   const wrap = (s, i, j) =>
     s.slice(0, i) + (i < j ? `<span class="lit">${s.slice(i, j)}</span>` : '') + s.slice(j);
   return { from: wrap(sa, p, ea), to: wrap(sb, p, eb) };
-}
-
-/* The CAST hero — three nouns × seven cases. Tap a cell to jump to that case. */
-function renderCast() {
-  const root = document.getElementById('castScroll');
-  if (!root) return;
-  if (detailMode() === 'basic') { root.innerHTML = ''; return; }
-  const d = dict();
-  const genderLabel = cast =>
-    d['cases.gender.' + cast.gender] || cast.gender.toUpperCase();
-  const castSync = CAST.map(cast => castSyncretism(cast.forms.sg));
-
-  const mobileHeadRow = `
-    <div class="cast-row cast-row-head" role="row">
-      <span class="cast-cell cast-cell-head" role="rowheader"></span>
-      ${CAST.map(cast => `
-        <span class="cast-cell cast-cell-head cast-gender-head" data-gender="${cast.gender}" role="columnheader">${genderLabel(cast)}</span>
-      `).join('')}
-    </div>`;
-  const mobileRows = CASES.map((c, i) => {
-    const cells = CAST.map((cast, ci) => {
-      const base = cast.forms.sg[0];
-      const form = cast.forms.sg[i];
-      const hl = i === 0 ? cast.word : diffHL(base, form).to;
-      const sync = castSync[ci][i];
-      const echo = !sync.novel;
-      return `
-        <a class="cast-cell${echo ? ' is-echo' : ''}" data-tone="${c.tone}" href="#${caseAnchor(c.key)}" aria-label="${c.abbr}, ${genderLabel(cast)}: ${SerbianFyi.sr(form)}${echo ? ', = ' + sync.source : ''}">
-          <span class="cast-form">${SerbianFyi.srHTML(hl)}</span>
-          ${echo ? pillsHTML([sync.source]) : ''}
-        </a>`;
-    }).join('');
-    return `
-      <div class="cast-row" data-tone="${c.tone}" role="row">
-        <a class="cast-cell cast-case" data-tone="${c.tone}" role="rowheader" href="#${caseAnchor(c.key)}">
-          <span class="cast-abbr">${c.abbr}</span>
-        </a>
-        ${cells}
-      </div>`;
-  }).join('');
-
-  const wideHeadRow = `
-    <div class="cast-row cast-row-head" role="row">
-      <span class="cast-cell cast-cell-head" role="rowheader"></span>
-      ${CASES.map(c => `
-        <a class="cast-cell cast-cell-head" data-tone="${c.tone}" role="columnheader" href="#${caseAnchor(c.key)}">
-          <span class="cast-abbr">${c.abbr}</span>
-        </a>
-      `).join('')}
-    </div>`;
-  const wideRows = CAST.map((cast, ci) => {
-    const cells = cast.forms.sg.map((form, i) => {
-      const c = CASES[i];
-      const base = cast.forms.sg[0];
-      const hl = i === 0 ? cast.word : diffHL(base, form).to;
-      const sync = castSync[ci][i];
-      const echo = !sync.novel;
-      return `
-        <a class="cast-cell${echo ? ' is-echo' : ''}" data-tone="${c.tone}" href="#${caseAnchor(c.key)}" aria-label="${c.abbr}: ${SerbianFyi.sr(form)}${echo ? ', = ' + sync.source : ''}">
-          <span class="cast-form">${SerbianFyi.srHTML(hl)}</span>
-          ${echo ? pillsHTML([sync.source]) : ''}
-        </a>
-      `;
-    }).join('');
-    return `
-      <div class="cast-row" data-gender="${cast.gender}" role="row">
-        <span class="cast-cell cast-gender" data-gender="${cast.gender}" role="rowheader">${genderLabel(cast)}</span>
-        ${cells}
-      </div>`;
-  }).join('');
-  root.innerHTML = `
-    <div class="cast-table cast-mobile" role="table" aria-label="Three nouns declined through seven cases">${mobileHeadRow}${mobileRows}</div>
-    <div class="cast-table cast-wide" role="table" aria-label="Three nouns declined through seven cases">${wideHeadRow}${wideRows}</div>`;
 }
 
 function renderCaseStrip() {
@@ -181,13 +109,13 @@ function computeSyncretism() {
     const firstSeen = new Map(); // ending value -> case abbr that introduced it
     CASES.forEach((c, i) => {
       const entry = c.endings[ax.g][ax.n];
-      /* Sound-conditioned alternation — an unlabeled split like the palatal/
-         soft vocative (-e / -u) — is not syncretism. A coincidental shape
-         match (VOK soft -u vs DAT -u) must not read as "borrowed", so those
-         branches stay lit. The labeled split (AKU animacy) is genuine reuse
+      /* Sound-conditioned alternation — a plain split like the palatal/soft
+         vocative (-e / -u) — is not syncretism. A coincidental shape match
+         (VOK soft -u vs DAT -u) must not read as "borrowed", so those branches
+         stay lit. Only a split flagged syncretic (AKU animacy) is genuine reuse
          of GEN/NOM and keeps its echo chips. */
       const conditioned = entry && typeof entry !== 'string'
-        && Array.isArray(entry.split) && !entry.split.some(s => s.labelKey);
+        && Array.isArray(entry.split) && !entry.syncretic;
       const vals = entryBranchValues(entry);
       const branches = vals.map(v => (!conditioned && firstSeen.has(String(v)))
         ? { v, novel: false, source: firstSeen.get(String(v)) }
@@ -252,19 +180,17 @@ function cellHTML(entry, caseIdx, axisKey) {
        so the cell reads `-a / -∅¹` rather than `-a¹ / -∅¹`. */
     const sharedNote = variants.every(s => s.n && s.n === variants[0].n)
       ? variants[0].n : null;
-    const hasLabels = variants.some(s => s.labelKey);
-    if (hasLabels) {
-      const d = dict();
+    /* Syncretic split (AKU animacy): each ending reuses a known case, so it
+       stacks with its source-case chip. The criterion that picks between them
+       (alive vs thing) lives in the ? note, not inline — the cell stays narrow
+       and the two reused shapes read at a glance. */
+    if (entry.syncretic) {
       const rows = variants.map((s, idx) => {
-        const label = s.labelKey ? (d[s.labelKey] || '') : '';
-        const m = sharedNote && idx === variants.length - 1 ? noteMark(sharedNote) : !sharedNote && s.n ? noteMark(s.n) : '';
-        return `
-          <span class="end-row">
-            <span class="cell-label">${label}</span>
-            ${endHTML(s.v, branches[idx], m)}
-          </span>`;
+        const m = sharedNote && idx === variants.length - 1 ? noteMark(sharedNote)
+                : !sharedNote && s.n ? noteMark(s.n) : '';
+        return `<span class="end-row">${endHTML(s.v, branches[idx], m)}</span>`;
       }).join('');
-      return `<span class="cell cell-alt cell-alt-labeled">${rows}</span>`;
+      return `<span class="cell cell-alt cell-alt-stack">${rows}</span>`;
     }
     const ends = variants.map((s, idx) => {
       const m = !sharedNote && s.n ? noteMark(s.n) : '';
@@ -289,7 +215,6 @@ function renderCases() {
   const d = dict();
   if (!list) return;
   const lang = currentLang();
-  const exLabel    = d['cases.examples'] || 'In the wild';
   const prepsLabel = d['cases.preps']    || 'Prepositions';
 
   const headBlock = (c) => {
@@ -297,50 +222,78 @@ function renderCases() {
     const local   = SerbianFyi.sr(d[c.key + '.local'] || '');
     const tagline = d[c.key + '.tagline'] || '';
     const q       = srStrongHTML(d[c.key + '.q'] || '');
+    /* Examples hide by default — a chevron on the question line unfolds them
+       in place, so the endings matrix stays the legible default. */
+    const hasEx = c.examples.length > 0;
+    const exLabel = d['cases.examples'] || 'In the wild';
+    const exToggle = hasEx ? `<button type="button" class="ex-toggle" data-ex-toggle aria-expanded="false" aria-label="${exLabel}"><span class="ex-toggle-caret" aria-hidden="true"></span></button>` : '';
+    const exHTML  = hasEx ? `
+      <div class="case-head-ex">
+        <div class="examples">${c.examples.map(ex => `
+          <div class="ex">
+            <div class="sr">${SerbianFyi.srHTML(ex.sr)}</div>
+            <div class="tr">${SerbianFyi.srGrammarHTML(ex[lang] || ex.en)}</div>
+          </div>`).join('')}
+        </div>
+      </div>` : '';
     return `
       <div class="case-cell case-cell-head">
         <header class="case-head">
-          <span class="case-tag">${c.abbr}</span>
-          <h3>${name}<em title="${d['cases.local.tooltip'] || ''}">${local}</em></h3>
-          <p class="q">${q}</p>
+          <div class="case-head-title">
+            <h3>${local}<em>${name}</em></h3>
+            <span class="case-tag">${c.abbr}</span>
+          </div>
+          <p class="q">${exToggle}${q}</p>
           <p class="tagline">${tagline}</p>
+          ${exHTML}
         </header>
       </div>`;
   };
 
-  /* Basic mode: head + signature ending + one example per case. The cast hero
-     and off-paradigm packs are hidden by CSS ([data-detail="basic"]). The
-     signature endings carry syncretism too — LOK's -u recedes to =DAT. */
+  /* Basic mode: one concrete noun per gender (pilot / žena / selo) declined
+     down the seven cases — rows × {M,F,N} singular. Endings stay abstract in
+     Detailed; here the whole word is shown, the changed letters lit in tone.
+     Syncretism recession applies per noun: an echo loses its highlight and
+     names the case it borrows from. Off-paradigm packs hidden by CSS. */
   if (detailMode() === 'basic') {
-    const sigFirst = new Map();
-    const sigInfo = CASES.map(c => {
-      const v = String(c.sigEnding);
-      if (sigFirst.has(v)) return { echo: true, source: sigFirst.get(v) };
-      sigFirst.set(v, c.abbr);
-      return { echo: false, source: null };
-    });
-    list.innerHTML = CASES.map((c, i) => {
-      const si = sigInfo[i];
-      const ex = c.examples[0];
-      const sig = `<div class="case-sig"><span class="end${si.echo ? ' is-echo' : ''}">${SerbianFyi.sr(c.sigEnding)}</span>${si.echo ? pillsHTML([si.source]) : ''}</div>`;
-      const exHTML = ex ? `
-        <div class="examples">
-          <div class="ex">
-            <div class="sr">${SerbianFyi.srHTML(ex.sr)}</div>
-            <div class="tr">${SerbianFyi.srGrammarHTML(ex[lang] || ex.en)}</div>
-          </div>
-        </div>` : '';
+    const genderLabel = g => d['cases.gender.' + g] || g.toUpperCase();
+    const castSync = CAST.map(cast => castSyncretism(cast.forms.sg));
+    const headRow = `
+      <div class="cast-row cast-row-head" role="row">
+        <span class="cast-cell cast-cell-head" role="rowheader"></span>
+        ${CAST.map(cast => `
+          <span class="cast-cell cast-cell-head cast-gender-head" data-gender="${cast.gender}" role="columnheader">${genderLabel(cast.gender)}</span>
+        `).join('')}
+      </div>`;
+    const rows = CASES.map((c, i) => {
+      const cells = CAST.map((cast, ci) => {
+        const base = cast.forms.sg[0];
+        const form = cast.forms.sg[i];
+        const hl = i === 0 ? cast.word : diffHL(base, form).to;
+        const sync = castSync[ci][i];
+        const echo = !sync.novel;
+        return `
+          <span class="cast-cell${echo ? ' is-echo' : ''}" data-tone="${c.tone}" data-gender="${cast.gender}" aria-label="${c.abbr}, ${genderLabel(cast.gender)}: ${SerbianFyi.sr(form)}${echo ? ', = ' + sync.source : ''}">
+            <span class="cast-form">${SerbianFyi.srHTML(hl)}</span>
+            ${echo ? pillsHTML([sync.source]) : ''}
+          </span>`;
+      }).join('');
       return `
-        <article class="case-row case-row-slim" id="${caseAnchor(c.key)}" data-tone="${c.tone}">
-          ${headBlock(c)}
-          <div class="case-slim-body">
-            ${sig}
-            ${exHTML}
+        <div class="cast-row" id="${caseAnchor(c.key)}" data-tone="${c.tone}" role="row">
+          <div class="cast-cell cast-case" data-tone="${c.tone}" role="rowheader">
+            <div class="case-head-title">
+              <h3>${SerbianFyi.sr(d[c.key + '.local'] || '')}<em>${d[c.key + '.name'] || ''}</em></h3>
+              <span class="case-tag">${c.abbr}</span>
+            </div>
           </div>
-        </article>`;
+          ${cells}
+        </div>`;
     }).join('');
+    list.className = 'cast-table cast-basic';
+    list.innerHTML = headRow + rows;
     return;
   }
+  list.className = 'case-list';
 
   const headerRow = `
     <div class="case-row case-row-head" aria-hidden="true">
@@ -348,7 +301,6 @@ function renderCases() {
       ${ENDING_AXES.map(ax => `
         <span class="case-cell case-cell-col" data-gender="${ax.g}" data-axis="${ax.key}">${axisLabel(ax, d)}</span>
       `).join('')}
-      <span class="case-cell case-cell-col case-cell-col-ex">${exLabel}</span>
       <span class="case-cell case-cell-col case-cell-col-preps">${prepsLabel}</span>
     </div>`;
 
@@ -359,18 +311,6 @@ function renderCases() {
         ${cellHTML(c.endings[ax.g][ax.n], i, ax.key)}
       </div>
     `).join('');
-
-    const exHTML = c.examples.map(ex => `
-      <div class="ex">
-        <div class="sr">${SerbianFyi.srHTML(ex.sr)}</div>
-        <div class="tr">${SerbianFyi.srGrammarHTML(ex[lang] || ex.en)}</div>
-      </div>
-    `).join('');
-    const exCell = `
-      <div class="case-cell case-cell-ex">
-        <span class="cell-axis">${exLabel}</span>
-        <div class="examples">${exHTML}</div>
-      </div>`;
 
     const prepCell = c.preps.length === 0 ? `
       <div class="case-cell case-cell-preps is-empty" aria-hidden="true"></div>
@@ -384,7 +324,6 @@ function renderCases() {
       <article class="case-row" id="${caseAnchor(c.key)}" data-tone="${c.tone}">
         ${headBlock(c)}
         ${endCells}
-        ${exCell}
         ${prepCell}
       </article>`;
   }).join('');
@@ -460,7 +399,6 @@ function renderExtras() {
 function renderAll() {
   renderStaticGrammarTokens();
   renderCaseStrip();
-  renderCast();
   renderCases();
   renderExtras();
 }
@@ -531,7 +469,7 @@ function setupCaseStripVisibility() {
 function setupScrollSpy() {
   const update = () => {
     const cells = document.querySelectorAll('.case-strip-cell');
-    const rows = document.querySelectorAll('#caseList .case-row[id]');
+    const rows = document.querySelectorAll('#caseList .case-row[id], #caseList .cast-row[id]');
     if (!cells.length || !rows.length) return;
     const off = parseInt(getComputedStyle(document.documentElement)
       .getPropertyValue('--sticky-offset')) || 0;
@@ -641,6 +579,17 @@ function setupScrollSpy() {
   document.addEventListener('langchange', close);
 })();
 
+/* Example disclosure — unfold the hidden example under its case meta.
+   Delegated so it survives re-render; state is per-render (collapsed default). */
+document.addEventListener('click', (e) => {
+  const t = e.target.closest('[data-ex-toggle]');
+  if (!t) return;
+  const head = t.closest('.case-cell-head');
+  if (!head) return;
+  const open = head.classList.toggle('is-ex-open');
+  t.setAttribute('aria-expanded', open ? 'true' : 'false');
+});
+
 document.addEventListener('langchange', () => {
   renderAll();
   updateStickyOffset();
@@ -694,11 +643,84 @@ function injectSettings() {
   ], () => (syncOn() ? 'on' : 'off'), (v) => { lsSet(LS_SYNC, v); applySync(); }));
 }
 
+/* First-visit coachmark: a one-time nudge anchored under the settings button,
+   pointing newcomers (who land in Basic) at the Detailed table they can't see.
+   Shown once — dismissed and remembered (as_hint_detail) when the user opens
+   settings, clicks away, or presses Escape. It tracks the sticky gear on
+   scroll/resize (reposition, not dismiss), so reading the list won't dismiss it. */
+function setupDetailCoachmark() {
+  if (!document.getElementById('caseList')) return;       // cases page only
+  if (lsGet(LS_HINT) === 'seen') return;                  // already shown
+  if (detailMode() !== 'basic') { lsSet(LS_HINT, 'seen'); return; } // nothing to nudge toward
+  const btn = document.querySelector('[data-settings-toggle]');
+  if (!btn) return;
+
+  const coach = document.createElement('div');
+  coach.className = 'coachmark';
+  coach.id = 'detailCoach';
+  coach.setAttribute('role', 'status');
+  const body = tCases('cases.hint.detail');
+  coach.innerHTML =
+    `<div class="coachmark-card">
+      <p class="coachmark-body" data-i18n="cases.hint.detail">${body}</p>
+      <button type="button" class="coachmark-cta" data-i18n="cases.hint.cta">${tCases('cases.hint.cta')}</button>
+    </div>`;
+  document.body.appendChild(coach);
+
+  const position = () => {
+    const r = btn.getBoundingClientRect();
+    const gutter = 12;
+    const w = coach.firstElementChild.offsetWidth || 260;
+    let left = r.right - w;
+    left = Math.max(gutter, Math.min(left, window.innerWidth - w - gutter));
+    coach.style.left = left + 'px';
+    coach.style.top = (r.bottom + 12) + 'px';
+    // Point the arrow at the gear's horizontal centre.
+    coach.style.setProperty('--arrow-x', (r.left + r.width / 2 - left) + 'px');
+  };
+
+  let done = false;
+  const dismiss = (remember) => {
+    if (done) return; done = true;
+    if (remember) lsSet(LS_HINT, 'seen');
+    coach.classList.remove('is-open');
+    window.removeEventListener('resize', onResize);
+    window.removeEventListener('scroll', onResize);
+    document.removeEventListener('click', onOutside, true);
+    document.removeEventListener('keydown', onKey);
+    document.removeEventListener('langchange', onLang);
+    setTimeout(() => coach.remove(), 200);
+  };
+  const onResize = () => position();
+  const onOutside = (e) => { if (!coach.contains(e.target)) dismiss(true); };
+  const onKey = (e) => { if (e.key === 'Escape') dismiss(true); };
+  const onLang = () => dismiss(false);   // re-render in flight; bow out quietly
+
+  coach.querySelector('.coachmark-cta').addEventListener('click', (e) => {
+    // Stop this click reaching app.js's document-level outside-click handler,
+    // which would otherwise see a click outside the just-opened menu and shut it.
+    e.stopPropagation();
+    dismiss(true);
+    btn.click();   // open the settings menu where Detailed lives
+  });
+
+  requestAnimationFrame(() => {
+    position();
+    coach.classList.add('is-open');
+    window.addEventListener('resize', onResize);
+    window.addEventListener('scroll', onResize, { passive: true });
+    document.addEventListener('click', onOutside, true);
+    document.addEventListener('keydown', onKey);
+    document.addEventListener('langchange', onLang);
+  });
+}
+
 applyDetail();
 applySync();
 renderAll();
 updateStickyOffset();
 setupCaseStripVisibility();
 setupScrollSpy();
-if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', injectSettings);
-else injectSettings();
+function setupExtras() { injectSettings(); setupDetailCoachmark(); }
+if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', setupExtras);
+else setupExtras();

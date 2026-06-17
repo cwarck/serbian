@@ -5,7 +5,10 @@
 /* Cell shape:
      string         e.g. '-a'
      { v, n }       ending value + footnote id (resolved against .notes below)
-     { split: [{labelKey, v, n}, ...] }   animacy / soft-consonant alternation
+     { split: [{v, n}, ...] }             soft-consonant alternation (VOK -e/-u)
+     { syncretic, split: [{v, n}, ...] }  case-reuse split (AKU animacy: -a like
+                                          Gen / -∅ like Nom); syncretic keeps the
+                                          source chips, criteria lives in the note
    Syncretism ("= DAT" echoes + source chips) is derived at render time by
    computeSyncretism() in cases.js — never annotated here.
 */
@@ -83,9 +86,9 @@ const CASES = [
     sigEnding: '-a / -∅',
     endings: {
       m: {
-        sg: { split: [
-          { v:'-a', n:'animacy', labelKey:'cases.aku.label.alive' },
-          { v:'-∅', n:'animacy', labelKey:'cases.aku.label.thing' },
+        sg: { syncretic: true, split: [
+          { v:'-a', n:'animacy' },
+          { v:'-∅', n:'animacy' },
         ] },
         pl: '-e'
       },

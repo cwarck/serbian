@@ -19,6 +19,8 @@ window.I18N = {
     'cases.syncretism': 'Shared endings',
     'cases.syncretism.on': 'On',
     'cases.syncretism.off': 'Off',
+    'cases.hint.detail': 'Want every ending? The full table — all genders, examples and prepositions — lives in <strong>Detailed</strong>.',
+    'cases.hint.cta': 'Open settings',
 
     'chart.index.label': 'Charts',
 
@@ -201,9 +203,6 @@ window.I18N = {
     'pron.pl': 'Plural',
 
     /* Cases page */
-    'cases.aku.label.alive': 'alive',
-    'cases.aku.label.thing': 'thing',
-
     'cases.examples': 'In the wild',
     'cases.preps': 'Prepositions',
     'cases.local.tooltip': 'Serbian name for this case',
@@ -270,6 +269,8 @@ window.I18N = {
     'cases.syncretism': 'Общие окончания',
     'cases.syncretism.on': 'Вкл',
     'cases.syncretism.off': 'Выкл',
+    'cases.hint.detail': 'Нужны все окончания? Полная таблица — все роды, примеры и предлоги — в режиме <strong>Подробно</strong>.',
+    'cases.hint.cta': 'Открыть настройки',
 
     'chart.index.label': 'Таблицы',
 
@@ -452,9 +453,6 @@ window.I18N = {
     'pron.pl': 'Мн.',
 
     /* Cases */
-    'cases.aku.label.alive': 'живое',
-    'cases.aku.label.thing': 'вещь',
-
     'cases.examples': 'В живой речи',
     'cases.preps': 'Предлоги',
     'cases.local.tooltip': 'Сербское название падежа',
