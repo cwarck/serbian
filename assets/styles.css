@@ -3134,9 +3134,8 @@ a.cast-cell:focus-visible {
   border-bottom-style: dashed;
 }
 
-.pitch-pattern,
-.pitch-rank {
-  color: var(--accent);
+.pitch-pattern {
+  color: var(--ink);
 }
 
 .pitch-examples,
@@ -3195,7 +3194,7 @@ a.cast-cell:focus-visible {
 }
 
 .pitch-paradigm-head h4 {
-  color: var(--accent);
+  color: var(--ink);
   text-transform: none;
 }
 
@@ -3240,7 +3239,7 @@ a.cast-cell:focus-visible {
 
 .pitch-rank {
   color: var(--paper);
-  background: var(--accent);
+  background: var(--ink);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -3262,7 +3261,7 @@ a.cast-cell:focus-visible {
   letter-spacing: var(--track-label);
   line-height: 1;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--ink);
   font-feature-settings: "tnum";
 }
 
