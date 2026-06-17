@@ -3893,7 +3893,7 @@ a.cast-cell:focus-visible {
   font-weight: 300;
   line-height: 1;
   letter-spacing: var(--track-display);
-  color: var(--accent);
+  color: var(--ink);
 }
 
 .false-cell {
