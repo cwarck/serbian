@@ -44,6 +44,7 @@ window.I18N = {
     'card.falseFriends.note': 'Russian traps',
 
     'foot.copy': '© <a href="/">serbian.fyi</a> · <a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener" target="_blank">CC BY 4.0</a>',
+    'foot.credit': 'Structure inspired by <a href="https://slev.life/serbian-charts" rel="noopener" target="_blank">Steven Levithan’s Serbian charts</a> · CC BY 4.0',
     'foot.repo': 'Source',
     'foot.author': 'Ilya Akimov',
 
@@ -294,6 +295,7 @@ window.I18N = {
     'card.falseFriends.note': 'Русские ловушки',
 
     'foot.copy': '© <a href="/">serbian.fyi</a> · <a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener" target="_blank">CC BY 4.0</a>',
+    'foot.credit': 'Структура вдохновлена <a href="https://slev.life/serbian-charts" rel="noopener" target="_blank">сербскими таблицами Стивена Левитана</a> · CC BY 4.0',
     'foot.repo': 'Исходники',
     'foot.author': 'Илья Акимов',
 

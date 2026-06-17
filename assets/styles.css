@@ -367,7 +367,11 @@ section { position: relative; }
   letter-spacing: var(--track-label);
   text-transform: uppercase;
   color: var(--ink-muted);
-  display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: space-between;
+  display: flex; justify-content: flex-end;
+}
+.foot-meta {
+  display: flex; flex-direction: column; gap: .6rem;
+  text-align: right; line-height: var(--lh-snug);
 }
 .foot-icon { display: inline-flex; vertical-align: middle; line-height: 0; }
 .foot-icon svg { display: block; }
