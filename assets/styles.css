@@ -1699,7 +1699,7 @@ a.cast-cell:focus-visible {
   font-style: normal;
   font-weight: 400;
   font-size: var(--fs-lead);
-  color: var(--accent);
+  color: var(--ink);
   letter-spacing: -.005em;
 }
 .i-decl tbody tr:last-child th,
