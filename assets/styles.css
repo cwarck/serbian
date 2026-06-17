@@ -474,7 +474,7 @@ section { position: relative; }
 }
 .letter .cyr { color: var(--ink); }
 .letter .sep { color: var(--ink-faint); font-size: var(--fs-caption); padding-bottom: .3em; }
-.letter .lat { color: var(--accent); }
+.letter .lat { color: var(--ink); }
 
 .letter .ipa-row {
   display: flex;
@@ -508,7 +508,7 @@ section { position: relative; }
 }
 .letter .example .word-cyr { color: var(--ink); }
 .letter .example .word-sep { color: var(--ink-faint); }
-.letter .example .word-lat { color: var(--accent); font-style: normal; }
+.letter .example .word-lat { color: var(--ink); font-style: normal; }
 .letter .example .tr {
   font-style: italic;
   color: var(--ink-muted);
