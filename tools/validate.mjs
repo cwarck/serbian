@@ -259,6 +259,22 @@ function validateLinks() {
   }
 }
 
+function validateLocalFonts() {
+  const files = walk(root, file => file.endsWith('.html') || file.endsWith('.css'));
+  const css = read('assets/styles.css');
+  const requiredCyrillicMarks = ['U+0300-0301', 'U+0304', 'U+030F', 'U+0311'];
+
+  for (const file of files) {
+    const source = readFileSync(file, 'utf8');
+    expect(!source.includes('fonts.googleapis.com'), rel(file), 'must not link Google Fonts CSS');
+    expect(!source.includes('fonts.gstatic.com'), rel(file), 'must not link Google Fonts assets');
+    expect(!/@import\b/.test(source), rel(file), 'must not use CSS @import');
+  }
+  for (const range of requiredCyrillicMarks) {
+    expect(css.includes(range), 'fonts', `Cyrillic font ranges must include pitch-stress mark ${range}`);
+  }
+}
+
 function parseToneAssignments(css) {
   const tones = new Map();
   for (const match of css.matchAll(/\[data-tone="([^"]+)"\]\s*\{\s*--tone:\s*([^;]+);/g)) {
@@ -842,6 +858,7 @@ function validateDataShapes() {
 
 validateI18n();
 validateLinks();
+validateLocalFonts();
 validateTones();
 validateScriptConverter();
 validateSerbianContentScript();
