@@ -223,7 +223,7 @@ a {
   text-decoration-thickness: 1px;
   text-underline-offset: .2em;
 }
-.brand, .chart-card, .foot-icon { text-decoration: none; }
+.brand, .chart-card { text-decoration: none; }
 button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; padding: 0; }
 
 img, svg { display: block; max-width: 100%; }
@@ -468,8 +468,13 @@ section { position: relative; }
   display: flex; flex-direction: column; gap: .6rem;
   text-align: right; line-height: var(--lh-snug);
 }
-.foot-icon { display: inline-flex; vertical-align: middle; line-height: 0; }
-.foot-icon svg { display: block; }
+.foot-icon {
+  display: inline;
+  vertical-align: baseline;
+  line-height: inherit;
+}
+.foot-icon::after { content: "Github"; }
+.foot-icon svg { display: none; }
 
 @media (hover: hover) and (pointer: fine) {
   .chip:hover { color: var(--ink); }
