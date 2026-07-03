@@ -50,26 +50,28 @@ function renderAccents() {
   return `
     <section class="pitch-group pitch-accents">
       <header class="pitch-group-head"><h3>${ui('accents')}</h3></header>
-      <div class="pitch-accent-head" aria-hidden="true">
-        <span>${ui('mark')}</span>
-        <span>${ui('length')}</span>
-        <span>${ui('contour')}</span>
-        <span>${ui('pattern')}</span>
-        <span>${ui('examples')}</span>
-      </div>
-      <div class="pitch-accent-grid">
-        ${PITCH_ACCENTS.map(row => `
-          <article class="pitch-accent-card" data-contour="${row.contour.en}">
-            <div class="pitch-mark" data-label="${ui('mark')}">${row.mark}</div>
-            <div class="pitch-cell" data-label="${ui('length')}">${pick(row.length)}</div>
-            <div class="pitch-cell pitch-contour-cell" data-label="${ui('contour')}">
-              <span class="pitch-contour">${pick(row.contour)}</span>
-              ${noteButton(row.note)}
-            </div>
-            <div class="pitch-cell pitch-pattern" data-label="${ui('pattern')}">${row.pattern}</div>
-            <div class="pitch-cell" data-label="${ui('examples')}">${exampleListHTML(row.examples)}</div>
-          </article>
-        `).join('')}
+      <div role="table" style="display:contents">
+        <div class="pitch-accent-head" role="row">
+          <span role="columnheader">${ui('mark')}</span>
+          <span role="columnheader">${ui('length')}</span>
+          <span role="columnheader">${ui('contour')}</span>
+          <span role="columnheader">${ui('pattern')}</span>
+          <span role="columnheader">${ui('examples')}</span>
+        </div>
+        <div class="pitch-accent-grid" role="rowgroup">
+          ${PITCH_ACCENTS.map(row => `
+            <article class="pitch-accent-card" data-contour="${row.contour.en}" role="row">
+              <div class="pitch-mark" data-label="${ui('mark')}" role="cell">${row.mark}</div>
+              <div class="pitch-cell" data-label="${ui('length')}" role="cell">${pick(row.length)}</div>
+              <div class="pitch-cell pitch-contour-cell" data-label="${ui('contour')}" role="cell">
+                <span class="pitch-contour">${pick(row.contour)}</span>
+                ${noteButton(row.note)}
+              </div>
+              <div class="pitch-cell pitch-pattern" data-label="${ui('pattern')}" role="cell">${row.pattern}</div>
+              <div class="pitch-cell" data-label="${ui('examples')}" role="cell">${exampleListHTML(row.examples)}</div>
+            </article>
+          `).join('')}
+        </div>
       </div>
     </section>
   `;
