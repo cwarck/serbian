@@ -1058,7 +1058,6 @@ section { position: relative; }
 .case-cell-preps .prep-list { max-width: 60ch; }
 
 /* Gender row/column labels in the case tables — full ink, no hue */
-[data-gender].cast-gender,
 [data-gender].cast-gender-head { color: var(--ink); }
 
 /* -----------------------------------------------------------
@@ -1600,25 +1599,9 @@ body:not(.is-syncretism) .cell-shares {
   padding: clamp(1.5rem, 4vw, 2.5rem) 0 clamp(2rem, 5vw, 3rem);
   border-bottom: 1px solid var(--hairline);
 }
-.cast-frame {
-  position: relative;
-}
-.cast-scroll {
-  overflow-x: visible;
-  overflow-y: hidden;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
-  border: 1px solid var(--hairline);
-  background: color-mix(in oklab, var(--paper) 96%, transparent);
-}
 .cast-table {
   display: grid;
   grid-auto-rows: auto;
-}
-.cast-wide { display: none; }
-.cast-scroll:focus-visible {
-  outline: 1px dashed var(--accent);
-  outline-offset: 3px;
 }
 .cast-row {
   display: grid;
@@ -1651,7 +1634,6 @@ a.cast-cell:focus-visible {
   min-height: 44px;
   align-items: center;
 }
-.cast-gender,
 .cast-case,
 .cast-gender-head,
 .cast-row-head .cast-cell-head:first-child {
@@ -1691,12 +1673,6 @@ a.cast-cell:focus-visible {
   color: var(--tone, var(--ink-soft));
 }
 @media (min-width: 720px) {
-  .cast-scroll {
-    overflow-x: auto;
-    scroll-snap-type: x proximity;
-  }
-  .cast-mobile { display: none; }
-  .cast-wide { display: grid; }
   .cast-row { grid-template-columns: 5rem repeat(7, 1fr); }
   .cast-cell {
     padding: .85rem .75rem;
@@ -1704,15 +1680,6 @@ a.cast-cell:focus-visible {
     scroll-snap-align: start;
   }
   .cast-cell-head { padding: .65rem .75rem; }
-  .cast-gender,
-  .cast-wide .cast-row-head .cast-cell-head:first-child {
-    position: sticky;
-    left: 0;
-    z-index: 2;
-  }
-  .cast-wide .cast-row:not(.cast-row-head) .cast-gender {
-    background: color-mix(in oklab, var(--paper-deep) 70%, transparent);
-  }
   .cast-form {
     font-size: var(--fs-lead);
     overflow: visible;
