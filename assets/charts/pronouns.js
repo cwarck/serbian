@@ -63,15 +63,16 @@ function renderPersonal() {
 function renderPossessives() {
   const root = document.getElementById('possessives');
   if (!root) return;
+  root.setAttribute('role', 'table');
   root.innerHTML = `
-    <div class="pron-mini-head" aria-hidden="true">
-      <span></span><span data-gender="m">${t('cases.gender.m')}</span><span data-gender="n">${t('cases.gender.n')}</span><span data-gender="f">${t('cases.gender.f')}</span>
+    <div class="pron-mini-head" role="row">
+      <span role="presentation"></span><span role="columnheader" data-gender="m">${t('cases.gender.m')}</span><span role="columnheader" data-gender="n">${t('cases.gender.n')}</span><span role="columnheader" data-gender="f">${t('cases.gender.f')}</span>
     </div>
-    ${POSSESSIVES.map(item => `
-      <article class="pron-poss-card">
-        <h4>${t(item.owner)}</h4>
-        <div class="pron-gender-row">
-          ${item.forms.map(form => `<span>${SerbianFyi.sr(form)}</span>`).join('')}
+    ${POSSESSIVES.map((item, i) => `
+      <article class="pron-poss-card" role="rowgroup">
+        <h4 id="pron-poss-owner-${i}">${t(item.owner)}</h4>
+        <div class="pron-gender-row" role="row" aria-labelledby="pron-poss-owner-${i}">
+          ${item.forms.map(form => `<span role="cell">${SerbianFyi.sr(form)}</span>`).join('')}
         </div>
         ${item.note ? `<p>${t(item.note)}</p>` : ''}
       </article>
@@ -80,8 +81,8 @@ function renderPossessives() {
 }
 
 function genderHead() {
-  return `<div class="pron-mini-head pron-genders" aria-hidden="true">
-    <span></span><span data-gender="m">${t('cases.gender.m')}</span><span data-gender="n">${t('cases.gender.n')}</span><span data-gender="f">${t('cases.gender.f')}</span>
+  return `<div class="pron-mini-head pron-genders" role="row">
+    <span role="columnheader"></span><span role="columnheader" data-gender="m">${t('cases.gender.m')}</span><span role="columnheader" data-gender="n">${t('cases.gender.n')}</span><span role="columnheader" data-gender="f">${t('cases.gender.f')}</span>
   </div>`;
 }
 
@@ -91,14 +92,16 @@ function renderDemonstratives() {
   root.innerHTML = DEMOS.map(group => `
     <section class="pron-demo-group">
       <h4>${t(group.title)}</h4>
-      ${genderHead()}
-      <div class="pron-matrix">
-        ${group.rows.map(row => `
-          <div class="pron-matrix-row">
-            <span class="pron-row-label">${t(row.key)}</span>
-            ${row.forms.map(form => `<span class="pron-form">${SerbianFyi.sr(form)}</span>`).join('')}
-          </div>
-        `).join('')}
+      <div role="table" style="display:contents">
+        ${genderHead()}
+        <div class="pron-matrix" role="rowgroup">
+          ${group.rows.map(row => `
+            <div class="pron-matrix-row" role="row">
+              <span class="pron-row-label" role="rowheader">${t(row.key)}</span>
+              ${row.forms.map(form => `<span class="pron-form" role="cell">${SerbianFyi.sr(form)}</span>`).join('')}
+            </div>
+          `).join('')}
+        </div>
       </div>
     </section>
   `).join('') + `
@@ -115,25 +118,27 @@ function renderQuestions() {
   root.innerHTML = `
     <section class="pron-question-block">
       <h4>${t('pron.whose')}</h4>
-      ${genderHead()}
-      <div class="pron-matrix">
-        ${QUESTIONS.whose.map(row => `
-          <div class="pron-matrix-row">
-            <span class="pron-row-label">${t(row.label)}</span>
-            ${row.forms.map(form => `<span class="pron-form">${SerbianFyi.sr(form)}</span>`).join('')}
-          </div>
-        `).join('')}
+      <div role="table" style="display:contents">
+        ${genderHead()}
+        <div class="pron-matrix" role="rowgroup">
+          ${QUESTIONS.whose.map(row => `
+            <div class="pron-matrix-row" role="row">
+              <span class="pron-row-label" role="rowheader">${t(row.label)}</span>
+              ${row.forms.map(form => `<span class="pron-form" role="cell">${SerbianFyi.sr(form)}</span>`).join('')}
+            </div>
+          `).join('')}
+        </div>
       </div>
     </section>
     <section class="pron-question-block">
       <h4>${t('pron.who.what')}</h4>
-      <div class="pron-kw-table">
-        <div class="pron-kw-head"><span></span><span>${t('pron.who')}</span><span>${t('pron.what')}</span></div>
+      <div class="pron-kw-table" role="table">
+        <div class="pron-kw-head" role="row"><span role="columnheader"></span><span role="columnheader">${t('pron.who')}</span><span role="columnheader">${t('pron.what')}</span></div>
         ${QUESTIONS.whoWhat.map(row => `
-          <div class="pron-kw-row">
-            <span>${t(row.key)}</span>
-            <span>${SerbianFyi.sr(row.who)}</span>
-            <span>${SerbianFyi.sr(row.what)}</span>
+          <div class="pron-kw-row" role="row">
+            <span role="rowheader">${t(row.key)}</span>
+            <span role="cell">${SerbianFyi.sr(row.who)}</span>
+            <span role="cell">${SerbianFyi.sr(row.what)}</span>
           </div>
         `).join('')}
       </div>
