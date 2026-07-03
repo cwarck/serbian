@@ -590,10 +590,10 @@ section { position: relative; }
 }
 .letter .ipa {
   font-family: var(--ff-body);
-  font-size: var(--fs-label);
+  font-size: var(--fs-caption);
+  font-weight: 400;
   line-height: 1;
   color: var(--ink-muted);
-  letter-spacing: .04em;
 }
 
 .letter .example {
@@ -2831,13 +2831,24 @@ a.cast-cell:focus-visible {
 
 .aspect-compare-row h4,
 .aspect-table-row h4,
-.aspect-prefix p,
-.aspect-trap h4 {
+.aspect-prefix p {
   font-family: var(--ff-body);
   font-size: var(--fs-label);
   font-weight: 500;
   letter-spacing: var(--track-label);
   line-height: 1;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+/* Trap titles are multi-word summary phrases, not single-line labels — at
+   line-height:1 wrapped lines collide. Set them as captions with snug leading. */
+.aspect-trap h4 {
+  font-family: var(--ff-body);
+  font-size: var(--fs-caption);
+  font-weight: 500;
+  letter-spacing: var(--track-label);
+  line-height: var(--lh-snug);
   text-transform: uppercase;
   color: var(--ink-muted);
 }
@@ -3723,11 +3734,9 @@ a.cast-cell:focus-visible {
 
 .prep-meaning {
   font-family: var(--ff-body);
-  font-size: var(--fs-label);
-  font-weight: 500;
-  letter-spacing: var(--track-label);
-  line-height: 1;
-  text-transform: uppercase;
+  font-size: var(--fs-caption);
+  font-weight: 400;
+  line-height: var(--lh-snug);
   color: var(--ink-muted);
 }
 
