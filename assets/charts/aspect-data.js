@@ -130,22 +130,3 @@ const COMMON_PAIRS = [
   { imp: 'otvarati', perf: 'otvoriti', ex: { sr: 'Otvorila je vrata.', en: 'She opened the door.', ru: 'Она открыла дверь.' } },
   { imp: 'zaboravljati', perf: 'zaboraviti', ex: { sr: 'Zaboravio sam ime.', en: 'I forgot the name.', ru: 'Я забыл имя.' } }
 ];
-
-const TRAPS = [
-  {
-    trap: { en: 'one imperfective, many perfectives', ru: 'один несов., много сов.' },
-    why: { en: 'prefixes add result, direction, start, amount, or a new lexical meaning.', ru: 'приставки добавляют результат, направление, начало, меру или новое словарное значение.' }
-  },
-  {
-    trap: { en: 'perfective present is not normal now', ru: 'сов. настоящее не обычное «сейчас»' },
-    why: { en: 'it usually appears in future, condition, sequence, or repeated-frame contexts.', ru: 'обычно это будущее, условие, последовательность или повторяющаяся рамка.' }
-  },
-  {
-    trap: { en: 'dictionary pairs are contextual', ru: 'словарные пары зависят от контекста' },
-    why: { en: 'the right perfective can change with the exact result you mean.', ru: 'нужный совершенный глагол зависит от конкретного результата.' }
-  },
-  {
-    trap: { en: 'motion verbs are special', ru: 'глаголы движения особые' },
-    why: { en: 'direction, prefix, and stem changes overlap; keep them as their own chart.', ru: 'направление, приставка и изменения основы накладываются друг на друга.' }
-  }
-];

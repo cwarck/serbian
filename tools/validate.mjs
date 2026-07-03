@@ -8,7 +8,7 @@ const errors = [];
 
 const chartDataFiles = {
   'assets/charts/alphabet-data.js': ['ALPHABET'],
-  'assets/charts/aspect-data.js': ['CONTRAST', 'TIME_ROWS', 'PATTERNS', 'PREFIXES', 'COMMON_PAIRS', 'TRAPS'],
+  'assets/charts/aspect-data.js': ['CONTRAST', 'TIME_ROWS', 'PATTERNS', 'PREFIXES', 'COMMON_PAIRS'],
   'assets/charts/cases-data.js': ['CASES', 'IDECL', 'WRINKLES', 'CAST', 'ENDING_AXES'],
   'assets/charts/false-friends-data.js': ['FALSE_FRIEND_GROUPS'],
   'assets/charts/numbers-data.js': ['NUMBER_GROUPS', 'NUMBER_BUILDS', 'NOUN_COUNTS', 'ORDINALS'],
@@ -605,7 +605,7 @@ function validatePrepositions() {
 }
 
 function validateAspect() {
-  const { CONTRAST, TIME_ROWS, PATTERNS, PREFIXES, COMMON_PAIRS, TRAPS } = data['assets/charts/aspect-data.js'];
+  const { CONTRAST, TIME_ROWS, PATTERNS, PREFIXES, COMMON_PAIRS } = data['assets/charts/aspect-data.js'];
   CONTRAST.forEach((row, index) => {
     const scope = `aspect.contrast[${index}]`;
     ['key', 'imp', 'perf'].forEach(field => expectLocalized(row[field], scope, field));
@@ -646,10 +646,6 @@ function validateAspect() {
     expectString(row.ex?.sr, scope, 'ex.sr');
     expectString(row.ex?.en, scope, 'ex.en');
     expectString(row.ex?.ru, scope, 'ex.ru');
-  });
-  TRAPS.forEach((row, index) => {
-    expectLocalized(row.trap, `aspect.traps[${index}]`, 'trap');
-    expectLocalized(row.why, `aspect.traps[${index}]`, 'why');
   });
 }
 

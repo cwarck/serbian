@@ -142,22 +142,6 @@ function renderPairs() {
   `;
 }
 
-function renderTraps() {
-  return `
-    <section class="aspect-group aspect-traps" data-tone="aspect-trap">
-      <header class="aspect-group-head"><h3>${ui('traps')}</h3></header>
-      <div class="aspect-trap-grid">
-        ${TRAPS.map(row => `
-          <article class="aspect-trap">
-            <h4>${pick(row.trap)}</h4>
-            <p>${pick(row.why)}</p>
-          </article>
-        `).join('')}
-      </div>
-    </section>
-  `;
-}
-
 function renderAspect() {
   const root = document.getElementById('aspectChart');
   if (!root) return;
@@ -166,8 +150,7 @@ function renderAspect() {
     renderTime(),
     renderPatterns(),
     renderPrefixes(),
-    renderPairs(),
-    renderTraps()
+    renderPairs()
   ].join('');
 }
 
