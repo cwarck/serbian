@@ -24,6 +24,16 @@ window.I18N = {
 
     'chart.index.label': 'Charts',
 
+    'page.alphabet.h1': 'The two alphabets',
+    'page.aspect.h1': 'Verb aspect pairs',
+    'page.cases.h1': 'Seven cases',
+    'page.falseFriends.h1': 'False friends',
+    'page.numbers.h1': 'Numbers & counting',
+    'page.pitch.h1': 'Pitch & stress',
+    'page.prepositions.h1': 'Prepositions',
+    'page.pronouns.h1': 'Pronouns & forms',
+    'page.verbs.h1': 'Verbs & conjugation',
+
     'card.alphabet.title': 'Alphabet',
     'card.alphabet.note': 'Letters & scripts',
     'card.numbers.title': 'Numbers',
@@ -274,6 +284,16 @@ window.I18N = {
     'cases.hint.cta': 'Открыть настройки',
 
     'chart.index.label': 'Таблицы',
+
+    'page.alphabet.h1': 'Два алфавита',
+    'page.aspect.h1': 'Видовые пары глаголов',
+    'page.cases.h1': 'Семь падежей',
+    'page.falseFriends.h1': 'Ложные друзья',
+    'page.numbers.h1': 'Числа и счёт',
+    'page.pitch.h1': 'Тон и ударение',
+    'page.prepositions.h1': 'Предлоги',
+    'page.pronouns.h1': 'Местоимения и формы',
+    'page.verbs.h1': 'Глаголы и спряжение',
 
     'card.alphabet.title': 'Алфавит',
     'card.alphabet.note': 'Буквы и письмо',
