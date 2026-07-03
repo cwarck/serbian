@@ -83,7 +83,7 @@ const PAST = {
     { sr:'Gledao sam film.', en:'I watched a film. (m.)', ru:'Я смотрел фильм. (м.)' },
     { sr:'Ja sam gledao film.', en:'I watched a film.', ru:'Я смотрел фильм.' },
     { sr:'Nisam gledao film.', en:'I did not watch a film. (m.)', ru:'Я не смотрел фильм. (м.)' },
-    { sr:'Gledala sam film.', en:'I watched a film. (f.)', ru:'Я смотрела фильм. (ж.)' },
+    { sr:'Juče sam gledao film.', en:'Yesterday I watched a film.', ru:'Вчера я смотрел фильм.' },
   ],
   endings: [
     { key:'past.msg', ending:'-o' },
