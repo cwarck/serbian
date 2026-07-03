@@ -12,7 +12,7 @@ const chartDataFiles = {
   'assets/charts/cases-data.js': ['CASES', 'IDECL', 'WRINKLES', 'CAST', 'ENDING_AXES'],
   'assets/charts/false-friends-data.js': ['FALSE_FRIEND_GROUPS'],
   'assets/charts/numbers-data.js': ['NUMBER_GROUPS', 'NUMBER_BUILDS', 'NOUN_COUNTS', 'ORDINALS'],
-  'assets/charts/pitch-stress-data.js': ['PITCH_ACCENTS', 'PITCH_RULES', 'PITCH_LENGTH_ROWS', 'PITCH_PARADIGMS', 'PITCH_PRIORITY', 'PITCH_READING', 'PITCH_NOTES'],
+  'assets/charts/pitch-stress-data.js': ['PITCH_ACCENTS', 'PITCH_RULES', 'PITCH_PARADIGMS', 'PITCH_PRIORITY', 'PITCH_READING', 'PITCH_NOTES'],
   'assets/charts/prepositions-data.js': ['CASE_KEYS', 'PREP_GROUPS'],
   'assets/charts/pronouns-data.js': ['PERSONAL', 'POSSESSIVES', 'DEMOS', 'QUESTIONS'],
   'assets/charts/verbs-data.js': ['PRONOUNS', 'VERB_GROUPS', 'IRREGULARS', 'PAST', 'FUTURE'],
@@ -479,7 +479,6 @@ function validateSerbianContentScript() {
   const pitch = data['assets/charts/pitch-stress-data.js'];
   pitch.PITCH_ACCENTS.forEach((row, rowIndex) => row.examples.forEach((example, exampleIndex) => validateSerbianLatin(example.sr, `pitch.accents[${rowIndex}].examples[${exampleIndex}].sr`)));
   pitch.PITCH_RULES.forEach((row, rowIndex) => eachString(row.examples, value => validateSerbianLatin(value, `pitch.rules[${rowIndex}].examples`)));
-  pitch.PITCH_LENGTH_ROWS.forEach((row, rowIndex) => row.examples.forEach((example, exampleIndex) => validateSerbianLatin(example.sr, `pitch.lengthRows[${rowIndex}].examples[${exampleIndex}].sr`)));
   pitch.PITCH_PARADIGMS.forEach((row, rowIndex) => {
     validateSerbianLatin(row.word.sr, `pitch.paradigms[${rowIndex}].word.sr`);
     row.cells.forEach((cell, cellIndex) => validateSerbianLatin(cell.sr, `pitch.paradigms[${rowIndex}].cells[${cellIndex}].sr`));

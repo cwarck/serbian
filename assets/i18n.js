@@ -108,7 +108,6 @@ window.I18N = {
     /* Pitch & stress page */
     'pitch.accents': 'Four accents',
     'pitch.rules': 'Placement rules',
-    'pitch.lengths': 'Length marks',
     'pitch.paradigms': 'Accent shifts',
     'pitch.priority': 'Learner priority',
     'pitch.reading': 'Reading order',
@@ -119,8 +118,6 @@ window.I18N = {
     'pitch.examples': 'Examples',
     'pitch.slot': 'Slot',
     'pitch.fact': 'Fact',
-    'pitch.type': 'Type',
-    'pitch.marks': 'Marks',
     'pitch.note': 'note',
 
     /* False friends page */
@@ -357,7 +354,6 @@ window.I18N = {
     /* Pitch & stress */
     'pitch.accents': 'Четыре ударения',
     'pitch.rules': 'Правила позиции',
-    'pitch.lengths': 'Знаки долготы',
     'pitch.paradigms': 'Сдвиги ударения',
     'pitch.priority': 'Приоритет',
     'pitch.reading': 'Порядок чтения',
@@ -368,8 +364,6 @@ window.I18N = {
     'pitch.examples': 'Примеры',
     'pitch.slot': 'Позиция',
     'pitch.fact': 'Факт',
-    'pitch.type': 'Тип',
-    'pitch.marks': 'Знаки',
     'pitch.note': 'заметка',
 
     /* False friends */

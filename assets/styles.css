@@ -3175,14 +3175,6 @@ a.cast-cell:focus-visible {
   text-transform: uppercase;
 }
 
-.pitch-marks span {
-  font-family: var(--ff-display);
-  font-size: var(--fs-lead);
-  font-weight: 400;
-  line-height: var(--lh-snug);
-  color: var(--accent);
-}
-
 .pitch-contour {
   color: var(--ink);
   padding-bottom: .18rem;
@@ -3412,12 +3404,6 @@ a.cast-cell:focus-visible {
     display: block;
   }
 
-  .pitch-marks {
-    display: flex;
-    flex-wrap: wrap;
-    gap: .45rem;
-  }
-
   .pitch-cell::before,
   .pitch-mark::before,
   .pitch-contour-cell::before {
@@ -3431,11 +3417,6 @@ a.cast-cell:focus-visible {
 
   .pitch-contour-cell {
     display: flex;
-  }
-
-  .pitch-length-table .pitch-table-head,
-  .pitch-length-table .pitch-table-row {
-    grid-template-columns: minmax(10rem, .8fr) minmax(8rem, .55fr) minmax(0, 1.4fr);
   }
 
   .pitch-paradigm-grid {

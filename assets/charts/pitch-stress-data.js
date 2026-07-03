@@ -73,33 +73,11 @@ const PITCH_RULES = [
     fact: { en: 'not final; needs following syllable', ru: 'не на конце; нужен следующий слог' },
     examples: ['vòda', 'gláva', 'čokoláda'],
     note: 'rising'
-  }
-];
-
-const PITCH_LENGTH_ROWS = [
-  {
-    label: { en: 'short stressed', ru: 'краткий ударный' },
-    marks: ['ȁ', 'à'],
-    examples: [
-      { sr: 'nȅbo' },
-      { sr: 'vòda' }
-    ]
   },
   {
-    label: { en: 'long stressed', ru: 'долгий ударный' },
-    marks: ['ȃ', 'á'],
-    examples: [
-      { sr: 'pȋvo' },
-      { sr: 'gláva' }
-    ]
-  },
-  {
-    label: { en: 'long unstressed', ru: 'долгий без ударения' },
-    marks: ['ā'],
-    examples: [
-      { sr: 'dèvōjka' },
-      { sr: 'lȍnācā', tr: { en: 'pots, gen. pl.', ru: 'кастрюль, род. мн.' } }
-    ],
+    label: { en: 'macron ā', ru: 'макрон ā' },
+    fact: { en: 'long vowel after the accent', ru: 'долгий гласный после ударения' },
+    examples: ['dèvōjka', 'lȍnācā'],
     note: 'length'
   }
 ];

@@ -95,26 +95,6 @@ function renderRules() {
   `;
 }
 
-function renderLength() {
-  return `
-    <section class="pitch-group pitch-length">
-      <header class="pitch-group-head"><h3>${ui('lengths')}</h3></header>
-      <div class="pitch-table pitch-length-table">
-        <div class="pitch-table-head">
-          <span>${ui('type')}</span><span>${ui('marks')}</span><span>${ui('examples')}</span>
-        </div>
-        ${PITCH_LENGTH_ROWS.map(row => `
-          <article class="pitch-table-row">
-            <h4>${pick(row.label)} ${row.note ? noteButton(row.note) : ''}</h4>
-            <div class="pitch-cell pitch-marks" data-label="${ui('marks')}">${row.marks.map(mark => `<span>${mark}</span>`).join('')}</div>
-            <div class="pitch-cell" data-label="${ui('examples')}">${exampleListHTML(row.examples)}</div>
-          </article>
-        `).join('')}
-      </div>
-    </section>
-  `;
-}
-
 function renderParadigms() {
   return `
     <section class="pitch-group pitch-paradigms">
@@ -181,7 +161,6 @@ function renderPitch() {
   root.innerHTML = [
     renderAccents(),
     renderRules(),
-    renderLength(),
     renderParadigms(),
     renderPriority(),
     renderReading()
