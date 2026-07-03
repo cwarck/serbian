@@ -282,7 +282,7 @@ function renderCases() {
         const sync = castSync[ci][i];
         const echo = !sync.novel;
         return `
-          <span class="cast-cell${echo ? ' is-echo' : ''}" data-tone="${c.tone}" data-gender="${cast.gender}" aria-label="${c.abbr}, ${genderLabel(cast.gender)}: ${SerbianFyi.sr(form)}${echo ? ', = ' + sync.source : ''}">
+          <span class="cast-cell${echo ? ' is-echo' : ''}" role="cell" data-tone="${c.tone}" data-gender="${cast.gender}" aria-label="${c.abbr}, ${genderLabel(cast.gender)}: ${SerbianFyi.sr(form)}${echo ? ', = ' + sync.source : ''}">
             <span class="cast-form">${SerbianFyi.srHTML(hl)}</span>
             ${echo ? pillsHTML([sync.source]) : ''}
           </span>`;
@@ -299,10 +299,12 @@ function renderCases() {
         </div>`;
     }).join('');
     list.className = 'cast-table cast-basic';
+    list.setAttribute('role', 'table');
     list.innerHTML = headRow + rows;
     return;
   }
   list.className = 'case-list';
+  list.removeAttribute('role');
 
   const headerRow = `
     <div class="case-row case-row-head" aria-hidden="true">
@@ -492,7 +494,10 @@ function setupScrollSpy() {
       const a = cell.querySelector('a');
       const match = !!a && a.getAttribute('href') === '#' + candidateId;
       cell.classList.toggle('is-current', match);
-      if (a) a.setAttribute('aria-selected', match ? 'true' : 'false');
+      if (a) {
+        if (match) a.setAttribute('aria-current', 'location');
+        else a.removeAttribute('aria-current');
+      }
     });
   };
 
