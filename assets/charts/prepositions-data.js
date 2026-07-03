@@ -61,7 +61,7 @@ const PREP_GROUPS = [
       {
         prep: 'među', icon: 'between', tone: 'ins',
         uses: [
-          { case: 'aku', icon: 'between-motion', meaning: { en: 'to among, between', ru: 'между, движение' }, sr: 'Ulazim među ljude.', tr: { en: 'I go among the people.', ru: 'Я вхожу между людей.' } },
+          { case: 'aku', icon: 'between-motion', meaning: { en: 'to among, between', ru: 'между, движение' }, sr: 'Ulazim među ljude.', tr: { en: 'I go among the people.', ru: 'Я вхожу в толпу.' } },
           { case: 'ins', icon: 'between', meaning: { en: 'among, between', ru: 'между, место' }, sr: 'Stojim među ljudima.', tr: { en: 'I stand among the people.', ru: 'Я стою между людьми.' } },
         ]
       },
