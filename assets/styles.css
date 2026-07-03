@@ -652,6 +652,7 @@ section { position: relative; }
 
 /* Small `?` glyph used by alphabet and case-note popovers */
 .tip-chip {
+  position: relative;
   display: inline-flex; align-items: center; justify-content: center;
   width: 1.15rem; height: 1.15rem;
   padding: 0;
@@ -666,6 +667,17 @@ section { position: relative; }
   cursor: pointer;
   transition: color .15s, border-color .15s;
   vertical-align: baseline;
+}
+/* Grow the tap target to a comfortable ≥44px (WCAG 2.5.8) without moving the
+   visible glyph — a centered, transparent overlay that catches the pointer.
+   Absolutely positioned so it never shifts surrounding layout. */
+.tip-chip::after {
+  content: "";
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 44px; height: 44px;
+  min-width: 100%; min-height: 100%;
+  transform: translate(-50%, -50%);
 }
 .tip-chip:focus-visible,
 .tip-chip[aria-expanded="true"] {
@@ -3746,7 +3758,11 @@ a.cast-cell:focus-visible {
   cursor: pointer;
   background: none;
   border: 0;
-  padding: 0 .06em;
+  /* Vertical padding grows the tap target to ≥24px (WCAG 2.5.8); the equal
+     negative block-margin cancels the added height so line flow is unchanged. */
+  display: inline-block;
+  padding: .35em .06em;
+  margin-block: -.35em;
   border-radius: 3px;
   text-decoration: underline dashed color-mix(in oklab, currentColor 40%, transparent);
   text-underline-offset: .22em;
