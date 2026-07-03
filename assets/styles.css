@@ -2615,9 +2615,7 @@ a.cast-cell:focus-visible {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
-  .num-mini,
-  .num-mini:nth-child(odd),
-  .num-mini:nth-child(even) {
+  .num-mini {
     padding: .9rem;
     border-right: 1px solid var(--hairline-soft);
   }
