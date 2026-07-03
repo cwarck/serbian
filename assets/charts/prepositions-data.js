@@ -54,7 +54,7 @@ const PREP_GROUPS = [
       {
         prep: 'nad', icon: 'over', tone: 'ins',
         uses: [
-          { case: 'aku', icon: 'over-motion', meaning: { en: 'to above', ru: 'над, движение' }, sr: 'Podižem lampu nad sto.', tr: { en: 'I lift the lamp above the table.', ru: 'Я поднимаю лампу над стол.' } },
+          { case: 'aku', icon: 'over-motion', meaning: { en: 'to above', ru: 'над, движение' }, sr: 'Podižem lampu nad sto.', tr: { en: 'I lift the lamp above the table.', ru: 'Я поднимаю лампу над столом.' } },
           { case: 'ins', icon: 'over', meaning: { en: 'above, over', ru: 'над, место' }, sr: 'Lampa je nad stolom.', tr: { en: 'The lamp is above the table.', ru: 'Лампа над столом.' } },
         ]
       },
