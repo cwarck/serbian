@@ -315,7 +315,7 @@ section { position: relative; }
 .chip {
   font-family: var(--ff-body);
   font-size: var(--fs-label);
-  letter-spacing: .08em;
+  letter-spacing: var(--track-label);
   text-transform: uppercase;
   line-height: 1;
   padding: .7rem 1rem;
@@ -350,7 +350,9 @@ section { position: relative; }
   .nav-inner { padding-block: .85rem; }
   .nav-actions { gap: .3rem; }
   .nav-controls { gap: .15rem; padding: 2px; }
-  .chip { padding: .48rem .58rem; }
+  /* Keep a comfortable tap target at narrow widths — trim only the horizontal
+     padding, keep the vertical near the base so height stays well over 24px. */
+  .chip { padding: .62rem .5rem; }
 }
 
 /* -----------------------------------------------------------
