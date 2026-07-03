@@ -161,13 +161,9 @@ window.I18N = {
     'prep.col.example': 'Example',
 
     /* Pronouns page */
-    'pron.personal.kicker': 'Core grid',
     'pron.personal.title': 'Personal pronouns',
-    'pron.possessive.kicker': 'Adjective forms',
     'pron.possessive.title': 'Possessives',
-    'pron.demo.kicker': 'Near / middle / far',
     'pron.demo.title': 'Demonstratives',
-    'pron.question.kicker': 'Question words',
     'pron.question.title': 'Who, what, whose?',
     'pron.subject': 'Subject',
     'pron.accgen': 'Acc / Gen',
@@ -422,13 +418,9 @@ window.I18N = {
     'prep.col.example': 'Пример',
 
     /* Pronouns */
-    'pron.personal.kicker': 'Главная сетка',
     'pron.personal.title': 'Личные местоимения',
-    'pron.possessive.kicker': 'Как прилагательные',
     'pron.possessive.title': 'Притяжательные',
-    'pron.demo.kicker': 'Близко / средне / далеко',
     'pron.demo.title': 'Указательные',
-    'pron.question.kicker': 'Вопросительные слова',
     'pron.question.title': 'Кто, что, чей?',
     'pron.subject': 'Субъект',
     'pron.accgen': 'Вин. / Род.',

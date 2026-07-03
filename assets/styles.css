@@ -1908,7 +1908,6 @@ a.cast-cell:focus-visible {
   display: grid;
   gap: .45rem;
 }
-.pron-kicker,
 .pron-panel h4,
 .pron-person-label,
 .pron-mini-head,
@@ -1922,7 +1921,6 @@ a.cast-cell:focus-visible {
   line-height: 1;
   text-transform: uppercase;
 }
-.pron-kicker,
 .pron-panel h4,
 .pron-person-label,
 .pron-mini-head,
