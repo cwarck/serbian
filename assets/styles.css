@@ -1005,14 +1005,6 @@ section { position: relative; }
   margin-top: .5em;
   letter-spacing: 0;
 }
-.case-cell-head .tagline {
-  font-family: var(--ff-body);
-  font-size: var(--fs-body);
-  color: var(--ink);
-  margin: 1.1rem 0 0;
-  line-height: var(--lh-prose);
-  max-width: 32ch;
-}
 /* The question line pairs a Serbian specimen with its gloss: the <strong>
    question words keep the serif voice, the "— meaning" gloss is apparatus sans. */
 .case-cell-head .q {
@@ -1145,8 +1137,6 @@ section { position: relative; }
   .case-row:not(.case-row-head) .case-cell-head .q { font-size: var(--fs-caption); margin-top: .65rem; max-width: none; }
   /* Example sentence tracks the question's size at this width */
   .case-row:not(.case-row-head) .case-cell-head .case-head-ex .sr { font-size: var(--fs-caption); }
-  /* Tagline is narrative — drop it on xlarge */
-  .case-row:not(.case-row-head) .case-cell-head .tagline { display: none; }
 
   /* Ending cells flat into the grid — drop the mobile frame's top/left,
      keep the grid right/bottom borders from .case-row > * */

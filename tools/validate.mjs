@@ -158,7 +158,7 @@ function collectJsLiteralI18nKeys(files) {
 function collectDataI18nKeys() {
   const keys = new Set();
   const add = key => keys.add(key);
-  const addCaseKey = key => ['name', 'local', 'tagline', 'q'].forEach(suffix => add(`${key}.${suffix}`));
+  const addCaseKey = key => ['name', 'local', 'q'].forEach(suffix => add(`${key}.${suffix}`));
 
   const cases = data['assets/charts/cases-data.js'];
   cases.CASES.forEach(c => {

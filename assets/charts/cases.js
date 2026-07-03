@@ -231,7 +231,6 @@ function renderCases() {
   const headBlock = (c) => {
     const name    = d[c.key + '.name']    || '';
     const local   = SerbianFyi.sr(d[c.key + '.local'] || '');
-    const tagline = d[c.key + '.tagline'] || '';
     const q       = srStrongHTML(d[c.key + '.q'] || '');
     /* Examples hide by default — a chevron on the question line unfolds them
        in place, so the endings matrix stays the legible default. */
@@ -255,7 +254,6 @@ function renderCases() {
             <span class="case-tag">${c.abbr}</span>
           </div>
           <p class="q">${exToggle}${q}</p>
-          <p class="tagline">${tagline}</p>
           ${exHTML}
         </header>
       </div>`;
