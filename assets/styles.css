@@ -471,14 +471,6 @@ section { position: relative; }
   display: flex; flex-direction: column; gap: .6rem;
   text-align: right; line-height: var(--lh-snug);
 }
-.foot-icon {
-  display: inline;
-  vertical-align: baseline;
-  line-height: inherit;
-}
-.foot-icon::after { content: "Github"; }
-.foot-icon svg { display: none; }
-
 @media (hover: hover) and (pointer: fine) {
   .chip:hover { color: var(--ink); }
   .chip[aria-pressed="true"]:hover { color: var(--paper); }
