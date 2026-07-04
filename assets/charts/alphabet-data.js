@@ -11,7 +11,7 @@ const ALPHABET = [
   { n: 5,  cyr:'Д д', lat:'D d',  ipa:'/d/',   wCyr:'дом',     wLat:'dom',     kind:'shared' },
   { n: 6,  cyr:'Ђ ђ', lat:'Đ đ',  ipa:'/dʑ/',  wCyr:'ђак',     wLat:'đak',     kind:'unique',
     tip:{
-      en:'A soft sound between “d” and “j”. Imagine the gentle “dy” sound some people use in <em>duke</em>. Your tongue stays close to the roof of the mouth, making it soft and smooth.',
+      en:'A soft sound between “d” and “j”. Imagine the gentle “dy” sound some people use in “duke”. Your tongue stays close to the roof of the mouth, making it soft and smooth.',
       ru:'Мягкий звук между «дь» и «дж». Представь очень мягкое «д» в слове «дядя». Язык прижимается к нёбу, поэтому звук получается «нежным».'
     } },
   { n: 7,  cyr:'Е е', lat:'E e',  ipa:'/e/',   wCyr:'европа',  wLat:'evropa',  kind:'shared' },
@@ -41,12 +41,12 @@ const ALPHABET = [
   { n:27,  cyr:'Ц ц', lat:'C c',  ipa:'/ts/',  wCyr:'цвет',    wLat:'cvet',    kind:'shared' },
   { n:28,  cyr:'Ч ч', lat:'Č č',  ipa:'/tʃ/',  wCyr:'час',     wLat:'čas',     kind:'shared',
     tip:{
-      en:'Like the “ch” in <em>chocolate</em>. A strong and crisp sound.',
+      en:'Like the “ch” in “chocolate”. A strong and crisp sound.',
       ru:'Похоже на русский «ч» в слове «чай», но чуть твёрже и чётче.'
     } },
   { n:29,  cyr:'Џ џ', lat:'Dž dž',ipa:'/dʒ/',  wCyr:'џеп',     wLat:'džep',    kind:'unique',
     tip:{
-      en:'The same sound as “j” in <em>jam</em>. Strong, voiced, and easy to hear.',
+      en:'The same sound as “j” in “jam”. Strong, voiced, and easy to hear.',
       ru:'Просто «дж», как в слове «джаз». Твёрдый и звонкий звук.'
     } },
   { n:30,  cyr:'Ш ш', lat:'Š š',  ipa:'/ʃ/',   wCyr:'шума',    wLat:'šuma',    kind:'shared' },
