@@ -4072,6 +4072,38 @@ a.cast-cell:focus-visible {
 }
 
 /* -----------------------------------------------------------
+   Forced colors (Windows High Contrast Mode)
+
+   The OS swaps every author color for a small system palette, so two
+   colour-only codes lose their signal: the alphabet's solid-vs-dashed
+   badge (both cyr/lat share one border color) and the six case hues
+   (all --tone accents map to one system color). We restore each with a
+   channel forced-colors keeps.
+   ----------------------------------------------------------- */
+@media (forced-colors: active) {
+  /* Alphabet badge. The solid (unique "SR") vs dashed (diff "!=")
+     border-STYLE survives HCM untouched — only the color is swapped —
+     so the two categories stay distinct on style + glyph alone. Pin the
+     styles explicitly (defensive) and paint with a system color so the
+     badge outline never drops to a value HCM would render invisibly. */
+  .letter::after { border-color: CanvasText; }
+  .letter[data-kind="unique"]::after { border-style: solid; }
+  .letter[data-kind="diff"]::after   { border-style: dashed; }
+
+  /* Case tones. The per-case accent lives in two decorative 3px marker
+     bars — .case-strip-cell::before (nav) and .case-row::before (row).
+     These are the pure colour code; opt them out of the forced-colors
+     override so the six hues (and NOM's neutral --ink-soft) stay apart.
+     Scoped to these tiny decorative bars only — text keeps system colors
+     for legibility, and the NOM/GEN/… abbreviations already label each
+     case, so meaning is never on color alone. */
+  .case-strip-cell::before,
+  .case-row::before {
+    forced-color-adjust: none;
+  }
+}
+
+/* -----------------------------------------------------------
    Utilities
    ----------------------------------------------------------- */
 
