@@ -102,7 +102,7 @@ const FUTURE = {
     { sr:'Radiću.', en:'I will work.', ru:'Я буду работать.' },
     { sr:'Neću raditi.', en:'I will not work.', ru:'Я не буду работать.' },
   ],
-  merged: ['raditi -> radiću', 'radićeš', 'radiće'],
+  merged: ['raditi → radiću', 'radićeš', 'radiće'],
   exceptions: ['ići ću', 'doći ću'],
   reflexive: ['Šetam se.', 'Ja se šetam.', 'Nisam se šetao.']
 };
