@@ -519,7 +519,6 @@ function validateCases() {
     expectString(row.key, scope, 'key');
     expect(row.abbr === caseAbbrs[index], scope, `abbr must be ${caseAbbrs[index]}`);
     expectString(row.tone, scope, 'tone');
-    expectString(row.sigEnding, scope, 'sigEnding');
     for (const gender of genders) {
       expect(isObject(row.endings?.[gender]), scope, `endings.${gender} required`);
       for (const number of numbers) expect(row.endings?.[gender]?.[number] !== undefined, scope, `endings.${gender}.${number} required`);

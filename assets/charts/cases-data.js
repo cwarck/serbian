@@ -16,7 +16,6 @@
 const CASES = [
   {
     key: 'case.1', abbr: 'NOM', tone: 'nom',
-    sigEnding: '-∅',
     endings: {
       m: { sg: '-∅',               pl: { v:'-i', n:'sib-i' } },
       f: { sg: '-a',                pl: '-e' },
@@ -41,7 +40,6 @@ const CASES = [
 
   {
     key: 'case.2', abbr: 'GEN', tone: 'gen',
-    sigEnding: '-a',
     endings: {
       m: { sg: '-a',                pl: '-a' },
       f: { sg: '-e',                pl: '-∅' },
@@ -58,7 +56,6 @@ const CASES = [
 
   {
     key: 'case.3', abbr: 'DAT', tone: 'dat',
-    sigEnding: '-u',
     endings: {
       m: { sg: '-u',                pl: '-ima' },
       f: { sg: { v:'-i', n:'sib-i' }, pl: '-ama' },
@@ -83,7 +80,6 @@ const CASES = [
 
   {
     key: 'case.4', abbr: 'AKU', tone: 'aku',
-    sigEnding: '-a / -∅',
     endings: {
       m: {
         sg: { syncretic: true, split: [
@@ -114,7 +110,6 @@ const CASES = [
 
   {
     key: 'case.5', abbr: 'VOK', tone: 'vok',
-    sigEnding: '-e / -u',
     endings: {
       m: {
         sg: { split: [
@@ -152,7 +147,6 @@ const CASES = [
 
   {
     key: 'case.6', abbr: 'INS', tone: 'ins',
-    sigEnding: '-om',
     endings: {
       m: { sg: { v:'-om', n:'soft-em' }, pl: '-ima' },
       f: { sg: '-om',                     pl: '-ama' },
@@ -177,7 +171,6 @@ const CASES = [
 
   {
     key: 'case.7', abbr: 'LOK', tone: 'lok',
-    sigEnding: '-u',
     endings: {
       m: { sg: '-u',               pl: '-ima' },
       f: { sg: { v:'-i', n:'sib-i' }, pl: '-ama' },
