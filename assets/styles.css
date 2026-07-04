@@ -2502,6 +2502,10 @@ a.cast-cell:focus-visible {
   border-bottom: 1px solid var(--hairline-soft);
 }
 
+/* Empty pad cells only exist to square off the 4-col grid; on the 1-col
+   mobile layout they'd render as stray bordered rows. */
+.num-mini-empty { display: none; }
+
 .num-value {
   font-family: var(--ff-body);
   font-size: var(--fs-label);
@@ -2611,6 +2615,8 @@ a.cast-cell:focus-visible {
   .num-mini:nth-child(4n) {
     border-right: 0;
   }
+
+  .num-mini-empty { display: grid; }
 }
 
 @media (min-width: 900px) {
