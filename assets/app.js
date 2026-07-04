@@ -125,7 +125,11 @@
 
   /* Convert Serbian tokens inline in foreign prose: wrap each Serbian word or
      ending in <i>...</i> in the i18n source, and only that text flips script.
-     Everything outside the marker stays in its native language. */
+     Everything outside the marker stays in its native language. The same <i>
+     marker also localises the token for assistive tech — tag the opening tag
+     with lang="sr" so a screen reader pronounces the specimen with Serbian
+     phonology instead of the surrounding UI language's. Idempotent: skipped if
+     the tag already carries a lang (re-render reads back a tagged source). */
   function srGrammarHTML(html) {
     let depth = 0;
     return String(html)
@@ -137,7 +141,12 @@
           const m = part.match(/^<\s*(\/?)\s*([a-z][a-z0-9]*)/i);
           if (m && m[2].toLowerCase() === 'i') {
             if (m[1]) depth = Math.max(0, depth - 1);
-            else if (!/\/\s*>\s*$/.test(part)) depth++;
+            else if (!/\/\s*>\s*$/.test(part)) {
+              depth++;
+              if (!/\blang\s*=/i.test(part)) {
+                return part.replace(/^<\s*i\b/i, '<i lang="sr"');
+              }
+            }
           }
           return part;
         }

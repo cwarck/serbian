@@ -34,7 +34,7 @@ function noteButton(id) {
 function exampleHTML(ex) {
   return `
     <span class="pitch-example">
-      <span class="sr">${SerbianFyi.sr(ex.sr)}</span>
+      <span class="sr" lang="sr">${SerbianFyi.sr(ex.sr)}</span>
       <span class="tr">${exampleGloss(ex)}</span>
     </span>
   `;
@@ -43,7 +43,7 @@ function exampleListHTML(items) {
   return `<div class="pitch-examples">${items.map(exampleHTML).join('')}</div>`;
 }
 function srListHTML(items) {
-  return `<div class="pitch-sr-list">${items.map(item => `<span>${SerbianFyi.sr(item)}</span>`).join('')}</div>`;
+  return `<div class="pitch-sr-list" lang="sr">${items.map(item => `<span>${SerbianFyi.sr(item)}</span>`).join('')}</div>`;
 }
 
 function renderAccents() {
@@ -105,7 +105,7 @@ function renderParadigms() {
         ${PITCH_PARADIGMS.map(row => `
           <article class="pitch-paradigm">
             <header class="pitch-paradigm-head">
-              <h4>${SerbianFyi.sr(row.word.sr)}</h4>
+              <h4 lang="sr">${SerbianFyi.sr(row.word.sr)}</h4>
               <span>${exampleGloss(row.word)}</span>
               ${noteButton(row.note)}
             </header>
@@ -113,7 +113,7 @@ function renderParadigms() {
               ${row.cells.map(cell => `
                 <div>
                   <span class="pitch-case">${cell.label}</span>
-                  <span class="pitch-form">${SerbianFyi.sr(cell.sr)}</span>
+                  <span class="pitch-form" lang="sr">${SerbianFyi.sr(cell.sr)}</span>
                 </div>
               `).join('')}
             </div>

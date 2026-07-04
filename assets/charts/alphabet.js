@@ -13,7 +13,7 @@ function renderAlphabet() {
   const cta = tipLabel(lang);
   grid.innerHTML = ALPHABET.map((L, i) => `
     <article class="letter" data-kind="${L.kind}">
-      <div class="glyphs">
+      <div class="glyphs" lang="sr">
         <span class="cyr">${L.cyr}</span>
         <span class="sep">·</span>
         <span class="lat">${L.lat}</span>
@@ -23,7 +23,7 @@ function renderAlphabet() {
         ${L.tip ? `<button class="tip-chip" type="button" aria-haspopup="dialog" aria-expanded="false" aria-label="${cta}" data-tip-idx="${i}">?</button>` : ''}
       </div>
       <div class="example">
-        <span class="word">
+        <span class="word" lang="sr">
           <span class="word-cyr">${L.wCyr}</span>
           <span class="word-sep">·</span>
           <span class="word-lat">${L.wLat}</span>

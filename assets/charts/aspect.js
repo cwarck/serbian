@@ -17,7 +17,7 @@ function srPair(pair) {
 function exampleHTML(ex) {
   return `
     <div class="aspect-example">
-      <span class="sr">${SerbianFyi.sr(ex.sr)}</span>
+      <span class="sr" lang="sr">${SerbianFyi.sr(ex.sr)}</span>
       <span class="tr">${pick(ex)}</span>
     </div>
   `;
@@ -85,8 +85,8 @@ function renderPatterns() {
         ${PATTERNS.map(row => `
           <article class="aspect-table-row">
             <h4>${pick(row.pattern)}</h4>
-            <span class="aspect-form aspect-cell" data-label="${ui('imperfective')}">${SerbianFyi.sr(row.imp)}</span>
-            <span class="aspect-form aspect-cell" data-label="${ui('perfective')}">${SerbianFyi.sr(row.perf)}</span>
+            <span class="aspect-form aspect-cell" data-label="${ui('imperfective')}" lang="sr">${SerbianFyi.sr(row.imp)}</span>
+            <span class="aspect-form aspect-cell" data-label="${ui('perfective')}" lang="sr">${SerbianFyi.sr(row.perf)}</span>
             <p class="aspect-cell" data-label="${ui('signal')}">${pick(row.signal)}</p>
           </article>
         `).join('')}
@@ -103,12 +103,12 @@ function renderPrefixes() {
     return `
       <article class="aspect-prefix" data-tone="${row.tone}">
         <header class="aspect-prefix-head">
-          <h4>${SerbianFyi.sr(row.prefix)}</h4>
+          <h4 lang="sr">${SerbianFyi.sr(row.prefix)}</h4>
           ${row.note ? noteButton(idx) : ''}
         </header>
         <p>${pick(row.feel)}</p>
         <ul>
-          ${row.pairs.map(pair => `<li>${srPair(pair)}</li>`).join('')}
+          ${row.pairs.map(pair => `<li lang="sr">${srPair(pair)}</li>`).join('')}
         </ul>
       </article>
     `;
@@ -132,8 +132,8 @@ function renderPairs() {
         ${COMMON_PAIRS.map(row => `
           <article class="aspect-table-row">
             <h4>${SerbianFyi.glossary.gloss(row.imp, lang())}</h4>
-            <span class="aspect-form aspect-cell" data-label="${ui('imperfective')}">${SerbianFyi.sr(row.imp)}</span>
-            <span class="aspect-form aspect-cell" data-label="${ui('perfective')}">${SerbianFyi.sr(row.perf)}</span>
+            <span class="aspect-form aspect-cell" data-label="${ui('imperfective')}" lang="sr">${SerbianFyi.sr(row.imp)}</span>
+            <span class="aspect-form aspect-cell" data-label="${ui('perfective')}" lang="sr">${SerbianFyi.sr(row.perf)}</span>
             <div class="aspect-cell" data-label="${ui('example')}">${exampleHTML(row.ex)}</div>
           </article>
         `).join('')}

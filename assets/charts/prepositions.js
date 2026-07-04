@@ -34,7 +34,7 @@ function renderUse(use) {
         <span class="prep-meaning">${use.meaning[lang] || use.meaning.en}</span>
       </div>
       <div class="prep-example">
-        <span class="sr">${SerbianFyi.sr(use.sr)}</span>
+        <span class="sr" lang="sr">${SerbianFyi.sr(use.sr)}</span>
         <span class="tr">${use.tr[lang] || use.tr.en}</span>
       </div>
     </div>
@@ -59,7 +59,7 @@ function renderGroup(group) {
         ${group.rows.map(row => `
           <article class="prep-row" data-tone="${row.tone}">
             <div class="prep-visual">${visualHTML(row)}</div>
-            <div class="prep-name">${SerbianFyi.sr(row.prep)}</div>
+            <div class="prep-name" lang="sr">${SerbianFyi.sr(row.prep)}</div>
             <div class="prep-uses">${row.uses.map(renderUse).join('')}</div>
           </article>
         `).join('')}

@@ -21,7 +21,7 @@ function personalCell(value) {
     const comma = idx < parts.length - 1 ? '<span class="pron-comma">,</span>' : '';
     return `<span class="${cls}">${SerbianFyi.sr(part)}${comma}</span>`;
   });
-  return `<span class="pron-pair">${forms.join(' ')}</span>`;
+  return `<span class="pron-pair" lang="sr">${forms.join(' ')}</span>`;
 }
 
 function renderPersonal() {
@@ -38,7 +38,7 @@ function renderPersonal() {
     <tr data-band="${row.band}">
       <th scope="row">
         <span class="pron-person-label">${t(row.label)}</span>
-        <span class="pron-subject">${SerbianFyi.sr(row.subject)}</span>
+        <span class="pron-subject" lang="sr">${SerbianFyi.sr(row.subject)}</span>
       </th>
       ${columns.slice(1).map(([key, prop]) => `<td data-label="${t(key)}">${personalCell(row[prop])}</td>`).join('')}
     </tr>
@@ -55,7 +55,7 @@ function renderPersonal() {
     </table>
     <div class="pron-rule-row">
       <p><strong>${t('pron.long.short')}</strong> ${t('pron.long.short.rule')}</p>
-      <p><strong><i>${SerbianFyi.sr('svoj')}</i></strong> ${t('pron.svoj.rule')}</p>
+      <p><strong><i lang="sr">${SerbianFyi.sr('svoj')}</i></strong> ${t('pron.svoj.rule')}</p>
     </div>
   `;
 }
@@ -72,7 +72,7 @@ function renderPossessives() {
       <article class="pron-poss-card" role="rowgroup">
         <h4 id="pron-poss-owner-${i}">${t(item.owner)}</h4>
         <div class="pron-gender-row" role="row" aria-labelledby="pron-poss-owner-${i}">
-          ${item.forms.map(form => `<span role="cell">${SerbianFyi.sr(form)}</span>`).join('')}
+          ${item.forms.map(form => `<span role="cell" lang="sr">${SerbianFyi.sr(form)}</span>`).join('')}
         </div>
         ${item.note ? `<p>${t(item.note)}</p>` : ''}
       </article>
@@ -98,7 +98,7 @@ function renderDemonstratives() {
           ${group.rows.map(row => `
             <div class="pron-matrix-row" role="row">
               <span class="pron-row-label" role="rowheader">${t(row.key)}</span>
-              ${row.forms.map(form => `<span class="pron-form" role="cell">${SerbianFyi.sr(form)}</span>`).join('')}
+              ${row.forms.map(form => `<span class="pron-form" role="cell" lang="sr">${SerbianFyi.sr(form)}</span>`).join('')}
             </div>
           `).join('')}
         </div>
@@ -106,8 +106,8 @@ function renderDemonstratives() {
     </section>
   `).join('') + `
     <div class="pron-rule-row">
-      <p><strong><i>${SerbianFyi.sr('Ovo je...')}</i></strong> ${t('pron.demo.predicate')}</p>
-      <p><strong><i>${SerbianFyi.sr('Ovaj pas')}</i></strong> ${t('pron.demo.noun.rule')}</p>
+      <p><strong><i lang="sr">${SerbianFyi.sr('Ovo je...')}</i></strong> ${t('pron.demo.predicate')}</p>
+      <p><strong><i lang="sr">${SerbianFyi.sr('Ovaj pas')}</i></strong> ${t('pron.demo.noun.rule')}</p>
     </div>
   `;
 }
@@ -124,7 +124,7 @@ function renderQuestions() {
           ${QUESTIONS.whose.map(row => `
             <div class="pron-matrix-row" role="row">
               <span class="pron-row-label" role="rowheader">${t(row.label)}</span>
-              ${row.forms.map(form => `<span class="pron-form" role="cell">${SerbianFyi.sr(form)}</span>`).join('')}
+              ${row.forms.map(form => `<span class="pron-form" role="cell" lang="sr">${SerbianFyi.sr(form)}</span>`).join('')}
             </div>
           `).join('')}
         </div>
@@ -137,8 +137,8 @@ function renderQuestions() {
         ${QUESTIONS.whoWhat.map(row => `
           <div class="pron-kw-row" role="row">
             <span role="rowheader">${t(row.key)}</span>
-            <span role="cell">${SerbianFyi.sr(row.who)}</span>
-            <span role="cell">${SerbianFyi.sr(row.what)}</span>
+            <span role="cell" lang="sr">${SerbianFyi.sr(row.who)}</span>
+            <span role="cell" lang="sr">${SerbianFyi.sr(row.what)}</span>
           </div>
         `).join('')}
       </div>

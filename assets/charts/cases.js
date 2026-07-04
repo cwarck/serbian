@@ -10,7 +10,7 @@ function dict() {
 function tCases(key) { return dict()[key] || ''; }
 function currentLang() { return document.documentElement.getAttribute('lang') || 'en'; }
 function srStrongHTML(html) {
-  return String(html).replace(/<strong>(.*?)<\/strong>/g, (_, inner) => `<strong>${SerbianFyi.srHTML(inner)}</strong>`);
+  return String(html).replace(/<strong>(.*?)<\/strong>/g, (_, inner) => `<strong lang="sr">${SerbianFyi.srHTML(inner)}</strong>`);
 }
 function renderStaticGrammarTokens() {
   const lang = currentLang();
@@ -88,9 +88,9 @@ function notePopoverHTML(caseIdx, noteId) {
     const hl = diffHL(p[0], p[1]);
     return `
       <li>
-        <span class="from">${SerbianFyi.srHTML(hl.from)}</span>
+        <span class="from" lang="sr">${SerbianFyi.srHTML(hl.from)}</span>
         <span class="arrow" aria-hidden="true">→</span>
-        <span class="to">${SerbianFyi.srHTML(hl.to)}</span>
+        <span class="to" lang="sr">${SerbianFyi.srHTML(hl.to)}</span>
       </li>`;
   }).join('');
   return `
@@ -178,7 +178,7 @@ function cellHTML(entry, caseIdx, axisKey) {
   /* One ending + its trailing note + (if it's an echo) the source-case chip. */
   const endHTML = (value, branch, note) => {
     const echo = branch && !branch.novel;
-    return `<span class="end${echo ? ' is-echo' : ''}">${SerbianFyi.sr(value)}${note}</span>${echo ? pillsHTML([branch.source]) : ''}`;
+    return `<span class="end${echo ? ' is-echo' : ''}"><span lang="sr">${SerbianFyi.sr(value)}</span>${note}</span>${echo ? pillsHTML([branch.source]) : ''}`;
   };
 
   if (typeof entry === 'string') {
@@ -241,7 +241,7 @@ function renderCases() {
       <div class="case-head-ex">
         <div class="examples">${c.examples.map(ex => `
           <div class="ex">
-            <div class="sr">${SerbianFyi.srHTML(ex.sr)}</div>
+            <div class="sr" lang="sr">${SerbianFyi.srHTML(ex.sr)}</div>
             <div class="tr">${SerbianFyi.srGrammarHTML(ex[lang] || ex.en)}</div>
           </div>`).join('')}
         </div>
@@ -250,7 +250,7 @@ function renderCases() {
       <div class="case-cell case-cell-head">
         <header class="case-head">
           <div class="case-head-title">
-            <h3>${local}<em>${name}</em></h3>
+            <h3><span lang="sr">${local}</span><em>${name}</em></h3>
             <span class="case-tag">${c.abbr}</span>
           </div>
           <p class="q">${exToggle}${q}</p>
@@ -283,7 +283,7 @@ function renderCases() {
         const echo = !sync.novel;
         return `
           <span class="cast-cell${echo ? ' is-echo' : ''}" role="cell" data-tone="${c.tone}" data-gender="${cast.gender}" aria-label="${c.abbr}, ${genderLabel(cast.gender)}: ${SerbianFyi.sr(form)}${echo ? ', = ' + sync.source : ''}">
-            <span class="cast-form">${SerbianFyi.srHTML(hl)}</span>
+            <span class="cast-form" lang="sr">${SerbianFyi.srHTML(hl)}</span>
             ${echo ? pillsHTML([sync.source]) : ''}
           </span>`;
       }).join('');
@@ -291,7 +291,7 @@ function renderCases() {
         <div class="cast-row" id="${caseAnchor(c.key)}" data-tone="${c.tone}" role="row">
           <div class="cast-cell cast-case" data-tone="${c.tone}" role="rowheader">
             <div class="case-head-title">
-              <h3>${SerbianFyi.sr(d[c.key + '.local'] || '')}<em>${d[c.key + '.name'] || ''}</em></h3>
+              <h3><span lang="sr">${SerbianFyi.sr(d[c.key + '.local'] || '')}</span><em>${d[c.key + '.name'] || ''}</em></h3>
               <span class="case-tag">${c.abbr}</span>
             </div>
           </div>
@@ -352,8 +352,8 @@ function renderExtras() {
   const idRows = IDECL.cases.map((abbr, i) => `
     <tr>
       <th scope="row" class="num">${abbr}</th>
-      <td><span class="end">${SerbianFyi.sr(IDECL.sg[i])}</span></td>
-      <td><span class="end">${SerbianFyi.sr(IDECL.pl[i])}</span></td>
+      <td><span class="end" lang="sr">${SerbianFyi.sr(IDECL.sg[i])}</span></td>
+      <td><span class="end" lang="sr">${SerbianFyi.sr(IDECL.pl[i])}</span></td>
     </tr>
   `).join('');
   const idTitle = d['cases.extra.title'] || 'Feminines without -a';
@@ -362,7 +362,7 @@ function renderExtras() {
     <article class="extra-panel extra-panel-idecl">
       <header class="extra-panel-head">
         <h3 class="extra-panel-title">${SerbianFyi.srGrammarHTML(idTitle)}</h3>
-        <span class="extra-panel-sub"><em>${SerbianFyi.sr('ljubav')}</em>${idGloss ? ' · ' + idGloss : ''}</span>
+        <span class="extra-panel-sub"><em lang="sr">${SerbianFyi.sr('ljubav')}</em>${idGloss ? ' · ' + idGloss : ''}</span>
       </header>
       <div class="extra-panel-body">
         <table class="i-decl">
@@ -385,9 +385,9 @@ function renderExtras() {
       const hl = diffHL(ex.from, ex.to);
       return `
         <li>
-          <span class="from">${SerbianFyi.srHTML(hl.from)}</span>
+          <span class="from" lang="sr">${SerbianFyi.srHTML(hl.from)}</span>
           <span class="arrow" aria-hidden="true">→</span>
-          <span class="to">${SerbianFyi.srHTML(hl.to)}</span>
+          <span class="to" lang="sr">${SerbianFyi.srHTML(hl.to)}</span>
           <span class="gloss">${SerbianFyi.srGrammarHTML(ex[lang] || ex.en)}</span>
         </li>
       `;

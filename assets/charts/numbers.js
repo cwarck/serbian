@@ -17,7 +17,7 @@ function renderNumberGroup(group) {
   const cells = group.rows.map(row => `
     <article class="num-mini">
       <span class="num-value">${row.n}</span>
-      <span class="num-word">${SerbianFyi.sr(row.sr)}</span>
+      <span class="num-word" lang="sr">${SerbianFyi.sr(row.sr)}</span>
     </article>
   `).join('') + Array.from({ length: blanks }, () => '<article class="num-mini num-mini-empty" aria-hidden="true"></article>').join('');
   return `
@@ -47,7 +47,7 @@ function renderBuilds() {
         ${NUMBER_BUILDS.map(row => `
           <article class="num-table-row">
             <span class="num-value" data-label="${t('numbers.number')}">${row.n}</span>
-            <span class="num-built" data-label="${t('numbers.parts')}">${srParts(row.parts)}</span>
+            <span class="num-built" data-label="${t('numbers.parts')}" lang="sr">${srParts(row.parts)}</span>
             <span class="num-meaning" data-label="${t('numbers.meaning')}">${pick(row)}</span>
           </article>
         `).join('')}
@@ -72,7 +72,7 @@ function renderNounCounts() {
           <article class="num-table-row">
             <span class="num-value" data-label="${t('numbers.number')}">${row.n}</span>
             <span class="num-pattern" data-label="${t('numbers.pattern')}">${pick(row.pattern)}</span>
-            <div class="num-examples" data-label="${t('numbers.examples')}">
+            <div class="num-examples" data-label="${t('numbers.examples')}" lang="sr">
               ${row.examples.map(example => `<span>${SerbianFyi.sr(example)}</span>`).join('')}
             </div>
           </article>
@@ -98,7 +98,7 @@ function renderOrdinals() {
         ${ORDINALS.map(row => `
           <article class="num-table-row">
             <span class="num-value" data-label="${t('numbers.number')}">${row.n}</span>
-            ${row.forms.map((form, idx) => `<span class="num-word" data-label="${t(['cases.gender.m', 'cases.gender.f', 'cases.gender.n'][idx])}">${SerbianFyi.sr(form)}</span>`).join('')}
+            ${row.forms.map((form, idx) => `<span class="num-word" data-label="${t(['cases.gender.m', 'cases.gender.f', 'cases.gender.n'][idx])}" lang="sr">${SerbianFyi.sr(form)}</span>`).join('')}
           </article>
         `).join('')}
       </div>

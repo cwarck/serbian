@@ -130,14 +130,14 @@ function renderPrepCard(token) {
           <span class="prep-meaning">${use.meaning[lang] || use.meaning.en}</span>
         </div>
         <div class="prep-example">
-          <span class="sr">${SerbianFyi.sr(use.sr)}</span>
+          <span class="sr" lang="sr">${SerbianFyi.sr(use.sr)}</span>
           <span class="tr">${use.tr[lang] || use.tr.en}</span>
         </div>
       </div>
     </div>`).join('');
   return `
     <article class="prep-card">
-      <header class="prep-card-head"><span class="prep-card-name">${SerbianFyi.sr(entity.display)}</span></header>
+      <header class="prep-card-head"><span class="prep-card-name" lang="sr">${SerbianFyi.sr(entity.display)}</span></header>
       <div class="prep-card-uses">${uses}</div>
     </article>`;
 }
