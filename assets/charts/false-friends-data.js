@@ -188,11 +188,11 @@ const FALSE_FRIEND_GROUPS = [
         ex: { sr: 'Moja struka je medicina.', ru: 'Моя специальность - медицина.' }
       },
       {
-        sr: 'dijeta',
-        means: 'рацион, питание',
-        trap: 'диета',
-        trapMeans: 'ограниченный режим еды',
-        ex: { sr: 'Zdrava dijeta.', ru: 'Здоровое питание.' }
+        sr: 'pravo',
+        means: 'право; прямо (вперёд)',
+        trap: 'право',
+        trapMeans: 'только право, закон',
+        ex: { sr: 'Idi pravo.', ru: 'Иди прямо.' }
       }
     ]
   }

@@ -184,7 +184,6 @@ window.GLOSSARY = {
   'govor':        { pos:'noun', gender:'m',                gloss:{ en:'speech; manner of speaking', ru:'речь; манера говорить' }, level:'B1' },
   'sklad':        { pos:'noun', gender:'m',                gloss:{ en:'harmony', ru:'гармония / лад' }, level:'B2' },
   'struka':       { pos:'noun', gender:'f',                gloss:{ en:'profession / specialty', ru:'профессия' }, level:'B1' },
-  'dijeta':       { pos:'noun', gender:'f',                gloss:{ en:'diet', ru:'диета' }, level:'B1' },
   'potres':       { pos:'noun', gender:'m',                gloss:{ en:'earthquake', ru:'землетрясение' }, level:'B1' },
   'pozorište':    { pos:'noun', gender:'n',                gloss:{ en:'theatre', ru:'театр' }, level:'A2' },
   'iskustvo':     { pos:'noun', gender:'n',                gloss:{ en:'experience', ru:'опыт' }, level:'B1' },
@@ -248,6 +247,7 @@ window.GLOSSARY = {
   /* ---------- adverbs ---------- */
 
   'hladno':       { pos:'adv', gloss:{ en:'cold(ly)', ru:'холодно' }, level:'A1' },
+  'pravo':        { pos:'adv', gloss:{ en:'straight ahead; right/law', ru:'прямо; право' }, level:'A1' },
   'sad':          { pos:'adv', gloss:{ en:'now', ru:'сейчас' }, level:'A1' },
   'sutra':        { pos:'adv', gloss:{ en:'tomorrow', ru:'завтра' }, level:'A1' },
 
