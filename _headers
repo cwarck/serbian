@@ -1,0 +1,46 @@
+# Cloudflare Workers Static Assets — _headers
+# Served from the assets root (wrangler.jsonc: assets.directory = ".").
+# Docs: https://developers.cloudflare.com/workers/static-assets/headers/
+#
+# SEMANTICS NOTE: rules are CUMULATIVE. A request matching several path
+# patterns inherits every matched rule's headers, and a header set twice is
+# JOINED with a comma (not overridden). The Cache-Control paths below are
+# therefore kept mutually exclusive so no asset ever receives two of them.
+# Fail-open: malformed syntax is ignored, so a bad edit can't break serving.
+
+# --- Security headers (site-wide, unique header names) ---
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: DENY
+  Permissions-Policy: geolocation=(), camera=(), microphone=()
+
+# --- Fonts: content-stable woff2 subsets (and their OFL licences).
+#     The real win — large files, never change under a stable path. ---
+/assets/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# --- CSS / JS: UNHASHED stable paths. Must revalidate so a deploy is not
+#     masked by a stale cached copy. `/assets/*.js` also covers charts/*. ---
+/assets/*.css
+  Cache-Control: no-cache
+/assets/*.js
+  Cache-Control: no-cache
+
+# --- HTML: always revalidate; never long-cache a document. ---
+/*.html
+  Cache-Control: no-cache
+/
+  Cache-Control: no-cache
+
+# --- RECOMMENDED Content-Security-Policy (NOT shipped) ---
+# Left commented: these pages ship inline `style="display:contents"`
+# ATTRIBUTES (grid a11y) and an inline <script> redirect in
+# charts/false-friends.html. A strict CSP would break both, and that can
+# only be confirmed against a PREVIEW DEPLOY. Before enabling:
+#   - inline style attributes force `style-src 'unsafe-inline'`
+#     (attributes can't be hashed/nonced);
+#   - the inline <script> needs its exact sha256 hash added to script-src,
+#     or move it to an external .js file.
+# Draft to test on a preview deploy, then move under `/*`:
+#   Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-<HASH-OF-INLINE-SCRIPT>'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'
