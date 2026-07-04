@@ -12,7 +12,7 @@ function renderAlphabet() {
   if (!grid) return;
   const cta = tipLabel(lang);
   grid.innerHTML = ALPHABET.map((L, i) => `
-    <article class="letter" data-kind="${L.kind}"${L.tip ? ' data-has-tip="true"' : ''}>
+    <article class="letter" data-kind="${L.kind}">
       <div class="glyphs">
         <span class="cyr">${L.cyr}</span>
         <span class="sep">·</span>
