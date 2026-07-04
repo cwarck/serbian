@@ -213,6 +213,9 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
+  /* Long unbreakable tokens wrap instead of forcing a horizontal scroll at
+     narrow widths (base safety net for prose, glosses, and translations). */
+  overflow-wrap: break-word;
 }
 
 ::selection { background: var(--accent); color: var(--paper); }
@@ -250,6 +253,18 @@ p { margin: 0 0 1.15em; }
    converter can find them. It's a structural marker, not visual emphasis —
    but the token itself is a specimen, so it renders in the serif voice. */
 i { font-style: inherit; font-family: var(--ff-display); }
+
+/* Serbian specimens and their glosses sit in rigid grid/flex example tracks.
+   `break-word` alone won't shrink a track — the longest word still sets the
+   column's min-content. `anywhere` lets an over-long unbreakable token break
+   AND collapse its min-content contribution, so the track shrinks to fit
+   instead of forcing the page body to scroll sideways at 320px. */
+.sr,
+.tr,
+.verb-form,
+.pitch-form {
+  overflow-wrap: anywhere;
+}
 
 /* -----------------------------------------------------------
    Layout primitives
