@@ -5,17 +5,17 @@ function dict() {
 function t(key) { return dict()[key] || key; }
 function renderFalseRow(row) {
   return `
-    <article class="false-row">
-      <div class="false-word" data-label="${t('false.col.sr')}">
+    <article class="chart-row">
+      <div class="chart-cell false-word" data-label="${t('false.col.sr')}">
         <span class="sr" lang="sr">${SerbianFyi.sr(row.sr)}</span>
       </div>
-      <div class="false-cell false-means" data-label="${t('false.col.means')}">${row.means}</div>
-      <div class="false-cell false-trap" data-label="${t('false.col.trap')}">
-        <span class="false-not">${t('false.trap.label')}</span>
+      <div class="chart-cell false-means" data-label="${t('false.col.means')}">${row.means}</div>
+      <div class="chart-cell false-trap" data-label="${t('false.col.trap')}">
+        <span class="chart-label false-not">${t('false.trap.label')}</span>
         <span>${row.trap}</span>
         <small>${row.trapMeans}</small>
       </div>
-      <div class="false-example" data-label="${t('false.col.example')}">
+      <div class="chart-example" data-label="${t('false.col.example')}">
         <span class="sr" lang="sr">${SerbianFyi.sr(row.ex.sr)}</span>
         <span class="tr">${row.ex.ru}</span>
       </div>
@@ -27,12 +27,12 @@ function renderFalseFriends() {
   const root = document.getElementById('falseFriendsChart');
   if (!root) return;
   root.innerHTML = FALSE_FRIEND_GROUPS.map(group => `
-    <section class="false-group">
-      <header class="false-group-head">
+    <section class="chart-group">
+      <header class="chart-group-head">
         <h3>${t(group.key)}</h3>
       </header>
-      <div class="false-table">
-        <div class="false-table-head">
+      <div class="chart-table">
+        <div class="chart-table-head">
           <span>${t('false.col.sr')}</span>
           <span>${t('false.col.means')}</span>
           <span>${t('false.col.trap')}</span>

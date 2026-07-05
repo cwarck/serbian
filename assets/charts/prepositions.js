@@ -8,7 +8,7 @@ function currentLang() { return document.documentElement.getAttribute('lang') ||
    reuse the same glyph vocabulary without pulling in this renderer. */
 
 function caseChip(use) {
-  return `<span class="prep-case" data-case="${use.case}">${PREP_CASE_ABBR[use.case] || t(CASE_KEYS[use.case])}</span>`;
+  return `<span class="chart-label prep-case" data-case="${use.case}">${PREP_CASE_ABBR[use.case] || t(CASE_KEYS[use.case])}</span>`;
 }
 
 function visualHTML(row) {
@@ -33,7 +33,7 @@ function renderUse(use) {
         ${caseChip(use)}
         <span class="prep-meaning">${use.meaning[lang] || use.meaning.en}</span>
       </div>
-      <div class="prep-example">
+      <div class="chart-example prep-example">
         <span class="sr" lang="sr">${SerbianFyi.sr(use.sr)}</span>
         <span class="tr">${use.tr[lang] || use.tr.en}</span>
       </div>
@@ -45,19 +45,19 @@ const PREP_WIDE_QUERY = '(min-width: 1440px)';
 
 function renderGroup(group) {
   return `
-    <section class="prep-group">
-      <header class="prep-group-head">
+    <section class="chart-group">
+      <header class="chart-group-head">
         <h3>${t(group.key)}</h3>
       </header>
-      <div class="prep-table">
-        <div class="prep-table-head">
+      <div class="chart-table">
+        <div class="chart-table-head">
           <span>${t('prep.col.visual')}</span>
           <span>${t('prep.col.prep')}</span>
           <span>${t('prep.col.case')}</span>
           <span>${t('prep.col.example')}</span>
         </div>
         ${group.rows.map(row => `
-          <article class="prep-row" data-tone="${row.tone}">
+          <article class="chart-row prep-row" data-tone="${row.tone}">
             <div class="prep-visual">${visualHTML(row)}</div>
             <div class="prep-name" lang="sr">${SerbianFyi.sr(row.prep)}</div>
             <div class="prep-uses">${row.uses.map(renderUse).join('')}</div>

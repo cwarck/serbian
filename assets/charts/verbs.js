@@ -4,20 +4,20 @@ function dict() {
 }
 function t(key) { return dict()[key] || ''; }
 function currentLang() { return document.documentElement.getAttribute('lang') || 'en'; }
-function pronounRows(values, cls) {
+function pronounRows(values) {
   return PRONOUNS.map(p => `
-    <div class="${cls}">
+    <div class="chart-pair">
       <span class="verb-pron" lang="sr">${SerbianFyi.sr(p.label)}</span>
-      <span class="verb-form" lang="sr">${SerbianFyi.sr(values[p.key])}</span>
+      <span class="chart-form verb-form" lang="sr">${SerbianFyi.sr(values[p.key])}</span>
     </div>
   `).join('');
 }
 
-function formRows(forms, cls) {
+function formRows(forms) {
   return forms.map((form, i) => `
-    <div class="${cls}">
+    <div class="chart-pair">
       <span class="verb-pron" lang="sr">${SerbianFyi.sr(PRONOUNS[i].label)}</span>
-      <span class="verb-form" lang="sr">${SerbianFyi.sr(form)}</span>
+      <span class="chart-form verb-form" lang="sr">${SerbianFyi.sr(form)}</span>
     </div>
   `).join('');
 }
@@ -25,7 +25,7 @@ function formRows(forms, cls) {
 function examplesHTML(examples) {
   const lang = currentLang();
   return examples.map(ex => `
-    <div class="verb-example">
+    <div class="chart-example verb-example">
       <span class="sr" lang="sr">${SerbianFyi.sr(ex.sr)}</span>
       <span class="tr">${SerbianFyi.srGrammarHTML(ex[lang] || ex.en)}</span>
     </div>
@@ -42,22 +42,22 @@ function formulaHTML(parts) {
 
 function renderRegularGroup(group) {
   return `
-    <article class="verb-col" data-tone="${group.tone}">
-      <header class="verb-col-head">
-        <span class="verb-kicker">${t('verbs.present')}</span>
+    <article class="chart-panel verb-col" data-tone="${group.tone}">
+      <header class="chart-panel-head">
+        <span class="chart-label">${t('verbs.present')}</span>
         <h3>${group.title}</h3>
       </header>
-      <div class="verb-endings" aria-label="${t('verbs.endings')}">
-        ${pronounRows(group.endings, 'verb-ending-row')}
+      <div class="chart-pairs" aria-label="${t('verbs.endings')}">
+        ${pronounRows(group.endings)}
       </div>
       <section class="verb-block">
-        <h4>${t('verbs.inf.cues')}</h4>
+        <h4 class="chart-label">${t('verbs.inf.cues')}</h4>
         <div class="verb-patterns">
           ${group.patterns.map(pattern => `<span class="verb-pattern" lang="sr">${SerbianFyi.sr(pattern)}</span>`).join('')}
         </div>
       </section>
       <section class="verb-block">
-        <h4>${t('verbs.common')}</h4>
+        <h4 class="chart-label">${t('verbs.common')}</h4>
         <ul class="verb-list verb-list-glossed">
           ${group.verbs.map(verb => `
             <li>
@@ -69,8 +69,8 @@ function renderRegularGroup(group) {
       </section>
       <section class="verb-block verb-block-example">
         <h4 class="sr-head" lang="sr">${SerbianFyi.sr(group.example.infinitive)}</h4>
-        <div class="verb-example-grid">
-          ${pronounRows(group.example.forms, 'verb-example-row')}
+        <div class="chart-pairs">
+          ${pronounRows(group.example.forms)}
         </div>
       </section>
     </article>
@@ -84,21 +84,21 @@ function renderIrregulars() {
         <h4 class="sr-head" lang="sr">${SerbianFyi.sr(item.title)}</h4>
         ${item.full ? `<button class="tip-chip" type="button" aria-haspopup="dialog" aria-expanded="false" aria-label="${t('verbs.full.forms')}" data-verb-tip="${idx}">?</button>` : ''}
       </header>
-      <div class="verb-example-grid">
-        ${formRows(item.forms, 'verb-example-row')}
+      <div class="chart-pairs">
+        ${formRows(item.forms)}
       </div>
       ${item.negative.length ? `
         <div class="verb-negative">
-          <span class="verb-sub">${t('verbs.negative')}</span>
+          <span class="chart-label verb-sub">${t('verbs.negative')}</span>
           <p lang="sr">${item.negative.map(form => SerbianFyi.sr(form)).join(', ')}</p>
         </div>` : ''}
     </section>
   `).join('');
 
   return `
-    <article class="verb-col" data-tone="irr">
-      <header class="verb-col-head">
-        <span class="verb-kicker">${t('verbs.present')}</span>
+    <article class="chart-panel verb-col" data-tone="irr">
+      <header class="chart-panel-head">
+        <span class="chart-label">${t('verbs.present')}</span>
         <h3>${t('verbs.irregulars')}</h3>
       </header>
       <div class="verb-mini-list">${minis}</div>
@@ -108,26 +108,26 @@ function renderIrregulars() {
 
 function renderPast() {
   return `
-    <article class="verb-col" data-tone="past">
-      <header class="verb-col-head">
-        <span class="verb-kicker">${t('verbs.tense')}</span>
+    <article class="chart-panel verb-col" data-tone="past">
+      <header class="chart-panel-head">
+        <span class="chart-label">${t('verbs.tense')}</span>
         <h3>${t('verbs.past')}</h3>
       </header>
       <section class="verb-block">
-        <h4>${t('verbs.formula')}</h4>
+        <h4 class="chart-label">${t('verbs.formula')}</h4>
         <p class="verb-formula">${formulaHTML(PAST.formula)}</p>
       </section>
       <section class="verb-block">
-        <h4>${t('verbs.placement')}</h4>
+        <h4 class="chart-label">${t('verbs.placement')}</h4>
         <div class="verb-examples">${examplesHTML(PAST.examples)}</div>
       </section>
       <section class="verb-block">
-        <h4>${t('verbs.participle')}</h4>
-        <div class="verb-participle-grid">
+        <h4 class="chart-label">${t('verbs.participle')}</h4>
+        <div class="chart-pairs verb-participle-grid">
           ${PAST.endings.map(item => `
-            <div>
-              <span class="verb-sub">${t(item.key)}</span>
-              <span class="verb-form">${SerbianFyi.sr(item.ending)}</span>
+            <div class="chart-pair">
+              <span class="chart-label verb-sub">${t(item.key)}</span>
+              <span class="chart-form verb-form">${SerbianFyi.sr(item.ending)}</span>
             </div>
           `).join('')}
         </div>
@@ -138,31 +138,31 @@ function renderPast() {
 
 function renderFuture() {
   return `
-    <article class="verb-col" data-tone="future">
-      <header class="verb-col-head">
-        <span class="verb-kicker">${t('verbs.tense')}</span>
+    <article class="chart-panel verb-col" data-tone="future">
+      <header class="chart-panel-head">
+        <span class="chart-label">${t('verbs.tense')}</span>
         <h3>${t('verbs.future')}</h3>
       </header>
       <section class="verb-block">
-        <h4>${t('verbs.formula')}</h4>
+        <h4 class="chart-label">${t('verbs.formula')}</h4>
         <p class="verb-formula">${formulaHTML(FUTURE.formula)}</p>
       </section>
       <section class="verb-block">
-        <h4>${t('verbs.orthography')}</h4>
+        <h4 class="chart-label">${t('verbs.orthography')}</h4>
         <div class="verb-examples">${examplesHTML(FUTURE.examples)}</div>
       </section>
       <section class="verb-block">
-        <h4>${t('verbs.merged')}</h4>
+        <h4 class="chart-label">${t('verbs.merged')}</h4>
         <p class="verb-list" lang="sr">${FUTURE.merged.map(item => SerbianFyi.sr(item)).join(', ')}</p>
       </section>
       <section class="verb-block">
-        <h4>${t('verbs.ici.exception')}</h4>
+        <h4 class="chart-label">${t('verbs.ici.exception')}</h4>
         <p class="verb-list" lang="sr">${FUTURE.exceptions.map(item => SerbianFyi.sr(item)).join(', ')}</p>
       </section>
       <section class="verb-block verb-reflexive">
         <h4 class="sr-head" lang="sr">${SerbianFyi.sr('se')}</h4>
         <p class="verb-note">${SerbianFyi.srGrammarHTML(t('verbs.se.rule'))}</p>
-        <div class="verb-examples">${FUTURE.reflexive.map(sr => `<div class="verb-example"><span class="sr" lang="sr">${SerbianFyi.sr(sr)}</span></div>`).join('')}</div>
+        <div class="verb-examples">${FUTURE.reflexive.map(sr => `<div class="chart-example verb-example"><span class="sr" lang="sr">${SerbianFyi.sr(sr)}</span></div>`).join('')}</div>
       </section>
     </article>
   `;
@@ -182,13 +182,13 @@ function renderVerbs() {
 /* Irregular full-forms popover — rides the shared popover shell. */
 SerbianFyi.popover.register({
   match: '[data-verb-tip]',
-  variant: 'verb-pop',
+  variant: 'chart-pop',
   render: (trigger) => {
     const item = IRREGULARS[+trigger.getAttribute('data-verb-tip')];
     return (item && item.full) ? `
-      <article class="verb-tip">
+      <article class="chart-tip">
         <h4><span lang="sr">${SerbianFyi.sr(item.title)}</span> · ${t('verbs.full.forms')}</h4>
-        <div class="verb-example-grid">${formRows(item.full, 'verb-example-row')}</div>
+        <div class="chart-pairs">${formRows(item.full)}</div>
       </article>
     ` : '';
   },

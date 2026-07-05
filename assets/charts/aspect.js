@@ -10,13 +10,13 @@ function pick(value) {
 }
 function srPair(pair) {
   return String(pair).split(/( -> | \/ )/g).map(part => {
-    if (part === ' -> ' || part === ' / ') return `<span class="aspect-arrow">${part.trim()}</span>`;
+    if (part === ' -> ' || part === ' / ') return `<span class="chart-sep">${part.trim()}</span>`;
     return `<span>${SerbianFyi.sr(part)}</span>`;
   }).join(' ');
 }
 function exampleHTML(ex) {
   return `
-    <div class="aspect-example">
+    <div class="chart-example">
       <span class="sr" lang="sr">${SerbianFyi.sr(ex.sr)}</span>
       <span class="tr">${pick(ex)}</span>
     </div>
@@ -28,22 +28,22 @@ function noteButton(idx) {
 
 function renderContrast() {
   return `
-    <section class="aspect-group aspect-contrast" data-tone="aspect-core">
-      <header class="aspect-group-head"><h3>${ui('contrast')}</h3></header>
-      <div class="aspect-compare-head">
+    <section class="chart-group aspect-contrast" data-tone="aspect-core">
+      <header class="chart-group-head"><h3>${ui('contrast')}</h3></header>
+      <div class="chart-table-head">
         <span></span>
         <span>${ui('imperfective')}</span>
         <span>${ui('perfective')}</span>
       </div>
-      <div class="aspect-compare">
+      <div class="chart-table">
         ${CONTRAST.map(row => `
-          <article class="aspect-compare-row">
+          <article class="chart-row">
             <h4>${pick(row.key)}</h4>
-            <div class="aspect-side" data-aspect="imp" data-label="${ui('imperfective')}">
+            <div class="chart-cell aspect-side" data-aspect="imp" data-label="${ui('imperfective')}">
               <p>${pick(row.imp)}</p>
               ${exampleHTML(row.impEx)}
             </div>
-            <div class="aspect-side" data-aspect="perf" data-label="${ui('perfective')}">
+            <div class="chart-cell aspect-side" data-aspect="perf" data-label="${ui('perfective')}">
               <p>${pick(row.perf)}</p>
               ${exampleHTML(row.perfEx)}
             </div>
@@ -56,17 +56,17 @@ function renderContrast() {
 
 function renderTime() {
   return `
-    <section class="aspect-group aspect-time" data-tone="aspect-time">
-      <header class="aspect-group-head"><h3>${ui('time')}</h3></header>
-      <div class="aspect-table aspect-time-table">
-        <div class="aspect-table-head">
+    <section class="chart-group aspect-time" data-tone="aspect-time">
+      <header class="chart-group-head"><h3>${ui('time')}</h3></header>
+      <div class="chart-table">
+        <div class="chart-table-head">
           <span></span><span>${ui('imperfective')}</span><span>${ui('perfective')}</span>
         </div>
         ${TIME_ROWS.map(row => `
-          <article class="aspect-table-row">
+          <article class="chart-row">
             <h4>${pick(row.tense)}</h4>
-            <div class="aspect-cell" data-label="${ui('imperfective')}">${exampleHTML(row.imp)}</div>
-            <div class="aspect-cell" data-label="${ui('perfective')}">${exampleHTML(row.perf)}</div>
+            <div class="chart-cell" data-label="${ui('imperfective')}">${exampleHTML(row.imp)}</div>
+            <div class="chart-cell" data-label="${ui('perfective')}">${exampleHTML(row.perf)}</div>
           </article>
         `).join('')}
       </div>
@@ -76,18 +76,18 @@ function renderTime() {
 
 function renderPatterns() {
   return `
-    <section class="aspect-group aspect-patterns" data-tone="aspect-pattern">
-      <header class="aspect-group-head"><h3>${ui('patterns')}</h3></header>
-      <div class="aspect-table aspect-pattern-table">
-        <div class="aspect-table-head">
+    <section class="chart-group aspect-patterns" data-tone="aspect-pattern">
+      <header class="chart-group-head"><h3>${ui('patterns')}</h3></header>
+      <div class="chart-table">
+        <div class="chart-table-head">
           <span>${ui('pattern')}</span><span>${ui('imperfective')}</span><span>${ui('perfective')}</span><span>${ui('signal')}</span>
         </div>
         ${PATTERNS.map(row => `
-          <article class="aspect-table-row">
+          <article class="chart-row">
             <h4>${pick(row.pattern)}</h4>
-            <span class="aspect-form aspect-cell" data-label="${ui('imperfective')}" lang="sr">${SerbianFyi.sr(row.imp)}</span>
-            <span class="aspect-form aspect-cell" data-label="${ui('perfective')}" lang="sr">${SerbianFyi.sr(row.perf)}</span>
-            <p class="aspect-cell" data-label="${ui('signal')}">${pick(row.signal)}</p>
+            <span class="chart-cell chart-form aspect-form" data-label="${ui('imperfective')}" lang="sr">${SerbianFyi.sr(row.imp)}</span>
+            <span class="chart-cell chart-form aspect-form" data-label="${ui('perfective')}" lang="sr">${SerbianFyi.sr(row.perf)}</span>
+            <p class="chart-cell" data-label="${ui('signal')}">${pick(row.signal)}</p>
           </article>
         `).join('')}
       </div>
@@ -101,40 +101,40 @@ function renderPrefixes() {
     const idx = row.note ? noteIdx++ : null;
     if (row.note) row.note._idx = idx;
     return `
-      <article class="aspect-prefix" data-tone="${row.tone}">
+      <article class="chart-tile aspect-prefix" data-tone="${row.tone}">
         <header class="aspect-prefix-head">
-          <h4 lang="sr">${SerbianFyi.sr(row.prefix)}</h4>
+          <h4 class="chart-form" lang="sr">${SerbianFyi.sr(row.prefix)}</h4>
           ${row.note ? noteButton(idx) : ''}
         </header>
-        <p>${pick(row.feel)}</p>
+        <p class="chart-label">${pick(row.feel)}</p>
         <ul>
-          ${row.pairs.map(pair => `<li lang="sr">${srPair(pair)}</li>`).join('')}
+          ${row.pairs.map(pair => `<li class="chart-form" lang="sr">${srPair(pair)}</li>`).join('')}
         </ul>
       </article>
     `;
   }).join('');
   return `
-    <section class="aspect-group aspect-prefixes" data-tone="aspect-prefix">
-      <header class="aspect-group-head"><h3>${ui('prefixes')}</h3></header>
-      <div class="aspect-prefix-grid">${rows}</div>
+    <section class="chart-group aspect-prefixes" data-tone="aspect-prefix">
+      <header class="chart-group-head"><h3>${ui('prefixes')}</h3></header>
+      <div class="chart-tiles aspect-prefix-grid">${rows}</div>
     </section>
   `;
 }
 
 function renderPairs() {
   return `
-    <section class="aspect-group aspect-pairs" data-tone="aspect-pairs">
-      <header class="aspect-group-head"><h3>${ui('pairs')}</h3></header>
-      <div class="aspect-table aspect-pair-table">
-        <div class="aspect-table-head">
+    <section class="chart-group aspect-pairs" data-tone="aspect-pairs">
+      <header class="chart-group-head"><h3>${ui('pairs')}</h3></header>
+      <div class="chart-table">
+        <div class="chart-table-head">
           <span>${ui('meaning')}</span><span>${ui('imperfective')}</span><span>${ui('perfective')}</span><span>${ui('example')}</span>
         </div>
         ${COMMON_PAIRS.map(row => `
-          <article class="aspect-table-row">
+          <article class="chart-row">
             <h4>${SerbianFyi.glossary.gloss(row.imp, lang())}</h4>
-            <span class="aspect-form aspect-cell" data-label="${ui('imperfective')}" lang="sr">${SerbianFyi.sr(row.imp)}</span>
-            <span class="aspect-form aspect-cell" data-label="${ui('perfective')}" lang="sr">${SerbianFyi.sr(row.perf)}</span>
-            <div class="aspect-cell" data-label="${ui('example')}">${exampleHTML(row.ex)}</div>
+            <span class="chart-cell chart-form aspect-form" data-label="${ui('imperfective')}" lang="sr">${SerbianFyi.sr(row.imp)}</span>
+            <span class="chart-cell chart-form aspect-form" data-label="${ui('perfective')}" lang="sr">${SerbianFyi.sr(row.perf)}</span>
+            <div class="chart-cell" data-label="${ui('example')}">${exampleHTML(row.ex)}</div>
           </article>
         `).join('')}
       </div>
@@ -157,12 +157,12 @@ function renderAspect() {
 /* Prefix-note popover — rides the shared popover shell. */
 SerbianFyi.popover.register({
   match: '[data-aspect-note]',
-  variant: 'aspect-pop',
+  variant: 'chart-pop',
   render: (t) => {
     const notes = PREFIXES.filter(item => item.note).map(item => item.note);
     const note = notes[+t.getAttribute('data-aspect-note')];
     return note ? `
-      <article class="aspect-tip">
+      <article class="chart-tip">
         <h4>${pick(note.title)}</h4>
         <p>${pick(note.body)}</p>
       </article>

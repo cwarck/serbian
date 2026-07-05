@@ -126,10 +126,10 @@ function renderPrepCard(token) {
       <span class="prep-icon-cell">${prepIcon(use.icon)}</span>
       <div class="prep-card-use-text">
         <div class="prep-use-head">
-          <span class="prep-case" data-case="${use.case}">${(window.PREP_CASE_ABBR && PREP_CASE_ABBR[use.case]) || tCase(CASE_KEYS[use.case])}</span>
+          <span class="chart-label prep-case" data-case="${use.case}">${(window.PREP_CASE_ABBR && PREP_CASE_ABBR[use.case]) || tCase(CASE_KEYS[use.case])}</span>
           <span class="prep-meaning">${use.meaning[lang] || use.meaning.en}</span>
         </div>
-        <div class="prep-example">
+        <div class="chart-example prep-example">
           <span class="sr" lang="sr">${SerbianFyi.sr(use.sr)}</span>
           <span class="tr">${use.tr[lang] || use.tr.en}</span>
         </div>

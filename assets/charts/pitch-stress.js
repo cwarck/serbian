@@ -33,7 +33,7 @@ function noteButton(id) {
 }
 function exampleHTML(ex) {
   return `
-    <span class="pitch-example">
+    <span class="chart-example">
       <span class="sr" lang="sr">${SerbianFyi.sr(ex.sr)}</span>
       <span class="tr">${exampleGloss(ex)}</span>
     </span>
@@ -43,32 +43,32 @@ function exampleListHTML(items) {
   return `<div class="pitch-examples">${items.map(exampleHTML).join('')}</div>`;
 }
 function srListHTML(items) {
-  return `<div class="pitch-sr-list" lang="sr">${items.map(item => `<span>${SerbianFyi.sr(item)}</span>`).join('')}</div>`;
+  return `<div class="pitch-sr-list" lang="sr">${items.map(item => `<span class="chart-form">${SerbianFyi.sr(item)}</span>`).join('')}</div>`;
 }
 
 function renderAccents() {
   return `
-    <section class="pitch-group pitch-accents">
-      <header class="pitch-group-head"><h3>${ui('accents')}</h3></header>
+    <section class="chart-group pitch-accents">
+      <header class="chart-group-head"><h3>${ui('accents')}</h3></header>
       <div role="table" style="display:contents">
-        <div class="pitch-accent-head" role="row">
+        <div class="chart-table-head" role="row">
           <span role="columnheader">${ui('mark')}</span>
           <span role="columnheader">${ui('length')}</span>
           <span role="columnheader">${ui('contour')}</span>
           <span role="columnheader">${ui('pattern')}</span>
           <span role="columnheader">${ui('examples')}</span>
         </div>
-        <div class="pitch-accent-grid" role="rowgroup">
+        <div class="chart-table" role="rowgroup">
           ${PITCH_ACCENTS.map(row => `
-            <article class="pitch-accent-card" data-contour="${row.contour.en}" role="row">
-              <div class="pitch-mark" data-label="${ui('mark')}" role="cell">${row.mark}</div>
-              <div class="pitch-cell" data-label="${ui('length')}" role="cell">${pick(row.length)}</div>
-              <div class="pitch-cell pitch-contour-cell" data-label="${ui('contour')}" role="cell">
-                <span class="pitch-contour">${pick(row.contour)}</span>
+            <article class="chart-row pitch-accent-card" data-contour="${row.contour.en}" role="row">
+              <div class="chart-cell pitch-mark" data-label="${ui('mark')}" role="cell">${row.mark}</div>
+              <div class="chart-cell" data-label="${ui('length')}" role="cell">${pick(row.length)}</div>
+              <div class="chart-cell pitch-contour-cell" data-label="${ui('contour')}" role="cell">
+                <span class="chart-label pitch-contour">${pick(row.contour)}</span>
                 ${noteButton(row.note)}
               </div>
-              <div class="pitch-cell pitch-pattern" data-label="${ui('pattern')}" role="cell">${row.pattern}</div>
-              <div class="pitch-cell" data-label="${ui('examples')}" role="cell">${exampleListHTML(row.examples)}</div>
+              <div class="chart-cell chart-label pitch-pattern" data-label="${ui('pattern')}" role="cell">${row.pattern}</div>
+              <div class="chart-cell" data-label="${ui('examples')}" role="cell">${exampleListHTML(row.examples)}</div>
             </article>
           `).join('')}
         </div>
@@ -79,17 +79,17 @@ function renderAccents() {
 
 function renderRules() {
   return `
-    <section class="pitch-group pitch-rules">
-      <header class="pitch-group-head"><h3>${ui('rules')}</h3></header>
-      <div class="pitch-table">
-        <div class="pitch-table-head">
+    <section class="chart-group pitch-rules">
+      <header class="chart-group-head"><h3>${ui('rules')}</h3></header>
+      <div class="chart-table">
+        <div class="chart-table-head">
           <span>${ui('slot')}</span><span>${ui('fact')}</span><span>${ui('examples')}</span>
         </div>
         ${PITCH_RULES.map(row => `
-          <article class="pitch-table-row">
+          <article class="chart-row">
             <h4>${pick(row.label)} ${noteButton(row.note)}</h4>
-            <p class="pitch-cell" data-label="${ui('fact')}">${pick(row.fact)}</p>
-            <div class="pitch-cell" data-label="${ui('examples')}">${srListHTML(row.examples)}</div>
+            <p class="chart-cell" data-label="${ui('fact')}">${pick(row.fact)}</p>
+            <div class="chart-cell" data-label="${ui('examples')}">${srListHTML(row.examples)}</div>
           </article>
         `).join('')}
       </div>
@@ -99,21 +99,21 @@ function renderRules() {
 
 function renderParadigms() {
   return `
-    <section class="pitch-group pitch-paradigms">
-      <header class="pitch-group-head"><h3>${ui('paradigms')}</h3></header>
-      <div class="pitch-paradigm-grid">
+    <section class="chart-group pitch-paradigms">
+      <header class="chart-group-head"><h3>${ui('paradigms')}</h3></header>
+      <div class="chart-tiles pitch-paradigm-grid">
         ${PITCH_PARADIGMS.map(row => `
-          <article class="pitch-paradigm">
-            <header class="pitch-paradigm-head">
-              <h4 lang="sr">${SerbianFyi.sr(row.word.sr)}</h4>
+          <article class="chart-tile">
+            <header class="chart-label pitch-paradigm-head">
+              <h4 class="chart-form" lang="sr">${SerbianFyi.sr(row.word.sr)}</h4>
               <span>${exampleGloss(row.word)}</span>
               ${noteButton(row.note)}
             </header>
-            <div class="pitch-paradigm-cells">
+            <div class="chart-pairs">
               ${row.cells.map(cell => `
-                <div>
-                  <span class="pitch-case">${cell.label}</span>
-                  <span class="pitch-form" lang="sr">${SerbianFyi.sr(cell.sr)}</span>
+                <div class="chart-pair">
+                  <span class="chart-label">${cell.label}</span>
+                  <span class="chart-form" lang="sr">${SerbianFyi.sr(cell.sr)}</span>
                 </div>
               `).join('')}
             </div>
@@ -126,13 +126,13 @@ function renderParadigms() {
 
 function renderPriority() {
   return `
-    <section class="pitch-group pitch-priority">
-      <header class="pitch-group-head"><h3>${ui('priority')}</h3></header>
-      <div class="pitch-priority-list">
+    <section class="chart-group pitch-priority">
+      <header class="chart-group-head"><h3>${ui('priority')}</h3></header>
+      <div class="chart-tiles">
         ${PITCH_PRIORITY.map(row => `
-          <article class="pitch-priority-row">
-            <span class="pitch-rank">${row.rank}</span>
-            <h4>${pick(row.label)} ${row.note ? noteButton(row.note) : ''}</h4>
+          <article class="chart-tile pitch-priority-row">
+            <span class="chart-label pitch-rank">${row.rank}</span>
+            <h4 class="chart-label">${pick(row.label)} ${row.note ? noteButton(row.note) : ''}</h4>
             <p>${pick(row.fact)}</p>
           </article>
         `).join('')}
@@ -143,12 +143,12 @@ function renderPriority() {
 
 function renderReading() {
   return `
-    <section class="pitch-group pitch-reading">
-      <header class="pitch-group-head"><h3>${ui('reading')}</h3></header>
-      <ol class="pitch-reading-list">
+    <section class="chart-group pitch-reading">
+      <header class="chart-group-head"><h3>${ui('reading')}</h3></header>
+      <ol class="chart-tiles pitch-reading-list">
         ${PITCH_READING.map(row => `
-          <li>
-            <span>${row.step}</span>
+          <li class="chart-pair">
+            <span class="chart-label">${row.step}</span>
             <p>${pick(row.text)}</p>
           </li>
         `).join('')}
@@ -172,11 +172,11 @@ function renderPitch() {
 /* Pitch-note popover — rides the shared popover shell. */
 SerbianFyi.popover.register({
   match: '[data-pitch-note]',
-  variant: 'pitch-pop',
+  variant: 'chart-pop',
   render: (t) => {
     const note = PITCH_NOTES[t.getAttribute('data-pitch-note')];
     return note ? `
-      <article class="pitch-tip">
+      <article class="chart-tip">
         <h4>${pick(note.title)}</h4>
         <p>${pick(note.body)}</p>
       </article>

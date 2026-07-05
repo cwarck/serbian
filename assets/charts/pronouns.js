@@ -14,10 +14,10 @@ function colHeader(key, tones) {
 }
 
 function personalCell(value) {
-  if (value === '-') return '<span class="pron-dash">-</span>';
+  if (value === '-') return '<span class="chart-form pron-dash">-</span>';
   const parts = value.split(',').map(part => part.trim());
   const forms = parts.map((part, idx) => {
-    const cls = idx === 0 ? 'pron-long' : 'pron-short';
+    const cls = idx === 0 ? 'chart-form pron-long' : 'chart-form pron-short';
     const comma = idx < parts.length - 1 ? '<span class="pron-comma">,</span>' : '';
     return `<span class="${cls}">${SerbianFyi.sr(part)}${comma}</span>`;
   });
@@ -37,8 +37,8 @@ function renderPersonal() {
   const rows = PERSONAL.map(row => `
     <tr data-band="${row.band}">
       <th scope="row">
-        <span class="pron-person-label">${t(row.label)}</span>
-        <span class="pron-subject" lang="sr">${SerbianFyi.sr(row.subject)}</span>
+        <span class="chart-label">${t(row.label)}</span>
+        <span class="chart-form pron-subject" lang="sr">${SerbianFyi.sr(row.subject)}</span>
       </th>
       ${columns.slice(1).map(([key, prop]) => `<td data-label="${t(key)}">${personalCell(row[prop])}</td>`).join('')}
     </tr>
@@ -48,7 +48,7 @@ function renderPersonal() {
     <table class="pron-table">
       <thead>
         <tr>
-          ${columns.map(([key, , tones = []]) => `<th scope="col">${colHeader(key, tones)}</th>`).join('')}
+          ${columns.map(([key, , tones = []]) => `<th class="chart-label" scope="col">${colHeader(key, tones)}</th>`).join('')}
         </tr>
       </thead>
       <tbody>${rows}</tbody>
@@ -65,14 +65,14 @@ function renderPossessives() {
   if (!root) return;
   root.setAttribute('role', 'table');
   root.innerHTML = `
-    <div class="pron-mini-head" role="row">
+    <div class="chart-label pron-mini-head" role="row">
       <span role="presentation"></span><span role="columnheader" data-gender="m">${t('cases.gender.m')}</span><span role="columnheader" data-gender="n">${t('cases.gender.n')}</span><span role="columnheader" data-gender="f">${t('cases.gender.f')}</span>
     </div>
     ${POSSESSIVES.map((item, i) => `
       <article class="pron-poss-card" role="rowgroup">
-        <h4 id="pron-poss-owner-${i}">${t(item.owner)}</h4>
+        <h4 class="chart-label" id="pron-poss-owner-${i}">${t(item.owner)}</h4>
         <div class="pron-gender-row" role="row" aria-labelledby="pron-poss-owner-${i}">
-          ${item.forms.map(form => `<span role="cell" lang="sr">${SerbianFyi.sr(form)}</span>`).join('')}
+          ${item.forms.map(form => `<span class="chart-form" role="cell" lang="sr">${SerbianFyi.sr(form)}</span>`).join('')}
         </div>
         ${item.note ? `<p>${t(item.note)}</p>` : ''}
       </article>
@@ -81,7 +81,7 @@ function renderPossessives() {
 }
 
 function genderHead() {
-  return `<div class="pron-mini-head pron-genders" role="row">
+  return `<div class="chart-label pron-mini-head" role="row">
     <span role="columnheader"></span><span role="columnheader" data-gender="m">${t('cases.gender.m')}</span><span role="columnheader" data-gender="n">${t('cases.gender.n')}</span><span role="columnheader" data-gender="f">${t('cases.gender.f')}</span>
   </div>`;
 }
@@ -91,14 +91,14 @@ function renderDemonstratives() {
   if (!root) return;
   root.innerHTML = DEMOS.map(group => `
     <section class="pron-demo-group">
-      <h4>${t(group.title)}</h4>
+      <h4 class="chart-label">${t(group.title)}</h4>
       <div role="table" style="display:contents">
         ${genderHead()}
-        <div class="pron-matrix" role="rowgroup">
+        <div class="chart-pairs" role="rowgroup">
           ${group.rows.map(row => `
-            <div class="pron-matrix-row" role="row">
-              <span class="pron-row-label" role="rowheader">${t(row.key)}</span>
-              ${row.forms.map(form => `<span class="pron-form" role="cell" lang="sr">${SerbianFyi.sr(form)}</span>`).join('')}
+            <div class="chart-pair pron-matrix-row" role="row">
+              <span class="chart-label" role="rowheader">${t(row.key)}</span>
+              ${row.forms.map(form => `<span class="chart-form pron-form" role="cell" lang="sr">${SerbianFyi.sr(form)}</span>`).join('')}
             </div>
           `).join('')}
         </div>
@@ -117,28 +117,28 @@ function renderQuestions() {
   if (!root) return;
   root.innerHTML = `
     <section class="pron-question-block">
-      <h4>${t('pron.whose')}</h4>
+      <h4 class="chart-label">${t('pron.whose')}</h4>
       <div role="table" style="display:contents">
         ${genderHead()}
-        <div class="pron-matrix" role="rowgroup">
+        <div class="chart-pairs" role="rowgroup">
           ${QUESTIONS.whose.map(row => `
-            <div class="pron-matrix-row" role="row">
-              <span class="pron-row-label" role="rowheader">${t(row.label)}</span>
-              ${row.forms.map(form => `<span class="pron-form" role="cell" lang="sr">${SerbianFyi.sr(form)}</span>`).join('')}
+            <div class="chart-pair pron-matrix-row" role="row">
+              <span class="chart-label" role="rowheader">${t(row.label)}</span>
+              ${row.forms.map(form => `<span class="chart-form pron-form" role="cell" lang="sr">${SerbianFyi.sr(form)}</span>`).join('')}
             </div>
           `).join('')}
         </div>
       </div>
     </section>
     <section class="pron-question-block">
-      <h4>${t('pron.who.what')}</h4>
+      <h4 class="chart-label">${t('pron.who.what')}</h4>
       <div class="pron-kw-table" role="table">
-        <div class="pron-kw-head" role="row"><span role="columnheader"></span><span role="columnheader">${t('pron.who')}</span><span role="columnheader">${t('pron.what')}</span></div>
+        <div class="chart-label pron-kw-head" role="row"><span role="columnheader"></span><span role="columnheader">${t('pron.who')}</span><span role="columnheader">${t('pron.what')}</span></div>
         ${QUESTIONS.whoWhat.map(row => `
-          <div class="pron-kw-row" role="row">
-            <span role="rowheader">${t(row.key)}</span>
-            <span role="cell" lang="sr">${SerbianFyi.sr(row.who)}</span>
-            <span role="cell" lang="sr">${SerbianFyi.sr(row.what)}</span>
+          <div class="chart-pair pron-kw-row" role="row">
+            <span class="chart-label" role="rowheader">${t(row.key)}</span>
+            <span class="chart-form" role="cell" lang="sr">${SerbianFyi.sr(row.who)}</span>
+            <span class="chart-form" role="cell" lang="sr">${SerbianFyi.sr(row.what)}</span>
           </div>
         `).join('')}
       </div>
