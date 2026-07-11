@@ -135,16 +135,12 @@ window.I18N = {
     'false.trap.label': 'not',
 
     /* Numbers page */
-    'numbers.digits': '0-10',
-    'numbers.teens': '11-19',
-    'numbers.tens': 'Tens',
-    'numbers.hundreds': 'Hundreds',
+    'numbers.cardinals': 'Cardinal numbers',
     'numbers.build': 'Build numbers',
     'numbers.nouns': 'With nouns',
     'numbers.ordinals': 'Ordinals',
     'numbers.number': 'Number',
     'numbers.parts': 'Parts',
-    'numbers.meaning': 'Meaning',
     'numbers.pattern': 'Pattern',
     'numbers.examples': 'Examples',
 
@@ -385,16 +381,12 @@ window.I18N = {
     'false.trap.label': 'не',
 
     /* Numbers */
-    'numbers.digits': '0-10',
-    'numbers.teens': '11-19',
-    'numbers.tens': 'Десятки',
-    'numbers.hundreds': 'Сотни',
+    'numbers.cardinals': 'Количественные числительные',
     'numbers.build': 'Составные числа',
     'numbers.nouns': 'С существительными',
     'numbers.ordinals': 'Порядковые',
     'numbers.number': 'Число',
     'numbers.parts': 'Части',
-    'numbers.meaning': 'Значение',
     'numbers.pattern': 'Схема',
     'numbers.examples': 'Примеры',
 

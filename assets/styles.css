@@ -2521,7 +2521,9 @@ a.cast-cell:focus-visible {
    Numbers
    ----------------------------------------------------------- */
 
-.num-builds,
+.num-builds {
+  --chart-cols: minmax(7rem, .45fr) minmax(0, 1fr);
+}
 .num-nouns {
   --chart-cols: minmax(7rem, .45fr) minmax(12rem, .9fr) minmax(0, 1.65fr);
 }
@@ -2529,24 +2531,81 @@ a.cast-cell:focus-visible {
   --chart-cols: minmax(7rem, .5fr) repeat(3, minmax(0, 1fr));
 }
 
-.num-mini-grid {
+/* Cardinal groups: one fluid rule at every width. auto-fit grows the grid
+   from two columns on a phone to a full single row on a wide screen — column
+   count tracks the viewport with no per-breakpoint steps and no side-by-side
+   panel split. Rows separate with a hairline, columns with a gap; no vertical
+   rules to appear and vanish across breakpoints. */
+/* Cardinals — one continuous table on the alphabet-chart playbook: a single
+   auto-fit grid framed like .alph-grid (container top+left borders + pseudo
+   edges close the right and bottom, so a partial last row can't open the
+   frame), with cells carrying the inner dividers. Columns follow the viewport
+   from two on a phone up to a full row on a wide screen. */
+.num-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  border-top: 1px solid var(--hairline);
+  border-left: 1px solid var(--hairline);
+  position: relative;
 }
+.num-grid::before,
+.num-grid::after {
+  content: "";
+  position: absolute;
+  background: var(--hairline);
+  pointer-events: none;
+}
+.num-grid::before { left: 0; right: 0; bottom: 0; height: 1px; }
+.num-grid::after { top: 0; bottom: 0; right: 0; width: 1px; }
 
-.num-mini {
+.num-cell {
   display: grid;
   gap: .25rem;
   align-content: start;
-  padding: .9rem 0;
-  border-bottom: 1px solid var(--hairline-soft);
+  padding: .85rem .6rem;
+  border-right: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+}
+/* Each order of magnitude gets its own neutral background shade, deepening
+   with magnitude, standing in for the old per-range headers. Shades are
+   ink-tones, not hues — magnitude isn't a grammatical category. Every step is
+   ≥ AA for the number text (ink stays ≥6.4:1) and every step skips fx-150 /
+   fx-850, the hairline colour, so the cell dividers never vanish into a band.
+   Ones (0–9) keep plain paper: the base is unmarked. */
+.num-cell[data-band="teens"]     { background: light-dark(var(--fx-50),  var(--fx-950)); }
+.num-cell[data-band="tens"]      { background: light-dark(var(--fx-100), var(--fx-900)); }
+.num-cell[data-band="hundreds"]  { background: light-dark(var(--fx-200), var(--fx-800)); }
+.num-cell[data-band="thousands"] { background: light-dark(var(--fx-300), var(--fx-700)); }
+
+/* Notable endings — the trailing -a of dvesta/trista, the count-driven
+   -u / -e of hiljadu / hiljade. The letters stay ink (AA on every band); the
+   brand orange rides an underline as marker ink, so contrast never depends on
+   the orange itself. */
+.num-end {
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: .11em;
+  text-underline-offset: .17em;
+  text-decoration-skip-ink: none;
+}
+/* Keep number words whole: the fixed-min track already blocks page-level
+   overflow, so the .chart-form `anywhere` net isn't needed here — and it
+   would split "sedamnaest" mid-word. Two-word thousands still wrap at the
+   space. */
+.num-word {
+  overflow-wrap: normal;
 }
 
-/* Empty pad cells only exist to square off the 4-col grid; on the 1-col
-   mobile layout they'd render as stray bordered rows. */
-.num-mini-empty { display: none; }
-
+/* The digit is the index key, not apparatus: you read the number first,
+   then the Serbian form. Sits on the title tier, one step above the
+   specimen (--fs-lead), in full ink. */
 .num-value {
+  font-family: var(--ff-display);
+  font-size: var(--fs-title);
+  font-weight: 500;
+  line-height: var(--lh-snug);
+  color: var(--ink);
   font-feature-settings: "tnum";
 }
 
@@ -2555,11 +2614,9 @@ a.cast-cell:focus-visible {
   flex-wrap: wrap;
   align-items: baseline;
   gap: .35rem;
-  color: var(--tone, var(--ink-soft));
 }
 
-.num-pattern,
-.num-meaning {
+.num-pattern {
   font-size: var(--fs-body);
   line-height: var(--lh-prose);
   color: var(--ink-muted);
@@ -2570,60 +2627,9 @@ a.cast-cell:focus-visible {
   gap: .35rem;
 }
 
-.num-ordinals .num-word {
-  color: var(--tone, var(--ink-soft));
-}
-
-@media (min-width: 700px) {
-  .num-mini-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-
-  .num-mini {
-    padding: .9rem;
-    border-right: 1px solid var(--hairline-soft);
-  }
-
-  .num-mini:nth-child(4n) {
-    border-right: 0;
-  }
-
-  .num-mini-empty { display: grid; }
-}
-
 @media (min-width: 880px) {
   .num-examples {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
-@media (min-width: 1180px) {
-  .num-layout {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-
-  .num-cardinals .num-mini-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .num-cardinals .num-mini {
-    border-right: 1px solid var(--hairline-soft);
-  }
-
-  .num-cardinals .num-mini:nth-child(2n) {
-    border-right: 0;
-  }
-
-  /* Quarter-width panels: 10-char words ("sedamdeset") must fit a half-panel
-     cell without breaking mid-word, so cardinals drop to body size here. */
-  .num-cardinals .num-word {
-    font-size: var(--fs-body);
-  }
-
-  .num-builds,
-  .num-nouns,
-  .num-ordinals {
-    grid-column: 1 / -1;
   }
 }
 

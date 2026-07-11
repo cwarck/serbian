@@ -11,7 +11,7 @@ const chartDataFiles = {
   'assets/charts/aspect-data.js': ['CONTRAST', 'TIME_ROWS', 'PATTERNS', 'PREFIXES', 'COMMON_PAIRS'],
   'assets/charts/cases-data.js': ['CASES', 'IDECL', 'WRINKLES', 'CAST', 'ENDING_AXES'],
   'assets/charts/false-friends-data.js': ['FALSE_FRIEND_GROUPS'],
-  'assets/charts/numbers-data.js': ['NUMBER_GROUPS', 'NUMBER_BUILDS', 'NOUN_COUNTS', 'ORDINALS'],
+  'assets/charts/numbers-data.js': ['CARDINALS', 'NUMBER_BUILDS', 'NOUN_COUNTS', 'ORDINALS'],
   'assets/charts/pitch-stress-data.js': ['PITCH_ACCENTS', 'PITCH_RULES', 'PITCH_PARADIGMS', 'PITCH_PRIORITY', 'PITCH_READING', 'PITCH_NOTES'],
   'assets/charts/prepositions-data.js': ['CASE_KEYS', 'PREP_GROUPS'],
   'assets/charts/pronouns-data.js': ['PERSONAL', 'POSSESSIVES', 'DEMOS', 'QUESTIONS'],
@@ -174,8 +174,7 @@ function collectDataI18nKeys() {
   });
   cases.WRINKLES.forEach(item => add(`${item.key}.title`));
 
-  const numbers = data['assets/charts/numbers-data.js'];
-  numbers.NUMBER_GROUPS.forEach(group => add(group.key));
+  add('numbers.cardinals');
 
   const prep = data['assets/charts/prepositions-data.js'];
   Object.values(prep.CASE_KEYS).forEach(add);
@@ -418,8 +417,9 @@ function validateSerbianContentScript() {
   });
 
   const numbers = data['assets/charts/numbers-data.js'];
-  numbers.NUMBER_GROUPS.forEach((group, groupIndex) => {
-    group.rows.forEach((row, rowIndex) => validateSerbianLatin(row.sr, `numberGroups[${groupIndex}].rows[${rowIndex}].sr`));
+  numbers.CARDINALS.forEach((row, rowIndex) => {
+    validateSerbianLatin(row.sr, `cardinals[${rowIndex}].sr`);
+    if (row.end) validateSerbianLatin(row.end, `cardinals[${rowIndex}].end`);
   });
   numbers.NUMBER_BUILDS.forEach((row, rowIndex) => eachString(row.parts, value => validateSerbianLatin(value, `numberBuilds[${rowIndex}].parts`)));
   numbers.NOUN_COUNTS.forEach((row, rowIndex) => eachString(row.examples, value => validateSerbianLatin(value, `nounCounts[${rowIndex}].examples`)));
@@ -546,17 +546,13 @@ function validateCases() {
 }
 
 function validateNumbers() {
-  const { NUMBER_GROUPS, NUMBER_BUILDS, NOUN_COUNTS, ORDINALS } = data['assets/charts/numbers-data.js'];
-  expectArray(NUMBER_GROUPS, 'numbers', 'NUMBER_GROUPS');
-  NUMBER_GROUPS.forEach((group, index) => {
-    const scope = `numberGroups[${index}]`;
-    expectString(group.key, scope, 'key');
-    expectString(group.tone, scope, 'tone');
-    expectArray(group.rows, scope, 'rows');
-    group.rows.forEach((row, rowIndex) => {
-      expectString(row.n, `${scope}.rows[${rowIndex}]`, 'n');
-      expectString(row.sr, `${scope}.rows[${rowIndex}]`, 'sr');
-    });
+  const { CARDINALS, NUMBER_BUILDS, NOUN_COUNTS, ORDINALS } = data['assets/charts/numbers-data.js'];
+  expectArray(CARDINALS, 'numbers', 'CARDINALS');
+  CARDINALS.forEach((row, index) => {
+    const scope = `cardinals[${index}]`;
+    expectString(row.n, scope, 'n');
+    expectString(row.sr, scope, 'sr');
+    if (Object.hasOwn(row, 'end')) expectString(row.end, scope, 'end');
   });
   NUMBER_BUILDS.forEach((row, index) => {
     const scope = `numberBuilds[${index}]`;

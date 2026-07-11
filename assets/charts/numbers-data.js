@@ -1,66 +1,62 @@
-const NUMBER_GROUPS = [
-  {
-    key: 'numbers.digits',
-    tone: 'num-digits',
-    rows: [
-      { n: '0', sr: 'nula' },
-      { n: '1', sr: 'jedan' },
-      { n: '2', sr: 'dva' },
-      { n: '3', sr: 'tri' },
-      { n: '4', sr: 'četiri' },
-      { n: '5', sr: 'pet' },
-      { n: '6', sr: 'šest' },
-      { n: '7', sr: 'sedam' },
-      { n: '8', sr: 'osam' },
-      { n: '9', sr: 'devet' },
-      { n: '10', sr: 'deset' },
-    ]
-  },
-  {
-    key: 'numbers.teens',
-    tone: 'num-teens',
-    rows: [
-      { n: '11', sr: 'jedanaest' },
-      { n: '12', sr: 'dvanaest' },
-      { n: '13', sr: 'trinaest' },
-      { n: '14', sr: 'četrnaest' },
-      { n: '15', sr: 'petnaest' },
-      { n: '16', sr: 'šesnaest' },
-      { n: '17', sr: 'sedamnaest' },
-      { n: '18', sr: 'osamnaest' },
-      { n: '19', sr: 'devetnaest' },
-    ]
-  },
-  {
-    key: 'numbers.tens',
-    tone: 'num-tens',
-    rows: [
-      { n: '20', sr: 'dvadeset' },
-      { n: '30', sr: 'trideset' },
-      { n: '40', sr: 'četrdeset' },
-      { n: '50', sr: 'pedeset' },
-      { n: '60', sr: 'šezdeset' },
-      { n: '70', sr: 'sedamdeset' },
-      { n: '80', sr: 'osamdeset' },
-      { n: '90', sr: 'devedeset' },
-    ]
-  },
-  {
-    key: 'numbers.hundreds',
-    tone: 'num-hundreds',
-    rows: [
-      { n: '100', sr: 'sto' },
-      { n: '200', sr: 'dvesta' },
-      { n: '300', sr: 'trista' },
-      { n: '400', sr: 'četiristo' },
-      { n: '500', sr: 'petsto' },
-      { n: '600', sr: 'šeststo' },
-      { n: '700', sr: 'sedamsto' },
-      { n: '800', sr: 'osamsto' },
-      { n: '900', sr: 'devetsto' },
-      { n: '1.000', sr: 'hiljadu' },
-    ]
-  }
+/* One continuous cardinal table (alphabet-chart playbook). Each order of
+   magnitude (ones, teens, tens, hundreds, thousands) gets its own neutral
+   background shade, derived from the value in the renderer — deepening with
+   magnitude, in place of range headers. `end` splits off a notable ending
+   marked with a brand-orange underline: the trailing "-a" of dvesta/trista
+   (vs the regular "-o" of četiristo, petsto…) and the count-driven case
+   endings of hiljadu / hiljade (hiljada, the 5+ base form, stays unmarked so
+   the changed endings stand out against it). */
+const CARDINALS = [
+  { n: '0', sr: 'nula' },
+  { n: '1', sr: 'jedan' },
+  { n: '2', sr: 'dva' },
+  { n: '3', sr: 'tri' },
+  { n: '4', sr: 'četiri' },
+  { n: '5', sr: 'pet' },
+  { n: '6', sr: 'šest' },
+  { n: '7', sr: 'sedam' },
+  { n: '8', sr: 'osam' },
+  { n: '9', sr: 'devet' },
+
+  { n: '10', sr: 'deset' },
+  { n: '11', sr: 'jedanaest' },
+  { n: '12', sr: 'dvanaest' },
+  { n: '13', sr: 'trinaest' },
+  { n: '14', sr: 'četrnaest' },
+  { n: '15', sr: 'petnaest' },
+  { n: '16', sr: 'šesnaest' },
+  { n: '17', sr: 'sedamnaest' },
+  { n: '18', sr: 'osamnaest' },
+  { n: '19', sr: 'devetnaest' },
+
+  { n: '20', sr: 'dvadeset' },
+  { n: '30', sr: 'trideset' },
+  { n: '40', sr: 'četrdeset' },
+  { n: '50', sr: 'pedeset' },
+  { n: '60', sr: 'šezdeset' },
+  { n: '70', sr: 'sedamdeset' },
+  { n: '80', sr: 'osamdeset' },
+  { n: '90', sr: 'devedeset' },
+
+  { n: '100', sr: 'sto' },
+  { n: '200', sr: 'dvest', end: 'a' },
+  { n: '300', sr: 'trist', end: 'a' },
+  { n: '400', sr: 'četiristo' },
+  { n: '500', sr: 'petsto' },
+  { n: '600', sr: 'šeststo' },
+  { n: '700', sr: 'sedamsto' },
+  { n: '800', sr: 'osamsto' },
+  { n: '900', sr: 'devetsto' },
+
+  { n: '1.000', sr: 'hiljad', end: 'u' },
+  { n: '2.000', sr: 'dve hiljad', end: 'e' },
+  { n: '3.000', sr: 'tri hiljad', end: 'e' },
+  { n: '4.000', sr: 'četiri hiljad', end: 'e' },
+  { n: '5.000', sr: 'pet hiljada' },
+  { n: '6.000', sr: 'šest hiljada' },
+  { n: '7.000', sr: 'sedam hiljada' },
+  { n: '8.000', sr: 'osam hiljada' },
+  { n: '9.000', sr: 'devet hiljada' },
 ];
 
 const NUMBER_BUILDS = [
