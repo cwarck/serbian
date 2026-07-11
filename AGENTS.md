@@ -1,4 +1,4 @@
-# CLAUDE.md
+# AGENTS.md
 
 ## Premise
 
@@ -67,7 +67,7 @@ Flexoki accents, one hue per meaning. Orange is the brand's marker ink and carri
 
 | Hue       | Meaning                                                                                     |
 | --------- | ------------------------------------------------------------------------------------------- |
-| orange    | brand/marker ink — brand mark, `::selection`, focus rings, hovers, index highlights, paradigm-letter highlights, verb present family. Never a grammatical category |
+| orange    | brand/marker ink — brand mark, `::selection`, focus rings, hovers, verb present family. Never a grammatical category |
 | red       | VOK                                                                                         |
 | yellow    | DAT                                                                                         |
 | green     | LOK                                                                                         |
