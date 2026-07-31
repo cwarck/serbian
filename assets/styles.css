@@ -1653,10 +1653,9 @@ a.cast-cell:focus-visible {
   font-size: var(--fs-body);
   color: var(--ink);
   letter-spacing: -.005em;
-  line-height: 1;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  line-height: 1.15;
+  /* Never ellipsize a specimen — the ending is the data. Break instead. */
+  overflow-wrap: anywhere;
 }
 /* Changed ending: colored regular serif, no highlight box — the hue alone
    marks where the word inflected. */
