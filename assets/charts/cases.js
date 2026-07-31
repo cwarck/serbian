@@ -306,15 +306,6 @@ function renderCases() {
   list.className = 'case-list';
   list.removeAttribute('role');
 
-  const headerRow = `
-    <div class="case-row case-row-head" aria-hidden="true">
-      <span class="case-cell case-cell-head"></span>
-      ${ENDING_AXES.map(ax => `
-        <span class="case-cell case-cell-col" data-gender="${ax.g}" data-axis="${ax.key}">${axisLabel(ax, d)}</span>
-      `).join('')}
-      <span class="case-cell case-cell-col case-cell-col-preps">${prepsLabel}</span>
-    </div>`;
-
   const caseRows = CASES.map((c, i) => {
     const endCells = ENDING_AXES.map(ax => `
       <div class="case-cell case-cell-end" data-axis="${ax.key}" data-gender="${ax.g}">
@@ -339,7 +330,7 @@ function renderCases() {
       </article>`;
   }).join('');
 
-  list.innerHTML = headerRow + caseRows;
+  list.innerHTML = caseRows;
 }
 
 function renderExtras() {

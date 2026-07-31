@@ -2388,11 +2388,6 @@ a.cast-cell:focus-visible {
   --chart-cols: 6.5rem 10rem minmax(15rem, 1fr) minmax(20rem, 1.55fr);
 }
 
-.prep-column {
-  display: grid;
-  gap: clamp(1.6rem, 3vw, 2.6rem);
-}
-
 .prep-row {
   grid-template-columns: 5rem minmax(0, 1fr);
   gap: .85rem 1rem;
