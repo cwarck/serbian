@@ -2210,12 +2210,6 @@ a.cast-cell:focus-visible {
   gap: .35rem;
 }
 
-@media (min-width: 880px) {
-  .num-examples {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
 /* -----------------------------------------------------------
    Verb aspect pairs
    ----------------------------------------------------------- */
@@ -2266,32 +2260,6 @@ a.cast-cell:focus-visible {
   align-items: baseline;
   flex-wrap: wrap;
   gap: .45rem;
-}
-
-@media (min-width: 880px) {
-  .aspect-side {
-    padding-top: .9rem;
-    border-top: 0;
-  }
-
-  .aspect-prefix-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (min-width: 1180px) {
-  .aspect-layout {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .aspect-contrast,
-  .aspect-pairs {
-    grid-column: 1 / -1;
-  }
-
-  .aspect-prefix-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
 }
 
 /* -----------------------------------------------------------
@@ -2410,40 +2378,6 @@ a.cast-cell:focus-visible {
 .pitch-reading-list span {
   color: var(--ink);
   font-feature-settings: "tnum";
-}
-
-@media (min-width: 880px) {
-  .pitch-mark {
-    display: flex;
-    align-items: center;
-  }
-
-  .pitch-paradigm-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .pitch-reading-list {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .pitch-reading-list li {
-    grid-template-columns: 1fr;
-    gap: .45rem;
-    padding: 1rem .9rem 1.1rem;
-    border-right: 1px solid var(--hairline-soft);
-    border-bottom: 1px solid var(--hairline);
-  }
-}
-
-@media (min-width: 1180px) {
-  .pitch-layout {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .pitch-accents,
-  .pitch-paradigms {
-    grid-column: 1 / -1;
-  }
 }
 
 /* -----------------------------------------------------------
@@ -2647,90 +2581,6 @@ a.cast-cell:focus-visible {
 .prep-card-use .prep-use-head,
 .prep-card-use .prep-example { padding: 0; border: 0; }
 
-@media (min-width: 880px) {
-  .prep-row {
-    grid-template-columns: 6.5rem 10rem minmax(0, 1fr);
-    gap: 0;
-  }
-
-  .prep-visual,
-  .prep-name,
-  .prep-uses {
-    border-right-color: var(--hairline);
-  }
-
-  .prep-visual {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .prep-visual-pack,
-  .prep-visual-pack.is-split {
-    align-items: center;
-  }
-
-  .prep-name {
-    display: flex;
-    align-items: center;
-    font-size: var(--fs-title);
-  }
-
-  .prep-uses {
-    grid-column: auto;
-    border-right: 0;
-    gap: 0;
-    padding: 0;
-  }
-
-  .prep-use {
-    grid-template-columns: minmax(15rem, 1fr) minmax(20rem, 1.55fr);
-    gap: 0;
-    padding: 0;
-    border-top: 1px solid var(--hairline-soft);
-  }
-
-  .prep-use:first-child {
-    border-top: 0;
-  }
-
-  .prep-use-head,
-  .prep-example {
-    padding: .9rem;
-  }
-
-  .prep-use-head {
-    border-right: 1px solid var(--hairline-soft);
-  }
-
-  .prep-icon {
-    width: 4.8rem;
-  }
-}
-
-@media (min-width: 1440px) {
-  .prep-layout {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    --chart-cols: 5.5rem 10rem minmax(10rem, .9fr) minmax(14rem, 1.25fr);
-  }
-
-  .prep-row {
-    grid-template-columns: 5.5rem 10rem minmax(0, 1fr);
-  }
-
-  .prep-use {
-    grid-template-columns: minmax(10rem, .9fr) minmax(14rem, 1.25fr);
-  }
-
-  .prep-icon {
-    width: 4.6rem;
-  }
-
-  .prep-visual-pack.is-split .prep-icon {
-    width: 3.8rem;
-  }
-}
-
 /* -----------------------------------------------------------
    False friends
    ----------------------------------------------------------- */
@@ -2781,12 +2631,6 @@ a.cast-cell:focus-visible {
   font-size: var(--fs-caption);
   line-height: var(--lh-snug);
   color: var(--ink-muted);
-}
-
-@media (min-width: 880px) {
-  .false-word .sr {
-    font-size: var(--fs-title);
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
