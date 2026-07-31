@@ -1946,48 +1946,6 @@ a.cast-cell:focus-visible {
   color: var(--tone, var(--ink-soft));
 }
 
-@media (min-width: 760px) {
-  .pron-layout { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .pron-personal { grid-column: 1 / -1; }
-  .pron-table {
-    display: table;
-    table-layout: fixed;
-  }
-  .pron-table thead { display: table-header-group; }
-  .pron-table tbody { display: table-row-group; }
-  .pron-table tr { display: table-row; padding: 0; border-top: 0; }
-  .pron-table th,
-  .pron-table td {
-    display: table-cell;
-    padding: .74rem .7rem;
-    border-top: 1px solid var(--hairline-soft);
-    border-right: 1px solid var(--hairline-soft);
-    vertical-align: baseline;
-  }
-  .pron-table th:last-child,
-  .pron-table td:last-child {
-    border-right: 0;
-  }
-  .pron-table thead th {
-    text-align: left;
-    border-top: 0;
-    border-bottom: 1px solid var(--hairline);
-  }
-  .pron-table tbody th {
-    width: 18%;
-  }
-  .pron-table td::before { content: none; }
-  .pron-table th {
-    justify-content: flex-start;
-    padding-bottom: .74rem;
-  }
-}
-
-@media (min-width: 1280px) {
-  .pron-layout { grid-template-columns: 1.35fr 1fr; }
-  .pron-personal { grid-row: span 3; grid-column: auto; }
-}
-
 /* -----------------------------------------------------------
    Verbs (conjugation)
    ----------------------------------------------------------- */
