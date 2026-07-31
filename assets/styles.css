@@ -1048,28 +1048,26 @@ section { position: relative; }
   display: grid;
   grid-template-columns: 1fr;
   gap: 0;
-  margin-top: 2rem;
 }
 
-/* One fact per line: head, six endings, preps. */
+/* Endings pair up SG | PL per gender — one case fits one screen. */
 .case-row {
   scroll-margin-top: calc(var(--sticky-offset, 120px) + .5rem);
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-template-areas:
-    "head"
-    "m-sg"
-    "f-sg"
-    "n-sg"
-    "m-pl"
-    "f-pl"
-    "n-pl"
-    "preps";
-  gap: 1rem;
+    "head  head"
+    "m-sg  m-pl"
+    "f-sg  f-pl"
+    "n-sg  n-pl"
+    "preps preps";
+  gap: .55rem;
   padding: 2.2rem 0;
   border-bottom: 1px solid var(--hairline);
   position: relative;
 }
+.case-row .case-cell-head { margin-bottom: .65rem; }
+.case-row .case-cell-preps { margin-top: .65rem; }
 .case-row::before {
   content: "";
   position: absolute;
