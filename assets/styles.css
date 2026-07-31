@@ -168,12 +168,14 @@
   --ff-display:   'Source Serif 4', Georgia, serif;
   --ff-body:      'Source Sans 3', system-ui, sans-serif;
 
-  --fs-label:     clamp(.76rem, .72rem + .12vw, .86rem);
-  --fs-caption:   clamp(.9rem, .84rem + .18vw, 1.04rem);
-  --fs-body:      clamp(1.12rem, 1.04rem + .26vw, 1.3rem);
-  --fs-lead:      clamp(1.28rem, 1.1rem + .48vw, 1.58rem);
-  --fs-title:     clamp(1.5rem, 1.22rem + .75vw, 2.05rem);
-  --fs-head:      clamp(2.1rem, 1.5rem + 1.7vw, 3.3rem);
+  /* Fixed rem per role. All viewport fluidity lives in ONE place — the root
+     font-size clamp on `html`. Tokens must never carry their own vw terms. */
+  --fs-label:     .76rem;
+  --fs-caption:   .9rem;
+  --fs-body:      1.12rem;
+  --fs-lead:      1.28rem;
+  --fs-title:     1.5rem;
+  --fs-head:      2.1rem;
 
   --track-label:    .075em;
   --track-display: -.02em;
@@ -181,8 +183,11 @@
   --lh-snug:  1.3;
   --lh-prose: 1.55;
 
-  --pad-x:        clamp(1rem, 4.5vw, 6rem);
-  --max-w:        none;
+  /* Canonical column: one layout per chart, sized like a sheet of paper.
+     The sheet (body) caps at --max-w and grows physically with the root
+     scale — desktop gets the same sheet, larger, never a different layout. */
+  --pad-x:        1.1rem;
+  --max-w:        28rem;
 
   --rad:          2px;
 }
@@ -198,10 +203,20 @@
 html {
   -webkit-text-size-adjust: 100%;
   scroll-behavior: smooth;
-  background: var(--paper);
+  /* The desk behind the sheet — visible only when the viewport outgrows
+     --max-w, so no media query is needed. */
+  background: var(--paper-deep);
+  /* The single viewport-responsive rule on the site. Phones stay at the
+     user's default (1rem); wider viewports scale the whole sheet up —
+     type, spacing, and column width together — capped at 1.35rem.
+     rem-based terms keep user font-size preferences intact. */
+  font-size: clamp(1rem, .9rem + .33vw, 1.35rem);
 }
 body {
-  margin: 0;
+  margin: 0 auto;
+  max-width: var(--max-w);
+  min-height: 100svh;
+  border-inline: 1px solid var(--hairline);
   font-family: var(--ff-body);
   font-size: var(--fs-body);
   line-height: var(--lh-prose);
@@ -269,9 +284,9 @@ i { font-style: inherit; font-family: var(--ff-display); }
    Layout primitives
    ----------------------------------------------------------- */
 
+/* The sheet (body) owns the column width; shells only pad. */
 .shell {
   width: 100%;
-  max-width: var(--max-w);
   margin: 0 auto;
   padding-inline: var(--pad-x);
 }
@@ -302,13 +317,13 @@ section { position: relative; }
   z-index: 0;
 }
 .nav-inner {
-  display: flex; align-items: center; gap: 1.5rem;
+  display: flex; align-items: center; gap: .75rem;
   padding-block: 1.1rem;
   position: relative;
   z-index: 1;
 }
 .nav-actions {
-  display: inline-flex; align-items: center; gap: .75rem;
+  display: inline-flex; align-items: center; gap: .4rem;
   margin-left: auto;
 }
 .brand {
@@ -332,7 +347,9 @@ section { position: relative; }
   letter-spacing: var(--track-label);
   text-transform: uppercase;
   line-height: 1;
-  padding: .7rem 1rem;
+  /* Tap target stays over 24px tall; horizontal padding trimmed so the
+     no-JS chip fallback fits the column down to 320px. */
+  padding: .62rem .7rem;
   border-radius: 999px;
   color: var(--ink-muted);
   transition: background .25s, color .25s;
@@ -350,24 +367,6 @@ section { position: relative; }
   outline-offset: 2px;
 }
 
-@media (max-width: 560px) {
-  .nav-inner { gap: .75rem; }
-}
-
-@media (max-width: 420px) {
-  .nav-inner { gap: .5rem; }
-  .nav-actions { gap: .4rem; }
-  .chip { padding: .55rem .7rem; }
-}
-
-@media (max-width: 360px) {
-  .nav-inner { padding-block: .85rem; }
-  .nav-actions { gap: .3rem; }
-  .nav-controls { gap: .15rem; padding: 2px; }
-  /* Keep a comfortable tap target at narrow widths — trim only the horizontal
-     padding, keep the vertical near the base so height stays well over 24px. */
-  .chip { padding: .62rem .5rem; }
-}
 
 /* -----------------------------------------------------------
    Chart index
