@@ -69,9 +69,8 @@ function renderCaseStrip() {
   if (!list) return;
   list.innerHTML = CASES.map((c) => `
     <li class="case-strip-cell" data-tone="${c.tone}">
-      <a href="#${caseAnchor(c.key)}">
+      <a href="#${caseAnchor(c.key)}" aria-label="${tCases(c.key + '.name')}">
         <span class="strip-abbr">${c.abbr}</span>
-        <span class="strip-name">${tCases(c.key + '.name')}</span>
       </a>
     </li>
   `).join('');

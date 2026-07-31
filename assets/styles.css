@@ -457,15 +457,14 @@ section { position: relative; }
    .chart-label                      ALL-CAPS apparatus label
    .chart-form                       Serbian specimen voice (data cell)
    .chart-group / .chart-group-head  titled block
-   .chart-table / .chart-table-head /
-   .chart-row / .chart-cell          stacked-to-columnar table; columns
-                                     come from --chart-cols, set on the
-                                     group or layout element
+   .chart-table / .chart-row /
+   .chart-cell                       stacked table: one labelled fact
+                                     per line (.chart-table-head stays
+                                     hidden — data-labels carry the axis)
    .chart-pairs / .chart-pair        label + form paradigm rows
    .chart-example                    Serbian sentence over its gloss
    .chart-sep                        connector glyph in a specimen run
-   .chart-tiles / .chart-tile        card grid: stacked rows on mobile,
-                                     hairline-framed cards at wide
+   .chart-tiles / .chart-tile        stacked card rows
    .chart-panel-grid / .chart-panel  bordered panel mosaic with a tone
                                      strip (pronouns, verbs)
    .chart-pop / .chart-tip           `?` popover card body
@@ -980,8 +979,7 @@ section { position: relative; }
 
 /* -----------------------------------------------------------
    Case strip — colour-coded sticky nav.
-   Mobile-first: all seven cells fit the viewport (no scroll).
-   Wider screens reveal the name and number.
+   All seven cells fit the column (no scroll); abbreviations only.
    ----------------------------------------------------------- */
 .case-strip {
   position: sticky;
@@ -1037,7 +1035,6 @@ section { position: relative; }
 .case-strip-cell.is-current::before { height: 4px; opacity: 1; }
 
 /* Abbreviations only — all seven cells fit the column at every width. */
-.strip-name { display: none; }
 .strip-abbr {
   font-family: var(--ff-body);
   font-size: var(--fs-label);
@@ -1050,8 +1047,7 @@ section { position: relative; }
 
 
 /* -----------------------------------------------------------
-   Case list — single grid: rows are cases. Stacked below xlarge,
-   master 9-col table at xlarge so endings line up across cases.
+   Case list — one row per case; endings pair SG | PL per gender.
    ----------------------------------------------------------- */
 .case-list {
   display: grid;
@@ -1593,13 +1589,8 @@ body:not(.is-syncretism) .cell-shares {
 }
 
 /* -----------------------------------------------------------
-   Meet the cast — three nouns through all seven cases.
-   Mobile-first: transposed so all genders stay visible.
+   Cast primitives — cases × {M,F,N} word grid (Basic mode).
    ----------------------------------------------------------- */
-.case-cast {
-  padding: 1.5rem 0 2rem;
-  border-bottom: 1px solid var(--hairline);
-}
 .cast-table {
   display: grid;
   grid-auto-rows: auto;
@@ -2111,16 +2102,6 @@ a.cast-cell:focus-visible {
    Numbers
    ----------------------------------------------------------- */
 
-.num-builds {
-  --chart-cols: minmax(7rem, .45fr) minmax(0, 1fr);
-}
-.num-nouns {
-  --chart-cols: minmax(7rem, .45fr) minmax(12rem, .9fr) minmax(0, 1.65fr);
-}
-.num-ordinals {
-  --chart-cols: minmax(7rem, .5fr) repeat(3, minmax(0, 1fr));
-}
-
 /* Cardinal groups: one fluid rule at every width. auto-fit grows the grid
    from two columns on a phone to a full single row on a wide screen — column
    count tracks the viewport with no per-breakpoint steps and no side-by-side
@@ -2221,16 +2202,6 @@ a.cast-cell:focus-visible {
    Verb aspect pairs
    ----------------------------------------------------------- */
 
-.aspect-contrast {
-  --chart-cols: minmax(9rem, .7fr) repeat(2, minmax(0, 1fr));
-}
-.aspect-time {
-  --chart-cols: minmax(9rem, .85fr) repeat(2, minmax(0, 1fr));
-}
-.aspect-patterns,
-.aspect-pairs {
-  --chart-cols: minmax(9rem, .9fr) minmax(8rem, .7fr) minmax(8rem, .7fr) minmax(0, 1.4fr);
-}
 
 .aspect-side {
   display: grid;
@@ -2272,13 +2243,6 @@ a.cast-cell:focus-visible {
 /* -----------------------------------------------------------
    Pitch & stress
    ----------------------------------------------------------- */
-
-.pitch-accents {
-  --chart-cols: minmax(5rem, .4fr) minmax(7rem, .55fr) minmax(8rem, .65fr) minmax(6rem, .45fr) minmax(0, 1.45fr);
-}
-.pitch-rules {
-  --chart-cols: minmax(10rem, .75fr) minmax(0, 1fr) minmax(0, 1.3fr);
-}
 
 .pitch-mark {
   font-family: var(--ff-display);
@@ -2390,10 +2354,6 @@ a.cast-cell:focus-visible {
 /* -----------------------------------------------------------
    Prepositions
    ----------------------------------------------------------- */
-
-.prep-layout {
-  --chart-cols: 6.5rem 10rem minmax(15rem, 1fr) minmax(20rem, 1.55fr);
-}
 
 .prep-row {
   grid-template-columns: 5rem minmax(0, 1fr);
@@ -2586,10 +2546,6 @@ a.cast-cell:focus-visible {
 /* -----------------------------------------------------------
    False friends
    ----------------------------------------------------------- */
-
-.false-layout {
-  --chart-cols: minmax(8rem, .65fr) minmax(12rem, .85fr) minmax(12rem, .95fr) minmax(16rem, 1.3fr);
-}
 
 .false-word .sr {
   font-family: var(--ff-display);

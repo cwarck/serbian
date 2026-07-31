@@ -29,6 +29,17 @@ Reference: Levithan's A4 Serbian charts — every block is a labeled grid of fac
 - No tiny elements.
 - Less is more.
 
+## Layout
+
+One layout per chart — the mobile layout is THE layout. Desktop gets the same sheet, scaled up, never a different design.
+
+- **The sheet.** `body` is the canonical column: `max-width: var(--max-w)` (28rem), centered, hairline side rules. `html` is the desk behind it (`--paper-deep`). No wrapper elements, no media query — the desk simply appears when the viewport outgrows the sheet.
+- **One fluid rule.** The root `font-size` clamp on `html` is the ONLY viewport-responsive declaration on the site. It scales type, spacing, and column width together (everything is rem-based). Phones stay at the user's default size.
+- **Width media queries are banned.** Allowed queries: `hover`, `prefers-reduced-motion`, `forced-colors` — capability, never width. If a chart "needs" a wider variant, the chart is showing too much at once; redesign the one layout instead.
+- **No vw units** outside the root clamp (viewport-safety `calc(100vw - …)` caps on fixed overlays are fine). Spacing is fixed rem — fluidity comes from the root, not from per-rule clamps.
+- **Every layout must fit 320px.** That's the narrow end of the one layout, not a breakpoint tier.
+- **Truly 2D data** (a paradigm that genuinely needs both axes at once) gets a horizontal-scroll pane inside the column — never a wide page variant.
+
 ## Typography
 
 The scale is the rulebook. Pick a role; the token decides the size.
