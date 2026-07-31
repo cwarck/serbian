@@ -1159,7 +1159,7 @@ section { position: relative; }
   display: flex;
   flex-direction: column;
   gap: .45rem;
-  padding: .75rem .8rem .8rem;
+  padding: .6rem .65rem .65rem;
   border: 1px solid var(--hairline-soft);
   background: color-mix(in oklab, var(--paper) 96%, transparent);
 }
@@ -1475,11 +1475,6 @@ body:not(.is-syncretism) .cell-shares {
 }
 .coachmark-cta:hover { background: color-mix(in oklab, var(--accent) 18%, transparent); }
 .coachmark-cta:focus-visible { outline: 1px dashed var(--accent); outline-offset: 2px; }
-
-@media (max-width: 520px) {
-  .case-cell-end { padding: .6rem .65rem .65rem; }
-  .case-row { gap: .75rem; }
-}
 
 .note-title {
   font-style: italic;
