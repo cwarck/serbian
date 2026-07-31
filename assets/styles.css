@@ -688,63 +688,6 @@ section { position: relative; }
   color: var(--ink-muted);
 }
 
-@media (min-width: 880px) {
-  .chart-group {
-    border: 1px solid var(--hairline);
-    border-bottom: 0;
-  }
-  .chart-group-head {
-    padding: 1rem .9rem .85rem;
-  }
-  .chart-table-head {
-    display: grid;
-    grid-template-columns: var(--chart-cols);
-    background: var(--paper-deep);
-    border-bottom: 1px solid var(--hairline);
-  }
-  .chart-table-head span {
-    padding: .85rem .9rem;
-    border-right: 1px solid var(--hairline);
-    font-family: var(--ff-body);
-    font-size: var(--fs-label);
-    font-weight: 500;
-    letter-spacing: var(--track-label);
-    line-height: 1;
-    text-transform: uppercase;
-    color: var(--ink-muted);
-  }
-  .chart-table-head span:last-child {
-    border-right: 0;
-  }
-  .chart-row {
-    grid-template-columns: var(--chart-cols);
-    gap: 0;
-    padding: 0;
-    border-bottom: 1px solid var(--hairline);
-  }
-  .chart-row > * {
-    padding: .9rem;
-    border-right: 1px solid var(--hairline-soft);
-  }
-  .chart-row > *:last-child {
-    border-right: 0;
-  }
-  .chart-cell {
-    display: block;
-  }
-  .chart-cell[data-label]::before,
-  .chart-example[data-label]::before {
-    content: none;
-  }
-  .chart-tiles {
-    border-left: 1px solid var(--hairline-soft);
-  }
-  .chart-tile {
-    padding: 1rem .9rem 1.1rem;
-    border-right: 1px solid var(--hairline-soft);
-    border-bottom: 1px solid var(--hairline);
-  }
-}
 
 /* -----------------------------------------------------------
    Alphabet grid
