@@ -384,83 +384,30 @@ section { position: relative; }
   border-top: 1px solid var(--hairline);
   border-left: 1px solid var(--hairline);
 }
-@media (min-width: 620px) {
-  .chart-grid { grid-template-columns: repeat(2, 1fr); }
-}
-@media (min-width: 960px) {
-  .chart-grid { grid-template-columns: repeat(3, 1fr); }
-  .chart-grid .flagship { grid-column: span 2; }
-}
 .chart-grid li { min-width: 0; }
 
+/* One layout: a compact row per chart — name only. The old hero-card
+   grid (glyph + note, 2/3-col) was desktop-only duplication. */
 .chart-card {
   position: relative;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  align-items: center;
   gap: 1.4rem;
-  height: 100%;
-  min-height: clamp(13rem, 20vw, 17rem);
-  padding: clamp(1.4rem, 2.8vw, 2.2rem);
+  padding: .95rem 1.2rem;
   background: var(--paper);
   border-right: 1px solid var(--hairline);
   border-bottom: 1px solid var(--hairline);
   transition: background .25s;
-  overflow: hidden;
-  isolation: isolate;
 }
 
-.chart-glyph {
-  font-family: var(--ff-display);
-  font-weight: 300;
-  font-size: clamp(3.4rem, 1.8rem + 6vw, 6rem);
-  line-height: .9;
-  letter-spacing: -.02em;
-  color: var(--ink);
-  font-variation-settings: "opsz" 60;
-  font-feature-settings: "tnum";
-  white-space: nowrap;
-  flex: 1;
-  display: flex;
-  align-items: flex-start;
-  overflow: hidden;
-}
-.chart-glyph[data-chart="verbs"]    { color: var(--tone-orange); }
-.chart-glyph b { color: var(--tone-orange); font-weight: inherit; }
-.chart-glyph[data-chart="pitch"] {
-  font-size: clamp(2.4rem, 1.4rem + 4vw, 4.2rem);
-  letter-spacing: .08em;
-}
+.chart-glyph { display: none; }
 
-.chart-meta { display: flex; flex-direction: column; gap: .3rem; }
+.chart-meta { display: flex; flex-direction: column; gap: .3rem; flex: 1 1 auto; min-width: 0; }
 .chart-card h2 {
   font-size: var(--fs-title);
   line-height: var(--lh-snug);
 }
-.chart-note {
-  font-family: var(--ff-body);
-  font-size: var(--fs-caption);
-  line-height: var(--lh-prose);
-  color: var(--ink-soft);
-  margin: 0;
-  max-width: 30ch;
-}
-
-/* Mobile (below the 2-col breakpoint): the tall hero card is mostly air in a
-   single column. Collapse to a short row — chart name only; glyph and note
-   dropped. */
-@media (max-width: 619.98px) {
-  .chart-card {
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    min-height: 0;
-    padding: .95rem clamp(1.1rem, 4vw, 1.4rem);
-  }
-  .chart-glyph { display: none; }
-  .chart-meta { flex: 1 1 auto; min-width: 0; }
-  .chart-note { display: none; }
-}
+.chart-note { display: none; }
 
 :root:not([lang="ru"]) [data-lang-only="ru"] {
   display: none;
