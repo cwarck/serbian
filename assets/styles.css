@@ -373,7 +373,7 @@ section { position: relative; }
    ----------------------------------------------------------- */
 
 .home {
-  padding-block: clamp(1.8rem, 5vw, 3.2rem) clamp(3rem, 7vw, 6rem);
+  padding-block: 1.8rem 3rem;
 }
 .chart-grid {
   display: grid;
@@ -472,12 +472,12 @@ section { position: relative; }
    ----------------------------------------------------------- */
 
 .chart-section {
-  padding-block: clamp(2rem, 5vw, 4rem) clamp(3rem, 6vw, 5rem);
+  padding-block: 2rem 3rem;
 }
 .chart-layout {
   display: grid;
   align-items: start;
-  gap: clamp(1.6rem, 3vw, 2.6rem);
+  gap: 1.6rem;
 }
 
 .chart-label {
@@ -694,7 +694,7 @@ section { position: relative; }
    ----------------------------------------------------------- */
 
 .alph-section {
-  padding-block: clamp(2.5rem, 6vw, 5rem);
+  padding-block: 2.5rem;
 }
 
 .alph-legend {
@@ -880,7 +880,7 @@ section { position: relative; }
 .tip-pop {
   position: absolute;
   z-index: 50;
-  width: min(320px, calc(100vw - 24px));
+  width: min(20rem, calc(100vw - 24px));
   opacity: 0;
   transform: none;
   pointer-events: none;
@@ -938,7 +938,7 @@ section { position: relative; }
    ----------------------------------------------------------- */
 
 .cases-section {
-  padding-block: clamp(2rem, 5vw, 4rem) clamp(3rem, 6vw, 5rem);
+  padding-block: 2rem 3rem;
 }
 
 /* Baseline for any [data-tone]: ink-soft. Charts that don't carry
@@ -1048,7 +1048,7 @@ section { position: relative; }
   display: grid;
   grid-template-columns: 1fr;
   gap: 0;
-  margin-top: clamp(2rem, 4vw, 3rem);
+  margin-top: 2rem;
 }
 
 /* One fact per line: head, six endings, preps. */
@@ -1066,7 +1066,7 @@ section { position: relative; }
     "n-pl"
     "preps";
   gap: 1rem;
-  padding: clamp(2.2rem, 4.5vw, 3.4rem) 0;
+  padding: 2.2rem 0;
   border-bottom: 1px solid var(--hairline);
   position: relative;
 }
@@ -1387,7 +1387,7 @@ body:not(.is-syncretism) .cell-shares {
   pointer-events: auto;
 }
 .settings-menu-card {
-  width: min(280px, calc(100vw - 24px));
+  width: min(17.5rem, calc(100vw - 24px));
   background: var(--paper-deep);
   border: 1px solid var(--hairline);
   border-radius: 12px;
@@ -1433,7 +1433,7 @@ body:not(.is-syncretism) .cell-shares {
 .coachmark.is-open { opacity: 1; transform: none; pointer-events: auto; }
 .coachmark-card {
   position: relative;
-  width: min(264px, calc(100vw - 24px));
+  width: min(16.5rem, calc(100vw - 24px));
   background: var(--paper-deep);
   border: 1px solid var(--hairline);
   border-top: 2px solid var(--accent);
@@ -1590,7 +1590,7 @@ body:not(.is-syncretism) .cell-shares {
    Mobile-first: transposed so all genders stay visible.
    ----------------------------------------------------------- */
 .case-cast {
-  padding: clamp(1.5rem, 4vw, 2.5rem) 0 clamp(2rem, 5vw, 3rem);
+  padding: 1.5rem 0 2rem;
   border-bottom: 1px solid var(--hairline);
 }
 .cast-table {
@@ -1670,7 +1670,7 @@ a.cast-cell:focus-visible {
    Off-paradigm pack — i-declension + five wrinkles, stacked.
    ----------------------------------------------------------- */
 .case-extra {
-  padding-top: clamp(3rem, 6vw, 5rem);
+  padding-top: 3rem;
 }
 
 .extra-pack {
@@ -2544,7 +2544,7 @@ a.cast-cell:focus-visible {
    every use stacked and tinted by its own case (gen/dat/aku/ins/lok). */
 /* Widen the shell itself (not just the card) so position()'s clamp — which
    measures the .tip-pop wrapper — keeps the card on-screen near an edge. */
-.prep-pop { width: min(360px, calc(100vw - 24px)); }
+.prep-pop { width: min(22.5rem, calc(100vw - 24px)); }
 .prep-pop .tip-pop-card {
   max-height: min(72vh, 540px);
   overflow-y: auto;
