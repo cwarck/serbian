@@ -2099,32 +2099,6 @@ a.cast-cell:focus-visible {
   padding-top: 1rem;
 }
 
-@media (min-width: 680px) {
-  .verb-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-@media (min-width: 1040px) {
-  .verb-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-}
-@media (min-width: 1360px) {
-  .verb-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-}
-@media (min-width: 1840px) {
-  .verb-grid { grid-template-columns: repeat(7, minmax(0, 1fr)); }
-  .verb-col {
-    padding: 1.1rem .9rem 1.2rem;
-  }
-  .verb-col::before {
-    margin: -1.1rem -.9rem .05rem;
-  }
-  .verb-col .chart-pair {
-    grid-template-columns: minmax(4.75rem, .8fr) minmax(0, 1fr);
-    gap: .55rem;
-  }
-  .verb-participle-grid > div {
-    grid-template-columns: 1fr;
-    gap: .22rem;
-  }
-}
 
 /* -----------------------------------------------------------
    Numbers
