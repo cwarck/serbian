@@ -4,8 +4,12 @@ function dict() {
 }
 function t(key) { return dict()[key] || ''; }
 function currentLang() { return document.documentElement.getAttribute('lang') || 'en'; }
+/* Paired paradigm order: SG | PL side by side, three visual rows
+   (ja|mi, ti|vi, on|oni) inside a .verb-pair-grid container. */
+const PAIR_ORDER = [0, 3, 1, 4, 2, 5];
+
 function pronounRows(values) {
-  return PRONOUNS.map(p => `
+  return PAIR_ORDER.map(i => PRONOUNS[i]).map(p => `
     <div class="chart-pair">
       <span class="verb-pron" lang="sr">${SerbianFyi.sr(p.label)}</span>
       <span class="chart-form verb-form" lang="sr">${SerbianFyi.sr(values[p.key])}</span>
@@ -13,11 +17,12 @@ function pronounRows(values) {
   `).join('');
 }
 
-function formRows(forms) {
-  return forms.map((form, i) => `
+function formRows(forms, paired) {
+  const order = paired ? PAIR_ORDER : forms.map((_, i) => i);
+  return order.map(i => `
     <div class="chart-pair">
       <span class="verb-pron" lang="sr">${SerbianFyi.sr(PRONOUNS[i].label)}</span>
-      <span class="chart-form verb-form" lang="sr">${SerbianFyi.sr(form)}</span>
+      <span class="chart-form verb-form" lang="sr">${SerbianFyi.sr(forms[i])}</span>
     </div>
   `).join('');
 }
@@ -47,7 +52,7 @@ function renderRegularGroup(group) {
         <span class="chart-label">${t('verbs.present')}</span>
         <h3>${group.title}</h3>
       </header>
-      <div class="chart-pairs" aria-label="${t('verbs.endings')}">
+      <div class="chart-pairs verb-pair-grid" aria-label="${t('verbs.endings')}">
         ${pronounRows(group.endings)}
       </div>
       <section class="verb-block">
@@ -69,7 +74,7 @@ function renderRegularGroup(group) {
       </section>
       <section class="verb-block verb-block-example">
         <h4 class="sr-head" lang="sr">${SerbianFyi.sr(group.example.infinitive)}</h4>
-        <div class="chart-pairs">
+        <div class="chart-pairs verb-pair-grid">
           ${pronounRows(group.example.forms)}
         </div>
       </section>
@@ -84,8 +89,8 @@ function renderIrregulars() {
         <h4 class="sr-head" lang="sr">${SerbianFyi.sr(item.title)}</h4>
         ${item.full ? `<button class="tip-chip" type="button" aria-haspopup="dialog" aria-expanded="false" aria-label="${t('verbs.full.forms')}" data-verb-tip="${idx}">?</button>` : ''}
       </header>
-      <div class="chart-pairs">
-        ${formRows(item.forms)}
+      <div class="chart-pairs verb-pair-grid">
+        ${formRows(item.forms, true)}
       </div>
       ${item.negative.length ? `
         <div class="verb-negative">
@@ -123,10 +128,10 @@ function renderPast() {
       </section>
       <section class="verb-block">
         <h4 class="chart-label">${t('verbs.participle')}</h4>
-        <div class="chart-pairs verb-participle-grid">
-          ${PAST.endings.map(item => `
+        <div class="chart-pairs verb-pair-grid">
+          ${PAIR_ORDER.map(i => PAST.endings[i]).map(item => `
             <div class="chart-pair">
-              <span class="chart-label verb-sub">${t(item.key)}</span>
+              <span class="chart-label">${t(item.key)}</span>
               <span class="chart-form verb-form">${SerbianFyi.sr(item.ending)}</span>
             </div>
           `).join('')}
