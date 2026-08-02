@@ -1065,6 +1065,7 @@ section { position: relative; }
     "m-sg  m-pl"
     "f-sg  f-pl"
     "n-sg  n-pl"
+    "ex    ex"
     "preps preps";
   gap: .55rem;
   padding: 2.2rem 0;
@@ -1095,7 +1096,9 @@ section { position: relative; }
 .case-cell-end[data-axis="f-pl"] { grid-area: f-pl; }
 .case-cell-end[data-axis="n-sg"] { grid-area: n-sg; }
 .case-cell-end[data-axis="n-pl"] { grid-area: n-pl; }
+.case-cell-ex      { grid-area: ex; }
 .case-cell-preps   { grid-area: preps; }
+.case-row .case-cell-ex { margin-top: .65rem; }
 
 .case-cell-head { position: relative; }
 .case-cell-head .case-head { display: block; }
@@ -1321,44 +1324,6 @@ body:not(.is-syncretism) .cell-shares {
 .cast-basic .cast-case .case-head-title h3 { display: none; }
 .cast-basic .cast-case .case-tag { padding: .3rem .5rem; }
 
-/* One example tucked under the case meta (col-1), replacing the old wide
-   "In the wild" column. Hidden by default; the chevron on the question line
-   unfolds it, keeping the endings matrix the legible default. */
-.ex-toggle {
-  display: inline-flex; align-items: center; justify-content: center;
-  width: 1.35rem; height: 1.35rem;
-  float: right;
-  margin: 0 0 .3rem .5rem;
-  background: transparent;
-  border: 1px solid var(--hairline);
-  border-radius: 50%;
-  color: var(--ink-muted);
-  cursor: pointer;
-  transition: color .15s, border-color .15s, background .15s;
-}
-.ex-toggle:hover,
-.ex-toggle[aria-expanded="true"] { color: var(--ink); border-color: var(--ink-muted); }
-.ex-toggle[aria-expanded="true"] { background: var(--paper-deep); }
-.ex-toggle-caret {
-  width: .42rem; height: .42rem;
-  border-right: 1.5px solid currentColor;
-  border-bottom: 1.5px solid currentColor;
-  transform: translateY(-2px) rotate(45deg);
-  transition: transform .18s ease;
-}
-.ex-toggle[aria-expanded="true"] .ex-toggle-caret { transform: translateY(1px) rotate(-135deg); }
-
-.case-head-ex {
-  display: none;
-  margin-top: 1.1rem;
-  padding-top: 1.1rem;
-  border-top: 1px solid var(--hairline-soft);
-}
-.is-ex-open .case-head-ex { display: block; }
-/* Examples reuse the shared .ex/.examples layout (stacked, hairline-divided). */
-.case-head-ex .ex { padding: .8rem 0; }
-.case-head-ex .ex:first-child { padding-top: 0; }
-.case-head-ex .ex .sr { line-height: var(--lh-snug); }
 
 /* ── Settings menu ─────────────────────────────────────────────────────
    One masthead button opens a small floating panel with every site toggle.

@@ -226,25 +226,12 @@ function renderCases() {
   if (!list) return;
   const lang = currentLang();
   const prepsLabel = d['cases.preps']    || 'Prepositions';
+  const exLabel    = d['cases.examples'] || 'In the wild';
 
   const headBlock = (c) => {
     const name    = d[c.key + '.name']    || '';
     const local   = SerbianFyi.sr(d[c.key + '.local'] || '');
     const q       = srStrongHTML(d[c.key + '.q'] || '');
-    /* Examples hide by default — a chevron on the question line unfolds them
-       in place, so the endings matrix stays the legible default. */
-    const hasEx = c.examples.length > 0;
-    const exLabel = d['cases.examples'] || 'In the wild';
-    const exToggle = hasEx ? `<button type="button" class="ex-toggle" data-ex-toggle aria-expanded="false" aria-label="${exLabel}"><span class="ex-toggle-caret" aria-hidden="true"></span></button>` : '';
-    const exHTML  = hasEx ? `
-      <div class="case-head-ex">
-        <div class="examples">${c.examples.map(ex => `
-          <div class="ex">
-            <div class="sr" lang="sr">${SerbianFyi.srHTML(ex.sr)}</div>
-            <div class="tr">${SerbianFyi.srGrammarHTML(ex[lang] || ex.en)}</div>
-          </div>`).join('')}
-        </div>
-      </div>` : '';
     return `
       <div class="case-cell case-cell-head">
         <header class="case-head">
@@ -252,8 +239,7 @@ function renderCases() {
             <h3><span lang="sr">${local}</span><em>${name}</em></h3>
             <span class="case-tag">${c.abbr}</span>
           </div>
-          <p class="q">${exToggle}${q}</p>
-          ${exHTML}
+          <p class="q">${q}</p>
         </header>
       </div>`;
   };
@@ -313,6 +299,17 @@ function renderCases() {
       </div>
     `).join('');
 
+    const exCell = c.examples.length === 0 ? '' : `
+      <div class="case-cell case-cell-ex">
+        <span class="cell-axis">${exLabel}</span>
+        <div class="examples">${c.examples.map(ex => `
+          <div class="ex">
+            <div class="sr" lang="sr">${SerbianFyi.srHTML(ex.sr)}</div>
+            <div class="tr">${SerbianFyi.srGrammarHTML(ex[lang] || ex.en)}</div>
+          </div>`).join('')}
+        </div>
+      </div>`;
+
     const prepCell = c.preps.length === 0 ? `
       <div class="case-cell case-cell-preps is-empty" aria-hidden="true"></div>
     ` : `
@@ -325,6 +322,7 @@ function renderCases() {
       <article class="case-row" id="${caseAnchor(c.key)}" data-tone="${c.tone}">
         ${headBlock(c)}
         ${endCells}
+        ${exCell}
         ${prepCell}
       </article>`;
   }).join('');
@@ -524,17 +522,6 @@ if (window.SerbianFyi && SerbianFyi.prep) {
     render: (t) => SerbianFyi.prep.renderCard(t.getAttribute('data-prep')),
   });
 }
-
-/* Example disclosure — unfold the hidden example under its case meta.
-   Delegated so it survives re-render; state is per-render (collapsed default). */
-document.addEventListener('click', (e) => {
-  const t = e.target.closest('[data-ex-toggle]');
-  if (!t) return;
-  const head = t.closest('.case-cell-head');
-  if (!head) return;
-  const open = head.classList.toggle('is-ex-open');
-  t.setAttribute('aria-expanded', open ? 'true' : 'false');
-});
 
 document.addEventListener('langchange', () => {
   renderAll();
