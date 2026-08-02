@@ -103,7 +103,6 @@ window.I18N = {
     'aspect.pairs': 'Common pairs',
     'aspect.imperfective': 'Imperfective',
     'aspect.perfective': 'Perfective',
-    'aspect.meaning': 'Meaning',
     'aspect.pattern': 'Pattern',
     'aspect.signal': 'Signal',
     'aspect.example': 'Example',
@@ -120,7 +119,6 @@ window.I18N = {
     'pitch.contour': 'Contour',
     'pitch.pattern': 'Pattern',
     'pitch.examples': 'Examples',
-    'pitch.slot': 'Slot',
     'pitch.fact': 'Fact',
     'pitch.note': 'note',
 
@@ -151,10 +149,6 @@ window.I18N = {
     'prep.group.source': 'Source / direction',
     'prep.group.time': 'Time / purpose',
     'prep.group.fixed': 'Fixed case',
-    'prep.col.visual': 'Visual',
-    'prep.col.prep': 'Preposition',
-    'prep.col.case': 'Case / meaning',
-    'prep.col.example': 'Example',
 
     /* Pronouns page */
     'pron.personal.title': 'Personal pronouns',
@@ -349,7 +343,6 @@ window.I18N = {
     'aspect.pairs': 'Частые пары',
     'aspect.imperfective': 'Несовершенный',
     'aspect.perfective': 'Совершенный',
-    'aspect.meaning': 'Значение',
     'aspect.pattern': 'Тип',
     'aspect.signal': 'Сигнал',
     'aspect.example': 'Пример',
@@ -366,7 +359,6 @@ window.I18N = {
     'pitch.contour': 'Тон',
     'pitch.pattern': 'Схема',
     'pitch.examples': 'Примеры',
-    'pitch.slot': 'Позиция',
     'pitch.fact': 'Факт',
     'pitch.note': 'заметка',
 
@@ -397,10 +389,6 @@ window.I18N = {
     'prep.group.source': 'Источник / направление',
     'prep.group.time': 'Время / цель',
     'prep.group.fixed': 'Фиксированный падеж',
-    'prep.col.visual': 'Схема',
-    'prep.col.prep': 'Предлог',
-    'prep.col.case': 'Падеж / значение',
-    'prep.col.example': 'Пример',
 
     /* Pronouns */
     'pron.personal.title': 'Личные местоимения',

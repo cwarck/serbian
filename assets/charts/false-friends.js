@@ -32,12 +32,6 @@ function renderFalseFriends() {
         <h3>${t(group.key)}</h3>
       </header>
       <div class="chart-table">
-        <div class="chart-table-head">
-          <span>${t('false.col.sr')}</span>
-          <span>${t('false.col.means')}</span>
-          <span>${t('false.col.trap')}</span>
-          <span>${t('false.col.example')}</span>
-        </div>
         ${group.rows.map(renderFalseRow).join('')}
       </div>
     </section>

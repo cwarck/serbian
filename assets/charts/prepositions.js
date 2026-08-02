@@ -48,12 +48,6 @@ function renderGroup(group) {
         <h3>${t(group.key)}</h3>
       </header>
       <div class="chart-table">
-        <div class="chart-table-head">
-          <span>${t('prep.col.visual')}</span>
-          <span>${t('prep.col.prep')}</span>
-          <span>${t('prep.col.case')}</span>
-          <span>${t('prep.col.example')}</span>
-        </div>
         ${group.rows.map(row => `
           <article class="chart-row prep-row" data-tone="${row.tone}">
             <div class="prep-visual">${visualHTML(row)}</div>

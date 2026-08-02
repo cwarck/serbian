@@ -30,11 +30,6 @@ function renderContrast() {
   return `
     <section class="chart-group aspect-contrast" data-tone="aspect-core">
       <header class="chart-group-head"><h3>${ui('contrast')}</h3></header>
-      <div class="chart-table-head">
-        <span></span>
-        <span>${ui('imperfective')}</span>
-        <span>${ui('perfective')}</span>
-      </div>
       <div class="chart-table">
         ${CONTRAST.map(row => `
           <article class="chart-row">
@@ -59,9 +54,6 @@ function renderTime() {
     <section class="chart-group aspect-time" data-tone="aspect-time">
       <header class="chart-group-head"><h3>${ui('time')}</h3></header>
       <div class="chart-table">
-        <div class="chart-table-head">
-          <span></span><span>${ui('imperfective')}</span><span>${ui('perfective')}</span>
-        </div>
         ${TIME_ROWS.map(row => `
           <article class="chart-row">
             <h4>${pick(row.tense)}</h4>
@@ -79,9 +71,6 @@ function renderPatterns() {
     <section class="chart-group aspect-patterns" data-tone="aspect-pattern">
       <header class="chart-group-head"><h3>${ui('patterns')}</h3></header>
       <div class="chart-table">
-        <div class="chart-table-head">
-          <span>${ui('pattern')}</span><span>${ui('imperfective')}</span><span>${ui('perfective')}</span><span>${ui('signal')}</span>
-        </div>
         ${PATTERNS.map(row => `
           <article class="chart-row">
             <h4>${pick(row.pattern)}</h4>
@@ -126,9 +115,6 @@ function renderPairs() {
     <section class="chart-group aspect-pairs" data-tone="aspect-pairs">
       <header class="chart-group-head"><h3>${ui('pairs')}</h3></header>
       <div class="chart-table">
-        <div class="chart-table-head">
-          <span>${ui('meaning')}</span><span>${ui('imperfective')}</span><span>${ui('perfective')}</span><span>${ui('example')}</span>
-        </div>
         ${COMMON_PAIRS.map(row => `
           <article class="chart-row">
             <h4>${SerbianFyi.glossary.gloss(row.imp, lang())}</h4>
