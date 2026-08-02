@@ -2166,6 +2166,14 @@ a.cast-cell:focus-visible {
    ----------------------------------------------------------- */
 
 
+/* Time behavior: imp | perf side by side under the tense head —
+   the forms are short; stacking them wasted half the column. */
+.aspect-time .chart-row {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 1.1rem;
+}
+.aspect-time .chart-row h4 { grid-column: 1 / -1; }
+
 .aspect-side {
   display: grid;
   gap: .45rem;
@@ -2247,25 +2255,22 @@ a.cast-cell:focus-visible {
   gap: .65rem 1rem;
 }
 
+/* One 3-col mini-grid: case labels down the side, one column per word. */
+.pitch-paradigm-row {
+  grid-template-columns: minmax(4.2rem, .55fr) repeat(2, minmax(0, 1fr));
+  gap: .8rem;
+}
+
+.pitch-paradigm-words { border-bottom: 1px solid var(--hairline); }
+
 .pitch-paradigm-head {
-  display: flex;
-  align-items: center;
-  gap: .55rem;
+  display: inline-flex;
+  align-items: baseline;
+  gap: .45rem;
   flex-wrap: wrap;
 }
 
-.pitch-paradigm-head h4 {
-  color: var(--ink);
-  text-transform: none;
-}
-
-.pitch-paradigm-head span {
-  font-size: var(--fs-caption);
-  line-height: var(--lh-snug);
-  color: var(--ink-muted);
-  text-transform: none;
-  letter-spacing: 0;
-}
+.pitch-paradigm-head .chart-form { color: var(--ink); }
 
 .pitch-priority-row {
   grid-template-columns: auto minmax(0, 1fr);

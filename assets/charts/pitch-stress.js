@@ -89,23 +89,21 @@ function renderParadigms() {
   return `
     <section class="chart-group pitch-paradigms">
       <header class="chart-group-head"><h3>${ui('paradigms')}</h3></header>
-      <div class="chart-tiles pitch-paradigm-grid">
-        ${PITCH_PARADIGMS.map(row => `
-          <article class="chart-tile">
-            <header class="chart-label pitch-paradigm-head">
-              <h4 class="chart-form" lang="sr">${SerbianFyi.sr(row.word.sr)}</h4>
-              <span>${exampleGloss(row.word)}</span>
+      <div class="chart-pairs pitch-paradigm-table">
+        <div class="chart-pair pitch-paradigm-row pitch-paradigm-words">
+          <span></span>
+          ${PITCH_PARADIGMS.map(row => `
+            <span class="pitch-paradigm-head">
+              <span class="chart-form" lang="sr">${SerbianFyi.sr(row.word.sr)}</span>
               ${noteButton(row.note)}
-            </header>
-            <div class="chart-pairs">
-              ${row.cells.map(cell => `
-                <div class="chart-pair">
-                  <span class="chart-label">${cell.label}</span>
-                  <span class="chart-form" lang="sr">${SerbianFyi.sr(cell.sr)}</span>
-                </div>
-              `).join('')}
-            </div>
-          </article>
+            </span>
+          `).join('')}
+        </div>
+        ${PITCH_PARADIGMS[0].cells.map((cell, i) => `
+          <div class="chart-pair pitch-paradigm-row">
+            <span class="chart-label">${cell.label}</span>
+            ${PITCH_PARADIGMS.map(row => `<span class="chart-form" lang="sr">${SerbianFyi.sr(row.cells[i].sr)}</span>`).join('')}
+          </div>
         `).join('')}
       </div>
     </section>
