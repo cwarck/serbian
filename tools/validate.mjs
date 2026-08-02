@@ -435,7 +435,7 @@ function validateSerbianContentScript() {
 
   const pronouns = data['assets/charts/pronouns-data.js'];
   pronouns.PERSONAL.forEach((row, rowIndex) => {
-    ['subject', 'object', 'datloc', 'inst', 'poss'].forEach(field => validateSerbianLatin(row[field], `pronouns.personal[${rowIndex}].${field}`));
+    ['subject', 'object', 'datloc', 'inst'].forEach(field => validateSerbianLatin(row[field], `pronouns.personal[${rowIndex}].${field}`));
   });
   pronouns.POSSESSIVES.forEach((row, rowIndex) => eachString(row.forms, value => validateSerbianLatin(value, `pronouns.possessives[${rowIndex}].forms`)));
   pronouns.DEMOS.forEach((group, groupIndex) => group.rows.forEach((row, rowIndex) => eachString(row.forms, value => validateSerbianLatin(value, `pronouns.demos[${groupIndex}].rows[${rowIndex}].forms`))));
@@ -669,7 +669,7 @@ function validatePronouns() {
   const { PERSONAL, POSSESSIVES, DEMOS, QUESTIONS } = data['assets/charts/pronouns-data.js'];
   PERSONAL.forEach((row, index) => {
     const scope = `pronouns.personal[${index}]`;
-    ['band', 'label', 'subject', 'object', 'datloc', 'inst', 'poss'].forEach(field => expectString(row[field], scope, field));
+    ['band', 'label', 'subject', 'object', 'datloc', 'inst'].forEach(field => expectString(row[field], scope, field));
   });
   POSSESSIVES.forEach((row, index) => {
     const scope = `pronouns.possessives[${index}]`;

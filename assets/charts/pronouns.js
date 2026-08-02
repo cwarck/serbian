@@ -32,7 +32,6 @@ function renderPersonal() {
     ['pron.accgen', 'object', ['aku', 'gen']],
     ['pron.datloc', 'datloc', ['dat', 'lok']],
     ['case.6.name', 'inst', ['ins']],
-    ['pron.poss.short', 'poss', []],
   ];
   const rows = PERSONAL.map(row => `
     <tr data-band="${row.band}">
