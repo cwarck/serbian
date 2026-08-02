@@ -226,7 +226,7 @@ function renderCases() {
   if (!list) return;
   const lang = currentLang();
   const prepsLabel = d['cases.preps']    || 'Prepositions';
-  const exLabel    = d['cases.examples'] || 'In the wild';
+  const exLabel    = d['cases.examples'] || 'Examples';
 
   const headBlock = (c) => {
     const name    = d[c.key + '.name']    || '';

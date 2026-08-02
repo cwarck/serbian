@@ -206,7 +206,7 @@ window.I18N = {
     'pron.pl': 'Plural',
 
     /* Cases page */
-    'cases.examples': 'In the wild',
+    'cases.examples': 'Examples',
     'cases.preps': 'Prepositions',
     'cases.local.tooltip': 'Serbian name for this case',
     'cases.gender.m': 'M',
@@ -452,7 +452,7 @@ window.I18N = {
     'pron.pl': 'Мн.',
 
     /* Cases */
-    'cases.examples': 'В живой речи',
+    'cases.examples': 'Примеры',
     'cases.preps': 'Предлоги',
     'cases.local.tooltip': 'Сербское название падежа',
     'cases.gender.m': 'М',
