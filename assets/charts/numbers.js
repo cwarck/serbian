@@ -50,10 +50,6 @@ function renderBuilds() {
         <h3>${t('numbers.build')}</h3>
       </header>
       <div class="chart-table">
-        <div class="chart-table-head">
-          <span>${t('numbers.number')}</span>
-          <span>${t('numbers.parts')}</span>
-        </div>
         ${NUMBER_BUILDS.map(row => `
           <article class="chart-row">
             <span class="chart-cell num-value" data-label="${t('numbers.number')}">${row.n}</span>
@@ -72,11 +68,6 @@ function renderNounCounts() {
         <h3>${t('numbers.nouns')}</h3>
       </header>
       <div class="chart-table">
-        <div class="chart-table-head">
-          <span>${t('numbers.number')}</span>
-          <span>${t('numbers.pattern')}</span>
-          <span>${t('numbers.examples')}</span>
-        </div>
         ${NOUN_COUNTS.map(row => `
           <article class="chart-row">
             <span class="chart-cell num-value" data-label="${t('numbers.number')}">${row.n}</span>
@@ -98,12 +89,6 @@ function renderOrdinals() {
         <h3>${t('numbers.ordinals')}</h3>
       </header>
       <div class="chart-table">
-        <div class="chart-table-head">
-          <span>${t('numbers.number')}</span>
-          <span data-gender="m">${t('cases.gender.m')}</span>
-          <span data-gender="f">${t('cases.gender.f')}</span>
-          <span data-gender="n">${t('cases.gender.n')}</span>
-        </div>
         ${ORDINALS.map(row => `
           <article class="chart-row">
             <span class="chart-cell num-value" data-label="${t('numbers.number')}">${row.n}</span>

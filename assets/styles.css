@@ -459,8 +459,8 @@ section { position: relative; }
    .chart-group / .chart-group-head  titled block
    .chart-table / .chart-row /
    .chart-cell                       stacked table: one labelled fact
-                                     per line (.chart-table-head stays
-                                     hidden — data-labels carry the axis)
+                                     per line (no header row — per-cell
+                                     data-labels carry the axis)
    .chart-pairs / .chart-pair        label + form paradigm rows
    .chart-example                    Serbian sentence over its gloss
    .chart-sep                        connector glyph in a specimen run
@@ -513,9 +513,6 @@ section { position: relative; }
 
 .chart-table {
   display: grid;
-}
-.chart-table-head {
-  display: none;
 }
 .chart-row {
   display: grid;
@@ -974,8 +971,7 @@ section { position: relative; }
 
 /* Gender axis labels carry no hue — position + label carry the axis.
    Full ink sets them off from the muted apparatus labels around them. */
-.pron-mini-head [data-gender],
-.chart-table-head [data-gender] { color: var(--ink); }
+.pron-mini-head [data-gender] { color: var(--ink); }
 
 /* -----------------------------------------------------------
    Case strip — colour-coded sticky nav.
