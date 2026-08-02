@@ -39,7 +39,7 @@ function renderPersonal() {
         <span class="chart-label">${t(row.label)}</span>
         <span class="chart-form pron-subject" lang="sr">${SerbianFyi.sr(row.subject)}</span>
       </th>
-      ${columns.slice(1).map(([key, prop]) => `<td data-label="${t(key)}">${personalCell(row[prop])}</td>`).join('')}
+      ${columns.slice(1).map(([, prop]) => `<td>${personalCell(row[prop])}</td>`).join('')}
     </tr>
   `).join('');
 

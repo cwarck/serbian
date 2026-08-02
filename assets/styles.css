@@ -1765,47 +1765,43 @@ a.cast-cell:focus-visible {
    Pronouns
    ----------------------------------------------------------- */
 
+/* Person × case is truly 2D — a real table in a horizontal scroll pane
+   (the honest answer per the Layout rulebook). The person column sticks
+   so orientation survives the scroll; case headers carry their tones. */
+.pron-table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
 .pron-table {
   width: 100%;
+  min-width: 28rem;
   border-collapse: collapse;
 }
-.pron-table thead { display: none; }
-.pron-table tbody,
-.pron-table tr,
 .pron-table th,
 .pron-table td {
-  display: block;
-}
-.pron-table tr {
-  border-top: 1px solid var(--hairline-soft);
-  padding-block: .75rem;
-}
-.pron-table tr:first-child { border-top: 0; padding-top: 0; }
-.pron-table th {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 1rem;
-  padding-bottom: .55rem;
-  text-align: left;
-}
-.pron-table td {
-  display: grid;
-  grid-template-columns: minmax(5.75rem, .8fr) minmax(0, 1fr);
-  align-items: baseline;
-  gap: .8rem;
-  padding: .52rem 0;
+  padding: .6rem .9rem .6rem 0;
   border-top: 1px dashed var(--hairline-soft);
+  text-align: left;
+  vertical-align: baseline;
 }
-.pron-table td::before {
-  content: attr(data-label);
-  font-family: var(--ff-body);
-  font-size: var(--fs-label);
-  font-weight: 500;
-  letter-spacing: var(--track-label);
-  line-height: 1;
-  text-transform: uppercase;
-  color: var(--ink-faint);
+.pron-table thead th {
+  border-top: 0;
+  border-bottom: 1px solid var(--hairline);
+  padding-top: 0;
+  white-space: nowrap;
+}
+.pron-table tbody tr:first-child th,
+.pron-table tbody tr:first-child td { border-top: 0; }
+.pron-table th[scope="row"],
+.pron-table thead th:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  background: var(--paper);
+}
+.pron-table th[scope="row"] .chart-label {
+  display: block;
+  margin-bottom: .3rem;
 }
 .pron-subject,
 .pron-long,
