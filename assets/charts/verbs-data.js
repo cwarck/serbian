@@ -104,5 +104,8 @@ const FUTURE = {
   ],
   merged: ['raditi → radiću', 'radićeš', 'radiće'],
   exceptions: ['ići ću', 'doći ću'],
-  reflexive: ['Šetam se.', 'Ja se šetam.', 'Nisam se šetao.']
 };
+
+/* Clitic placement is not a tense fact — these examples are present and past,
+   so they get their own panel instead of riding inside FUTURE. */
+const CLITICS = ['Šetam se.', 'Ja se šetam.', 'Nisam se šetao.'];

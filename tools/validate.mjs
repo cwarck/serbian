@@ -15,7 +15,7 @@ const chartDataFiles = {
   'assets/charts/pitch-stress-data.js': ['PITCH_ACCENTS', 'PITCH_RULES', 'PITCH_PARADIGMS', 'PITCH_PRIORITY', 'PITCH_READING', 'PITCH_NOTES'],
   'assets/charts/prepositions-data.js': ['CASE_KEYS', 'PREP_GROUPS'],
   'assets/charts/pronouns-data.js': ['PERSONAL', 'POSSESSIVES', 'DEMOS', 'QUESTIONS'],
-  'assets/charts/verbs-data.js': ['PRONOUNS', 'VERB_GROUPS', 'IRREGULARS', 'PAST', 'FUTURE'],
+  'assets/charts/verbs-data.js': ['PRONOUNS', 'VERB_GROUPS', 'IRREGULARS', 'PAST', 'FUTURE', 'CLITICS'],
 };
 
 function rel(file) {
@@ -460,7 +460,8 @@ function validateSerbianContentScript() {
     tense.examples.forEach((example, exampleIndex) => validateSerbianLatin(example.sr, `verbs.tense[${tenseIndex}].examples[${exampleIndex}].sr`));
   });
   verbs.PAST.endings.forEach((row, rowIndex) => validateSerbianLatin(row.ending, `verbs.PAST.endings[${rowIndex}].ending`));
-  ['merged', 'exceptions', 'reflexive'].forEach(field => eachString(verbs.FUTURE[field], value => validateSerbianLatin(value, `verbs.FUTURE.${field}`)));
+  ['merged', 'exceptions'].forEach(field => eachString(verbs.FUTURE[field], value => validateSerbianLatin(value, `verbs.FUTURE.${field}`)));
+  eachString(verbs.CLITICS, value => validateSerbianLatin(value, 'verbs.CLITICS'));
 
   const aspect = data['assets/charts/aspect-data.js'];
   aspect.CONTRAST.forEach((row, rowIndex) => ['impEx', 'perfEx'].forEach(field => validateSerbianLatin(row[field].sr, `aspect.contrast[${rowIndex}].${field}.sr`)));
@@ -684,7 +685,7 @@ function validatePronouns() {
 }
 
 function validateVerbs() {
-  const { PRONOUNS, VERB_GROUPS, IRREGULARS, PAST, FUTURE } = data['assets/charts/verbs-data.js'];
+  const { PRONOUNS, VERB_GROUPS, IRREGULARS, PAST, FUTURE, CLITICS } = data['assets/charts/verbs-data.js'];
   expectArray(PRONOUNS, 'verbs', 'PRONOUNS');
   VERB_GROUPS.forEach((group, index) => {
     const scope = `verbGroups[${index}]`;
@@ -706,6 +707,7 @@ function validateVerbs() {
   expectArray(PAST.endings, 'verbs.PAST', 'endings');
   expectArray(FUTURE.formula, 'verbs.FUTURE', 'formula');
   expectArray(FUTURE.examples, 'verbs.FUTURE', 'examples');
+  expectArray(CLITICS, 'verbs', 'CLITICS');
 }
 
 function validateFalseFriends() {

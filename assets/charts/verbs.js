@@ -169,10 +169,20 @@ function renderFuture() {
         <h4 class="chart-label">${t('verbs.ici.exception')}</h4>
         <p class="verb-list" lang="sr">${FUTURE.exceptions.map(item => SerbianFyi.sr(item)).join(', ')}</p>
       </section>
-      <section class="verb-block verb-reflexive">
-        <h4 class="sr-head" lang="sr">${SerbianFyi.sr('se')}</h4>
+    </article>
+  `;
+}
+
+function renderClitics() {
+  return `
+    <article class="chart-panel verb-col" data-tone="clitic">
+      <header class="chart-panel-head">
+        <span class="chart-label">${t('verbs.clitics')}</span>
+        <h3 lang="sr">${SerbianFyi.sr('se')}</h3>
+      </header>
+      <section class="verb-block">
         <p class="verb-note">${SerbianFyi.srGrammarHTML(t('verbs.se.rule'))}</p>
-        <div class="verb-examples">${FUTURE.reflexive.map(sr => `<div class="chart-example verb-example"><span class="sr" lang="sr">${SerbianFyi.sr(sr)}</span></div>`).join('')}</div>
+        <div class="verb-examples">${CLITICS.map(sr => `<div class="chart-example verb-example"><span class="sr" lang="sr">${SerbianFyi.sr(sr)}</span></div>`).join('')}</div>
       </section>
     </article>
   `;
@@ -185,7 +195,8 @@ function renderVerbs() {
     ...VERB_GROUPS.map(renderRegularGroup),
     renderIrregulars(),
     renderPast(),
-    renderFuture()
+    renderFuture(),
+    renderClitics()
   ].join('');
 }
 
