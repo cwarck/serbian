@@ -53,14 +53,18 @@ function renderAccents() {
       <div class="chart-table">
         ${PITCH_ACCENTS.map(row => `
           <article class="chart-row pitch-accent-card" data-contour="${row.contour.en}">
-            <div class="chart-cell pitch-mark" data-label="${ui('mark')}">${row.mark}</div>
-            <div class="chart-cell" data-label="${ui('length')}">${pick(row.length)}</div>
-            <div class="chart-cell pitch-contour-cell" data-label="${ui('contour')}">
-              <span class="chart-label pitch-contour">${pick(row.contour)}</span>
-              ${noteButton(row.note)}
+            <div class="pitch-mark" lang="sr">${row.mark}</div>
+            <div class="pitch-accent-body">
+              <div class="pitch-accent-meta">
+                <span class="pitch-length">${pick(row.length)}</span>
+                <span class="chart-sep">·</span>
+                <span class="chart-label pitch-contour">${pick(row.contour)}</span>
+                <span class="chart-sep">·</span>
+                <span class="chart-label pitch-pattern">${row.pattern}</span>
+                ${noteButton(row.note)}
+              </div>
+              ${exampleListHTML(row.examples)}
             </div>
-            <div class="chart-cell chart-label pitch-pattern" data-label="${ui('pattern')}">${row.pattern}</div>
-            <div class="chart-cell" data-label="${ui('examples')}">${exampleListHTML(row.examples)}</div>
           </article>
         `).join('')}
       </div>

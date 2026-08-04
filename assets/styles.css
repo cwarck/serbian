@@ -2218,6 +2218,13 @@ a.cast-cell:focus-visible {
    Pitch & stress
    ----------------------------------------------------------- */
 
+/* Alphabet-style row: mark glyph in a fixed left cell, one inline meta
+   line (length · contour · pattern) over the examples on the right. */
+.pitch-accent-card {
+  grid-template-columns: minmax(2.6rem, auto) minmax(0, 1fr);
+  column-gap: 1.1rem;
+}
+
 .pitch-mark {
   font-family: var(--ff-display);
   font-size: var(--fs-head);
@@ -2226,15 +2233,24 @@ a.cast-cell:focus-visible {
   color: var(--accent);
 }
 
-.pitch-contour-cell {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: .5rem;
+.pitch-accent-body {
+  display: grid;
+  gap: .55rem;
+  min-width: 0;
 }
 
-.pitch-contour-cell::before {
-  width: 100%;
+.pitch-accent-meta {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: .4rem .55rem;
+}
+
+.pitch-length {
+  font-family: var(--ff-body);
+  font-size: var(--fs-caption);
+  line-height: 1;
+  color: var(--ink-muted);
 }
 
 .pitch-contour {
