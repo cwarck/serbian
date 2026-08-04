@@ -103,8 +103,6 @@ window.I18N = {
     'aspect.pairs': 'Common pairs',
     'aspect.imperfective': 'Imperfective',
     'aspect.perfective': 'Perfective',
-    'aspect.pattern': 'Pattern',
-    'aspect.signal': 'Signal',
     'aspect.note': 'note',
 
     /* Pitch & stress page */
@@ -341,8 +339,6 @@ window.I18N = {
     'aspect.pairs': 'Частые пары',
     'aspect.imperfective': 'Несовершенный',
     'aspect.perfective': 'Совершенный',
-    'aspect.pattern': 'Тип',
-    'aspect.signal': 'Сигнал',
     'aspect.note': 'заметка',
 
     /* Pitch & stress */

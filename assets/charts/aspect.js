@@ -74,9 +74,8 @@ function renderPatterns() {
         ${PATTERNS.map(row => `
           <article class="chart-row">
             <h4>${pick(row.pattern)}</h4>
-            <span class="chart-cell chart-form aspect-form" data-label="${ui('imperfective')}" lang="sr">${SerbianFyi.sr(row.imp)}</span>
-            <span class="chart-cell chart-form aspect-form" data-label="${ui('perfective')}" lang="sr">${SerbianFyi.sr(row.perf)}</span>
-            <p class="chart-cell" data-label="${ui('signal')}">${pick(row.signal)}</p>
+            <div class="chart-form aspect-form aspect-pair" lang="sr">${srPair(`${row.imp} -> ${row.perf}`)}</div>
+            <p>${pick(row.signal)}</p>
           </article>
         `).join('')}
       </div>
