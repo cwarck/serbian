@@ -153,13 +153,15 @@ const FALSE_FRIEND_GROUPS = [
     key: 'false.group.partial',
     rows: [
       {
+        partial: true,
         sr: 'vreme',
         means: 'время; погода',
         trap: 'время',
-        trapMeans: 'только время',
+        trapMeans: 'время, не погода',
         ex: { sr: 'Kakvo je vreme?', ru: 'Какая погода?' }
       },
       {
+        partial: true,
         sr: 'sto',
         means: 'стол; сто',
         trap: 'сто',
@@ -188,10 +190,11 @@ const FALSE_FRIEND_GROUPS = [
         ex: { sr: 'Moja struka je medicina.', ru: 'Моя специальность - медицина.' }
       },
       {
+        partial: true,
         sr: 'pravo',
         means: 'право; прямо (вперёд)',
         trap: 'право',
-        trapMeans: 'только право, закон',
+        trapMeans: 'право, закон, не «прямо»',
         ex: { sr: 'Idi pravo.', ru: 'Иди прямо.' }
       }
     ]

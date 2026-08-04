@@ -719,6 +719,7 @@ function validateFalseFriends() {
     group.rows.forEach((row, rowIndex) => {
       const rowScope = `${scope}.rows[${rowIndex}]`;
       ['sr', 'means', 'trap', 'trapMeans'].forEach(field => expectString(row[field], rowScope, field));
+      if ('partial' in row) expect(row.partial === true, rowScope, 'partial must be true when present');
       expectString(row.ex?.sr, rowScope, 'ex.sr');
       expectString(row.ex?.ru, rowScope, 'ex.ru');
     });

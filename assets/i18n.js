@@ -121,6 +121,7 @@ window.I18N = {
     'false.group.things': 'Objects & places',
     'false.group.partial': 'Partial overlaps',
     'false.trap.label': 'not',
+    'false.trap.partial': 'not only',
 
     /* Numbers page */
     'numbers.cardinals': 'Cardinal numbers',
@@ -350,6 +351,7 @@ window.I18N = {
     'false.group.things': 'Предметы и места',
     'false.group.partial': 'Частичные совпадения',
     'false.trap.label': 'не',
+    'false.trap.partial': 'не только',
 
     /* Numbers */
     'numbers.cardinals': 'Количественные числительные',
