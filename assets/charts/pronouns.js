@@ -13,6 +13,16 @@ function colHeader(key, tones) {
   }).join('<span class="pron-slash">/</span>');
 }
 
+/* who/what row-headers ARE the case axis, so they carry the case hues the
+   personal table's column headers already use. NOM stays unmarked (ink). */
+const KW_TONES = {
+  'case.1.name': ['nom'],
+  'case.4.name': ['aku'],
+  'case.2.name': ['gen'],
+  'pron.datloc': ['dat', 'lok'],
+  'case.6.name': ['ins'],
+};
+
 function personalCell(value) {
   if (value === '-') return '<span class="chart-form pron-dash">-</span>';
   const parts = value.split(',').map(part => part.trim());
@@ -135,7 +145,7 @@ function renderQuestions() {
         <div class="chart-label pron-kw-head" role="row"><span role="columnheader"></span><span role="columnheader">${t('pron.who')}</span><span role="columnheader">${t('pron.what')}</span></div>
         ${QUESTIONS.whoWhat.map(row => `
           <div class="chart-pair pron-kw-row" role="row">
-            <span class="chart-label" role="rowheader">${t(row.key)}</span>
+            <span class="chart-label" role="rowheader">${colHeader(row.key, KW_TONES[row.key] || [])}</span>
             <span class="chart-form" role="cell" lang="sr">${SerbianFyi.sr(row.who)}</span>
             <span class="chart-form" role="cell" lang="sr">${SerbianFyi.sr(row.what)}</span>
           </div>

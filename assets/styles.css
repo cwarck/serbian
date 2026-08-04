@@ -977,10 +977,12 @@ section { position: relative; }
 [data-tone="ins"] { --tone: var(--tone-blue); }
 [data-tone="lok"] { --tone: var(--tone-green); }
 
-/* Case-toned spans inside the personal-pronouns column header
-   (combined labels like "ACC/GEN", "DAT/LOC" tone each half by case). */
-.pron-table thead [data-tone] { color: var(--tone); }
-.pron-table thead .pron-slash { color: var(--ink-faint); margin: 0 .15em; }
+/* Case-toned spans inside the pronouns chart's case-axis headers — the
+   personal table's column heads and the who/what row heads (combined labels
+   like "ACC/GEN", "DAT/LOC" tone each half by case). */
+.pron-table thead [data-tone],
+.pron-kw-row [data-tone] { color: var(--tone); }
+.pron-slash { color: var(--ink-faint); margin: 0 .15em; }
 
 /* Gender axis labels carry no hue — position + label carry the axis.
    Full ink sets them off from the muted apparatus labels around them. */
