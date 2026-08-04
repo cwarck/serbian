@@ -75,7 +75,10 @@ function renderRegularGroup(group) {
         </ul>
       </section>
       <section class="verb-block verb-block-example">
-        <h4 class="sr-head" lang="sr">${SerbianFyi.sr(group.example.infinitive)}</h4>
+        <header class="verb-lemma-head">
+          <span class="chart-label">${t('verbs.example')}</span>
+          <h4 class="sr-head" lang="sr">${SerbianFyi.sr(group.example.infinitive)}</h4>
+        </header>
         <div class="chart-pairs verb-pair-grid">
           ${pronounRows(group.example.forms)}
         </div>
@@ -87,7 +90,7 @@ function renderRegularGroup(group) {
 function renderIrregulars() {
   const minis = IRREGULARS.map((item, idx) => `
     <section class="verb-mini">
-      <header class="verb-mini-head">
+      <header class="verb-lemma-head">
         <h4 class="sr-head" lang="sr">${SerbianFyi.sr(item.title)}</h4>
         ${item.full ? `<button class="tip-chip" type="button" aria-haspopup="dialog" aria-expanded="false" aria-label="${t('verbs.full.forms')}" data-verb-tip="${idx}">?</button>` : ''}
       </header>

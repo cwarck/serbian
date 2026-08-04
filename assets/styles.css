@@ -2049,12 +2049,15 @@ a.cast-cell:focus-visible {
   gap: .75rem;
 }
 .verb-mini:last-child { border-bottom: 0; padding-bottom: 0; }
-.verb-mini-head {
+/* One lemma-head treatment page-wide: an apparatus label (or a tip chip)
+   beside the lemma, the lemma itself in the panel's tone. Without the label the
+   example lemma read as a glossless item of the COMMON VERBS list above it. */
+.verb-lemma-head {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   gap: .55rem;
 }
-.verb-mini-head .sr-head {
+.verb-lemma-head .sr-head {
   color: var(--tone, var(--ink-soft));
 }
 .verb-negative {
