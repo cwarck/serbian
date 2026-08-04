@@ -233,6 +233,19 @@ body {
   overflow-wrap: break-word;
 }
 
+/* Translation glosses are NOT Serbian. body pins font-language-override:"SRB"
+   for Serbian italic alternates (п → ū-form, т → ш̄-form); an italic Russian
+   gloss inherits it and renders "Идём в театр." with Serbian letterforms. Reset
+   the override wherever a gloss carries the reader's language — harmless on EN
+   pages, where the same glosses are Latin-script. */
+.chart-example .tr,
+.letter .example .tr,
+.ex .tr,
+.wrinkle-list .gloss,
+.case-head-title h3 em {
+  font-language-override: normal;
+}
+
 ::selection { background: var(--accent); color: var(--paper); }
 
 a {
