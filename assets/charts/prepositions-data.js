@@ -111,6 +111,7 @@ const PREP_GROUPS = [
     key: 'prep.group.fixed',
     rows: [
       { prep: 's/sa', icon: 'with', uses: [{ case: 'ins', meaning: { en: 'with', ru: 'с, вместе' }, sr: 'Putujem sa sestrom.', tr: { en: 'I travel with my sister.', ru: 'Я путешествую с сестрой.' } }] },
+      { prep: 'uz', icon: 'with', uses: [{ case: 'aku', meaning: { en: 'alongside, along with', ru: 'вместе с, рядом с' }, sr: 'Pijem kafu uz kolač.', tr: { en: 'I drink coffee with cake.', ru: 'Я пью кофе с пирожным.' } }] },
       { prep: 'o', icon: 'about', uses: [{ case: 'lok', meaning: { en: 'about, on a topic', ru: 'о, про' }, sr: 'Pričamo o filmu.', tr: { en: 'We talk about the film.', ru: 'Мы говорим о фильме.' } }] },
       { prep: 'po', icon: 'around', uses: [{ case: 'lok', meaning: { en: 'around, by pattern', ru: 'по, вокруг' }, sr: 'Šetam po gradu.', tr: { en: 'I walk around town.', ru: 'Я гуляю по городу.' } }] },
       { prep: 'pri', icon: 'near', uses: [{ case: 'lok', meaning: { en: 'attached to, at', ru: 'при, у' }, sr: 'Radim pri školi.', tr: { en: 'I work at the school.', ru: 'Я работаю при школе.' } }] },
