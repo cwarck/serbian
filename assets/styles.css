@@ -2257,12 +2257,15 @@ a.cast-cell:focus-visible {
   column-gap: 1.1rem;
 }
 
+/* The mark glyph is this chart's core data, so it speaks in the specimen voice
+   like the examples beside it. Orange is brand chrome; on a grammatical
+   specimen it would read as UI. */
 .pitch-mark {
   font-family: var(--ff-display);
   font-size: var(--fs-head);
   font-weight: 300;
   line-height: 1;
-  color: var(--accent);
+  color: var(--ink);
 }
 
 .pitch-accent-body {
