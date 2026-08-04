@@ -112,7 +112,6 @@ window.I18N = {
     'pitch.priority': 'Learner priority',
     'pitch.reading': 'Reading order',
     'pitch.examples': 'Examples',
-    'pitch.fact': 'Fact',
     'pitch.note': 'note',
 
     /* False friends page */
@@ -344,7 +343,6 @@ window.I18N = {
     'pitch.priority': 'Приоритет',
     'pitch.reading': 'Порядок чтения',
     'pitch.examples': 'Примеры',
-    'pitch.fact': 'Факт',
     'pitch.note': 'заметка',
 
     /* False friends */

@@ -80,7 +80,7 @@ function renderRules() {
         ${PITCH_RULES.map(row => `
           <article class="chart-row">
             <h4>${pick(row.label)} ${noteButton(row.note)}</h4>
-            <p class="chart-cell" data-label="${ui('fact')}">${pick(row.fact)}</p>
+            <p>${pick(row.fact)}</p>
             <div class="chart-cell" data-label="${ui('examples')}">${srListHTML(row.examples)}</div>
           </article>
         `).join('')}
