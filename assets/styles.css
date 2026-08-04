@@ -1884,6 +1884,12 @@ a.cast-cell:focus-visible {
   border-bottom: 1px dashed var(--hairline-soft);
 }
 .pron-poss-card:last-child { border-bottom: 0; padding-bottom: 0; }
+/* Head and form row share ONE template. Possessive forms fill the panel in
+   three columns (the owner label sits on its own line above), so the M/N/F
+   head drops the demos' leading label column — with it, "svoje" landed under
+   M and F stood empty. The label column can't come back here: three 69px
+   specimens (njihova, njegovo) already exhaust the 247px panel at 320px. */
+.pron-poss-head,
 .pron-gender-row {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));

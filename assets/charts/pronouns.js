@@ -74,8 +74,8 @@ function renderPossessives() {
   if (!root) return;
   root.setAttribute('role', 'table');
   root.innerHTML = `
-    <div class="chart-label pron-mini-head" role="row">
-      <span role="presentation"></span><span role="columnheader" data-gender="m">${t('cases.gender.m')}</span><span role="columnheader" data-gender="n">${t('cases.gender.n')}</span><span role="columnheader" data-gender="f">${t('cases.gender.f')}</span>
+    <div class="chart-label pron-mini-head pron-poss-head" role="row">
+      <span role="columnheader" data-gender="m">${t('cases.gender.m')}</span><span role="columnheader" data-gender="n">${t('cases.gender.n')}</span><span role="columnheader" data-gender="f">${t('cases.gender.f')}</span>
     </div>
     ${POSSESSIVES.map((item, i) => `
       <article class="pron-poss-card" role="rowgroup">
