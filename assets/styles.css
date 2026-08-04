@@ -2374,20 +2374,10 @@ a.cast-cell:focus-visible {
    Prepositions
    ----------------------------------------------------------- */
 
+/* The lemma is a compact row header over its uses — one column, because each
+   use already spends a column on its own icon. */
 .prep-row {
-  grid-template-columns: 5rem minmax(0, 1fr);
-  gap: .85rem 1rem;
-}
-
-.prep-visual-pack {
-  display: flex;
-  align-items: center;
-  gap: .35rem;
-}
-
-.prep-visual-pack.is-split {
-  flex-direction: column;
-  align-items: flex-start;
+  gap: .5rem;
 }
 
 /* The dot is the case marker: its hue comes from the cell's own data-tone
@@ -2398,14 +2388,10 @@ a.cast-cell:focus-visible {
 }
 
 .prep-icon {
-  width: 5rem;
+  width: 4.4rem;
   height: auto;
   color: var(--ink-muted);
   overflow: visible;
-}
-
-.prep-visual-pack.is-split .prep-icon {
-  width: 4.1rem;
 }
 
 .prep-icon-object,
@@ -2441,7 +2427,6 @@ a.cast-cell:focus-visible {
    row tone, so colouring the name would read as a single phantom case. Case
    colour lives on the per-use icon dots and chips instead. */
 .prep-name {
-  align-self: center;
   font-family: var(--ff-display);
   font-size: var(--fs-head);
   font-weight: 400;
@@ -2450,21 +2435,33 @@ a.cast-cell:focus-visible {
 }
 
 .prep-uses {
-  grid-column: 1 / -1;
   display: grid;
-  gap: .75rem;
 }
 
+/* Shared by the chart row and the popover card: icon | chip + meaning +
+   example. The icon column is fixed so every use in a group aligns. */
 .prep-use {
   display: grid;
-  gap: .35rem;
-  padding-top: .75rem;
+  grid-template-columns: 4.4rem minmax(0, 1fr);
+  align-items: start;
+  column-gap: .9rem;
+  padding-top: .85rem;
   border-top: 1px dashed var(--hairline-soft);
 }
 
 .prep-use:first-child {
   padding-top: 0;
   border-top: 0;
+}
+
+.prep-use .prep-icon-cell {
+  padding-top: .1rem;
+}
+
+.prep-use-text {
+  display: grid;
+  gap: .35rem;
+  min-width: 0;
 }
 
 .prep-use-head {
@@ -2533,20 +2530,9 @@ a.cast-cell:focus-visible {
   line-height: 1;
   color: var(--ink);
 }
-.prep-card-uses { display: grid; gap: .9rem; }
-.prep-card-use {
-  display: grid;
-  grid-template-columns: 4.4rem minmax(0, 1fr);
-  align-items: start;
-  column-gap: .9rem;
-  padding-top: .9rem;
-  border-top: 1px dashed var(--hairline-soft);
-}
-.prep-card-use:first-child { padding-top: 0; border-top: 0; }
-/* The icon sits with the label row; bump it well past the chart's inline size. */
-.prep-card-use .prep-icon-cell { padding-top: .1rem; }
-.prep-card-use .prep-icon { width: 4.4rem; }
-.prep-card-use-text { display: grid; gap: .35rem; min-width: 0; }
+/* The card's uses ARE .prep-use rows — same grid as the chart, no second
+   per-use layout to keep in sync. */
+.prep-card-uses { display: grid; }
 
 /* -----------------------------------------------------------
    False friends

@@ -13,31 +13,26 @@ function caseChip(use) {
   return `<span class="chart-label prep-case">${PREP_CASE_ABBR[use.case] || t(CASE_KEYS[use.case])}</span>`;
 }
 
-function visualHTML(row) {
-  const split = row.uses.length > 1 ? ' is-split' : '';
-  return `
-    <div class="prep-visual-pack${split}">
-      ${row.uses.map(use => `
-        <span class="prep-icon-cell" data-tone="${use.case}">
-          ${prepIcon(use.icon || row.icon)}
-          <span class="sr-only">${t(CASE_KEYS[use.case])}</span>
-        </span>
-      `).join('')}
-    </div>
-  `;
-}
-
-function renderUse(use) {
+/* One row per use: its own icon beside its own chip, meaning and example — the
+   same grid the popover card uses. A dual-case preposition (pod, za…) no longer
+   detaches its icons from the uses they illustrate. */
+function renderUse(use, row) {
   const lang = currentLang();
   return `
     <div class="prep-use" data-tone="${use.case}">
-      <div class="prep-use-head">
-        ${caseChip(use)}
-        <span class="prep-meaning">${use.meaning[lang] || use.meaning.en}</span>
-      </div>
-      <div class="chart-example prep-example">
-        <span class="sr" lang="sr">${SerbianFyi.sr(use.sr)}</span>
-        <span class="tr">${use.tr[lang] || use.tr.en}</span>
+      <span class="prep-icon-cell">
+        ${prepIcon(use.icon || row.icon)}
+        <span class="sr-only">${t(CASE_KEYS[use.case])}</span>
+      </span>
+      <div class="prep-use-text">
+        <div class="prep-use-head">
+          ${caseChip(use)}
+          <span class="prep-meaning">${use.meaning[lang] || use.meaning.en}</span>
+        </div>
+        <div class="chart-example prep-example">
+          <span class="sr" lang="sr">${SerbianFyi.sr(use.sr)}</span>
+          <span class="tr">${use.tr[lang] || use.tr.en}</span>
+        </div>
       </div>
     </div>
   `;
@@ -52,9 +47,8 @@ function renderGroup(group) {
       <div class="chart-table">
         ${group.rows.map(row => `
           <article class="chart-row prep-row">
-            <div class="prep-visual">${visualHTML(row)}</div>
             <div class="prep-name" lang="sr">${SerbianFyi.sr(row.prep)}</div>
-            <div class="prep-uses">${row.uses.map(renderUse).join('')}</div>
+            <div class="prep-uses">${row.uses.map(use => renderUse(use, row)).join('')}</div>
           </article>
         `).join('')}
       </div>
