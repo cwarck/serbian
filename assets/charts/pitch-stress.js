@@ -120,7 +120,7 @@ function renderPriority() {
       <header class="chart-group-head"><h3>${ui('priority')}</h3></header>
       <div class="chart-tiles">
         ${PITCH_PRIORITY.map(row => `
-          <article class="chart-tile pitch-priority-row">
+          <article class="chart-tile pitch-advice-row">
             <span class="chart-label pitch-rank">${row.rank}</span>
             <h4 class="chart-label">${pick(row.label)} ${row.note ? noteButton(row.note) : ''}</h4>
             <p>${pick(row.fact)}</p>
@@ -135,10 +135,10 @@ function renderReading() {
   return `
     <section class="chart-group pitch-reading">
       <header class="chart-group-head"><h3>${ui('reading')}</h3></header>
-      <ol class="chart-tiles pitch-reading-list">
+      <ol class="chart-tiles pitch-advice-list">
         ${PITCH_READING.map(row => `
-          <li class="chart-pair">
-            <span class="chart-label">${row.step}</span>
+          <li class="chart-tile pitch-advice-row">
+            <span class="chart-label pitch-rank">${row.step}</span>
             <p>${pick(row.text)}</p>
           </li>
         `).join('')}

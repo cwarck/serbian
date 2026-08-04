@@ -2323,12 +2323,16 @@ a.cast-cell:focus-visible {
 
 .pitch-paradigm-head .chart-form { color: var(--ink); }
 
-.pitch-priority-row {
+/* One numbered-advice row, shared by Learner priority and Reading order: rank
+   badge in an auto column, text in the second. Reading order used to reuse
+   .chart-pair, whose 5.8rem paradigm-label column is sized for "NOM SG", not
+   for a single digit — half the row went to the number. */
+.pitch-advice-row {
   grid-template-columns: auto minmax(0, 1fr);
   align-items: baseline;
 }
 
-.pitch-priority-row h4 {
+.pitch-advice-row h4 {
   display: flex;
   align-items: center;
   gap: .55rem;
@@ -2336,16 +2340,12 @@ a.cast-cell:focus-visible {
   margin: 0;
 }
 
-.pitch-priority-row p,
-.pitch-reading-list p {
+.pitch-advice-row p {
   margin: 0;
+  grid-column: 2;
   font-size: var(--fs-body);
   line-height: var(--lh-prose);
   color: var(--ink-muted);
-}
-
-.pitch-priority-row p {
-  grid-column: 2;
 }
 
 .pitch-rank {
@@ -2359,15 +2359,10 @@ a.cast-cell:focus-visible {
   font-feature-settings: "tnum";
 }
 
-.pitch-reading-list {
+.pitch-advice-list {
   list-style: none;
   padding: 0;
   margin: 0;
-}
-
-.pitch-reading-list span {
-  color: var(--ink);
-  font-feature-settings: "tnum";
 }
 
 /* -----------------------------------------------------------
