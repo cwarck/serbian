@@ -2534,7 +2534,17 @@ a.cast-cell:focus-visible {
    False friends
    ----------------------------------------------------------- */
 
-.false-word .sr {
+/* Headword and its Russian meaning share one baseline row — the serif
+   specimen against the sans gloss carries the axis, so the entry needs no
+   per-cell labels. */
+.false-head {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: .25rem .7rem;
+}
+
+.false-word {
   font-family: var(--ff-display);
   font-size: var(--fs-head);
   font-weight: 400;
@@ -2570,6 +2580,9 @@ a.cast-cell:focus-visible {
    Its gloss (<small>) stays in the sans apparatus voice. */
 .false-trap > span:not(.false-not) {
   font-family: var(--ff-display);
+  font-size: var(--fs-lead);
+  line-height: var(--lh-snug);
+  color: var(--ink);
 }
 .false-trap small {
   flex-basis: 100%;

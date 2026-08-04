@@ -118,10 +118,6 @@ window.I18N = {
     'false.group.common': 'High-risk pairs',
     'false.group.things': 'Objects & places',
     'false.group.partial': 'Partial overlaps',
-    'false.col.sr': 'Serbian',
-    'false.col.means': 'Means in Russian',
-    'false.col.trap': 'Russian trap',
-    'false.col.example': 'Example',
     'false.trap.label': 'not',
 
     /* Numbers page */
@@ -349,10 +345,6 @@ window.I18N = {
     'false.group.common': 'Частые ловушки',
     'false.group.things': 'Предметы и места',
     'false.group.partial': 'Частичные совпадения',
-    'false.col.sr': 'Сербское',
-    'false.col.means': 'Значит по-русски',
-    'false.col.trap': 'Русская ловушка',
-    'false.col.example': 'Пример',
     'false.trap.label': 'не',
 
     /* Numbers */

@@ -6,16 +6,16 @@ function t(key) { return dict()[key] || key; }
 function renderFalseRow(row) {
   return `
     <article class="chart-row">
-      <div class="chart-cell false-word" data-label="${t('false.col.sr')}">
-        <span class="sr" lang="sr">${SerbianFyi.sr(row.sr)}</span>
+      <div class="false-head">
+        <span class="false-word" lang="sr">${SerbianFyi.sr(row.sr)}</span>
+        <span class="false-means">${row.means}</span>
       </div>
-      <div class="chart-cell false-means" data-label="${t('false.col.means')}">${row.means}</div>
-      <div class="chart-cell false-trap" data-label="${t('false.col.trap')}">
+      <div class="false-trap">
         <span class="chart-label false-not">${t('false.trap.label')}</span>
         <span>${row.trap}</span>
         <small>${row.trapMeans}</small>
       </div>
-      <div class="chart-example" data-label="${t('false.col.example')}">
+      <div class="chart-example">
         <span class="sr" lang="sr">${SerbianFyi.sr(row.ex.sr)}</span>
         <span class="tr">${row.ex.ru}</span>
       </div>
