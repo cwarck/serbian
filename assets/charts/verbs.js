@@ -37,11 +37,13 @@ function examplesHTML(examples) {
   `).join('');
 }
 
+/* Only the lang="sr" run is a specimen. The translated term ("past participle")
+   is apparatus and the "+" a connector, so both speak sans. */
 function formulaHTML(parts) {
   return parts.map(part => {
     if (part.sr) return `<span lang="sr">${SerbianFyi.sr(part.sr)}</span>`;
-    if (part.key) return t(part.key);
-    return part.text || '';
+    if (part.key) return `<span class="verb-term">${t(part.key)}</span>`;
+    return part.text ? `<span class="chart-sep">${part.text}</span>` : '';
   }).join(' ');
 }
 

@@ -2024,6 +2024,12 @@ a.cast-cell:focus-visible {
 .verb-formula {
   color: var(--tone, var(--ink-soft));
 }
+/* Apparatus inside the formula — the grammatical term naming what the Serbian
+   run combines with. Sans voice, caption size; the specimen keeps the serif. */
+.verb-formula .verb-term {
+  font-family: var(--ff-body);
+  font-size: var(--fs-caption);
+}
 
 .verb-mini-list {
   display: grid;
