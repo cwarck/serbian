@@ -2206,9 +2206,11 @@ a.cast-cell:focus-visible {
   border-top: 1px dashed var(--hairline-soft);
 }
 
+/* The verb pair IS the section's data — full ink, like every other specimen.
+   Aspect carries no categorical hue, so there is no tone to pull through. */
 .aspect-form,
 .aspect-prefix-head h4 {
-  color: var(--tone, var(--ink-soft));
+  color: var(--ink);
 }
 
 .aspect-prefix {
