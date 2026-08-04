@@ -122,11 +122,11 @@ function renderPrepCard(token) {
   const lang = document.documentElement.getAttribute('lang') || 'en';
   const tCase = (k) => ((window.I18N && I18N[lang] && I18N[lang][k]) || k);
   const uses = entity.uses.map((use) => `
-    <div class="prep-card-use" data-tone="${use.case}" data-case="${use.case}">
+    <div class="prep-card-use" data-tone="${use.case}">
       <span class="prep-icon-cell">${prepIcon(use.icon)}</span>
       <div class="prep-card-use-text">
         <div class="prep-use-head">
-          <span class="chart-label prep-case" data-case="${use.case}">${(window.PREP_CASE_ABBR && PREP_CASE_ABBR[use.case]) || tCase(CASE_KEYS[use.case])}</span>
+          <span class="chart-label prep-case">${(window.PREP_CASE_ABBR && PREP_CASE_ABBR[use.case]) || tCase(CASE_KEYS[use.case])}</span>
           <span class="prep-meaning">${use.meaning[lang] || use.meaning.en}</span>
         </div>
         <div class="chart-example prep-example">

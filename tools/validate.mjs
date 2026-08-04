@@ -309,21 +309,20 @@ function validateTones() {
     expect(color !== 'var(--tone-orange)', 'tones', `${tone} claims brand orange`);
   }
 
-  // Parallel case maps (e.g. prepositions data-case) must agree with the canonical tones
-  for (const match of css.matchAll(/\[data-case="([^"]+)"\]\s*\{\s*--[\w-]+:\s*([^;]+);/g)) {
-    const [, caseKey, value] = match;
-    expect(expected[caseKey] === value.trim(), 'tones', `data-case ${caseKey} must map to ${expected[caseKey]}`);
-  }
+  // [data-tone] is the single case→hue map. A parallel map under any other
+  // attribute (the old prepositions data-case) forces dual-attribute emission
+  // and drifts from the canonical scale — ban it outright.
+  expect(!/\[data-case="/.test(css), 'tones', 'case hues must route through data-tone, not a parallel data-case map');
 
   expect(!css.includes('--gender-'), 'tones', 'genders carry no hue — ink typography only');
   expect(!/\[data-gender="[mnf]"\][^{]*\{[^}]*color:/.test(css), 'tones', 'gender labels must not be colored per-gender');
 
-  // Case hues may only be spent through the data-tone / data-case maps — any
-  // other selector using one is a chart-internal category wearing grammar
+  // Case hues may only be spent through the data-tone map — any other selector
+  // using one is a chart-internal category wearing grammar
   const caseHue = /var\(--tone-(red|yellow|green|cyan|blue|purple|magenta)\)/;
   for (const line of css.split('\n')) {
     if (!caseHue.test(line)) continue;
-    expect(/\[data-(tone|case)=/.test(line), 'tones', `case hue outside data-tone/data-case maps: ${line.trim()}`);
+    expect(/\[data-tone=/.test(line), 'tones', `case hue outside the data-tone map: ${line.trim()}`);
   }
   expect(/\[data-tone="im"\][\s\S]*\[data-tone="irr"\]\s*\{\s*--tone:\s*var\(--tone-orange\);/.test(css), 'tones', 'present verb family must share orange');
 }

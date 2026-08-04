@@ -2375,16 +2375,12 @@ a.cast-cell:focus-visible {
   align-items: flex-start;
 }
 
+/* The dot is the case marker: its hue comes from the cell's own data-tone
+   (chart) or the card use it sits in — never a second case→hue map. */
 .prep-icon-cell {
   display: block;
   --prep-dot: var(--tone, var(--ink-soft));
 }
-
-.prep-icon-cell[data-case="gen"] { --prep-dot: var(--tone-cyan); }
-.prep-icon-cell[data-case="dat"] { --prep-dot: var(--tone-yellow); }
-.prep-icon-cell[data-case="aku"] { --prep-dot: var(--tone-purple); }
-.prep-icon-cell[data-case="ins"] { --prep-dot: var(--tone-blue); }
-.prep-icon-cell[data-case="lok"] { --prep-dot: var(--tone-green); }
 
 .prep-icon {
   width: 5rem;
@@ -2466,16 +2462,10 @@ a.cast-cell:focus-visible {
 .prep-case {
   display: inline-flex;
   align-items: center;
-  color: var(--case-tone, var(--tone, var(--ink-soft)));
-  background: color-mix(in oklab, var(--case-tone, var(--tone, var(--ink-soft))) 12%, transparent);
+  color: var(--tone, var(--ink-soft));
+  background: color-mix(in oklab, var(--tone, var(--ink-soft)) 12%, transparent);
   padding: .36rem .52rem .34rem;
 }
-
-.prep-case[data-case="gen"] { --case-tone: var(--tone-cyan); }
-.prep-case[data-case="dat"] { --case-tone: var(--tone-yellow); }
-.prep-case[data-case="aku"] { --case-tone: var(--tone-purple); }
-.prep-case[data-case="ins"] { --case-tone: var(--tone-blue); }
-.prep-case[data-case="lok"] { --case-tone: var(--tone-green); }
 
 .prep-meaning {
   font-family: var(--ff-body);

@@ -7,8 +7,10 @@ function currentLang() { return document.documentElement.getAttribute('lang') ||
 /* prepIcon() lives in prepositions-shared.js (loaded first) so the card can
    reuse the same glyph vocabulary without pulling in this renderer. */
 
+/* The chip inherits --tone from its use (or card use) — the shared
+   [data-tone] map is the only case→hue source. */
 function caseChip(use) {
-  return `<span class="chart-label prep-case" data-case="${use.case}">${PREP_CASE_ABBR[use.case] || t(CASE_KEYS[use.case])}</span>`;
+  return `<span class="chart-label prep-case">${PREP_CASE_ABBR[use.case] || t(CASE_KEYS[use.case])}</span>`;
 }
 
 function visualHTML(row) {
@@ -16,7 +18,7 @@ function visualHTML(row) {
   return `
     <div class="prep-visual-pack${split}">
       ${row.uses.map(use => `
-        <span class="prep-icon-cell" data-case="${use.case}">
+        <span class="prep-icon-cell" data-tone="${use.case}">
           ${prepIcon(use.icon || row.icon)}
           <span class="sr-only">${t(CASE_KEYS[use.case])}</span>
         </span>
@@ -28,7 +30,7 @@ function visualHTML(row) {
 function renderUse(use) {
   const lang = currentLang();
   return `
-    <div class="prep-use" data-case="${use.case}">
+    <div class="prep-use" data-tone="${use.case}">
       <div class="prep-use-head">
         ${caseChip(use)}
         <span class="prep-meaning">${use.meaning[lang] || use.meaning.en}</span>
