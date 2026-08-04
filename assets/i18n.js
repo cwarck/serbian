@@ -105,7 +105,6 @@ window.I18N = {
     'aspect.perfective': 'Perfective',
     'aspect.pattern': 'Pattern',
     'aspect.signal': 'Signal',
-    'aspect.example': 'Example',
     'aspect.note': 'note',
 
     /* Pitch & stress page */
@@ -344,7 +343,6 @@ window.I18N = {
     'aspect.perfective': 'Совершенный',
     'aspect.pattern': 'Тип',
     'aspect.signal': 'Сигнал',
-    'aspect.example': 'Пример',
     'aspect.note': 'заметка',
 
     /* Pitch & stress */

@@ -118,9 +118,8 @@ function renderPairs() {
         ${COMMON_PAIRS.map(row => `
           <article class="chart-row">
             <h4>${SerbianFyi.glossary.gloss(row.imp, lang())}</h4>
-            <span class="chart-cell chart-form aspect-form" data-label="${ui('imperfective')}" lang="sr">${SerbianFyi.sr(row.imp)}</span>
-            <span class="chart-cell chart-form aspect-form" data-label="${ui('perfective')}" lang="sr">${SerbianFyi.sr(row.perf)}</span>
-            <div class="chart-cell" data-label="${ui('example')}">${exampleHTML(row.ex)}</div>
+            <div class="chart-form aspect-form aspect-pair" lang="sr">${srPair(`${row.imp} -> ${row.perf}`)}</div>
+            ${exampleHTML(row.ex)}
           </article>
         `).join('')}
       </div>
