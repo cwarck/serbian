@@ -29,7 +29,7 @@ function exampleGloss(ex) {
   return ex.tr ? pick(ex.tr) : SerbianFyi.glossary.gloss(stripPitch(ex.sr), lang());
 }
 function noteButton(id) {
-  return `<button class="tip-chip pitch-note-btn" type="button" aria-haspopup="dialog" aria-expanded="false" aria-label="${ui('note')}" data-pitch-note="${id}">?</button>`;
+  return `<button class="tip-chip" type="button" aria-haspopup="dialog" aria-expanded="false" aria-label="${ui('note')}" data-pitch-note="${id}">?</button>`;
 }
 function exampleHTML(ex) {
   return `

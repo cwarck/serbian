@@ -1,15 +1,15 @@
 const PERSONAL = [
-  { band:'sg', label:'pron.1sg', subject:'ja', object:'mene, me', datloc:'meni, mi', inst:'mnom' },
-  { band:'sg', label:'pron.2sg', subject:'ti', object:'tebe, te', datloc:'tebi, ti', inst:'tobom' },
-  { band:'sg', label:'pron.3msg', subject:'on', object:'njega, ga', datloc:'njemu, mu', inst:'njim' },
-  { band:'sg', label:'pron.3nsg', subject:'ono', object:'njega, ga', datloc:'njemu, mu', inst:'njim' },
-  { band:'sg', label:'pron.3fsg', subject:'ona', object:'nju / nje, je / ju', datloc:'njoj, joj', inst:'njom' },
-  { band:'pl', label:'pron.1pl', subject:'mi', object:'nas', datloc:'nama, nam', inst:'nama' },
-  { band:'pl', label:'pron.2pl', subject:'vi', object:'vas', datloc:'vama, vam', inst:'vama' },
-  { band:'pl', label:'pron.3mpl', subject:'oni', object:'njih, ih', datloc:'njima, im', inst:'njima' },
-  { band:'pl', label:'pron.3npl', subject:'ona', object:'njih, ih', datloc:'njima, im', inst:'njima' },
-  { band:'pl', label:'pron.3fpl', subject:'one', object:'njih, ih', datloc:'njima, im', inst:'njima' },
-  { band:'self', label:'pron.self', subject:'-', object:'sebe, se', datloc:'sebi, si', inst:'sobom' },
+  { label:'pron.1sg', subject:'ja', object:'mene, me', datloc:'meni, mi', inst:'mnom' },
+  { label:'pron.2sg', subject:'ti', object:'tebe, te', datloc:'tebi, ti', inst:'tobom' },
+  { label:'pron.3msg', subject:'on', object:'njega, ga', datloc:'njemu, mu', inst:'njim' },
+  { label:'pron.3nsg', subject:'ono', object:'njega, ga', datloc:'njemu, mu', inst:'njim' },
+  { label:'pron.3fsg', subject:'ona', object:'nju / nje, je / ju', datloc:'njoj, joj', inst:'njom' },
+  { label:'pron.1pl', subject:'mi', object:'nas', datloc:'nama, nam', inst:'nama' },
+  { label:'pron.2pl', subject:'vi', object:'vas', datloc:'vama, vam', inst:'vama' },
+  { label:'pron.3mpl', subject:'oni', object:'njih, ih', datloc:'njima, im', inst:'njima' },
+  { label:'pron.3npl', subject:'ona', object:'njih, ih', datloc:'njima, im', inst:'njima' },
+  { label:'pron.3fpl', subject:'one', object:'njih, ih', datloc:'njima, im', inst:'njima' },
+  { label:'pron.self', subject:'-', object:'sebe, se', datloc:'sebi, si', inst:'sobom' },
 ];
 
 const POSSESSIVES = [

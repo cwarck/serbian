@@ -1840,6 +1840,10 @@ a.cast-cell:focus-visible {
   gap: .2rem .45rem;
 }
 
+/* An ARIA table wrapper that must not become a layout box — the head and its
+   rowgroup are laid out by the section's own grid. */
+.pron-subtable { display: contents; }
+
 .pron-rule-row {
   display: grid;
   gap: .65rem;
@@ -2538,10 +2542,6 @@ a.cast-cell:focus-visible {
 .prep-card-use .prep-icon-cell { padding-top: .1rem; }
 .prep-card-use .prep-icon { width: 4.4rem; }
 .prep-card-use-text { display: grid; gap: .35rem; min-width: 0; }
-/* Neutralise the chart's ≥920px wide-layout bleed (border-right + cell padding
-   on .prep-use-head/.prep-example) — the card reuses those classes. */
-.prep-card-use .prep-use-head,
-.prep-card-use .prep-example { padding: 0; border: 0; }
 
 /* -----------------------------------------------------------
    False friends

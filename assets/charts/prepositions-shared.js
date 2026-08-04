@@ -59,8 +59,8 @@ function prepIcon(kind) {
    ('s/sa' → 's', 'k/ka' → 'k'); every variant maps back to it. Repeated rows
    (za appears in position + time, s/sa in source + fixed) merge their uses
    under one entity. The row-level icon fallback is baked into each use so the
-   card needs no row context. Tone is NOT merged — the card colours each use by
-   its own case (gen/dat/aku/ins/lok map 1:1 to the tone scale). */
+   card needs no row context. There is no row-level tone: colour lives on each
+   use's own case (gen/dat/aku/ins/lok map 1:1 to the tone scale). */
 /* Canonical key: lowercase + strip diacritics, so 'među' and 'medju' (and the
    same word in either script after romanisation) collapse to one key. The
    index keys, alias keys, and normalizePrep() MUST all use this — otherwise a

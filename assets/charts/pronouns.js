@@ -34,7 +34,7 @@ function renderPersonal() {
     ['case.6.name', 'inst', ['ins']],
   ];
   const rows = PERSONAL.map(row => `
-    <tr data-band="${row.band}">
+    <tr>
       <th scope="row">
         <span class="chart-label">${t(row.label)}</span>
         <span class="chart-form pron-subject" lang="sr">${SerbianFyi.sr(row.subject)}</span>
@@ -91,7 +91,7 @@ function renderDemonstratives() {
   root.innerHTML = DEMOS.map(group => `
     <section class="pron-demo-group">
       <h4 class="chart-label">${t(group.title)}</h4>
-      <div role="table" style="display:contents">
+      <div class="pron-subtable" role="table">
         ${genderHead()}
         <div class="chart-pairs" role="rowgroup">
           ${group.rows.map(row => `
@@ -117,7 +117,7 @@ function renderQuestions() {
   root.innerHTML = `
     <section class="pron-question-block">
       <h4 class="chart-label">${t('pron.whose')}</h4>
-      <div role="table" style="display:contents">
+      <div class="pron-subtable" role="table">
         ${genderHead()}
         <div class="chart-pairs" role="rowgroup">
           ${QUESTIONS.whose.map(row => `

@@ -23,7 +23,7 @@ function exampleHTML(ex) {
   `;
 }
 function noteButton(idx) {
-  return `<button class="tip-chip aspect-note-btn" type="button" aria-haspopup="dialog" aria-expanded="false" aria-label="${ui('note')}" data-aspect-note="${idx}">?</button>`;
+  return `<button class="tip-chip" type="button" aria-haspopup="dialog" aria-expanded="false" aria-label="${ui('note')}" data-aspect-note="${idx}">?</button>`;
 }
 
 function renderContrast() {
@@ -34,11 +34,11 @@ function renderContrast() {
         ${CONTRAST.map(row => `
           <article class="chart-row">
             <h4>${pick(row.key)}</h4>
-            <div class="chart-cell aspect-side" data-aspect="imp" data-label="${ui('imperfective')}">
+            <div class="chart-cell aspect-side" data-label="${ui('imperfective')}">
               <p>${pick(row.imp)}</p>
               ${exampleHTML(row.impEx)}
             </div>
-            <div class="chart-cell aspect-side" data-aspect="perf" data-label="${ui('perfective')}">
+            <div class="chart-cell aspect-side" data-label="${ui('perfective')}">
               <p>${pick(row.perf)}</p>
               ${exampleHTML(row.perfEx)}
             </div>
@@ -89,7 +89,7 @@ function renderPrefixes() {
     const idx = row.note ? noteIdx++ : null;
     if (row.note) row.note._idx = idx;
     return `
-      <article class="chart-tile aspect-prefix" data-tone="${row.tone}">
+      <article class="chart-tile aspect-prefix">
         <header class="aspect-prefix-head">
           <h4 class="chart-form" lang="sr">${SerbianFyi.sr(row.prefix)}</h4>
           ${row.note ? noteButton(idx) : ''}

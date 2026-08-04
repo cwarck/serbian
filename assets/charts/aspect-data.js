@@ -70,7 +70,6 @@ const PATTERNS = [
 const PREFIXES = [
   {
     prefix: 'na-',
-    tone: 'na',
     feel: { en: 'completion, enough', ru: 'завершение, достаточно' },
     pairs: ['pisati -> napisati', 'učiti -> naučiti', 'jesti -> najesti se'],
     note: {
@@ -80,7 +79,6 @@ const PREFIXES = [
   },
   {
     prefix: 'po-',
-    tone: 'po',
     feel: { en: 'short action, once, start', ru: 'немного, один раз, начало' },
     pairs: ['gledati -> pogledati', 'čekati -> počekati', 'pričati -> popričati'],
     note: {
@@ -90,19 +88,16 @@ const PREFIXES = [
   },
   {
     prefix: 'u-',
-    tone: 'u',
     feel: { en: 'into, successful result', ru: 'внутрь, успешный результат' },
     pairs: ['raditi -> uraditi', 'ići -> ući', 'upoznavati -> upoznati']
   },
   {
     prefix: 'iz-',
-    tone: 'iz',
     feel: { en: 'out, fully through', ru: 'из, полностью' },
     pairs: ['vaditi -> izvaditi', 'birati -> izabrati', 'graditi -> izgraditi']
   },
   {
     prefix: 'do-',
-    tone: 'do',
     feel: { en: 'reach, add up to', ru: 'дойти, добавить до точки' },
     pairs: ['dolaziti -> doći', 'nositi -> doneti', 'pisati -> dopisati'],
     note: {
@@ -112,7 +107,6 @@ const PREFIXES = [
   },
   {
     prefix: 'pro-',
-    tone: 'pro',
     feel: { en: 'through, for a span', ru: 'через, за промежуток' },
     pairs: ['čitati -> pročitati', 'živeti -> proživeti', 'ići -> proći']
   }

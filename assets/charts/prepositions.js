@@ -49,7 +49,7 @@ function renderGroup(group) {
       </header>
       <div class="chart-table">
         ${group.rows.map(row => `
-          <article class="chart-row prep-row" data-tone="${row.tone}">
+          <article class="chart-row prep-row">
             <div class="prep-visual">${visualHTML(row)}</div>
             <div class="prep-name" lang="sr">${SerbianFyi.sr(row.prep)}</div>
             <div class="prep-uses">${row.uses.map(renderUse).join('')}</div>

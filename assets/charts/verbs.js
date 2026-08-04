@@ -94,7 +94,7 @@ function renderIrregulars() {
       </div>
       ${item.negative.length ? `
         <div class="verb-negative">
-          <span class="chart-label verb-sub">${t('verbs.negative')}</span>
+          <span class="chart-label">${t('verbs.negative')}</span>
           <p lang="sr">${item.negative.map(form => SerbianFyi.sr(form)).join(', ')}</p>
         </div>` : ''}
     </section>

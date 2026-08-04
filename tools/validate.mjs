@@ -585,7 +585,6 @@ function validatePrepositions() {
       const rowScope = `${scope}.rows[${rowIndex}]`;
       expectString(row.prep, rowScope, 'prep');
       expectString(row.icon, rowScope, 'icon');
-      expectString(row.tone, rowScope, 'tone');
       expectArray(row.uses, rowScope, 'uses');
       row.uses.forEach((use, useIndex) => {
         const useScope = `${rowScope}.uses[${useIndex}]`;
@@ -626,7 +625,7 @@ function validateAspect() {
   });
   PREFIXES.forEach((row, index) => {
     const scope = `aspect.prefixes[${index}]`;
-    ['prefix', 'tone'].forEach(field => expectString(row[field], scope, field));
+    expectString(row.prefix, scope, 'prefix');
     expectLocalized(row.feel, scope, 'feel');
     expectArray(row.pairs, scope, 'pairs');
     if (row.note) {
@@ -669,7 +668,7 @@ function validatePronouns() {
   const { PERSONAL, POSSESSIVES, DEMOS, QUESTIONS } = data['assets/charts/pronouns-data.js'];
   PERSONAL.forEach((row, index) => {
     const scope = `pronouns.personal[${index}]`;
-    ['band', 'label', 'subject', 'object', 'datloc', 'inst'].forEach(field => expectString(row[field], scope, field));
+    ['label', 'subject', 'object', 'datloc', 'inst'].forEach(field => expectString(row[field], scope, field));
   });
   POSSESSIVES.forEach((row, index) => {
     const scope = `pronouns.possessives[${index}]`;
