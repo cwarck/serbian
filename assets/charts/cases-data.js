@@ -31,7 +31,7 @@ const CASES = [
       }
     },
     examples: [
-      { sr:'<mark>Dobar pilot</mark> proverava instrumente.', en:'A good <i>pilot</i> checks the instruments.', ru:'Хороший пилот проверяет приборы.' },
+      { sr:'<mark>Dobar pilot</mark> proverava instrumente.', en:'A good pilot checks the instruments.', ru:'Хороший пилот проверяет приборы.' },
       { sr:'<mark>Žena</mark> peva.',                   en:'The woman sings.',               ru:'Женщина поёт.' },
       { sr:'<mark>Selo</mark> je tiho.',                en:'The village is quiet.',          ru:'Деревня тихая.' },
     ],
@@ -47,7 +47,7 @@ const CASES = [
     },
     notes: {},
     examples: [
-      { sr:'Kaciga <mark>pilota</mark>.',        en:'The <i>pilot</i>\'s helmet.',         ru:'Шлем пилота.' },
+      { sr:'Kaciga <mark>pilota</mark>.',        en:'The pilot\'s helmet.',         ru:'Шлем пилота.' },
       { sr:'Stižem iz <mark>grada</mark>.',       en:'I\'m arriving from the city.', ru:'Я приезжаю из города.' },
       { sr:'Nemam <mark>vremena</mark>.',         en:'I have no time.',              ru:'У меня нет времени.' },
     ],
@@ -71,7 +71,7 @@ const CASES = [
       }
     },
     examples: [
-      { sr:'Pokazujem kartu <mark>pilotu</mark>.', en:'I show the map to the <i>pilot</i>.',      ru:'Я показываю карту пилоту.' },
+      { sr:'Pokazujem kartu <mark>pilotu</mark>.', en:'I show the map to the pilot.',      ru:'Я показываю карту пилоту.' },
       { sr:'Idem k <mark>moru</mark>.',             en:'I\'m going to the sea.',            ru:'Я еду к морю.' },
       { sr:'Pomažem <mark>prijateljici</mark>.',    en:'I\'m helping a friend (f.).',       ru:'Я помогаю подруге.' },
     ],
@@ -101,7 +101,7 @@ const CASES = [
       }
     },
     examples: [
-      { sr:'Vidim <mark>pilota</mark>.',    en:'I see the <i>pilot</i>. <em>(living → <i>-a</i>, like Gen)</em>',     ru:'Я вижу пилота. <em>(одуш. → <i>-a</i>, как Род.)</em>' },
+      { sr:'Vidim <mark>pilota</mark>.',    en:'I see the pilot. <em>(living → <i>-a</i>, like Gen)</em>',     ru:'Я вижу пилота. <em>(одуш. → <i>-a</i>, как Род.)</em>' },
       { sr:'Vidim <mark>grad</mark>.',       en:'I see the city. <em>(non-living → <i>-∅</i>, like Nom)</em>', ru:'Я вижу город. <em>(неодуш. → <i>-∅</i>, как Им.)</em>' },
       { sr:'Idem u <mark>grad</mark>.',      en:'I\'m going to the city. <em>(motion: <i>u</i> + Acc)</em>',  ru:'Я еду в город. <em>(движение: <i>u</i> + Acc)</em>' },
     ],
@@ -138,7 +138,7 @@ const CASES = [
       }
     },
     examples: [
-      { sr:'<mark>Pilote</mark>, dobar dan!',    en:'<i>Pilot</i>, hello!',             ru:'Пилот, добрый день!' },
+      { sr:'<mark>Pilote</mark>, dobar dan!',    en:'Pilot, hello!',             ru:'Пилот, добрый день!' },
       { sr:'<mark>Marija</mark>, gde si?',         en:'<i>Marija</i>, where are you?',    ru:'Мария, ты где?' },
       { sr:'O, <mark>prijatelju</mark>!',         en:'Oh, my friend!',            ru:'О, друг мой!' },
     ],
@@ -163,7 +163,7 @@ const CASES = [
     },
     examples: [
       { sr:'Putujem <mark>autobusom</mark>.',  en:'I\'m traveling by bus.',     ru:'Я еду на автобусе.' },
-      { sr:'Letim sa <mark>pilotom</mark>.',    en:'I\'m flying with the <i>pilot</i>.', ru:'Я лечу с пилотом.' },
+      { sr:'Letim sa <mark>pilotom</mark>.',    en:'I\'m flying with the pilot.', ru:'Я лечу с пилотом.' },
       { sr:'<mark>Ponedeljkom</mark> radim.',  en:'On Mondays I work. <em>(recurring time)</em>', ru:'По понедельникам я работаю. <em>(регулярное время)</em>' },
     ],
     preps: ['s/sa','pod','pred','nad','među','za']
@@ -187,7 +187,7 @@ const CASES = [
     },
     examples: [
       { sr:'Knjiga je na <mark>stolu</mark>.',      en:'The book is on the table. <em>(location)</em>',         ru:'Книга на столе. <em>(где)</em>' },
-      { sr:'Govorim o <mark>pilotu</mark>.',        en:'I\'m speaking about the <i>pilot</i>. <em>(topic)</em>',       ru:'Я говорю о пилоте. <em>(о чём)</em>' },
+      { sr:'Govorim o <mark>pilotu</mark>.',        en:'I\'m speaking about the pilot. <em>(topic)</em>',       ru:'Я говорю о пилоте. <em>(о чём)</em>' },
       { sr:'Živim u <mark>Beogradu</mark>.',         en:'I live in Belgrade. <em>(location: <i>u</i> + Loc, no motion)</em>', ru:'Я живу в Белграде. <em>(где: <i>u</i> + Loc, без движения)</em>' },
     ],
     preps: ['u','na','o','po','pri']
