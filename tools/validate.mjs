@@ -493,6 +493,122 @@ function validateSerbianContentScript() {
   });
 }
 
+/* <i> is the script-converter hook (srGrammarHTML in assets/app.js): whatever it
+   wraps flips Latin↔Cyrillic, everything around it stays in its own language.
+   Wrap a translation's OWN word in it and that word transliterates — an English
+   gloss sprouts a Russian-looking token ("to the pilot" → "to the пилот").
+   So an <i> payload must be Serbian, and provably so:
+
+     paired with an sr specimen  → the payload must be a word that specimen
+                                   actually contains, and must not be spelled
+                                   identically to its own gloss in that language
+                                   (a Serbian/English homograph like "pilot"
+                                   gains nothing from the marker and can only
+                                   mis-flip)
+     standalone prose            → the payload must be an attested lemma in
+                                   data/glossary.js
+
+   Abstract shapes (-a, -ov-, -∅, ...) and bare letters (k, g, h) name patterns
+   rather than words and are exempt. Runtime-interpolated payloads are already
+   converted by SerbianFyi.sr() at render time, so they're skipped. */
+
+const I_MARKER = /<i\b[^>]*>([\s\S]*?)<\/i>/g;
+
+function markerPayloads(html) {
+  return [...String(html).matchAll(I_MARKER)].map(match => match[1].trim()).filter(Boolean);
+}
+
+function isAbstractShape(token) {
+  return token.startsWith('-') || token.endsWith('-') || token === '∅' || /^[.…]+$/.test(token);
+}
+
+/* ALPHABET stores each letter as an upper/lower pair ("A a", "Dž dž"). */
+const alphabetLetters = new Set(
+  data['assets/charts/alphabet-data.js'].ALPHABET
+    .flatMap(row => [...row.lat.split(/\s+/), ...row.cyr.split(/\s+/)])
+    .map(letter => letter.toLowerCase())
+    .filter(Boolean)
+);
+
+function isLetterList(token) {
+  const pieces = token.split(',').map(piece => piece.trim()).filter(Boolean);
+  return pieces.length > 0 && pieces.every(piece => alphabetLetters.has(piece.toLowerCase()));
+}
+
+function fold(text) {
+  return scriptConverter
+    .stripDiacritics(String(text).normalize('NFD').replace(/\p{M}+/gu, ''))
+    .toLowerCase();
+}
+
+function specimenWords(html) {
+  return new Set(fold(String(html).replace(/<[^>]+>/g, ' ')).split(/[^\p{L}]+/u).filter(Boolean));
+}
+
+function markerLang(key) {
+  if (/^en$|En$/.test(key)) return 'en';
+  if (/^ru$|Ru$/.test(key)) return 'ru';
+  return null;
+}
+
+function checkMarkers(text, scope, specimen, lang) {
+  for (const token of markerPayloads(text)) {
+    if (token.includes('${')) continue;
+    if (isAbstractShape(token) || isLetterList(token)) continue;
+
+    if (specimen === null) {
+      expect(
+        Object.hasOwn(glossary, fold(token)),
+        'markers',
+        `${scope}: <i>${token}</i> is not a glossary lemma — <i> may only wrap Serbian`
+      );
+      continue;
+    }
+
+    const attested = specimenWords(specimen).has(fold(token));
+    expect(attested, 'markers', `${scope}: <i>${token}</i> is not a word of the paired Serbian specimen`);
+    if (!attested) continue;
+
+    const entry = glossary[fold(token)];
+    const gloss = lang && entry ? entry.gloss?.[lang] : null;
+    expect(
+      gloss !== token,
+      'markers',
+      `${scope}: <i>${token}</i> is spelled identically to its ${lang} gloss — drop the marker`
+    );
+  }
+}
+
+function walkMarkers(node, scope, inheritedSpecimen) {
+  if (Array.isArray(node)) {
+    node.forEach((item, index) => walkMarkers(item, `${scope}[${index}]`, inheritedSpecimen));
+    return;
+  }
+  if (!isObject(node)) return;
+
+  const specimen = typeof node.sr === 'string' ? node.sr : inheritedSpecimen;
+  for (const [key, value] of Object.entries(node)) {
+    const childScope = `${scope}.${key}`;
+    if (typeof value === 'string') {
+      if (key === 'sr') continue;
+      checkMarkers(value, childScope, specimen, markerLang(key));
+    } else {
+      walkMarkers(value, childScope, specimen);
+    }
+  }
+}
+
+function validateSerbianMarkers() {
+  for (const [file, chart] of Object.entries(data)) {
+    walkMarkers(chart, path.basename(file, '.js'), null);
+  }
+  for (const [lang, dict] of Object.entries(i18n)) {
+    for (const [key, value] of Object.entries(dict)) {
+      if (typeof value === 'string') checkMarkers(value, `i18n.${lang}.${key}`, null, lang);
+    }
+  }
+}
+
 function validateAlphabet() {
   const { ALPHABET } = data['assets/charts/alphabet-data.js'];
   expectArray(ALPHABET, 'alphabet', 'ALPHABET');
@@ -853,6 +969,7 @@ validateLocalFonts();
 validateTones();
 validateScriptConverter();
 validateSerbianContentScript();
+validateSerbianMarkers();
 validateDataShapes();
 validateGlossaryEntries();
 validateChartLemmaCoverage();

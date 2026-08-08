@@ -295,6 +295,7 @@ window.GLOSSARY = {
   'oni':          { pos:'pron', gloss:{ en:'they (m / mixed)', ru:'они' }, level:'A0' },
   'one':          { pos:'pron', gloss:{ en:'they (f)', ru:'они (ж.)' }, level:'A0' },
   'sebe':         { pos:'pron', gloss:{ en:'oneself (refl.)', ru:'себя' }, level:'A1' },
+  'se':           { pos:'pron', gloss:{ en:'-self (refl. clitic)', ru:'-ся (возвр. клитика)' }, level:'A1', related:['sebe'] },
   'ko':           { pos:'pron', gloss:{ en:'who', ru:'кто' }, level:'A0' },
   'šta':          { pos:'pron', gloss:{ en:'what', ru:'что' }, level:'A0' },
 
