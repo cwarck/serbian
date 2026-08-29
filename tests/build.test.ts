@@ -1,7 +1,7 @@
 import { expect, test, beforeAll } from 'bun:test';
 import fs from 'node:fs';
 import path from 'node:path';
-import { build } from '../build.mjs';
+import { build } from '../build.ts';
 import { ROUTES } from '../src/lib/routes.ts';
 import { CASES } from '../src/content/cases.ts';
 import { CASE_TONES } from '../src/lib/types.ts';

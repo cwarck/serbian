@@ -7,6 +7,8 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
+import { ROUTES } from './src/lib/routes.ts';
+import { renderPage } from './src/layout/page.ts';
 
 const ROOT = import.meta.dir;
 const OUT = path.join(ROOT, 'dist');
@@ -14,7 +16,7 @@ const PUBLIC = path.join(ROOT, 'public');
 
 /* ---------- fs helpers ---------- */
 
-function copyDir(from, to) {
+function copyDir(from: string, to: string): void {
   fs.mkdirSync(to, { recursive: true });
   for (const entry of fs.readdirSync(from, { withFileTypes: true })) {
     const src = path.join(from, entry.name);
@@ -24,7 +26,7 @@ function copyDir(from, to) {
   }
 }
 
-function emit(file, contents) {
+function emit(file: string, contents: string | Uint8Array): string {
   const target = path.join(OUT, file);
   fs.mkdirSync(path.dirname(target), { recursive: true });
   fs.writeFileSync(target, contents);
@@ -33,7 +35,7 @@ function emit(file, contents) {
 
 /* ---------- build ---------- */
 
-export async function build() {
+export async function build(): Promise<string[]> {
   fs.rmSync(OUT, { recursive: true, force: true });
   fs.mkdirSync(OUT, { recursive: true });
 
@@ -44,10 +46,8 @@ export async function build() {
      likewise sit at the dist root or Workers ignores them. */
   copyDir(PUBLIC, OUT);
 
-  const { ROUTES } = await import('./src/lib/routes.ts');
-  const { renderPage } = await import('./src/layout/page.ts');
 
-  const written = [];
+  const written: string[] = [];
   for (const route of ROUTES) {
     written.push(emit(route.file, await renderPage(route)));
   }
@@ -64,7 +64,7 @@ export async function build() {
    src/styles/ when that tree is deleted (plan phase 5.5). */
 const STYLESHEET = 'assets/styles.css';
 
-async function emitStyles(written) {
+async function emitStyles(written: string[]): Promise<void> {
   for (const candidate of ['src/styles/styles.css', STYLESHEET]) {
     const src = path.join(ROOT, candidate);
     if (!fs.existsSync(src)) continue;
@@ -74,7 +74,7 @@ async function emitStyles(written) {
   throw new Error('stylesheet not found');
 }
 
-async function emitClient(written) {
+async function emitClient(written: string[]): Promise<void> {
   const entries = ['src/client/theme-init.ts', 'src/client/app.ts']
     .map(p => path.join(ROOT, p))
     .filter(fs.existsSync);
@@ -98,19 +98,19 @@ async function emitClient(written) {
 
 /* ---------- dev ---------- */
 
-async function dev() {
+async function dev(): Promise<void> {
   const rebuild = async () => {
     const started = Date.now();
     try {
       const written = await build();
       console.log(`built ${written.length} files in ${Date.now() - started}ms`);
     } catch (error) {
-      console.error('build failed:', error.message);
+      console.error('build failed:', (error as Error).message);
     }
   };
   await rebuild();
 
-  let queued = null;
+  let queued: ReturnType<typeof setTimeout> | undefined;
   for (const dir of ['src', 'public']) {
     fs.watch(path.join(ROOT, dir), { recursive: true }, () => {
       clearTimeout(queued);
