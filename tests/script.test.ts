@@ -1,6 +1,4 @@
 import { expect, test } from 'bun:test';
-import vm from 'node:vm';
-import fs from 'node:fs';
 import { toCyrillic, toLatin, stripDiacritics, fold } from '../src/lib/script.ts';
 
 /* The eight canonical pairs and five accent roundtrips ported from
@@ -54,33 +52,4 @@ test('stripDiacritics and fold', () => {
   expect(stripDiacritics('žena čovek đak')).toBe('zena covek djak');
   expect(fold('ŽENA')).toBe('zena');
   expect(fold('čòvek')).toBe('covek');
-});
-
-/* Byte-for-byte agreement with the renderer the snapshots were captured from.
-   Deleted with the old tree at phase 5.5. */
-test('matches the pre-rewrite converter on every string the charts ship', () => {
-  const context: any = {
-    window: {}, console,
-    localStorage: { getItem: () => null, setItem: () => {} },
-    navigator: { languages: ['en'], language: 'en' },
-    document: {
-      readyState: 'loading', addEventListener: () => {},
-      documentElement: { setAttribute: () => {}, getAttribute: () => 'en' },
-      querySelectorAll: () => [],
-    },
-  };
-  vm.createContext(context);
-  vm.runInContext(fs.readFileSync('assets/app.js', 'utf8'), context);
-  const legacy = context.window.SerbianFyi;
-
-  const corpus = new Set<string>();
-  for (const file of fs.readdirSync('assets/charts')) {
-    const text = fs.readFileSync(`assets/charts/${file}`, 'utf8');
-    for (const m of text.matchAll(/'([^'\\\n]{2,60})'/g)) corpus.add(m[1]!);
-  }
-  expect(corpus.size).toBeGreaterThan(500);
-  for (const s of corpus) {
-    expect(toCyrillic(s)).toBe(legacy.toCyrillic(s));
-    expect(toLatin(s)).toBe(legacy.toLatin(s));
-  }
 });

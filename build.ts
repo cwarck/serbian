@@ -59,19 +59,9 @@ export async function build(): Promise<string[]> {
 }
 
 /* styles.css stays ONE authored global file — the tone audit scans it line by
-   line, so no minifier may collapse it. Copied, never bundled. It still lives
-   at assets/styles.css because the pre-rewrite pages link it; it moves under
-   src/styles/ when that tree is deleted (plan phase 5.5). */
-const STYLESHEET = 'assets/styles.css';
-
+   line, so no minifier may collapse it. Copied, never bundled. */
 async function emitStyles(written: string[]): Promise<void> {
-  for (const candidate of ['src/styles/styles.css', STYLESHEET]) {
-    const src = path.join(ROOT, candidate);
-    if (!fs.existsSync(src)) continue;
-    written.push(emit('assets/styles.css', fs.readFileSync(src)));
-    return;
-  }
-  throw new Error('stylesheet not found');
+  written.push(emit('assets/styles.css', fs.readFileSync(path.join(ROOT, 'src/styles/styles.css'))));
 }
 
 async function emitClient(written: string[]): Promise<void> {

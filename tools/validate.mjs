@@ -1,6 +1,5 @@
 import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
 import path from 'node:path';
-import vm from 'node:vm';
 import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -59,7 +58,7 @@ function expectTranslation(value, scope, field = 'tr') {
 
 function walk(dir, predicate, out = []) {
   for (const entry of readdirSync(dir)) {
-    if (entry === '.git' || entry === '.wrangler' || entry === 'node_modules' || entry === 'dist') continue;
+    if (entry === '.git' || entry === '.wrangler' || entry === 'node_modules') continue;
     const full = path.join(dir, entry);
     const stat = statSync(full);
     if (stat.isDirectory()) walk(full, predicate, out);
@@ -68,27 +67,9 @@ function walk(dir, predicate, out = []) {
   return out;
 }
 
-function loadScriptConverter() {
-  const context = {
-    window: {},
-    console,
-    localStorage: { getItem: () => null, setItem: () => {} },
-    navigator: { languages: ['en'], language: 'en' },
-    document: {
-      readyState: 'loading',
-      addEventListener: () => {},
-      documentElement: { setAttribute: () => {} },
-      querySelectorAll: () => [],
-    },
-  };
-  vm.createContext(context);
-  vm.runInContext(read('assets/app.js'), context, { filename: 'assets/app.js' });
-  return context.window.SerbianFyi;
-}
-
 
 const { DICTS: i18n } = await import(path.join(root, 'src/i18n/index.ts'));
-const scriptConverter = loadScriptConverter();
+const scriptConverter = await import(path.join(root, 'src/lib/script.ts'));
 /* Content is TypeScript now; import it instead of running it through a
    fake-browser shim. The `satisfies` annotations give presence and shape, so
    what survives below is what types cannot express: values, ordering, and
@@ -97,46 +78,6 @@ const data = Object.fromEntries(await Promise.all(
   chartModules.map(async file => [file, await import(path.join(root, file))])
 ));
 const { GLOSSARY: glossary } = await import(path.join(root, 'src/glossary/glossary.ts'));
-
-function collectHtmlI18nKeys(files) {
-  const keys = new Set();
-
-  for (const file of files) {
-    const source = readFileSync(file, 'utf8');
-    for (const match of source.matchAll(/\bdata-i18n="([^"]+)"/g)) {
-      keys.add(match[1]);
-    }
-    for (const match of source.matchAll(/\bdata-i18n-attr="([^"]+)"/g)) {
-      for (const pair of match[1].split(',')) {
-        const key = pair.trim().split(':')[1];
-        if (key) keys.add(key.trim());
-      }
-    }
-  }
-
-  return keys;
-}
-
-function collectJsLiteralI18nKeys(files) {
-  const keys = new Set();
-
-  for (const file of files) {
-    const source = readFileSync(file, 'utf8');
-    for (const match of source.matchAll(/\bt(?:Cases)?\(['"]([a-z][a-z0-9.-]+)['"]\)/g)) {
-      keys.add(match[1]);
-    }
-    for (const match of source.matchAll(/\bui\(['"]([a-z][a-z0-9.-]+)['"]\)/g)) {
-      const prefix = source.includes("function ui(key) { return t('aspect.' + key); }")
-        ? 'aspect'
-        : source.includes("function ui(key) { return t('pitch.' + key); }")
-          ? 'pitch'
-          : null;
-      if (prefix) keys.add(`${prefix}.${match[1]}`);
-    }
-  }
-
-  return keys;
-}
 
 function collectDataI18nKeys() {
   const keys = new Set();
@@ -188,32 +129,32 @@ function collectDataI18nKeys() {
   return keys;
 }
 
+/* The key GRAPH is gone: ru.ts is `Record<Key, string>`, so a missing or
+   typo'd key is a compile error, and translator() throws at build time on a
+   key that does not exist. What no type can see is the keys the CONTENT names
+   — a chart row carries its own `key` string — so those are still resolved
+   here, against both dictionaries. */
 function validateI18n() {
   const langs = Object.keys(i18n || {});
   expect(langs.includes('en') && langs.includes('ru'), 'i18n', 'en and ru dictionaries required');
 
-  const enKeys = new Set(Object.keys(i18n.en || {}));
-  const ruKeys = new Set(Object.keys(i18n.ru || {}));
-  for (const key of enKeys) expect(ruKeys.has(key), 'i18n', `ru missing key ${key}`);
-  for (const key of ruKeys) expect(enKeys.has(key), 'i18n', `en missing key ${key}`);
-
-  const htmlFiles = walk(root, file => file.endsWith('.html'));
-  const jsFiles = walk(path.join(root, 'assets'), file => file.endsWith('.js'));
-  const used = new Set([
-    ...collectHtmlI18nKeys(htmlFiles),
-    ...collectJsLiteralI18nKeys(jsFiles),
-    ...collectDataI18nKeys(),
-  ]);
-
-  for (const key of [...used].sort()) {
+  for (const key of [...collectDataI18nKeys()].sort()) {
     for (const lang of langs) {
-      expect(Object.hasOwn(i18n[lang], key), 'i18n', `${lang} missing used key ${key}`);
+      expect(Object.hasOwn(i18n[lang], key), 'i18n', `${lang} missing content key ${key}`);
     }
   }
 }
 
+/* Resolve links against the BUILT tree. Resolving them against the source
+   would validate pages that are no longer served, and pass even when the ones
+   that are served have nothing to point at. */
 function validateLinks() {
-  const files = walk(root, file => file.endsWith('.html'));
+  const dist = path.join(root, 'dist');
+  if (!existsSync(dist)) {
+    fail('links', 'dist/ is missing — run `bun run build` before validating');
+    return;
+  }
+  const files = walk(dist, file => file.endsWith('.html'));
   const attrs = ['href', 'src'];
 
   for (const file of files) {
@@ -226,13 +167,9 @@ function validateLinks() {
         const withoutHash = raw.split('#')[0];
         if (!withoutHash) continue;
 
-        const candidates = withoutHash === '/'
-          ? [path.join(root, 'index.html')]
-          : withoutHash.startsWith('/')
-            // Root-absolute hrefs resolve against every served root: the tree
-            // itself and public/, which the build copies to dist/ verbatim.
-            ? [path.join(root, withoutHash.slice(1)), path.join(root, 'public', withoutHash.slice(1))]
-            : [path.resolve(path.dirname(file), withoutHash)];
+        const candidates = withoutHash.startsWith('/')
+          ? [path.join(dist, withoutHash.slice(1))]
+          : [path.resolve(path.dirname(file), withoutHash)];
 
         const resolved = candidates.map(target =>
           existsSync(target) && statSync(target).isDirectory() ? path.join(target, 'index.html') : target);
@@ -243,8 +180,9 @@ function validateLinks() {
 }
 
 function validateLocalFonts() {
-  const files = walk(root, file => file.endsWith('.html') || file.endsWith('.css'));
-  const css = read('assets/styles.css');
+  const files = walk(path.join(root, 'src'), file => file.endsWith('.html') || file.endsWith('.css'))
+    .concat(walk(path.join(root, 'dist'), file => file.endsWith('.html') || file.endsWith('.css')));
+  const css = read('src/styles/styles.css');
   const requiredCyrillicMarks = ['U+0300-0301', 'U+0304', 'U+030F', 'U+0311'];
 
   for (const file of files) {
@@ -267,7 +205,7 @@ function parseToneAssignments(css) {
 }
 
 function validateTones() {
-  const css = read('assets/styles.css');
+  const css = read('src/styles/styles.css');
   const tones = parseToneAssignments(css);
   const expected = {
     nom: 'var(--ink-soft)',
@@ -473,7 +411,7 @@ function validateSerbianContentScript() {
   });
 }
 
-/* <i> is the script-converter hook (srGrammarHTML in assets/app.js): whatever it
+/* <i> is the script-converter hook (srGrammarHTML in src/lib/html.ts): whatever it
    wraps flips Latin↔Cyrillic, everything around it stays in its own language.
    Wrap a translation's OWN word in it and that word transliterates — an English
    gloss sprouts a Russian-looking token ("to the pilot" → "to the пилот").
