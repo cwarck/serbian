@@ -2762,7 +2762,7 @@ when they meet it.
 <div class="prep-use-text">
 <div class="prep-use-head">
 <span class="chart-label prep-case">
-Genitive
+GEN
 </span>
 <span class="prep-meaning">
 without
@@ -2800,7 +2800,7 @@ Coffee without sugar.
 <div class="prep-use-text">
 <div class="prep-use-head">
 <span class="chart-label prep-case">
-Genitive
+GEN
 </span>
 <span class="prep-meaning">
 near
@@ -2842,7 +2842,7 @@ The apartment is near the center.
 <div class="prep-use-text">
 <div class="prep-use-head">
 <span class="chart-label prep-case">
-Genitive
+GEN
 </span>
 <span class="prep-meaning">
 up to, until
@@ -2884,7 +2884,7 @@ I am going up to the station.
 <div class="prep-use-text">
 <div class="prep-use-head">
 <span class="chart-label prep-case">
-Genitive
+GEN
 </span>
 <span class="prep-meaning">
 out of, from inside
@@ -2922,7 +2922,7 @@ I leave the house.
 <div class="prep-use-text">
 <div class="prep-use-head">
 <span class="chart-label prep-case">
-Genitive
+GEN
 </span>
 <span class="prep-meaning">
 behind
@@ -2964,7 +2964,7 @@ The car is behind the house.
 <div class="prep-use-text">
 <div class="prep-use-head">
 <span class="chart-label prep-case">
-Dative
+DAT
 </span>
 <span class="prep-meaning">
 toward, to
@@ -3002,7 +3002,7 @@ I am going toward town.
 <div class="prep-use-text">
 <div class="prep-use-head">
 <span class="chart-label prep-case">
-Genitive
+GEN
 </span>
 <span class="prep-meaning">
 at someone's place
@@ -3044,7 +3044,7 @@ I sleep at my brother's place.
 <div class="prep-use-text">
 <div class="prep-use-head">
 <span class="chart-label prep-case">
-Accusative
+AKU
 </span>
 <span class="prep-meaning">
 through
@@ -3086,7 +3086,7 @@ I walk through the park.
 <div class="prep-use-text">
 <div class="prep-use-head">
 <span class="chart-label prep-case">
-Accusative
+AKU
 </span>
 <span class="prep-meaning">
 to among, between
@@ -3114,7 +3114,7 @@ I go among the people.
 <div class="prep-use-text">
 <div class="prep-use-head">
 <span class="chart-label prep-case">
-Instrumental
+INS
 </span>
 <span class="prep-meaning">
 among, between
@@ -3156,7 +3156,7 @@ I stand among the people.
 <div class="prep-use-text">
 <div class="prep-use-head">
 <span class="chart-label prep-case">
-Accusative
+AKU
 </span>
 <span class="prep-meaning">
 onto, to
@@ -3184,7 +3184,7 @@ I put the book onto the table.
 <div class="prep-use-text">
 <div class="prep-use-head">
 <span class="chart-label prep-case">
-Locative
+LOK
 </span>
 <span class="prep-meaning">
 on, at
@@ -3226,7 +3226,7 @@ The book is on the table.
 <div class="prep-use-text">
 <div class="prep-use-head">
 <span class="chart-label prep-case">
-Accusative
+AKU
 </span>
 <span class="prep-meaning">
 to above
@@ -3254,7 +3254,7 @@ I lift the lamp above the table.
 <div class="prep-use-text">
 <div class="prep-use-head">
 <span class="chart-label prep-case">
-Instrumental
+INS
 </span>
 <span class="prep-meaning">
 above, over
@@ -3296,7 +3296,7 @@ The lamp is above the table.
 <div class="prep-use-text">
 <div class="prep-use-head">
 <span class="chart-label prep-case">
-Dative
+DAT
 </span>
 <span class="prep-meaning">
 opposite
@@ -3338,7 +3338,7 @@ I sit opposite my brother.
 <div class="prep-use-text">
 <div class="prep-use-head">
 <span class="chart-label prep-case">
-Accusative
+AKU
 </span>
 <span class="prep-meaning">
 down along
@@ -3378,7 +3378,7 @@ I walk down the street.
 <div class="prep-use-text">
 <div class="prep-use-head">
 <span class="chart-label prep-case">
-Locative
+LOK
 </span>
 <span class="prep-meaning">
 about, on a topic
@@ -3420,7 +3420,7 @@ We talk about the film.
 <div class="prep-use-text">
 <div class="prep-use-head">
 <span class="chart-label prep-case">
-Genitive
+GEN
 </span>
 <span class="prep-meaning">
 from, away from
@@ -3460,7 +3460,7 @@ I am coming from a friend.
 <div class="prep-use-text">
 <div class="prep-use-head">
 <span class="chart-label prep-case">
-Genitive
+GEN
 </span>
 <span class="prep-meaning">
 around
@@ -3500,7 +3500,7 @@ We sit around the table.
 <div class="prep-use-text">
 <div class="prep-use-head">
 <span class="chart-label prep-case">
-Locative
+LOK
 </span>
 <span class="prep-meaning">
 around, by pattern
@@ -3542,7 +3542,7 @@ I walk around town.
 <div class="prep-use-text">
 <div class="prep-use-head">
 <span class="chart-label prep-case">
-Accusative
+AKU
 </span>
 <span class="prep-meaning">
 to under
@@ -3570,7 +3570,7 @@ The cat goes under the table.
 <div class="prep-use-text">
 <div class="prep-use-head">
 <span class="chart-label prep-case">
-Instrumental
+INS
 </span>
 <span class="prep-meaning">
 under
@@ -3610,7 +3610,7 @@ The cat is under the table.
 <div class="prep-use-text">
 <div class="prep-use-head">
 <span class="chart-label prep-case">
-Genitive
+GEN
 </span>
 <span class="prep-meaning">
 after
@@ -3650,7 +3650,7 @@ After class I go home.
 <div class="prep-use-text">
 <div class="prep-use-head">
 <span class="chart-label prep-case">
-Genitive
+GEN
 </span>
 <span class="prep-meaning">
 before
@@ -3692,7 +3692,7 @@ Before lunch I drink water.
 <div class="prep-use-text">
 <div class="prep-use-head">
 <span class="chart-label prep-case">
-Accusative
+AKU
 </span>
 <span class="prep-meaning">
 to in front of
@@ -3720,7 +3720,7 @@ I step in front of the house.
 <div class="prep-use-text">
 <div class="prep-use-head">
 <span class="chart-label prep-case">
-Instrumental
+INS
 </span>
 <span class="prep-meaning">
 in front of
@@ -3762,7 +3762,7 @@ I stand in front of the house.
 <div class="prep-use-text">
 <div class="prep-use-head">
 <span class="chart-label prep-case">
-Dative
+DAT
 </span>
 <span class="prep-meaning">
 toward, facing
@@ -3800,7 +3800,7 @@ I am turned toward the sea.
 <div class="prep-use-text">
 <div class="prep-use-head">
 <span class="chart-label prep-case">
-Locative
+LOK
 </span>
 <span class="prep-meaning">
 attached to, at
@@ -3842,7 +3842,7 @@ I work at the school.
 <div class="prep-use-text">
 <div class="prep-use-head">
 <span class="chart-label prep-case">
-Genitive
+GEN
 </span>
 <span class="prep-meaning">
 from off, down from
@@ -3870,7 +3870,7 @@ I am getting off the bus.
 <div class="prep-use-text">
 <div class="prep-use-head">
 <span class="chart-label prep-case">
-Instrumental
+INS
 </span>
 <span class="prep-meaning">
 with
@@ -3912,7 +3912,7 @@ I travel with my sister.
 <div class="prep-use-text">
 <div class="prep-use-head">
 <span class="chart-label prep-case">
-Accusative
+AKU
 </span>
 <span class="prep-meaning">
 into, to
@@ -3940,7 +3940,7 @@ I am going into town.
 <div class="prep-use-text">
 <div class="prep-use-head">
 <span class="chart-label prep-case">
-Locative
+LOK
 </span>
 <span class="prep-meaning">
 in, at
@@ -3982,7 +3982,7 @@ I live in town.
 <div class="prep-use-text">
 <div class="prep-use-head">
 <span class="chart-label prep-case">
-Accusative
+AKU
 </span>
 <span class="prep-meaning">
 up along
@@ -4010,7 +4010,7 @@ I go up the stairs.
 <div class="prep-use-text">
 <div class="prep-use-head">
 <span class="chart-label prep-case">
-Accusative
+AKU
 </span>
 <span class="prep-meaning">
 alongside, along with
@@ -4052,7 +4052,7 @@ I drink coffee with cake.
 <div class="prep-use-text">
 <div class="prep-use-head">
 <span class="chart-label prep-case">
-Accusative
+AKU
 </span>
 <span class="prep-meaning">
 to behind
@@ -4080,7 +4080,7 @@ I hide behind the house.
 <div class="prep-use-text">
 <div class="prep-use-head">
 <span class="chart-label prep-case">
-Instrumental
+INS
 </span>
 <span class="prep-meaning">
 behind, at
@@ -4114,7 +4114,7 @@ I am sitting at the table.
 <div class="prep-use-text">
 <div class="prep-use-head">
 <span class="chart-label prep-case">
-Accusative
+AKU
 </span>
 <span class="prep-meaning">
 in, for a span
@@ -4144,7 +4144,7 @@ I am coming back in an hour.
 <div class="prep-use-text">
 <div class="prep-use-head">
 <span class="chart-label prep-case">
-Accusative
+AKU
 </span>
 <span class="prep-meaning">
 for, intended for
