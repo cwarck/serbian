@@ -80,7 +80,7 @@ const PREFIXES = [
   {
     prefix: 'po-',
     feel: { en: 'short action, once, start', ru: 'немного, один раз, начало' },
-    pairs: ['gledati -> pogledati', 'čekati -> počekati', 'pričati -> popričati'],
+    pairs: ['gledati -> pogledati', 'čekati -> sačekati', 'pričati -> popričati'],
     note: {
       title: { en: 'po- is broad', ru: 'po- очень широкая' },
       body: { en: 'It often marks a bounded action: take a look, wait a bit, talk for a while. The exact feel depends on the verb.', ru: 'Часто она ограничивает действие: посмотреть, подождать, поговорить. Точный оттенок зависит от глагола.' }

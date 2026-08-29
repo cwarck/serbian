@@ -9,7 +9,7 @@ const PERSONAL = [
   { label:'pron.3mpl', subject:'oni', object:'njih, ih', datloc:'njima, im', inst:'njima' },
   { label:'pron.3npl', subject:'ona', object:'njih, ih', datloc:'njima, im', inst:'njima' },
   { label:'pron.3fpl', subject:'one', object:'njih, ih', datloc:'njima, im', inst:'njima' },
-  { label:'pron.self', subject:'-', object:'sebe, se', datloc:'sebi, si', inst:'sobom' },
+  { label:'pron.self', subject:'-', object:'sebe, se', datloc:'sebi', inst:'sobom' },
 ];
 
 const POSSESSIVES = [

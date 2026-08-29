@@ -233,7 +233,7 @@ const WRINKLES = [
     key: 'wrinkle.iju',
     examples: [
       { from:'oko',  to:'očiju',   en:'eye · of eyes',     ru:'глаз · глаз (род. мн.)' },
-      { from:'uho',  to:'ušiju',   en:'ear · of ears',     ru:'ухо · ушей' },
+      { from:'uvo',  to:'ušiju',   en:'ear · of ears',     ru:'ухо · ушей' },
       { from:'gost', to:'gostiju', en:'guest · of guests', ru:'гость · гостей' },
       { from:'prst', to:'prstiju', en:'finger · of fingers', ru:'палец · пальцев' },
     ],

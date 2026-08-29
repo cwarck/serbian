@@ -66,11 +66,18 @@ const FALSE_FRIEND_GROUPS = [
         ex: { sr: 'Ona je trudna.', ru: 'Она беременна.' }
       },
       {
-        sr: 'potres',
-        means: 'землетрясение',
-        trap: 'потрясение',
-        trapMeans: 'сильное волнение',
-        ex: { sr: 'Bio je potres.', ru: 'Было землетрясение.' }
+        sr: 'skupo',
+        means: 'дорого',
+        trap: 'скупо',
+        trapMeans: 'скудно, в обрез',
+        ex: { sr: 'To je skupo.', ru: 'Это дорого.' }
+      },
+      {
+        sr: 'ljubiti',
+        means: 'целовать',
+        trap: 'любить',
+        trapMeans: 'любить — по-сербски voleti',
+        ex: { sr: 'Ljubim te.', ru: 'Целую тебя.' }
       }
     ]
   },
@@ -118,13 +125,6 @@ const FALSE_FRIEND_GROUPS = [
         trap: 'ягода',
         trapMeans: 'любой ягодный плод',
         ex: { sr: 'Jedem jagode.', ru: 'Ем клубнику.' }
-      },
-      {
-        sr: 'brusnica',
-        means: 'клюква',
-        trap: 'брусника',
-        trapMeans: 'другая ягода',
-        ex: { sr: 'Sok od brusnice.', ru: 'Клюквенный сок.' }
       },
       {
         sr: 'korica',
@@ -183,11 +183,12 @@ const FALSE_FRIEND_GROUPS = [
         ex: { sr: 'Žive u skladu.', ru: 'Живут в согласии.' }
       },
       {
-        sr: 'struka',
-        means: 'профессия, специальность',
-        trap: 'стук',
-        trapMeans: 'звук удара',
-        ex: { sr: 'Moja struka je medicina.', ru: 'Моя специальность - медицина.' }
+        partial: true,
+        sr: 'nedelja',
+        means: 'воскресенье; неделя',
+        trap: 'неделя',
+        trapMeans: 'семь дней, но не воскресенье',
+        ex: { sr: 'Vidimo se u nedelju.', ru: 'Увидимся в воскресенье.' }
       },
       {
         partial: true,

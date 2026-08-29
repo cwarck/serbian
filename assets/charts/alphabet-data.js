@@ -14,7 +14,7 @@ const ALPHABET = [
       en:'A soft sound between “d” and “j”. Imagine the gentle “dy” sound some people use in “duke”. Your tongue stays close to the roof of the mouth, making it soft and smooth.',
       ru:'Мягкий звук между «дь» и «дж». Представь очень мягкое «д» в слове «дядя». Язык прижимается к нёбу, поэтому звук получается «нежным».'
     } },
-  { n: 7,  cyr:'Е е', lat:'E e',  ipa:'/e/',   wCyr:'европа',  wLat:'evropa',  kind:'shared' },
+  { n: 7,  cyr:'Е е', lat:'E e',  ipa:'/e/',   wCyr:'екран',   wLat:'ekran',   kind:'shared' },
   { n: 8,  cyr:'Ж ж', lat:'Ž ž',  ipa:'/ʒ/',   wCyr:'жена',    wLat:'žena',    kind:'shared' },
   { n: 9,  cyr:'З з', lat:'Z z',  ipa:'/z/',   wCyr:'зима',    wLat:'zima',    kind:'shared' },
   { n:10,  cyr:'И и', lat:'I i',  ipa:'/i/',   wCyr:'игра',    wLat:'igra',    kind:'shared' },
