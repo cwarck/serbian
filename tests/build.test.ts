@@ -15,6 +15,14 @@ import { findTriggers, popoverKey } from '../src/lib/triggers.ts';
 const OUT = 'dist';
 const pages = new Map<string, string>();
 
+/* Assets are content-hashed, so find them by extension rather than by name. */
+function asset(ext: '.css' | '.js', match?: string): string {
+  const found = fs.readdirSync(path.join(OUT, 'assets'))
+    .filter(f => f.endsWith(ext) && (!match || f.startsWith(match)));
+  expect(found.length, `one ${match ?? ''}${ext} asset`).toBe(1);
+  return path.join(OUT, 'assets', found[0]!);
+}
+
 beforeAll(async () => {
   await build();
   for (const route of ROUTES) pages.set(route.path, fs.readFileSync(path.join(OUT, route.file), 'utf8'));
@@ -48,7 +56,7 @@ test('sr() never emits class="sr" — .sr is a live specimen class', () => {
 /* Symmetric display rules would render `žena жена` on any document without
    data-script. The baseline must hide exactly one variant. */
 test('the attribute-less rendering hides exactly one script', () => {
-  const css = fs.readFileSync(path.join(OUT, 'assets/styles.css'), 'utf8');
+  const css = fs.readFileSync(asset('.css'), 'utf8');
   const baseline = css.match(/^\[data-s="(lat|cyr)"\]\s*\{\s*display:\s*none/m);
   expect(baseline, 'a baseline [data-s] display:none rule must exist').not.toBeNull();
   const flip = css.match(/\[data-script="cyr"\][^{]*\[data-s="(lat|cyr)"\]/g);
@@ -131,7 +139,7 @@ test('fonts land at dist/assets/fonts/', () => {
 });
 
 test('the stylesheet is not collapsed to one line — the tone audit scans it', () => {
-  const css = fs.readFileSync(path.join(OUT, 'assets/styles.css'), 'utf8');
+  const css = fs.readFileSync(asset('.css'), 'utf8');
   expect(css.split('\n').length).toBeGreaterThan(1000);
 });
 
@@ -204,9 +212,69 @@ test('the home cards dual-emit their Serbian glyphs', () => {
 });
 
 test('the client bundle carries no transliteration table', () => {
-  const app = fs.readFileSync(path.join(OUT, 'assets/app.js'), 'utf8');
+  const app = fs.readFileSync(asset('.js', 'app.'), 'utf8');
   for (const cyrillic of ['\u0436', '\u0459', '\u045a', '\u045f']) {
     expect(app, `app.js still ships ${cyrillic}`).not.toContain(cyrillic);
   }
   expect(app.length).toBeLessThan(20000);
+});
+
+/* ---------- headers and hashing ---------- */
+
+const headers = () => fs.readFileSync(path.join(OUT, '_headers'), 'utf8');
+
+test('every CSS and JS asset is content-hashed', () => {
+  const assets = fs.readdirSync(path.join(OUT, 'assets'))
+    .filter(f => f.endsWith('.js') || f.endsWith('.css'));
+  expect(assets.length).toBeGreaterThan(0);
+  for (const file of assets) {
+    expect(file, `${file} is not content-hashed`).toMatch(/\.[0-9a-f]{8}\.(js|css)$/);
+  }
+});
+
+test('every hashed asset a page links actually exists', () => {
+  for (const [route, html] of pages) {
+    for (const [, href] of html.matchAll(/(?:href|src)="(\/assets\/[^"]+)"/g)) {
+      expect(fs.existsSync(path.join(OUT, href!.slice(1))), `${route} -> ${href}`).toBe(true);
+    }
+  }
+});
+
+/* The hashed stylesheet must stay in /assets/ or its 12 relative
+   url('fonts/…') declarations break. */
+test('the stylesheet stays beside the fonts directory', () => {
+  const contents = fs.readFileSync(asset('.css'), 'utf8');
+  expect(contents).toContain("url('fonts/");
+  for (const [, url] of contents.matchAll(/url\('(fonts\/[^']+)'\)/g)) {
+    expect(fs.existsSync(path.join(OUT, 'assets', url!)), url).toBe(true);
+  }
+});
+
+test('the CSP ships, and nothing on the page violates it', () => {
+  expect(headers()).toContain("script-src 'self'");
+  expect(headers()).toContain("style-src 'self'");
+  expect(headers()).not.toContain('unsafe-inline');
+  expect(headers()).not.toContain('HASH-OF-INLINE-SCRIPT');
+  for (const [route, html] of pages) {
+    /* An inline <script> or style="" attribute would be blocked silently. */
+    expect(html.match(/<script(?![^>]*\bsrc=)/), `${route} has an inline script`).toBeNull();
+    expect(html.match(/\sstyle="/), `${route} has an inline style attribute`).toBeNull();
+  }
+});
+
+test('no path gets two different Cache-Control values', () => {
+  const rules = [...headers().matchAll(/^(\/\S*)\n(?:\s{2}\S[^\n]*\n)*/gm)];
+  expect(rules.length).toBeGreaterThan(4);
+  /* Hashed assets are immutable; documents revalidate. The two sets must not
+     overlap — a joined `immutable, no-cache` is a silently wrong header. */
+  const immutable = headers().match(/^\/assets\/\*\.(css|js)$/gm) ?? [];
+  expect(immutable.length).toBe(2);
+  expect(headers()).not.toMatch(/^\/assets\/theme-init\.js$/m);
+});
+
+test('the false-friends EN path redirects to the RU page', () => {
+  const redirects = fs.readFileSync(path.join(OUT, '_redirects'), 'utf8');
+  expect(redirects).toMatch(/^\/charts\/false-friends\.html\s+\/ru\/charts\/false-friends\.html\s+301$/m);
+  expect(fs.existsSync(path.join(OUT, 'charts/false-friends.html'))).toBe(false);
+  expect(fs.existsSync(path.join(OUT, 'ru/charts/false-friends.html'))).toBe(true);
 });

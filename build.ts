@@ -48,30 +48,61 @@ export async function build(): Promise<string[]> {
 
 
   const written: string[] = [];
-  for (const route of ROUTES) {
-    written.push(emit(route.file, await renderPage(route)));
-  }
 
-  await emitStyles(written);
-  await emitClient(written);
+  /* Assets are emitted FIRST so their hashed names exist before a page needs
+     to link them. */
+  const assets = new Map<string, string>();
+  await emitStyles(written, assets);
+  await emitClient(written, assets);
+
+  for (const route of ROUTES) {
+    written.push(emit(route.file, resolveAssets(await renderPage(route), assets)));
+  }
 
   return written;
 }
 
-/* styles.css stays ONE authored global file — the tone audit scans it line by
-   line, so no minifier may collapse it. Copied, never bundled. */
-async function emitStyles(written: string[]): Promise<void> {
-  written.push(emit('assets/styles.css', fs.readFileSync(path.join(ROOT, 'src/styles/styles.css'))));
+/* Content-hashed filenames move /assets/*.css and *.js from `no-cache` to
+   `immutable`. The payoff is one blocking revalidation round-trip before paint,
+   per asset, per pageview — `no-cache` means store-then-revalidate, and an
+   unchanged ETag returns a 304 with an empty body, so the win is latency, not
+   bytes.
+
+   Assets are emitted before the pages that link them, so every asset is
+   hashed — including the render-blocking theme-init. That keeps the
+   Cache-Control patterns in _headers mutually exclusive, which matters:
+   _headers rules are cumulative, and a header set twice is joined with a
+   comma, so an overlapping `immutable` and `no-cache` would ship both. */
+function hashed(name: string, contents: string | Uint8Array): string {
+  const hash = new Bun.CryptoHasher('sha256').update(contents).digest('hex').slice(0, 8);
+  return name.replace(/(\.[a-z0-9]+)$/, `.${hash}$1`);
 }
 
-async function emitClient(written: string[]): Promise<void> {
-  const entries = ['src/client/theme-init.ts', 'src/client/app.ts']
-    .map(p => path.join(ROOT, p))
-    .filter(fs.existsSync);
-  if (!entries.length) return;
+function resolveAssets(html: string, assets: Map<string, string>): string {
+  let out = html;
+  for (const [logical, real] of assets) out = out.split(logical).join(real);
+  return out;
+}
 
+/* styles.css stays ONE authored global file — the tone audit scans it line by
+   line, so no minifier may collapse it. Copied, never bundled.
+
+   The hashed stylesheet MUST stay in the same directory: its 12
+   `src: url('fonts/…')` declarations resolve relative to the stylesheet's own
+   location. */
+async function emitStyles(written: string[], assets: Map<string, string>): Promise<void> {
+  const contents = fs.readFileSync(path.join(ROOT, 'src/styles/styles.css'));
+  const name = hashed('assets/styles.css', contents);
+  written.push(emit(name, contents));
+  assets.set('/assets/styles.css', '/' + name);
+}
+
+async function emitClient(written: string[], assets: Map<string, string>): Promise<void> {
   const result = await Bun.build({
-    entrypoints: entries,
+    entrypoints: [
+      path.join(ROOT, 'src/client/theme-init.ts'),
+      path.join(ROOT, 'src/client/app.ts'),
+    ],
     target: 'browser',
     minify: true,
     format: 'iife',
@@ -81,8 +112,11 @@ async function emitClient(written: string[]): Promise<void> {
     throw new Error('client bundle failed');
   }
   for (const artifact of result.outputs) {
-    const name = path.basename(artifact.path).replace(/\.js$/, '.js');
-    written.push(emit(path.join('assets', name), Buffer.from(await artifact.arrayBuffer())));
+    const base = path.basename(artifact.path);
+    const contents = Buffer.from(await artifact.arrayBuffer());
+    const name = hashed(path.join('assets', base), contents);
+    written.push(emit(name, contents));
+    assets.set('/assets/' + base, '/' + name);
   }
 }
 
