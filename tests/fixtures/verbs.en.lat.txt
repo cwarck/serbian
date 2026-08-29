@@ -1126,55 +1126,70 @@ Yesterday I watched a film.
 <h4 class="chart-label">
 Participle
 </h4>
-<div class="chart-pairs verb-pair-grid">
-<div class="chart-pair">
+<div class="gender-band">
 <span class="chart-label">
-M sg
+Singular
 </span>
-<span class="chart-form verb-form">
+<div class="gender-run">
+<span class="gender-unit" data-gender="m">
+<span class="gender-tag">
+M
+</span>
+<span class="chart-form verb-form" lang="sr">
 -o
 </span>
-</div>
-<div class="chart-pair">
-<span class="chart-label">
-M/mixed pl
 </span>
-<span class="chart-form verb-form">
--li
+<span class="gender-unit" data-gender="n">
+<span class="gender-tag">
+N
 </span>
-</div>
-<div class="chart-pair">
-<span class="chart-label">
-F sg
-</span>
-<span class="chart-form verb-form">
--la
-</span>
-</div>
-<div class="chart-pair">
-<span class="chart-label">
-F pl
-</span>
-<span class="chart-form verb-form">
--le
-</span>
-</div>
-<div class="chart-pair">
-<span class="chart-label">
-N sg
-</span>
-<span class="chart-form verb-form">
+<span class="chart-form verb-form" lang="sr">
 -lo
 </span>
-</div>
-<div class="chart-pair">
-<span class="chart-label">
-N pl
 </span>
-<span class="chart-form verb-form">
+<span class="gender-unit" data-gender="f">
+<span class="gender-tag">
+F
+</span>
+<span class="chart-form verb-form" lang="sr">
 -la
 </span>
+</span>
 </div>
+</div>
+<div class="gender-band">
+<span class="chart-label">
+Plural
+</span>
+<div class="gender-run">
+<span class="gender-unit" data-gender="m">
+<span class="gender-tag">
+M
+</span>
+<span class="chart-form verb-form" lang="sr">
+-li
+</span>
+</span>
+<span class="gender-unit" data-gender="n">
+<span class="gender-tag">
+N
+</span>
+<span class="chart-form verb-form" lang="sr">
+-la
+</span>
+</span>
+<span class="gender-unit" data-gender="f">
+<span class="gender-tag">
+F
+</span>
+<span class="chart-form verb-form" lang="sr">
+-le
+</span>
+</span>
+</div>
+<p class="gender-band-note">
+M plural also covers mixed groups.
+</p>
 </div>
 </section>
 </article>

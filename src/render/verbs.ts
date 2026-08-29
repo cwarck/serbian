@@ -2,8 +2,18 @@ import { html, raw, sr, srGrammarHTML, type Raw } from '../lib/html.ts';
 import type { Lang } from '../lib/negotiate.ts';
 import { translator } from '../i18n/index.ts';
 import { PRONOUNS, VERB_GROUPS, IRREGULARS, PAST, FUTURE, CLITICS } from '../content/verbs.ts';
-import type { PersonForms, VerbGroup, Irregular } from '../lib/types.ts';
-import { gloss, type Chart } from './chart.ts';
+import { GENDERS, type PersonForms, type VerbGroup, type Irregular, type Gender, type Number_ } from '../lib/types.ts';
+import { gloss, genderUnit, type Chart } from './chart.ts';
+
+const NUMBERS = ['sg', 'pl'] as const satisfies readonly Number_[];
+
+/* PAST.endings is a flat six keyed past.<gender><number>; the bands regroup it
+   without touching the data. The keys stay the data's own labels — the chip
+   label must come from cases.gender.* so the letter attestation in
+   tools/validate.mjs can check it against one dictionary entry per locale. */
+function pastEnding(gender: Gender, number: Number_): string {
+  return PAST.endings.find(e => e.key === `past.${gender}${number}`)?.ending ?? '';
+}
 
 type T = (key: string) => Raw;
 
@@ -134,14 +144,15 @@ export const chart: Chart = {
       </section>
       <section class="verb-block">
         <h4 class="chart-label">${t('verbs.participle')}</h4>
-        <div class="chart-pairs verb-pair-grid">
-          ${PAIR_ORDER.map(i => PAST.endings[i]!).map(item => html`
-            <div class="chart-pair">
-              <span class="chart-label">${t(item.key)}</span>
-              <span class="chart-form verb-form">${sr(item.ending)}</span>
-            </div>
-          `)}
-        </div>
+        ${NUMBERS.map(number => html`
+          <div class="gender-band">
+            <span class="chart-label">${t('band.' + number)}</span>
+            <div class="gender-run">${GENDERS.map(gender =>
+              genderUnit(gender, t('cases.gender.' + gender),
+                html`<span class="chart-form verb-form" lang="sr">${sr(pastEnding(gender, number))}</span>`))}</div>
+            ${number === 'pl' ? html`<p class="gender-band-note">${t('past.mixed')}</p>` : ''}
+          </div>
+        `)}
       </section>
     </article>
   `;

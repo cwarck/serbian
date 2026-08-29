@@ -2,11 +2,8 @@ import { html, raw, sr, type Raw } from '../lib/html.ts';
 import type { Lang } from '../lib/negotiate.ts';
 import { translator } from '../i18n/index.ts';
 import { AGREEMENT, CARDINALS, NUMBER_BUILDS, NOUN_COUNTS, ORDINALS } from '../content/numbers.ts';
-import type { Cardinal } from '../lib/types.ts';
-import type { Chart } from './chart.ts';
-
-const GENDER_ORDER = ['m', 'n', 'f'] as const;
-const GENDER_KEYS = ['cases.gender.m', 'cases.gender.n', 'cases.gender.f'] as const;
+import { GENDERS, type Cardinal } from '../lib/types.ts';
+import { genderUnit, type Chart } from './chart.ts';
 
 function srParts(parts: readonly string[]): Raw {
   return raw(parts.map(part => `<span>${sr(part).value}</span>`).join('<span class="chart-sep">+</span>'));
@@ -114,7 +111,8 @@ export const chart: Chart = {
         ${ORDINALS.map(row => html`
           <article class="chart-row">
             <span class="chart-cell num-value" data-label="${t('numbers.number')}">${row.n}</span>
-            ${row.forms.map((form, idx) => html`<span class="chart-cell chart-form num-word" data-gender="${GENDER_ORDER[idx]}" data-label="${t(GENDER_KEYS[idx]!)}" lang="sr">${sr(form)}</span>`)}
+            <div class="gender-run">${GENDERS.map((g, idx) =>
+              genderUnit(g, t('cases.gender.' + g), html`<span class="chart-form num-word" lang="sr">${sr(row.forms[idx] ?? '')}</span>`))}</div>
           </article>
         `)}
       </div>

@@ -113,6 +113,7 @@ export const en = {
   'past.mpl': 'M/mixed pl',
   'past.fpl': 'F pl',
   'past.npl': 'N pl',
+  'past.mixed': 'M plural also covers mixed groups.',
 
   /* Aspect page */
   'aspect.contrast': 'Core contrast',

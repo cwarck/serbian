@@ -1265,11 +1265,13 @@ section { position: relative; }
    The letter and its specimen are ONE bounded object: proximity alone loses
    the pairing the moment a row wraps.
 
-   Selectors are scoped to .gender-unit. A bare [data-gender="m"] would leak —
-   numbers.ts puts data-gender on the specimen span itself, and .num-word has
-   no use for a radius or a --facet. var(--facet, var(--ink-muted)) mirrors
-   the house var(--tone, var(--accent)) idiom so a unit with no gender
-   degrades to ink rather than dropping its border.
+   Selectors are scoped to .gender-unit, never a bare [data-gender="m"].
+   data-gender marks the facet AXIS, and the axis is carried by things that
+   are not chips (the glossary knows a gender for every noun) — an unscoped
+   rule would hand them a radius and a --facet they have no use for.
+   var(--facet, var(--ink-muted)) mirrors the house var(--tone, var(--accent))
+   idiom so a unit with no gender degrades to ink rather than dropping its
+   border to an invalid value.
    ----------------------------------------------------------- */
 .gender-unit {
   display: inline-flex;
@@ -1309,6 +1311,20 @@ section { position: relative; }
   flex-wrap: wrap;
   gap: .4rem .5rem;
   min-width: 0;
+}
+/* A run under its own number heading. Number is a band, never a chip. */
+.gender-band {
+  display: grid;
+  gap: .4rem;
+}
+/* The one caveat a one-letter chip cannot carry: the past M plural is
+   M-or-mixed. It rides beside the band instead. */
+.gender-band-note {
+  margin: 0;
+  font-family: var(--ff-body);
+  font-size: var(--fs-caption);
+  line-height: var(--lh-prose);
+  color: var(--ink-muted);
 }
 
 /* The corner family — one token, three silhouettes. Judge a change to it on

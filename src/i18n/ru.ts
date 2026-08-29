@@ -115,6 +115,7 @@ export const ru: Record<Key, string> = {
   'past.mpl': 'М/смеш. мн.',
   'past.fpl': 'Ж мн.',
   'past.npl': 'С мн.',
+  'past.mixed': 'М мн. — также для смешанных групп.',
 
   /* Aspect */
   'aspect.contrast': 'Главное различие',
