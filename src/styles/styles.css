@@ -1080,10 +1080,6 @@ section { position: relative; }
 .pron-kw-row [data-tone] { color: var(--tone); }
 .pron-slash { color: var(--ink-faint); margin: 0 .15em; }
 
-/* Gender axis labels carry no hue — position + label carry the axis.
-   Full ink sets them off from the muted apparatus labels around them. */
-.pron-mini-head [data-gender] { color: var(--ink); }
-
 /* -----------------------------------------------------------
    Case strip — colour-coded sticky nav.
    All seven cells fit the column (no scroll); abbreviations only.
@@ -1292,7 +1288,21 @@ section { position: relative; }
 /* Inline padding clears the pill's cap: a two-character specimen (`to`, `-a`)
    must not be clipped by the radius. */
 .gender-unit > .chart-form,
+.gender-unit > .cell,
 .gender-unit > .end { padding: .12rem .5rem .16rem; }
+/* The specimen keeps the house tone idiom, so a chip reads ink-soft
+   everywhere except inside an ending cell, where the row's subject is the
+   case and the ending stays case-hued. See AGENTS.md — the two tiers meet on
+   one object there, and that is deliberate. */
+.gender-unit > .chart-form { color: var(--tone, var(--ink-soft)); }
+
+/* A wrapping run of chips — what replaced the three gender columns. */
+.gender-run {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem .5rem;
+  min-width: 0;
+}
 
 /* The corner family — one token, three silhouettes. Judge a change to it on
    grouping across a grid, not on legibility of one chip. */
@@ -1799,8 +1809,6 @@ section { position: relative; }
 }
 .pron-subject,
 .pron-long,
-.pron-form,
-.pron-gender-row span,
 .pron-kw-row > span:not(:first-child) {
   color: var(--tone, var(--ink-soft));
 }
@@ -1849,13 +1857,6 @@ section { position: relative; }
   display: grid;
   gap: 1.1rem;
 }
-.pron-mini-head {
-  display: grid;
-  grid-template-columns: minmax(5.8rem, .8fr) repeat(3, minmax(0, 1fr));
-  gap: .6rem;
-  padding-bottom: .5rem;
-  border-bottom: 1px solid var(--hairline-soft);
-}
 .pron-poss-card {
   display: grid;
   gap: .45rem;
@@ -1863,26 +1864,17 @@ section { position: relative; }
   border-bottom: 1px dashed var(--hairline-soft);
 }
 .pron-poss-card:last-child { border-bottom: 0; padding-bottom: 0; }
-/* Head and form row share ONE template. Possessive forms fill the panel in
-   three columns (the owner label sits on its own line above), so the M/N/F
-   head drops the demos' leading label column — with it, "svoje" landed under
-   M and F stood empty. The label column can't come back here: three 69px
-   specimens (njihova, njegovo) already exhaust the 247px panel at 320px. */
-.pron-poss-head,
-.pron-gender-row {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: .6rem;
-}
-
 .pron-demo-group,
 .pron-question-block {
   display: grid;
   gap: .65rem;
 }
+/* Label over chips, not label beside three tracks: each chip now carries its
+   own gender, so the row needs one column and the run wraps inside it. */
 .pron-matrix-row {
-  grid-template-columns: minmax(5.8rem, .8fr) repeat(3, minmax(0, 1fr));
-  gap: .6rem;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: start;
+  gap: .45rem;
 }
 
 .pron-kw-table {

@@ -511,145 +511,254 @@ Use for own: my own, your own, his own, their own.
 </p>
 </div>
 ### mount possessives
-<div class="chart-label pron-mini-head pron-poss-head" role="row">
-<span data-gender="m" role="columnheader">
-M
-</span>
-<span data-gender="n" role="columnheader">
-N
-</span>
-<span data-gender="f" role="columnheader">
-F
-</span>
-</div>
-<article class="pron-poss-card" role="rowgroup">
-<h4 class="chart-label" id="pron-poss-owner-0">
+<article class="pron-poss-card">
+<h4 class="chart-label">
 own
 </h4>
-<div aria-labelledby="pron-poss-owner-0" class="pron-gender-row" role="row">
-<span class="chart-form" lang="sr" role="cell">
+<div class="gender-run">
+<span class="gender-unit" data-gender="m">
+<span class="gender-tag">
+M
+</span>
+<span class="chart-form" lang="sr">
 svoj
 </span>
-<span class="chart-form" lang="sr" role="cell">
+</span>
+<span class="gender-unit" data-gender="n">
+<span class="gender-tag">
+N
+</span>
+<span class="chart-form" lang="sr">
 svoje
 </span>
-<span class="chart-form" lang="sr" role="cell">
+</span>
+<span class="gender-unit" data-gender="f">
+<span class="gender-tag">
+F
+</span>
+<span class="chart-form" lang="sr">
 svoja
+</span>
 </span>
 </div>
 <p>
 points back to the subject
 </p>
 </article>
-<article class="pron-poss-card" role="rowgroup">
-<h4 class="chart-label" id="pron-poss-owner-1">
+<article class="pron-poss-card">
+<h4 class="chart-label">
 my
 </h4>
-<div aria-labelledby="pron-poss-owner-1" class="pron-gender-row" role="row">
-<span class="chart-form" lang="sr" role="cell">
+<div class="gender-run">
+<span class="gender-unit" data-gender="m">
+<span class="gender-tag">
+M
+</span>
+<span class="chart-form" lang="sr">
 moj
 </span>
-<span class="chart-form" lang="sr" role="cell">
+</span>
+<span class="gender-unit" data-gender="n">
+<span class="gender-tag">
+N
+</span>
+<span class="chart-form" lang="sr">
 moje
 </span>
-<span class="chart-form" lang="sr" role="cell">
+</span>
+<span class="gender-unit" data-gender="f">
+<span class="gender-tag">
+F
+</span>
+<span class="chart-form" lang="sr">
 moja
 </span>
+</span>
 </div>
 </article>
-<article class="pron-poss-card" role="rowgroup">
-<h4 class="chart-label" id="pron-poss-owner-2">
+<article class="pron-poss-card">
+<h4 class="chart-label">
 your
 </h4>
-<div aria-labelledby="pron-poss-owner-2" class="pron-gender-row" role="row">
-<span class="chart-form" lang="sr" role="cell">
+<div class="gender-run">
+<span class="gender-unit" data-gender="m">
+<span class="gender-tag">
+M
+</span>
+<span class="chart-form" lang="sr">
 tvoj
 </span>
-<span class="chart-form" lang="sr" role="cell">
+</span>
+<span class="gender-unit" data-gender="n">
+<span class="gender-tag">
+N
+</span>
+<span class="chart-form" lang="sr">
 tvoje
 </span>
-<span class="chart-form" lang="sr" role="cell">
+</span>
+<span class="gender-unit" data-gender="f">
+<span class="gender-tag">
+F
+</span>
+<span class="chart-form" lang="sr">
 tvoja
 </span>
+</span>
 </div>
 </article>
-<article class="pron-poss-card" role="rowgroup">
-<h4 class="chart-label" id="pron-poss-owner-3">
+<article class="pron-poss-card">
+<h4 class="chart-label">
 his / its
 </h4>
-<div aria-labelledby="pron-poss-owner-3" class="pron-gender-row" role="row">
-<span class="chart-form" lang="sr" role="cell">
+<div class="gender-run">
+<span class="gender-unit" data-gender="m">
+<span class="gender-tag">
+M
+</span>
+<span class="chart-form" lang="sr">
 njegov
 </span>
-<span class="chart-form" lang="sr" role="cell">
+</span>
+<span class="gender-unit" data-gender="n">
+<span class="gender-tag">
+N
+</span>
+<span class="chart-form" lang="sr">
 njegovo
 </span>
-<span class="chart-form" lang="sr" role="cell">
+</span>
+<span class="gender-unit" data-gender="f">
+<span class="gender-tag">
+F
+</span>
+<span class="chart-form" lang="sr">
 njegova
 </span>
+</span>
 </div>
 </article>
-<article class="pron-poss-card" role="rowgroup">
-<h4 class="chart-label" id="pron-poss-owner-4">
+<article class="pron-poss-card">
+<h4 class="chart-label">
 her
 </h4>
-<div aria-labelledby="pron-poss-owner-4" class="pron-gender-row" role="row">
-<span class="chart-form" lang="sr" role="cell">
+<div class="gender-run">
+<span class="gender-unit" data-gender="m">
+<span class="gender-tag">
+M
+</span>
+<span class="chart-form" lang="sr">
 njen
 </span>
-<span class="chart-form" lang="sr" role="cell">
+</span>
+<span class="gender-unit" data-gender="n">
+<span class="gender-tag">
+N
+</span>
+<span class="chart-form" lang="sr">
 njeno
 </span>
-<span class="chart-form" lang="sr" role="cell">
+</span>
+<span class="gender-unit" data-gender="f">
+<span class="gender-tag">
+F
+</span>
+<span class="chart-form" lang="sr">
 njena
 </span>
+</span>
 </div>
 </article>
-<article class="pron-poss-card" role="rowgroup">
-<h4 class="chart-label" id="pron-poss-owner-5">
+<article class="pron-poss-card">
+<h4 class="chart-label">
 our
 </h4>
-<div aria-labelledby="pron-poss-owner-5" class="pron-gender-row" role="row">
-<span class="chart-form" lang="sr" role="cell">
+<div class="gender-run">
+<span class="gender-unit" data-gender="m">
+<span class="gender-tag">
+M
+</span>
+<span class="chart-form" lang="sr">
 naš
 </span>
-<span class="chart-form" lang="sr" role="cell">
+</span>
+<span class="gender-unit" data-gender="n">
+<span class="gender-tag">
+N
+</span>
+<span class="chart-form" lang="sr">
 naše
 </span>
-<span class="chart-form" lang="sr" role="cell">
+</span>
+<span class="gender-unit" data-gender="f">
+<span class="gender-tag">
+F
+</span>
+<span class="chart-form" lang="sr">
 naša
 </span>
+</span>
 </div>
 </article>
-<article class="pron-poss-card" role="rowgroup">
-<h4 class="chart-label" id="pron-poss-owner-6">
+<article class="pron-poss-card">
+<h4 class="chart-label">
 your pl.
 </h4>
-<div aria-labelledby="pron-poss-owner-6" class="pron-gender-row" role="row">
-<span class="chart-form" lang="sr" role="cell">
+<div class="gender-run">
+<span class="gender-unit" data-gender="m">
+<span class="gender-tag">
+M
+</span>
+<span class="chart-form" lang="sr">
 vaš
 </span>
-<span class="chart-form" lang="sr" role="cell">
+</span>
+<span class="gender-unit" data-gender="n">
+<span class="gender-tag">
+N
+</span>
+<span class="chart-form" lang="sr">
 vaše
 </span>
-<span class="chart-form" lang="sr" role="cell">
+</span>
+<span class="gender-unit" data-gender="f">
+<span class="gender-tag">
+F
+</span>
+<span class="chart-form" lang="sr">
 vaša
+</span>
 </span>
 </div>
 </article>
-<article class="pron-poss-card" role="rowgroup">
-<h4 class="chart-label" id="pron-poss-owner-7">
+<article class="pron-poss-card">
+<h4 class="chart-label">
 their
 </h4>
-<div aria-labelledby="pron-poss-owner-7" class="pron-gender-row" role="row">
-<span class="chart-form" lang="sr" role="cell">
+<div class="gender-run">
+<span class="gender-unit" data-gender="m">
+<span class="gender-tag">
+M
+</span>
+<span class="chart-form" lang="sr">
 njihov
 </span>
-<span class="chart-form" lang="sr" role="cell">
+</span>
+<span class="gender-unit" data-gender="n">
+<span class="gender-tag">
+N
+</span>
+<span class="chart-form" lang="sr">
 njihovo
 </span>
-<span class="chart-form" lang="sr" role="cell">
+</span>
+<span class="gender-unit" data-gender="f">
+<span class="gender-tag">
+F
+</span>
+<span class="chart-form" lang="sr">
 njihova
+</span>
 </span>
 </div>
 </article>
@@ -658,62 +767,100 @@ njihova
 <h4 class="chart-label">
 Singular
 </h4>
-<div class="pron-subtable" role="table">
-<div class="chart-label pron-mini-head" role="row">
-<span role="columnheader">
-</span>
-<span data-gender="m" role="columnheader">
-M
-</span>
-<span data-gender="n" role="columnheader">
-N
-</span>
-<span data-gender="f" role="columnheader">
-F
-</span>
-</div>
-<div class="chart-pairs" role="rowgroup">
-<div class="chart-pair pron-matrix-row" role="row">
-<span class="chart-label" role="rowheader">
+<div class="pron-subtable">
+<div class="chart-pairs">
+<div class="chart-pair pron-matrix-row">
+<span class="chart-label">
 this
 </span>
-<span class="chart-form pron-form" lang="sr" role="cell">
+<div class="gender-run">
+<span class="gender-unit" data-gender="m">
+<span class="gender-tag">
+M
+</span>
+<span class="chart-form" lang="sr">
 ovaj
 </span>
-<span class="chart-form pron-form" lang="sr" role="cell">
+</span>
+<span class="gender-unit" data-gender="n">
+<span class="gender-tag">
+N
+</span>
+<span class="chart-form" lang="sr">
 ovo
 </span>
-<span class="chart-form pron-form" lang="sr" role="cell">
+</span>
+<span class="gender-unit" data-gender="f">
+<span class="gender-tag">
+F
+</span>
+<span class="chart-form" lang="sr">
 ova
 </span>
+</span>
 </div>
-<div class="chart-pair pron-matrix-row" role="row">
-<span class="chart-label" role="rowheader">
+</div>
+<div class="chart-pair pron-matrix-row">
+<span class="chart-label">
 that
 </span>
-<span class="chart-form pron-form" lang="sr" role="cell">
+<div class="gender-run">
+<span class="gender-unit" data-gender="m">
+<span class="gender-tag">
+M
+</span>
+<span class="chart-form" lang="sr">
 taj
 </span>
-<span class="chart-form pron-form" lang="sr" role="cell">
+</span>
+<span class="gender-unit" data-gender="n">
+<span class="gender-tag">
+N
+</span>
+<span class="chart-form" lang="sr">
 to
 </span>
-<span class="chart-form pron-form" lang="sr" role="cell">
+</span>
+<span class="gender-unit" data-gender="f">
+<span class="gender-tag">
+F
+</span>
+<span class="chart-form" lang="sr">
 ta
 </span>
+</span>
 </div>
-<div class="chart-pair pron-matrix-row" role="row">
-<span class="chart-label" role="rowheader">
+</div>
+<div class="chart-pair pron-matrix-row">
+<span class="chart-label">
 that there
 </span>
-<span class="chart-form pron-form" lang="sr" role="cell">
+<div class="gender-run">
+<span class="gender-unit" data-gender="m">
+<span class="gender-tag">
+M
+</span>
+<span class="chart-form" lang="sr">
 onaj
 </span>
-<span class="chart-form pron-form" lang="sr" role="cell">
+</span>
+<span class="gender-unit" data-gender="n">
+<span class="gender-tag">
+N
+</span>
+<span class="chart-form" lang="sr">
 ono
 </span>
-<span class="chart-form pron-form" lang="sr" role="cell">
+</span>
+<span class="gender-unit" data-gender="f">
+<span class="gender-tag">
+F
+</span>
+<span class="chart-form" lang="sr">
 ona
 </span>
+</span>
+</div>
 </div>
 </div>
 </div>
@@ -722,62 +869,100 @@ ona
 <h4 class="chart-label">
 Plural
 </h4>
-<div class="pron-subtable" role="table">
-<div class="chart-label pron-mini-head" role="row">
-<span role="columnheader">
-</span>
-<span data-gender="m" role="columnheader">
-M
-</span>
-<span data-gender="n" role="columnheader">
-N
-</span>
-<span data-gender="f" role="columnheader">
-F
-</span>
-</div>
-<div class="chart-pairs" role="rowgroup">
-<div class="chart-pair pron-matrix-row" role="row">
-<span class="chart-label" role="rowheader">
+<div class="pron-subtable">
+<div class="chart-pairs">
+<div class="chart-pair pron-matrix-row">
+<span class="chart-label">
 these
 </span>
-<span class="chart-form pron-form" lang="sr" role="cell">
+<div class="gender-run">
+<span class="gender-unit" data-gender="m">
+<span class="gender-tag">
+M
+</span>
+<span class="chart-form" lang="sr">
 ovi
 </span>
-<span class="chart-form pron-form" lang="sr" role="cell">
+</span>
+<span class="gender-unit" data-gender="n">
+<span class="gender-tag">
+N
+</span>
+<span class="chart-form" lang="sr">
 ova
 </span>
-<span class="chart-form pron-form" lang="sr" role="cell">
+</span>
+<span class="gender-unit" data-gender="f">
+<span class="gender-tag">
+F
+</span>
+<span class="chart-form" lang="sr">
 ove
 </span>
+</span>
 </div>
-<div class="chart-pair pron-matrix-row" role="row">
-<span class="chart-label" role="rowheader">
+</div>
+<div class="chart-pair pron-matrix-row">
+<span class="chart-label">
 those
 </span>
-<span class="chart-form pron-form" lang="sr" role="cell">
+<div class="gender-run">
+<span class="gender-unit" data-gender="m">
+<span class="gender-tag">
+M
+</span>
+<span class="chart-form" lang="sr">
 ti
 </span>
-<span class="chart-form pron-form" lang="sr" role="cell">
+</span>
+<span class="gender-unit" data-gender="n">
+<span class="gender-tag">
+N
+</span>
+<span class="chart-form" lang="sr">
 ta
 </span>
-<span class="chart-form pron-form" lang="sr" role="cell">
+</span>
+<span class="gender-unit" data-gender="f">
+<span class="gender-tag">
+F
+</span>
+<span class="chart-form" lang="sr">
 te
 </span>
+</span>
 </div>
-<div class="chart-pair pron-matrix-row" role="row">
-<span class="chart-label" role="rowheader">
+</div>
+<div class="chart-pair pron-matrix-row">
+<span class="chart-label">
 those there
 </span>
-<span class="chart-form pron-form" lang="sr" role="cell">
+<div class="gender-run">
+<span class="gender-unit" data-gender="m">
+<span class="gender-tag">
+M
+</span>
+<span class="chart-form" lang="sr">
 oni
 </span>
-<span class="chart-form pron-form" lang="sr" role="cell">
+</span>
+<span class="gender-unit" data-gender="n">
+<span class="gender-tag">
+N
+</span>
+<span class="chart-form" lang="sr">
 ona
 </span>
-<span class="chart-form pron-form" lang="sr" role="cell">
+</span>
+<span class="gender-unit" data-gender="f">
+<span class="gender-tag">
+F
+</span>
+<span class="chart-form" lang="sr">
 one
 </span>
+</span>
+</div>
 </div>
 </div>
 </div>
@@ -805,48 +990,69 @@ match the noun by gender, number, and case.
 <h4 class="chart-label">
 Whose
 </h4>
-<div class="pron-subtable" role="table">
-<div class="chart-label pron-mini-head" role="row">
-<span role="columnheader">
-</span>
-<span data-gender="m" role="columnheader">
-M
-</span>
-<span data-gender="n" role="columnheader">
-N
-</span>
-<span data-gender="f" role="columnheader">
-F
-</span>
-</div>
-<div class="chart-pairs" role="rowgroup">
-<div class="chart-pair pron-matrix-row" role="row">
-<span class="chart-label" role="rowheader">
+<div class="pron-subtable">
+<div class="chart-pairs">
+<div class="chart-pair pron-matrix-row">
+<span class="chart-label">
 Singular
 </span>
-<span class="chart-form pron-form" lang="sr" role="cell">
+<div class="gender-run">
+<span class="gender-unit" data-gender="m">
+<span class="gender-tag">
+M
+</span>
+<span class="chart-form" lang="sr">
 čiji
 </span>
-<span class="chart-form pron-form" lang="sr" role="cell">
+</span>
+<span class="gender-unit" data-gender="n">
+<span class="gender-tag">
+N
+</span>
+<span class="chart-form" lang="sr">
 čije
 </span>
-<span class="chart-form pron-form" lang="sr" role="cell">
+</span>
+<span class="gender-unit" data-gender="f">
+<span class="gender-tag">
+F
+</span>
+<span class="chart-form" lang="sr">
 čija
+</span>
 </span>
 </div>
-<div class="chart-pair pron-matrix-row" role="row">
-<span class="chart-label" role="rowheader">
+</div>
+<div class="chart-pair pron-matrix-row">
+<span class="chart-label">
 Plural
 </span>
-<span class="chart-form pron-form" lang="sr" role="cell">
+<div class="gender-run">
+<span class="gender-unit" data-gender="m">
+<span class="gender-tag">
+M
+</span>
+<span class="chart-form" lang="sr">
 čiji
 </span>
-<span class="chart-form pron-form" lang="sr" role="cell">
+</span>
+<span class="gender-unit" data-gender="n">
+<span class="gender-tag">
+N
+</span>
+<span class="chart-form" lang="sr">
 čija
 </span>
-<span class="chart-form pron-form" lang="sr" role="cell">
+</span>
+<span class="gender-unit" data-gender="f">
+<span class="gender-tag">
+F
+</span>
+<span class="chart-form" lang="sr">
 čije
 </span>
+</span>
+</div>
 </div>
 </div>
 </div>

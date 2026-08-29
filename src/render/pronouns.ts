@@ -2,8 +2,8 @@ import { html, raw, sr, type Raw } from '../lib/html.ts';
 import type { Lang } from '../lib/negotiate.ts';
 import { translator } from '../i18n/index.ts';
 import { PERSONAL, POSSESSIVES, DEMOS, QUESTIONS } from '../content/pronouns.ts';
-import type { PersonalPronoun } from '../lib/types.ts';
-import type { Chart } from './chart.ts';
+import { GENDERS, type PersonalPronoun } from '../lib/types.ts';
+import { genderUnit, type Chart } from './chart.ts';
 
 type T = (key: string) => Raw;
 
@@ -46,17 +46,19 @@ function personalCell(value: string): Raw {
   return raw(`<span class="pron-pair" lang="sr">${forms.join(' ')}</span>`);
 }
 
-function genderHead(t: T): Raw {
-  return raw(`<div class="chart-label pron-mini-head" role="row">
-    <span role="columnheader"></span><span role="columnheader" data-gender="m">${t('cases.gender.m').value}</span><span role="columnheader" data-gender="n">${t('cases.gender.n').value}</span><span role="columnheader" data-gender="f">${t('cases.gender.f').value}</span>
-  </div>`);
+/* The gender axis used to be three columns with a head row. It is three chips
+   now: the axis moved from the structure into each cell, so a screen reader
+   reads "M njihov" off the content instead of off a columnheader. That is why
+   these blocks are no longer ARIA tables — a table whose column headers are
+   gone is worse than no table. */
+function genderRun(t: T, forms: readonly string[]): Raw {
+  return raw(`<div class="gender-run">` + GENDERS.map((g, i) =>
+    genderUnit(g, t('cases.gender.' + g), html`<span class="chart-form" lang="sr">${sr(forms[i] ?? '')}</span>`).value
+  ).join('') + `</div>`);
 }
 
 export const chart: Chart = {
   name: 'pronouns',
-  /* #possessives used to get role="table" imperatively at render time; the
-     layout carries it now. */
-  mountAttrs: { possessives: { role: 'table' } },
 
   mounts: (lang: Lang) => {
     const t = translator(lang);
@@ -85,15 +87,10 @@ export const chart: Chart = {
   `;
 
     const possessives = html`
-    <div class="chart-label pron-mini-head pron-poss-head" role="row">
-      <span role="columnheader" data-gender="m">${t('cases.gender.m')}</span><span role="columnheader" data-gender="n">${t('cases.gender.n')}</span><span role="columnheader" data-gender="f">${t('cases.gender.f')}</span>
-    </div>
-    ${POSSESSIVES.map((item, i) => html`
-      <article class="pron-poss-card" role="rowgroup">
-        <h4 class="chart-label" id="pron-poss-owner-${i}">${t(item.owner)}</h4>
-        <div class="pron-gender-row" role="row" aria-labelledby="pron-poss-owner-${i}">
-          ${item.forms.map(form => html`<span class="chart-form" role="cell" lang="sr">${sr(form)}</span>`)}
-        </div>
+    ${POSSESSIVES.map(item => html`
+      <article class="pron-poss-card">
+        <h4 class="chart-label">${t(item.owner)}</h4>
+        ${genderRun(t, item.forms)}
         ${item.note ? html`<p>${t(item.note)}</p>` : ''}
       </article>
     `)}
@@ -102,13 +99,12 @@ export const chart: Chart = {
     const demonstratives = raw(DEMOS.map(group => html`
     <section class="pron-demo-group">
       <h4 class="chart-label">${t(group.title)}</h4>
-      <div class="pron-subtable" role="table">
-        ${genderHead(t)}
-        <div class="chart-pairs" role="rowgroup">
+      <div class="pron-subtable">
+        <div class="chart-pairs">
           ${group.rows.map(row => html`
-            <div class="chart-pair pron-matrix-row" role="row">
-              <span class="chart-label" role="rowheader">${t(row.key)}</span>
-              ${row.forms.map(form => html`<span class="chart-form pron-form" role="cell" lang="sr">${sr(form)}</span>`)}
+            <div class="chart-pair pron-matrix-row">
+              <span class="chart-label">${t(row.key)}</span>
+              ${genderRun(t, row.forms)}
             </div>
           `)}
         </div>
@@ -124,13 +120,12 @@ export const chart: Chart = {
     const questions = html`
     <section class="pron-question-block">
       <h4 class="chart-label">${t('pron.whose')}</h4>
-      <div class="pron-subtable" role="table">
-        ${genderHead(t)}
-        <div class="chart-pairs" role="rowgroup">
+      <div class="pron-subtable">
+        <div class="chart-pairs">
           ${QUESTIONS.whose.map(row => html`
-            <div class="chart-pair pron-matrix-row" role="row">
-              <span class="chart-label" role="rowheader">${t(row.label)}</span>
-              ${row.forms.map(form => html`<span class="chart-form pron-form" role="cell" lang="sr">${sr(form)}</span>`)}
+            <div class="chart-pair pron-matrix-row">
+              <span class="chart-label">${t(row.label)}</span>
+              ${genderRun(t, row.forms)}
             </div>
           `)}
         </div>
