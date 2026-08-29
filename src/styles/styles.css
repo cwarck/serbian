@@ -163,6 +163,20 @@
   --tone-purple:    light-dark(var(--fx-purple-600), var(--fx-purple-400));
   --tone-magenta:   light-dark(var(--fx-magenta-600), var(--fx-magenta-400)); /* unassigned — reserve for a future cross-chart axis */
 
+  /* Tier 2 — facets. Chroma names the axis, hue names the value within it:
+     tier-1 accents run C .085–.165 and own the case axis alone; facets run
+     C .050 and own gender. The GAP is the encoding — a facet must never read
+     as a faded case. Solved in OKLCH at C .050, L fitted per hue and per
+     ground to 4.61–4.63:1 on --fx-paper and --fx-black alike. Do not
+     hand-edit: if a hue moves, re-solve L for the same target, or the band
+     stops being a band. */
+  --facet-m:        light-dark(#5D7A63, #66846B); /* L .550/.583  C .0488/.0511  h 151/150 */
+  --facet-n:        light-dark(#717091, #7A7A9A); /* L .558/.591  C .0508/.0486  h 286/285 */
+  --facet-f:        light-dark(#8B6D58, #967661); /* L .559/.591  C .0493/.0507  h  57/ 55 */
+
+  /* One radius drives the whole corner family (square / diagonal / pill). */
+  --facet-r:        11px;
+
   /* Two voices: serif carries the language (Serbian specimens, headings),
      sans carries the apparatus (labels, captions, UI, prose around the data). */
   --ff-display:   'Source Serif 4', Georgia, serif;
