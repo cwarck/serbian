@@ -45,3 +45,12 @@ test('the glossary is a verbatim port', async () => {
   vm.runInContext(fs.readFileSync('data/glossary.js', 'utf8'), context);
   expect(GLOSSARY).toEqual(context.window.GLOSSARY);
 });
+
+test('the i18n dictionaries are a verbatim port', async () => {
+  const { DICTS } = await import('../src/i18n/index.ts');
+  const context: any = { window: {}, console };
+  vm.createContext(context);
+  vm.runInContext(fs.readFileSync('assets/i18n.js', 'utf8'), context);
+  expect(DICTS.en).toEqual(context.window.I18N.en);
+  expect(DICTS.ru).toEqual(context.window.I18N.ru);
+});

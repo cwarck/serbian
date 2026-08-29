@@ -68,13 +68,6 @@ function walk(dir, predicate, out = []) {
   return out;
 }
 
-function loadI18n() {
-  const context = { window: {}, console };
-  vm.createContext(context);
-  vm.runInContext(read('assets/i18n.js'), context, { filename: 'assets/i18n.js' });
-  return context.window.I18N;
-}
-
 function loadScriptConverter() {
   const context = {
     window: {},
@@ -94,7 +87,7 @@ function loadScriptConverter() {
 }
 
 
-const i18n = loadI18n();
+const { DICTS: i18n } = await import(path.join(root, 'src/i18n/index.ts'));
 const scriptConverter = loadScriptConverter();
 /* Content is TypeScript now; import it instead of running it through a
    fake-browser shim. The `satisfies` annotations give presence and shape, so
