@@ -21,6 +21,10 @@ export interface Chart {
   readonly name: string;
   /* Mount id -> markup, keyed exactly as the pre-rewrite page ids were. */
   readonly mounts: (lang: Lang) => Record<string, string>;
+  /* Attributes the pre-rewrite renderer set on the mount ELEMENT rather than
+     inside it (pronouns' role="table"). The layout carries them now — they are
+     invisible to a fixture that only captured innerHTML. */
+  readonly mountAttrs?: Readonly<Record<string, Record<string, string>>>;
   readonly popovers?: readonly PopoverReg[];
 }
 
