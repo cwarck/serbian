@@ -72,8 +72,9 @@ export const chart: Chart = {
         <ul class="verb-list verb-list-glossed">
           ${group.verbs.map(verb => html`
             <li>
-              <span class="verb-lemma" lang="sr">${sr(verb)}</span>
-              <span class="verb-gloss">${gloss(verb, lang)}</span>
+              <span class="verb-lemma" lang="sr">${sr(verb.lemma)}</span>
+              <span class="verb-stem" lang="sr">${sr(verb.present)}</span>
+              <span class="verb-gloss">${gloss(verb.lemma, lang)}</span>
             </li>
           `)}
         </ul>

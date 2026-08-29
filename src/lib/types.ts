@@ -144,7 +144,10 @@ export interface VerbGroup {
   readonly title: string;
   readonly endings: PersonForms;
   readonly patterns: readonly string[];
-  readonly verbs: readonly string[];
+  /* The 1sg present beside the lemma. Without it a learner reads the -em
+     bucket and produces *pisem, *zvem, *brem — the stem mutations are the
+     only hard part of the group and they were not on the chart. */
+  readonly verbs: readonly { readonly lemma: string; readonly present: string }[];
   readonly example: { readonly infinitive: string; readonly forms: PersonForms };
 }
 

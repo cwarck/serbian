@@ -1913,6 +1913,20 @@ section { position: relative; }
   font-size: var(--fs-lead);
   color: var(--ink);
 }
+/* The 1sg present. The stem mutation is the only hard part of a bucket
+   (pisati -> pišem, not *pisem), so it sits in the specimen voice beside the
+   lemma, with the arrow as apparatus. */
+.verb-list-glossed .verb-stem {
+  font-family: var(--ff-display);
+  font-size: var(--fs-body);
+  color: var(--ink-soft);
+}
+.verb-list-glossed .verb-stem::before {
+  content: "→";
+  margin-inline-end: .4em;
+  font-family: var(--ff-body);
+  color: var(--ink-muted);
+}
 .verb-list-glossed .verb-gloss {
   font-size: var(--fs-caption);
   color: var(--ink-soft);

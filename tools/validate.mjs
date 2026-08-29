@@ -364,7 +364,10 @@ function validateSerbianContentScript() {
   verbs.VERB_GROUPS.forEach((group, groupIndex) => {
     eachString(group.endings, value => validateSerbianLatin(value, `verbGroups[${groupIndex}].endings`));
     eachString(group.patterns, value => validateSerbianLatin(value, `verbGroups[${groupIndex}].patterns`));
-    eachString(group.verbs, value => validateSerbianLatin(value, `verbGroups[${groupIndex}].verbs`));
+    group.verbs.forEach((verb, i) => {
+      validateSerbianLatin(verb.lemma, `verbGroups[${groupIndex}].verbs[${i}].lemma`);
+      validateSerbianLatin(verb.present, `verbGroups[${groupIndex}].verbs[${i}].present`);
+    });
     validateSerbianLatin(group.example.infinitive, `verbGroups[${groupIndex}].example.infinitive`);
     eachString(group.example.forms, value => validateSerbianLatin(value, `verbGroups[${groupIndex}].example.forms`));
   });
@@ -811,7 +814,7 @@ function chartLemmas() {
 
   const verbs = data['src/content/verbs.ts'];
   verbs.VERB_GROUPS.forEach((group, gi) => {
-    group.verbs.forEach((v, i) => add(v, `verbGroups[${gi}].verbs[${i}]`));
+    group.verbs.forEach((v, i) => add(v.lemma, `verbGroups[${gi}].verbs[${i}].lemma`));
     add(group.example.infinitive, `verbGroups[${gi}].example.infinitive`);
   });
   verbs.IRREGULARS.forEach((row, i) => add(row.title, `irregulars[${i}].title`));

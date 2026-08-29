@@ -80,6 +80,9 @@ oni/one/ona
 <span class="verb-lemma" lang="sr">
 raditi
 </span>
+<span class="verb-stem" lang="sr">
+radim
+</span>
 <span class="verb-gloss">
 работать / делать
 </span>
@@ -87,6 +90,9 @@ raditi
 <li>
 <span class="verb-lemma" lang="sr">
 govoriti
+</span>
+<span class="verb-stem" lang="sr">
+govorim
 </span>
 <span class="verb-gloss">
 говорить
@@ -96,6 +102,9 @@ govoriti
 <span class="verb-lemma" lang="sr">
 učiti
 </span>
+<span class="verb-stem" lang="sr">
+učim
+</span>
 <span class="verb-gloss">
 учить
 </span>
@@ -103,6 +112,9 @@ učiti
 <li>
 <span class="verb-lemma" lang="sr">
 videti
+</span>
+<span class="verb-stem" lang="sr">
+vidim
 </span>
 <span class="verb-gloss">
 видеть
@@ -112,6 +124,9 @@ videti
 <span class="verb-lemma" lang="sr">
 voleti
 </span>
+<span class="verb-stem" lang="sr">
+volim
+</span>
 <span class="verb-gloss">
 любить
 </span>
@@ -120,6 +135,9 @@ voleti
 <span class="verb-lemma" lang="sr">
 živeti
 </span>
+<span class="verb-stem" lang="sr">
+živim
+</span>
 <span class="verb-gloss">
 жить
 </span>
@@ -127,6 +145,9 @@ voleti
 <li>
 <span class="verb-lemma" lang="sr">
 sedeti
+</span>
+<span class="verb-stem" lang="sr">
+sedim
 </span>
 <span class="verb-gloss">
 сидеть
@@ -273,6 +294,9 @@ oni/one/ona
 <span class="verb-lemma" lang="sr">
 čitati
 </span>
+<span class="verb-stem" lang="sr">
+čitam
+</span>
 <span class="verb-gloss">
 читать
 </span>
@@ -280,6 +304,9 @@ oni/one/ona
 <li>
 <span class="verb-lemma" lang="sr">
 znati
+</span>
+<span class="verb-stem" lang="sr">
+znam
 </span>
 <span class="verb-gloss">
 знать
@@ -289,6 +316,9 @@ znati
 <span class="verb-lemma" lang="sr">
 imati
 </span>
+<span class="verb-stem" lang="sr">
+imam
+</span>
 <span class="verb-gloss">
 иметь
 </span>
@@ -296,6 +326,9 @@ imati
 <li>
 <span class="verb-lemma" lang="sr">
 gledati
+</span>
+<span class="verb-stem" lang="sr">
+gledam
 </span>
 <span class="verb-gloss">
 смотреть
@@ -305,6 +338,9 @@ gledati
 <span class="verb-lemma" lang="sr">
 slušati
 </span>
+<span class="verb-stem" lang="sr">
+slušam
+</span>
 <span class="verb-gloss">
 слушать
 </span>
@@ -313,6 +349,9 @@ slušati
 <span class="verb-lemma" lang="sr">
 čekati
 </span>
+<span class="verb-stem" lang="sr">
+čekam
+</span>
 <span class="verb-gloss">
 ждать
 </span>
@@ -320,6 +359,9 @@ slušati
 <li>
 <span class="verb-lemma" lang="sr">
 igrati
+</span>
+<span class="verb-stem" lang="sr">
+igram
 </span>
 <span class="verb-gloss">
 играть
@@ -469,6 +511,9 @@ oni/one/ona
 <span class="verb-lemma" lang="sr">
 lagati
 </span>
+<span class="verb-stem" lang="sr">
+lažem
+</span>
 <span class="verb-gloss">
 лгать
 </span>
@@ -476,6 +521,9 @@ lagati
 <li>
 <span class="verb-lemma" lang="sr">
 pisati
+</span>
+<span class="verb-stem" lang="sr">
+pišem
 </span>
 <span class="verb-gloss">
 писать
@@ -485,6 +533,9 @@ pisati
 <span class="verb-lemma" lang="sr">
 zvati
 </span>
+<span class="verb-stem" lang="sr">
+zovem
+</span>
 <span class="verb-gloss">
 звать
 </span>
@@ -492,6 +543,9 @@ zvati
 <li>
 <span class="verb-lemma" lang="sr">
 brati
+</span>
+<span class="verb-stem" lang="sr">
+berem
 </span>
 <span class="verb-gloss">
 собирать
@@ -501,24 +555,33 @@ brati
 <span class="verb-lemma" lang="sr">
 prati
 </span>
+<span class="verb-stem" lang="sr">
+perem
+</span>
 <span class="verb-gloss">
 мыть / стирать
 </span>
 </li>
 <li>
 <span class="verb-lemma" lang="sr">
-peći
+kazati
+</span>
+<span class="verb-stem" lang="sr">
+kažem
 </span>
 <span class="verb-gloss">
-печь / жарить
+говорить / сказать
 </span>
 </li>
 <li>
 <span class="verb-lemma" lang="sr">
-reći
+plakati
+</span>
+<span class="verb-stem" lang="sr">
+plačem
 </span>
 <span class="verb-gloss">
-сказать
+плакать
 </span>
 </li>
 </ul>
@@ -668,6 +731,9 @@ oni/one/ona
 <span class="verb-lemma" lang="sr">
 kupovati
 </span>
+<span class="verb-stem" lang="sr">
+kupujem
+</span>
 <span class="verb-gloss">
 покупать
 </span>
@@ -675,6 +741,9 @@ kupovati
 <li>
 <span class="verb-lemma" lang="sr">
 putovati
+</span>
+<span class="verb-stem" lang="sr">
+putujem
 </span>
 <span class="verb-gloss">
 путешествовать
@@ -684,6 +753,9 @@ putovati
 <span class="verb-lemma" lang="sr">
 stanovati
 </span>
+<span class="verb-stem" lang="sr">
+stanujem
+</span>
 <span class="verb-gloss">
 проживать
 </span>
@@ -691,6 +763,9 @@ stanovati
 <li>
 <span class="verb-lemma" lang="sr">
 verovati
+</span>
+<span class="verb-stem" lang="sr">
+verujem
 </span>
 <span class="verb-gloss">
 верить
@@ -700,6 +775,9 @@ verovati
 <span class="verb-lemma" lang="sr">
 pokazivati
 </span>
+<span class="verb-stem" lang="sr">
+pokazujem
+</span>
 <span class="verb-gloss">
 показывать
 </span>
@@ -707,6 +785,9 @@ pokazivati
 <li>
 <span class="verb-lemma" lang="sr">
 prodavati
+</span>
+<span class="verb-stem" lang="sr">
+prodajem
 </span>
 <span class="verb-gloss">
 продавать

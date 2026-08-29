@@ -80,6 +80,9 @@ Common verbs
 <span class="verb-lemma" lang="sr">
 raditi
 </span>
+<span class="verb-stem" lang="sr">
+radim
+</span>
 <span class="verb-gloss">
 work / do
 </span>
@@ -87,6 +90,9 @@ work / do
 <li>
 <span class="verb-lemma" lang="sr">
 govoriti
+</span>
+<span class="verb-stem" lang="sr">
+govorim
 </span>
 <span class="verb-gloss">
 speak / talk
@@ -96,6 +102,9 @@ speak / talk
 <span class="verb-lemma" lang="sr">
 učiti
 </span>
+<span class="verb-stem" lang="sr">
+učim
+</span>
 <span class="verb-gloss">
 learn / study
 </span>
@@ -103,6 +112,9 @@ learn / study
 <li>
 <span class="verb-lemma" lang="sr">
 videti
+</span>
+<span class="verb-stem" lang="sr">
+vidim
 </span>
 <span class="verb-gloss">
 see
@@ -112,6 +124,9 @@ see
 <span class="verb-lemma" lang="sr">
 voleti
 </span>
+<span class="verb-stem" lang="sr">
+volim
+</span>
 <span class="verb-gloss">
 love / like
 </span>
@@ -120,6 +135,9 @@ love / like
 <span class="verb-lemma" lang="sr">
 živeti
 </span>
+<span class="verb-stem" lang="sr">
+živim
+</span>
 <span class="verb-gloss">
 live
 </span>
@@ -127,6 +145,9 @@ live
 <li>
 <span class="verb-lemma" lang="sr">
 sedeti
+</span>
+<span class="verb-stem" lang="sr">
+sedim
 </span>
 <span class="verb-gloss">
 sit
@@ -273,6 +294,9 @@ Common verbs
 <span class="verb-lemma" lang="sr">
 čitati
 </span>
+<span class="verb-stem" lang="sr">
+čitam
+</span>
 <span class="verb-gloss">
 read
 </span>
@@ -280,6 +304,9 @@ read
 <li>
 <span class="verb-lemma" lang="sr">
 znati
+</span>
+<span class="verb-stem" lang="sr">
+znam
 </span>
 <span class="verb-gloss">
 know
@@ -289,6 +316,9 @@ know
 <span class="verb-lemma" lang="sr">
 imati
 </span>
+<span class="verb-stem" lang="sr">
+imam
+</span>
 <span class="verb-gloss">
 have
 </span>
@@ -296,6 +326,9 @@ have
 <li>
 <span class="verb-lemma" lang="sr">
 gledati
+</span>
+<span class="verb-stem" lang="sr">
+gledam
 </span>
 <span class="verb-gloss">
 watch / look
@@ -305,6 +338,9 @@ watch / look
 <span class="verb-lemma" lang="sr">
 slušati
 </span>
+<span class="verb-stem" lang="sr">
+slušam
+</span>
 <span class="verb-gloss">
 listen
 </span>
@@ -313,6 +349,9 @@ listen
 <span class="verb-lemma" lang="sr">
 čekati
 </span>
+<span class="verb-stem" lang="sr">
+čekam
+</span>
 <span class="verb-gloss">
 wait (for)
 </span>
@@ -320,6 +359,9 @@ wait (for)
 <li>
 <span class="verb-lemma" lang="sr">
 igrati
+</span>
+<span class="verb-stem" lang="sr">
+igram
 </span>
 <span class="verb-gloss">
 play
@@ -469,6 +511,9 @@ Common verbs
 <span class="verb-lemma" lang="sr">
 lagati
 </span>
+<span class="verb-stem" lang="sr">
+lažem
+</span>
 <span class="verb-gloss">
 lie / tell lies
 </span>
@@ -476,6 +521,9 @@ lie / tell lies
 <li>
 <span class="verb-lemma" lang="sr">
 pisati
+</span>
+<span class="verb-stem" lang="sr">
+pišem
 </span>
 <span class="verb-gloss">
 write
@@ -485,6 +533,9 @@ write
 <span class="verb-lemma" lang="sr">
 zvati
 </span>
+<span class="verb-stem" lang="sr">
+zovem
+</span>
 <span class="verb-gloss">
 call (name)
 </span>
@@ -492,6 +543,9 @@ call (name)
 <li>
 <span class="verb-lemma" lang="sr">
 brati
+</span>
+<span class="verb-stem" lang="sr">
+berem
 </span>
 <span class="verb-gloss">
 pick / gather
@@ -501,24 +555,33 @@ pick / gather
 <span class="verb-lemma" lang="sr">
 prati
 </span>
+<span class="verb-stem" lang="sr">
+perem
+</span>
 <span class="verb-gloss">
 wash
 </span>
 </li>
 <li>
 <span class="verb-lemma" lang="sr">
-peći
+kazati
+</span>
+<span class="verb-stem" lang="sr">
+kažem
 </span>
 <span class="verb-gloss">
-bake / roast
+say / tell
 </span>
 </li>
 <li>
 <span class="verb-lemma" lang="sr">
-reći
+plakati
+</span>
+<span class="verb-stem" lang="sr">
+plačem
 </span>
 <span class="verb-gloss">
-say
+cry
 </span>
 </li>
 </ul>
@@ -668,6 +731,9 @@ Common verbs
 <span class="verb-lemma" lang="sr">
 kupovati
 </span>
+<span class="verb-stem" lang="sr">
+kupujem
+</span>
 <span class="verb-gloss">
 buy / shop
 </span>
@@ -675,6 +741,9 @@ buy / shop
 <li>
 <span class="verb-lemma" lang="sr">
 putovati
+</span>
+<span class="verb-stem" lang="sr">
+putujem
 </span>
 <span class="verb-gloss">
 travel
@@ -684,6 +753,9 @@ travel
 <span class="verb-lemma" lang="sr">
 stanovati
 </span>
+<span class="verb-stem" lang="sr">
+stanujem
+</span>
 <span class="verb-gloss">
 reside / live (at)
 </span>
@@ -691,6 +763,9 @@ reside / live (at)
 <li>
 <span class="verb-lemma" lang="sr">
 verovati
+</span>
+<span class="verb-stem" lang="sr">
+verujem
 </span>
 <span class="verb-gloss">
 believe
@@ -700,6 +775,9 @@ believe
 <span class="verb-lemma" lang="sr">
 pokazivati
 </span>
+<span class="verb-stem" lang="sr">
+pokazujem
+</span>
 <span class="verb-gloss">
 show / point
 </span>
@@ -707,6 +785,9 @@ show / point
 <li>
 <span class="verb-lemma" lang="sr">
 prodavati
+</span>
+<span class="verb-stem" lang="sr">
+prodajem
 </span>
 <span class="verb-gloss">
 sell

@@ -80,6 +80,9 @@ IM | E
 <span class="verb-lemma" lang="sr">
 радити
 </span>
+<span class="verb-stem" lang="sr">
+радим
+</span>
 <span class="verb-gloss">
 работать / делать
 </span>
@@ -87,6 +90,9 @@ IM | E
 <li>
 <span class="verb-lemma" lang="sr">
 говорити
+</span>
+<span class="verb-stem" lang="sr">
+говорим
 </span>
 <span class="verb-gloss">
 говорить
@@ -96,6 +102,9 @@ IM | E
 <span class="verb-lemma" lang="sr">
 учити
 </span>
+<span class="verb-stem" lang="sr">
+учим
+</span>
 <span class="verb-gloss">
 учить
 </span>
@@ -103,6 +112,9 @@ IM | E
 <li>
 <span class="verb-lemma" lang="sr">
 видети
+</span>
+<span class="verb-stem" lang="sr">
+видим
 </span>
 <span class="verb-gloss">
 видеть
@@ -112,6 +124,9 @@ IM | E
 <span class="verb-lemma" lang="sr">
 волети
 </span>
+<span class="verb-stem" lang="sr">
+волим
+</span>
 <span class="verb-gloss">
 любить
 </span>
@@ -120,6 +135,9 @@ IM | E
 <span class="verb-lemma" lang="sr">
 живети
 </span>
+<span class="verb-stem" lang="sr">
+живим
+</span>
 <span class="verb-gloss">
 жить
 </span>
@@ -127,6 +145,9 @@ IM | E
 <li>
 <span class="verb-lemma" lang="sr">
 седети
+</span>
+<span class="verb-stem" lang="sr">
+седим
 </span>
 <span class="verb-gloss">
 сидеть
@@ -273,6 +294,9 @@ AM | AJU
 <span class="verb-lemma" lang="sr">
 читати
 </span>
+<span class="verb-stem" lang="sr">
+читам
+</span>
 <span class="verb-gloss">
 читать
 </span>
@@ -280,6 +304,9 @@ AM | AJU
 <li>
 <span class="verb-lemma" lang="sr">
 знати
+</span>
+<span class="verb-stem" lang="sr">
+знам
 </span>
 <span class="verb-gloss">
 знать
@@ -289,6 +316,9 @@ AM | AJU
 <span class="verb-lemma" lang="sr">
 имати
 </span>
+<span class="verb-stem" lang="sr">
+имам
+</span>
 <span class="verb-gloss">
 иметь
 </span>
@@ -296,6 +326,9 @@ AM | AJU
 <li>
 <span class="verb-lemma" lang="sr">
 гледати
+</span>
+<span class="verb-stem" lang="sr">
+гледам
 </span>
 <span class="verb-gloss">
 смотреть
@@ -305,6 +338,9 @@ AM | AJU
 <span class="verb-lemma" lang="sr">
 слушати
 </span>
+<span class="verb-stem" lang="sr">
+слушам
+</span>
 <span class="verb-gloss">
 слушать
 </span>
@@ -313,6 +349,9 @@ AM | AJU
 <span class="verb-lemma" lang="sr">
 чекати
 </span>
+<span class="verb-stem" lang="sr">
+чекам
+</span>
 <span class="verb-gloss">
 ждать
 </span>
@@ -320,6 +359,9 @@ AM | AJU
 <li>
 <span class="verb-lemma" lang="sr">
 играти
+</span>
+<span class="verb-stem" lang="sr">
+играм
 </span>
 <span class="verb-gloss">
 играть
@@ -469,6 +511,9 @@ EM | U
 <span class="verb-lemma" lang="sr">
 лагати
 </span>
+<span class="verb-stem" lang="sr">
+лажем
+</span>
 <span class="verb-gloss">
 лгать
 </span>
@@ -476,6 +521,9 @@ EM | U
 <li>
 <span class="verb-lemma" lang="sr">
 писати
+</span>
+<span class="verb-stem" lang="sr">
+пишем
 </span>
 <span class="verb-gloss">
 писать
@@ -485,6 +533,9 @@ EM | U
 <span class="verb-lemma" lang="sr">
 звати
 </span>
+<span class="verb-stem" lang="sr">
+зовем
+</span>
 <span class="verb-gloss">
 звать
 </span>
@@ -492,6 +543,9 @@ EM | U
 <li>
 <span class="verb-lemma" lang="sr">
 брати
+</span>
+<span class="verb-stem" lang="sr">
+берем
 </span>
 <span class="verb-gloss">
 собирать
@@ -501,24 +555,33 @@ EM | U
 <span class="verb-lemma" lang="sr">
 прати
 </span>
+<span class="verb-stem" lang="sr">
+перем
+</span>
 <span class="verb-gloss">
 мыть / стирать
 </span>
 </li>
 <li>
 <span class="verb-lemma" lang="sr">
-пећи
+казати
+</span>
+<span class="verb-stem" lang="sr">
+кажем
 </span>
 <span class="verb-gloss">
-печь / жарить
+говорить / сказать
 </span>
 </li>
 <li>
 <span class="verb-lemma" lang="sr">
-рећи
+плакати
+</span>
+<span class="verb-stem" lang="sr">
+плачем
 </span>
 <span class="verb-gloss">
-сказать
+плакать
 </span>
 </li>
 </ul>
@@ -668,6 +731,9 @@ JEM | JU
 <span class="verb-lemma" lang="sr">
 куповати
 </span>
+<span class="verb-stem" lang="sr">
+купујем
+</span>
 <span class="verb-gloss">
 покупать
 </span>
@@ -675,6 +741,9 @@ JEM | JU
 <li>
 <span class="verb-lemma" lang="sr">
 путовати
+</span>
+<span class="verb-stem" lang="sr">
+путујем
 </span>
 <span class="verb-gloss">
 путешествовать
@@ -684,6 +753,9 @@ JEM | JU
 <span class="verb-lemma" lang="sr">
 становати
 </span>
+<span class="verb-stem" lang="sr">
+станујем
+</span>
 <span class="verb-gloss">
 проживать
 </span>
@@ -691,6 +763,9 @@ JEM | JU
 <li>
 <span class="verb-lemma" lang="sr">
 веровати
+</span>
+<span class="verb-stem" lang="sr">
+верујем
 </span>
 <span class="verb-gloss">
 верить
@@ -700,6 +775,9 @@ JEM | JU
 <span class="verb-lemma" lang="sr">
 показивати
 </span>
+<span class="verb-stem" lang="sr">
+показујем
+</span>
 <span class="verb-gloss">
 показывать
 </span>
@@ -707,6 +785,9 @@ JEM | JU
 <li>
 <span class="verb-lemma" lang="sr">
 продавати
+</span>
+<span class="verb-stem" lang="sr">
+продајем
 </span>
 <span class="verb-gloss">
 продавать

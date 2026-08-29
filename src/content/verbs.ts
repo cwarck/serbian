@@ -16,7 +16,15 @@ export const VERB_GROUPS = [
     title: 'IM | E',
     endings: { ja:'-im', ti:'-iš', on:'-i', mi:'-imo', vi:'-ite', oni:'-e' },
     patterns: ['-iti', '-eti'],
-    verbs: ['raditi', 'govoriti', 'učiti', 'videti', 'voleti', 'živeti', 'sedeti'],
+    verbs: [
+      { lemma: 'raditi', present: 'radim' },
+      { lemma: 'govoriti', present: 'govorim' },
+      { lemma: 'učiti', present: 'učim' },
+      { lemma: 'videti', present: 'vidim' },
+      { lemma: 'voleti', present: 'volim' },
+      { lemma: 'živeti', present: 'živim' },
+      { lemma: 'sedeti', present: 'sedim' },
+    ],
     example: {
       infinitive: 'raditi',
       forms: { ja:'radim', ti:'radiš', on:'radi', mi:'radimo', vi:'radite', oni:'rade' }
@@ -28,7 +36,15 @@ export const VERB_GROUPS = [
     title: 'AM | AJU',
     endings: { ja:'-am', ti:'-aš', on:'-a', mi:'-amo', vi:'-ate', oni:'-aju' },
     patterns: ['-ati'],
-    verbs: ['čitati', 'znati', 'imati', 'gledati', 'slušati', 'čekati', 'igrati'],
+    verbs: [
+      { lemma: 'čitati', present: 'čitam' },
+      { lemma: 'znati', present: 'znam' },
+      { lemma: 'imati', present: 'imam' },
+      { lemma: 'gledati', present: 'gledam' },
+      { lemma: 'slušati', present: 'slušam' },
+      { lemma: 'čekati', present: 'čekam' },
+      { lemma: 'igrati', present: 'igram' },
+    ],
     example: {
       infinitive: 'čitati',
       forms: { ja:'čitam', ti:'čitaš', on:'čita', mi:'čitamo', vi:'čitate', oni:'čitaju' }
@@ -40,7 +56,15 @@ export const VERB_GROUPS = [
     title: 'EM | U',
     endings: { ja:'-em', ti:'-eš', on:'-e', mi:'-emo', vi:'-ete', oni:'-u' },
     patterns: ['-ati', '-ći'],
-    verbs: ['lagati', 'pisati', 'zvati', 'brati', 'prati', 'peći', 'reći'],
+    verbs: [
+      { lemma: 'lagati', present: 'lažem' },
+      { lemma: 'pisati', present: 'pišem' },
+      { lemma: 'zvati', present: 'zovem' },
+      { lemma: 'brati', present: 'berem' },
+      { lemma: 'prati', present: 'perem' },
+      { lemma: 'kazati', present: 'kažem' },
+      { lemma: 'plakati', present: 'plačem' },
+    ],
     example: {
       infinitive: 'lagati',
       forms: { ja:'lažem', ti:'lažeš', on:'laže', mi:'lažemo', vi:'lažete', oni:'lažu' }
@@ -52,7 +76,14 @@ export const VERB_GROUPS = [
     title: 'JEM | JU',
     endings: { ja:'-jem', ti:'-ješ', on:'-je', mi:'-jemo', vi:'-jete', oni:'-ju' },
     patterns: ['-ovati', '-ivati', '-avati'],
-    verbs: ['kupovati', 'putovati', 'stanovati', 'verovati', 'pokazivati', 'prodavati'],
+    verbs: [
+      { lemma: 'kupovati', present: 'kupujem' },
+      { lemma: 'putovati', present: 'putujem' },
+      { lemma: 'stanovati', present: 'stanujem' },
+      { lemma: 'verovati', present: 'verujem' },
+      { lemma: 'pokazivati', present: 'pokazujem' },
+      { lemma: 'prodavati', present: 'prodajem' },
+    ],
     example: {
       infinitive: 'kupovati',
       forms: { ja:'kupujem', ti:'kupuješ', on:'kupuje', mi:'kupujemo', vi:'kupujete', oni:'kupuju' }

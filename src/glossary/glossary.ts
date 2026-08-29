@@ -41,6 +41,8 @@ export const GLOSSARY = {
 
   // em | u
   'lagati':       { pos:'verb', aspect:'ipf', gloss:{ en:'lie / tell lies', ru:'лгать' }, level:'A2' },
+  'kazati':       { pos:'verb', aspect:'ipf', gloss:{ en:'say / tell', ru:'говорить / сказать' }, level:'A2' },
+  'plakati':      { pos:'verb', aspect:'ipf', gloss:{ en:'cry', ru:'плакать' }, level:'A2' },
   'pisati':       { pos:'verb', aspect:'ipf', gloss:{ en:'write', ru:'писать' }, level:'A1', related:['napisati','dopisati','popisati','potpisati','raspisati','zapisati','ispisati'] },
   'napisati':     { pos:'verb', aspect:'pf',  gloss:{ en:'write (finish)', ru:'написать' }, level:'A1', related:['pisati'] },
   'dopisati':     { pos:'verb', aspect:'pf',  gloss:{ en:'write more, add', ru:'дописать' }, level:'B1', related:['pisati'] },
