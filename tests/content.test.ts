@@ -46,11 +46,17 @@ test('the glossary is a verbatim port', async () => {
   expect(GLOSSARY).toEqual(context.window.GLOSSARY);
 });
 
-test('the i18n dictionaries are a verbatim port', async () => {
+/* The port carried every pre-rewrite string across unchanged. New keys have
+   been added since (per-route descriptions, the skip link, the noscript line),
+   so this asserts non-regression of the old ones rather than equality. */
+test('every pre-rewrite i18n string survived the port unchanged', async () => {
   const { DICTS } = await import('../src/i18n/index.ts');
   const context: any = { window: {}, console };
   vm.createContext(context);
   vm.runInContext(fs.readFileSync('assets/i18n.js', 'utf8'), context);
-  expect(DICTS.en).toEqual(context.window.I18N.en);
-  expect(DICTS.ru).toEqual(context.window.I18N.ru);
+  for (const lang of ['en', 'ru'] as const) {
+    for (const [key, value] of Object.entries(context.window.I18N[lang])) {
+      expect((DICTS[lang] as Record<string, string>)[key], `${lang} ${key}`).toBe(value as string);
+    }
+  }
 });

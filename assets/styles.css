@@ -282,6 +282,22 @@ p { margin: 0 0 1.15em; }
    but the token itself is a specimen, so it renders in the serif voice. */
 i { font-style: inherit; font-family: var(--ff-display); }
 
+/* ── Alphabet switch ───────────────────────────────────────────────────
+   Every Serbian string ships in BOTH alphabets and CSS picks one. Toggling is
+   one attribute on <html>; nothing rewrites text, so copy/paste and screen
+   readers stay correct (display:none removes the hidden twin from both).
+
+   Deliberately `.s`, not `.sr` — `.sr` is a live block-level specimen class
+   (.chart-example .sr, .ex .sr), and these wrappers nest inside translations.
+
+   The rules are ASYMMETRIC on purpose: a symmetric pair would render
+   `žena жена` on any document without data-script. Latin wins by default,
+   matching the pre-rewrite client; the [data-script="cyr"] block flips it. */
+.s { display: contents; }
+[data-s="cyr"] { display: none; }
+[data-script="cyr"] [data-s="lat"] { display: none; }
+[data-script="cyr"] [data-s="cyr"] { display: inline; }
+
 /* Serbian specimens and their glosses sit in rigid grid/flex example tracks.
    `break-word` alone won't shrink a track — the longest word still sets the
    column's min-content. `anywhere` lets an over-long unbreakable token break
@@ -375,6 +391,7 @@ section { position: relative; }
    controls that previously fell back to the unstyled UA default. */
 .brand:focus-visible,
 .chip:focus-visible,
+.foot-charts-list a:focus-visible,
 .settings-btn:focus-visible,
 .chart-card:focus-visible,
 .case-strip-cell a:focus-visible,
@@ -433,6 +450,43 @@ section { position: relative; }
    Footer
    ----------------------------------------------------------- */
 
+/* Keyboard-only route past the masthead. Off-canvas until focused, then it
+   parks over the sheet's top-left corner. */
+.skip-link {
+  position: absolute;
+  left: .75rem; top: -4rem;
+  z-index: 1300;
+  padding: .7rem 1rem;
+  border: 1px solid var(--hairline);
+  border-radius: .4rem;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--ff-body);
+  font-size: var(--fs-label);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  line-height: 1;
+  transition: top .18s;
+}
+.skip-link:focus-visible {
+  top: .75rem;
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* With JS off the popovers and the alphabet toggle are inert; everything else
+   is already in the served bytes. One line, then out of the way. */
+.noscript-note {
+  margin: 0 0 1.2rem;
+  padding: .7rem 0;
+  border-bottom: 1px dashed var(--hairline-soft);
+  font-family: var(--ff-body);
+  font-size: var(--fs-caption);
+  line-height: var(--lh-prose);
+  color: var(--ink-muted);
+  text-transform: none;
+}
+
 .foot {
   padding-block: 3rem 4rem;
   border-top: 1px solid var(--hairline);
@@ -441,13 +495,34 @@ section { position: relative; }
   letter-spacing: var(--track-label);
   text-transform: uppercase;
   color: var(--ink-muted);
-  display: flex; justify-content: flex-end;
+  display: flex; flex-direction: column; gap: 2.4rem;
 }
 .foot-meta {
   display: flex; flex-direction: column; gap: .6rem;
   text-align: right; line-height: var(--lh-snug);
+  align-self: flex-end;
 }
+
+/* Chart-to-chart navigation. A cheat sheet is flipped between, not read
+   through — before this the only route from cases to verbs was
+   wordmark -> home -> card. */
+.foot-charts {
+  display: flex; flex-direction: column; gap: .8rem;
+}
+.foot-charts-label { color: var(--ink-soft); }
+.foot-charts-list {
+  list-style: none; margin: 0; padding: 0;
+  display: flex; flex-wrap: wrap; gap: .5rem 1.1rem;
+  line-height: 1;
+}
+.foot-charts-list a {
+  display: inline-block;
+  padding-block: .5rem;
+  color: var(--ink-muted);
+}
+.foot-charts-list a[aria-current="page"] { color: var(--ink); }
 @media (hover: hover) and (pointer: fine) {
+  .foot-charts-list a:hover { color: var(--accent); }
   .chip:hover { color: var(--ink); }
   .chip[aria-pressed="true"]:hover { color: var(--paper); }
   .chart-card:hover { background: var(--paper-deep); }
