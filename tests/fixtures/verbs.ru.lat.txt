@@ -1,0 +1,1266 @@
+### mount verbGrid
+<article class="chart-panel verb-col" data-tone="im">
+<header class="chart-panel-head">
+<span class="chart-label">
+Настоящее
+</span>
+<h3>
+IM | E
+</h3>
+</header>
+<div aria-label="Окончания" class="chart-pairs verb-pair-grid">
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ja
+</span>
+<span class="chart-form verb-form" lang="sr">
+-im
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+mi
+</span>
+<span class="chart-form verb-form" lang="sr">
+-imo
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ti
+</span>
+<span class="chart-form verb-form" lang="sr">
+-iš
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+vi
+</span>
+<span class="chart-form verb-form" lang="sr">
+-ite
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+on/ona/ono
+</span>
+<span class="chart-form verb-form" lang="sr">
+-i
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+oni/one/ona
+</span>
+<span class="chart-form verb-form" lang="sr">
+-e
+</span>
+</div>
+</div>
+<section class="verb-block">
+<h4 class="chart-label">
+Инф. подсказки
+</h4>
+<div class="verb-patterns">
+<span class="verb-pattern" lang="sr">
+-iti
+</span>
+<span class="verb-pattern" lang="sr">
+-eti
+</span>
+</div>
+</section>
+<section class="verb-block">
+<h4 class="chart-label">
+Частые глаголы
+</h4>
+<ul class="verb-list verb-list-glossed">
+<li>
+<span class="verb-lemma" lang="sr">
+raditi
+</span>
+<span class="verb-gloss">
+работать / делать
+</span>
+</li>
+<li>
+<span class="verb-lemma" lang="sr">
+govoriti
+</span>
+<span class="verb-gloss">
+говорить
+</span>
+</li>
+<li>
+<span class="verb-lemma" lang="sr">
+učiti
+</span>
+<span class="verb-gloss">
+учить
+</span>
+</li>
+<li>
+<span class="verb-lemma" lang="sr">
+videti
+</span>
+<span class="verb-gloss">
+видеть
+</span>
+</li>
+<li>
+<span class="verb-lemma" lang="sr">
+voleti
+</span>
+<span class="verb-gloss">
+любить
+</span>
+</li>
+<li>
+<span class="verb-lemma" lang="sr">
+živeti
+</span>
+<span class="verb-gloss">
+жить
+</span>
+</li>
+<li>
+<span class="verb-lemma" lang="sr">
+sedeti
+</span>
+<span class="verb-gloss">
+сидеть
+</span>
+</li>
+</ul>
+</section>
+<section class="verb-block verb-block-example">
+<header class="verb-lemma-head">
+<span class="chart-label">
+Пример
+</span>
+<h4 class="sr-head" lang="sr">
+raditi
+</h4>
+</header>
+<div class="chart-pairs verb-pair-grid">
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ja
+</span>
+<span class="chart-form verb-form" lang="sr">
+radim
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+mi
+</span>
+<span class="chart-form verb-form" lang="sr">
+radimo
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ti
+</span>
+<span class="chart-form verb-form" lang="sr">
+radiš
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+vi
+</span>
+<span class="chart-form verb-form" lang="sr">
+radite
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+on/ona/ono
+</span>
+<span class="chart-form verb-form" lang="sr">
+radi
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+oni/one/ona
+</span>
+<span class="chart-form verb-form" lang="sr">
+rade
+</span>
+</div>
+</div>
+</section>
+</article>
+<article class="chart-panel verb-col" data-tone="am">
+<header class="chart-panel-head">
+<span class="chart-label">
+Настоящее
+</span>
+<h3>
+AM | AJU
+</h3>
+</header>
+<div aria-label="Окончания" class="chart-pairs verb-pair-grid">
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ja
+</span>
+<span class="chart-form verb-form" lang="sr">
+-am
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+mi
+</span>
+<span class="chart-form verb-form" lang="sr">
+-amo
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ti
+</span>
+<span class="chart-form verb-form" lang="sr">
+-aš
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+vi
+</span>
+<span class="chart-form verb-form" lang="sr">
+-ate
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+on/ona/ono
+</span>
+<span class="chart-form verb-form" lang="sr">
+-a
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+oni/one/ona
+</span>
+<span class="chart-form verb-form" lang="sr">
+-aju
+</span>
+</div>
+</div>
+<section class="verb-block">
+<h4 class="chart-label">
+Инф. подсказки
+</h4>
+<div class="verb-patterns">
+<span class="verb-pattern" lang="sr">
+-ati
+</span>
+</div>
+</section>
+<section class="verb-block">
+<h4 class="chart-label">
+Частые глаголы
+</h4>
+<ul class="verb-list verb-list-glossed">
+<li>
+<span class="verb-lemma" lang="sr">
+čitati
+</span>
+<span class="verb-gloss">
+читать
+</span>
+</li>
+<li>
+<span class="verb-lemma" lang="sr">
+znati
+</span>
+<span class="verb-gloss">
+знать
+</span>
+</li>
+<li>
+<span class="verb-lemma" lang="sr">
+imati
+</span>
+<span class="verb-gloss">
+иметь
+</span>
+</li>
+<li>
+<span class="verb-lemma" lang="sr">
+gledati
+</span>
+<span class="verb-gloss">
+смотреть
+</span>
+</li>
+<li>
+<span class="verb-lemma" lang="sr">
+slušati
+</span>
+<span class="verb-gloss">
+слушать
+</span>
+</li>
+<li>
+<span class="verb-lemma" lang="sr">
+čekati
+</span>
+<span class="verb-gloss">
+ждать
+</span>
+</li>
+<li>
+<span class="verb-lemma" lang="sr">
+igrati
+</span>
+<span class="verb-gloss">
+играть
+</span>
+</li>
+</ul>
+</section>
+<section class="verb-block verb-block-example">
+<header class="verb-lemma-head">
+<span class="chart-label">
+Пример
+</span>
+<h4 class="sr-head" lang="sr">
+čitati
+</h4>
+</header>
+<div class="chart-pairs verb-pair-grid">
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ja
+</span>
+<span class="chart-form verb-form" lang="sr">
+čitam
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+mi
+</span>
+<span class="chart-form verb-form" lang="sr">
+čitamo
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ti
+</span>
+<span class="chart-form verb-form" lang="sr">
+čitaš
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+vi
+</span>
+<span class="chart-form verb-form" lang="sr">
+čitate
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+on/ona/ono
+</span>
+<span class="chart-form verb-form" lang="sr">
+čita
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+oni/one/ona
+</span>
+<span class="chart-form verb-form" lang="sr">
+čitaju
+</span>
+</div>
+</div>
+</section>
+</article>
+<article class="chart-panel verb-col" data-tone="em">
+<header class="chart-panel-head">
+<span class="chart-label">
+Настоящее
+</span>
+<h3>
+EM | U
+</h3>
+</header>
+<div aria-label="Окончания" class="chart-pairs verb-pair-grid">
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ja
+</span>
+<span class="chart-form verb-form" lang="sr">
+-em
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+mi
+</span>
+<span class="chart-form verb-form" lang="sr">
+-emo
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ti
+</span>
+<span class="chart-form verb-form" lang="sr">
+-eš
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+vi
+</span>
+<span class="chart-form verb-form" lang="sr">
+-ete
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+on/ona/ono
+</span>
+<span class="chart-form verb-form" lang="sr">
+-e
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+oni/one/ona
+</span>
+<span class="chart-form verb-form" lang="sr">
+-u
+</span>
+</div>
+</div>
+<section class="verb-block">
+<h4 class="chart-label">
+Инф. подсказки
+</h4>
+<div class="verb-patterns">
+<span class="verb-pattern" lang="sr">
+-ati
+</span>
+<span class="verb-pattern" lang="sr">
+-ći
+</span>
+</div>
+</section>
+<section class="verb-block">
+<h4 class="chart-label">
+Частые глаголы
+</h4>
+<ul class="verb-list verb-list-glossed">
+<li>
+<span class="verb-lemma" lang="sr">
+lagati
+</span>
+<span class="verb-gloss">
+лгать
+</span>
+</li>
+<li>
+<span class="verb-lemma" lang="sr">
+pisati
+</span>
+<span class="verb-gloss">
+писать
+</span>
+</li>
+<li>
+<span class="verb-lemma" lang="sr">
+zvati
+</span>
+<span class="verb-gloss">
+звать
+</span>
+</li>
+<li>
+<span class="verb-lemma" lang="sr">
+brati
+</span>
+<span class="verb-gloss">
+собирать
+</span>
+</li>
+<li>
+<span class="verb-lemma" lang="sr">
+prati
+</span>
+<span class="verb-gloss">
+мыть / стирать
+</span>
+</li>
+<li>
+<span class="verb-lemma" lang="sr">
+peći
+</span>
+<span class="verb-gloss">
+печь / жарить
+</span>
+</li>
+<li>
+<span class="verb-lemma" lang="sr">
+reći
+</span>
+<span class="verb-gloss">
+сказать
+</span>
+</li>
+</ul>
+</section>
+<section class="verb-block verb-block-example">
+<header class="verb-lemma-head">
+<span class="chart-label">
+Пример
+</span>
+<h4 class="sr-head" lang="sr">
+lagati
+</h4>
+</header>
+<div class="chart-pairs verb-pair-grid">
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ja
+</span>
+<span class="chart-form verb-form" lang="sr">
+lažem
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+mi
+</span>
+<span class="chart-form verb-form" lang="sr">
+lažemo
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ti
+</span>
+<span class="chart-form verb-form" lang="sr">
+lažeš
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+vi
+</span>
+<span class="chart-form verb-form" lang="sr">
+lažete
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+on/ona/ono
+</span>
+<span class="chart-form verb-form" lang="sr">
+laže
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+oni/one/ona
+</span>
+<span class="chart-form verb-form" lang="sr">
+lažu
+</span>
+</div>
+</div>
+</section>
+</article>
+<article class="chart-panel verb-col" data-tone="jem">
+<header class="chart-panel-head">
+<span class="chart-label">
+Настоящее
+</span>
+<h3>
+JEM | JU
+</h3>
+</header>
+<div aria-label="Окончания" class="chart-pairs verb-pair-grid">
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ja
+</span>
+<span class="chart-form verb-form" lang="sr">
+-jem
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+mi
+</span>
+<span class="chart-form verb-form" lang="sr">
+-jemo
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ti
+</span>
+<span class="chart-form verb-form" lang="sr">
+-ješ
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+vi
+</span>
+<span class="chart-form verb-form" lang="sr">
+-jete
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+on/ona/ono
+</span>
+<span class="chart-form verb-form" lang="sr">
+-je
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+oni/one/ona
+</span>
+<span class="chart-form verb-form" lang="sr">
+-ju
+</span>
+</div>
+</div>
+<section class="verb-block">
+<h4 class="chart-label">
+Инф. подсказки
+</h4>
+<div class="verb-patterns">
+<span class="verb-pattern" lang="sr">
+-ovati
+</span>
+<span class="verb-pattern" lang="sr">
+-ivati
+</span>
+<span class="verb-pattern" lang="sr">
+-avati
+</span>
+</div>
+</section>
+<section class="verb-block">
+<h4 class="chart-label">
+Частые глаголы
+</h4>
+<ul class="verb-list verb-list-glossed">
+<li>
+<span class="verb-lemma" lang="sr">
+kupovati
+</span>
+<span class="verb-gloss">
+покупать
+</span>
+</li>
+<li>
+<span class="verb-lemma" lang="sr">
+putovati
+</span>
+<span class="verb-gloss">
+путешествовать
+</span>
+</li>
+<li>
+<span class="verb-lemma" lang="sr">
+stanovati
+</span>
+<span class="verb-gloss">
+проживать
+</span>
+</li>
+<li>
+<span class="verb-lemma" lang="sr">
+verovati
+</span>
+<span class="verb-gloss">
+верить
+</span>
+</li>
+<li>
+<span class="verb-lemma" lang="sr">
+pokazivati
+</span>
+<span class="verb-gloss">
+показывать
+</span>
+</li>
+<li>
+<span class="verb-lemma" lang="sr">
+prodavati
+</span>
+<span class="verb-gloss">
+продавать
+</span>
+</li>
+</ul>
+</section>
+<section class="verb-block verb-block-example">
+<header class="verb-lemma-head">
+<span class="chart-label">
+Пример
+</span>
+<h4 class="sr-head" lang="sr">
+kupovati
+</h4>
+</header>
+<div class="chart-pairs verb-pair-grid">
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ja
+</span>
+<span class="chart-form verb-form" lang="sr">
+kupujem
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+mi
+</span>
+<span class="chart-form verb-form" lang="sr">
+kupujemo
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ti
+</span>
+<span class="chart-form verb-form" lang="sr">
+kupuješ
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+vi
+</span>
+<span class="chart-form verb-form" lang="sr">
+kupujete
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+on/ona/ono
+</span>
+<span class="chart-form verb-form" lang="sr">
+kupuje
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+oni/one/ona
+</span>
+<span class="chart-form verb-form" lang="sr">
+kupuju
+</span>
+</div>
+</div>
+</section>
+</article>
+<article class="chart-panel verb-col" data-tone="irr">
+<header class="chart-panel-head">
+<span class="chart-label">
+Настоящее
+</span>
+<h3>
+Исключения
+</h3>
+</header>
+<div class="verb-mini-list">
+<section class="verb-mini">
+<header class="verb-lemma-head">
+<h4 class="sr-head" lang="sr">
+biti
+</h4>
+<button aria-expanded="false" aria-haspopup="dialog" aria-label="полные формы" class="tip-chip" data-verb-tip="0" type="button">
+?
+</button>
+</header>
+<div class="chart-pairs verb-pair-grid">
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ja
+</span>
+<span class="chart-form verb-form" lang="sr">
+sam
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+mi
+</span>
+<span class="chart-form verb-form" lang="sr">
+smo
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ti
+</span>
+<span class="chart-form verb-form" lang="sr">
+si
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+vi
+</span>
+<span class="chart-form verb-form" lang="sr">
+ste
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+on/ona/ono
+</span>
+<span class="chart-form verb-form" lang="sr">
+je
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+oni/one/ona
+</span>
+<span class="chart-form verb-form" lang="sr">
+su
+</span>
+</div>
+</div>
+<div class="verb-negative">
+<span class="chart-label">
+Отрицание
+</span>
+<p lang="sr">
+nisam, nisi, nije, nismo, niste, nisu
+</p>
+</div>
+</section>
+<section class="verb-mini">
+<header class="verb-lemma-head">
+<h4 class="sr-head" lang="sr">
+hteti
+</h4>
+</header>
+<div class="chart-pairs verb-pair-grid">
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ja
+</span>
+<span class="chart-form verb-form" lang="sr">
+hoću
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+mi
+</span>
+<span class="chart-form verb-form" lang="sr">
+hoćemo
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ti
+</span>
+<span class="chart-form verb-form" lang="sr">
+hoćeš
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+vi
+</span>
+<span class="chart-form verb-form" lang="sr">
+hoćete
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+on/ona/ono
+</span>
+<span class="chart-form verb-form" lang="sr">
+hoće
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+oni/one/ona
+</span>
+<span class="chart-form verb-form" lang="sr">
+hoće
+</span>
+</div>
+</div>
+<div class="verb-negative">
+<span class="chart-label">
+Отрицание
+</span>
+<p lang="sr">
+neću, nećeš, neće, nećemo, nećete, neće
+</p>
+</div>
+</section>
+<section class="verb-mini">
+<header class="verb-lemma-head">
+<h4 class="sr-head" lang="sr">
+moći
+</h4>
+</header>
+<div class="chart-pairs verb-pair-grid">
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ja
+</span>
+<span class="chart-form verb-form" lang="sr">
+mogu
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+mi
+</span>
+<span class="chart-form verb-form" lang="sr">
+možemo
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ti
+</span>
+<span class="chart-form verb-form" lang="sr">
+možeš
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+vi
+</span>
+<span class="chart-form verb-form" lang="sr">
+možete
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+on/ona/ono
+</span>
+<span class="chart-form verb-form" lang="sr">
+može
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+oni/one/ona
+</span>
+<span class="chart-form verb-form" lang="sr">
+mogu
+</span>
+</div>
+</div>
+</section>
+</div>
+</article>
+<article class="chart-panel verb-col" data-tone="past">
+<header class="chart-panel-head">
+<span class="chart-label">
+Время
+</span>
+<h3>
+Прошедшее
+</h3>
+</header>
+<section class="verb-block">
+<h4 class="chart-label">
+Формула
+</h4>
+<p class="verb-formula">
+<span lang="sr">
+sam/si/je/smo/ste/su
+</span>
+<span class="chart-sep">
++
+</span>
+<span class="verb-term">
+причастие прошедшего времени
+</span>
+</p>
+</section>
+<section class="verb-block">
+<h4 class="chart-label">
+Порядок
+</h4>
+<div class="verb-examples">
+<div class="chart-example verb-example">
+<span class="sr" lang="sr">
+Gledao sam film.
+</span>
+<span class="tr">
+Я смотрел фильм. (м.)
+</span>
+</div>
+<div class="chart-example verb-example">
+<span class="sr" lang="sr">
+Ja sam gledao film.
+</span>
+<span class="tr">
+Я смотрел фильм.
+</span>
+</div>
+<div class="chart-example verb-example">
+<span class="sr" lang="sr">
+Nisam gledao film.
+</span>
+<span class="tr">
+Я не смотрел фильм. (м.)
+</span>
+</div>
+<div class="chart-example verb-example">
+<span class="sr" lang="sr">
+Juče sam gledao film.
+</span>
+<span class="tr">
+Вчера я смотрел фильм.
+</span>
+</div>
+</div>
+</section>
+<section class="verb-block">
+<h4 class="chart-label">
+Причастие
+</h4>
+<div class="chart-pairs verb-pair-grid">
+<div class="chart-pair">
+<span class="chart-label">
+М ед.
+</span>
+<span class="chart-form verb-form">
+-o
+</span>
+</div>
+<div class="chart-pair">
+<span class="chart-label">
+М/смеш. мн.
+</span>
+<span class="chart-form verb-form">
+-li
+</span>
+</div>
+<div class="chart-pair">
+<span class="chart-label">
+Ж ед.
+</span>
+<span class="chart-form verb-form">
+-la
+</span>
+</div>
+<div class="chart-pair">
+<span class="chart-label">
+Ж мн.
+</span>
+<span class="chart-form verb-form">
+-le
+</span>
+</div>
+<div class="chart-pair">
+<span class="chart-label">
+С ед.
+</span>
+<span class="chart-form verb-form">
+-lo
+</span>
+</div>
+<div class="chart-pair">
+<span class="chart-label">
+С мн.
+</span>
+<span class="chart-form verb-form">
+-la
+</span>
+</div>
+</div>
+</section>
+</article>
+<article class="chart-panel verb-col" data-tone="future">
+<header class="chart-panel-head">
+<span class="chart-label">
+Время
+</span>
+<h3>
+Будущее
+</h3>
+</header>
+<section class="verb-block">
+<h4 class="chart-label">
+Формула
+</h4>
+<p class="verb-formula">
+<span lang="sr">
+ću/ćeš/će/ćemo/ćete/će
+</span>
+<span class="chart-sep">
++
+</span>
+<span class="verb-term">
+инфинитив
+</span>
+</p>
+</section>
+<section class="verb-block">
+<h4 class="chart-label">
+Порядок / письмо
+</h4>
+<div class="verb-examples">
+<div class="chart-example verb-example">
+<span class="sr" lang="sr">
+Ja ću raditi.
+</span>
+<span class="tr">
+Я буду работать.
+</span>
+</div>
+<div class="chart-example verb-example">
+<span class="sr" lang="sr">
+Radiću.
+</span>
+<span class="tr">
+Я буду работать.
+</span>
+</div>
+<div class="chart-example verb-example">
+<span class="sr" lang="sr">
+Neću raditi.
+</span>
+<span class="tr">
+Я не буду работать.
+</span>
+</div>
+</div>
+</section>
+<section class="verb-block">
+<h4 class="chart-label">
+Слитные формы
+</h4>
+<p class="verb-list" lang="sr">
+raditi → radiću, radićeš, radiće
+</p>
+</section>
+<section class="verb-block">
+<h4 class="chart-label">
+Глаголы на -ći
+</h4>
+<p class="verb-list" lang="sr">
+ići ću, doći ću
+</p>
+</section>
+</article>
+<article class="chart-panel verb-col" data-tone="clitic">
+<header class="chart-panel-head">
+<span class="chart-label">
+Клитика
+</span>
+<h3 lang="sr">
+se
+</h3>
+</header>
+<section class="verb-block">
+<p class="verb-note">
+<i lang="sr">
+se
+</i>
+стоит после первого ударного слова.
+</p>
+<div class="verb-examples">
+<div class="chart-example verb-example">
+<span class="sr" lang="sr">
+Šetam se.
+</span>
+</div>
+<div class="chart-example verb-example">
+<span class="sr" lang="sr">
+Ja se šetam.
+</span>
+</div>
+<div class="chart-example verb-example">
+<span class="sr" lang="sr">
+Nisam se šetao.
+</span>
+</div>
+</div>
+</section>
+</article>
+### popover [data-verb-tip]|[["data-verb-tip","0"]]
+<article class="chart-tip">
+<h4>
+<span lang="sr">
+biti
+</span>
+· полные формы
+</h4>
+<div class="chart-pairs">
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ja
+</span>
+<span class="chart-form verb-form" lang="sr">
+jesam
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ti
+</span>
+<span class="chart-form verb-form" lang="sr">
+jesi
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+on/ona/ono
+</span>
+<span class="chart-form verb-form" lang="sr">
+jeste
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+mi
+</span>
+<span class="chart-form verb-form" lang="sr">
+jesmo
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+vi
+</span>
+<span class="chart-form verb-form" lang="sr">
+jeste
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+oni/one/ona
+</span>
+<span class="chart-form verb-form" lang="sr">
+jesu
+</span>
+</div>
+</div>
+</article>

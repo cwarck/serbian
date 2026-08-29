@@ -1,0 +1,538 @@
+### mount pitchChart
+<section class="chart-group pitch-accents">
+<header class="chart-group-head">
+<h3>
+Четыре ударения
+</h3>
+</header>
+<div class="chart-table">
+<article class="chart-row pitch-accent-card" data-contour="falling">
+<div class="pitch-mark" lang="sr">
+ȁ
+</div>
+<div class="pitch-accent-body">
+<div class="pitch-accent-meta">
+<span class="pitch-length">
+краткий
+</span>
+<span class="chart-sep">
+·
+</span>
+<span class="chart-label pitch-contour">
+нисходящий
+</span>
+<span class="chart-sep">
+·
+</span>
+<span class="chart-label pitch-pattern">
+HL
+</span>
+<button aria-expanded="false" aria-haspopup="dialog" aria-label="заметка" class="tip-chip" data-pitch-note="falling" type="button">
+?
+</button>
+</div>
+<div class="pitch-examples">
+<span class="chart-example">
+<span class="sr" lang="sr">
+nȅbo
+</span>
+<span class="tr">
+небо
+</span>
+</span>
+<span class="chart-example">
+<span class="sr" lang="sr">
+sȑce
+</span>
+<span class="tr">
+сердце
+</span>
+</span>
+</div>
+</div>
+</article>
+<article class="chart-row pitch-accent-card" data-contour="rising">
+<div class="pitch-mark" lang="sr">
+à
+</div>
+<div class="pitch-accent-body">
+<div class="pitch-accent-meta">
+<span class="pitch-length">
+краткий
+</span>
+<span class="chart-sep">
+·
+</span>
+<span class="chart-label pitch-contour">
+восходящий
+</span>
+<span class="chart-sep">
+·
+</span>
+<span class="chart-label pitch-pattern">
+LH
+</span>
+<button aria-expanded="false" aria-haspopup="dialog" aria-label="заметка" class="tip-chip" data-pitch-note="rising" type="button">
+?
+</button>
+</div>
+<div class="pitch-examples">
+<span class="chart-example">
+<span class="sr" lang="sr">
+vòda
+</span>
+<span class="tr">
+вода
+</span>
+</span>
+<span class="chart-example">
+<span class="sr" lang="sr">
+màskara
+</span>
+<span class="tr">
+тушь
+</span>
+</span>
+</div>
+</div>
+</article>
+<article class="chart-row pitch-accent-card" data-contour="falling">
+<div class="pitch-mark" lang="sr">
+ȃ
+</div>
+<div class="pitch-accent-body">
+<div class="pitch-accent-meta">
+<span class="pitch-length">
+долгий
+</span>
+<span class="chart-sep">
+·
+</span>
+<span class="chart-label pitch-contour">
+нисходящий
+</span>
+<span class="chart-sep">
+·
+</span>
+<span class="chart-label pitch-pattern">
+H-L
+</span>
+<button aria-expanded="false" aria-haspopup="dialog" aria-label="заметка" class="tip-chip" data-pitch-note="falling" type="button">
+?
+</button>
+</div>
+<div class="pitch-examples">
+<span class="chart-example">
+<span class="sr" lang="sr">
+pȋvo
+</span>
+<span class="tr">
+пиво
+</span>
+</span>
+<span class="chart-example">
+<span class="sr" lang="sr">
+grȃd
+</span>
+<span class="tr">
+город
+</span>
+</span>
+</div>
+</div>
+</article>
+<article class="chart-row pitch-accent-card" data-contour="rising">
+<div class="pitch-mark" lang="sr">
+á
+</div>
+<div class="pitch-accent-body">
+<div class="pitch-accent-meta">
+<span class="pitch-length">
+долгий
+</span>
+<span class="chart-sep">
+·
+</span>
+<span class="chart-label pitch-contour">
+восходящий
+</span>
+<span class="chart-sep">
+·
+</span>
+<span class="chart-label pitch-pattern">
+L-H
+</span>
+<button aria-expanded="false" aria-haspopup="dialog" aria-label="заметка" class="tip-chip" data-pitch-note="rising" type="button">
+?
+</button>
+</div>
+<div class="pitch-examples">
+<span class="chart-example">
+<span class="sr" lang="sr">
+gláva
+</span>
+<span class="tr">
+голова
+</span>
+</span>
+<span class="chart-example">
+<span class="sr" lang="sr">
+čokoláda
+</span>
+<span class="tr">
+шоколад
+</span>
+</span>
+</div>
+</div>
+</article>
+</div>
+</section>
+<section class="chart-group pitch-rules">
+<header class="chart-group-head">
+<h3>
+Правила позиции
+</h3>
+</header>
+<div class="chart-table">
+<article class="chart-row">
+<h4>
+обычное письмо
+<button aria-expanded="false" aria-haspopup="dialog" aria-label="заметка" class="tip-chip" data-pitch-note="marks" type="button">
+?
+</button>
+</h4>
+<p>
+знаки ударения не пишутся
+</p>
+<div class="chart-cell" data-label="Примеры">
+<div class="pitch-sr-list" lang="sr">
+<span class="chart-form">
+voda
+</span>
+<span class="chart-form">
+glava
+</span>
+<span class="chart-form">
+čokolada
+</span>
+</div>
+</div>
+</article>
+<article class="chart-row">
+<h4>
+последний слог
+<button aria-expanded="false" aria-haspopup="dialog" aria-label="заметка" class="tip-chip" data-pitch-note="final" type="button">
+?
+</button>
+</h4>
+<p>
+обычно без ударения
+</p>
+<div class="chart-cell" data-label="Примеры">
+<div class="pitch-sr-list" lang="sr">
+<span class="chart-form">
+vòda
+</span>
+<span class="chart-form">
+gláva
+</span>
+<span class="chart-form">
+čokoláda
+</span>
+</div>
+</div>
+</article>
+<article class="chart-row">
+<h4>
+нисходящее
+<button aria-expanded="false" aria-haspopup="dialog" aria-label="заметка" class="tip-chip" data-pitch-note="falling" type="button">
+?
+</button>
+</h4>
+<p>
+односложное или первый слог
+</p>
+<div class="chart-cell" data-label="Примеры">
+<div class="pitch-sr-list" lang="sr">
+<span class="chart-form">
+pȋvo
+</span>
+<span class="chart-form">
+nȅbo
+</span>
+<span class="chart-form">
+grȃd
+</span>
+</div>
+</div>
+</article>
+<article class="chart-row">
+<h4>
+восходящее
+<button aria-expanded="false" aria-haspopup="dialog" aria-label="заметка" class="tip-chip" data-pitch-note="rising" type="button">
+?
+</button>
+</h4>
+<p>
+не на конце; нужен следующий слог
+</p>
+<div class="chart-cell" data-label="Примеры">
+<div class="pitch-sr-list" lang="sr">
+<span class="chart-form">
+vòda
+</span>
+<span class="chart-form">
+gláva
+</span>
+<span class="chart-form">
+čokoláda
+</span>
+</div>
+</div>
+</article>
+<article class="chart-row">
+<h4>
+макрон ā
+<button aria-expanded="false" aria-haspopup="dialog" aria-label="заметка" class="tip-chip" data-pitch-note="length" type="button">
+?
+</button>
+</h4>
+<p>
+долгий гласный после ударения
+</p>
+<div class="chart-cell" data-label="Примеры">
+<div class="pitch-sr-list" lang="sr">
+<span class="chart-form">
+dèvōjka
+</span>
+<span class="chart-form">
+lȍnācā
+</span>
+</div>
+</div>
+</article>
+</div>
+</section>
+<section class="chart-group pitch-paradigms">
+<header class="chart-group-head">
+<h3>
+Сдвиги ударения
+</h3>
+</header>
+<div class="chart-pairs pitch-paradigm-table">
+<div class="chart-pair pitch-paradigm-row pitch-paradigm-words">
+<span>
+</span>
+<span class="pitch-paradigm-head">
+<span class="chart-form" lang="sr">
+lȍnac
+</span>
+<button aria-expanded="false" aria-haspopup="dialog" aria-label="заметка" class="tip-chip" data-pitch-note="mobile" type="button">
+?
+</button>
+</span>
+<span class="pitch-paradigm-head">
+<span class="chart-form" lang="sr">
+grȃd
+</span>
+<button aria-expanded="false" aria-haspopup="dialog" aria-label="заметка" class="tip-chip" data-pitch-note="mobile" type="button">
+?
+</button>
+</span>
+</div>
+<div class="chart-pair pitch-paradigm-row">
+<span class="chart-label">
+NOM SG
+</span>
+<span class="chart-form" lang="sr">
+lȍnac
+</span>
+<span class="chart-form" lang="sr">
+grȃd
+</span>
+</div>
+<div class="chart-pair pitch-paradigm-row">
+<span class="chart-label">
+GEN SG
+</span>
+<span class="chart-form" lang="sr">
+lónca
+</span>
+<span class="chart-form" lang="sr">
+grȃda
+</span>
+</div>
+<div class="chart-pair pitch-paradigm-row">
+<span class="chart-label">
+NOM PL
+</span>
+<span class="chart-form" lang="sr">
+lȏnci
+</span>
+<span class="chart-form" lang="sr">
+grȁdovi
+</span>
+</div>
+<div class="chart-pair pitch-paradigm-row">
+<span class="chart-label">
+GEN PL
+</span>
+<span class="chart-form" lang="sr">
+lȍnācā
+</span>
+<span class="chart-form" lang="sr">
+grȃdōvā
+</span>
+</div>
+</div>
+</section>
+<section class="chart-group pitch-priority">
+<header class="chart-group-head">
+<h3>
+Приоритет
+</h3>
+</header>
+<div class="chart-tiles">
+<article class="chart-tile pitch-advice-row">
+<span class="chart-label pitch-rank">
+1
+</span>
+<h4 class="chart-label">
+место ударения
+</h4>
+<p>
+слышать первым; учить со словом
+</p>
+</article>
+<article class="chart-tile pitch-advice-row">
+<span class="chart-label pitch-rank">
+2
+</span>
+<h4 class="chart-label">
+долгота
+</h4>
+<p>
+кратко vs долго меняет ритм
+</p>
+</article>
+<article class="chart-tile pitch-advice-row">
+<span class="chart-label pitch-rank">
+3
+</span>
+<h4 class="chart-label">
+тон
+<button aria-expanded="false" aria-haspopup="dialog" aria-label="заметка" class="tip-chip" data-pitch-note="urban" type="button">
+?
+</button>
+</h4>
+<p>
+зависит от говора; знак в словаре помогает
+</p>
+</article>
+</div>
+</section>
+<section class="chart-group pitch-reading">
+<header class="chart-group-head">
+<h3>
+Порядок чтения
+</h3>
+</header>
+<ol class="chart-tiles pitch-advice-list">
+<li class="chart-tile pitch-advice-row">
+<span class="chart-label pitch-rank">
+1
+</span>
+<p>
+Найти отмеченный слог.
+</p>
+</li>
+<li class="chart-tile pitch-advice-row">
+<span class="chart-label pitch-rank">
+2
+</span>
+<p>
+Прочитать долготу: краткий или долгий знак.
+</p>
+</li>
+<li class="chart-tile pitch-advice-row">
+<span class="chart-label pitch-rank">
+3
+</span>
+<p>
+Тянуть слоги с макроном после ударения.
+</p>
+</li>
+<li class="chart-tile pitch-advice-row">
+<span class="chart-label pitch-rank">
+4
+</span>
+<p>
+Не переносить ударение на последний слог.
+</p>
+</li>
+</ol>
+</section>
+### popover [data-pitch-note]|[["data-pitch-note","falling"]]
+<article class="chart-tip">
+<h4>
+Нисходящий тон
+</h4>
+<p>
+В стандарте нисходящее ударение стоит в односложных словах или на первом слоге более длинного слова.
+</p>
+</article>
+### popover [data-pitch-note]|[["data-pitch-note","final"]]
+<article class="chart-tip">
+<h4>
+Ударение на конце
+</h4>
+<p>
+Исконные стандартные слова избегают ударения на конце. Заимствования, имена и диалектные формы могут нарушать это правило.
+</p>
+</article>
+### popover [data-pitch-note]|[["data-pitch-note","length"]]
+<article class="chart-tip">
+<h4>
+Долгота после ударения
+</h4>
+<p>
+Макрон отмечает долгий безударный гласный. В стандартной акцентной записи такая долгота стоит после ударного слога.
+</p>
+</article>
+### popover [data-pitch-note]|[["data-pitch-note","marks"]]
+<article class="chart-tip">
+<h4>
+Знаки - словарная запись
+</h4>
+<p>
+Словари, учебники и справочники отмечают ударение. Обычная сербская орфография нет.
+</p>
+</article>
+### popover [data-pitch-note]|[["data-pitch-note","mobile"]]
+<article class="chart-tip">
+<h4>
+Ударение может двигаться
+</h4>
+<p>
+Падеж, число и словообразование могут менять место, тон и долготу. Частые парадигмы лучше учить как свойства слова.
+</p>
+</article>
+### popover [data-pitch-note]|[["data-pitch-note","rising"]]
+<article class="chart-tip">
+<h4>
+Восходящий тон
+</h4>
+<p>
+Подъём слышен на ударном слоге и после него. Это не английская вопросительная интонация.
+</p>
+</article>
+### popover [data-pitch-note]|[["data-pitch-note","urban"]]
+<article class="chart-tip">
+<h4>
+Современная речь
+</h4>
+<p>
+Многие носители яснее сохраняют место ударения и долготу, чем четыре тоновых различия, особенно в городской речи.
+</p>
+</article>

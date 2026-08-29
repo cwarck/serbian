@@ -1,5 +1,7 @@
 {
   "scripts": {
-    "validate": "bun tools/validate.mjs"
+    "validate": "bun tools/validate.mjs && bun tests/snapshot.mjs check",
+    "snapshot:write": "bun tests/snapshot.mjs write",
+    "snapshot:check": "bun tests/snapshot.mjs check"
   }
 }

@@ -1,0 +1,644 @@
+### mount aspectChart
+<section class="chart-group aspect-contrast" data-tone="aspect-core">
+<header class="chart-group-head">
+<h3>
+Главное различие
+</h3>
+</header>
+<div class="chart-table">
+<article class="chart-row">
+<h4>
+Форма
+</h4>
+<div class="chart-cell aspect-side" data-label="Несовершенный">
+<p>
+процесс, длительность
+</p>
+<div class="chart-example">
+<span class="sr" lang="sr">
+Pišem pismo.
+</span>
+<span class="tr">
+Я пишу письмо.
+</span>
+</div>
+</div>
+<div class="chart-cell aspect-side" data-label="Совершенный">
+<p>
+результат, граница
+</p>
+<div class="chart-example">
+<span class="sr" lang="sr">
+Napisaću pismo.
+</span>
+<span class="tr">
+Я напишу письмо.
+</span>
+</div>
+</div>
+</article>
+<article class="chart-row">
+<h4>
+Повтор
+</h4>
+<div class="chart-cell aspect-side" data-label="Несовершенный">
+<p>
+привычка, повтор
+</p>
+<div class="chart-example">
+<span class="sr" lang="sr">
+Čitam svako veče.
+</span>
+<span class="tr">
+Я читаю каждый вечер.
+</span>
+</div>
+</div>
+<div class="chart-cell aspect-side" data-label="Совершенный">
+<p>
+одно завершённое событие
+</p>
+<div class="chart-example">
+<span class="sr" lang="sr">
+Pročitao sam knjigu.
+</span>
+<span class="tr">
+Я прочитал книгу.
+</span>
+</div>
+</div>
+</article>
+<article class="chart-row">
+<h4>
+Настоящее
+</h4>
+<div class="chart-cell aspect-side" data-label="Несовершенный">
+<p>
+сейчас или вообще
+</p>
+<div class="chart-example">
+<span class="sr" lang="sr">
+Gledam film.
+</span>
+<span class="tr">
+Я смотрю фильм.
+</span>
+</div>
+</div>
+<div class="chart-cell aspect-side" data-label="Совершенный">
+<p>
+будущее, последовательность, условие
+</p>
+<div class="chart-example">
+<span class="sr" lang="sr">
+Kad pogledam, reći ću ti.
+</span>
+<span class="tr">
+Когда посмотрю, скажу тебе.
+</span>
+</div>
+</div>
+</article>
+</div>
+</section>
+<section class="chart-group aspect-time" data-tone="aspect-time">
+<header class="chart-group-head">
+<h3>
+Поведение во времени
+</h3>
+</header>
+<div class="chart-table">
+<article class="chart-row">
+<h4>
+Настоящее
+</h4>
+<div class="chart-cell" data-label="Несовершенный">
+<div class="chart-example">
+<span class="sr" lang="sr">
+Pišem.
+</span>
+<span class="tr">
+сейчас / обычно
+</span>
+</div>
+</div>
+<div class="chart-cell" data-label="Совершенный">
+<div class="chart-example">
+<span class="sr" lang="sr">
+Kad napišem…
+</span>
+<span class="tr">
+не стоит отдельно — нужна рамка
+</span>
+</div>
+</div>
+</article>
+<article class="chart-row">
+<h4>
+Прошедшее
+</h4>
+<div class="chart-cell" data-label="Несовершенный">
+<div class="chart-example">
+<span class="sr" lang="sr">
+Pisao sam.
+</span>
+<span class="tr">
+писал / бывало писал
+</span>
+</div>
+</div>
+<div class="chart-cell" data-label="Совершенный">
+<div class="chart-example">
+<span class="sr" lang="sr">
+Napisao sam.
+</span>
+<span class="tr">
+написал до результата
+</span>
+</div>
+</div>
+</article>
+<article class="chart-row">
+<h4>
+Будущее
+</h4>
+<div class="chart-cell" data-label="Несовершенный">
+<div class="chart-example">
+<span class="sr" lang="sr">
+Pisaću.
+</span>
+<span class="tr">
+буду писать
+</span>
+</div>
+</div>
+<div class="chart-cell" data-label="Совершенный">
+<div class="chart-example">
+<span class="sr" lang="sr">
+Napisaću.
+</span>
+<span class="tr">
+напишу до результата
+</span>
+</div>
+</div>
+</article>
+</div>
+</section>
+<section class="chart-group aspect-patterns" data-tone="aspect-pattern">
+<header class="chart-group-head">
+<h3>
+Типы пар
+</h3>
+</header>
+<div class="chart-table">
+<article class="chart-row">
+<h4>
+глагол + приставка
+</h4>
+<div class="chart-form aspect-form aspect-pair" lang="sr">
+<span>
+pisati
+</span>
+<span class="chart-sep">
+->
+</span>
+<span>
+napisati
+</span>
+</div>
+<p>
+готовый текст
+</p>
+</article>
+<article class="chart-row">
+<h4>
+вторичный несов.
+</h4>
+<div class="chart-form aspect-form aspect-pair" lang="sr">
+<span>
+otvarati
+</span>
+<span class="chart-sep">
+->
+</span>
+<span>
+otvoriti
+</span>
+</div>
+<p>
+открывать не раз / в процессе
+</p>
+</article>
+<article class="chart-row">
+<h4>
+суффиксальная пара
+</h4>
+<div class="chart-form aspect-form aspect-pair" lang="sr">
+<span>
+kupovati
+</span>
+<span class="chart-sep">
+->
+</span>
+<span>
+kupiti
+</span>
+</div>
+<p>
+покупать vs купить
+</p>
+</article>
+<article class="chart-row">
+<h4>
+пара с другой основой
+</h4>
+<div class="chart-form aspect-form aspect-pair" lang="sr">
+<span>
+uzimati
+</span>
+<span class="chart-sep">
+->
+</span>
+<span>
+uzeti
+</span>
+</div>
+<p>
+брать vs взять
+</p>
+</article>
+</div>
+</section>
+<section class="chart-group aspect-prefixes" data-tone="aspect-prefix">
+<header class="chart-group-head">
+<h3>
+Карта приставок
+</h3>
+</header>
+<div class="chart-tiles aspect-prefix-grid">
+<article class="chart-tile aspect-prefix">
+<header class="aspect-prefix-head">
+<h4 class="chart-form" lang="sr">
+na-
+</h4>
+<button aria-expanded="false" aria-haspopup="dialog" aria-label="заметка" class="tip-chip" data-aspect-note="0" type="button">
+?
+</button>
+</header>
+<p class="chart-label">
+завершение, достаточно
+</p>
+<ul>
+<li class="chart-form" lang="sr">
+<span>
+pisati
+</span>
+<span class="chart-sep">
+->
+</span>
+<span>
+napisati
+</span>
+</li>
+<li class="chart-form" lang="sr">
+<span>
+učiti
+</span>
+<span class="chart-sep">
+->
+</span>
+<span>
+naučiti
+</span>
+</li>
+<li class="chart-form" lang="sr">
+<span>
+jesti
+</span>
+<span class="chart-sep">
+->
+</span>
+<span>
+najesti se
+</span>
+</li>
+</ul>
+</article>
+<article class="chart-tile aspect-prefix">
+<header class="aspect-prefix-head">
+<h4 class="chart-form" lang="sr">
+po-
+</h4>
+<button aria-expanded="false" aria-haspopup="dialog" aria-label="заметка" class="tip-chip" data-aspect-note="1" type="button">
+?
+</button>
+</header>
+<p class="chart-label">
+немного, один раз, начало
+</p>
+<ul>
+<li class="chart-form" lang="sr">
+<span>
+gledati
+</span>
+<span class="chart-sep">
+->
+</span>
+<span>
+pogledati
+</span>
+</li>
+<li class="chart-form" lang="sr">
+<span>
+čekati
+</span>
+<span class="chart-sep">
+->
+</span>
+<span>
+sačekati
+</span>
+</li>
+<li class="chart-form" lang="sr">
+<span>
+pričati
+</span>
+<span class="chart-sep">
+->
+</span>
+<span>
+popričati
+</span>
+</li>
+</ul>
+</article>
+<article class="chart-tile aspect-prefix">
+<header class="aspect-prefix-head">
+<h4 class="chart-form" lang="sr">
+u-
+</h4>
+</header>
+<p class="chart-label">
+внутрь, успешный результат
+</p>
+<ul>
+<li class="chart-form" lang="sr">
+<span>
+raditi
+</span>
+<span class="chart-sep">
+->
+</span>
+<span>
+uraditi
+</span>
+</li>
+<li class="chart-form" lang="sr">
+<span>
+ići
+</span>
+<span class="chart-sep">
+->
+</span>
+<span>
+ući
+</span>
+</li>
+<li class="chart-form" lang="sr">
+<span>
+upoznavati
+</span>
+<span class="chart-sep">
+->
+</span>
+<span>
+upoznati
+</span>
+</li>
+</ul>
+</article>
+<article class="chart-tile aspect-prefix">
+<header class="aspect-prefix-head">
+<h4 class="chart-form" lang="sr">
+iz-
+</h4>
+</header>
+<p class="chart-label">
+из, полностью
+</p>
+<ul>
+<li class="chart-form" lang="sr">
+<span>
+vaditi
+</span>
+<span class="chart-sep">
+->
+</span>
+<span>
+izvaditi
+</span>
+</li>
+<li class="chart-form" lang="sr">
+<span>
+birati
+</span>
+<span class="chart-sep">
+->
+</span>
+<span>
+izabrati
+</span>
+</li>
+<li class="chart-form" lang="sr">
+<span>
+graditi
+</span>
+<span class="chart-sep">
+->
+</span>
+<span>
+izgraditi
+</span>
+</li>
+</ul>
+</article>
+<article class="chart-tile aspect-prefix">
+<header class="aspect-prefix-head">
+<h4 class="chart-form" lang="sr">
+do-
+</h4>
+<button aria-expanded="false" aria-haspopup="dialog" aria-label="заметка" class="tip-chip" data-aspect-note="2" type="button">
+?
+</button>
+</header>
+<p class="chart-label">
+дойти, добавить до точки
+</p>
+<ul>
+<li class="chart-form" lang="sr">
+<span>
+dolaziti
+</span>
+<span class="chart-sep">
+->
+</span>
+<span>
+doći
+</span>
+</li>
+<li class="chart-form" lang="sr">
+<span>
+nositi
+</span>
+<span class="chart-sep">
+->
+</span>
+<span>
+doneti
+</span>
+</li>
+<li class="chart-form" lang="sr">
+<span>
+pisati
+</span>
+<span class="chart-sep">
+->
+</span>
+<span>
+dopisati
+</span>
+</li>
+</ul>
+</article>
+<article class="chart-tile aspect-prefix">
+<header class="aspect-prefix-head">
+<h4 class="chart-form" lang="sr">
+pro-
+</h4>
+</header>
+<p class="chart-label">
+через, за промежуток
+</p>
+<ul>
+<li class="chart-form" lang="sr">
+<span>
+čitati
+</span>
+<span class="chart-sep">
+->
+</span>
+<span>
+pročitati
+</span>
+</li>
+<li class="chart-form" lang="sr">
+<span>
+živeti
+</span>
+<span class="chart-sep">
+->
+</span>
+<span>
+proživeti
+</span>
+</li>
+<li class="chart-form" lang="sr">
+<span>
+ići
+</span>
+<span class="chart-sep">
+->
+</span>
+<span>
+proći
+</span>
+</li>
+</ul>
+</article>
+</div>
+</section>
+<section class="chart-group aspect-pairs" data-tone="aspect-pairs">
+<header class="chart-group-head">
+<h3>
+Частые пары
+</h3>
+</header>
+<div class="chart-table">
+<article class="chart-row">
+<h4>
+давать
+</h4>
+<div class="chart-form aspect-form aspect-pair" lang="sr">
+<span>
+davati
+</span>
+<span class="chart-sep">
+->
+</span>
+<span>
+dati
+</span>
+</div>
+<div class="chart-example">
+<span class="sr" lang="sr">
+Dao mi je ključ.
+</span>
+<span class="tr">
+Он дал мне ключ.
+</span>
+</div>
+</article>
+<article class="chart-row">
+<h4>
+забывать
+</h4>
+<div class="chart-form aspect-form aspect-pair" lang="sr">
+<span>
+zaboravljati
+</span>
+<span class="chart-sep">
+->
+</span>
+<span>
+zaboraviti
+</span>
+</div>
+<div class="chart-example">
+<span class="sr" lang="sr">
+Zaboravio sam ime.
+</span>
+<span class="tr">
+Я забыл имя.
+</span>
+</div>
+</article>
+</div>
+</section>
+### popover [data-aspect-note]|[["data-aspect-note","0"]]
+<article class="chart-tip">
+<h4>
+na- не только завершение
+</h4>
+<p>
+Приставка также может значить «на», «наверх» или «вдоволь». Сначала запоминайте пару как слово, а приставку используйте как подсказку.
+</p>
+</article>
+### popover [data-aspect-note]|[["data-aspect-note","1"]]
+<article class="chart-tip">
+<h4>
+po- очень широкая
+</h4>
+<p>
+Часто она ограничивает действие: посмотреть, подождать, поговорить. Точный оттенок зависит от глагола.
+</p>
+</article>
+### popover [data-aspect-note]|[["data-aspect-note","2"]]
+<article class="chart-tip">
+<h4>
+Глаголы движения сжимают схемы
+</h4>
+<p>
+В парах движения часто есть дополнительные изменения основы. Их стоит видеть, но не брать за модель для всех глаголов.
+</p>
+</article>

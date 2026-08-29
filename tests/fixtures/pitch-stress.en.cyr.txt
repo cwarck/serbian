@@ -1,0 +1,538 @@
+### mount pitchChart
+<section class="chart-group pitch-accents">
+<header class="chart-group-head">
+<h3>
+Four accents
+</h3>
+</header>
+<div class="chart-table">
+<article class="chart-row pitch-accent-card" data-contour="falling">
+<div class="pitch-mark" lang="sr">
+ȁ
+</div>
+<div class="pitch-accent-body">
+<div class="pitch-accent-meta">
+<span class="pitch-length">
+short
+</span>
+<span class="chart-sep">
+·
+</span>
+<span class="chart-label pitch-contour">
+falling
+</span>
+<span class="chart-sep">
+·
+</span>
+<span class="chart-label pitch-pattern">
+HL
+</span>
+<button aria-expanded="false" aria-haspopup="dialog" aria-label="note" class="tip-chip" data-pitch-note="falling" type="button">
+?
+</button>
+</div>
+<div class="pitch-examples">
+<span class="chart-example">
+<span class="sr" lang="sr">
+не̏бо
+</span>
+<span class="tr">
+sky
+</span>
+</span>
+<span class="chart-example">
+<span class="sr" lang="sr">
+ср̏це
+</span>
+<span class="tr">
+heart
+</span>
+</span>
+</div>
+</div>
+</article>
+<article class="chart-row pitch-accent-card" data-contour="rising">
+<div class="pitch-mark" lang="sr">
+à
+</div>
+<div class="pitch-accent-body">
+<div class="pitch-accent-meta">
+<span class="pitch-length">
+short
+</span>
+<span class="chart-sep">
+·
+</span>
+<span class="chart-label pitch-contour">
+rising
+</span>
+<span class="chart-sep">
+·
+</span>
+<span class="chart-label pitch-pattern">
+LH
+</span>
+<button aria-expanded="false" aria-haspopup="dialog" aria-label="note" class="tip-chip" data-pitch-note="rising" type="button">
+?
+</button>
+</div>
+<div class="pitch-examples">
+<span class="chart-example">
+<span class="sr" lang="sr">
+во̀да
+</span>
+<span class="tr">
+water
+</span>
+</span>
+<span class="chart-example">
+<span class="sr" lang="sr">
+ма̀скара
+</span>
+<span class="tr">
+mascara
+</span>
+</span>
+</div>
+</div>
+</article>
+<article class="chart-row pitch-accent-card" data-contour="falling">
+<div class="pitch-mark" lang="sr">
+ȃ
+</div>
+<div class="pitch-accent-body">
+<div class="pitch-accent-meta">
+<span class="pitch-length">
+long
+</span>
+<span class="chart-sep">
+·
+</span>
+<span class="chart-label pitch-contour">
+falling
+</span>
+<span class="chart-sep">
+·
+</span>
+<span class="chart-label pitch-pattern">
+H-L
+</span>
+<button aria-expanded="false" aria-haspopup="dialog" aria-label="note" class="tip-chip" data-pitch-note="falling" type="button">
+?
+</button>
+</div>
+<div class="pitch-examples">
+<span class="chart-example">
+<span class="sr" lang="sr">
+пи̑во
+</span>
+<span class="tr">
+beer
+</span>
+</span>
+<span class="chart-example">
+<span class="sr" lang="sr">
+гра̑д
+</span>
+<span class="tr">
+city
+</span>
+</span>
+</div>
+</div>
+</article>
+<article class="chart-row pitch-accent-card" data-contour="rising">
+<div class="pitch-mark" lang="sr">
+á
+</div>
+<div class="pitch-accent-body">
+<div class="pitch-accent-meta">
+<span class="pitch-length">
+long
+</span>
+<span class="chart-sep">
+·
+</span>
+<span class="chart-label pitch-contour">
+rising
+</span>
+<span class="chart-sep">
+·
+</span>
+<span class="chart-label pitch-pattern">
+L-H
+</span>
+<button aria-expanded="false" aria-haspopup="dialog" aria-label="note" class="tip-chip" data-pitch-note="rising" type="button">
+?
+</button>
+</div>
+<div class="pitch-examples">
+<span class="chart-example">
+<span class="sr" lang="sr">
+гла́ва
+</span>
+<span class="tr">
+head
+</span>
+</span>
+<span class="chart-example">
+<span class="sr" lang="sr">
+чокола́да
+</span>
+<span class="tr">
+chocolate
+</span>
+</span>
+</div>
+</div>
+</article>
+</div>
+</section>
+<section class="chart-group pitch-rules">
+<header class="chart-group-head">
+<h3>
+Placement rules
+</h3>
+</header>
+<div class="chart-table">
+<article class="chart-row">
+<h4>
+ordinary writing
+<button aria-expanded="false" aria-haspopup="dialog" aria-label="note" class="tip-chip" data-pitch-note="marks" type="button">
+?
+</button>
+</h4>
+<p>
+accent marks omitted
+</p>
+<div class="chart-cell" data-label="Examples">
+<div class="pitch-sr-list" lang="sr">
+<span class="chart-form">
+вода
+</span>
+<span class="chart-form">
+глава
+</span>
+<span class="chart-form">
+чоколада
+</span>
+</div>
+</div>
+</article>
+<article class="chart-row">
+<h4>
+last syllable
+<button aria-expanded="false" aria-haspopup="dialog" aria-label="note" class="tip-chip" data-pitch-note="final" type="button">
+?
+</button>
+</h4>
+<p>
+normally unstressed
+</p>
+<div class="chart-cell" data-label="Examples">
+<div class="pitch-sr-list" lang="sr">
+<span class="chart-form">
+во̀да
+</span>
+<span class="chart-form">
+гла́ва
+</span>
+<span class="chart-form">
+чокола́да
+</span>
+</div>
+</div>
+</article>
+<article class="chart-row">
+<h4>
+falling
+<button aria-expanded="false" aria-haspopup="dialog" aria-label="note" class="tip-chip" data-pitch-note="falling" type="button">
+?
+</button>
+</h4>
+<p>
+one syllable, or first syllable
+</p>
+<div class="chart-cell" data-label="Examples">
+<div class="pitch-sr-list" lang="sr">
+<span class="chart-form">
+пи̑во
+</span>
+<span class="chart-form">
+не̏бо
+</span>
+<span class="chart-form">
+гра̑д
+</span>
+</div>
+</div>
+</article>
+<article class="chart-row">
+<h4>
+rising
+<button aria-expanded="false" aria-haspopup="dialog" aria-label="note" class="tip-chip" data-pitch-note="rising" type="button">
+?
+</button>
+</h4>
+<p>
+not final; needs following syllable
+</p>
+<div class="chart-cell" data-label="Examples">
+<div class="pitch-sr-list" lang="sr">
+<span class="chart-form">
+во̀да
+</span>
+<span class="chart-form">
+гла́ва
+</span>
+<span class="chart-form">
+чокола́да
+</span>
+</div>
+</div>
+</article>
+<article class="chart-row">
+<h4>
+macron ā
+<button aria-expanded="false" aria-haspopup="dialog" aria-label="note" class="tip-chip" data-pitch-note="length" type="button">
+?
+</button>
+</h4>
+<p>
+long vowel after the accent
+</p>
+<div class="chart-cell" data-label="Examples">
+<div class="pitch-sr-list" lang="sr">
+<span class="chart-form">
+дѐво̄јка
+</span>
+<span class="chart-form">
+ло̏на̄ца̄
+</span>
+</div>
+</div>
+</article>
+</div>
+</section>
+<section class="chart-group pitch-paradigms">
+<header class="chart-group-head">
+<h3>
+Accent shifts
+</h3>
+</header>
+<div class="chart-pairs pitch-paradigm-table">
+<div class="chart-pair pitch-paradigm-row pitch-paradigm-words">
+<span>
+</span>
+<span class="pitch-paradigm-head">
+<span class="chart-form" lang="sr">
+ло̏нац
+</span>
+<button aria-expanded="false" aria-haspopup="dialog" aria-label="note" class="tip-chip" data-pitch-note="mobile" type="button">
+?
+</button>
+</span>
+<span class="pitch-paradigm-head">
+<span class="chart-form" lang="sr">
+гра̑д
+</span>
+<button aria-expanded="false" aria-haspopup="dialog" aria-label="note" class="tip-chip" data-pitch-note="mobile" type="button">
+?
+</button>
+</span>
+</div>
+<div class="chart-pair pitch-paradigm-row">
+<span class="chart-label">
+NOM SG
+</span>
+<span class="chart-form" lang="sr">
+ло̏нац
+</span>
+<span class="chart-form" lang="sr">
+гра̑д
+</span>
+</div>
+<div class="chart-pair pitch-paradigm-row">
+<span class="chart-label">
+GEN SG
+</span>
+<span class="chart-form" lang="sr">
+ло́нца
+</span>
+<span class="chart-form" lang="sr">
+гра̑да
+</span>
+</div>
+<div class="chart-pair pitch-paradigm-row">
+<span class="chart-label">
+NOM PL
+</span>
+<span class="chart-form" lang="sr">
+ло̑нци
+</span>
+<span class="chart-form" lang="sr">
+гра̏дови
+</span>
+</div>
+<div class="chart-pair pitch-paradigm-row">
+<span class="chart-label">
+GEN PL
+</span>
+<span class="chart-form" lang="sr">
+ло̏на̄ца̄
+</span>
+<span class="chart-form" lang="sr">
+гра̑до̄ва̄
+</span>
+</div>
+</div>
+</section>
+<section class="chart-group pitch-priority">
+<header class="chart-group-head">
+<h3>
+Learner priority
+</h3>
+</header>
+<div class="chart-tiles">
+<article class="chart-tile pitch-advice-row">
+<span class="chart-label pitch-rank">
+1
+</span>
+<h4 class="chart-label">
+stress place
+</h4>
+<p>
+hear first; learn with word
+</p>
+</article>
+<article class="chart-tile pitch-advice-row">
+<span class="chart-label pitch-rank">
+2
+</span>
+<h4 class="chart-label">
+vowel length
+</h4>
+<p>
+short vs long changes rhythm
+</p>
+</article>
+<article class="chart-tile pitch-advice-row">
+<span class="chart-label pitch-rank">
+3
+</span>
+<h4 class="chart-label">
+pitch contour
+<button aria-expanded="false" aria-haspopup="dialog" aria-label="note" class="tip-chip" data-pitch-note="urban" type="button">
+?
+</button>
+</h4>
+<p>
+dialect-sensitive; dictionary mark helps
+</p>
+</article>
+</div>
+</section>
+<section class="chart-group pitch-reading">
+<header class="chart-group-head">
+<h3>
+Reading order
+</h3>
+</header>
+<ol class="chart-tiles pitch-advice-list">
+<li class="chart-tile pitch-advice-row">
+<span class="chart-label pitch-rank">
+1
+</span>
+<p>
+Find marked syllable.
+</p>
+</li>
+<li class="chart-tile pitch-advice-row">
+<span class="chart-label pitch-rank">
+2
+</span>
+<p>
+Read length: short mark or long mark.
+</p>
+</li>
+<li class="chart-tile pitch-advice-row">
+<span class="chart-label pitch-rank">
+3
+</span>
+<p>
+Keep post-accent macrons long.
+</p>
+</li>
+<li class="chart-tile pitch-advice-row">
+<span class="chart-label pitch-rank">
+4
+</span>
+<p>
+Do not move stress to final syllable.
+</p>
+</li>
+</ol>
+</section>
+### popover [data-pitch-note]|[["data-pitch-note","falling"]]
+<article class="chart-tip">
+<h4>
+Falling accent
+</h4>
+<p>
+Standard falling accents appear on one-syllable words or the first syllable of longer words.
+</p>
+</article>
+### popover [data-pitch-note]|[["data-pitch-note","final"]]
+<article class="chart-tip">
+<h4>
+Final stress
+</h4>
+<p>
+Native standard words avoid final stress. Loans, names, and dialect forms can break the learner rule.
+</p>
+</article>
+### popover [data-pitch-note]|[["data-pitch-note","length"]]
+<article class="chart-tip">
+<h4>
+Post-accent length
+</h4>
+<p>
+Macron marks long vowels without stress. In standard accent notation, these long vowels occur after the accented syllable.
+</p>
+</article>
+### popover [data-pitch-note]|[["data-pitch-note","marks"]]
+<article class="chart-tip">
+<h4>
+Marks are reference notation
+</h4>
+<p>
+Books, dictionaries, and teaching material mark accent. Normal Serbian spelling does not.
+</p>
+</article>
+### popover [data-pitch-note]|[["data-pitch-note","mobile"]]
+<article class="chart-tip">
+<h4>
+Accent can move
+</h4>
+<p>
+Case, number, and derivation can change stress place, tone, and length. Treat common paradigms as word facts.
+</p>
+</article>
+### popover [data-pitch-note]|[["data-pitch-note","rising"]]
+<article class="chart-tip">
+<h4>
+Rising accent
+</h4>
+<p>
+The rise is heard across the stressed syllable and what follows. Do not turn it into English question intonation.
+</p>
+</article>
+### popover [data-pitch-note]|[["data-pitch-note","urban"]]
+<article class="chart-tip">
+<h4>
+Modern speech
+</h4>
+<p>
+Many speakers keep stress place and length more clearly than the four-way pitch contrast, especially in urban speech.
+</p>
+</article>

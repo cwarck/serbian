@@ -1,0 +1,4155 @@
+### mount caseStripList
+<li class="case-strip-cell" data-tone="nom">
+<a aria-label="Именительный" href="#case-1">
+<span class="strip-abbr">
+NOM
+</span>
+</a>
+</li>
+<li class="case-strip-cell" data-tone="gen">
+<a aria-label="Родительный" href="#case-2">
+<span class="strip-abbr">
+GEN
+</span>
+</a>
+</li>
+<li class="case-strip-cell" data-tone="dat">
+<a aria-label="Дательный" href="#case-3">
+<span class="strip-abbr">
+DAT
+</span>
+</a>
+</li>
+<li class="case-strip-cell" data-tone="aku">
+<a aria-label="Винительный" href="#case-4">
+<span class="strip-abbr">
+AKU
+</span>
+</a>
+</li>
+<li class="case-strip-cell" data-tone="vok">
+<a aria-label="Звательный" href="#case-5">
+<span class="strip-abbr">
+VOK
+</span>
+</a>
+</li>
+<li class="case-strip-cell" data-tone="ins">
+<a aria-label="Творительный" href="#case-6">
+<span class="strip-abbr">
+INS
+</span>
+</a>
+</li>
+<li class="case-strip-cell" data-tone="lok">
+<a aria-label="Предложный" href="#case-7">
+<span class="strip-abbr">
+LOK
+</span>
+</a>
+</li>
+### mount caseList
+<article class="case-row" data-tone="nom" id="case-1">
+<div class="case-cell case-cell-head">
+<header class="case-head">
+<div class="case-head-title">
+<h3>
+<span lang="sr">
+Nominativ
+</span>
+<em>
+Именительный
+</em>
+</h3>
+<span class="case-tag">
+NOM
+</span>
+</div>
+<p class="q">
+<strong lang="sr">
+ko? / šta?
+</strong>
+— кто, что.
+</p>
+</header>
+</div>
+<div class="case-cell case-cell-end" data-axis="m-sg" data-gender="m">
+<span class="cell-axis">
+М.Ед.
+</span>
+<span class="cell">
+<span class="end">
+<span lang="sr">
+-∅
+</span>
+</span>
+</span>
+</div>
+<div class="case-cell case-cell-end" data-axis="m-pl" data-gender="m">
+<span class="cell-axis">
+М.Мн.
+</span>
+<span class="cell">
+<span class="end">
+<span lang="sr">
+-i
+</span>
+<button aria-expanded="false" aria-haspopup="dialog" aria-label="k, g, h смягчаются перед -i" class="tip-chip cell-note" data-case-idx="0" data-note-id="sib-i" data-note-trigger type="button">
+?
+</button>
+</span>
+</span>
+</div>
+<div class="case-cell case-cell-end" data-axis="f-sg" data-gender="f">
+<span class="cell-axis">
+Ж.Ед.
+</span>
+<span class="cell">
+<span class="end">
+<span lang="sr">
+-a
+</span>
+</span>
+</span>
+</div>
+<div class="case-cell case-cell-end" data-axis="f-pl" data-gender="f">
+<span class="cell-axis">
+Ж.Мн.
+</span>
+<span class="cell">
+<span class="end">
+<span lang="sr">
+-e
+</span>
+</span>
+</span>
+</div>
+<div class="case-cell case-cell-end" data-axis="n-sg" data-gender="n">
+<span class="cell-axis">
+С.Ед.
+</span>
+<span class="cell">
+<span class="end">
+<span lang="sr">
+-o
+</span>
+</span>
+</span>
+</div>
+<div class="case-cell case-cell-end" data-axis="n-pl" data-gender="n">
+<span class="cell-axis">
+С.Мн.
+</span>
+<span class="cell">
+<span class="end">
+<span lang="sr">
+-a
+</span>
+</span>
+</span>
+</div>
+<div class="case-cell case-cell-ex">
+<span class="cell-axis">
+Примеры
+</span>
+<div class="examples">
+<div class="ex">
+<div class="sr" lang="sr">
+<mark>
+Dobar pilot
+</mark>
+proverava instrumente.
+</div>
+<div class="tr">
+Хороший пилот проверяет приборы.
+</div>
+</div>
+<div class="ex">
+<div class="sr" lang="sr">
+<mark>
+Žena
+</mark>
+peva.
+</div>
+<div class="tr">
+Женщина поёт.
+</div>
+</div>
+<div class="ex">
+<div class="sr" lang="sr">
+<mark>
+Selo
+</mark>
+je tiho.
+</div>
+<div class="tr">
+Деревня тихая.
+</div>
+</div>
+</div>
+</div>
+<div aria-hidden="true" class="case-cell case-cell-preps is-empty">
+</div>
+</article>
+<article class="case-row" data-tone="gen" id="case-2">
+<div class="case-cell case-cell-head">
+<header class="case-head">
+<div class="case-head-title">
+<h3>
+<span lang="sr">
+Genitiv
+</span>
+<em>
+Родительный
+</em>
+</h3>
+<span class="case-tag">
+GEN
+</span>
+</div>
+<p class="q">
+<strong lang="sr">
+koga? / čega?
+</strong>
+— кого, чего.
+</p>
+</header>
+</div>
+<div class="case-cell case-cell-end" data-axis="m-sg" data-gender="m">
+<span class="cell-axis">
+М.Ед.
+</span>
+<span class="cell">
+<span class="end">
+<span lang="sr">
+-a
+</span>
+</span>
+</span>
+</div>
+<div class="case-cell case-cell-end" data-axis="m-pl" data-gender="m">
+<span class="cell-axis">
+М.Мн.
+</span>
+<span class="cell">
+<span class="end">
+<span lang="sr">
+-a
+</span>
+</span>
+</span>
+</div>
+<div class="case-cell case-cell-end" data-axis="f-sg" data-gender="f">
+<span class="cell-axis">
+Ж.Ед.
+</span>
+<span class="cell">
+<span class="end">
+<span lang="sr">
+-e
+</span>
+</span>
+</span>
+</div>
+<div class="case-cell case-cell-end" data-axis="f-pl" data-gender="f">
+<span class="cell-axis">
+Ж.Мн.
+</span>
+<span class="cell">
+<span class="end">
+<span lang="sr">
+-a
+</span>
+</span>
+</span>
+</div>
+<div class="case-cell case-cell-end" data-axis="n-sg" data-gender="n">
+<span class="cell-axis">
+С.Ед.
+</span>
+<span class="cell">
+<span class="end">
+<span lang="sr">
+-a
+</span>
+</span>
+</span>
+</div>
+<div class="case-cell case-cell-end" data-axis="n-pl" data-gender="n">
+<span class="cell-axis">
+С.Мн.
+</span>
+<span class="cell">
+<span class="end is-echo">
+<span lang="sr">
+-a
+</span>
+</span>
+<span aria-label="same as" class="cell-shares">
+<span class="cell-share" data-target="NOM" data-tone="nom">
+<span class="share-label">
+NOM
+</span>
+</span>
+</span>
+</span>
+</div>
+<div class="case-cell case-cell-ex">
+<span class="cell-axis">
+Примеры
+</span>
+<div class="examples">
+<div class="ex">
+<div class="sr" lang="sr">
+Kaciga
+<mark>
+pilota
+</mark>
+.
+</div>
+<div class="tr">
+Шлем пилота.
+</div>
+</div>
+<div class="ex">
+<div class="sr" lang="sr">
+Stižem iz
+<mark>
+grada
+</mark>
+.
+</div>
+<div class="tr">
+Я приезжаю из города.
+</div>
+</div>
+<div class="ex">
+<div class="sr" lang="sr">
+Nemam
+<mark>
+vremena
+</mark>
+.
+</div>
+<div class="tr">
+У меня нет времени.
+</div>
+</div>
+<div class="ex">
+<div class="sr" lang="sr">
+Ovde nema
+<mark>
+žena
+</mark>
+.
+</div>
+<div class="tr">
+Здесь нет женщин.
+<em>
+(ж. мн. —
+<i lang="sr">
+-a
+</i>
+, совпадает с Им. ед.)
+</em>
+</div>
+</div>
+</div>
+</div>
+<div class="case-cell case-cell-preps">
+<span class="cell-axis">
+Предлоги
+</span>
+<p class="prep-list">
+<button aria-expanded="false" class="prep-trigger" data-prep="od" type="button">
+od
+</button>
+,
+<button aria-expanded="false" class="prep-trigger" data-prep="iz" type="button">
+iz
+</button>
+,
+<button aria-expanded="false" class="prep-trigger" data-prep="do" type="button">
+do
+</button>
+,
+<button aria-expanded="false" class="prep-trigger" data-prep="kod" type="button">
+kod
+</button>
+,
+<button aria-expanded="false" class="prep-trigger" data-prep="blizu" type="button">
+blizu
+</button>
+,
+<button aria-expanded="false" class="prep-trigger" data-prep="iza" type="button">
+iza
+</button>
+,
+<button aria-expanded="false" class="prep-trigger" data-prep="oko" type="button">
+oko
+</button>
+,
+<button aria-expanded="false" class="prep-trigger" data-prep="bez" type="button">
+bez
+</button>
+,
+<button aria-expanded="false" class="prep-trigger" data-prep="pre" type="button">
+pre
+</button>
+,
+<button aria-expanded="false" class="prep-trigger" data-prep="posle" type="button">
+posle
+</button>
+</p>
+</div>
+</article>
+<article class="case-row" data-tone="dat" id="case-3">
+<div class="case-cell case-cell-head">
+<header class="case-head">
+<div class="case-head-title">
+<h3>
+<span lang="sr">
+Dativ
+</span>
+<em>
+Дательный
+</em>
+</h3>
+<span class="case-tag">
+DAT
+</span>
+</div>
+<p class="q">
+<strong lang="sr">
+kome? / čemu?
+</strong>
+— кому, чему.
+</p>
+</header>
+</div>
+<div class="case-cell case-cell-end" data-axis="m-sg" data-gender="m">
+<span class="cell-axis">
+М.Ед.
+</span>
+<span class="cell">
+<span class="end">
+<span lang="sr">
+-u
+</span>
+</span>
+</span>
+</div>
+<div class="case-cell case-cell-end" data-axis="m-pl" data-gender="m">
+<span class="cell-axis">
+М.Мн.
+</span>
+<span class="cell">
+<span class="end">
+<span lang="sr">
+-ima
+</span>
+</span>
+</span>
+</div>
+<div class="case-cell case-cell-end" data-axis="f-sg" data-gender="f">
+<span class="cell-axis">
+Ж.Ед.
+</span>
+<span class="cell">
+<span class="end">
+<span lang="sr">
+-i
+</span>
+<button aria-expanded="false" aria-haspopup="dialog" aria-label="k, g, h смягчаются перед -i" class="tip-chip cell-note" data-case-idx="2" data-note-id="sib-i" data-note-trigger type="button">
+?
+</button>
+</span>
+</span>
+</div>
+<div class="case-cell case-cell-end" data-axis="f-pl" data-gender="f">
+<span class="cell-axis">
+Ж.Мн.
+</span>
+<span class="cell">
+<span class="end">
+<span lang="sr">
+-ama
+</span>
+</span>
+</span>
+</div>
+<div class="case-cell case-cell-end" data-axis="n-sg" data-gender="n">
+<span class="cell-axis">
+С.Ед.
+</span>
+<span class="cell">
+<span class="end">
+<span lang="sr">
+-u
+</span>
+</span>
+</span>
+</div>
+<div class="case-cell case-cell-end" data-axis="n-pl" data-gender="n">
+<span class="cell-axis">
+С.Мн.
+</span>
+<span class="cell">
+<span class="end">
+<span lang="sr">
+-ima
+</span>
+</span>
+</span>
+</div>
+<div class="case-cell case-cell-ex">
+<span class="cell-axis">
+Примеры
+</span>
+<div class="examples">
+<div class="ex">
+<div class="sr" lang="sr">
+Pokazujem kartu
+<mark>
+pilotu
+</mark>
+.
+</div>
+<div class="tr">
+Я показываю карту пилоту.
+</div>
+</div>
+<div class="ex">
+<div class="sr" lang="sr">
+Idem ka
+<mark>
+moru
+</mark>
+.
+</div>
+<div class="tr">
+Я еду к морю.
+</div>
+</div>
+<div class="ex">
+<div class="sr" lang="sr">
+Pomažem
+<mark>
+prijateljici
+</mark>
+.
+</div>
+<div class="tr">
+Я помогаю подруге.
+</div>
+</div>
+</div>
+</div>
+<div class="case-cell case-cell-preps">
+<span class="cell-axis">
+Предлоги
+</span>
+<p class="prep-list">
+<button aria-expanded="false" class="prep-trigger" data-prep="k/ka" type="button">
+k/ka
+</button>
+,
+<button aria-expanded="false" class="prep-trigger" data-prep="prema" type="button">
+prema
+</button>
+,
+<button aria-expanded="false" class="prep-trigger" data-prep="nasuprot" type="button">
+nasuprot
+</button>
+</p>
+</div>
+</article>
+<article class="case-row" data-tone="aku" id="case-4">
+<div class="case-cell case-cell-head">
+<header class="case-head">
+<div class="case-head-title">
+<h3>
+<span lang="sr">
+Akuzativ
+</span>
+<em>
+Винительный
+</em>
+</h3>
+<span class="case-tag">
+AKU
+</span>
+</div>
+<p class="q">
+<strong lang="sr">
+koga? / šta?
+</strong>
+— кого, что.
+</p>
+</header>
+</div>
+<div class="case-cell case-cell-end" data-axis="m-sg" data-gender="m">
+<span class="cell-axis">
+М.Ед.
+</span>
+<span class="cell cell-alt cell-alt-stack">
+<span class="end-row">
+<span class="end is-echo">
+<span lang="sr">
+-a
+</span>
+</span>
+<span aria-label="same as" class="cell-shares">
+<span class="cell-share" data-target="GEN" data-tone="gen">
+<span class="share-label">
+GEN
+</span>
+</span>
+</span>
+</span>
+<span class="end-row">
+<span class="end is-echo">
+<span lang="sr">
+-∅
+</span>
+<button aria-expanded="false" aria-haspopup="dialog" aria-label="Одушевлённые против всего остального" class="tip-chip cell-note" data-case-idx="3" data-note-id="animacy" data-note-trigger type="button">
+?
+</button>
+</span>
+<span aria-label="same as" class="cell-shares">
+<span class="cell-share" data-target="NOM" data-tone="nom">
+<span class="share-label">
+NOM
+</span>
+</span>
+</span>
+</span>
+</span>
+</div>
+<div class="case-cell case-cell-end" data-axis="m-pl" data-gender="m">
+<span class="cell-axis">
+М.Мн.
+</span>
+<span class="cell">
+<span class="end">
+<span lang="sr">
+-e
+</span>
+</span>
+</span>
+</div>
+<div class="case-cell case-cell-end" data-axis="f-sg" data-gender="f">
+<span class="cell-axis">
+Ж.Ед.
+</span>
+<span class="cell">
+<span class="end">
+<span lang="sr">
+-u
+</span>
+</span>
+</span>
+</div>
+<div class="case-cell case-cell-end" data-axis="f-pl" data-gender="f">
+<span class="cell-axis">
+Ж.Мн.
+</span>
+<span class="cell">
+<span class="end is-echo">
+<span lang="sr">
+-e
+</span>
+</span>
+<span aria-label="same as" class="cell-shares">
+<span class="cell-share" data-target="NOM" data-tone="nom">
+<span class="share-label">
+NOM
+</span>
+</span>
+</span>
+</span>
+</div>
+<div class="case-cell case-cell-end" data-axis="n-sg" data-gender="n">
+<span class="cell-axis">
+С.Ед.
+</span>
+<span class="cell">
+<span class="end is-echo">
+<span lang="sr">
+-o
+</span>
+</span>
+<span aria-label="same as" class="cell-shares">
+<span class="cell-share" data-target="NOM" data-tone="nom">
+<span class="share-label">
+NOM
+</span>
+</span>
+</span>
+</span>
+</div>
+<div class="case-cell case-cell-end" data-axis="n-pl" data-gender="n">
+<span class="cell-axis">
+С.Мн.
+</span>
+<span class="cell">
+<span class="end is-echo">
+<span lang="sr">
+-a
+</span>
+</span>
+<span aria-label="same as" class="cell-shares">
+<span class="cell-share" data-target="NOM" data-tone="nom">
+<span class="share-label">
+NOM
+</span>
+</span>
+</span>
+</span>
+</div>
+<div class="case-cell case-cell-ex">
+<span class="cell-axis">
+Примеры
+</span>
+<div class="examples">
+<div class="ex">
+<div class="sr" lang="sr">
+Vidim
+<mark>
+pilota
+</mark>
+.
+</div>
+<div class="tr">
+Я вижу пилота.
+<em>
+(одуш. →
+<i lang="sr">
+-a
+</i>
+, как Род.)
+</em>
+</div>
+</div>
+<div class="ex">
+<div class="sr" lang="sr">
+Vidim
+<mark>
+grad
+</mark>
+.
+</div>
+<div class="tr">
+Я вижу город.
+<em>
+(неодуш. →
+<i lang="sr">
+-∅
+</i>
+, как Им.)
+</em>
+</div>
+</div>
+<div class="ex">
+<div class="sr" lang="sr">
+Idem u
+<mark>
+grad
+</mark>
+.
+</div>
+<div class="tr">
+Я еду в город.
+<em>
+(движение:
+<i lang="sr">
+u
+</i>
++ Acc)
+</em>
+</div>
+</div>
+</div>
+</div>
+<div class="case-cell case-cell-preps">
+<span class="cell-axis">
+Предлоги
+</span>
+<p class="prep-list">
+<button aria-expanded="false" class="prep-trigger" data-prep="u" type="button">
+u
+</button>
+,
+<button aria-expanded="false" class="prep-trigger" data-prep="na" type="button">
+na
+</button>
+,
+<button aria-expanded="false" class="prep-trigger" data-prep="kroz" type="button">
+kroz
+</button>
+,
+<button aria-expanded="false" class="prep-trigger" data-prep="niz" type="button">
+niz
+</button>
+,
+<button aria-expanded="false" class="prep-trigger" data-prep="uz" type="button">
+uz
+</button>
+,
+<button aria-expanded="false" class="prep-trigger" data-prep="pod" type="button">
+pod
+</button>
+,
+<button aria-expanded="false" class="prep-trigger" data-prep="pred" type="button">
+pred
+</button>
+,
+<button aria-expanded="false" class="prep-trigger" data-prep="nad" type="button">
+nad
+</button>
+,
+<button aria-expanded="false" class="prep-trigger" data-prep="među" type="button">
+među
+</button>
+,
+<button aria-expanded="false" class="prep-trigger" data-prep="za" type="button">
+za
+</button>
+</p>
+</div>
+</article>
+<article class="case-row" data-tone="vok" id="case-5">
+<div class="case-cell case-cell-head">
+<header class="case-head">
+<div class="case-head-title">
+<h3>
+<span lang="sr">
+Vokativ
+</span>
+<em>
+Звательный
+</em>
+</h3>
+<span class="case-tag">
+VOK
+</span>
+</div>
+<p class="q">
+<strong lang="sr">
+O, Marija!
+</strong>
+— падеж, которым окликают.
+</p>
+</header>
+</div>
+<div class="case-cell case-cell-end" data-axis="m-sg" data-gender="m">
+<span class="cell-axis">
+М.Ед.
+</span>
+<span class="cell cell-alt">
+<span class="end">
+<span lang="sr">
+-e
+</span>
+<button aria-expanded="false" aria-haspopup="dialog" aria-label="k, g, h превращаются в č, ž, š при обращении" class="tip-chip cell-note" data-case-idx="4" data-note-id="palatal" data-note-trigger type="button">
+?
+</button>
+</span>
+<span aria-hidden="true" class="cell-sep">
+/
+</span>
+<span class="end">
+<span lang="sr">
+-u
+</span>
+<button aria-expanded="false" aria-haspopup="dialog" aria-label="После мягких согласных — -u вместо -e" class="tip-chip cell-note" data-case-idx="4" data-note-id="soft" data-note-trigger type="button">
+?
+</button>
+</span>
+</span>
+</div>
+<div class="case-cell case-cell-end" data-axis="m-pl" data-gender="m">
+<span class="cell-axis">
+М.Мн.
+</span>
+<span class="cell">
+<span class="end is-echo">
+<span lang="sr">
+-i
+</span>
+</span>
+<span aria-label="same as" class="cell-shares">
+<span class="cell-share" data-target="NOM" data-tone="nom">
+<span class="share-label">
+NOM
+</span>
+</span>
+</span>
+</span>
+</div>
+<div class="case-cell case-cell-end" data-axis="f-sg" data-gender="f">
+<span class="cell-axis">
+Ж.Ед.
+</span>
+<span class="cell">
+<span class="end">
+<span lang="sr">
+-o
+</span>
+<button aria-expanded="false" aria-haspopup="dialog" aria-label="Имена обычно сохраняют -a" class="tip-chip cell-note" data-case-idx="4" data-note-id="vok-f-name" data-note-trigger type="button">
+?
+</button>
+</span>
+</span>
+</div>
+<div class="case-cell case-cell-end" data-axis="f-pl" data-gender="f">
+<span class="cell-axis">
+Ж.Мн.
+</span>
+<span class="cell">
+<span class="end is-echo">
+<span lang="sr">
+-e
+</span>
+</span>
+<span aria-label="same as" class="cell-shares">
+<span class="cell-share" data-target="NOM" data-tone="nom">
+<span class="share-label">
+NOM
+</span>
+</span>
+</span>
+</span>
+</div>
+<div class="case-cell case-cell-end" data-axis="n-sg" data-gender="n">
+<span class="cell-axis">
+С.Ед.
+</span>
+<span class="cell">
+<span class="end is-echo">
+<span lang="sr">
+-o
+</span>
+</span>
+<span aria-label="same as" class="cell-shares">
+<span class="cell-share" data-target="NOM" data-tone="nom">
+<span class="share-label">
+NOM
+</span>
+</span>
+</span>
+</span>
+</div>
+<div class="case-cell case-cell-end" data-axis="n-pl" data-gender="n">
+<span class="cell-axis">
+С.Мн.
+</span>
+<span class="cell">
+<span class="end is-echo">
+<span lang="sr">
+-a
+</span>
+</span>
+<span aria-label="same as" class="cell-shares">
+<span class="cell-share" data-target="NOM" data-tone="nom">
+<span class="share-label">
+NOM
+</span>
+</span>
+</span>
+</span>
+</div>
+<div class="case-cell case-cell-ex">
+<span class="cell-axis">
+Примеры
+</span>
+<div class="examples">
+<div class="ex">
+<div class="sr" lang="sr">
+<mark>
+Pilote
+</mark>
+, dobar dan!
+</div>
+<div class="tr">
+Пилот, добрый день!
+</div>
+</div>
+<div class="ex">
+<div class="sr" lang="sr">
+<mark>
+Marija
+</mark>
+, gde si?
+</div>
+<div class="tr">
+Мария, ты где?
+</div>
+</div>
+<div class="ex">
+<div class="sr" lang="sr">
+O,
+<mark>
+prijatelju
+</mark>
+!
+</div>
+<div class="tr">
+О, друг мой!
+</div>
+</div>
+</div>
+</div>
+<div aria-hidden="true" class="case-cell case-cell-preps is-empty">
+</div>
+</article>
+<article class="case-row" data-tone="ins" id="case-6">
+<div class="case-cell case-cell-head">
+<header class="case-head">
+<div class="case-head-title">
+<h3>
+<span lang="sr">
+Instrumental
+</span>
+<em>
+Творительный
+</em>
+</h3>
+<span class="case-tag">
+INS
+</span>
+</div>
+<p class="q">
+<strong lang="sr">
+(s) kim? / čim?
+</strong>
+— с кем, чем.
+</p>
+</header>
+</div>
+<div class="case-cell case-cell-end" data-axis="m-sg" data-gender="m">
+<span class="cell-axis">
+М.Ед.
+</span>
+<span class="cell">
+<span class="end">
+<span lang="sr">
+-om
+</span>
+<button aria-expanded="false" aria-haspopup="dialog" aria-label="После мягких согласных -om становится -em" class="tip-chip cell-note" data-case-idx="5" data-note-id="soft-em" data-note-trigger type="button">
+?
+</button>
+</span>
+</span>
+</div>
+<div class="case-cell case-cell-end" data-axis="m-pl" data-gender="m">
+<span class="cell-axis">
+М.Мн.
+</span>
+<span class="cell">
+<span class="end is-echo">
+<span lang="sr">
+-ima
+</span>
+</span>
+<span aria-label="same as" class="cell-shares">
+<span class="cell-share" data-target="DAT" data-tone="dat">
+<span class="share-label">
+DAT
+</span>
+</span>
+</span>
+</span>
+</div>
+<div class="case-cell case-cell-end" data-axis="f-sg" data-gender="f">
+<span class="cell-axis">
+Ж.Ед.
+</span>
+<span class="cell">
+<span class="end">
+<span lang="sr">
+-om
+</span>
+</span>
+</span>
+</div>
+<div class="case-cell case-cell-end" data-axis="f-pl" data-gender="f">
+<span class="cell-axis">
+Ж.Мн.
+</span>
+<span class="cell">
+<span class="end is-echo">
+<span lang="sr">
+-ama
+</span>
+</span>
+<span aria-label="same as" class="cell-shares">
+<span class="cell-share" data-target="DAT" data-tone="dat">
+<span class="share-label">
+DAT
+</span>
+</span>
+</span>
+</span>
+</div>
+<div class="case-cell case-cell-end" data-axis="n-sg" data-gender="n">
+<span class="cell-axis">
+С.Ед.
+</span>
+<span class="cell">
+<span class="end">
+<span lang="sr">
+-om
+</span>
+<button aria-expanded="false" aria-haspopup="dialog" aria-label="После мягких согласных -om становится -em" class="tip-chip cell-note" data-case-idx="5" data-note-id="soft-em" data-note-trigger type="button">
+?
+</button>
+</span>
+</span>
+</div>
+<div class="case-cell case-cell-end" data-axis="n-pl" data-gender="n">
+<span class="cell-axis">
+С.Мн.
+</span>
+<span class="cell">
+<span class="end is-echo">
+<span lang="sr">
+-ima
+</span>
+</span>
+<span aria-label="same as" class="cell-shares">
+<span class="cell-share" data-target="DAT" data-tone="dat">
+<span class="share-label">
+DAT
+</span>
+</span>
+</span>
+</span>
+</div>
+<div class="case-cell case-cell-ex">
+<span class="cell-axis">
+Примеры
+</span>
+<div class="examples">
+<div class="ex">
+<div class="sr" lang="sr">
+Putujem
+<mark>
+autobusom
+</mark>
+.
+</div>
+<div class="tr">
+Я еду на автобусе.
+</div>
+</div>
+<div class="ex">
+<div class="sr" lang="sr">
+Letim sa
+<mark>
+pilotom
+</mark>
+.
+</div>
+<div class="tr">
+Я лечу с пилотом.
+</div>
+</div>
+<div class="ex">
+<div class="sr" lang="sr">
+<mark>
+Ponedeljkom
+</mark>
+radim.
+</div>
+<div class="tr">
+По понедельникам я работаю.
+<em>
+(регулярное время)
+</em>
+</div>
+</div>
+</div>
+</div>
+<div class="case-cell case-cell-preps">
+<span class="cell-axis">
+Предлоги
+</span>
+<p class="prep-list">
+<button aria-expanded="false" class="prep-trigger" data-prep="s/sa" type="button">
+s/sa
+</button>
+,
+<button aria-expanded="false" class="prep-trigger" data-prep="pod" type="button">
+pod
+</button>
+,
+<button aria-expanded="false" class="prep-trigger" data-prep="pred" type="button">
+pred
+</button>
+,
+<button aria-expanded="false" class="prep-trigger" data-prep="nad" type="button">
+nad
+</button>
+,
+<button aria-expanded="false" class="prep-trigger" data-prep="među" type="button">
+među
+</button>
+,
+<button aria-expanded="false" class="prep-trigger" data-prep="za" type="button">
+za
+</button>
+</p>
+</div>
+</article>
+<article class="case-row" data-tone="lok" id="case-7">
+<div class="case-cell case-cell-head">
+<header class="case-head">
+<div class="case-head-title">
+<h3>
+<span lang="sr">
+Lokativ
+</span>
+<em>
+Предложный
+</em>
+</h3>
+<span class="case-tag">
+LOK
+</span>
+</div>
+<p class="q">
+<strong lang="sr">
+o kome? / o čemu?
+</strong>
+— о ком, о чём.
+</p>
+</header>
+</div>
+<div class="case-cell case-cell-end" data-axis="m-sg" data-gender="m">
+<span class="cell-axis">
+М.Ед.
+</span>
+<span class="cell">
+<span class="end is-echo">
+<span lang="sr">
+-u
+</span>
+</span>
+<span aria-label="same as" class="cell-shares">
+<span class="cell-share" data-target="DAT" data-tone="dat">
+<span class="share-label">
+DAT
+</span>
+</span>
+</span>
+</span>
+</div>
+<div class="case-cell case-cell-end" data-axis="m-pl" data-gender="m">
+<span class="cell-axis">
+М.Мн.
+</span>
+<span class="cell">
+<span class="end is-echo">
+<span lang="sr">
+-ima
+</span>
+</span>
+<span aria-label="same as" class="cell-shares">
+<span class="cell-share" data-target="DAT" data-tone="dat">
+<span class="share-label">
+DAT
+</span>
+</span>
+</span>
+</span>
+</div>
+<div class="case-cell case-cell-end" data-axis="f-sg" data-gender="f">
+<span class="cell-axis">
+Ж.Ед.
+</span>
+<span class="cell">
+<span class="end is-echo">
+<span lang="sr">
+-i
+</span>
+<button aria-expanded="false" aria-haspopup="dialog" aria-label="k, g, h смягчаются перед -i (как в Дательном)" class="tip-chip cell-note" data-case-idx="6" data-note-id="sib-i" data-note-trigger type="button">
+?
+</button>
+</span>
+<span aria-label="same as" class="cell-shares">
+<span class="cell-share" data-target="DAT" data-tone="dat">
+<span class="share-label">
+DAT
+</span>
+</span>
+</span>
+</span>
+</div>
+<div class="case-cell case-cell-end" data-axis="f-pl" data-gender="f">
+<span class="cell-axis">
+Ж.Мн.
+</span>
+<span class="cell">
+<span class="end is-echo">
+<span lang="sr">
+-ama
+</span>
+</span>
+<span aria-label="same as" class="cell-shares">
+<span class="cell-share" data-target="DAT" data-tone="dat">
+<span class="share-label">
+DAT
+</span>
+</span>
+</span>
+</span>
+</div>
+<div class="case-cell case-cell-end" data-axis="n-sg" data-gender="n">
+<span class="cell-axis">
+С.Ед.
+</span>
+<span class="cell">
+<span class="end is-echo">
+<span lang="sr">
+-u
+</span>
+</span>
+<span aria-label="same as" class="cell-shares">
+<span class="cell-share" data-target="DAT" data-tone="dat">
+<span class="share-label">
+DAT
+</span>
+</span>
+</span>
+</span>
+</div>
+<div class="case-cell case-cell-end" data-axis="n-pl" data-gender="n">
+<span class="cell-axis">
+С.Мн.
+</span>
+<span class="cell">
+<span class="end is-echo">
+<span lang="sr">
+-ima
+</span>
+</span>
+<span aria-label="same as" class="cell-shares">
+<span class="cell-share" data-target="DAT" data-tone="dat">
+<span class="share-label">
+DAT
+</span>
+</span>
+</span>
+</span>
+</div>
+<div class="case-cell case-cell-ex">
+<span class="cell-axis">
+Примеры
+</span>
+<div class="examples">
+<div class="ex">
+<div class="sr" lang="sr">
+Knjiga je na
+<mark>
+stolu
+</mark>
+.
+</div>
+<div class="tr">
+Книга на столе.
+<em>
+(где)
+</em>
+</div>
+</div>
+<div class="ex">
+<div class="sr" lang="sr">
+Govorim o
+<mark>
+pilotu
+</mark>
+.
+</div>
+<div class="tr">
+Я говорю о пилоте.
+<em>
+(о чём)
+</em>
+</div>
+</div>
+<div class="ex">
+<div class="sr" lang="sr">
+Živim u
+<mark>
+Beogradu
+</mark>
+.
+</div>
+<div class="tr">
+Я живу в Белграде.
+<em>
+(где:
+<i lang="sr">
+u
+</i>
++ Loc, без движения)
+</em>
+</div>
+</div>
+</div>
+</div>
+<div class="case-cell case-cell-preps">
+<span class="cell-axis">
+Предлоги
+</span>
+<p class="prep-list">
+<button aria-expanded="false" class="prep-trigger" data-prep="u" type="button">
+u
+</button>
+,
+<button aria-expanded="false" class="prep-trigger" data-prep="na" type="button">
+na
+</button>
+,
+<button aria-expanded="false" class="prep-trigger" data-prep="o" type="button">
+o
+</button>
+,
+<button aria-expanded="false" class="prep-trigger" data-prep="po" type="button">
+po
+</button>
+,
+<button aria-expanded="false" class="prep-trigger" data-prep="pri" type="button">
+pri
+</button>
+</p>
+</div>
+</article>
+### mount extraPack
+<article class="extra-panel extra-panel-idecl">
+<header class="extra-panel-head">
+<h3 class="extra-panel-title">
+Женский род без
+<i lang="sr">
+-a
+</i>
+</h3>
+<span class="extra-panel-sub">
+<em lang="sr">
+ljubav
+</em>
+· любовь
+</span>
+</header>
+<div class="extra-panel-body">
+<table class="i-decl">
+<thead>
+<tr>
+<th>
+</th>
+<th>
+Ед.
+</th>
+<th>
+Мн.
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="num" scope="row">
+NOM
+</th>
+<td>
+<span class="end" lang="sr">
+ljubav
+</span>
+</td>
+<td>
+<span class="end" lang="sr">
+ljubavi
+</span>
+</td>
+</tr>
+<tr>
+<th class="num" scope="row">
+GEN
+</th>
+<td>
+<span class="end" lang="sr">
+ljubavi
+</span>
+</td>
+<td>
+<span class="end" lang="sr">
+ljubavi
+</span>
+</td>
+</tr>
+<tr>
+<th class="num" scope="row">
+DAT
+</th>
+<td>
+<span class="end" lang="sr">
+ljubavi
+</span>
+</td>
+<td>
+<span class="end" lang="sr">
+ljubavima
+</span>
+</td>
+</tr>
+<tr>
+<th class="num" scope="row">
+AKU
+</th>
+<td>
+<span class="end" lang="sr">
+ljubav
+</span>
+</td>
+<td>
+<span class="end" lang="sr">
+ljubavi
+</span>
+</td>
+</tr>
+<tr>
+<th class="num" scope="row">
+VOK
+</th>
+<td>
+<span class="end" lang="sr">
+ljubavi
+</span>
+</td>
+<td>
+<span class="end" lang="sr">
+ljubavi
+</span>
+</td>
+</tr>
+<tr>
+<th class="num" scope="row">
+INS
+</th>
+<td>
+<span class="end" lang="sr">
+ljubavlju
+</span>
+</td>
+<td>
+<span class="end" lang="sr">
+ljubavima
+</span>
+</td>
+</tr>
+<tr>
+<th class="num" scope="row">
+LOK
+</th>
+<td>
+<span class="end" lang="sr">
+ljubavi
+</span>
+</td>
+<td>
+<span class="end" lang="sr">
+ljubavima
+</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</article>
+<article class="extra-panel">
+<header class="extra-panel-head">
+<h3 class="extra-panel-title">
+Беглая гласная
+</h3>
+</header>
+<div class="extra-panel-body">
+<ul class="wrinkle-list">
+<li>
+<span class="from" lang="sr">
+p
+<span class="lit">
+as
+</span>
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+p
+<span class="lit">
+sa
+</span>
+</span>
+<span class="gloss">
+пёс · собаки
+</span>
+</li>
+<li>
+<span class="from" lang="sr">
+pos
+<span class="lit">
+ao
+</span>
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+pos
+<span class="lit">
+la
+</span>
+</span>
+<span class="gloss">
+дело · дела
+</span>
+</li>
+<li>
+<span class="from" lang="sr">
+o
+<span class="lit">
+tac
+</span>
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+o
+<span class="lit">
+ca
+</span>
+</span>
+<span class="gloss">
+отец · отца
+</span>
+</li>
+<li>
+<span class="from" lang="sr">
+vred
+<span class="lit">
+an
+</span>
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+vred
+<span class="lit">
+ni
+</span>
+</span>
+<span class="gloss">
+усердный (м.р., ед.) · мн.ч.
+</span>
+</li>
+</ul>
+</div>
+</article>
+<article class="extra-panel">
+<header class="extra-panel-head">
+<h3 class="extra-panel-title">
+Вставная
+<i lang="sr">
+-a
+</i>
+в род. мн.
+</h3>
+</header>
+<div class="extra-panel-body">
+<ul class="wrinkle-list">
+<li>
+<span class="from" lang="sr">
+sestra
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+sest
+<span class="lit">
+a
+</span>
+ra
+</span>
+<span class="gloss">
+сестра · сестёр (род. мн.)
+</span>
+</li>
+<li>
+<span class="from" lang="sr">
+pis
+<span class="lit">
+mo
+</span>
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+pis
+<span class="lit">
+ama
+</span>
+</span>
+<span class="gloss">
+письмо · писем
+</span>
+</li>
+<li>
+<span class="from" lang="sr">
+viljuška
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+viljuš
+<span class="lit">
+a
+</span>
+ka
+</span>
+<span class="gloss">
+вилка · вилок
+</span>
+</li>
+<li>
+<span class="from" lang="sr">
+stak
+<span class="lit">
+lo
+</span>
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+stak
+<span class="lit">
+ala
+</span>
+</span>
+<span class="gloss">
+стекло · стёкол
+</span>
+</li>
+</ul>
+</div>
+</article>
+<article class="extra-panel">
+<header class="extra-panel-head">
+<h3 class="extra-panel-title">
+<i lang="sr">
+-ov-
+</i>
+/
+<i lang="sr">
+-ev-
+</i>
+во мн. ч.
+</h3>
+</header>
+<div class="extra-panel-body">
+<ul class="wrinkle-list">
+<li>
+<span class="from" lang="sr">
+sin
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+sin
+<span class="lit">
+ovi
+</span>
+</span>
+<span class="gloss">
+сын · сыновья
+</span>
+</li>
+<li>
+<span class="from" lang="sr">
+grad
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+grad
+<span class="lit">
+ovi
+</span>
+</span>
+<span class="gloss">
+город · города
+</span>
+</li>
+<li>
+<span class="from" lang="sr">
+muž
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+muž
+<span class="lit">
+evi
+</span>
+</span>
+<span class="gloss">
+муж · мужья (мягк. →
+<i lang="sr">
+-ev-
+</i>
+)
+</span>
+</li>
+<li>
+<span class="from" lang="sr">
+dan
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+dan
+<span class="lit">
+i
+</span>
+</span>
+<span class="gloss">
+день · дни (исключение, просто
+<i lang="sr">
+-i
+</i>
+)
+</span>
+</li>
+</ul>
+</div>
+</article>
+<article class="extra-panel">
+<header class="extra-panel-head">
+<h3 class="extra-panel-title">
+Старое
+<i lang="sr">
+-iju
+</i>
+</h3>
+</header>
+<div class="extra-panel-body">
+<ul class="wrinkle-list">
+<li>
+<span class="from" lang="sr">
+o
+<span class="lit">
+ko
+</span>
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+o
+<span class="lit">
+čiju
+</span>
+</span>
+<span class="gloss">
+глаз · глаз (род. мн.)
+</span>
+</li>
+<li>
+<span class="from" lang="sr">
+u
+<span class="lit">
+vo
+</span>
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+u
+<span class="lit">
+šiju
+</span>
+</span>
+<span class="gloss">
+ухо · ушей
+</span>
+</li>
+<li>
+<span class="from" lang="sr">
+gost
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+gost
+<span class="lit">
+iju
+</span>
+</span>
+<span class="gloss">
+гость · гостей
+</span>
+</li>
+<li>
+<span class="from" lang="sr">
+prst
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+prst
+<span class="lit">
+iju
+</span>
+</span>
+<span class="gloss">
+палец · пальцев
+</span>
+</li>
+</ul>
+</div>
+</article>
+<article class="extra-panel">
+<header class="extra-panel-head">
+<h3 class="extra-panel-title">
+Исключения
+</h3>
+</header>
+<div class="extra-panel-body">
+<ul class="wrinkle-list">
+<li>
+<span class="from" lang="sr">
+bra
+<span class="lit">
+t
+</span>
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+bra
+<span class="lit">
+ća
+</span>
+</span>
+<span class="gloss">
+брат → братья (соб., ж.р., ед.)
+</span>
+</li>
+<li>
+<span class="from" lang="sr">
+<span class="lit">
+čovek
+</span>
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+<span class="lit">
+ljudi
+</span>
+</span>
+<span class="gloss">
+человек → люди (новое слово)
+</span>
+</li>
+<li>
+<span class="from" lang="sr">
+de
+<span class="lit">
+te
+</span>
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+de
+<span class="lit">
+ca
+</span>
+</span>
+<span class="gloss">
+ребёнок → дети (соб., ж.р., ед.)
+</span>
+</li>
+<li>
+<span class="from" lang="sr">
+drv
+<span class="lit">
+o
+</span>
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+drv
+<span class="lit">
+eta
+</span>
+</span>
+<span class="gloss">
+дерево → дерева (основа удлиняется)
+</span>
+</li>
+<li>
+<span class="from" lang="sr">
+ime
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+ime
+<span class="lit">
+na
+</span>
+</span>
+<span class="gloss">
+имя → имена (наращение -n-)
+</span>
+</li>
+<li>
+<span class="from" lang="sr">
+vreme
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+vreme
+<span class="lit">
+na
+</span>
+</span>
+<span class="gloss">
+время → времена (наращение -n-)
+</span>
+</li>
+<li>
+<span class="from" lang="sr">
+ruk
+<span class="lit">
+a
+</span>
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+ruk
+<span class="lit">
+u
+</span>
+</span>
+<span class="gloss">
+рука → рук (особый род. мн.)
+</span>
+</li>
+<li>
+<span class="from" lang="sr">
+nog
+<span class="lit">
+a
+</span>
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+nog
+<span class="lit">
+u
+</span>
+</span>
+<span class="gloss">
+нога → ног (особый род. мн.)
+</span>
+</li>
+<li>
+<span class="from" lang="sr">
+sat
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+sat
+<span class="lit">
+i
+</span>
+</span>
+<span class="gloss">
+час → часы (без
+<i lang="sr">
+-ov-
+</i>
+)
+</span>
+</li>
+<li>
+<span class="from" lang="sr">
+neb
+<span class="lit">
+o
+</span>
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+neb
+<span class="lit">
+esa
+</span>
+</span>
+<span class="gloss">
+небо → небеса (наращение -s-)
+</span>
+</li>
+</ul>
+</div>
+</article>
+### popover [data-note-trigger]|[["data-case-idx","0"],["data-note-id","sib-i"],["data-note-trigger",null]]
+<article class="note-pop">
+<h4 class="note-title">
+<i lang="sr">
+k, g, h
+</i>
+смягчаются перед
+<i lang="sr">
+-i
+</i>
+</h4>
+<p class="note-body">
+Этим трём твёрдым согласным неудобно стоять перед «светлым»
+<i lang="sr">
+-i
+</i>
+. Они меняются на мягких родственников —
+<i lang="sr">
+c, z, s
+</i>
+— которым с
+<i lang="sr">
+-i
+</i>
+легче.
+</p>
+<ul class="note-pairs">
+<li>
+<span class="from" lang="sr">
+juna
+<span class="lit">
+k
+</span>
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+juna
+<span class="lit">
+ci
+</span>
+</span>
+</li>
+<li>
+<span class="from" lang="sr">
+jezi
+<span class="lit">
+k
+</span>
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+jezi
+<span class="lit">
+ci
+</span>
+</span>
+</li>
+<li>
+<span class="from" lang="sr">
+mona
+<span class="lit">
+h
+</span>
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+mona
+<span class="lit">
+si
+</span>
+</span>
+</li>
+</ul>
+</article>
+### popover [data-note-trigger]|[["data-case-idx","2"],["data-note-id","sib-i"],["data-note-trigger",null]]
+<article class="note-pop">
+<h4 class="note-title">
+<i lang="sr">
+k, g, h
+</i>
+смягчаются перед
+<i lang="sr">
+-i
+</i>
+</h4>
+<p class="note-body">
+Когда женское окончание
+<i lang="sr">
+-i
+</i>
+падает на основу, оканчивающуюся на
+<i lang="sr">
+k
+</i>
+,
+<i lang="sr">
+g
+</i>
+или
+<i lang="sr">
+h
+</i>
+, эти твёрдые согласные меняются на
+<i lang="sr">
+c, z, s
+</i>
+— более мягкие звуки, которые лучше ладят с
+<i lang="sr">
+-i
+</i>
+.
+</p>
+<ul class="note-pairs">
+<li>
+<span class="from" lang="sr">
+knji
+<span class="lit">
+ga
+</span>
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+knji
+<span class="lit">
+zi
+</span>
+</span>
+</li>
+<li>
+<span class="from" lang="sr">
+ru
+<span class="lit">
+ka
+</span>
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+ru
+<span class="lit">
+ci
+</span>
+</span>
+</li>
+<li>
+<span class="from" lang="sr">
+Ameri
+<span class="lit">
+ka
+</span>
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+Ameri
+<span class="lit">
+ci
+</span>
+</span>
+</li>
+</ul>
+</article>
+### popover [data-note-trigger]|[["data-case-idx","3"],["data-note-id","animacy"],["data-note-trigger",null]]
+<article class="note-pop">
+<h4 class="note-title">
+Одушевлённые против всего остального
+</h4>
+<p class="note-body">
+Только в мужском роде единственного числа винительный делится по одушевлённости. У живых (люди, животные) окончание
+<i lang="sr">
+-a
+</i>
+— точно как в родительном. У неодушевлённых —
+<i lang="sr">
+-∅
+</i>
+, как в именительном. То есть переиспользуются уже знакомые окончания.
+</p>
+<ul class="note-pairs">
+<li>
+<span class="from" lang="sr">
+pilot
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+pilot
+<span class="lit">
+a
+</span>
+</span>
+</li>
+<li>
+<span class="from" lang="sr">
+grad
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+grad
+</span>
+</li>
+</ul>
+</article>
+### popover [data-note-trigger]|[["data-case-idx","4"],["data-note-id","palatal"],["data-note-trigger",null]]
+<article class="note-pop">
+<h4 class="note-title">
+<i lang="sr">
+k, g, h
+</i>
+превращаются в
+<i lang="sr">
+č, ž, š
+</i>
+при обращении
+</h4>
+<p class="note-body">
+Когда зовут кого-то, чьё имя или должность оканчивается на
+<i lang="sr">
+k, g, h
+</i>
+, эти согласные меняются на мягких родственников —
+<i lang="sr">
+č, ž, š
+</i>
+— перед окончанием
+<i lang="sr">
+-e
+</i>
+. Звук размягчается, потому что это окрик, а не утверждение.
+</p>
+<ul class="note-pairs">
+<li>
+<span class="from" lang="sr">
+juna
+<span class="lit">
+k
+</span>
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+juna
+<span class="lit">
+če
+</span>
+</span>
+</li>
+<li>
+<span class="from" lang="sr">
+Bo
+<span class="lit">
+g
+</span>
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+Bo
+<span class="lit">
+že
+</span>
+</span>
+</li>
+<li>
+<span class="from" lang="sr">
+du
+<span class="lit">
+h
+</span>
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+du
+<span class="lit">
+še
+</span>
+</span>
+</li>
+</ul>
+</article>
+### popover [data-note-trigger]|[["data-case-idx","4"],["data-note-id","soft"],["data-note-trigger",null]]
+<article class="note-pop">
+<h4 class="note-title">
+После мягких согласных —
+<i lang="sr">
+-u
+</i>
+вместо
+<i lang="sr">
+-e
+</i>
+</h4>
+<p class="note-body">
+Если слово уже оканчивается на мягкий согласный —
+<i lang="sr">
+c, ć, č, đ, dž, j, lj, nj, š, ž
+</i>
+— добавлять сверху мягкое
+<i lang="sr">
+-e
+</i>
+было бы излишеством. Окончание становится
+<i lang="sr">
+-u
+</i>
+.
+</p>
+<ul class="note-pairs">
+<li>
+<span class="from" lang="sr">
+prijatelj
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+prijatelj
+<span class="lit">
+u
+</span>
+</span>
+</li>
+<li>
+<span class="from" lang="sr">
+mladić
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+mladić
+<span class="lit">
+u
+</span>
+</span>
+</li>
+<li>
+<span class="from" lang="sr">
+muž
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+muž
+<span class="lit">
+u
+</span>
+</span>
+</li>
+</ul>
+</article>
+### popover [data-note-trigger]|[["data-case-idx","4"],["data-note-id","vok-f-name"],["data-note-trigger",null]]
+<article class="note-pop">
+<h4 class="note-title">
+Имена обычно сохраняют
+<i lang="sr">
+-a
+</i>
+</h4>
+<p class="note-body">
+Нарицательные берут
+<i lang="sr">
+-o
+</i>
+. Личные имена при обращении обычно не меняются, а уменьшительные на
+<i lang="sr">
+-ica
+</i>
+берут
+<i lang="sr">
+-e
+</i>
+. Форма на
+<i lang="sr">
+-o
+</i>
+от имени звучит официально или по-фольклорному.
+</p>
+<ul class="note-pairs">
+<li>
+<span class="from" lang="sr">
+žen
+<span class="lit">
+a
+</span>
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+žen
+<span class="lit">
+o
+</span>
+</span>
+</li>
+<li>
+<span class="from" lang="sr">
+Marija
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+Marija
+</span>
+</li>
+<li>
+<span class="from" lang="sr">
+sestric
+<span class="lit">
+a
+</span>
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+sestric
+<span class="lit">
+e
+</span>
+</span>
+</li>
+</ul>
+</article>
+### popover [data-note-trigger]|[["data-case-idx","5"],["data-note-id","soft-em"],["data-note-trigger",null]]
+<article class="note-pop">
+<h4 class="note-title">
+После мягких согласных
+<i lang="sr">
+-om
+</i>
+становится
+<i lang="sr">
+-em
+</i>
+</h4>
+<p class="note-body">
+Округлое
+<i lang="sr">
+-om
+</i>
+кажется тяжёлым после мягкого согласного (
+<i lang="sr">
+c, ć, č, đ, dž, j, lj, nj, š, ž
+</i>
+). Оно превращается в
+<i lang="sr">
+-em
+</i>
+, чтобы слово оставалось лёгким — мягкий согласный, мягкий гласный.
+</p>
+<ul class="note-pairs">
+<li>
+<span class="from" lang="sr">
+muž
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+muž
+<span class="lit">
+em
+</span>
+</span>
+</li>
+<li>
+<span class="from" lang="sr">
+nož
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+nož
+<span class="lit">
+em
+</span>
+</span>
+</li>
+<li>
+<span class="from" lang="sr">
+mesec
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+mesec
+<span class="lit">
+em
+</span>
+</span>
+</li>
+</ul>
+</article>
+### popover [data-note-trigger]|[["data-case-idx","6"],["data-note-id","sib-i"],["data-note-trigger",null]]
+<article class="note-pop">
+<h4 class="note-title">
+<i lang="sr">
+k, g, h
+</i>
+смягчаются перед
+<i lang="sr">
+-i
+</i>
+(как в Дательном)
+</h4>
+<p class="note-body">
+Окончание Предложного для женского рода единственного — то же
+<i lang="sr">
+-i
+</i>
+, что и в Дательном. То же окончание, то же смягчение:
+<i lang="sr">
+k, g, h
+</i>
+становятся
+<i lang="sr">
+c, z, s
+</i>
+.
+</p>
+<ul class="note-pairs">
+<li>
+<span class="from" lang="sr">
+ru
+<span class="lit">
+ka
+</span>
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+ru
+<span class="lit">
+ci
+</span>
+</span>
+</li>
+<li>
+<span class="from" lang="sr">
+knji
+<span class="lit">
+ga
+</span>
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+knji
+<span class="lit">
+zi
+</span>
+</span>
+</li>
+<li>
+<span class="from" lang="sr">
+Ameri
+<span class="lit">
+ka
+</span>
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+Ameri
+<span class="lit">
+ci
+</span>
+</span>
+</li>
+</ul>
+</article>
+### popover [data-prep]|[["data-prep","bez"]]
+<article class="prep-card">
+<header class="prep-card-head">
+<span class="prep-card-name" lang="sr">
+bez
+</span>
+</header>
+<div class="prep-card-uses">
+<div class="prep-use" data-tone="gen">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
+</rect>
+<circle class="prep-icon-dot" cx="44" cy="32" r="9">
+</circle>
+<path class="prep-icon-line" d="M26 52L62 12">
+</path>
+</svg>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+Родительный
+</span>
+<span class="prep-meaning">
+без
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Kafa bez šećera.
+</span>
+<span class="tr">
+Кофе без сахара.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+### popover [data-prep]|[["data-prep","blizu"]]
+<article class="prep-card">
+<header class="prep-card-head">
+<span class="prep-card-name" lang="sr">
+blizu
+</span>
+</header>
+<div class="prep-card-uses">
+<div class="prep-use" data-tone="gen">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
+</rect>
+<circle class="prep-icon-dot" cx="20" cy="32" r="9">
+</circle>
+</svg>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+Родительный
+</span>
+<span class="prep-meaning">
+близко к
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Stan je blizu centra.
+</span>
+<span class="tr">
+Квартира близко к центру.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+### popover [data-prep]|[["data-prep","do"]]
+<article class="prep-card">
+<header class="prep-card-head">
+<span class="prep-card-name" lang="sr">
+do
+</span>
+</header>
+<div class="prep-card-uses">
+<div class="prep-use" data-tone="gen">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<path class="prep-icon-line" d="M62 12V52">
+</path>
+<circle class="prep-icon-dot" cx="22" cy="32" r="9">
+</circle>
+<path class="prep-icon-arrow" d="M32 32H58">
+</path>
+<path class="prep-icon-arrow" d="M50 24L60 32L50 40">
+</path>
+</svg>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+Родительный
+</span>
+<span class="prep-meaning">
+до
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Idem do stanice.
+</span>
+<span class="tr">
+Я иду до станции.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+### popover [data-prep]|[["data-prep","iz"]]
+<article class="prep-card">
+<header class="prep-card-head">
+<span class="prep-card-name" lang="sr">
+iz
+</span>
+</header>
+<div class="prep-card-uses">
+<div class="prep-use" data-tone="gen">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="26" width="26" x="20" y="26">
+</rect>
+<circle class="prep-icon-dot" cx="28" cy="39" r="9">
+</circle>
+<path class="prep-icon-arrow" d="M36 30C45 14 55 13 67 15">
+</path>
+<path class="prep-icon-arrow" d="M58 8L71 15L58 22">
+</path>
+</svg>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+Родительный
+</span>
+<span class="prep-meaning">
+из, изнутри
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Izlazim iz kuće.
+</span>
+<span class="tr">
+Я выхожу из дома.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+### popover [data-prep]|[["data-prep","iza"]]
+<article class="prep-card">
+<header class="prep-card-head">
+<span class="prep-card-name" lang="sr">
+iza
+</span>
+</header>
+<div class="prep-card-uses">
+<div class="prep-use" data-tone="gen">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="28" y="18">
+</rect>
+<circle class="prep-icon-dot" cx="58" cy="36" r="9">
+</circle>
+</svg>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+Родительный
+</span>
+<span class="prep-meaning">
+за, позади
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Auto je iza kuće.
+</span>
+<span class="tr">
+Машина за домом.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+### popover [data-prep]|[["data-prep","k/ka"]]
+<article class="prep-card">
+<header class="prep-card-head">
+<span class="prep-card-name" lang="sr">
+k/ka
+</span>
+</header>
+<div class="prep-card-uses">
+<div class="prep-use" data-tone="dat">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
+</rect>
+<circle class="prep-icon-dot" cx="18" cy="32" r="9">
+</circle>
+<path class="prep-icon-arrow" d="M28 32H66">
+</path>
+<path class="prep-icon-arrow" d="M58 24L68 32L58 40">
+</path>
+</svg>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+Дательный
+</span>
+<span class="prep-meaning">
+к
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Idem ka gradu.
+</span>
+<span class="tr">
+Я иду к городу.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+### popover [data-prep]|[["data-prep","kod"]]
+<article class="prep-card">
+<header class="prep-card-head">
+<span class="prep-card-name" lang="sr">
+kod
+</span>
+</header>
+<div class="prep-card-uses">
+<div class="prep-use" data-tone="gen">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
+</rect>
+<circle class="prep-icon-dot" cx="20" cy="32" r="9">
+</circle>
+</svg>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+Родительный
+</span>
+<span class="prep-meaning">
+у, возле
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Spavam kod brata.
+</span>
+<span class="tr">
+Я ночую у брата.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+### popover [data-prep]|[["data-prep","kroz"]]
+<article class="prep-card">
+<header class="prep-card-head">
+<span class="prep-card-name" lang="sr">
+kroz
+</span>
+</header>
+<div class="prep-card-uses">
+<div class="prep-use" data-tone="aku">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
+</rect>
+<path class="prep-icon-arrow" d="M16 33H70">
+</path>
+<path class="prep-icon-arrow" d="M62 25L72 33L62 41">
+</path>
+<circle class="prep-icon-dot" cx="24" cy="33" r="9">
+</circle>
+</svg>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+Винительный
+</span>
+<span class="prep-meaning">
+через, сквозь
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Idem kroz park.
+</span>
+<span class="tr">
+Я иду через парк.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+### popover [data-prep]|[["data-prep","među"]]
+<article class="prep-card">
+<header class="prep-card-head">
+<span class="prep-card-name" lang="sr">
+među
+</span>
+</header>
+<div class="prep-card-uses">
+<div class="prep-use" data-tone="aku">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<path class="prep-icon-line" d="M25 10V54M63 10V54">
+</path>
+<circle class="prep-icon-dot" cx="14" cy="32" r="9">
+</circle>
+<path class="prep-icon-arrow" d="M23 32H44">
+</path>
+<path class="prep-icon-arrow" d="M36 24L46 32L36 40">
+</path>
+</svg>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+Винительный
+</span>
+<span class="prep-meaning">
+между, движение
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Ulazim među ljude.
+</span>
+<span class="tr">
+Я вхожу в толпу.
+</span>
+</div>
+</div>
+</div>
+<div class="prep-use" data-tone="ins">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<path class="prep-icon-line" d="M25 10V54M63 10V54">
+</path>
+<circle class="prep-icon-dot" cx="44" cy="32" r="9">
+</circle>
+</svg>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+Творительный
+</span>
+<span class="prep-meaning">
+между, место
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Stojim među ljudima.
+</span>
+<span class="tr">
+Я стою между людьми.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+### popover [data-prep]|[["data-prep","na"]]
+<article class="prep-card">
+<header class="prep-card-head">
+<span class="prep-card-name" lang="sr">
+na
+</span>
+</header>
+<div class="prep-card-uses">
+<div class="prep-use" data-tone="aku">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="28">
+</rect>
+<circle class="prep-icon-dot" cx="19" cy="18" r="9">
+</circle>
+<path class="prep-icon-arrow" d="M27 18C34 18 38 21 42 25">
+</path>
+<path class="prep-icon-arrow" d="M31 26L44 26L40 14">
+</path>
+</svg>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+Винительный
+</span>
+<span class="prep-meaning">
+на, на поверхность
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Stavljam knjigu na sto.
+</span>
+<span class="tr">
+Я кладу книгу на стол.
+</span>
+</div>
+</div>
+</div>
+<div class="prep-use" data-tone="lok">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="28">
+</rect>
+<circle class="prep-icon-dot" cx="44" cy="24" r="9">
+</circle>
+</svg>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+Предложный
+</span>
+<span class="prep-meaning">
+на, на месте
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Knjiga je na stolu.
+</span>
+<span class="tr">
+Книга на столе.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+### popover [data-prep]|[["data-prep","nad"]]
+<article class="prep-card">
+<header class="prep-card-head">
+<span class="prep-card-name" lang="sr">
+nad
+</span>
+</header>
+<div class="prep-card-uses">
+<div class="prep-use" data-tone="aku">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="30">
+</rect>
+<circle class="prep-icon-dot" cx="18" cy="14" r="9">
+</circle>
+<path class="prep-icon-arrow" d="M27 14H44">
+</path>
+<path class="prep-icon-arrow" d="M36 6L46 14L36 22">
+</path>
+</svg>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+Винительный
+</span>
+<span class="prep-meaning">
+над, движение
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Podižem lampu nad sto.
+</span>
+<span class="tr">
+Я поднимаю лампу над столом.
+</span>
+</div>
+</div>
+</div>
+<div class="prep-use" data-tone="ins">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="30">
+</rect>
+<circle class="prep-icon-dot" cx="44" cy="14" r="9">
+</circle>
+</svg>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+Творительный
+</span>
+<span class="prep-meaning">
+над, место
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Lampa je nad stolom.
+</span>
+<span class="tr">
+Лампа над столом.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+### popover [data-prep]|[["data-prep","nasuprot"]]
+<article class="prep-card">
+<header class="prep-card-head">
+<span class="prep-card-name" lang="sr">
+nasuprot
+</span>
+</header>
+<div class="prep-card-uses">
+<div class="prep-use" data-tone="dat">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
+</rect>
+<circle class="prep-icon-dot" cx="14" cy="32" r="9">
+</circle>
+<circle class="prep-icon-dot" cx="74" cy="32" r="9">
+</circle>
+<path class="prep-icon-dash" d="M23 32H65">
+</path>
+</svg>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+Дательный
+</span>
+<span class="prep-meaning">
+напротив
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Sedim nasuprot bratu.
+</span>
+<span class="tr">
+Я сижу напротив брата.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+### popover [data-prep]|[["data-prep","niz"]]
+<article class="prep-card">
+<header class="prep-card-head">
+<span class="prep-card-name" lang="sr">
+niz
+</span>
+</header>
+<div class="prep-card-uses">
+<div class="prep-use" data-tone="aku">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<path class="prep-icon-dash" d="M20 14L68 50">
+</path>
+<path class="prep-icon-arrow" d="M28 20L60 44">
+</path>
+<path class="prep-icon-arrow" d="M59 33L63 47L49 44">
+</path>
+<circle class="prep-icon-dot" cx="24" cy="16" r="9">
+</circle>
+</svg>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+Винительный
+</span>
+<span class="prep-meaning">
+вниз по
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Idem niz ulicu.
+</span>
+<span class="tr">
+Я иду вниз по улице.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+### popover [data-prep]|[["data-prep","o"]]
+<article class="prep-card">
+<header class="prep-card-head">
+<span class="prep-card-name" lang="sr">
+o
+</span>
+</header>
+<div class="prep-card-uses">
+<div class="prep-use" data-tone="lok">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
+</rect>
+<path class="prep-icon-arrow" d="M27 21C35 8 58 9 65 23">
+</path>
+<path class="prep-icon-arrow" d="M53 20L66 24L62 11">
+</path>
+</svg>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+Предложный
+</span>
+<span class="prep-meaning">
+о, про
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Pričamo o filmu.
+</span>
+<span class="tr">
+Мы говорим о фильме.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+### popover [data-prep]|[["data-prep","od"]]
+<article class="prep-card">
+<header class="prep-card-head">
+<span class="prep-card-name" lang="sr">
+od
+</span>
+</header>
+<div class="prep-card-uses">
+<div class="prep-use" data-tone="gen">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
+</rect>
+<circle class="prep-icon-dot" cx="56" cy="32" r="9">
+</circle>
+<path class="prep-icon-arrow" d="M48 32H16">
+</path>
+<path class="prep-icon-arrow" d="M24 24L14 32L24 40">
+</path>
+</svg>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+Родительный
+</span>
+<span class="prep-meaning">
+от
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Dolazim od prijatelja.
+</span>
+<span class="tr">
+Я иду от друга.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+### popover [data-prep]|[["data-prep","oko"]]
+<article class="prep-card">
+<header class="prep-card-head">
+<span class="prep-card-name" lang="sr">
+oko
+</span>
+</header>
+<div class="prep-card-uses">
+<div class="prep-use" data-tone="gen">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
+</rect>
+<path class="prep-icon-arrow" d="M22 32C22 12 66 12 66 32C66 52 22 52 22 32">
+</path>
+<path class="prep-icon-arrow" d="M58 25L67 33L58 40">
+</path>
+</svg>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+Родительный
+</span>
+<span class="prep-meaning">
+около, вокруг
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Sedimo oko stola.
+</span>
+<span class="tr">
+Мы сидим вокруг стола.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+### popover [data-prep]|[["data-prep","po"]]
+<article class="prep-card">
+<header class="prep-card-head">
+<span class="prep-card-name" lang="sr">
+po
+</span>
+</header>
+<div class="prep-card-uses">
+<div class="prep-use" data-tone="lok">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
+</rect>
+<path class="prep-icon-arrow" d="M22 32C22 12 66 12 66 32C66 52 22 52 22 32">
+</path>
+<path class="prep-icon-arrow" d="M58 25L67 33L58 40">
+</path>
+</svg>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+Предложный
+</span>
+<span class="prep-meaning">
+по, вокруг
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Šetam po gradu.
+</span>
+<span class="tr">
+Я гуляю по городу.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+### popover [data-prep]|[["data-prep","pod"]]
+<article class="prep-card">
+<header class="prep-card-head">
+<span class="prep-card-name" lang="sr">
+pod
+</span>
+</header>
+<div class="prep-card-uses">
+<div class="prep-use" data-tone="aku">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="10">
+</rect>
+<circle class="prep-icon-dot" cx="18" cy="52" r="9">
+</circle>
+<path class="prep-icon-arrow" d="M27 52H44">
+</path>
+<path class="prep-icon-arrow" d="M36 44L46 52L36 60">
+</path>
+</svg>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+Винительный
+</span>
+<span class="prep-meaning">
+под, движение
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Mačka ide pod sto.
+</span>
+<span class="tr">
+Кошка идёт под стол.
+</span>
+</div>
+</div>
+</div>
+<div class="prep-use" data-tone="ins">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="10">
+</rect>
+<circle class="prep-icon-dot" cx="44" cy="52" r="9">
+</circle>
+</svg>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+Творительный
+</span>
+<span class="prep-meaning">
+под, место
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Mačka je pod stolom.
+</span>
+<span class="tr">
+Кошка под столом.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+### popover [data-prep]|[["data-prep","posle"]]
+<article class="prep-card">
+<header class="prep-card-head">
+<span class="prep-card-name" lang="sr">
+posle
+</span>
+</header>
+<div class="prep-card-uses">
+<div class="prep-use" data-tone="gen">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<path class="prep-icon-line" d="M20 32H68">
+</path>
+<path class="prep-icon-line" d="M40 18V46">
+</path>
+<circle class="prep-icon-dot" cx="58" cy="32" r="9">
+</circle>
+</svg>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+Родительный
+</span>
+<span class="prep-meaning">
+после
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Posle časa idem kući.
+</span>
+<span class="tr">
+После урока я иду домой.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+### popover [data-prep]|[["data-prep","pre"]]
+<article class="prep-card">
+<header class="prep-card-head">
+<span class="prep-card-name" lang="sr">
+pre
+</span>
+</header>
+<div class="prep-card-uses">
+<div class="prep-use" data-tone="gen">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<path class="prep-icon-line" d="M20 32H68">
+</path>
+<circle class="prep-icon-dot" cx="30" cy="32" r="9">
+</circle>
+<path class="prep-icon-line" d="M48 18V46">
+</path>
+</svg>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+Родительный
+</span>
+<span class="prep-meaning">
+до, перед
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Pre ručka pijem vodu.
+</span>
+<span class="tr">
+Перед обедом я пью воду.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+### popover [data-prep]|[["data-prep","pred"]]
+<article class="prep-card">
+<header class="prep-card-head">
+<span class="prep-card-name" lang="sr">
+pred
+</span>
+</header>
+<div class="prep-card-uses">
+<div class="prep-use" data-tone="aku">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
+</rect>
+<circle class="prep-icon-dot" cx="14" cy="32" r="9">
+</circle>
+<path class="prep-icon-arrow" d="M22 32H34">
+</path>
+<path class="prep-icon-arrow" d="M26 24L36 32L26 40">
+</path>
+</svg>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+Винительный
+</span>
+<span class="prep-meaning">
+перед, движение
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Stajem pred kuću.
+</span>
+<span class="tr">
+Я встаю перед домом.
+</span>
+</div>
+</div>
+</div>
+<div class="prep-use" data-tone="ins">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
+</rect>
+<circle class="prep-icon-dot" cx="22" cy="32" r="9">
+</circle>
+</svg>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+Творительный
+</span>
+<span class="prep-meaning">
+перед, место
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Stojim pred kućom.
+</span>
+<span class="tr">
+Я стою перед домом.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+### popover [data-prep]|[["data-prep","prema"]]
+<article class="prep-card">
+<header class="prep-card-head">
+<span class="prep-card-name" lang="sr">
+prema
+</span>
+</header>
+<div class="prep-card-uses">
+<div class="prep-use" data-tone="dat">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
+</rect>
+<circle class="prep-icon-dot" cx="18" cy="32" r="9">
+</circle>
+<path class="prep-icon-arrow" d="M28 32H66">
+</path>
+<path class="prep-icon-arrow" d="M58 24L68 32L58 40">
+</path>
+</svg>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+Дательный
+</span>
+<span class="prep-meaning">
+к, по направлению
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Okrenut sam prema moru.
+</span>
+<span class="tr">
+Я повернут к морю.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+### popover [data-prep]|[["data-prep","pri"]]
+<article class="prep-card">
+<header class="prep-card-head">
+<span class="prep-card-name" lang="sr">
+pri
+</span>
+</header>
+<div class="prep-card-uses">
+<div class="prep-use" data-tone="lok">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
+</rect>
+<circle class="prep-icon-dot" cx="20" cy="32" r="9">
+</circle>
+</svg>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+Предложный
+</span>
+<span class="prep-meaning">
+при, у
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Radim pri školi.
+</span>
+<span class="tr">
+Я работаю при школе.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+### popover [data-prep]|[["data-prep","s/sa"]]
+<article class="prep-card">
+<header class="prep-card-head">
+<span class="prep-card-name" lang="sr">
+s/sa
+</span>
+</header>
+<div class="prep-card-uses">
+<div class="prep-use" data-tone="gen">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="28">
+</rect>
+<circle class="prep-icon-dot" cx="44" cy="24" r="9">
+</circle>
+<path class="prep-icon-arrow" d="M39 23C31 22 24 26 19 35">
+</path>
+<path class="prep-icon-arrow" d="M17 23L18 38L31 31">
+</path>
+</svg>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+Родительный
+</span>
+<span class="prep-meaning">
+с, сверху/из
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Silazim sa autobusa.
+</span>
+<span class="tr">
+Я выхожу из автобуса.
+</span>
+</div>
+</div>
+</div>
+<div class="prep-use" data-tone="ins">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<circle class="prep-icon-dot" cx="34" cy="32" r="9">
+</circle>
+<circle class="prep-icon-dot" cx="54" cy="32" r="9">
+</circle>
+</svg>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+Творительный
+</span>
+<span class="prep-meaning">
+с, вместе
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Putujem sa sestrom.
+</span>
+<span class="tr">
+Я путешествую с сестрой.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+### popover [data-prep]|[["data-prep","u"]]
+<article class="prep-card">
+<header class="prep-card-head">
+<span class="prep-card-name" lang="sr">
+u
+</span>
+</header>
+<div class="prep-card-uses">
+<div class="prep-use" data-tone="aku">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
+</rect>
+<circle class="prep-icon-dot" cx="18" cy="32" r="9">
+</circle>
+<path class="prep-icon-arrow" d="M26 32H45">
+</path>
+<path class="prep-icon-arrow" d="M37 24L47 32L37 40">
+</path>
+</svg>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+Винительный
+</span>
+<span class="prep-meaning">
+в, внутрь
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Idem u grad.
+</span>
+<span class="tr">
+Я иду в город.
+</span>
+</div>
+</div>
+</div>
+<div class="prep-use" data-tone="lok">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
+</rect>
+<circle class="prep-icon-dot" cx="44" cy="32" r="9">
+</circle>
+</svg>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+Предложный
+</span>
+<span class="prep-meaning">
+в, внутри
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Živim u gradu.
+</span>
+<span class="tr">
+Я живу в городе.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+### popover [data-prep]|[["data-prep","uz"]]
+<article class="prep-card">
+<header class="prep-card-head">
+<span class="prep-card-name" lang="sr">
+uz
+</span>
+</header>
+<div class="prep-card-uses">
+<div class="prep-use" data-tone="aku">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<path class="prep-icon-dash" d="M20 50L68 14">
+</path>
+<path class="prep-icon-arrow" d="M28 44L60 20">
+</path>
+<path class="prep-icon-arrow" d="M49 18L63 18L59 31">
+</path>
+<circle class="prep-icon-dot" cx="24" cy="48" r="9">
+</circle>
+</svg>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+Винительный
+</span>
+<span class="prep-meaning">
+вверх по
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Idem uz stepenice.
+</span>
+<span class="tr">
+Я иду вверх по лестнице.
+</span>
+</div>
+</div>
+</div>
+<div class="prep-use" data-tone="aku">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<circle class="prep-icon-dot" cx="34" cy="32" r="9">
+</circle>
+<circle class="prep-icon-dot" cx="54" cy="32" r="9">
+</circle>
+</svg>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+Винительный
+</span>
+<span class="prep-meaning">
+вместе с, рядом с
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Pijem kafu uz kolač.
+</span>
+<span class="tr">
+Я пью кофе с пирожным.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+### popover [data-prep]|[["data-prep","za"]]
+<article class="prep-card">
+<header class="prep-card-head">
+<span class="prep-card-name" lang="sr">
+za
+</span>
+</header>
+<div class="prep-card-uses">
+<div class="prep-use" data-tone="aku">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="28" y="18">
+</rect>
+<circle class="prep-icon-dot" cx="70" cy="36" r="9">
+</circle>
+<path class="prep-icon-arrow" d="M68 36H56">
+</path>
+<path class="prep-icon-arrow" d="M64 28L54 36L64 44">
+</path>
+</svg>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+Винительный
+</span>
+<span class="prep-meaning">
+за, движение
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Sakrivam se za kuću.
+</span>
+<span class="tr">
+Я прячусь за дом.
+</span>
+</div>
+</div>
+</div>
+<div class="prep-use" data-tone="ins">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="28" y="18">
+</rect>
+<circle class="prep-icon-dot" cx="58" cy="36" r="9">
+</circle>
+</svg>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+Творительный
+</span>
+<span class="prep-meaning">
+за, место
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Sedim za stolom.
+</span>
+<span class="tr">
+Я сижу за столом.
+</span>
+</div>
+</div>
+</div>
+<div class="prep-use" data-tone="aku">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<path class="prep-icon-line" d="M16 32H72">
+</path>
+<path class="prep-icon-line" d="M40 18V46">
+</path>
+<circle class="prep-icon-dot" cx="58" cy="32" r="9">
+</circle>
+<path class="prep-icon-arrow" d="M45 32H70">
+</path>
+<path class="prep-icon-arrow" d="M62 24L72 32L62 40">
+</path>
+</svg>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+Винительный
+</span>
+<span class="prep-meaning">
+через, за срок
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Vraćam se za sat vremena.
+</span>
+<span class="tr">
+Я вернусь через час.
+</span>
+</div>
+</div>
+</div>
+<div class="prep-use" data-tone="aku">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<circle class="prep-icon-dot" cx="24" cy="32" r="9">
+</circle>
+<path class="prep-icon-arrow" d="M34 32H64">
+</path>
+<path class="prep-icon-arrow" d="M56 24L66 32L56 40">
+</path>
+</svg>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+Винительный
+</span>
+<span class="prep-meaning">
+для
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Poklon je za majku.
+</span>
+<span class="tr">
+Подарок для мамы.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>

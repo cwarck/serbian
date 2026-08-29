@@ -1,0 +1,941 @@
+### mount personalPronouns
+<table class="pron-table">
+<thead>
+<tr>
+<th class="chart-label" scope="col">
+<span data-tone="nom">
+Subject
+</span>
+</th>
+<th class="chart-label" scope="col">
+<span data-tone="aku">
+Acc
+</span>
+<span class="pron-slash">
+/
+</span>
+<span data-tone="gen">
+Gen
+</span>
+</th>
+<th class="chart-label" scope="col">
+<span data-tone="dat">
+Dat
+</span>
+<span class="pron-slash">
+/
+</span>
+<span data-tone="lok">
+Loc
+</span>
+</th>
+<th class="chart-label" scope="col">
+<span data-tone="ins">
+Instrumental
+</span>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">
+<span class="chart-label">
+I
+</span>
+<span class="chart-form pron-subject" lang="sr">
+ја
+</span>
+</th>
+<td>
+<span class="pron-pair" lang="sr">
+<span class="chart-form pron-long">
+мене
+<span class="pron-comma">
+,
+</span>
+</span>
+<span class="chart-form pron-short">
+ме
+</span>
+</span>
+</td>
+<td>
+<span class="pron-pair" lang="sr">
+<span class="chart-form pron-long">
+мени
+<span class="pron-comma">
+,
+</span>
+</span>
+<span class="chart-form pron-short">
+ми
+</span>
+</span>
+</td>
+<td>
+<span class="pron-pair" lang="sr">
+<span class="chart-form pron-long">
+мном
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th scope="row">
+<span class="chart-label">
+you
+</span>
+<span class="chart-form pron-subject" lang="sr">
+ти
+</span>
+</th>
+<td>
+<span class="pron-pair" lang="sr">
+<span class="chart-form pron-long">
+тебе
+<span class="pron-comma">
+,
+</span>
+</span>
+<span class="chart-form pron-short">
+те
+</span>
+</span>
+</td>
+<td>
+<span class="pron-pair" lang="sr">
+<span class="chart-form pron-long">
+теби
+<span class="pron-comma">
+,
+</span>
+</span>
+<span class="chart-form pron-short">
+ти
+</span>
+</span>
+</td>
+<td>
+<span class="pron-pair" lang="sr">
+<span class="chart-form pron-long">
+тобом
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th scope="row">
+<span class="chart-label">
+he
+</span>
+<span class="chart-form pron-subject" lang="sr">
+он
+</span>
+</th>
+<td>
+<span class="pron-pair" lang="sr">
+<span class="chart-form pron-long">
+њега
+<span class="pron-comma">
+,
+</span>
+</span>
+<span class="chart-form pron-short">
+га
+</span>
+</span>
+</td>
+<td>
+<span class="pron-pair" lang="sr">
+<span class="chart-form pron-long">
+њему
+<span class="pron-comma">
+,
+</span>
+</span>
+<span class="chart-form pron-short">
+му
+</span>
+</span>
+</td>
+<td>
+<span class="pron-pair" lang="sr">
+<span class="chart-form pron-long">
+њим
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th scope="row">
+<span class="chart-label">
+it
+</span>
+<span class="chart-form pron-subject" lang="sr">
+оно
+</span>
+</th>
+<td>
+<span class="pron-pair" lang="sr">
+<span class="chart-form pron-long">
+њега
+<span class="pron-comma">
+,
+</span>
+</span>
+<span class="chart-form pron-short">
+га
+</span>
+</span>
+</td>
+<td>
+<span class="pron-pair" lang="sr">
+<span class="chart-form pron-long">
+њему
+<span class="pron-comma">
+,
+</span>
+</span>
+<span class="chart-form pron-short">
+му
+</span>
+</span>
+</td>
+<td>
+<span class="pron-pair" lang="sr">
+<span class="chart-form pron-long">
+њим
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th scope="row">
+<span class="chart-label">
+she
+</span>
+<span class="chart-form pron-subject" lang="sr">
+она
+</span>
+</th>
+<td>
+<span class="pron-pair" lang="sr">
+<span class="chart-form pron-long">
+њу / ње
+<span class="pron-comma">
+,
+</span>
+</span>
+<span class="chart-form pron-short">
+је / ју
+</span>
+</span>
+</td>
+<td>
+<span class="pron-pair" lang="sr">
+<span class="chart-form pron-long">
+њој
+<span class="pron-comma">
+,
+</span>
+</span>
+<span class="chart-form pron-short">
+јој
+</span>
+</span>
+</td>
+<td>
+<span class="pron-pair" lang="sr">
+<span class="chart-form pron-long">
+њом
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th scope="row">
+<span class="chart-label">
+we
+</span>
+<span class="chart-form pron-subject" lang="sr">
+ми
+</span>
+</th>
+<td>
+<span class="pron-pair" lang="sr">
+<span class="chart-form pron-long">
+нас
+</span>
+</span>
+</td>
+<td>
+<span class="pron-pair" lang="sr">
+<span class="chart-form pron-long">
+нама
+<span class="pron-comma">
+,
+</span>
+</span>
+<span class="chart-form pron-short">
+нам
+</span>
+</span>
+</td>
+<td>
+<span class="pron-pair" lang="sr">
+<span class="chart-form pron-long">
+нама
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th scope="row">
+<span class="chart-label">
+you
+</span>
+<span class="chart-form pron-subject" lang="sr">
+ви
+</span>
+</th>
+<td>
+<span class="pron-pair" lang="sr">
+<span class="chart-form pron-long">
+вас
+</span>
+</span>
+</td>
+<td>
+<span class="pron-pair" lang="sr">
+<span class="chart-form pron-long">
+вама
+<span class="pron-comma">
+,
+</span>
+</span>
+<span class="chart-form pron-short">
+вам
+</span>
+</span>
+</td>
+<td>
+<span class="pron-pair" lang="sr">
+<span class="chart-form pron-long">
+вама
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th scope="row">
+<span class="chart-label">
+they M
+</span>
+<span class="chart-form pron-subject" lang="sr">
+они
+</span>
+</th>
+<td>
+<span class="pron-pair" lang="sr">
+<span class="chart-form pron-long">
+њих
+<span class="pron-comma">
+,
+</span>
+</span>
+<span class="chart-form pron-short">
+их
+</span>
+</span>
+</td>
+<td>
+<span class="pron-pair" lang="sr">
+<span class="chart-form pron-long">
+њима
+<span class="pron-comma">
+,
+</span>
+</span>
+<span class="chart-form pron-short">
+им
+</span>
+</span>
+</td>
+<td>
+<span class="pron-pair" lang="sr">
+<span class="chart-form pron-long">
+њима
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th scope="row">
+<span class="chart-label">
+they N
+</span>
+<span class="chart-form pron-subject" lang="sr">
+она
+</span>
+</th>
+<td>
+<span class="pron-pair" lang="sr">
+<span class="chart-form pron-long">
+њих
+<span class="pron-comma">
+,
+</span>
+</span>
+<span class="chart-form pron-short">
+их
+</span>
+</span>
+</td>
+<td>
+<span class="pron-pair" lang="sr">
+<span class="chart-form pron-long">
+њима
+<span class="pron-comma">
+,
+</span>
+</span>
+<span class="chart-form pron-short">
+им
+</span>
+</span>
+</td>
+<td>
+<span class="pron-pair" lang="sr">
+<span class="chart-form pron-long">
+њима
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th scope="row">
+<span class="chart-label">
+they F
+</span>
+<span class="chart-form pron-subject" lang="sr">
+оне
+</span>
+</th>
+<td>
+<span class="pron-pair" lang="sr">
+<span class="chart-form pron-long">
+њих
+<span class="pron-comma">
+,
+</span>
+</span>
+<span class="chart-form pron-short">
+их
+</span>
+</span>
+</td>
+<td>
+<span class="pron-pair" lang="sr">
+<span class="chart-form pron-long">
+њима
+<span class="pron-comma">
+,
+</span>
+</span>
+<span class="chart-form pron-short">
+им
+</span>
+</span>
+</td>
+<td>
+<span class="pron-pair" lang="sr">
+<span class="chart-form pron-long">
+њима
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th scope="row">
+<span class="chart-label">
+self
+</span>
+<span class="chart-form pron-subject" lang="sr">
+-
+</span>
+</th>
+<td>
+<span class="pron-pair" lang="sr">
+<span class="chart-form pron-long">
+себе
+<span class="pron-comma">
+,
+</span>
+</span>
+<span class="chart-form pron-short">
+се
+</span>
+</span>
+</td>
+<td>
+<span class="pron-pair" lang="sr">
+<span class="chart-form pron-long">
+себи
+</span>
+</span>
+</td>
+<td>
+<span class="pron-pair" lang="sr">
+<span class="chart-form pron-long">
+собом
+</span>
+</span>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="pron-rule-row">
+<p>
+<strong>
+Long / short.
+</strong>
+Long forms stand alone, after prepositions, or for contrast. Short forms sit in the clitic chain.
+</p>
+<p>
+<strong>
+<i lang="sr">
+свој
+</i>
+</strong>
+Use for own: my own, your own, his own, their own.
+</p>
+</div>
+### mount possessives
+<div class="chart-label pron-mini-head pron-poss-head" role="row">
+<span data-gender="m" role="columnheader">
+M
+</span>
+<span data-gender="n" role="columnheader">
+N
+</span>
+<span data-gender="f" role="columnheader">
+F
+</span>
+</div>
+<article class="pron-poss-card" role="rowgroup">
+<h4 class="chart-label" id="pron-poss-owner-0">
+own
+</h4>
+<div aria-labelledby="pron-poss-owner-0" class="pron-gender-row" role="row">
+<span class="chart-form" lang="sr" role="cell">
+свој
+</span>
+<span class="chart-form" lang="sr" role="cell">
+своје
+</span>
+<span class="chart-form" lang="sr" role="cell">
+своја
+</span>
+</div>
+<p>
+points back to the subject
+</p>
+</article>
+<article class="pron-poss-card" role="rowgroup">
+<h4 class="chart-label" id="pron-poss-owner-1">
+my
+</h4>
+<div aria-labelledby="pron-poss-owner-1" class="pron-gender-row" role="row">
+<span class="chart-form" lang="sr" role="cell">
+мој
+</span>
+<span class="chart-form" lang="sr" role="cell">
+моје
+</span>
+<span class="chart-form" lang="sr" role="cell">
+моја
+</span>
+</div>
+</article>
+<article class="pron-poss-card" role="rowgroup">
+<h4 class="chart-label" id="pron-poss-owner-2">
+your
+</h4>
+<div aria-labelledby="pron-poss-owner-2" class="pron-gender-row" role="row">
+<span class="chart-form" lang="sr" role="cell">
+твој
+</span>
+<span class="chart-form" lang="sr" role="cell">
+твоје
+</span>
+<span class="chart-form" lang="sr" role="cell">
+твоја
+</span>
+</div>
+</article>
+<article class="pron-poss-card" role="rowgroup">
+<h4 class="chart-label" id="pron-poss-owner-3">
+his / its
+</h4>
+<div aria-labelledby="pron-poss-owner-3" class="pron-gender-row" role="row">
+<span class="chart-form" lang="sr" role="cell">
+његов
+</span>
+<span class="chart-form" lang="sr" role="cell">
+његово
+</span>
+<span class="chart-form" lang="sr" role="cell">
+његова
+</span>
+</div>
+</article>
+<article class="pron-poss-card" role="rowgroup">
+<h4 class="chart-label" id="pron-poss-owner-4">
+her
+</h4>
+<div aria-labelledby="pron-poss-owner-4" class="pron-gender-row" role="row">
+<span class="chart-form" lang="sr" role="cell">
+њен
+</span>
+<span class="chart-form" lang="sr" role="cell">
+њено
+</span>
+<span class="chart-form" lang="sr" role="cell">
+њена
+</span>
+</div>
+</article>
+<article class="pron-poss-card" role="rowgroup">
+<h4 class="chart-label" id="pron-poss-owner-5">
+our
+</h4>
+<div aria-labelledby="pron-poss-owner-5" class="pron-gender-row" role="row">
+<span class="chart-form" lang="sr" role="cell">
+наш
+</span>
+<span class="chart-form" lang="sr" role="cell">
+наше
+</span>
+<span class="chart-form" lang="sr" role="cell">
+наша
+</span>
+</div>
+</article>
+<article class="pron-poss-card" role="rowgroup">
+<h4 class="chart-label" id="pron-poss-owner-6">
+your pl.
+</h4>
+<div aria-labelledby="pron-poss-owner-6" class="pron-gender-row" role="row">
+<span class="chart-form" lang="sr" role="cell">
+ваш
+</span>
+<span class="chart-form" lang="sr" role="cell">
+ваше
+</span>
+<span class="chart-form" lang="sr" role="cell">
+ваша
+</span>
+</div>
+</article>
+<article class="pron-poss-card" role="rowgroup">
+<h4 class="chart-label" id="pron-poss-owner-7">
+their
+</h4>
+<div aria-labelledby="pron-poss-owner-7" class="pron-gender-row" role="row">
+<span class="chart-form" lang="sr" role="cell">
+њихов
+</span>
+<span class="chart-form" lang="sr" role="cell">
+њихово
+</span>
+<span class="chart-form" lang="sr" role="cell">
+њихова
+</span>
+</div>
+</article>
+### mount demonstratives
+<section class="pron-demo-group">
+<h4 class="chart-label">
+Singular
+</h4>
+<div class="pron-subtable" role="table">
+<div class="chart-label pron-mini-head" role="row">
+<span role="columnheader">
+</span>
+<span data-gender="m" role="columnheader">
+M
+</span>
+<span data-gender="n" role="columnheader">
+N
+</span>
+<span data-gender="f" role="columnheader">
+F
+</span>
+</div>
+<div class="chart-pairs" role="rowgroup">
+<div class="chart-pair pron-matrix-row" role="row">
+<span class="chart-label" role="rowheader">
+this
+</span>
+<span class="chart-form pron-form" lang="sr" role="cell">
+овај
+</span>
+<span class="chart-form pron-form" lang="sr" role="cell">
+ово
+</span>
+<span class="chart-form pron-form" lang="sr" role="cell">
+ова
+</span>
+</div>
+<div class="chart-pair pron-matrix-row" role="row">
+<span class="chart-label" role="rowheader">
+that
+</span>
+<span class="chart-form pron-form" lang="sr" role="cell">
+тај
+</span>
+<span class="chart-form pron-form" lang="sr" role="cell">
+то
+</span>
+<span class="chart-form pron-form" lang="sr" role="cell">
+та
+</span>
+</div>
+<div class="chart-pair pron-matrix-row" role="row">
+<span class="chart-label" role="rowheader">
+that there
+</span>
+<span class="chart-form pron-form" lang="sr" role="cell">
+онај
+</span>
+<span class="chart-form pron-form" lang="sr" role="cell">
+оно
+</span>
+<span class="chart-form pron-form" lang="sr" role="cell">
+она
+</span>
+</div>
+</div>
+</div>
+</section>
+<section class="pron-demo-group">
+<h4 class="chart-label">
+Plural
+</h4>
+<div class="pron-subtable" role="table">
+<div class="chart-label pron-mini-head" role="row">
+<span role="columnheader">
+</span>
+<span data-gender="m" role="columnheader">
+M
+</span>
+<span data-gender="n" role="columnheader">
+N
+</span>
+<span data-gender="f" role="columnheader">
+F
+</span>
+</div>
+<div class="chart-pairs" role="rowgroup">
+<div class="chart-pair pron-matrix-row" role="row">
+<span class="chart-label" role="rowheader">
+these
+</span>
+<span class="chart-form pron-form" lang="sr" role="cell">
+ови
+</span>
+<span class="chart-form pron-form" lang="sr" role="cell">
+ова
+</span>
+<span class="chart-form pron-form" lang="sr" role="cell">
+ове
+</span>
+</div>
+<div class="chart-pair pron-matrix-row" role="row">
+<span class="chart-label" role="rowheader">
+those
+</span>
+<span class="chart-form pron-form" lang="sr" role="cell">
+ти
+</span>
+<span class="chart-form pron-form" lang="sr" role="cell">
+та
+</span>
+<span class="chart-form pron-form" lang="sr" role="cell">
+те
+</span>
+</div>
+<div class="chart-pair pron-matrix-row" role="row">
+<span class="chart-label" role="rowheader">
+those there
+</span>
+<span class="chart-form pron-form" lang="sr" role="cell">
+они
+</span>
+<span class="chart-form pron-form" lang="sr" role="cell">
+она
+</span>
+<span class="chart-form pron-form" lang="sr" role="cell">
+оне
+</span>
+</div>
+</div>
+</div>
+</section>
+<div class="pron-rule-row">
+<p>
+<strong>
+<i lang="sr">
+Ово је...
+</i>
+</strong>
+neuter singular for “this is / that is”.
+</p>
+<p>
+<strong>
+<i lang="sr">
+Овај пас
+</i>
+</strong>
+match the noun by gender, number, and case.
+</p>
+</div>
+### mount questions
+<section class="pron-question-block">
+<h4 class="chart-label">
+Whose
+</h4>
+<div class="pron-subtable" role="table">
+<div class="chart-label pron-mini-head" role="row">
+<span role="columnheader">
+</span>
+<span data-gender="m" role="columnheader">
+M
+</span>
+<span data-gender="n" role="columnheader">
+N
+</span>
+<span data-gender="f" role="columnheader">
+F
+</span>
+</div>
+<div class="chart-pairs" role="rowgroup">
+<div class="chart-pair pron-matrix-row" role="row">
+<span class="chart-label" role="rowheader">
+Singular
+</span>
+<span class="chart-form pron-form" lang="sr" role="cell">
+чији
+</span>
+<span class="chart-form pron-form" lang="sr" role="cell">
+чије
+</span>
+<span class="chart-form pron-form" lang="sr" role="cell">
+чија
+</span>
+</div>
+<div class="chart-pair pron-matrix-row" role="row">
+<span class="chart-label" role="rowheader">
+Plural
+</span>
+<span class="chart-form pron-form" lang="sr" role="cell">
+чији
+</span>
+<span class="chart-form pron-form" lang="sr" role="cell">
+чија
+</span>
+<span class="chart-form pron-form" lang="sr" role="cell">
+чије
+</span>
+</div>
+</div>
+</div>
+</section>
+<section class="pron-question-block">
+<h4 class="chart-label">
+Who / what
+</h4>
+<div class="pron-kw-table" role="table">
+<div class="chart-label pron-kw-head" role="row">
+<span role="columnheader">
+</span>
+<span role="columnheader">
+who
+</span>
+<span role="columnheader">
+what
+</span>
+</div>
+<div class="chart-pair pron-kw-row" role="row">
+<span class="chart-label" role="rowheader">
+<span data-tone="nom">
+Nominative
+</span>
+</span>
+<span class="chart-form" lang="sr" role="cell">
+ко
+</span>
+<span class="chart-form" lang="sr" role="cell">
+шта
+</span>
+</div>
+<div class="chart-pair pron-kw-row" role="row">
+<span class="chart-label" role="rowheader">
+<span data-tone="gen">
+Genitive
+</span>
+</span>
+<span class="chart-form" lang="sr" role="cell">
+кога
+</span>
+<span class="chart-form" lang="sr" role="cell">
+чега
+</span>
+</div>
+<div class="chart-pair pron-kw-row" role="row">
+<span class="chart-label" role="rowheader">
+<span data-tone="dat">
+Dat
+</span>
+<span class="pron-slash">
+/
+</span>
+<span data-tone="lok">
+Loc
+</span>
+</span>
+<span class="chart-form" lang="sr" role="cell">
+коме
+</span>
+<span class="chart-form" lang="sr" role="cell">
+чему
+</span>
+</div>
+<div class="chart-pair pron-kw-row" role="row">
+<span class="chart-label" role="rowheader">
+<span data-tone="aku">
+Accusative
+</span>
+</span>
+<span class="chart-form" lang="sr" role="cell">
+кога
+</span>
+<span class="chart-form" lang="sr" role="cell">
+шта
+</span>
+</div>
+<div class="chart-pair pron-kw-row" role="row">
+<span class="chart-label" role="rowheader">
+<span data-tone="ins">
+Instrumental
+</span>
+</span>
+<span class="chart-form" lang="sr" role="cell">
+ким
+</span>
+<span class="chart-form" lang="sr" role="cell">
+чим
+</span>
+</div>
+</div>
+</section>

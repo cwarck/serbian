@@ -1,0 +1,1531 @@
+### mount prepChart
+<section class="chart-group">
+<header class="chart-group-head">
+<h3>
+Место / движение
+</h3>
+</header>
+<div class="chart-table">
+<article class="chart-row prep-row">
+<div class="prep-name" lang="sr">
+у
+</div>
+<div class="prep-uses">
+<div class="prep-use" data-tone="aku">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
+</rect>
+<circle class="prep-icon-dot" cx="18" cy="32" r="9">
+</circle>
+<path class="prep-icon-arrow" d="M26 32H45">
+</path>
+<path class="prep-icon-arrow" d="M37 24L47 32L37 40">
+</path>
+</svg>
+<span class="sr-only">
+Винительный
+</span>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+AKU
+</span>
+<span class="prep-meaning">
+в, внутрь
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Идем у град.
+</span>
+<span class="tr">
+Я иду в город.
+</span>
+</div>
+</div>
+</div>
+<div class="prep-use" data-tone="lok">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
+</rect>
+<circle class="prep-icon-dot" cx="44" cy="32" r="9">
+</circle>
+</svg>
+<span class="sr-only">
+Предложный
+</span>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+LOK
+</span>
+<span class="prep-meaning">
+в, внутри
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Живим у граду.
+</span>
+<span class="tr">
+Я живу в городе.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="chart-row prep-row">
+<div class="prep-name" lang="sr">
+на
+</div>
+<div class="prep-uses">
+<div class="prep-use" data-tone="aku">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="28">
+</rect>
+<circle class="prep-icon-dot" cx="19" cy="18" r="9">
+</circle>
+<path class="prep-icon-arrow" d="M27 18C34 18 38 21 42 25">
+</path>
+<path class="prep-icon-arrow" d="M31 26L44 26L40 14">
+</path>
+</svg>
+<span class="sr-only">
+Винительный
+</span>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+AKU
+</span>
+<span class="prep-meaning">
+на, на поверхность
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Стављам књигу на сто.
+</span>
+<span class="tr">
+Я кладу книгу на стол.
+</span>
+</div>
+</div>
+</div>
+<div class="prep-use" data-tone="lok">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="28">
+</rect>
+<circle class="prep-icon-dot" cx="44" cy="24" r="9">
+</circle>
+</svg>
+<span class="sr-only">
+Предложный
+</span>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+LOK
+</span>
+<span class="prep-meaning">
+на, на месте
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Књига је на столу.
+</span>
+<span class="tr">
+Книга на столе.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+</div>
+</section>
+<section class="chart-group">
+<header class="chart-group-head">
+<h3>
+Положение вокруг
+</h3>
+</header>
+<div class="chart-table">
+<article class="chart-row prep-row">
+<div class="prep-name" lang="sr">
+под
+</div>
+<div class="prep-uses">
+<div class="prep-use" data-tone="aku">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="10">
+</rect>
+<circle class="prep-icon-dot" cx="18" cy="52" r="9">
+</circle>
+<path class="prep-icon-arrow" d="M27 52H44">
+</path>
+<path class="prep-icon-arrow" d="M36 44L46 52L36 60">
+</path>
+</svg>
+<span class="sr-only">
+Винительный
+</span>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+AKU
+</span>
+<span class="prep-meaning">
+под, движение
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Мачка иде под сто.
+</span>
+<span class="tr">
+Кошка идёт под стол.
+</span>
+</div>
+</div>
+</div>
+<div class="prep-use" data-tone="ins">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="10">
+</rect>
+<circle class="prep-icon-dot" cx="44" cy="52" r="9">
+</circle>
+</svg>
+<span class="sr-only">
+Творительный
+</span>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+INS
+</span>
+<span class="prep-meaning">
+под, место
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Мачка је под столом.
+</span>
+<span class="tr">
+Кошка под столом.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="chart-row prep-row">
+<div class="prep-name" lang="sr">
+пред
+</div>
+<div class="prep-uses">
+<div class="prep-use" data-tone="aku">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
+</rect>
+<circle class="prep-icon-dot" cx="14" cy="32" r="9">
+</circle>
+<path class="prep-icon-arrow" d="M22 32H34">
+</path>
+<path class="prep-icon-arrow" d="M26 24L36 32L26 40">
+</path>
+</svg>
+<span class="sr-only">
+Винительный
+</span>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+AKU
+</span>
+<span class="prep-meaning">
+перед, движение
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Стајем пред кућу.
+</span>
+<span class="tr">
+Я встаю перед домом.
+</span>
+</div>
+</div>
+</div>
+<div class="prep-use" data-tone="ins">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
+</rect>
+<circle class="prep-icon-dot" cx="22" cy="32" r="9">
+</circle>
+</svg>
+<span class="sr-only">
+Творительный
+</span>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+INS
+</span>
+<span class="prep-meaning">
+перед, место
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Стојим пред кућом.
+</span>
+<span class="tr">
+Я стою перед домом.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="chart-row prep-row">
+<div class="prep-name" lang="sr">
+над
+</div>
+<div class="prep-uses">
+<div class="prep-use" data-tone="aku">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="30">
+</rect>
+<circle class="prep-icon-dot" cx="18" cy="14" r="9">
+</circle>
+<path class="prep-icon-arrow" d="M27 14H44">
+</path>
+<path class="prep-icon-arrow" d="M36 6L46 14L36 22">
+</path>
+</svg>
+<span class="sr-only">
+Винительный
+</span>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+AKU
+</span>
+<span class="prep-meaning">
+над, движение
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Подижем лампу над сто.
+</span>
+<span class="tr">
+Я поднимаю лампу над столом.
+</span>
+</div>
+</div>
+</div>
+<div class="prep-use" data-tone="ins">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="30">
+</rect>
+<circle class="prep-icon-dot" cx="44" cy="14" r="9">
+</circle>
+</svg>
+<span class="sr-only">
+Творительный
+</span>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+INS
+</span>
+<span class="prep-meaning">
+над, место
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Лампа је над столом.
+</span>
+<span class="tr">
+Лампа над столом.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="chart-row prep-row">
+<div class="prep-name" lang="sr">
+међу
+</div>
+<div class="prep-uses">
+<div class="prep-use" data-tone="aku">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<path class="prep-icon-line" d="M25 10V54M63 10V54">
+</path>
+<circle class="prep-icon-dot" cx="14" cy="32" r="9">
+</circle>
+<path class="prep-icon-arrow" d="M23 32H44">
+</path>
+<path class="prep-icon-arrow" d="M36 24L46 32L36 40">
+</path>
+</svg>
+<span class="sr-only">
+Винительный
+</span>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+AKU
+</span>
+<span class="prep-meaning">
+между, движение
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Улазим међу људе.
+</span>
+<span class="tr">
+Я вхожу в толпу.
+</span>
+</div>
+</div>
+</div>
+<div class="prep-use" data-tone="ins">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<path class="prep-icon-line" d="M25 10V54M63 10V54">
+</path>
+<circle class="prep-icon-dot" cx="44" cy="32" r="9">
+</circle>
+</svg>
+<span class="sr-only">
+Творительный
+</span>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+INS
+</span>
+<span class="prep-meaning">
+между, место
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Стојим међу људима.
+</span>
+<span class="tr">
+Я стою между людьми.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="chart-row prep-row">
+<div class="prep-name" lang="sr">
+за
+</div>
+<div class="prep-uses">
+<div class="prep-use" data-tone="aku">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="28" y="18">
+</rect>
+<circle class="prep-icon-dot" cx="70" cy="36" r="9">
+</circle>
+<path class="prep-icon-arrow" d="M68 36H56">
+</path>
+<path class="prep-icon-arrow" d="M64 28L54 36L64 44">
+</path>
+</svg>
+<span class="sr-only">
+Винительный
+</span>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+AKU
+</span>
+<span class="prep-meaning">
+за, движение
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Сакривам се за кућу.
+</span>
+<span class="tr">
+Я прячусь за дом.
+</span>
+</div>
+</div>
+</div>
+<div class="prep-use" data-tone="ins">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="28" y="18">
+</rect>
+<circle class="prep-icon-dot" cx="58" cy="36" r="9">
+</circle>
+</svg>
+<span class="sr-only">
+Творительный
+</span>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+INS
+</span>
+<span class="prep-meaning">
+за, место
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Седим за столом.
+</span>
+<span class="tr">
+Я сижу за столом.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+</div>
+</section>
+<section class="chart-group">
+<header class="chart-group-head">
+<h3>
+Путь
+</h3>
+</header>
+<div class="chart-table">
+<article class="chart-row prep-row">
+<div class="prep-name" lang="sr">
+кроз
+</div>
+<div class="prep-uses">
+<div class="prep-use" data-tone="aku">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
+</rect>
+<path class="prep-icon-arrow" d="M16 33H70">
+</path>
+<path class="prep-icon-arrow" d="M62 25L72 33L62 41">
+</path>
+<circle class="prep-icon-dot" cx="24" cy="33" r="9">
+</circle>
+</svg>
+<span class="sr-only">
+Винительный
+</span>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+AKU
+</span>
+<span class="prep-meaning">
+через, сквозь
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Идем кроз парк.
+</span>
+<span class="tr">
+Я иду через парк.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="chart-row prep-row">
+<div class="prep-name" lang="sr">
+низ
+</div>
+<div class="prep-uses">
+<div class="prep-use" data-tone="aku">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<path class="prep-icon-dash" d="M20 14L68 50">
+</path>
+<path class="prep-icon-arrow" d="M28 20L60 44">
+</path>
+<path class="prep-icon-arrow" d="M59 33L63 47L49 44">
+</path>
+<circle class="prep-icon-dot" cx="24" cy="16" r="9">
+</circle>
+</svg>
+<span class="sr-only">
+Винительный
+</span>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+AKU
+</span>
+<span class="prep-meaning">
+вниз по
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Идем низ улицу.
+</span>
+<span class="tr">
+Я иду вниз по улице.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="chart-row prep-row">
+<div class="prep-name" lang="sr">
+уз
+</div>
+<div class="prep-uses">
+<div class="prep-use" data-tone="aku">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<path class="prep-icon-dash" d="M20 50L68 14">
+</path>
+<path class="prep-icon-arrow" d="M28 44L60 20">
+</path>
+<path class="prep-icon-arrow" d="M49 18L63 18L59 31">
+</path>
+<circle class="prep-icon-dot" cx="24" cy="48" r="9">
+</circle>
+</svg>
+<span class="sr-only">
+Винительный
+</span>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+AKU
+</span>
+<span class="prep-meaning">
+вверх по
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Идем уз степенице.
+</span>
+<span class="tr">
+Я иду вверх по лестнице.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+</div>
+</section>
+<section class="chart-group">
+<header class="chart-group-head">
+<h3>
+Источник / направление
+</h3>
+</header>
+<div class="chart-table">
+<article class="chart-row prep-row">
+<div class="prep-name" lang="sr">
+из
+</div>
+<div class="prep-uses">
+<div class="prep-use" data-tone="gen">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="26" width="26" x="20" y="26">
+</rect>
+<circle class="prep-icon-dot" cx="28" cy="39" r="9">
+</circle>
+<path class="prep-icon-arrow" d="M36 30C45 14 55 13 67 15">
+</path>
+<path class="prep-icon-arrow" d="M58 8L71 15L58 22">
+</path>
+</svg>
+<span class="sr-only">
+Родительный
+</span>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+GEN
+</span>
+<span class="prep-meaning">
+из, изнутри
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Излазим из куће.
+</span>
+<span class="tr">
+Я выхожу из дома.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="chart-row prep-row">
+<div class="prep-name" lang="sr">
+од
+</div>
+<div class="prep-uses">
+<div class="prep-use" data-tone="gen">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
+</rect>
+<circle class="prep-icon-dot" cx="56" cy="32" r="9">
+</circle>
+<path class="prep-icon-arrow" d="M48 32H16">
+</path>
+<path class="prep-icon-arrow" d="M24 24L14 32L24 40">
+</path>
+</svg>
+<span class="sr-only">
+Родительный
+</span>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+GEN
+</span>
+<span class="prep-meaning">
+от
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Долазим од пријатеља.
+</span>
+<span class="tr">
+Я иду от друга.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="chart-row prep-row">
+<div class="prep-name" lang="sr">
+с/са
+</div>
+<div class="prep-uses">
+<div class="prep-use" data-tone="gen">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="28">
+</rect>
+<circle class="prep-icon-dot" cx="44" cy="24" r="9">
+</circle>
+<path class="prep-icon-arrow" d="M39 23C31 22 24 26 19 35">
+</path>
+<path class="prep-icon-arrow" d="M17 23L18 38L31 31">
+</path>
+</svg>
+<span class="sr-only">
+Родительный
+</span>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+GEN
+</span>
+<span class="prep-meaning">
+с, сверху/из
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Силазим са аутобуса.
+</span>
+<span class="tr">
+Я выхожу из автобуса.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="chart-row prep-row">
+<div class="prep-name" lang="sr">
+до
+</div>
+<div class="prep-uses">
+<div class="prep-use" data-tone="gen">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<path class="prep-icon-line" d="M62 12V52">
+</path>
+<circle class="prep-icon-dot" cx="22" cy="32" r="9">
+</circle>
+<path class="prep-icon-arrow" d="M32 32H58">
+</path>
+<path class="prep-icon-arrow" d="M50 24L60 32L50 40">
+</path>
+</svg>
+<span class="sr-only">
+Родительный
+</span>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+GEN
+</span>
+<span class="prep-meaning">
+до
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Идем до станице.
+</span>
+<span class="tr">
+Я иду до станции.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="chart-row prep-row">
+<div class="prep-name" lang="sr">
+к/ка
+</div>
+<div class="prep-uses">
+<div class="prep-use" data-tone="dat">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
+</rect>
+<circle class="prep-icon-dot" cx="18" cy="32" r="9">
+</circle>
+<path class="prep-icon-arrow" d="M28 32H66">
+</path>
+<path class="prep-icon-arrow" d="M58 24L68 32L58 40">
+</path>
+</svg>
+<span class="sr-only">
+Дательный
+</span>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+DAT
+</span>
+<span class="prep-meaning">
+к
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Идем ка граду.
+</span>
+<span class="tr">
+Я иду к городу.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="chart-row prep-row">
+<div class="prep-name" lang="sr">
+према
+</div>
+<div class="prep-uses">
+<div class="prep-use" data-tone="dat">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
+</rect>
+<circle class="prep-icon-dot" cx="18" cy="32" r="9">
+</circle>
+<path class="prep-icon-arrow" d="M28 32H66">
+</path>
+<path class="prep-icon-arrow" d="M58 24L68 32L58 40">
+</path>
+</svg>
+<span class="sr-only">
+Дательный
+</span>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+DAT
+</span>
+<span class="prep-meaning">
+к, по направлению
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Окренут сам према мору.
+</span>
+<span class="tr">
+Я повернут к морю.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+</div>
+</section>
+<section class="chart-group">
+<header class="chart-group-head">
+<h3>
+Время / цель
+</h3>
+</header>
+<div class="chart-table">
+<article class="chart-row prep-row">
+<div class="prep-name" lang="sr">
+пре
+</div>
+<div class="prep-uses">
+<div class="prep-use" data-tone="gen">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<path class="prep-icon-line" d="M20 32H68">
+</path>
+<circle class="prep-icon-dot" cx="30" cy="32" r="9">
+</circle>
+<path class="prep-icon-line" d="M48 18V46">
+</path>
+</svg>
+<span class="sr-only">
+Родительный
+</span>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+GEN
+</span>
+<span class="prep-meaning">
+до, перед
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Пре ручка пијем воду.
+</span>
+<span class="tr">
+Перед обедом я пью воду.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="chart-row prep-row">
+<div class="prep-name" lang="sr">
+после
+</div>
+<div class="prep-uses">
+<div class="prep-use" data-tone="gen">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<path class="prep-icon-line" d="M20 32H68">
+</path>
+<path class="prep-icon-line" d="M40 18V46">
+</path>
+<circle class="prep-icon-dot" cx="58" cy="32" r="9">
+</circle>
+</svg>
+<span class="sr-only">
+Родительный
+</span>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+GEN
+</span>
+<span class="prep-meaning">
+после
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+После часа идем кући.
+</span>
+<span class="tr">
+После урока я иду домой.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="chart-row prep-row">
+<div class="prep-name" lang="sr">
+за
+</div>
+<div class="prep-uses">
+<div class="prep-use" data-tone="aku">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<path class="prep-icon-line" d="M16 32H72">
+</path>
+<path class="prep-icon-line" d="M40 18V46">
+</path>
+<circle class="prep-icon-dot" cx="58" cy="32" r="9">
+</circle>
+<path class="prep-icon-arrow" d="M45 32H70">
+</path>
+<path class="prep-icon-arrow" d="M62 24L72 32L62 40">
+</path>
+</svg>
+<span class="sr-only">
+Винительный
+</span>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+AKU
+</span>
+<span class="prep-meaning">
+через, за срок
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Враћам се за сат времена.
+</span>
+<span class="tr">
+Я вернусь через час.
+</span>
+</div>
+</div>
+</div>
+<div class="prep-use" data-tone="aku">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<circle class="prep-icon-dot" cx="24" cy="32" r="9">
+</circle>
+<path class="prep-icon-arrow" d="M34 32H64">
+</path>
+<path class="prep-icon-arrow" d="M56 24L66 32L56 40">
+</path>
+</svg>
+<span class="sr-only">
+Винительный
+</span>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+AKU
+</span>
+<span class="prep-meaning">
+для
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Поклон је за мајку.
+</span>
+<span class="tr">
+Подарок для мамы.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+</div>
+</section>
+<section class="chart-group">
+<header class="chart-group-head">
+<h3>
+Фиксированный падеж
+</h3>
+</header>
+<div class="chart-table">
+<article class="chart-row prep-row">
+<div class="prep-name" lang="sr">
+с/са
+</div>
+<div class="prep-uses">
+<div class="prep-use" data-tone="ins">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<circle class="prep-icon-dot" cx="34" cy="32" r="9">
+</circle>
+<circle class="prep-icon-dot" cx="54" cy="32" r="9">
+</circle>
+</svg>
+<span class="sr-only">
+Творительный
+</span>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+INS
+</span>
+<span class="prep-meaning">
+с, вместе
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Путујем са сестром.
+</span>
+<span class="tr">
+Я путешествую с сестрой.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="chart-row prep-row">
+<div class="prep-name" lang="sr">
+уз
+</div>
+<div class="prep-uses">
+<div class="prep-use" data-tone="aku">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<circle class="prep-icon-dot" cx="34" cy="32" r="9">
+</circle>
+<circle class="prep-icon-dot" cx="54" cy="32" r="9">
+</circle>
+</svg>
+<span class="sr-only">
+Винительный
+</span>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+AKU
+</span>
+<span class="prep-meaning">
+вместе с, рядом с
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Пијем кафу уз колач.
+</span>
+<span class="tr">
+Я пью кофе с пирожным.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="chart-row prep-row">
+<div class="prep-name" lang="sr">
+о
+</div>
+<div class="prep-uses">
+<div class="prep-use" data-tone="lok">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
+</rect>
+<path class="prep-icon-arrow" d="M27 21C35 8 58 9 65 23">
+</path>
+<path class="prep-icon-arrow" d="M53 20L66 24L62 11">
+</path>
+</svg>
+<span class="sr-only">
+Предложный
+</span>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+LOK
+</span>
+<span class="prep-meaning">
+о, про
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Причамо о филму.
+</span>
+<span class="tr">
+Мы говорим о фильме.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="chart-row prep-row">
+<div class="prep-name" lang="sr">
+по
+</div>
+<div class="prep-uses">
+<div class="prep-use" data-tone="lok">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
+</rect>
+<path class="prep-icon-arrow" d="M22 32C22 12 66 12 66 32C66 52 22 52 22 32">
+</path>
+<path class="prep-icon-arrow" d="M58 25L67 33L58 40">
+</path>
+</svg>
+<span class="sr-only">
+Предложный
+</span>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+LOK
+</span>
+<span class="prep-meaning">
+по, вокруг
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Шетам по граду.
+</span>
+<span class="tr">
+Я гуляю по городу.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="chart-row prep-row">
+<div class="prep-name" lang="sr">
+при
+</div>
+<div class="prep-uses">
+<div class="prep-use" data-tone="lok">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
+</rect>
+<circle class="prep-icon-dot" cx="20" cy="32" r="9">
+</circle>
+</svg>
+<span class="sr-only">
+Предложный
+</span>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+LOK
+</span>
+<span class="prep-meaning">
+при, у
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Радим при школи.
+</span>
+<span class="tr">
+Я работаю при школе.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="chart-row prep-row">
+<div class="prep-name" lang="sr">
+без
+</div>
+<div class="prep-uses">
+<div class="prep-use" data-tone="gen">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
+</rect>
+<circle class="prep-icon-dot" cx="44" cy="32" r="9">
+</circle>
+<path class="prep-icon-line" d="M26 52L62 12">
+</path>
+</svg>
+<span class="sr-only">
+Родительный
+</span>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+GEN
+</span>
+<span class="prep-meaning">
+без
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Кафа без шећера.
+</span>
+<span class="tr">
+Кофе без сахара.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="chart-row prep-row">
+<div class="prep-name" lang="sr">
+код
+</div>
+<div class="prep-uses">
+<div class="prep-use" data-tone="gen">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
+</rect>
+<circle class="prep-icon-dot" cx="20" cy="32" r="9">
+</circle>
+</svg>
+<span class="sr-only">
+Родительный
+</span>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+GEN
+</span>
+<span class="prep-meaning">
+у, возле
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Спавам код брата.
+</span>
+<span class="tr">
+Я ночую у брата.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="chart-row prep-row">
+<div class="prep-name" lang="sr">
+близу
+</div>
+<div class="prep-uses">
+<div class="prep-use" data-tone="gen">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
+</rect>
+<circle class="prep-icon-dot" cx="20" cy="32" r="9">
+</circle>
+</svg>
+<span class="sr-only">
+Родительный
+</span>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+GEN
+</span>
+<span class="prep-meaning">
+близко к
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Стан је близу центра.
+</span>
+<span class="tr">
+Квартира близко к центру.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="chart-row prep-row">
+<div class="prep-name" lang="sr">
+око
+</div>
+<div class="prep-uses">
+<div class="prep-use" data-tone="gen">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
+</rect>
+<path class="prep-icon-arrow" d="M22 32C22 12 66 12 66 32C66 52 22 52 22 32">
+</path>
+<path class="prep-icon-arrow" d="M58 25L67 33L58 40">
+</path>
+</svg>
+<span class="sr-only">
+Родительный
+</span>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+GEN
+</span>
+<span class="prep-meaning">
+около, вокруг
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Седимо око стола.
+</span>
+<span class="tr">
+Мы сидим вокруг стола.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="chart-row prep-row">
+<div class="prep-name" lang="sr">
+иза
+</div>
+<div class="prep-uses">
+<div class="prep-use" data-tone="gen">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="28" y="18">
+</rect>
+<circle class="prep-icon-dot" cx="58" cy="36" r="9">
+</circle>
+</svg>
+<span class="sr-only">
+Родительный
+</span>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+GEN
+</span>
+<span class="prep-meaning">
+за, позади
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Ауто је иза куће.
+</span>
+<span class="tr">
+Машина за домом.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="chart-row prep-row">
+<div class="prep-name" lang="sr">
+насупрот
+</div>
+<div class="prep-uses">
+<div class="prep-use" data-tone="dat">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
+</rect>
+<circle class="prep-icon-dot" cx="14" cy="32" r="9">
+</circle>
+<circle class="prep-icon-dot" cx="74" cy="32" r="9">
+</circle>
+<path class="prep-icon-dash" d="M23 32H65">
+</path>
+</svg>
+<span class="sr-only">
+Дательный
+</span>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+DAT
+</span>
+<span class="prep-meaning">
+напротив
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Седим насупрот брату.
+</span>
+<span class="tr">
+Я сижу напротив брата.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+</div>
+</section>
