@@ -3,7 +3,7 @@
    A cheat-sheet site is flipped between, not read through: before this the
    only route from cases to verbs was wordmark → home → card. */
 
-import { html, type Raw } from '../lib/html.ts';
+import { html, raw, type Raw } from '../lib/html.ts';
 import { translator } from '../i18n/index.ts';
 import { PAGES, routeFor, type Route } from '../lib/routes.ts';
 
@@ -18,7 +18,7 @@ export function chartStrip(route: Route): Raw {
     ${others.map(page => {
       const target = routeFor(page, route.lang);
       const current = target.name === route.name;
-      return html`<li><a href="${target.path}"${current ? ' aria-current="page"' : ''}>${t(cardKey(page.name))}</a></li>`;
+      return html`<li><a href="${target.path}"${current ? raw(' aria-current="page"') : ''}>${t(cardKey(page.name))}</a></li>`;
     })}
   </ul>
 </nav>
