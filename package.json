@@ -1,7 +1,18 @@
 {
   "scripts": {
-    "validate": "bun tools/validate.mjs && bun tests/snapshot.mjs check",
+    "build": "bun build.mjs",
+    "dev": "bun build.mjs dev",
+    "typecheck": "tsc --noEmit",
+    "test": "bun test",
+    "validate": "bun tools/validate.mjs && bun tests/snapshot.mjs check && bun test && tsc --noEmit",
     "snapshot:write": "bun tests/snapshot.mjs write",
     "snapshot:check": "bun tests/snapshot.mjs check"
-  }
+  },
+  "devDependencies": {
+    "@types/bun": "^1.4.0",
+    "typescript": "^7.0.2"
+  },
+  "name": "serbian-fyi",
+  "private": true,
+  "type": "module"
 }

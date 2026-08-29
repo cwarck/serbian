@@ -59,7 +59,7 @@ function expectTranslation(value, scope, field = 'tr') {
 
 function walk(dir, predicate, out = []) {
   for (const entry of readdirSync(dir)) {
-    if (entry === '.git' || entry === '.wrangler' || entry === 'node_modules') continue;
+    if (entry === '.git' || entry === '.wrangler' || entry === 'node_modules' || entry === 'dist') continue;
     const full = path.join(dir, entry);
     const stat = statSync(full);
     if (stat.isDirectory()) walk(full, predicate, out);
@@ -243,16 +243,17 @@ function validateLinks() {
         const withoutHash = raw.split('#')[0];
         if (!withoutHash) continue;
 
-        const target = withoutHash === '/'
-          ? path.join(root, 'index.html')
+        const candidates = withoutHash === '/'
+          ? [path.join(root, 'index.html')]
           : withoutHash.startsWith('/')
-            ? path.join(root, withoutHash.slice(1))
-            : path.resolve(path.dirname(file), withoutHash);
+            // Root-absolute hrefs resolve against every served root: the tree
+            // itself and public/, which the build copies to dist/ verbatim.
+            ? [path.join(root, withoutHash.slice(1)), path.join(root, 'public', withoutHash.slice(1))]
+            : [path.resolve(path.dirname(file), withoutHash)];
 
-        const finalTarget = existsSync(target) && statSync(target).isDirectory()
-          ? path.join(target, 'index.html')
-          : target;
-        expect(existsSync(finalTarget), rel(file), `${attr}="${raw}" points to missing ${rel(finalTarget)}`);
+        const resolved = candidates.map(target =>
+          existsSync(target) && statSync(target).isDirectory() ? path.join(target, 'index.html') : target);
+        expect(resolved.some(existsSync), rel(file), `${attr}="${raw}" points to missing ${rel(resolved[0])}`);
       }
     }
   }
