@@ -153,6 +153,12 @@ async function emitClient(written: string[], assets: Map<string, string>): Promi
 
 /* ---------- dev ---------- */
 
+/* A path under dist/, or null if it escapes. */
+function within(file: string): string | null {
+  const resolved = path.resolve(OUT, file);
+  return resolved === OUT || resolved.startsWith(OUT + path.sep) ? resolved : null;
+}
+
 async function dev(): Promise<void> {
   const rebuild = async () => {
     const started = Date.now();
@@ -177,10 +183,18 @@ async function dev(): Promise<void> {
     port: Number(process.env.PORT) || 3000,
     async fetch(request) {
       const url = new URL(request.url);
-      let file = decodeURIComponent(url.pathname).replace(/^\//, '') || 'index.html';
+      let file: string;
+      try {
+        file = decodeURIComponent(url.pathname).replace(/^\//, '') || 'index.html';
+      } catch { return new Response('Not found', { status: 404 }); }
       if (file.endsWith('/')) file += 'index.html';
-      let target = Bun.file(path.join(OUT, file));
-      if (!(await target.exists())) target = Bun.file(path.join(OUT, file, 'index.html'));
+      /* URL() normalizes literal `..` segments but not percent-encoded ones,
+         and decoding happens after — so containment is checked, not assumed. */
+      const direct = within(file);
+      const indexed = within(path.join(file, 'index.html'));
+      if (!direct || !indexed) return new Response('Not found', { status: 404 });
+      let target = Bun.file(direct);
+      if (!(await target.exists())) target = Bun.file(indexed);
       if (!(await target.exists())) return new Response('Not found', { status: 404 });
       return new Response(target);
     },
