@@ -341,6 +341,7 @@ function validateSerbianContentScript() {
   numbers.NUMBER_BUILDS.forEach((row, rowIndex) => eachString(row.parts, value => validateSerbianLatin(value, `numberBuilds[${rowIndex}].parts`)));
   numbers.NOUN_COUNTS.forEach((row, rowIndex) => eachString(row.examples, value => validateSerbianLatin(value, `nounCounts[${rowIndex}].examples`)));
   numbers.ORDINALS.forEach((row, rowIndex) => eachString(row.forms, value => validateSerbianLatin(value, `ordinals[${rowIndex}].forms`)));
+  numbers.AGREEMENT.forEach((row, rowIndex) => validateSerbianLatin(row.sr, `agreement[${rowIndex}].sr`));
 
   const prep = data['src/content/prepositions.ts'];
   prep.PREP_GROUPS.forEach((group, groupIndex) => {
@@ -566,7 +567,7 @@ function validateCases() {
 }
 
 function validateNumbers() {
-  const { CARDINALS, NUMBER_BUILDS, NOUN_COUNTS, ORDINALS } = data['src/content/numbers.ts'];
+  const { AGREEMENT, CARDINALS, NUMBER_BUILDS, NOUN_COUNTS, ORDINALS } = data['src/content/numbers.ts'];
   CARDINALS.forEach((row, index) => {
     const scope = `cardinals[${index}]`;
     expectString(row.n, scope, 'n');
@@ -590,6 +591,13 @@ function validateNumbers() {
     const scope = `ordinals[${index}]`;
     expectString(row.n, scope, 'n');
     expect(row.forms.length === 3, scope, 'forms must have m/n/f entries');
+  });
+  AGREEMENT.forEach((row, index) => {
+    const scope = `agreement[${index}]`;
+    expectString(row.n, scope, 'n');
+    expectLocalized(row.form, scope, 'form');
+    expectString(row.sr, scope, 'sr');
+    expectTranslation(row.tr, scope, 'tr');
   });
 }
 
