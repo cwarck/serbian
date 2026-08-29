@@ -360,23 +360,26 @@ section { position: relative; }
   letter-spacing: var(--track-label);
   text-transform: uppercase;
   line-height: 1;
-  /* Tap target stays over 24px tall; horizontal padding trimmed so the
+  /* 44px tap target (phone in hand); horizontal padding trimmed so the
      no-JS chip fallback fits the column down to 320px. */
-  padding: .62rem .7rem;
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 44px;
+  padding: 0 .7rem;
   border-radius: 999px;
   color: var(--ink-muted);
   transition: background .25s, color .25s;
 }
 .chip[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
 
-/* Keyboard focus — the house dashed-accent ring, applied to the primary
+/* Keyboard focus — the house solid-accent ring, applied to the primary
    controls that previously fell back to the unstyled UA default. */
 .brand:focus-visible,
 .chip:focus-visible,
+.settings-btn:focus-visible,
 .chart-card:focus-visible,
 .case-strip-cell a:focus-visible,
 .foot a:focus-visible {
-  outline: 1px dashed var(--accent);
+  outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
 
@@ -889,7 +892,7 @@ section { position: relative; }
   border-color: var(--ink-muted);
 }
 .tip-chip:focus-visible {
-  outline: 1px dashed var(--accent);
+  outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
 
@@ -939,7 +942,7 @@ section { position: relative; }
   border-radius: 50%;
   transition: color .15s, background .15s;
 }
-.tip-pop-close:focus-visible { outline: 1px dashed var(--accent); outline-offset: 2px; }
+.tip-pop-close:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
 /* Cases page — note popover. Same .tip-pop shell, richer body. */
 .case-pop .tip-pop-card {
@@ -1343,7 +1346,7 @@ section { position: relative; }
 }
 /* Compact chips inside the panel; a too-wide group wraps within its capsule. */
 .settings-menu .nav-controls { flex-wrap: wrap; gap: .15rem; }
-.settings-menu .chip { padding: .5rem .7rem; }
+.settings-menu .chip { padding: 0 .7rem; }
 
 .note-title {
   font-style: italic;
