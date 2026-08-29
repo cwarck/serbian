@@ -529,13 +529,11 @@ function validateSerbianMarkers() {
 
 function validateAlphabet() {
   const { ALPHABET } = data['src/content/alphabet.ts'];
-  expectArray(ALPHABET, 'alphabet', 'ALPHABET');
   expect(ALPHABET.length === 30, 'alphabet', 'ALPHABET must contain 30 letters');
   ALPHABET.forEach((row, index) => {
     const scope = `alphabet[${index}]`;
     expect(row.n === index + 1, scope, `n must be ${index + 1}`);
     ['cyr', 'lat', 'ipa', 'wCyr', 'wLat', 'kind'].forEach(field => expectString(row[field], scope, field));
-    expect(['unique', 'shared', 'diff'].includes(row.kind), scope, 'kind must be unique/shared/diff');
     if (row.tip) expectTranslation(row.tip, scope, 'tip');
   });
 }
@@ -543,44 +541,29 @@ function validateAlphabet() {
 function validateCases() {
   const { CASES, IDECL, WRINKLES, ENDING_AXES } = data['src/content/cases.ts'];
   const caseAbbrs = ['NOM', 'GEN', 'DAT', 'AKU', 'VOK', 'INS', 'LOK'];
-  const genders = ['m', 'f', 'n'];
-  const numbers = ['sg', 'pl'];
 
-  expectArray(CASES, 'cases', 'CASES');
   expect(CASES.length === 7, 'cases', 'CASES must contain seven cases');
   CASES.forEach((row, index) => {
     const scope = `cases[${index}]`;
     expectString(row.key, scope, 'key');
     expect(row.abbr === caseAbbrs[index], scope, `abbr must be ${caseAbbrs[index]}`);
-    expectString(row.tone, scope, 'tone');
-    for (const gender of genders) {
-      expect(isObject(row.endings?.[gender]), scope, `endings.${gender} required`);
-      for (const number of numbers) expect(row.endings?.[gender]?.[number] !== undefined, scope, `endings.${gender}.${number} required`);
-    }
     expectArray(row.examples, scope, 'examples');
     row.examples.forEach((example, exIndex) => {
       ['sr', 'en', 'ru'].forEach(field => expectString(example[field], `${scope}.examples[${exIndex}]`, field));
     });
-    expect(Array.isArray(row.preps), scope, 'preps must be array');
   });
 
-  expectArray(WRINKLES, 'cases', 'WRINKLES');
   WRINKLES.forEach((row, index) => {
     const scope = `wrinkles[${index}]`;
     expectString(row.key, scope, 'key');
     expectArray(row.examples, scope, 'examples');
   });
 
-  expectArray(ENDING_AXES, 'cases', 'ENDING_AXES');
-  expectArray(IDECL.cases, 'cases', 'IDECL.cases');
-  expectArray(IDECL.sg, 'cases', 'IDECL.sg');
-  expectArray(IDECL.pl, 'cases', 'IDECL.pl');
   expect(IDECL.cases.length === 7 && IDECL.sg.length === 7 && IDECL.pl.length === 7, 'cases', 'IDECL rows must align to seven cases');
 }
 
 function validateNumbers() {
   const { CARDINALS, NUMBER_BUILDS, NOUN_COUNTS, ORDINALS } = data['src/content/numbers.ts'];
-  expectArray(CARDINALS, 'numbers', 'CARDINALS');
   CARDINALS.forEach((row, index) => {
     const scope = `cardinals[${index}]`;
     expectString(row.n, scope, 'n');
@@ -603,7 +586,7 @@ function validateNumbers() {
   ORDINALS.forEach((row, index) => {
     const scope = `ordinals[${index}]`;
     expectString(row.n, scope, 'n');
-    expect(Array.isArray(row.forms) && row.forms.length === 3, scope, 'forms must have m/f/n entries');
+    expect(row.forms.length === 3, scope, 'forms must have m/n/f entries');
   });
 }
 
@@ -868,6 +851,14 @@ function validateChartLemmaCoverage() {
   }
 }
 
+/* `satisfies` in src/content gives presence, shape and every union — a missing
+   field, a wrong primitive or a typo'd tone is now a compile error. What it
+   does NOT give is values: '' satisfies string, and a seven-element array
+   satisfies readonly T[] whatever order it is in.
+
+   So what is left below is exactly the part types cannot express — lengths,
+   ordering against the tone map, cross-references between charts, and the
+   non-emptiness of about 120 strings. Types PLUS these, never instead. */
 function validateDataShapes() {
   validateAlphabet();
   validateCases();
