@@ -9,7 +9,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { PAGES, LANGS, SCRIPTS, renderPage } from './harness/render-legacy.mjs';
-import { normalizeHTML } from './harness/normalize.mjs';
+import { normalizeHTML } from './harness/normalize.ts';
 
 const DIR = path.join(process.cwd(), 'tests/fixtures');
 

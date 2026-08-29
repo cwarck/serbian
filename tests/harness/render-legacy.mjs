@@ -6,7 +6,7 @@ import vm from 'node:vm';
 import fs from 'node:fs';
 import path from 'node:path';
 import { makeContext, flattenWindow } from './dom.mjs';
-import { findTriggers } from './normalize.mjs';
+import { findTriggers } from './normalize.ts';
 
 const ROOT = process.cwd();
 

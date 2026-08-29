@@ -1,6 +1,6 @@
 import { expect, test } from 'bun:test';
 import fs from 'node:fs';
-import { normalizeHTML } from './harness/normalize.mjs';
+import { normalizeHTML } from './harness/normalize.ts';
 import { renderChart } from './harness/render-build.ts';
 import type { Chart } from '../src/render/chart.ts';
 import type { Lang } from '../src/lib/negotiate.ts';
@@ -14,7 +14,7 @@ import type { Script } from './harness/normalizers.ts';
    Charts land here one at a time as they are ported; PORTED is the list that
    has. When it names all nine, phase 2 is done. */
 
-const PORTED = ['alphabet', 'false-friends', 'aspect', 'numbers', 'pronouns', 'pitch-stress', 'verbs'] as const;
+const PORTED = ['alphabet', 'false-friends', 'aspect', 'numbers', 'pronouns', 'pitch-stress', 'verbs', 'prepositions'] as const;
 
 const LANGS: Lang[] = ['en', 'ru'];
 const SCRIPTS: Script[] = ['lat', 'cyr'];

@@ -9,7 +9,7 @@
 import type { Chart } from '../../src/render/chart.ts';
 import type { Lang } from '../../src/lib/negotiate.ts';
 import { collapseDualEmit, type Script } from './normalizers.ts';
-import { findTriggers } from './normalize.mjs';
+import { findTriggers } from './normalize.ts';
 
 export interface Rendered {
   mounts: Record<string, string>;
