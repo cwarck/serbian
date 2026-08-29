@@ -660,6 +660,69 @@
 </article>
 </div>
 </section>
+<section class="chart-group num-agreement" data-tone="num-agreement">
+<header class="chart-group-head">
+<h3>
+Согласование глагола
+</h3>
+</header>
+<div class="chart-table">
+<article class="chart-row">
+<span class="chart-cell num-value" data-label="Число">
+1
+</span>
+<span class="chart-cell num-pattern" data-label="Глагол">
+ед. число
+</span>
+<div class="chart-cell" data-label="Примеры">
+<div class="chart-example">
+<span class="sr" lang="sr">
+Један град је велик.
+</span>
+<span class="tr">
+Один город большой.
+</span>
+</div>
+</div>
+</article>
+<article class="chart-row">
+<span class="chart-cell num-value" data-label="Число">
+2-4
+</span>
+<span class="chart-cell num-pattern" data-label="Глагол">
+мн. число
+</span>
+<div class="chart-cell" data-label="Примеры">
+<div class="chart-example">
+<span class="sr" lang="sr">
+Два града су велика.
+</span>
+<span class="tr">
+Два города большие.
+</span>
+</div>
+</div>
+</article>
+<article class="chart-row">
+<span class="chart-cell num-value" data-label="Число">
+5+
+</span>
+<span class="chart-cell num-pattern" data-label="Глагол">
+ед. число
+</span>
+<div class="chart-cell" data-label="Примеры">
+<div class="chart-example">
+<span class="sr" lang="sr">
+Пет градова је велико.
+</span>
+<span class="tr">
+Пять городов большие.
+</span>
+</div>
+</div>
+</article>
+</div>
+</section>
 <section class="chart-group num-ordinals" data-tone="num-ordinal">
 <header class="chart-group-head">
 <h3>

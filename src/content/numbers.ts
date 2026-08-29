@@ -1,4 +1,4 @@
-import type { Cardinal, NounCount, NumberBuild, Ordinal } from '../lib/types.ts';
+import type { Cardinal, NounCount, NumberAgreement, NumberBuild, Ordinal } from '../lib/types.ts';
 
 /* One continuous cardinal table (alphabet-chart playbook). Each order of
    magnitude (ones, teens, tens, hundreds, thousands) gets its own neutral
@@ -107,6 +107,30 @@ export const NOUN_COUNTS = [
     examples: ['dvadeset pet gradova', 'trideset šest žena', 'četrdeset sedam sela']
   }
 ] satisfies readonly NounCount[];
+
+/* The single most common numeral error: what the VERB does. 2-4 take a plural
+   verb, 5+ take a third-person singular — and the adjective follows the verb,
+   not the noun. Nothing else on this chart shows a numeral inside a sentence. */
+export const AGREEMENT = [
+  {
+    n: '1',
+    form: { en: 'singular', ru: 'ед. число' },
+    sr: 'Jedan grad je velik.',
+    tr: { en: 'One city is big.', ru: 'Один город большой.' }
+  },
+  {
+    n: '2-4',
+    form: { en: 'plural', ru: 'мн. число' },
+    sr: 'Dva grada su velika.',
+    tr: { en: 'Two cities are big.', ru: 'Два города большие.' }
+  },
+  {
+    n: '5+',
+    form: { en: 'singular', ru: 'ед. число' },
+    sr: 'Pet gradova je veliko.',
+    tr: { en: 'Five cities are big.', ru: 'Пять городов большие.' }
+  },
+] satisfies readonly NumberAgreement[];
 
 export const ORDINALS = [
   { n: '1.', forms: ['prvi', 'prvo', 'prva'] },

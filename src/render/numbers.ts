@@ -1,7 +1,7 @@
 import { html, raw, sr, type Raw } from '../lib/html.ts';
 import type { Lang } from '../lib/negotiate.ts';
 import { translator } from '../i18n/index.ts';
-import { CARDINALS, NUMBER_BUILDS, NOUN_COUNTS, ORDINALS } from '../content/numbers.ts';
+import { AGREEMENT, CARDINALS, NUMBER_BUILDS, NOUN_COUNTS, ORDINALS } from '../content/numbers.ts';
 import type { Cardinal } from '../lib/types.ts';
 import type { Chart } from './chart.ts';
 
@@ -83,6 +83,28 @@ export const chart: Chart = {
     </section>
   `;
 
+    const agreement = html`
+    <section class="chart-group num-agreement" data-tone="num-agreement">
+      <header class="chart-group-head">
+        <h3>${t('numbers.agreement')}</h3>
+      </header>
+      <div class="chart-table">
+        ${AGREEMENT.map(row => html`
+          <article class="chart-row">
+            <span class="chart-cell num-value" data-label="${t('numbers.number')}">${row.n}</span>
+            <span class="chart-cell num-pattern" data-label="${t('numbers.verb')}">${pick(row.form)}</span>
+            <div class="chart-cell" data-label="${t('numbers.examples')}">
+              <div class="chart-example">
+                <span class="sr" lang="sr">${sr(row.sr)}</span>
+                <span class="tr">${pick(row.tr)}</span>
+              </div>
+            </div>
+          </article>
+        `)}
+      </div>
+    </section>
+  `;
+
     const ordinals = html`
     <section class="chart-group num-ordinals" data-tone="num-ordinal">
       <header class="chart-group-head">
@@ -99,6 +121,6 @@ export const chart: Chart = {
     </section>
   `;
 
-    return { numbersChart: [cardinals, builds, nouns, ordinals].map(x => x.value).join('') };
+    return { numbersChart: [cardinals, builds, nouns, agreement, ordinals].map(x => x.value).join('') };
   },
 };

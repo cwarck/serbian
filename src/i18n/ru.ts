@@ -145,6 +145,8 @@ export const ru: Record<Key, string> = {
   'numbers.cardinals': 'Количественные числительные',
   'numbers.build': 'Составные числа',
   'numbers.nouns': 'С существительными',
+  'numbers.agreement': 'Согласование глагола',
+  'numbers.verb': 'Глагол',
   'numbers.ordinals': 'Порядковые',
   'numbers.number': 'Число',
   'numbers.parts': 'Части',

@@ -125,6 +125,14 @@ export interface NounCount {
   readonly examples: readonly string[];
 }
 
+export interface NumberAgreement {
+  readonly n: string;
+  /* What the verb does, not what the noun does. */
+  readonly form: Localized;
+  readonly sr: string;
+  readonly tr: Localized;
+}
+
 export interface Ordinal {
   /* M, N, F — the site-wide gender column order. */
   readonly n: string;

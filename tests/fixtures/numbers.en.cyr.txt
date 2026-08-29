@@ -660,6 +660,69 @@ last word: 5+
 </article>
 </div>
 </section>
+<section class="chart-group num-agreement" data-tone="num-agreement">
+<header class="chart-group-head">
+<h3>
+Verb agreement
+</h3>
+</header>
+<div class="chart-table">
+<article class="chart-row">
+<span class="chart-cell num-value" data-label="Number">
+1
+</span>
+<span class="chart-cell num-pattern" data-label="Verb">
+singular
+</span>
+<div class="chart-cell" data-label="Examples">
+<div class="chart-example">
+<span class="sr" lang="sr">
+Један град је велик.
+</span>
+<span class="tr">
+One city is big.
+</span>
+</div>
+</div>
+</article>
+<article class="chart-row">
+<span class="chart-cell num-value" data-label="Number">
+2-4
+</span>
+<span class="chart-cell num-pattern" data-label="Verb">
+plural
+</span>
+<div class="chart-cell" data-label="Examples">
+<div class="chart-example">
+<span class="sr" lang="sr">
+Два града су велика.
+</span>
+<span class="tr">
+Two cities are big.
+</span>
+</div>
+</div>
+</article>
+<article class="chart-row">
+<span class="chart-cell num-value" data-label="Number">
+5+
+</span>
+<span class="chart-cell num-pattern" data-label="Verb">
+singular
+</span>
+<div class="chart-cell" data-label="Examples">
+<div class="chart-example">
+<span class="sr" lang="sr">
+Пет градова је велико.
+</span>
+<span class="tr">
+Five cities are big.
+</span>
+</div>
+</div>
+</article>
+</div>
+</section>
 <section class="chart-group num-ordinals" data-tone="num-ordinal">
 <header class="chart-group-head">
 <h3>

@@ -143,6 +143,8 @@ export const en = {
   'numbers.cardinals': 'Cardinal numbers',
   'numbers.build': 'Build numbers',
   'numbers.nouns': 'With nouns',
+  'numbers.agreement': 'Verb agreement',
+  'numbers.verb': 'Verb',
   'numbers.ordinals': 'Ordinals',
   'numbers.number': 'Number',
   'numbers.parts': 'Parts',
