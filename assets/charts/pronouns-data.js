@@ -47,11 +47,12 @@ const QUESTIONS = {
     { label:'pron.sg', forms:['čiji', 'čije', 'čija'] },
     { label:'pron.pl', forms:['čiji', 'čija', 'čije'] },
   ],
+  /* Case order follows the cases chart: NOM · GEN · DAT/LOK · AKU · INS. */
   whoWhat: [
     { key:'case.1.name', who:'ko', what:'šta' },
-    { key:'case.4.name', who:'koga', what:'šta' },
     { key:'case.2.name', who:'koga', what:'čega' },
     { key:'pron.datloc', who:'kome', what:'čemu' },
+    { key:'case.4.name', who:'koga', what:'šta' },
     { key:'case.6.name', who:'kim', what:'čim' },
   ]
 };

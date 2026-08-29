@@ -48,15 +48,15 @@ const CARDINALS = [
   { n: '800', sr: 'osamsto' },
   { n: '900', sr: 'devetsto' },
 
-  { n: '1.000', sr: 'hiljad', end: 'u' },
-  { n: '2.000', sr: 'dve hiljad', end: 'e' },
-  { n: '3.000', sr: 'tri hiljad', end: 'e' },
-  { n: '4.000', sr: 'četiri hiljad', end: 'e' },
-  { n: '5.000', sr: 'pet hiljada' },
-  { n: '6.000', sr: 'šest hiljada' },
-  { n: '7.000', sr: 'sedam hiljada' },
-  { n: '8.000', sr: 'osam hiljada' },
-  { n: '9.000', sr: 'devet hiljada' },
+  { n: '1 000', sr: 'hiljad', end: 'u' },
+  { n: '2 000', sr: 'dve hiljad', end: 'e' },
+  { n: '3 000', sr: 'tri hiljad', end: 'e' },
+  { n: '4 000', sr: 'četiri hiljad', end: 'e' },
+  { n: '5 000', sr: 'pet hiljada' },
+  { n: '6 000', sr: 'šest hiljada' },
+  { n: '7 000', sr: 'sedam hiljada' },
+  { n: '8 000', sr: 'osam hiljada' },
+  { n: '9 000', sr: 'devet hiljada' },
 ];
 
 const NUMBER_BUILDS = [
@@ -65,7 +65,7 @@ const NUMBER_BUILDS = [
   { n: '58', parts: ['pedeset', 'osam'], en: 'fifty eight', ru: 'пятьдесят восемь' },
   { n: '101', parts: ['sto', 'jedan'], en: 'one hundred one', ru: 'сто один' },
   { n: '125', parts: ['sto', 'dvadeset', 'pet'], en: 'one hundred twenty five', ru: 'сто двадцать пять' },
-  { n: '2.345', parts: ['dve', 'hiljade', 'trista', 'četrdeset', 'pet'], en: 'two thousand three hundred forty five', ru: 'две тысячи триста сорок пять' },
+  { n: '2 345', parts: ['dve', 'hiljade', 'trista', 'četrdeset', 'pet'], en: 'two thousand three hundred forty five', ru: 'две тысячи триста сорок пять' },
 ];
 
 const NOUN_COUNTS = [
@@ -107,16 +107,16 @@ const NOUN_COUNTS = [
 ];
 
 const ORDINALS = [
-  { n: '1.', forms: ['prvi', 'prva', 'prvo'] },
-  { n: '2.', forms: ['drugi', 'druga', 'drugo'] },
-  { n: '3.', forms: ['treći', 'treća', 'treće'] },
-  { n: '4.', forms: ['četvrti', 'četvrta', 'četvrto'] },
-  { n: '5.', forms: ['peti', 'peta', 'peto'] },
-  { n: '6.', forms: ['šesti', 'šesta', 'šesto'] },
-  { n: '7.', forms: ['sedmi', 'sedma', 'sedmo'] },
-  { n: '8.', forms: ['osmi', 'osma', 'osmo'] },
-  { n: '9.', forms: ['deveti', 'deveta', 'deveto'] },
-  { n: '10.', forms: ['deseti', 'deseta', 'deseto'] },
-  { n: '20.', forms: ['dvadeseti', 'dvadeseta', 'dvadeseto'] },
-  { n: '21.', forms: ['dvadeset prvi', 'dvadeset prva', 'dvadeset prvo'] },
+  { n: '1.', forms: ['prvi', 'prvo', 'prva'] },
+  { n: '2.', forms: ['drugi', 'drugo', 'druga'] },
+  { n: '3.', forms: ['treći', 'treće', 'treća'] },
+  { n: '4.', forms: ['četvrti', 'četvrto', 'četvrta'] },
+  { n: '5.', forms: ['peti', 'peto', 'peta'] },
+  { n: '6.', forms: ['šesti', 'šesto', 'šesta'] },
+  { n: '7.', forms: ['sedmi', 'sedmo', 'sedma'] },
+  { n: '8.', forms: ['osmi', 'osmo', 'osma'] },
+  { n: '9.', forms: ['deveti', 'deveto', 'deveta'] },
+  { n: '10.', forms: ['deseti', 'deseto', 'deseta'] },
+  { n: '20.', forms: ['dvadeseti', 'dvadeseto', 'dvadeseta'] },
+  { n: '21.', forms: ['dvadeset prvi', 'dvadeset prvo', 'dvadeset prva'] },
 ];

@@ -285,7 +285,7 @@ window.I18N = {
     'card.pronouns.title': 'Местоимения',
     'card.pronouns.note': 'Формы',
     'card.prepositions.title': 'Предлоги',
-    'card.prepositions.note': 'Падежи',
+    'card.prepositions.note': 'Управление падежом',
     'card.aspect.title': 'Вид',
     'card.aspect.note': 'Глагольные пары',
     'card.pitch.title': 'Тон и ударение',

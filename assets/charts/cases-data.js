@@ -73,7 +73,7 @@ const CASES = [
     },
     examples: [
       { sr:'Pokazujem kartu <mark>pilotu</mark>.', en:'I show the map to the pilot.',      ru:'Я показываю карту пилоту.' },
-      { sr:'Idem k <mark>moru</mark>.',             en:'I\'m going to the sea.',            ru:'Я еду к морю.' },
+      { sr:'Idem ka <mark>moru</mark>.',            en:'I\'m going to the sea.',            ru:'Я еду к морю.' },
       { sr:'Pomažem <mark>prijateljici</mark>.',    en:'I\'m helping a friend (f.).',       ru:'Я помогаю подруге.' },
     ],
     preps: ['k/ka','prema','nasuprot']
@@ -119,10 +119,17 @@ const CASES = [
         ] },
         pl: '-i'
       },
-      f: { sg: '-o',                pl: '-e' },
+      f: { sg: { v:'-o', n:'vok-f-name' }, pl: '-e' },
       n: { sg: '-o', pl: '-a' },
     },
     notes: {
+      'vok-f-name': {
+        titleEn: 'Names usually keep their <i>-a</i>',
+        titleRu: 'Имена обычно сохраняют <i>-a</i>',
+        bodyEn: 'Common nouns take <i>-o</i>. Personal names normally stay unchanged when you call them, and diminutives in <i>-ica</i> switch to <i>-e</i>. Putting <i>-o</i> on a name sounds formal or folkloric.',
+        bodyRu: 'Нарицательные берут <i>-o</i>. Личные имена при обращении обычно не меняются, а уменьшительные на <i>-ica</i> берут <i>-e</i>. Форма на <i>-o</i> от имени звучит официально или по-фольклорному.',
+        pairs: [['žena','ženo'],['Marija','Marija'],['sestrica','sestrice']]
+      },
       'palatal': {
         titleEn: '<i>k, g, h</i> turn into <i>č, ž, š</i> when calling out',
         titleRu: '<i>k, g, h</i> превращаются в <i>č, ž, š</i> при обращении',

@@ -92,7 +92,7 @@ function renderOrdinals() {
         ${ORDINALS.map(row => `
           <article class="chart-row">
             <span class="chart-cell num-value" data-label="${t('numbers.number')}">${row.n}</span>
-            ${row.forms.map((form, idx) => `<span class="chart-cell chart-form num-word" data-label="${t(['cases.gender.m', 'cases.gender.f', 'cases.gender.n'][idx])}" lang="sr">${SerbianFyi.sr(form)}</span>`).join('')}
+            ${row.forms.map((form, idx) => `<span class="chart-cell chart-form num-word" data-gender="${['m', 'n', 'f'][idx]}" data-label="${t(['cases.gender.m', 'cases.gender.n', 'cases.gender.f'][idx])}" lang="sr">${SerbianFyi.sr(form)}</span>`).join('')}
           </article>
         `).join('')}
       </div>
