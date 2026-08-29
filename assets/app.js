@@ -79,6 +79,19 @@
     { љ:'lj', њ:'nj', џ:'dž', Љ:'Lj', Њ:'Nj', Џ:'Dž' }
   );
 
+  /* Latin digraphs that straddle a morpheme boundary stay TWO Cyrillic letters:
+     nadživeti → надживети, injekcija → инјекција, konjugacija → конјугација.
+     Blind dž|lj|nj mapping corrupts them permanently after one toggle. The
+     patterns are deliberately narrow — odžačar (оџачар), konj (коњ) and inje
+     (иње) are genuine digraphs and must not match. */
+  const boundaryDigraphs = /nadž|podž|injek|injic|konjug|konjunk|konjekt|vanjez|tanjug|anjon/gi;
+  const SPLIT = '\u0000';
+
+  function splitBoundaryDigraphs(text) {
+    return String(text).replace(boundaryDigraphs, m =>
+      m.replace(/dž|nj/i, pair => pair[0] + SPLIT + pair[1]));
+  }
+
   function cyrDigraphReplacement(match) {
     const first = match[0];
     const second = match[1];
@@ -90,10 +103,11 @@
   }
 
   function toCyrillic(text) {
-    return String(text).normalize('NFC')
+    return splitBoundaryDigraphs(String(text).normalize('NFC'))
       .replace(/dž|Dž|DŽ|lj|Lj|LJ|nj|Nj|NJ/g, cyrDigraphReplacement)
       .replace(/[àáāȁȃèéēȅȇìíīȉȋòóōȍȏùúūȕȗŕȑȓÀÁĀȀȂÈÉĒȄȆÌÍĪȈȊÒÓŌȌȎÙÚŪȔȖŔȐȒ]/g, ch => accentToCyrMap[ch] || ch)
-      .replace(/[A-Za-zČĆĐŠŽčćđšž]/g, ch => latToCyrMap[ch] || ch);
+      .replace(/[A-Za-zČĆĐŠŽčćđšž]/g, ch => latToCyrMap[ch] || ch)
+      .split(SPLIT).join('');
   }
 
   function toLatin(text) {
