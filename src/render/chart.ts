@@ -4,8 +4,9 @@
    popover fragments that used to be produced on click. Both are build-time
    enumerable: every registration is a static index lookup into constant data. */
 
-import type { Raw } from '../lib/html.ts';
+import { html, type Raw } from '../lib/html.ts';
 import type { Lang } from '../lib/negotiate.ts';
+import type { Gender } from '../lib/types.ts';
 import { GLOSSARY } from '../glossary/glossary.ts';
 
 export interface PopoverReg {
@@ -31,4 +32,16 @@ export interface Chart {
 export function gloss(lemma: string, lang: Lang): string {
   const entry = (GLOSSARY as Record<string, { gloss: { en: string; ru: string } }>)[lemma];
   return entry ? entry.gloss[lang] : lemma;
+}
+
+/* The tier-2 gender chip: one bounded object pairing the facet-filled letter
+   with the specimen it labels. Every gender-bearing call site goes through
+   here — no renderer hand-writes the markup, which is what makes the
+   letter-attestation check in tools/validate.mjs enforceable.
+
+   `label` MUST come from t(), never sr(): the letter is apparatus, not a
+   specimen, so it must not dual-emit. A class="s" wrapper inside a
+   .gender-tag would let the script toggle transliterate the gender letters. */
+export function genderUnit(gender: Gender, label: Raw, inner: Raw): Raw {
+  return html`<span class="gender-unit" data-gender="${gender}"><span class="gender-tag">${label}</span>${inner}</span>`;
 }

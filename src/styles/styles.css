@@ -1233,6 +1233,73 @@ section { position: relative; }
   padding: .35rem .75rem;
   line-height: 1;
 }
+/* -----------------------------------------------------------
+   Tier 2 — the gender chip.
+
+   Sits beside .case-tag on purpose: the two tiers should read together in
+   source. A case-tag is tone-coloured text on a tint of its own tone; a
+   gender chip is the inverse — a solid facet fill with the letter KNOCKED
+   OUT of it.
+
+   The knockout is not a style preference. A facet-coloured letter on a 16%
+   facet tint measures 4.03:1 light and 2.92:1 dark against its own cell, and
+   re-solving L cannot save it: on a 16% tint the CEILING is 4.90:1 on dark
+   ground, and only for a pure-white letter — no hue reaches it. Every
+   --tone-* token above carries a hand-fit comment proving 4.5:1 is the house
+   bar, so the tint recipe is a regression against this project's own
+   standard. Inverting costs nothing: knockout-on-fill is the same colour
+   pair as fill-on-ground, so the solved lightnesses hold at 4.61-4.63:1 on
+   both grounds. Do not "simplify" this back to a tint.
+
+   The border runs at FULL facet, never a tint: it is the carrier for the
+   silhouette, and a 38% tint measures 1.42:1 in light — under even the 3:1
+   non-text floor, let alone what pre-attentive grouping needs.
+
+   Colour is the fast path; the letter is the guarantee. Under deuteranopia
+   M and F converge, so every facet-coloured mark prints its abbreviation —
+   permanently, via genderUnit() in src/render/chart.ts.
+
+   The letter and its specimen are ONE bounded object: proximity alone loses
+   the pairing the moment a row wraps.
+
+   Selectors are scoped to .gender-unit. A bare [data-gender="m"] would leak —
+   numbers.ts puts data-gender on the specimen span itself, and .num-word has
+   no use for a radius or a --facet. var(--facet, var(--ink-muted)) mirrors
+   the house var(--tone, var(--accent)) idiom so a unit with no gender
+   degrades to ink rather than dropping its border.
+   ----------------------------------------------------------- */
+.gender-unit {
+  display: inline-flex;
+  align-items: center;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--facet, var(--ink-muted));
+}
+.gender-tag {
+  align-self: stretch;
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--ff-body);
+  font-size: var(--fs-label);
+  font-weight: 500;
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  line-height: 1;
+  padding: .26rem .46rem;
+  color: var(--paper);
+  background: var(--facet, var(--ink-muted));
+}
+/* Inline padding clears the pill's cap: a two-character specimen (`to`, `-a`)
+   must not be clipped by the radius. */
+.gender-unit > .chart-form,
+.gender-unit > .end { padding: .12rem .5rem .16rem; }
+
+/* The corner family — one token, three silhouettes. Judge a change to it on
+   grouping across a grid, not on legibility of one chip. */
+.gender-unit[data-gender="m"] { --facet: var(--facet-m); border-radius: 0; }
+.gender-unit[data-gender="n"] { --facet: var(--facet-n); border-radius: var(--facet-r) 0 var(--facet-r) 0; }
+.gender-unit[data-gender="f"] { --facet: var(--facet-f); border-radius: 999px; }
+
 .case-head-title h3 {
   font-family: var(--ff-display);
   font-weight: 300;
