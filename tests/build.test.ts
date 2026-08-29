@@ -278,3 +278,57 @@ test('the false-friends EN path redirects to the RU page', () => {
   expect(fs.existsSync(path.join(OUT, 'charts/false-friends.html'))).toBe(false);
   expect(fs.existsSync(path.join(OUT, 'ru/charts/false-friends.html'))).toBe(true);
 });
+
+/* ---------- indexing ---------- */
+
+test('the sitemap lists every route with its alternates', () => {
+  const xml = fs.readFileSync(path.join(OUT, 'sitemap.xml'), 'utf8');
+  const locs = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1]!);
+  expect(locs.length).toBe(19);
+  for (const route of ROUTES) expect(locs).toContain(`https://serbian.fyi${route.path}`);
+  /* false-friends is RU-only: it declares itself and no counterpart. */
+  const ff = xml.slice(xml.indexOf('<loc>https://serbian.fyi/ru/charts/false-friends.html'));
+  const block = ff.slice(0, ff.indexOf('</url>'));
+  expect([...block.matchAll(/hreflang="/g)].length).toBe(1);
+});
+
+test('robots points at the sitemap', () => {
+  const robots = fs.readFileSync(path.join(OUT, 'robots.txt'), 'utf8');
+  expect(robots).toContain('Sitemap: https://serbian.fyi/sitemap.xml');
+});
+
+/* Comments in this stylesheet discuss the rules they guard, so strip them
+   before scanning for the rules themselves. */
+function declarations(): string {
+  return fs.readFileSync(asset('.css'), 'utf8').replace(/\/\*[\s\S]*?\*\//g, '');
+}
+
+/* AGENTS.md sanctions exactly three media queries — hover,
+   prefers-reduced-motion, forced-colors. Width queries are banned: the mobile
+   layout IS the layout. */
+test('the stylesheet uses no width media query', () => {
+  const css = declarations();
+  const queries = [...css.matchAll(/@media([^{]+)\{/g)].map(m => m[1]!.trim());
+  expect(queries.length).toBeGreaterThan(0);
+  for (const q of queries) {
+    expect(q, `unsanctioned media query: ${q}`)
+      .toMatch(/^\((hover|pointer|prefers-reduced-motion|forced-colors)/);
+    expect(q, `width query: ${q}`).not.toMatch(/width/);
+  }
+});
+
+/* The root font-size clamp is the ONLY viewport-responsive declaration; vw
+   elsewhere is limited to viewport-safety caps on fixed overlays. */
+test('vw appears only in the root clamp and viewport-safety caps', () => {
+  for (const line of declarations().split('\n')) {
+    if (!line.includes('vw')) continue;
+    expect(line, `stray vw: ${line.trim()}`).toMatch(/clamp\(|calc\(100vw/);
+  }
+});
+
+test('view transitions ship with a reduced-motion opt-out', () => {
+  const css = fs.readFileSync(asset('.css'), 'utf8');
+  expect(css).toContain('@view-transition');
+  const reduced = css.slice(css.indexOf('@media (prefers-reduced-motion: reduce)'));
+  expect(reduced).toContain('::view-transition-group(*)');
+});

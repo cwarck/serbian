@@ -7,7 +7,7 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
-import { ROUTES } from './src/lib/routes.ts';
+import { ROUTES, counterpart } from './src/lib/routes.ts';
 import { renderPage } from './src/layout/page.ts';
 
 const ROOT = import.meta.dir;
@@ -59,7 +59,38 @@ export async function build(): Promise<string[]> {
     written.push(emit(route.file, resolveAssets(await renderPage(route), assets)));
   }
 
+  written.push(emit('sitemap.xml', sitemap()));
+  written.push(emit('robots.txt', `User-agent: *\nAllow: /\nSitemap: ${ORIGIN}/sitemap.xml\n`));
+
   return written;
+}
+
+const ORIGIN = 'https://serbian.fyi';
+
+/* Launch IS first indexing — the one moment where two parallel language trees
+   are either understood as alternates or filed as duplicates, and the one
+   thing that is not cheap to redo. Pairs with the per-route hreflang and
+   canonical tags in the head, which crawlers read first. */
+function sitemap(): string {
+  const entries = ROUTES.map(route => {
+    const alternates = [route, counterpart(route)]
+      .filter((r): r is typeof route => r !== null)
+      .map(r => `    <xhtml:link rel="alternate" hreflang="${r.lang}" href="${ORIGIN}${r.path}"/>`);
+    return [
+      '  <url>',
+      `    <loc>${ORIGIN}${route.path}</loc>`,
+      ...alternates,
+      '  </url>',
+    ].join('\n');
+  });
+  return [
+    '<?xml version="1.0" encoding="UTF-8"?>',
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"',
+    '        xmlns:xhtml="http://www.w3.org/1999/xhtml">',
+    ...entries,
+    '</urlset>',
+    '',
+  ].join('\n');
 }
 
 /* Content-hashed filenames move /assets/*.css and *.js from `no-cache` to

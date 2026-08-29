@@ -2491,11 +2491,23 @@ section { position: relative; }
   color: var(--ink-muted);
 }
 
+/* Cross-document transitions, native — no client router, no framework. A
+   cheat-sheet site is flipped between, and the flip should not flash white. */
+@view-transition { navigation: auto; }
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after {
     animation-duration: .01ms !important;
     transition-duration: .01ms !important;
+  }
+  /* The blanket rule above does not reach the view-transition pseudos, which
+     animate on their own timeline. Turn the navigation animation off outright
+     rather than making it very fast. */
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
   }
 }
 
