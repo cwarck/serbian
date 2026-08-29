@@ -6,17 +6,17 @@ import { fileURLToPath } from 'node:url';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const errors = [];
 
-const chartDataFiles = {
-  'assets/charts/alphabet-data.js': ['ALPHABET'],
-  'assets/charts/aspect-data.js': ['CONTRAST', 'TIME_ROWS', 'PATTERNS', 'PREFIXES', 'COMMON_PAIRS'],
-  'assets/charts/cases-data.js': ['CASES', 'IDECL', 'WRINKLES', 'ENDING_AXES'],
-  'assets/charts/false-friends-data.js': ['FALSE_FRIEND_GROUPS'],
-  'assets/charts/numbers-data.js': ['CARDINALS', 'NUMBER_BUILDS', 'NOUN_COUNTS', 'ORDINALS'],
-  'assets/charts/pitch-stress-data.js': ['PITCH_ACCENTS', 'PITCH_RULES', 'PITCH_PARADIGMS', 'PITCH_PRIORITY', 'PITCH_READING', 'PITCH_NOTES'],
-  'assets/charts/prepositions-data.js': ['CASE_KEYS', 'PREP_GROUPS'],
-  'assets/charts/pronouns-data.js': ['PERSONAL', 'POSSESSIVES', 'DEMOS', 'QUESTIONS'],
-  'assets/charts/verbs-data.js': ['PRONOUNS', 'VERB_GROUPS', 'IRREGULARS', 'PAST', 'FUTURE', 'CLITICS'],
-};
+const chartModules = [
+  'src/content/alphabet.ts',
+  'src/content/aspect.ts',
+  'src/content/cases.ts',
+  'src/content/false-friends.ts',
+  'src/content/numbers.ts',
+  'src/content/pitch-stress.ts',
+  'src/content/prepositions.ts',
+  'src/content/pronouns.ts',
+  'src/content/verbs.ts',
+];
 
 function rel(file) {
   return path.relative(root, file);
@@ -93,27 +93,17 @@ function loadScriptConverter() {
   return context.window.SerbianFyi;
 }
 
-function loadData(relPath, names) {
-  const source = `${read(relPath)}\nglobalThis.__chartData = { ${names.join(', ')} };`;
-  const context = { console };
-  vm.createContext(context);
-  vm.runInContext(source, context, { filename: relPath });
-  return context.__chartData;
-}
-
-function loadGlossary(relPath) {
-  const context = { window: {}, console };
-  vm.createContext(context);
-  vm.runInContext(read(relPath), context, { filename: relPath });
-  return context.window.GLOSSARY;
-}
 
 const i18n = loadI18n();
 const scriptConverter = loadScriptConverter();
-const data = Object.fromEntries(
-  Object.entries(chartDataFiles).map(([file, names]) => [file, loadData(file, names)])
-);
-const glossary = loadGlossary('data/glossary.js');
+/* Content is TypeScript now; import it instead of running it through a
+   fake-browser shim. The `satisfies` annotations give presence and shape, so
+   what survives below is what types cannot express: values, ordering, and
+   cross-references. */
+const data = Object.fromEntries(await Promise.all(
+  chartModules.map(async file => [file, await import(path.join(root, file))])
+));
+const { GLOSSARY: glossary } = await import(path.join(root, 'src/glossary/glossary.ts'));
 
 function collectHtmlI18nKeys(files) {
   const keys = new Set();
@@ -160,7 +150,7 @@ function collectDataI18nKeys() {
   const add = key => keys.add(key);
   const addCaseKey = key => ['name', 'local', 'q'].forEach(suffix => add(`${key}.${suffix}`));
 
-  const cases = data['assets/charts/cases-data.js'];
+  const cases = data['src/content/cases.ts'];
   cases.CASES.forEach(c => {
     addCaseKey(c.key);
     Object.values(c.endings).forEach(byNumber => {
@@ -176,14 +166,14 @@ function collectDataI18nKeys() {
 
   add('numbers.cardinals');
 
-  const prep = data['assets/charts/prepositions-data.js'];
+  const prep = data['src/content/prepositions.ts'];
   Object.values(prep.CASE_KEYS).forEach(add);
   prep.PREP_GROUPS.forEach(group => add(group.key));
 
-  const falseFriends = data['assets/charts/false-friends-data.js'];
+  const falseFriends = data['src/content/false-friends.ts'];
   falseFriends.FALSE_FRIEND_GROUPS.forEach(group => add(group.key));
 
-  const pronouns = data['assets/charts/pronouns-data.js'];
+  const pronouns = data['src/content/pronouns.ts'];
   pronouns.PERSONAL.forEach(row => add(row.label));
   pronouns.POSSESSIVES.forEach(row => {
     add(row.owner);
@@ -196,7 +186,7 @@ function collectDataI18nKeys() {
   pronouns.QUESTIONS.whose.forEach(row => add(row.label));
   pronouns.QUESTIONS.whoWhat.forEach(row => add(row.key));
 
-  const verbs = data['assets/charts/verbs-data.js'];
+  const verbs = data['src/content/verbs.ts'];
   for (const part of [...verbs.PAST.formula, ...verbs.FUTURE.formula]) {
     if (part.key) add(part.key);
   }
@@ -387,13 +377,13 @@ function validateScriptConverter() {
 }
 
 function validateSerbianContentScript() {
-  const alphabet = data['assets/charts/alphabet-data.js'].ALPHABET;
+  const alphabet = data['src/content/alphabet.ts'].ALPHABET;
   alphabet.forEach((row, index) => {
     validateScriptPair(row.lat, row.cyr, `alphabet[${index}].letter`);
     validateScriptPair(row.wLat, row.wCyr, `alphabet[${index}].word`);
   });
 
-  const cases = data['assets/charts/cases-data.js'];
+  const cases = data['src/content/cases.ts'];
   cases.CASES.forEach((row, caseIndex) => {
     row.examples.forEach((example, exampleIndex) => {
       validateSerbianLatin(example.sr, `cases[${caseIndex}].examples[${exampleIndex}].sr`);
@@ -412,7 +402,7 @@ function validateSerbianContentScript() {
     });
   });
 
-  const numbers = data['assets/charts/numbers-data.js'];
+  const numbers = data['src/content/numbers.ts'];
   numbers.CARDINALS.forEach((row, rowIndex) => {
     validateSerbianLatin(row.sr, `cardinals[${rowIndex}].sr`);
     if (row.end) validateSerbianLatin(row.end, `cardinals[${rowIndex}].end`);
@@ -421,7 +411,7 @@ function validateSerbianContentScript() {
   numbers.NOUN_COUNTS.forEach((row, rowIndex) => eachString(row.examples, value => validateSerbianLatin(value, `nounCounts[${rowIndex}].examples`)));
   numbers.ORDINALS.forEach((row, rowIndex) => eachString(row.forms, value => validateSerbianLatin(value, `ordinals[${rowIndex}].forms`)));
 
-  const prep = data['assets/charts/prepositions-data.js'];
+  const prep = data['src/content/prepositions.ts'];
   prep.PREP_GROUPS.forEach((group, groupIndex) => {
     group.rows.forEach((row, rowIndex) => {
       validateSerbianLatin(row.prep, `prepGroups[${groupIndex}].rows[${rowIndex}].prep`);
@@ -429,7 +419,7 @@ function validateSerbianContentScript() {
     });
   });
 
-  const pronouns = data['assets/charts/pronouns-data.js'];
+  const pronouns = data['src/content/pronouns.ts'];
   pronouns.PERSONAL.forEach((row, rowIndex) => {
     ['subject', 'object', 'datloc', 'inst'].forEach(field => validateSerbianLatin(row[field], `pronouns.personal[${rowIndex}].${field}`));
   });
@@ -438,7 +428,7 @@ function validateSerbianContentScript() {
   pronouns.QUESTIONS.whose.forEach((row, rowIndex) => eachString(row.forms, value => validateSerbianLatin(value, `pronouns.questions.whose[${rowIndex}].forms`)));
   pronouns.QUESTIONS.whoWhat.forEach((row, rowIndex) => ['who', 'what'].forEach(field => validateSerbianLatin(row[field], `pronouns.questions.whoWhat[${rowIndex}].${field}`)));
 
-  const verbs = data['assets/charts/verbs-data.js'];
+  const verbs = data['src/content/verbs.ts'];
   verbs.PRONOUNS.forEach((row, rowIndex) => validateSerbianLatin(row.label, `verbs.pronouns[${rowIndex}].label`));
   verbs.VERB_GROUPS.forEach((group, groupIndex) => {
     eachString(group.endings, value => validateSerbianLatin(value, `verbGroups[${groupIndex}].endings`));
@@ -460,7 +450,7 @@ function validateSerbianContentScript() {
   ['merged', 'exceptions'].forEach(field => eachString(verbs.FUTURE[field], value => validateSerbianLatin(value, `verbs.FUTURE.${field}`)));
   eachString(verbs.CLITICS, value => validateSerbianLatin(value, 'verbs.CLITICS'));
 
-  const aspect = data['assets/charts/aspect-data.js'];
+  const aspect = data['src/content/aspect.ts'];
   aspect.CONTRAST.forEach((row, rowIndex) => ['impEx', 'perfEx'].forEach(field => validateSerbianLatin(row[field].sr, `aspect.contrast[${rowIndex}].${field}.sr`)));
   aspect.TIME_ROWS.forEach((row, rowIndex) => ['imp', 'perf'].forEach(field => validateSerbianLatin(row[field].sr, `aspect.time[${rowIndex}].${field}.sr`)));
   aspect.PATTERNS.forEach((row, rowIndex) => ['imp', 'perf'].forEach(field => validateSerbianLatin(row[field], `aspect.patterns[${rowIndex}].${field}`)));
@@ -473,7 +463,7 @@ function validateSerbianContentScript() {
     validateSerbianLatin(row.ex.sr, `aspect.commonPairs[${rowIndex}].ex.sr`);
   });
 
-  const pitch = data['assets/charts/pitch-stress-data.js'];
+  const pitch = data['src/content/pitch-stress.ts'];
   pitch.PITCH_ACCENTS.forEach((row, rowIndex) => row.examples.forEach((example, exampleIndex) => validateSerbianLatin(example.sr, `pitch.accents[${rowIndex}].examples[${exampleIndex}].sr`)));
   pitch.PITCH_RULES.forEach((row, rowIndex) => eachString(row.examples, value => validateSerbianLatin(value, `pitch.rules[${rowIndex}].examples`)));
   pitch.PITCH_PARADIGMS.forEach((row, rowIndex) => {
@@ -481,7 +471,7 @@ function validateSerbianContentScript() {
     row.cells.forEach((cell, cellIndex) => validateSerbianLatin(cell.sr, `pitch.paradigms[${rowIndex}].cells[${cellIndex}].sr`));
   });
 
-  const falseFriends = data['assets/charts/false-friends-data.js'];
+  const falseFriends = data['src/content/false-friends.ts'];
   falseFriends.FALSE_FRIEND_GROUPS.forEach((group, groupIndex) => {
     group.rows.forEach((row, rowIndex) => {
       validateSerbianLatin(row.sr, `falseFriends[${groupIndex}].rows[${rowIndex}].sr`);
@@ -503,7 +493,7 @@ function validateSerbianContentScript() {
                                    gains nothing from the marker and can only
                                    mis-flip)
      standalone prose            → the payload must be an attested lemma in
-                                   data/glossary.js
+                                   src/glossary/glossary.ts
 
    Abstract shapes (-a, -ov-, -∅, ...) and bare letters (k, g, h) name patterns
    rather than words and are exempt. Runtime-interpolated payloads are already
@@ -521,7 +511,7 @@ function isAbstractShape(token) {
 
 /* ALPHABET stores each letter as an upper/lower pair ("A a", "Dž dž"). */
 const alphabetLetters = new Set(
-  data['assets/charts/alphabet-data.js'].ALPHABET
+  data['src/content/alphabet.ts'].ALPHABET
     .flatMap(row => [...row.lat.split(/\s+/), ...row.cyr.split(/\s+/)])
     .map(letter => letter.toLowerCase())
     .filter(Boolean)
@@ -607,7 +597,7 @@ function validateSerbianMarkers() {
 }
 
 function validateAlphabet() {
-  const { ALPHABET } = data['assets/charts/alphabet-data.js'];
+  const { ALPHABET } = data['src/content/alphabet.ts'];
   expectArray(ALPHABET, 'alphabet', 'ALPHABET');
   expect(ALPHABET.length === 30, 'alphabet', 'ALPHABET must contain 30 letters');
   ALPHABET.forEach((row, index) => {
@@ -620,7 +610,7 @@ function validateAlphabet() {
 }
 
 function validateCases() {
-  const { CASES, IDECL, WRINKLES, ENDING_AXES } = data['assets/charts/cases-data.js'];
+  const { CASES, IDECL, WRINKLES, ENDING_AXES } = data['src/content/cases.ts'];
   const caseAbbrs = ['NOM', 'GEN', 'DAT', 'AKU', 'VOK', 'INS', 'LOK'];
   const genders = ['m', 'f', 'n'];
   const numbers = ['sg', 'pl'];
@@ -658,7 +648,7 @@ function validateCases() {
 }
 
 function validateNumbers() {
-  const { CARDINALS, NUMBER_BUILDS, NOUN_COUNTS, ORDINALS } = data['assets/charts/numbers-data.js'];
+  const { CARDINALS, NUMBER_BUILDS, NOUN_COUNTS, ORDINALS } = data['src/content/numbers.ts'];
   expectArray(CARDINALS, 'numbers', 'CARDINALS');
   CARDINALS.forEach((row, index) => {
     const scope = `cardinals[${index}]`;
@@ -687,7 +677,7 @@ function validateNumbers() {
 }
 
 function validatePrepositions() {
-  const { CASE_KEYS, PREP_GROUPS } = data['assets/charts/prepositions-data.js'];
+  const { CASE_KEYS, PREP_GROUPS } = data['src/content/prepositions.ts'];
   for (const key of ['gen', 'dat', 'aku', 'ins', 'lok']) expectString(CASE_KEYS[key], 'prepositions.CASE_KEYS', key);
   PREP_GROUPS.forEach((group, groupIndex) => {
     const scope = `prepGroups[${groupIndex}]`;
@@ -710,7 +700,7 @@ function validatePrepositions() {
 }
 
 function validateAspect() {
-  const { CONTRAST, TIME_ROWS, PATTERNS, PREFIXES, COMMON_PAIRS } = data['assets/charts/aspect-data.js'];
+  const { CONTRAST, TIME_ROWS, PATTERNS, PREFIXES, COMMON_PAIRS } = data['src/content/aspect.ts'];
   CONTRAST.forEach((row, index) => {
     const scope = `aspect.contrast[${index}]`;
     ['key', 'imp', 'perf'].forEach(field => expectLocalized(row[field], scope, field));
@@ -755,7 +745,7 @@ function validateAspect() {
 }
 
 function validatePitch() {
-  const chart = data['assets/charts/pitch-stress-data.js'];
+  const chart = data['src/content/pitch-stress.ts'];
   chart.PITCH_ACCENTS.forEach((row, index) => {
     const scope = `pitch.accents[${index}]`;
     ['key', 'mark', 'pattern'].forEach(field => expectString(row[field], scope, field));
@@ -777,7 +767,7 @@ function validatePitch() {
 }
 
 function validatePronouns() {
-  const { PERSONAL, POSSESSIVES, DEMOS, QUESTIONS } = data['assets/charts/pronouns-data.js'];
+  const { PERSONAL, POSSESSIVES, DEMOS, QUESTIONS } = data['src/content/pronouns.ts'];
   PERSONAL.forEach((row, index) => {
     const scope = `pronouns.personal[${index}]`;
     ['label', 'subject', 'object', 'datloc', 'inst'].forEach(field => expectString(row[field], scope, field));
@@ -797,7 +787,7 @@ function validatePronouns() {
 }
 
 function validateVerbs() {
-  const { PRONOUNS, VERB_GROUPS, IRREGULARS, PAST, FUTURE, CLITICS } = data['assets/charts/verbs-data.js'];
+  const { PRONOUNS, VERB_GROUPS, IRREGULARS, PAST, FUTURE, CLITICS } = data['src/content/verbs.ts'];
   expectArray(PRONOUNS, 'verbs', 'PRONOUNS');
   VERB_GROUPS.forEach((group, index) => {
     const scope = `verbGroups[${index}]`;
@@ -823,7 +813,7 @@ function validateVerbs() {
 }
 
 function validateFalseFriends() {
-  const { FALSE_FRIEND_GROUPS } = data['assets/charts/false-friends-data.js'];
+  const { FALSE_FRIEND_GROUPS } = data['src/content/false-friends.ts'];
   FALSE_FRIEND_GROUPS.forEach((group, groupIndex) => {
     const scope = `falseFriends[${groupIndex}]`;
     expectString(group.key, scope, 'key');
@@ -905,14 +895,14 @@ function chartLemmas() {
   const out = [];
   const add = (lemma, where) => out.push({ lemma, where });
 
-  const verbs = data['assets/charts/verbs-data.js'];
+  const verbs = data['src/content/verbs.ts'];
   verbs.VERB_GROUPS.forEach((group, gi) => {
     group.verbs.forEach((v, i) => add(v, `verbGroups[${gi}].verbs[${i}]`));
     add(group.example.infinitive, `verbGroups[${gi}].example.infinitive`);
   });
   verbs.IRREGULARS.forEach((row, i) => add(row.title, `irregulars[${i}].title`));
 
-  const aspect = data['assets/charts/aspect-data.js'];
+  const aspect = data['src/content/aspect.ts'];
   aspect.PATTERNS.forEach((row, i) => {
     add(row.imp, `aspect.patterns[${i}].imp`);
     add(row.perf, `aspect.patterns[${i}].perf`);
@@ -922,19 +912,19 @@ function chartLemmas() {
     add(row.perf, `aspect.commonPairs[${i}].perf`);
   });
 
-  const prep = data['assets/charts/prepositions-data.js'];
+  const prep = data['src/content/prepositions.ts'];
   prep.PREP_GROUPS.forEach((group, gi) => {
     group.rows.forEach((row, ri) => {
       row.prep.split('/').forEach((piece, pi) => add(piece.trim(), `prepGroups[${gi}].rows[${ri}].prep[${pi}]`));
     });
   });
 
-  const falseFriends = data['assets/charts/false-friends-data.js'];
+  const falseFriends = data['src/content/false-friends.ts'];
   falseFriends.FALSE_FRIEND_GROUPS.forEach((group, gi) => {
     group.rows.forEach((row, ri) => add(row.sr, `falseFriends[${gi}].rows[${ri}].sr`));
   });
 
-  const alphabet = data['assets/charts/alphabet-data.js'].ALPHABET;
+  const alphabet = data['src/content/alphabet.ts'].ALPHABET;
   alphabet.forEach((row, i) => add(row.wLat, `alphabet[${i}].wLat`));
 
   return out;
