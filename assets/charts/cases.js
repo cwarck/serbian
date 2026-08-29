@@ -1,8 +1,3 @@
-/* Three regular nouns walking through all seven cases.
-   Order matches CASES — NOM, GEN, DAT, AKU, VOK, INS, LOK.
-   Picked for full regularity: no fleeting-a, no -ov- infix, no sibilant
-   softening (ženi is straight -i, not the ruka→ruci shift). */
-
 function dict() {
   const lang = document.documentElement.getAttribute('lang') || 'en';
   return (window.I18N && window.I18N[lang]) || {};
@@ -37,17 +32,18 @@ function prepToken(p) {
 }
 
 /* ── View settings (persisted), surfaced as rows in the site settings menu.
-   detail: basic (head + signature ending + one example) vs detailed (full
-   grid + off-paradigm packs); sync: syncretism recession on/off. ── */
-const LS_DETAIL = 'as_detail';
+   sync: syncretism recession on/off. ── */
 const LS_SYNC = 'as_syncretism';
-const LS_HINT = 'as_hint_detail';
 function lsGet(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
 function lsSet(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
-function detailMode() { return lsGet(LS_DETAIL) === 'detailed' ? 'detailed' : 'basic'; }
+function lsDel(k) { try { localStorage.removeItem(k); } catch (e) {} }
 function syncOn() { return lsGet(LS_SYNC) !== 'off'; }
-function applyDetail() { document.documentElement.setAttribute('data-detail', detailMode()); }
 function applySync() { document.body.classList.toggle('is-syncretism', syncOn()); }
+
+/* The Simple/Detailed toggle is gone; sweep its keys so returning users don't
+   carry a dead `data-detail` preference forever. */
+lsDel('as_detail');
+lsDel('as_hint_detail');
 
 /* Spotlight changed letters in a sound-change pair: walk common prefix and
    suffix from both ends, wrap the divergent middle in <span class="lit">.
@@ -137,20 +133,6 @@ function computeSyncretism() {
   return map;
 }
 const SYNC = computeSyncretism();
-
-/* Per-noun syncretism for the CAST hero: walk one noun's seven singular
-   forms; a form that repeats an earlier case is an echo. In the cast, only
-   the changed ending carries tone, so an echo simply loses that highlight —
-   leaving only the cases that introduce a new ending lit. */
-function castSyncretism(forms) {
-  const firstSeen = new Map();
-  return forms.map((f, i) => {
-    const key = String(f);
-    if (firstSeen.has(key)) return { novel: false, source: firstSeen.get(key) };
-    firstSeen.set(key, CASES[i].abbr);
-    return { novel: true, source: null };
-  });
-}
 
 /* Tone-dotted chip: on an echo cell, name the case the shape came from —
    the chip's data-tone paints it in that case's hue. */
@@ -244,52 +226,7 @@ function renderCases() {
       </div>`;
   };
 
-  /* Basic mode: one concrete noun per gender (pilot / žena / selo) declined
-     down the seven cases — rows × {M,F,N} singular. Endings stay abstract in
-     Detailed; here the whole word is shown, the changed letters lit in tone.
-     Syncretism recession applies per noun: an echo loses its highlight and
-     names the case it borrows from. Off-paradigm packs hidden by CSS. */
-  if (detailMode() === 'basic') {
-    const genderLabel = g => d['cases.gender.' + g] || g.toUpperCase();
-    const castSync = CAST.map(cast => castSyncretism(cast.forms.sg));
-    const headRow = `
-      <div class="cast-row cast-row-head" role="row">
-        <span class="cast-cell cast-cell-head" role="rowheader"></span>
-        ${CAST.map(cast => `
-          <span class="cast-cell cast-cell-head cast-gender-head" data-gender="${cast.gender}" role="columnheader">${genderLabel(cast.gender)}</span>
-        `).join('')}
-      </div>`;
-    const rows = CASES.map((c, i) => {
-      const cells = CAST.map((cast, ci) => {
-        const base = cast.forms.sg[0];
-        const form = cast.forms.sg[i];
-        const hl = i === 0 ? cast.word : diffHL(base, form).to;
-        const sync = castSync[ci][i];
-        const echo = !sync.novel;
-        return `
-          <span class="cast-cell${echo ? ' is-echo' : ''}" role="cell" data-tone="${c.tone}" data-gender="${cast.gender}" aria-label="${c.abbr}, ${genderLabel(cast.gender)}: ${SerbianFyi.sr(form)}${echo ? ', = ' + sync.source : ''}">
-            <span class="cast-form" lang="sr">${SerbianFyi.srHTML(hl)}</span>
-            ${echo ? pillsHTML([sync.source]) : ''}
-          </span>`;
-      }).join('');
-      return `
-        <div class="cast-row" id="${caseAnchor(c.key)}" data-tone="${c.tone}" role="row">
-          <div class="cast-cell cast-case" data-tone="${c.tone}" role="rowheader">
-            <div class="case-head-title">
-              <h3><span lang="sr">${SerbianFyi.sr(d[c.key + '.local'] || '')}</span><em>${d[c.key + '.name'] || ''}</em></h3>
-              <span class="case-tag">${c.abbr}</span>
-            </div>
-          </div>
-          ${cells}
-        </div>`;
-    }).join('');
-    list.className = 'cast-table cast-basic';
-    list.setAttribute('role', 'table');
-    list.innerHTML = headRow + rows;
-    return;
-  }
   list.className = 'case-list';
-  list.removeAttribute('role');
 
   const caseRows = CASES.map((c, i) => {
     const endCells = ENDING_AXES.map(ax => `
@@ -333,7 +270,6 @@ function renderCases() {
 function renderExtras() {
   const root = document.getElementById('extraPack');
   if (!root) return;
-  if (detailMode() === 'basic') { root.innerHTML = ''; return; }
   const d = dict();
   const lang = currentLang();
 
@@ -468,7 +404,7 @@ function setupCaseStripVisibility() {
 function setupScrollSpy() {
   const update = () => {
     const cells = document.querySelectorAll('.case-strip-cell');
-    const rows = document.querySelectorAll('#caseList .case-row[id], #caseList .cast-row[id]');
+    const rows = document.querySelectorAll('#caseList .case-row[id]');
     if (!cells.length || !rows.length) return;
     const off = parseInt(getComputedStyle(document.documentElement)
       .getPropertyValue('--sticky-offset')) || 0;
@@ -566,94 +502,17 @@ function injectSettings() {
   const slot = (window.SerbianFyi && window.SerbianFyi.settingsExtras)
     || document.getElementById('settingsExtras');
   if (!slot || slot.childElementCount) return;
-  slot.appendChild(settingsRow('cases.detail', [
-    { value: 'basic',    labelKey: 'cases.detail.basic' },
-    { value: 'detailed', labelKey: 'cases.detail.detailed' },
-  ], detailMode, (v) => { lsSet(LS_DETAIL, v); applyDetail(); renderAll(); updateStickyOffset(); }));
   slot.appendChild(settingsRow('cases.syncretism', [
     { value: 'on',  labelKey: 'cases.syncretism.on' },
     { value: 'off', labelKey: 'cases.syncretism.off' },
   ], () => (syncOn() ? 'on' : 'off'), (v) => { lsSet(LS_SYNC, v); applySync(); }));
 }
 
-/* First-visit coachmark: a one-time nudge anchored under the settings button,
-   pointing newcomers (who land in Basic) at the Detailed table they can't see.
-   Shown once — dismissed and remembered (as_hint_detail) when the user opens
-   settings, clicks away, or presses Escape. It tracks the sticky gear on
-   scroll/resize (reposition, not dismiss), so reading the list won't dismiss it. */
-function setupDetailCoachmark() {
-  if (!document.getElementById('caseList')) return;       // cases page only
-  if (lsGet(LS_HINT) === 'seen') return;                  // already shown
-  if (detailMode() !== 'basic') { lsSet(LS_HINT, 'seen'); return; } // nothing to nudge toward
-  const btn = document.querySelector('[data-settings-toggle]');
-  if (!btn) return;
-
-  const coach = document.createElement('div');
-  coach.className = 'coachmark';
-  coach.id = 'detailCoach';
-  coach.setAttribute('role', 'status');
-  const body = tCases('cases.hint.detail');
-  coach.innerHTML =
-    `<div class="coachmark-card">
-      <p class="coachmark-body" data-i18n="cases.hint.detail">${body}</p>
-      <button type="button" class="coachmark-cta" data-i18n="cases.hint.cta">${tCases('cases.hint.cta')}</button>
-    </div>`;
-  document.body.appendChild(coach);
-
-  const position = () => {
-    const r = btn.getBoundingClientRect();
-    const gutter = 12;
-    const w = coach.firstElementChild.offsetWidth || 260;
-    let left = r.right - w;
-    left = Math.max(gutter, Math.min(left, window.innerWidth - w - gutter));
-    coach.style.left = left + 'px';
-    coach.style.top = (r.bottom + 12) + 'px';
-    // Point the arrow at the gear's horizontal centre.
-    coach.style.setProperty('--arrow-x', (r.left + r.width / 2 - left) + 'px');
-  };
-
-  let done = false;
-  const dismiss = (remember) => {
-    if (done) return; done = true;
-    if (remember) lsSet(LS_HINT, 'seen');
-    coach.classList.remove('is-open');
-    window.removeEventListener('resize', onResize);
-    window.removeEventListener('scroll', onResize);
-    document.removeEventListener('click', onOutside, true);
-    document.removeEventListener('keydown', onKey);
-    document.removeEventListener('langchange', onLang);
-    setTimeout(() => coach.remove(), 200);
-  };
-  const onResize = () => position();
-  const onOutside = (e) => { if (!coach.contains(e.target)) dismiss(true); };
-  const onKey = (e) => { if (e.key === 'Escape') dismiss(true); };
-  const onLang = () => dismiss(false);   // re-render in flight; bow out quietly
-
-  coach.querySelector('.coachmark-cta').addEventListener('click', (e) => {
-    // Stop this click reaching app.js's document-level outside-click handler,
-    // which would otherwise see a click outside the just-opened menu and shut it.
-    e.stopPropagation();
-    dismiss(true);
-    btn.click();   // open the settings menu where Detailed lives
-  });
-
-  requestAnimationFrame(() => {
-    position();
-    coach.classList.add('is-open');
-    window.addEventListener('resize', onResize);
-    window.addEventListener('scroll', onResize, { passive: true });
-    document.addEventListener('click', onOutside, true);
-    document.addEventListener('keydown', onKey);
-    document.addEventListener('langchange', onLang);
-  });
-}
-
-applyDetail();
 applySync();
 renderAll();
 updateStickyOffset();
 setupCaseStripVisibility();
 setupScrollSpy();
-function setupExtras() { injectSettings(); setupDetailCoachmark(); }
+function setupExtras() { injectSettings(); }
 if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', setupExtras);
 else setupExtras();

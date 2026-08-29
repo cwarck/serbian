@@ -9,7 +9,7 @@ const errors = [];
 const chartDataFiles = {
   'assets/charts/alphabet-data.js': ['ALPHABET'],
   'assets/charts/aspect-data.js': ['CONTRAST', 'TIME_ROWS', 'PATTERNS', 'PREFIXES', 'COMMON_PAIRS'],
-  'assets/charts/cases-data.js': ['CASES', 'IDECL', 'WRINKLES', 'CAST', 'ENDING_AXES'],
+  'assets/charts/cases-data.js': ['CASES', 'IDECL', 'WRINKLES', 'ENDING_AXES'],
   'assets/charts/false-friends-data.js': ['FALSE_FRIEND_GROUPS'],
   'assets/charts/numbers-data.js': ['CARDINALS', 'NUMBER_BUILDS', 'NOUN_COUNTS', 'ORDINALS'],
   'assets/charts/pitch-stress-data.js': ['PITCH_ACCENTS', 'PITCH_RULES', 'PITCH_PARADIGMS', 'PITCH_PRIORITY', 'PITCH_READING', 'PITCH_NOTES'],
@@ -410,10 +410,6 @@ function validateSerbianContentScript() {
       validateSerbianLatin(example.to, `wrinkles[${rowIndex}].examples[${exampleIndex}].to`);
     });
   });
-  cases.CAST.forEach((row, rowIndex) => {
-    validateSerbianLatin(row.word, `cast[${rowIndex}].word`);
-    eachString(row.forms, value => validateSerbianLatin(value, `cast[${rowIndex}].forms`));
-  });
 
   const numbers = data['assets/charts/numbers-data.js'];
   numbers.CARDINALS.forEach((row, rowIndex) => {
@@ -623,7 +619,7 @@ function validateAlphabet() {
 }
 
 function validateCases() {
-  const { CASES, IDECL, WRINKLES, CAST, ENDING_AXES } = data['assets/charts/cases-data.js'];
+  const { CASES, IDECL, WRINKLES, ENDING_AXES } = data['assets/charts/cases-data.js'];
   const caseAbbrs = ['NOM', 'GEN', 'DAT', 'AKU', 'VOK', 'INS', 'LOK'];
   const genders = ['m', 'f', 'n'];
   const numbers = ['sg', 'pl'];
@@ -653,7 +649,6 @@ function validateCases() {
     expectArray(row.examples, scope, 'examples');
   });
 
-  expectArray(CAST, 'cases', 'CAST');
   expectArray(ENDING_AXES, 'cases', 'ENDING_AXES');
   expectArray(IDECL.cases, 'cases', 'IDECL.cases');
   expectArray(IDECL.sg, 'cases', 'IDECL.sg');

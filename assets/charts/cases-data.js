@@ -254,24 +254,6 @@ const WRINKLES = [
   },
 ];
 
-const CAST = [
-  { gender: 'm', word: 'pilot',
-    forms: {
-      sg: ['pilot','pilota','pilotu','pilota','pilote','pilotom','pilotu'],
-      pl: ['piloti','pilota','pilotima','pilote','piloti','pilotima','pilotima'],
-    } },
-  { gender: 'f', word: 'žena',
-    forms: {
-      sg: ['žena','žene','ženi','ženu','ženo','ženom','ženi'],
-      pl: ['žene','žena','ženama','žene','žene','ženama','ženama'],
-    } },
-  { gender: 'n', word: 'selo',
-    forms: {
-      sg: ['selo','sela','selu','selo','selo','selom','selu'],
-      pl: ['sela','sela','selima','sela','sela','selima','selima'],
-    } },
-];
-
 const ENDING_AXES = [
   { key: 'm-sg', g: 'm', n: 'sg' },
   { key: 'm-pl', g: 'm', n: 'pl' },

@@ -17,14 +17,9 @@ window.I18N = {
     'settings.theme.system': 'Auto',
     'settings.theme.light': 'Light',
     'settings.theme.dark': 'Dark',
-    'cases.detail': 'Mode',
-    'cases.detail.basic': 'Simple',
-    'cases.detail.detailed': 'Detailed',
     'cases.syncretism': 'Shared endings',
     'cases.syncretism.on': 'On',
     'cases.syncretism.off': 'Off',
-    'cases.hint.detail': 'Want every ending? The full table — all genders, examples and prepositions — lives in <strong>Detailed</strong>.',
-    'cases.hint.cta': 'Open settings',
 
     'chart.index.label': 'Charts',
 
@@ -258,14 +253,9 @@ window.I18N = {
     'settings.theme.system': 'Авто',
     'settings.theme.light': 'Светлая',
     'settings.theme.dark': 'Тёмная',
-    'cases.detail': 'Режим',
-    'cases.detail.basic': 'Просто',
-    'cases.detail.detailed': 'Подробно',
     'cases.syncretism': 'Общие окончания',
     'cases.syncretism.on': 'Вкл',
     'cases.syncretism.off': 'Выкл',
-    'cases.hint.detail': 'Нужны все окончания? Полная таблица — все роды, примеры и предлоги — в режиме <strong>Подробно</strong>.',
-    'cases.hint.cta': 'Открыть настройки',
 
     'chart.index.label': 'Таблицы',
 

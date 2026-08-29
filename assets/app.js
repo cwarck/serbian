@@ -430,7 +430,7 @@
   /* Consolidate the masthead toggles behind one button + floating panel.
      Controls are RELOCATED (not recreated), so the data-attribute wiring in
      init() keeps working. Page scripts append page-specific rows to the
-     exposed `SerbianFyi.settingsExtras` slot (e.g. the cases Detail toggle). */
+     exposed `SerbianFyi.settingsExtras` slot (e.g. cases' shared-endings row). */
   const SLIDERS_SVG = `
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
       <line x1="4" y1="9" x2="20" y2="9"></line>
