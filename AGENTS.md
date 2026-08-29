@@ -71,36 +71,53 @@ The scale is the rulebook. Pick a role; the token decides the size.
 
 ## Colors
 
-Flexoki accents, one hue per meaning. Orange is the brand's marker ink and carries zero grammatical meaning; the six inflected cases each own one of the remaining accents. The full palette and semantic aliases live in `src/styles/styles.css` `:root` (`--fx-*` scale → `--tone-*` semantic).
+Flexoki accents. Colour encodes **two things at once by splitting the channel**: chroma names the *axis*, hue names the *value within* it. The full palette and semantic aliases live in `src/styles/styles.css` `:root` (`--fx-*` scale → `--tone-*` and `--facet-*` semantic).
 
-**Semantic map** (site-wide, single meaning per hue):
+| Tier | Chroma | Owns | Mechanism |
+| ---- | ------ | ---- | --------- |
+| 1 — accents | C .085–.165 | the case axis, alone | `[data-tone]` → `--tone-*` |
+| 2 — facets | C .050 | gender (and later axes) | `[data-gender]` → `--facet-*` |
+| 0 — ink | C 0 | prose, structure, the unmarked | `--ink-*` |
 
-| Hue       | Meaning                                                                                     |
-| --------- | ------------------------------------------------------------------------------------------- |
-| orange    | brand/marker ink — brand mark, `::selection`, focus rings, hovers, verb present family. Never a grammatical category |
-| red       | VOK                                                                                         |
-| yellow    | DAT                                                                                         |
-| green     | LOK                                                                                         |
-| cyan      | GEN                                                                                         |
-| blue      | INS                                                                                         |
-| purple    | AKU                                                                                         |
-| magenta   | unassigned — reserved for a future cross-chart axis                                         |
-| ink-tones | NOM, genders (M/N/F), body text, alphabet stripes, non-grammatical categories               |
+The gap between the bands **is** the encoding: tier 2 tops out at C .0511 against the lowest accent at C .0849, far enough that a facet never reads as a faded case. Lightness is matched across tiers — a facet is quieter, never dimmer. `validateFacets()` in `tools/validate.mjs` measures the gap per ground; it is not a comment to be trusted.
+
+**Semantic map** (site-wide, single meaning per hue within a tier):
+
+| Tier | Hue       | Meaning                                                                                     |
+| ---- | --------- | ------------------------------------------------------------------------------------------- |
+| 1 | orange    | brand/marker ink — brand mark, `::selection`, focus rings, hovers, verb present family. Never a grammatical category |
+| 1 | red       | VOK                                                                                         |
+| 1 | yellow    | DAT                                                                                         |
+| 1 | green     | LOK                                                                                         |
+| 1 | cyan      | GEN                                                                                         |
+| 1 | blue      | INS                                                                                         |
+| 1 | purple    | AKU                                                                                         |
+| 1 | magenta   | unassigned — an empty tier-1 seat, spent only if Serbian grows an eighth case               |
+| 2 | green 150° | M                                                                                          |
+| 2 | violet 285° | N                                                                                         |
+| 2 | amber 55° | F                                                                                           |
+| 0 | ink-tones | NOM, body text, alphabet stripes, non-grammatical categories                                 |
 
 **Mechanisms:**
 
 - **Case tone.** Set `data-tone="nom|gen|dat|aku|vok|ins|lok"` on the element. The `[data-tone]` block in `styles.css` resolves `--tone` to the right Flexoki accent; descendant elements pull through `color: var(--tone, var(--accent))`. A `:where([data-tone])` baseline maps any other tone value to `--ink-soft`, so legacy chart-internal categories quietly fall to neutral. The `var(--accent)` fallback paints tone-less elements brand orange by design — that is the marker ink, not a case.
 - **Combined case labels** (e.g., "Acc / Gen" in pronouns). Split the label on `/` and wrap each half in its own `data-tone` span. See `colHeader()` in `src/render/pronouns.ts`.
-- **Gender labels.** Set `data-gender="m|n|f"` on the labelled element. Genders carry no hue — scoped CSS renders the labels in full ink (`--ink`), one step above the muted apparatus labels around them. Position + label carry the axis.
+- **Gender facet.** Set `data-gender="m|n|f"` on a `.gender-unit`. Genders resolve to `--facet-*`, never `--tone-*`. Every call site goes through `genderUnit()` in `src/render/chart.ts` — no renderer hand-writes the markup, which is what makes the letter attestation enforceable. The chip label comes from `t()`, never `sr()`: it is apparatus, and a `class="s"` wrapper inside a `.gender-tag` would let the script toggle transliterate the gender letters.
+- **The chip silhouette.** M square / N diagonal pair / F pill, all driven from `--facet-r`. The letter identifies a chip in every channel already; the silhouette is not for reading one chip, it is for **not having to** — letters need fixation, silhouette groups pre-attentively, so a reader finds every feminine in a paradigm without decoding a mark. Judge any change to it on grouping across a grid, not on legibility of one chip.
 - **Verb present forms.** All four present-tense conjugation buckets plus irregulars share the brand orange via `[data-tone]` values `im|am|em|jem|irr` — marker ink ("here's the live paradigm"), not a grammatical hue. Past and future fall to the ink-soft baseline.
 
 **Rules:**
 
 - NOM is unmarked — it takes an ink-tone, not an accent. NOM is the dictionary form; the other six cases inflect from it.
 - Orange is brand-only. No grammatical category may claim it — a case mapped to `--tone-orange` would read as chrome, and chrome would read as grammar.
-- One hue, one meaning. If a new chart needs a categorical color, check first whether the category genuinely is a case. If it isn't, prefer ink-tones or typographic differentiation (line style, weight, position) over a fresh hue. Magenta stays in reserve — don't spend it casually.
-- Pronouns, numbers, and aspect charts carry no per-category color. Only the case axis gets hues; genders and chart-internal categories use ink.
+- One tier, one axis; one hue, one meaning **within** a tier. If a new chart needs a categorical color, ask which axis it is: a case goes in tier 1, any other cross-chart axis goes in tier 2 at C .050. Nothing gets a fresh tier-1 accent. Magenta stays in reserve — an eighth case, nothing else.
+- **Colour is the fast path; the letter is the guarantee.** Under deuteranopia the tier-1 accents already collapse (VOK / DAT / LOK → three olives) and tier-2 M and F converge. Every facet-coloured mark prints its abbreviation, permanently — `validateFacets()` checks it against the rendered tree, per locale.
+- **A facet mark is a solid fill with a knockout letter, never a tint with a coloured letter.** Measured: a facet letter on a 16% facet tint is 4.03:1 light and 2.92:1 dark, and re-solving L cannot save it — on a 16% tint the *ceiling* is 4.90:1 on dark ground and only for a pure-white letter. Knockout-on-fill is the same colour pair as fill-on-ground, so the solved lightnesses hold at 4.61–4.63:1 on both grounds. The chip border runs at full facet, never a tint (38% measures 1.42:1 in light, under even the 3:1 non-text floor).
+- **Number is never colour and never a chip.** It is a band — `band.sg` / `band.pl` heading a run of gender chips. A chip says which gender; the band it sits in says which number.
+- **The one place two tiers meet** is inside an ending cell: the chip is facet-filled while the ending it holds stays case-hued (`.cell .end`). Deliberate — the row's subject is the case, and C .050 against C .085+ reads as two registers rather than one faded one. Don't "fix" it. If it ever fails on device the answer is `.gender-unit .end { color: var(--ink) }`, not a facet-coloured ending.
+- Pronouns, numbers, and aspect charts carry no per-category color. Only the case axis gets tier-1 hues; only gender gets tier-2; chart-internal categories use ink.
 - Alphabet uses line-style differentiation (solid vs dashed ink stripe), not color. The "unique to Serbian" and "looks Latin, sounds different" categories sit outside the grammatical color system.
+- **Forced colours.** Facets need no opt-out. `border-radius` survives HCM untouched, so the corner family still groups; fill and border are overridden, and because the letter is *knocked out* rather than tinted, fill and text both take system colours and stay legible. This is why the `forced-colors` block only opts out the decorative case bars.
 
 ## Architecture
 
