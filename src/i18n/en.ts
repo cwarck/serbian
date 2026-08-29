@@ -219,6 +219,11 @@ export const en = {
   'cases.number.sg': 'Sg',
   'cases.number.pl': 'Pl',
 
+  /* Band headings over the ending chips. cases.number.* is an inline axis
+     label — too clipped to head a band. */
+  'band.sg': 'Singular',
+  'band.pl': 'Plural',
+
 
   'cases.extra.title': 'Feminines without <i>-a</i>',
   'cases.extra.gloss': 'love',

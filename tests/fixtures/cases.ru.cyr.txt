@@ -73,9 +73,15 @@ NOM
 </p>
 </header>
 </div>
-<div class="case-cell case-cell-end" data-axis="m-sg" data-gender="m">
+<div class="case-cell case-cell-band" data-band="sg">
 <span class="cell-axis">
-М.Ед.
+Ед. число
+</span>
+</div>
+<div class="case-cell case-cell-end" data-axis="m-sg">
+<span class="gender-unit" data-gender="m">
+<span class="gender-tag">
+М
 </span>
 <span class="cell">
 <span class="end">
@@ -84,10 +90,45 @@ NOM
 </span>
 </span>
 </span>
+</span>
 </div>
-<div class="case-cell case-cell-end" data-axis="m-pl" data-gender="m">
+<div class="case-cell case-cell-end" data-axis="n-sg">
+<span class="gender-unit" data-gender="n">
+<span class="gender-tag">
+С
+</span>
+<span class="cell">
+<span class="end">
+<span lang="sr">
+-о
+</span>
+</span>
+</span>
+</span>
+</div>
+<div class="case-cell case-cell-end" data-axis="f-sg">
+<span class="gender-unit" data-gender="f">
+<span class="gender-tag">
+Ж
+</span>
+<span class="cell">
+<span class="end">
+<span lang="sr">
+-а
+</span>
+</span>
+</span>
+</span>
+</div>
+<div class="case-cell case-cell-band" data-band="pl">
 <span class="cell-axis">
-М.Мн.
+Мн. число
+</span>
+</div>
+<div class="case-cell case-cell-end" data-axis="m-pl">
+<span class="gender-unit" data-gender="m">
+<span class="gender-tag">
+М
 </span>
 <span class="cell">
 <span class="end">
@@ -99,10 +140,12 @@ NOM
 </button>
 </span>
 </span>
+</span>
 </div>
-<div class="case-cell case-cell-end" data-axis="f-sg" data-gender="f">
-<span class="cell-axis">
-Ж.Ед.
+<div class="case-cell case-cell-end" data-axis="n-pl">
+<span class="gender-unit" data-gender="n">
+<span class="gender-tag">
+С
 </span>
 <span class="cell">
 <span class="end">
@@ -111,39 +154,18 @@ NOM
 </span>
 </span>
 </span>
+</span>
 </div>
-<div class="case-cell case-cell-end" data-axis="f-pl" data-gender="f">
-<span class="cell-axis">
-Ж.Мн.
+<div class="case-cell case-cell-end" data-axis="f-pl">
+<span class="gender-unit" data-gender="f">
+<span class="gender-tag">
+Ж
 </span>
 <span class="cell">
 <span class="end">
 <span lang="sr">
 -е
 </span>
-</span>
-</span>
-</div>
-<div class="case-cell case-cell-end" data-axis="n-sg" data-gender="n">
-<span class="cell-axis">
-С.Ед.
-</span>
-<span class="cell">
-<span class="end">
-<span lang="sr">
--о
-</span>
-</span>
-</span>
-</div>
-<div class="case-cell case-cell-end" data-axis="n-pl" data-gender="n">
-<span class="cell-axis">
-С.Мн.
-</span>
-<span class="cell">
-<span class="end">
-<span lang="sr">
--а
 </span>
 </span>
 </span>
@@ -215,9 +237,15 @@ GEN
 </p>
 </header>
 </div>
-<div class="case-cell case-cell-end" data-axis="m-sg" data-gender="m">
+<div class="case-cell case-cell-band" data-band="sg">
 <span class="cell-axis">
-М.Ед.
+Ед. число
+</span>
+</div>
+<div class="case-cell case-cell-end" data-axis="m-sg">
+<span class="gender-unit" data-gender="m">
+<span class="gender-tag">
+М
 </span>
 <span class="cell">
 <span class="end">
@@ -226,10 +254,12 @@ GEN
 </span>
 </span>
 </span>
+</span>
 </div>
-<div class="case-cell case-cell-end" data-axis="m-pl" data-gender="m">
-<span class="cell-axis">
-М.Мн.
+<div class="case-cell case-cell-end" data-axis="n-sg">
+<span class="gender-unit" data-gender="n">
+<span class="gender-tag">
+С
 </span>
 <span class="cell">
 <span class="end">
@@ -238,10 +268,12 @@ GEN
 </span>
 </span>
 </span>
+</span>
 </div>
-<div class="case-cell case-cell-end" data-axis="f-sg" data-gender="f">
-<span class="cell-axis">
-Ж.Ед.
+<div class="case-cell case-cell-end" data-axis="f-sg">
+<span class="gender-unit" data-gender="f">
+<span class="gender-tag">
+Ж
 </span>
 <span class="cell">
 <span class="end">
@@ -250,10 +282,17 @@ GEN
 </span>
 </span>
 </span>
+</span>
 </div>
-<div class="case-cell case-cell-end" data-axis="f-pl" data-gender="f">
+<div class="case-cell case-cell-band" data-band="pl">
 <span class="cell-axis">
-Ж.Мн.
+Мн. число
+</span>
+</div>
+<div class="case-cell case-cell-end" data-axis="m-pl">
+<span class="gender-unit" data-gender="m">
+<span class="gender-tag">
+М
 </span>
 <span class="cell">
 <span class="end">
@@ -262,22 +301,12 @@ GEN
 </span>
 </span>
 </span>
-</div>
-<div class="case-cell case-cell-end" data-axis="n-sg" data-gender="n">
-<span class="cell-axis">
-С.Ед.
-</span>
-<span class="cell">
-<span class="end">
-<span lang="sr">
--а
-</span>
-</span>
 </span>
 </div>
-<div class="case-cell case-cell-end" data-axis="n-pl" data-gender="n">
-<span class="cell-axis">
-С.Мн.
+<div class="case-cell case-cell-end" data-axis="n-pl">
+<span class="gender-unit" data-gender="n">
+<span class="gender-tag">
+С
 </span>
 <span class="cell">
 <span class="end is-echo">
@@ -289,6 +318,21 @@ GEN
 <span class="cell-share" data-target="NOM" data-tone="nom">
 <span class="share-label">
 NOM
+</span>
+</span>
+</span>
+</span>
+</span>
+</div>
+<div class="case-cell case-cell-end" data-axis="f-pl">
+<span class="gender-unit" data-gender="f">
+<span class="gender-tag">
+Ж
+</span>
+<span class="cell">
+<span class="end">
+<span lang="sr">
+-а
 </span>
 </span>
 </span>
@@ -427,9 +471,15 @@ DAT
 </p>
 </header>
 </div>
-<div class="case-cell case-cell-end" data-axis="m-sg" data-gender="m">
+<div class="case-cell case-cell-band" data-band="sg">
 <span class="cell-axis">
-М.Ед.
+Ед. число
+</span>
+</div>
+<div class="case-cell case-cell-end" data-axis="m-sg">
+<span class="gender-unit" data-gender="m">
+<span class="gender-tag">
+М
 </span>
 <span class="cell">
 <span class="end">
@@ -438,22 +488,26 @@ DAT
 </span>
 </span>
 </span>
+</span>
 </div>
-<div class="case-cell case-cell-end" data-axis="m-pl" data-gender="m">
-<span class="cell-axis">
-М.Мн.
+<div class="case-cell case-cell-end" data-axis="n-sg">
+<span class="gender-unit" data-gender="n">
+<span class="gender-tag">
+С
 </span>
 <span class="cell">
 <span class="end">
 <span lang="sr">
--има
+-у
+</span>
 </span>
 </span>
 </span>
 </div>
-<div class="case-cell case-cell-end" data-axis="f-sg" data-gender="f">
-<span class="cell-axis">
-Ж.Ед.
+<div class="case-cell case-cell-end" data-axis="f-sg">
+<span class="gender-unit" data-gender="f">
+<span class="gender-tag">
+Ж
 </span>
 <span class="cell">
 <span class="end">
@@ -465,39 +519,51 @@ DAT
 </button>
 </span>
 </span>
+</span>
 </div>
-<div class="case-cell case-cell-end" data-axis="f-pl" data-gender="f">
+<div class="case-cell case-cell-band" data-band="pl">
 <span class="cell-axis">
-Ж.Мн.
+Мн. число
+</span>
+</div>
+<div class="case-cell case-cell-end" data-axis="m-pl">
+<span class="gender-unit" data-gender="m">
+<span class="gender-tag">
+М
+</span>
+<span class="cell">
+<span class="end">
+<span lang="sr">
+-има
+</span>
+</span>
+</span>
+</span>
+</div>
+<div class="case-cell case-cell-end" data-axis="n-pl">
+<span class="gender-unit" data-gender="n">
+<span class="gender-tag">
+С
+</span>
+<span class="cell">
+<span class="end">
+<span lang="sr">
+-има
+</span>
+</span>
+</span>
+</span>
+</div>
+<div class="case-cell case-cell-end" data-axis="f-pl">
+<span class="gender-unit" data-gender="f">
+<span class="gender-tag">
+Ж
 </span>
 <span class="cell">
 <span class="end">
 <span lang="sr">
 -ама
 </span>
-</span>
-</span>
-</div>
-<div class="case-cell case-cell-end" data-axis="n-sg" data-gender="n">
-<span class="cell-axis">
-С.Ед.
-</span>
-<span class="cell">
-<span class="end">
-<span lang="sr">
--у
-</span>
-</span>
-</span>
-</div>
-<div class="case-cell case-cell-end" data-axis="n-pl" data-gender="n">
-<span class="cell-axis">
-С.Мн.
-</span>
-<span class="cell">
-<span class="end">
-<span lang="sr">
--има
 </span>
 </span>
 </span>
@@ -588,9 +654,15 @@ AKU
 </p>
 </header>
 </div>
-<div class="case-cell case-cell-end" data-axis="m-sg" data-gender="m">
+<div class="case-cell case-cell-band" data-band="sg">
 <span class="cell-axis">
-М.Ед.
+Ед. число
+</span>
+</div>
+<div class="case-cell case-cell-end" data-axis="m-sg">
+<span class="gender-unit" data-gender="m">
+<span class="gender-tag">
+М
 </span>
 <span class="cell cell-alt cell-alt-stack">
 <span class="end-row">
@@ -625,53 +697,12 @@ NOM
 </span>
 </span>
 </span>
-</div>
-<div class="case-cell case-cell-end" data-axis="m-pl" data-gender="m">
-<span class="cell-axis">
-М.Мн.
-</span>
-<span class="cell">
-<span class="end">
-<span lang="sr">
--е
-</span>
-</span>
 </span>
 </div>
-<div class="case-cell case-cell-end" data-axis="f-sg" data-gender="f">
-<span class="cell-axis">
-Ж.Ед.
-</span>
-<span class="cell">
-<span class="end">
-<span lang="sr">
--у
-</span>
-</span>
-</span>
-</div>
-<div class="case-cell case-cell-end" data-axis="f-pl" data-gender="f">
-<span class="cell-axis">
-Ж.Мн.
-</span>
-<span class="cell">
-<span class="end is-echo">
-<span lang="sr">
--е
-</span>
-</span>
-<span aria-label="same as" class="cell-shares">
-<span class="cell-share" data-target="NOM" data-tone="nom">
-<span class="share-label">
-NOM
-</span>
-</span>
-</span>
-</span>
-</div>
-<div class="case-cell case-cell-end" data-axis="n-sg" data-gender="n">
-<span class="cell-axis">
-С.Ед.
+<div class="case-cell case-cell-end" data-axis="n-sg">
+<span class="gender-unit" data-gender="n">
+<span class="gender-tag">
+С
 </span>
 <span class="cell">
 <span class="end is-echo">
@@ -687,10 +718,45 @@ NOM
 </span>
 </span>
 </span>
+</span>
 </div>
-<div class="case-cell case-cell-end" data-axis="n-pl" data-gender="n">
+<div class="case-cell case-cell-end" data-axis="f-sg">
+<span class="gender-unit" data-gender="f">
+<span class="gender-tag">
+Ж
+</span>
+<span class="cell">
+<span class="end">
+<span lang="sr">
+-у
+</span>
+</span>
+</span>
+</span>
+</div>
+<div class="case-cell case-cell-band" data-band="pl">
 <span class="cell-axis">
-С.Мн.
+Мн. число
+</span>
+</div>
+<div class="case-cell case-cell-end" data-axis="m-pl">
+<span class="gender-unit" data-gender="m">
+<span class="gender-tag">
+М
+</span>
+<span class="cell">
+<span class="end">
+<span lang="sr">
+-е
+</span>
+</span>
+</span>
+</span>
+</div>
+<div class="case-cell case-cell-end" data-axis="n-pl">
+<span class="gender-unit" data-gender="n">
+<span class="gender-tag">
+С
 </span>
 <span class="cell">
 <span class="end is-echo">
@@ -702,6 +768,28 @@ NOM
 <span class="cell-share" data-target="NOM" data-tone="nom">
 <span class="share-label">
 NOM
+</span>
+</span>
+</span>
+</span>
+</span>
+</div>
+<div class="case-cell case-cell-end" data-axis="f-pl">
+<span class="gender-unit" data-gender="f">
+<span class="gender-tag">
+Ж
+</span>
+<span class="cell">
+<span class="end is-echo">
+<span lang="sr">
+-е
+</span>
+</span>
+<span aria-label="same as" class="cell-shares">
+<span class="cell-share" data-target="NOM" data-tone="nom">
+<span class="share-label">
+NOM
+</span>
 </span>
 </span>
 </span>
@@ -842,9 +930,15 @@ VOK
 </p>
 </header>
 </div>
-<div class="case-cell case-cell-end" data-axis="m-sg" data-gender="m">
+<div class="case-cell case-cell-band" data-band="sg">
 <span class="cell-axis">
-М.Ед.
+Ед. число
+</span>
+</div>
+<div class="case-cell case-cell-end" data-axis="m-sg">
+<span class="gender-unit" data-gender="m">
+<span class="gender-tag">
+М
 </span>
 <span class="cell cell-alt">
 <span class="end">
@@ -867,10 +961,55 @@ VOK
 </button>
 </span>
 </span>
+</span>
 </div>
-<div class="case-cell case-cell-end" data-axis="m-pl" data-gender="m">
+<div class="case-cell case-cell-end" data-axis="n-sg">
+<span class="gender-unit" data-gender="n">
+<span class="gender-tag">
+С
+</span>
+<span class="cell">
+<span class="end is-echo">
+<span lang="sr">
+-о
+</span>
+</span>
+<span aria-label="same as" class="cell-shares">
+<span class="cell-share" data-target="NOM" data-tone="nom">
+<span class="share-label">
+NOM
+</span>
+</span>
+</span>
+</span>
+</span>
+</div>
+<div class="case-cell case-cell-end" data-axis="f-sg">
+<span class="gender-unit" data-gender="f">
+<span class="gender-tag">
+Ж
+</span>
+<span class="cell">
+<span class="end">
+<span lang="sr">
+-о
+</span>
+<button aria-expanded="false" aria-haspopup="dialog" class="tip-chip cell-note" data-case-idx="4" data-note-id="vok-f-name" data-note-trigger type="button">
+?
+</button>
+</span>
+</span>
+</span>
+</div>
+<div class="case-cell case-cell-band" data-band="pl">
 <span class="cell-axis">
-М.Мн.
+Мн. число
+</span>
+</div>
+<div class="case-cell case-cell-end" data-axis="m-pl">
+<span class="gender-unit" data-gender="m">
+<span class="gender-tag">
+М
 </span>
 <span class="cell">
 <span class="end is-echo">
@@ -886,25 +1025,33 @@ NOM
 </span>
 </span>
 </span>
+</span>
 </div>
-<div class="case-cell case-cell-end" data-axis="f-sg" data-gender="f">
-<span class="cell-axis">
-Ж.Ед.
+<div class="case-cell case-cell-end" data-axis="n-pl">
+<span class="gender-unit" data-gender="n">
+<span class="gender-tag">
+С
 </span>
 <span class="cell">
-<span class="end">
+<span class="end is-echo">
 <span lang="sr">
--о
+-а
 </span>
-<button aria-expanded="false" aria-haspopup="dialog" class="tip-chip cell-note" data-case-idx="4" data-note-id="vok-f-name" data-note-trigger type="button">
-?
-</button>
+</span>
+<span aria-label="same as" class="cell-shares">
+<span class="cell-share" data-target="NOM" data-tone="nom">
+<span class="share-label">
+NOM
+</span>
+</span>
+</span>
 </span>
 </span>
 </div>
-<div class="case-cell case-cell-end" data-axis="f-pl" data-gender="f">
-<span class="cell-axis">
-Ж.Мн.
+<div class="case-cell case-cell-end" data-axis="f-pl">
+<span class="gender-unit" data-gender="f">
+<span class="gender-tag">
+Ж
 </span>
 <span class="cell">
 <span class="end is-echo">
@@ -917,43 +1064,6 @@ NOM
 <span class="share-label">
 NOM
 </span>
-</span>
-</span>
-</span>
-</div>
-<div class="case-cell case-cell-end" data-axis="n-sg" data-gender="n">
-<span class="cell-axis">
-С.Ед.
-</span>
-<span class="cell">
-<span class="end is-echo">
-<span lang="sr">
--о
-</span>
-</span>
-<span aria-label="same as" class="cell-shares">
-<span class="cell-share" data-target="NOM" data-tone="nom">
-<span class="share-label">
-NOM
-</span>
-</span>
-</span>
-</span>
-</div>
-<div class="case-cell case-cell-end" data-axis="n-pl" data-gender="n">
-<span class="cell-axis">
-С.Мн.
-</span>
-<span class="cell">
-<span class="end is-echo">
-<span lang="sr">
--а
-</span>
-</span>
-<span aria-label="same as" class="cell-shares">
-<span class="cell-share" data-target="NOM" data-tone="nom">
-<span class="share-label">
-NOM
 </span>
 </span>
 </span>
@@ -1027,9 +1137,15 @@ INS
 </p>
 </header>
 </div>
-<div class="case-cell case-cell-end" data-axis="m-sg" data-gender="m">
+<div class="case-cell case-cell-band" data-band="sg">
 <span class="cell-axis">
-М.Ед.
+Ед. число
+</span>
+</div>
+<div class="case-cell case-cell-end" data-axis="m-sg">
+<span class="gender-unit" data-gender="m">
+<span class="gender-tag">
+М
 </span>
 <span class="cell">
 <span class="end">
@@ -1041,10 +1157,48 @@ INS
 </button>
 </span>
 </span>
+</span>
 </div>
-<div class="case-cell case-cell-end" data-axis="m-pl" data-gender="m">
+<div class="case-cell case-cell-end" data-axis="n-sg">
+<span class="gender-unit" data-gender="n">
+<span class="gender-tag">
+С
+</span>
+<span class="cell">
+<span class="end">
+<span lang="sr">
+-ом
+</span>
+<button aria-expanded="false" aria-haspopup="dialog" class="tip-chip cell-note" data-case-idx="5" data-note-id="soft-em" data-note-trigger type="button">
+?
+</button>
+</span>
+</span>
+</span>
+</div>
+<div class="case-cell case-cell-end" data-axis="f-sg">
+<span class="gender-unit" data-gender="f">
+<span class="gender-tag">
+Ж
+</span>
+<span class="cell">
+<span class="end">
+<span lang="sr">
+-ом
+</span>
+</span>
+</span>
+</span>
+</div>
+<div class="case-cell case-cell-band" data-band="pl">
 <span class="cell-axis">
-М.Мн.
+Мн. число
+</span>
+</div>
+<div class="case-cell case-cell-end" data-axis="m-pl">
+<span class="gender-unit" data-gender="m">
+<span class="gender-tag">
+М
 </span>
 <span class="cell">
 <span class="end is-echo">
@@ -1060,22 +1214,33 @@ DAT
 </span>
 </span>
 </span>
+</span>
 </div>
-<div class="case-cell case-cell-end" data-axis="f-sg" data-gender="f">
-<span class="cell-axis">
-Ж.Ед.
+<div class="case-cell case-cell-end" data-axis="n-pl">
+<span class="gender-unit" data-gender="n">
+<span class="gender-tag">
+С
 </span>
 <span class="cell">
-<span class="end">
+<span class="end is-echo">
 <span lang="sr">
--ом
+-има
+</span>
+</span>
+<span aria-label="same as" class="cell-shares">
+<span class="cell-share" data-target="DAT" data-tone="dat">
+<span class="share-label">
+DAT
+</span>
+</span>
 </span>
 </span>
 </span>
 </div>
-<div class="case-cell case-cell-end" data-axis="f-pl" data-gender="f">
-<span class="cell-axis">
-Ж.Мн.
+<div class="case-cell case-cell-end" data-axis="f-pl">
+<span class="gender-unit" data-gender="f">
+<span class="gender-tag">
+Ж
 </span>
 <span class="cell">
 <span class="end is-echo">
@@ -1088,39 +1253,6 @@ DAT
 <span class="share-label">
 DAT
 </span>
-</span>
-</span>
-</span>
-</div>
-<div class="case-cell case-cell-end" data-axis="n-sg" data-gender="n">
-<span class="cell-axis">
-С.Ед.
-</span>
-<span class="cell">
-<span class="end">
-<span lang="sr">
--ом
-</span>
-<button aria-expanded="false" aria-haspopup="dialog" class="tip-chip cell-note" data-case-idx="5" data-note-id="soft-em" data-note-trigger type="button">
-?
-</button>
-</span>
-</span>
-</div>
-<div class="case-cell case-cell-end" data-axis="n-pl" data-gender="n">
-<span class="cell-axis">
-С.Мн.
-</span>
-<span class="cell">
-<span class="end is-echo">
-<span lang="sr">
--има
-</span>
-</span>
-<span aria-label="same as" class="cell-shares">
-<span class="cell-share" data-target="DAT" data-tone="dat">
-<span class="share-label">
-DAT
 </span>
 </span>
 </span>
@@ -1226,9 +1358,15 @@ LOK
 </p>
 </header>
 </div>
-<div class="case-cell case-cell-end" data-axis="m-sg" data-gender="m">
+<div class="case-cell case-cell-band" data-band="sg">
 <span class="cell-axis">
-М.Ед.
+Ед. число
+</span>
+</div>
+<div class="case-cell case-cell-end" data-axis="m-sg">
+<span class="gender-unit" data-gender="m">
+<span class="gender-tag">
+М
 </span>
 <span class="cell">
 <span class="end is-echo">
@@ -1244,15 +1382,17 @@ DAT
 </span>
 </span>
 </span>
+</span>
 </div>
-<div class="case-cell case-cell-end" data-axis="m-pl" data-gender="m">
-<span class="cell-axis">
-М.Мн.
+<div class="case-cell case-cell-end" data-axis="n-sg">
+<span class="gender-unit" data-gender="n">
+<span class="gender-tag">
+С
 </span>
 <span class="cell">
 <span class="end is-echo">
 <span lang="sr">
--има
+-у
 </span>
 </span>
 <span aria-label="same as" class="cell-shares">
@@ -1263,10 +1403,12 @@ DAT
 </span>
 </span>
 </span>
+</span>
 </div>
-<div class="case-cell case-cell-end" data-axis="f-sg" data-gender="f">
-<span class="cell-axis">
-Ж.Ед.
+<div class="case-cell case-cell-end" data-axis="f-sg">
+<span class="gender-unit" data-gender="f">
+<span class="gender-tag">
+Ж
 </span>
 <span class="cell">
 <span class="end is-echo">
@@ -1285,10 +1427,59 @@ DAT
 </span>
 </span>
 </span>
+</span>
 </div>
-<div class="case-cell case-cell-end" data-axis="f-pl" data-gender="f">
+<div class="case-cell case-cell-band" data-band="pl">
 <span class="cell-axis">
-Ж.Мн.
+Мн. число
+</span>
+</div>
+<div class="case-cell case-cell-end" data-axis="m-pl">
+<span class="gender-unit" data-gender="m">
+<span class="gender-tag">
+М
+</span>
+<span class="cell">
+<span class="end is-echo">
+<span lang="sr">
+-има
+</span>
+</span>
+<span aria-label="same as" class="cell-shares">
+<span class="cell-share" data-target="DAT" data-tone="dat">
+<span class="share-label">
+DAT
+</span>
+</span>
+</span>
+</span>
+</span>
+</div>
+<div class="case-cell case-cell-end" data-axis="n-pl">
+<span class="gender-unit" data-gender="n">
+<span class="gender-tag">
+С
+</span>
+<span class="cell">
+<span class="end is-echo">
+<span lang="sr">
+-има
+</span>
+</span>
+<span aria-label="same as" class="cell-shares">
+<span class="cell-share" data-target="DAT" data-tone="dat">
+<span class="share-label">
+DAT
+</span>
+</span>
+</span>
+</span>
+</span>
+</div>
+<div class="case-cell case-cell-end" data-axis="f-pl">
+<span class="gender-unit" data-gender="f">
+<span class="gender-tag">
+Ж
 </span>
 <span class="cell">
 <span class="end is-echo">
@@ -1301,43 +1492,6 @@ DAT
 <span class="share-label">
 DAT
 </span>
-</span>
-</span>
-</span>
-</div>
-<div class="case-cell case-cell-end" data-axis="n-sg" data-gender="n">
-<span class="cell-axis">
-С.Ед.
-</span>
-<span class="cell">
-<span class="end is-echo">
-<span lang="sr">
--у
-</span>
-</span>
-<span aria-label="same as" class="cell-shares">
-<span class="cell-share" data-target="DAT" data-tone="dat">
-<span class="share-label">
-DAT
-</span>
-</span>
-</span>
-</span>
-</div>
-<div class="case-cell case-cell-end" data-axis="n-pl" data-gender="n">
-<span class="cell-axis">
-С.Мн.
-</span>
-<span class="cell">
-<span class="end is-echo">
-<span lang="sr">
--има
-</span>
-</span>
-<span aria-label="same as" class="cell-shares">
-<span class="cell-share" data-target="DAT" data-tone="dat">
-<span class="share-label">
-DAT
 </span>
 </span>
 </span>

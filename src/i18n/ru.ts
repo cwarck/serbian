@@ -221,6 +221,9 @@ export const ru: Record<Key, string> = {
   'cases.number.sg': 'Ед.',
   'cases.number.pl': 'Мн.',
 
+  'band.sg': 'Ед. число',
+  'band.pl': 'Мн. число',
+
 
 
   'cases.extra.title': 'Женский род без <i>-a</i>',

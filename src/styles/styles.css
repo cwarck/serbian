@@ -1158,18 +1158,23 @@ section { position: relative; }
   gap: 0;
 }
 
-/* Endings pair up SG | PL per gender — one case fits one screen. */
+/* Two bands of three chips — SINGULAR over M N F, then PLURAL. Number is a
+   band heading; gender is the chip. Three tracks at 320px is the tightest
+   thing on the site: the endings are short (-ima is the worst case), and the
+   fallback if it ever fails is two bands of three that WRAP, never a width
+   query. */
 .case-row {
   scroll-margin-top: calc(var(--sticky-offset, 120px) + .5rem);
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   grid-template-areas:
-    "head  head"
-    "m-sg  m-pl"
-    "f-sg  f-pl"
-    "n-sg  n-pl"
-    "ex    ex"
-    "preps preps";
+    "head  head  head"
+    "sg-l  sg-l  sg-l"
+    "m-sg  n-sg  f-sg"
+    "pl-l  pl-l  pl-l"
+    "m-pl  n-pl  f-pl"
+    "ex    ex    ex"
+    "preps preps preps";
   gap: .55rem;
   padding: 2.2rem 0;
   border-bottom: 1px solid var(--hairline);
@@ -1193,6 +1198,8 @@ section { position: relative; }
 .case-cell-preps.is-empty { display: none; }
 
 .case-cell-head    { grid-area: head; }
+.case-cell-band[data-band="sg"] { grid-area: sg-l; }
+.case-cell-band[data-band="pl"] { grid-area: pl-l; }
 .case-cell-end[data-axis="m-sg"] { grid-area: m-sg; }
 .case-cell-end[data-axis="m-pl"] { grid-area: m-pl; }
 .case-cell-end[data-axis="f-sg"] { grid-area: f-sg; }
@@ -1344,14 +1351,17 @@ section { position: relative; }
 }
 .case-cell-head .q strong { font-family: var(--ff-display); font-style: normal; font-weight: 500; color: var(--tone, var(--ink-soft)); }
 
-/* Each ending cell — small framed block with its own axis label */
+/* The cell is a grid slot, nothing more: the .gender-unit inside carries the
+   frame now, and a framed cell around a framed chip is a box in a box. */
 .case-cell-end {
   display: flex;
-  flex-direction: column;
-  gap: .45rem;
-  padding: .6rem .65rem .65rem;
-  border: 1px solid var(--hairline-soft);
-  background: color-mix(in oklab, var(--paper) 96%, transparent);
+  align-items: flex-start;
+  min-width: 0;
+}
+/* Band heading over its three chips. */
+.case-cell-band {
+  margin-top: .35rem;
+  padding-bottom: .15rem;
 }
 .cell-axis {
   font-family: var(--ff-body);
@@ -1362,8 +1372,6 @@ section { position: relative; }
   color: var(--ink-faint);
   line-height: 1;
 }
-.case-cell-end[data-gender] .cell-axis { color: var(--ink); }
-
 .case-cell-ex .cell-axis,
 .case-cell-preps .cell-axis {
   display: block;

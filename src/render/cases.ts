@@ -3,9 +3,13 @@ import { toLatin, toCyrillic } from '../lib/script.ts';
 import type { Lang } from '../lib/negotiate.ts';
 import { translator } from '../i18n/index.ts';
 import { CASES, IDECL, WRINKLES, ENDING_AXES } from '../content/cases.ts';
-import type { CaseRow, CaseNote, Ending, EndingAxis } from '../lib/types.ts';
+import { GENDERS, type CaseRow, type CaseNote, type Ending, type EndingAxis, type Number_ } from '../lib/types.ts';
 import { lookupPrep, renderPrepCard } from './prep-shared.ts';
-import type { Chart } from './chart.ts';
+import { genderUnit, type Chart } from './chart.ts';
+
+/* The two ending bands. Number is a band heading, never a chip: a chip says
+   which gender, the band it sits in says which number. */
+const NUMBERS = ['sg', 'pl'] as const satisfies readonly Number_[];
 
 type T = (key: string) => Raw;
 
@@ -193,10 +197,6 @@ export function notePopoverHTML(caseIdx: number, noteId: string, lang: Lang): Ra
     </article>`;
 }
 
-function axisLabel(ax: EndingAxis, t: T): string {
-  return `${t('cases.gender.' + ax.g).value}.${t('cases.number.' + ax.n).value}`;
-}
-
 export const chart: Chart = {
   name: 'cases',
   /* The pre-rewrite renderer re-asserted class="case-list" on every render. */
@@ -204,7 +204,6 @@ export const chart: Chart = {
 
   mounts: (lang: Lang) => {
     const t = translator(lang);
-    const axes = ENDING_AXES as readonly EndingAxis[];
 
     const caseStripList = (CASES as readonly CaseRow[]).map(c => html`
     <li class="case-strip-cell" data-tone="${c.tone}">
@@ -226,11 +225,18 @@ export const chart: Chart = {
       </div>`;
 
     const caseList = (CASES as readonly CaseRow[]).map((c, i) => {
-      const endCells = axes.map(ax => html`
-      <div class="case-cell case-cell-end" data-axis="${ax.key}" data-gender="${ax.g}">
-        <span class="cell-axis">${axisLabel(ax, t)}</span>
-        ${cellHTML(c.endings[ax.g][ax.n], i, ax.key, lang)}
+      /* One band per number, three chips per band, M-N-F per GENDERS. The
+         `M.SG` axis label is gone: the chip names the gender and the band
+         names the number. */
+      const endCells = NUMBERS.map(n => html`
+      <div class="case-cell case-cell-band" data-band="${n}">
+        <span class="cell-axis">${t('band.' + n)}</span>
       </div>
+      ${raw(GENDERS.map(g => html`
+      <div class="case-cell case-cell-end" data-axis="${g}-${n}">
+        ${genderUnit(g, t('cases.gender.' + g), cellHTML(c.endings[g][n], i, `${g}-${n}`, lang))}
+      </div>
+    `.value).join(''))}
     `.value).join('');
 
       const exCell = c.examples.length === 0 ? '' : html`
