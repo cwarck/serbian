@@ -127,8 +127,8 @@ function convertMarked(markup: string): string {
         return part;
       }
       if (depth === 0) return part;
-      return `<span class="s"><i data-s="lat">${toLatin(part)}</i>` +
-             `<i data-s="cyr">${toCyrillic(part)}</i></span>`;
+      return `<span class="s"><i data-s="lat">${escape(toLatin(part))}</i>` +
+             `<i data-s="cyr">${escape(toCyrillic(part))}</i></span>`;
     })
     .join('');
 }

@@ -28,7 +28,7 @@ function diffHL(a: string, b: string): { from: string; to: string } {
   let ea = sa.length, eb = sb.length;
   while (ea > p && eb > p && sa[ea - 1] === sb[eb - 1]) { ea--; eb--; }
   const wrap = (s: string, i: number, j: number) =>
-    s.slice(0, i) + (i < j ? `<span class="lit">${escape(s.slice(i, j))}</span>` : '') + escape(s.slice(j));
+    escape(s.slice(0, i)) + (i < j ? `<span class="lit">${escape(s.slice(i, j))}</span>` : '') + escape(s.slice(j));
   return { from: wrap(sa, p, ea), to: wrap(sb, p, eb) };
 }
 
