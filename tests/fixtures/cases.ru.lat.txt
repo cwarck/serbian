@@ -3108,7 +3108,7 @@ Ulazim među ljude.
 INS
 </span>
 <span class="prep-meaning">
-между, место
+между, место (обычно između)
 </span>
 </div>
 <div class="chart-example prep-example">
@@ -3225,10 +3225,10 @@ AKU
 </div>
 <div class="chart-example prep-example">
 <span class="sr" lang="sr">
-Podižem lampu nad sto.
+Vešam lampu nad sto.
 </span>
 <span class="tr">
-Я поднимаю лампу над столом.
+Я вешаю лампу над столом.
 </span>
 </div>
 </div>
@@ -3248,7 +3248,7 @@ Podižem lampu nad sto.
 INS
 </span>
 <span class="prep-meaning">
-над, место
+над, место (обычно iznad)
 </span>
 </div>
 <div class="chart-example prep-example">
@@ -3564,7 +3564,7 @@ Mačka ide pod sto.
 INS
 </span>
 <span class="prep-meaning">
-под, место
+под, место (обычно ispod)
 </span>
 </div>
 <div class="chart-example prep-example">
@@ -3714,7 +3714,7 @@ Stajem pred kuću.
 INS
 </span>
 <span class="prep-meaning">
-перед, место
+перед, место (обычно ispred)
 </span>
 </div>
 <div class="chart-example prep-example">

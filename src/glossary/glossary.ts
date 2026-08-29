@@ -286,6 +286,10 @@ export const GLOSSARY = {
   'blizu':        { pos:'prep', gloss:{ en:'near', ru:'близко к' }, government:'gen', level:'A2' },
   'oko':          { pos:'prep', gloss:{ en:'around', ru:'около / вокруг' }, government:'gen', level:'A1', related:[] },
   'iza':          { pos:'prep', gloss:{ en:'behind', ru:'за / позади' }, government:'gen', level:'A1' },
+  'iznad':        { pos:'prep', gloss:{ en:'above / over', ru:'над' }, government:'gen', level:'A1', related:['nad'] },
+  'ispod':        { pos:'prep', gloss:{ en:'under / below', ru:'под' }, government:'gen', level:'A1', related:['pod'] },
+  'ispred':       { pos:'prep', gloss:{ en:'in front of', ru:'перед' }, government:'gen', level:'A1', related:['pred'] },
+  'između':       { pos:'prep', gloss:{ en:'between / among', ru:'между' }, government:'gen', level:'A1', related:['među'] },
 
   /* ---------- pronouns ---------- */
 

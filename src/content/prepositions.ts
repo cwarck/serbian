@@ -36,6 +36,20 @@ export const PREP_GROUPS = [
       },
     ]
   },
+  /* Static position first, because this is the series a learner will actually
+     hear. The nad/pod/pred + INS forms below are correct but marked; teaching
+     them first produced sentences like `Podižem lampu nad sto` — grammatical,
+     and nobody has ever said it. `iza` lives here too, beside `za + INS`,
+     instead of four groups away under "fixed case". */
+  {
+    key: 'prep.group.static',
+    rows: [
+      { prep: 'iznad', icon: 'over', uses: [{ case: 'gen', meaning: { en: 'above, over', ru: 'над' }, sr: 'Lampa je iznad stola.', tr: { en: 'The lamp is above the table.', ru: 'Лампа над столом.' } }] },
+      { prep: 'ispod', icon: 'under', uses: [{ case: 'gen', meaning: { en: 'under, below', ru: 'под' }, sr: 'Mačka je ispod stola.', tr: { en: 'The cat is under the table.', ru: 'Кошка под столом.' } }] },
+      { prep: 'ispred', icon: 'front', uses: [{ case: 'gen', meaning: { en: 'in front of', ru: 'перед' }, sr: 'Stojim ispred kuće.', tr: { en: 'I stand in front of the house.', ru: 'Я стою перед домом.' } }] },
+      { prep: 'između', icon: 'between', uses: [{ case: 'gen', meaning: { en: 'between, among', ru: 'между' }, sr: 'Stojim između kuća.', tr: { en: 'I stand between the houses.', ru: 'Я стою между домами.' } }] },
+    ]
+  },
   {
     key: 'prep.group.position',
     rows: [
@@ -43,28 +57,28 @@ export const PREP_GROUPS = [
         prep: 'pod', icon: 'under',
         uses: [
           { case: 'aku', icon: 'under-motion', meaning: { en: 'to under', ru: 'под, движение' }, sr: 'Mačka ide pod sto.', tr: { en: 'The cat goes under the table.', ru: 'Кошка идёт под стол.' } },
-          { case: 'ins', icon: 'under', meaning: { en: 'under', ru: 'под, место' }, sr: 'Mačka je pod stolom.', tr: { en: 'The cat is under the table.', ru: 'Кошка под столом.' } },
+          { case: 'ins', icon: 'under', meaning: { en: 'under (marked; usually ispod)', ru: 'под, место (обычно ispod)' }, sr: 'Mačka je pod stolom.', tr: { en: 'The cat is under the table.', ru: 'Кошка под столом.' } },
         ]
       },
       {
         prep: 'pred', icon: 'front',
         uses: [
           { case: 'aku', icon: 'front-motion', meaning: { en: 'to in front of', ru: 'перед, движение' }, sr: 'Stajem pred kuću.', tr: { en: 'I step in front of the house.', ru: 'Я встаю перед домом.' } },
-          { case: 'ins', icon: 'front', meaning: { en: 'in front of', ru: 'перед, место' }, sr: 'Stojim pred kućom.', tr: { en: 'I stand in front of the house.', ru: 'Я стою перед домом.' } },
+          { case: 'ins', icon: 'front', meaning: { en: 'in front of (marked; usually ispred)', ru: 'перед, место (обычно ispred)' }, sr: 'Stojim pred kućom.', tr: { en: 'I stand in front of the house.', ru: 'Я стою перед домом.' } },
         ]
       },
       {
         prep: 'nad', icon: 'over',
         uses: [
-          { case: 'aku', icon: 'over-motion', meaning: { en: 'to above', ru: 'над, движение' }, sr: 'Podižem lampu nad sto.', tr: { en: 'I lift the lamp above the table.', ru: 'Я поднимаю лампу над столом.' } },
-          { case: 'ins', icon: 'over', meaning: { en: 'above, over', ru: 'над, место' }, sr: 'Lampa je nad stolom.', tr: { en: 'The lamp is above the table.', ru: 'Лампа над столом.' } },
+          { case: 'aku', icon: 'over-motion', meaning: { en: 'to above', ru: 'над, движение' }, sr: 'Vešam lampu nad sto.', tr: { en: 'I hang the lamp above the table.', ru: 'Я вешаю лампу над столом.' } },
+          { case: 'ins', icon: 'over', meaning: { en: 'above (marked; usually iznad)', ru: 'над, место (обычно iznad)' }, sr: 'Lampa je nad stolom.', tr: { en: 'The lamp is above the table.', ru: 'Лампа над столом.' } },
         ]
       },
       {
         prep: 'među', icon: 'between',
         uses: [
           { case: 'aku', icon: 'between-motion', meaning: { en: 'to among, between', ru: 'между, движение' }, sr: 'Ulazim među ljude.', tr: { en: 'I go among the people.', ru: 'Я вхожу в толпу.' } },
-          { case: 'ins', icon: 'between', meaning: { en: 'among, between', ru: 'между, место' }, sr: 'Stojim među ljudima.', tr: { en: 'I stand among the people.', ru: 'Я стою между людьми.' } },
+          { case: 'ins', icon: 'between', meaning: { en: 'among (marked; usually između)', ru: 'между, место (обычно između)' }, sr: 'Stojim među ljudima.', tr: { en: 'I stand among the people.', ru: 'Я стою между людьми.' } },
         ]
       },
       {

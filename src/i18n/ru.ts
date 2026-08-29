@@ -153,7 +153,8 @@ export const ru: Record<Key, string> = {
 
   /* Prepositions */
   'prep.group.place': 'Место / движение',
-  'prep.group.position': 'Положение вокруг',
+  'prep.group.static': 'Положение',
+  'prep.group.position': 'Движение и место',
   'prep.group.path': 'Путь',
   'prep.group.source': 'Источник / направление',
   'prep.group.time': 'Время / цель',

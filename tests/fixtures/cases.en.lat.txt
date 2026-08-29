@@ -3117,7 +3117,7 @@ I go among the people.
 INS
 </span>
 <span class="prep-meaning">
-among, between
+among (marked; usually između)
 </span>
 </div>
 <div class="chart-example prep-example">
@@ -3234,10 +3234,10 @@ to above
 </div>
 <div class="chart-example prep-example">
 <span class="sr" lang="sr">
-Podižem lampu nad sto.
+Vešam lampu nad sto.
 </span>
 <span class="tr">
-I lift the lamp above the table.
+I hang the lamp above the table.
 </span>
 </div>
 </div>
@@ -3257,7 +3257,7 @@ I lift the lamp above the table.
 INS
 </span>
 <span class="prep-meaning">
-above, over
+above (marked; usually iznad)
 </span>
 </div>
 <div class="chart-example prep-example">
@@ -3573,7 +3573,7 @@ The cat goes under the table.
 INS
 </span>
 <span class="prep-meaning">
-under
+under (marked; usually ispod)
 </span>
 </div>
 <div class="chart-example prep-example">
@@ -3723,7 +3723,7 @@ I step in front of the house.
 INS
 </span>
 <span class="prep-meaning">
-in front of
+in front of (marked; usually ispred)
 </span>
 </div>
 <div class="chart-example prep-example">

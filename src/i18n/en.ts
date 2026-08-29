@@ -151,7 +151,8 @@ export const en = {
 
   /* Prepositions page */
   'prep.group.place': 'Place / motion',
-  'prep.group.position': 'Position around',
+  'prep.group.static': 'Position',
+  'prep.group.position': 'Motion vs place',
   'prep.group.path': 'Path',
   'prep.group.source': 'Source / direction',
   'prep.group.time': 'Time / purpose',

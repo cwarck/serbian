@@ -157,7 +157,168 @@ LOK
 <section class="chart-group">
 <header class="chart-group-head">
 <h3>
-Положение вокруг
+Положение
+</h3>
+</header>
+<div class="chart-table">
+<article class="chart-row prep-row">
+<div class="prep-name" lang="sr">
+изнад
+</div>
+<div class="prep-uses">
+<div class="prep-use" data-tone="gen">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="30">
+</rect>
+<circle class="prep-icon-dot" cx="44" cy="14" r="9">
+</circle>
+</svg>
+<span class="sr-only">
+Родительный
+</span>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+GEN
+</span>
+<span class="prep-meaning">
+над
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Лампа је изнад стола.
+</span>
+<span class="tr">
+Лампа над столом.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="chart-row prep-row">
+<div class="prep-name" lang="sr">
+испод
+</div>
+<div class="prep-uses">
+<div class="prep-use" data-tone="gen">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="10">
+</rect>
+<circle class="prep-icon-dot" cx="44" cy="52" r="9">
+</circle>
+</svg>
+<span class="sr-only">
+Родительный
+</span>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+GEN
+</span>
+<span class="prep-meaning">
+под
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Мачка је испод стола.
+</span>
+<span class="tr">
+Кошка под столом.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="chart-row prep-row">
+<div class="prep-name" lang="sr">
+испред
+</div>
+<div class="prep-uses">
+<div class="prep-use" data-tone="gen">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
+</rect>
+<circle class="prep-icon-dot" cx="22" cy="32" r="9">
+</circle>
+</svg>
+<span class="sr-only">
+Родительный
+</span>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+GEN
+</span>
+<span class="prep-meaning">
+перед
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Стојим испред куће.
+</span>
+<span class="tr">
+Я стою перед домом.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="chart-row prep-row">
+<div class="prep-name" lang="sr">
+између
+</div>
+<div class="prep-uses">
+<div class="prep-use" data-tone="gen">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<path class="prep-icon-line" d="M25 10V54M63 10V54">
+</path>
+<circle class="prep-icon-dot" cx="44" cy="32" r="9">
+</circle>
+</svg>
+<span class="sr-only">
+Родительный
+</span>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+GEN
+</span>
+<span class="prep-meaning">
+между
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Стојим између кућа.
+</span>
+<span class="tr">
+Я стою между домами.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+</div>
+</section>
+<section class="chart-group">
+<header class="chart-group-head">
+<h3>
+Движение и место
 </h3>
 </header>
 <div class="chart-table">
@@ -219,7 +380,7 @@ AKU
 INS
 </span>
 <span class="prep-meaning">
-под, место
+под, место (обычно ispod)
 </span>
 </div>
 <div class="chart-example prep-example">
@@ -292,7 +453,7 @@ AKU
 INS
 </span>
 <span class="prep-meaning">
-перед, место
+перед, место (обычно ispred)
 </span>
 </div>
 <div class="chart-example prep-example">
@@ -339,10 +500,10 @@ AKU
 </div>
 <div class="chart-example prep-example">
 <span class="sr" lang="sr">
-Подижем лампу над сто.
+Вешам лампу над сто.
 </span>
 <span class="tr">
-Я поднимаю лампу над столом.
+Я вешаю лампу над столом.
 </span>
 </div>
 </div>
@@ -365,7 +526,7 @@ AKU
 INS
 </span>
 <span class="prep-meaning">
-над, место
+над, место (обычно iznad)
 </span>
 </div>
 <div class="chart-example prep-example">
@@ -438,7 +599,7 @@ AKU
 INS
 </span>
 <span class="prep-meaning">
-между, место
+между, место (обычно između)
 </span>
 </div>
 <div class="chart-example prep-example">

@@ -157,7 +157,168 @@ The book is on the table.
 <section class="chart-group">
 <header class="chart-group-head">
 <h3>
-Position around
+Position
+</h3>
+</header>
+<div class="chart-table">
+<article class="chart-row prep-row">
+<div class="prep-name" lang="sr">
+iznad
+</div>
+<div class="prep-uses">
+<div class="prep-use" data-tone="gen">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="30">
+</rect>
+<circle class="prep-icon-dot" cx="44" cy="14" r="9">
+</circle>
+</svg>
+<span class="sr-only">
+Genitive
+</span>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+GEN
+</span>
+<span class="prep-meaning">
+above, over
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Lampa je iznad stola.
+</span>
+<span class="tr">
+The lamp is above the table.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="chart-row prep-row">
+<div class="prep-name" lang="sr">
+ispod
+</div>
+<div class="prep-uses">
+<div class="prep-use" data-tone="gen">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="10">
+</rect>
+<circle class="prep-icon-dot" cx="44" cy="52" r="9">
+</circle>
+</svg>
+<span class="sr-only">
+Genitive
+</span>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+GEN
+</span>
+<span class="prep-meaning">
+under, below
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Mačka je ispod stola.
+</span>
+<span class="tr">
+The cat is under the table.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="chart-row prep-row">
+<div class="prep-name" lang="sr">
+ispred
+</div>
+<div class="prep-uses">
+<div class="prep-use" data-tone="gen">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
+</rect>
+<circle class="prep-icon-dot" cx="22" cy="32" r="9">
+</circle>
+</svg>
+<span class="sr-only">
+Genitive
+</span>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+GEN
+</span>
+<span class="prep-meaning">
+in front of
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Stojim ispred kuće.
+</span>
+<span class="tr">
+I stand in front of the house.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="chart-row prep-row">
+<div class="prep-name" lang="sr">
+između
+</div>
+<div class="prep-uses">
+<div class="prep-use" data-tone="gen">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<path class="prep-icon-line" d="M25 10V54M63 10V54">
+</path>
+<circle class="prep-icon-dot" cx="44" cy="32" r="9">
+</circle>
+</svg>
+<span class="sr-only">
+Genitive
+</span>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+GEN
+</span>
+<span class="prep-meaning">
+between, among
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Stojim između kuća.
+</span>
+<span class="tr">
+I stand between the houses.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+</div>
+</section>
+<section class="chart-group">
+<header class="chart-group-head">
+<h3>
+Motion vs place
 </h3>
 </header>
 <div class="chart-table">
@@ -219,7 +380,7 @@ Instrumental
 INS
 </span>
 <span class="prep-meaning">
-under
+under (marked; usually ispod)
 </span>
 </div>
 <div class="chart-example prep-example">
@@ -292,7 +453,7 @@ Instrumental
 INS
 </span>
 <span class="prep-meaning">
-in front of
+in front of (marked; usually ispred)
 </span>
 </div>
 <div class="chart-example prep-example">
@@ -339,10 +500,10 @@ to above
 </div>
 <div class="chart-example prep-example">
 <span class="sr" lang="sr">
-Podižem lampu nad sto.
+Vešam lampu nad sto.
 </span>
 <span class="tr">
-I lift the lamp above the table.
+I hang the lamp above the table.
 </span>
 </div>
 </div>
@@ -365,7 +526,7 @@ Instrumental
 INS
 </span>
 <span class="prep-meaning">
-above, over
+above (marked; usually iznad)
 </span>
 </div>
 <div class="chart-example prep-example">
@@ -438,7 +599,7 @@ Instrumental
 INS
 </span>
 <span class="prep-meaning">
-among, between
+among (marked; usually između)
 </span>
 </div>
 <div class="chart-example prep-example">
