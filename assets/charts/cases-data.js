@@ -42,7 +42,7 @@ const CASES = [
     key: 'case.2', abbr: 'GEN', tone: 'gen',
     endings: {
       m: { sg: '-a',                pl: '-a' },
-      f: { sg: '-e',                pl: '-∅' },
+      f: { sg: '-e',                pl: '-a' },
       n: { sg: '-a',                pl: '-a' },
     },
     notes: {},
@@ -50,6 +50,7 @@ const CASES = [
       { sr:'Kaciga <mark>pilota</mark>.',        en:'The pilot\'s helmet.',         ru:'Шлем пилота.' },
       { sr:'Stižem iz <mark>grada</mark>.',       en:'I\'m arriving from the city.', ru:'Я приезжаю из города.' },
       { sr:'Nemam <mark>vremena</mark>.',         en:'I have no time.',              ru:'У меня нет времени.' },
+      { sr:'Ovde nema <mark>žena</mark>.',        en:'There are no women here. <em>(f. pl. — <i>-a</i>, same shape as Nom sg)</em>', ru:'Здесь нет женщин. <em>(ж. мн. — <i>-a</i>, совпадает с Им. ед.)</em>' },
     ],
     preps: ['od','iz','do','kod','blizu','iza','oko','bez','pre','posle']
   },

@@ -3,7 +3,6 @@
 ## Premise
 
 Mobile-first cheat sheets. Replace pinch-zoom PDFs, not write a textbook.
-Reference: Levithan's A4 Serbian charts — every block is a labeled grid of facts.
 
 ## Brand
 
