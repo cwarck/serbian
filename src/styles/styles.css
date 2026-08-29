@@ -1299,10 +1299,9 @@ section { position: relative; }
 .gender-unit > .chart-form,
 .gender-unit > .cell,
 .gender-unit > .end { padding: .12rem .5rem .16rem; }
-/* The specimen keeps the house tone idiom, so a chip reads ink-soft
-   everywhere except inside an ending cell, where the row's subject is the
-   case and the ending stays case-hued. See AGENTS.md — the two tiers meet on
-   one object there, and that is deliberate. */
+/* The specimen keeps the house tone idiom, so a chip reads ink-soft where no
+   tone is set. Ending cells are the exception — see .cell .end: the chip is
+   the only coloured thing inside a case cell. */
 .gender-unit > .chart-form { color: var(--tone, var(--ink-soft)); }
 
 /* A wrapping run of chips — what replaced the three gender columns. */
@@ -1405,12 +1404,15 @@ section { position: relative; }
   align-items: baseline;
   gap: .15rem .55rem;
 }
+/* The ending is body ink, never case-hued: inside a facet-filled chip the
+   case tone was a second colour on one object. The case is already stated by
+   the section it sits in; the chip states the gender. */
 .cell .end {
   font-family: var(--ff-display);
   font-style: normal;
   font-weight: 400;
   font-size: var(--fs-lead);
-  color: var(--tone, var(--ink-soft));
+  color: var(--ink);
   line-height: 1;
   letter-spacing: -.01em;
   white-space: nowrap;
