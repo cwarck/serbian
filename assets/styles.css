@@ -1277,16 +1277,11 @@ section { position: relative; }
   gap: .35rem;
 }
 /* ── Syncretism recession ─────────────────────────────────────────────
-   When <body> carries .is-syncretism (the "Shared endings" setting), an
-   ending that merely repeats a shape an earlier case already introduced
-   recedes to ink so only the genuinely-new endings keep their hue — in the
-   grid (.end.is-echo + a tone chip naming its source case). With it off, the
-   source chips hide. */
-body.is-syncretism .end.is-echo {
+   An ending that merely repeats a shape an earlier case already introduced
+   recedes to ink, so only the genuinely-new endings keep their hue — paired
+   with a tone chip (.cell-shares) naming its source case. */
+.end.is-echo {
   color: var(--ink-faint);
-}
-body:not(.is-syncretism) .cell-shares {
-  display: none;
 }
 
 /* ── Settings menu ─────────────────────────────────────────────────────

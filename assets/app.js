@@ -429,8 +429,7 @@
 
   /* Consolidate the masthead toggles behind one button + floating panel.
      Controls are RELOCATED (not recreated), so the data-attribute wiring in
-     init() keeps working. Page scripts append page-specific rows to the
-     exposed `SerbianFyi.settingsExtras` slot (e.g. cases' shared-endings row). */
+     init() keeps working. */
   const SLIDERS_SVG = `
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
       <line x1="4" y1="9" x2="20" y2="9"></line>
@@ -501,16 +500,8 @@
     });
     addRow('settings.theme', themeGroup);
 
-    const extras = document.createElement('div');
-    extras.className = 'settings-extras';
-    extras.id = 'settingsExtras';
-    card.appendChild(extras);
-
     actions.appendChild(btn);
     document.body.appendChild(menu);
-
-    window.SerbianFyi = window.SerbianFyi || {};
-    window.SerbianFyi.settingsExtras = extras;
 
     wireSettingsMenu(btn, menu, card);
   }

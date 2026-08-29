@@ -17,9 +17,6 @@ window.I18N = {
     'settings.theme.system': 'Auto',
     'settings.theme.light': 'Light',
     'settings.theme.dark': 'Dark',
-    'cases.syncretism': 'Shared endings',
-    'cases.syncretism.on': 'On',
-    'cases.syncretism.off': 'Off',
 
     'chart.index.label': 'Charts',
 
@@ -253,9 +250,6 @@ window.I18N = {
     'settings.theme.system': 'Авто',
     'settings.theme.light': 'Светлая',
     'settings.theme.dark': 'Тёмная',
-    'cases.syncretism': 'Общие окончания',
-    'cases.syncretism.on': 'Вкл',
-    'cases.syncretism.off': 'Выкл',
 
     'chart.index.label': 'Таблицы',
 

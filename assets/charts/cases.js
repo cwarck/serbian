@@ -31,19 +31,11 @@ function prepToken(p) {
     : sr;
 }
 
-/* ── View settings (persisted), surfaced as rows in the site settings menu.
-   sync: syncretism recession on/off. ── */
-const LS_SYNC = 'as_syncretism';
-function lsGet(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
-function lsSet(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+/* Shared-endings recession is the only view now — no toggle, no stored
+   preference. Sweep the retired keys so returning users don't carry dead
+   settings forever. */
 function lsDel(k) { try { localStorage.removeItem(k); } catch (e) {} }
-function syncOn() { return lsGet(LS_SYNC) !== 'off'; }
-function applySync() { document.body.classList.toggle('is-syncretism', syncOn()); }
-
-/* The Simple/Detailed toggle is gone; sweep its keys so returning users don't
-   carry a dead `data-detail` preference forever. */
-lsDel('as_detail');
-lsDel('as_hint_detail');
+['as_detail', 'as_hint_detail', 'as_syncretism'].forEach(lsDel);
 
 /* Spotlight changed letters in a sound-change pair: walk common prefix and
    suffix from both ends, wrap the divergent middle in <span class="lit">.
@@ -469,50 +461,7 @@ document.addEventListener('scriptchange', () => {
 });
 window.addEventListener('resize', updateStickyOffset);
 window.addEventListener('load', updateStickyOffset);
-/* View-settings rows injected into the site settings menu (built by app.js).
-   Each row is a label + a chip group; data-i18n keeps labels translatable. */
-function settingsRow(labelKey, options, current, onPick) {
-  const row = document.createElement('div');
-  row.className = 'settings-row';
-  const label = document.createElement('span');
-  label.className = 'settings-label';
-  label.setAttribute('data-i18n', labelKey);
-  label.textContent = tCases(labelKey);
-  const group = document.createElement('div');
-  group.className = 'nav-controls';
-  group.setAttribute('role', 'group');
-  const refresh = () => group.querySelectorAll('.chip').forEach((chip, idx) =>
-    chip.setAttribute('aria-pressed', String(options[idx].value === current())));
-  options.forEach(opt => {
-    const chip = document.createElement('button');
-    chip.type = 'button';
-    chip.className = 'chip';
-    chip.setAttribute('data-i18n', opt.labelKey);
-    chip.textContent = tCases(opt.labelKey);
-    chip.addEventListener('click', () => { onPick(opt.value); refresh(); });
-    group.appendChild(chip);
-  });
-  refresh();
-  row.append(label, group);
-  return row;
-}
-
-function injectSettings() {
-  if (!document.getElementById('caseList')) return; // cases page only
-  const slot = (window.SerbianFyi && window.SerbianFyi.settingsExtras)
-    || document.getElementById('settingsExtras');
-  if (!slot || slot.childElementCount) return;
-  slot.appendChild(settingsRow('cases.syncretism', [
-    { value: 'on',  labelKey: 'cases.syncretism.on' },
-    { value: 'off', labelKey: 'cases.syncretism.off' },
-  ], () => (syncOn() ? 'on' : 'off'), (v) => { lsSet(LS_SYNC, v); applySync(); }));
-}
-
-applySync();
 renderAll();
 updateStickyOffset();
 setupCaseStripVisibility();
 setupScrollSpy();
-function setupExtras() { injectSettings(); }
-if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', setupExtras);
-else setupExtras();
