@@ -1,5 +1,17 @@
 {
   "scripts": {
-    "validate": "bun tools/validate.mjs"
-  }
+    "build": "bun build.ts",
+    "dev": "bun build.ts dev",
+    "typecheck": "tsc --noEmit",
+    "test": "bun test",
+    "validate": "bun run build && bun tools/validate.mjs && bun test && tsc --noEmit",
+    "snapshot:check": "bun test tests/snapshot.test.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.4.0",
+    "typescript": "^7.0.2"
+  },
+  "name": "serbian-fyi",
+  "private": true,
+  "type": "module"
 }

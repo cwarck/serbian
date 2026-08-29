@@ -1,0 +1,1347 @@
+### mount verbGrid
+<article class="chart-panel verb-col" data-tone="im">
+<header class="chart-panel-head">
+<span class="chart-label">
+Present
+</span>
+<h3>
+IM | E
+</h3>
+</header>
+<div aria-label="Endings" class="chart-pairs verb-pair-grid">
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ја
+</span>
+<span class="chart-form verb-form" lang="sr">
+-им
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ми
+</span>
+<span class="chart-form verb-form" lang="sr">
+-имо
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ти
+</span>
+<span class="chart-form verb-form" lang="sr">
+-иш
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ви
+</span>
+<span class="chart-form verb-form" lang="sr">
+-ите
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+он/она/оно
+</span>
+<span class="chart-form verb-form" lang="sr">
+-и
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+они/оне/она
+</span>
+<span class="chart-form verb-form" lang="sr">
+-е
+</span>
+</div>
+</div>
+<section class="verb-block">
+<h4 class="chart-label">
+Inf cues
+</h4>
+<div class="verb-patterns">
+<span class="verb-pattern" lang="sr">
+-ити
+</span>
+<span class="verb-pattern" lang="sr">
+-ети
+</span>
+</div>
+</section>
+<section class="verb-block">
+<h4 class="chart-label">
+Common verbs
+</h4>
+<ul class="verb-list verb-list-glossed">
+<li>
+<span class="verb-lemma" lang="sr">
+радити
+</span>
+<span class="verb-stem" lang="sr">
+радим
+</span>
+<span class="verb-gloss">
+work / do
+</span>
+</li>
+<li>
+<span class="verb-lemma" lang="sr">
+говорити
+</span>
+<span class="verb-stem" lang="sr">
+говорим
+</span>
+<span class="verb-gloss">
+speak / talk
+</span>
+</li>
+<li>
+<span class="verb-lemma" lang="sr">
+учити
+</span>
+<span class="verb-stem" lang="sr">
+учим
+</span>
+<span class="verb-gloss">
+learn / study
+</span>
+</li>
+<li>
+<span class="verb-lemma" lang="sr">
+видети
+</span>
+<span class="verb-stem" lang="sr">
+видим
+</span>
+<span class="verb-gloss">
+see
+</span>
+</li>
+<li>
+<span class="verb-lemma" lang="sr">
+волети
+</span>
+<span class="verb-stem" lang="sr">
+волим
+</span>
+<span class="verb-gloss">
+love / like
+</span>
+</li>
+<li>
+<span class="verb-lemma" lang="sr">
+живети
+</span>
+<span class="verb-stem" lang="sr">
+живим
+</span>
+<span class="verb-gloss">
+live
+</span>
+</li>
+<li>
+<span class="verb-lemma" lang="sr">
+седети
+</span>
+<span class="verb-stem" lang="sr">
+седим
+</span>
+<span class="verb-gloss">
+sit
+</span>
+</li>
+</ul>
+</section>
+<section class="verb-block verb-block-example">
+<header class="verb-lemma-head">
+<span class="chart-label">
+Example
+</span>
+<h4 class="sr-head" lang="sr">
+радити
+</h4>
+</header>
+<div class="chart-pairs verb-pair-grid">
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ја
+</span>
+<span class="chart-form verb-form" lang="sr">
+радим
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ми
+</span>
+<span class="chart-form verb-form" lang="sr">
+радимо
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ти
+</span>
+<span class="chart-form verb-form" lang="sr">
+радиш
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ви
+</span>
+<span class="chart-form verb-form" lang="sr">
+радите
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+он/она/оно
+</span>
+<span class="chart-form verb-form" lang="sr">
+ради
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+они/оне/она
+</span>
+<span class="chart-form verb-form" lang="sr">
+раде
+</span>
+</div>
+</div>
+</section>
+</article>
+<article class="chart-panel verb-col" data-tone="am">
+<header class="chart-panel-head">
+<span class="chart-label">
+Present
+</span>
+<h3>
+AM | AJU
+</h3>
+</header>
+<div aria-label="Endings" class="chart-pairs verb-pair-grid">
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ја
+</span>
+<span class="chart-form verb-form" lang="sr">
+-ам
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ми
+</span>
+<span class="chart-form verb-form" lang="sr">
+-амо
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ти
+</span>
+<span class="chart-form verb-form" lang="sr">
+-аш
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ви
+</span>
+<span class="chart-form verb-form" lang="sr">
+-ате
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+он/она/оно
+</span>
+<span class="chart-form verb-form" lang="sr">
+-а
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+они/оне/она
+</span>
+<span class="chart-form verb-form" lang="sr">
+-ају
+</span>
+</div>
+</div>
+<section class="verb-block">
+<h4 class="chart-label">
+Inf cues
+</h4>
+<div class="verb-patterns">
+<span class="verb-pattern" lang="sr">
+-ати
+</span>
+</div>
+</section>
+<section class="verb-block">
+<h4 class="chart-label">
+Common verbs
+</h4>
+<ul class="verb-list verb-list-glossed">
+<li>
+<span class="verb-lemma" lang="sr">
+читати
+</span>
+<span class="verb-stem" lang="sr">
+читам
+</span>
+<span class="verb-gloss">
+read
+</span>
+</li>
+<li>
+<span class="verb-lemma" lang="sr">
+знати
+</span>
+<span class="verb-stem" lang="sr">
+знам
+</span>
+<span class="verb-gloss">
+know
+</span>
+</li>
+<li>
+<span class="verb-lemma" lang="sr">
+имати
+</span>
+<span class="verb-stem" lang="sr">
+имам
+</span>
+<span class="verb-gloss">
+have
+</span>
+</li>
+<li>
+<span class="verb-lemma" lang="sr">
+гледати
+</span>
+<span class="verb-stem" lang="sr">
+гледам
+</span>
+<span class="verb-gloss">
+watch / look
+</span>
+</li>
+<li>
+<span class="verb-lemma" lang="sr">
+слушати
+</span>
+<span class="verb-stem" lang="sr">
+слушам
+</span>
+<span class="verb-gloss">
+listen
+</span>
+</li>
+<li>
+<span class="verb-lemma" lang="sr">
+чекати
+</span>
+<span class="verb-stem" lang="sr">
+чекам
+</span>
+<span class="verb-gloss">
+wait (for)
+</span>
+</li>
+<li>
+<span class="verb-lemma" lang="sr">
+играти
+</span>
+<span class="verb-stem" lang="sr">
+играм
+</span>
+<span class="verb-gloss">
+play
+</span>
+</li>
+</ul>
+</section>
+<section class="verb-block verb-block-example">
+<header class="verb-lemma-head">
+<span class="chart-label">
+Example
+</span>
+<h4 class="sr-head" lang="sr">
+читати
+</h4>
+</header>
+<div class="chart-pairs verb-pair-grid">
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ја
+</span>
+<span class="chart-form verb-form" lang="sr">
+читам
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ми
+</span>
+<span class="chart-form verb-form" lang="sr">
+читамо
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ти
+</span>
+<span class="chart-form verb-form" lang="sr">
+читаш
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ви
+</span>
+<span class="chart-form verb-form" lang="sr">
+читате
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+он/она/оно
+</span>
+<span class="chart-form verb-form" lang="sr">
+чита
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+они/оне/она
+</span>
+<span class="chart-form verb-form" lang="sr">
+читају
+</span>
+</div>
+</div>
+</section>
+</article>
+<article class="chart-panel verb-col" data-tone="em">
+<header class="chart-panel-head">
+<span class="chart-label">
+Present
+</span>
+<h3>
+EM | U
+</h3>
+</header>
+<div aria-label="Endings" class="chart-pairs verb-pair-grid">
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ја
+</span>
+<span class="chart-form verb-form" lang="sr">
+-ем
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ми
+</span>
+<span class="chart-form verb-form" lang="sr">
+-емо
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ти
+</span>
+<span class="chart-form verb-form" lang="sr">
+-еш
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ви
+</span>
+<span class="chart-form verb-form" lang="sr">
+-ете
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+он/она/оно
+</span>
+<span class="chart-form verb-form" lang="sr">
+-е
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+они/оне/она
+</span>
+<span class="chart-form verb-form" lang="sr">
+-у
+</span>
+</div>
+</div>
+<section class="verb-block">
+<h4 class="chart-label">
+Inf cues
+</h4>
+<div class="verb-patterns">
+<span class="verb-pattern" lang="sr">
+-ати
+</span>
+<span class="verb-pattern" lang="sr">
+-ћи
+</span>
+</div>
+</section>
+<section class="verb-block">
+<h4 class="chart-label">
+Common verbs
+</h4>
+<ul class="verb-list verb-list-glossed">
+<li>
+<span class="verb-lemma" lang="sr">
+лагати
+</span>
+<span class="verb-stem" lang="sr">
+лажем
+</span>
+<span class="verb-gloss">
+lie / tell lies
+</span>
+</li>
+<li>
+<span class="verb-lemma" lang="sr">
+писати
+</span>
+<span class="verb-stem" lang="sr">
+пишем
+</span>
+<span class="verb-gloss">
+write
+</span>
+</li>
+<li>
+<span class="verb-lemma" lang="sr">
+звати
+</span>
+<span class="verb-stem" lang="sr">
+зовем
+</span>
+<span class="verb-gloss">
+call (name)
+</span>
+</li>
+<li>
+<span class="verb-lemma" lang="sr">
+брати
+</span>
+<span class="verb-stem" lang="sr">
+берем
+</span>
+<span class="verb-gloss">
+pick / gather
+</span>
+</li>
+<li>
+<span class="verb-lemma" lang="sr">
+прати
+</span>
+<span class="verb-stem" lang="sr">
+перем
+</span>
+<span class="verb-gloss">
+wash
+</span>
+</li>
+<li>
+<span class="verb-lemma" lang="sr">
+казати
+</span>
+<span class="verb-stem" lang="sr">
+кажем
+</span>
+<span class="verb-gloss">
+say / tell
+</span>
+</li>
+<li>
+<span class="verb-lemma" lang="sr">
+плакати
+</span>
+<span class="verb-stem" lang="sr">
+плачем
+</span>
+<span class="verb-gloss">
+cry
+</span>
+</li>
+</ul>
+</section>
+<section class="verb-block verb-block-example">
+<header class="verb-lemma-head">
+<span class="chart-label">
+Example
+</span>
+<h4 class="sr-head" lang="sr">
+лагати
+</h4>
+</header>
+<div class="chart-pairs verb-pair-grid">
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ја
+</span>
+<span class="chart-form verb-form" lang="sr">
+лажем
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ми
+</span>
+<span class="chart-form verb-form" lang="sr">
+лажемо
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ти
+</span>
+<span class="chart-form verb-form" lang="sr">
+лажеш
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ви
+</span>
+<span class="chart-form verb-form" lang="sr">
+лажете
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+он/она/оно
+</span>
+<span class="chart-form verb-form" lang="sr">
+лаже
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+они/оне/она
+</span>
+<span class="chart-form verb-form" lang="sr">
+лажу
+</span>
+</div>
+</div>
+</section>
+</article>
+<article class="chart-panel verb-col" data-tone="jem">
+<header class="chart-panel-head">
+<span class="chart-label">
+Present
+</span>
+<h3>
+JEM | JU
+</h3>
+</header>
+<div aria-label="Endings" class="chart-pairs verb-pair-grid">
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ја
+</span>
+<span class="chart-form verb-form" lang="sr">
+-јем
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ми
+</span>
+<span class="chart-form verb-form" lang="sr">
+-јемо
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ти
+</span>
+<span class="chart-form verb-form" lang="sr">
+-јеш
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ви
+</span>
+<span class="chart-form verb-form" lang="sr">
+-јете
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+он/она/оно
+</span>
+<span class="chart-form verb-form" lang="sr">
+-је
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+они/оне/она
+</span>
+<span class="chart-form verb-form" lang="sr">
+-ју
+</span>
+</div>
+</div>
+<section class="verb-block">
+<h4 class="chart-label">
+Inf cues
+</h4>
+<div class="verb-patterns">
+<span class="verb-pattern" lang="sr">
+-овати
+</span>
+<span class="verb-pattern" lang="sr">
+-ивати
+</span>
+<span class="verb-pattern" lang="sr">
+-авати
+</span>
+</div>
+</section>
+<section class="verb-block">
+<h4 class="chart-label">
+Common verbs
+</h4>
+<ul class="verb-list verb-list-glossed">
+<li>
+<span class="verb-lemma" lang="sr">
+куповати
+</span>
+<span class="verb-stem" lang="sr">
+купујем
+</span>
+<span class="verb-gloss">
+buy / shop
+</span>
+</li>
+<li>
+<span class="verb-lemma" lang="sr">
+путовати
+</span>
+<span class="verb-stem" lang="sr">
+путујем
+</span>
+<span class="verb-gloss">
+travel
+</span>
+</li>
+<li>
+<span class="verb-lemma" lang="sr">
+становати
+</span>
+<span class="verb-stem" lang="sr">
+станујем
+</span>
+<span class="verb-gloss">
+reside / live (at)
+</span>
+</li>
+<li>
+<span class="verb-lemma" lang="sr">
+веровати
+</span>
+<span class="verb-stem" lang="sr">
+верујем
+</span>
+<span class="verb-gloss">
+believe
+</span>
+</li>
+<li>
+<span class="verb-lemma" lang="sr">
+показивати
+</span>
+<span class="verb-stem" lang="sr">
+показујем
+</span>
+<span class="verb-gloss">
+show / point
+</span>
+</li>
+<li>
+<span class="verb-lemma" lang="sr">
+продавати
+</span>
+<span class="verb-stem" lang="sr">
+продајем
+</span>
+<span class="verb-gloss">
+sell
+</span>
+</li>
+</ul>
+</section>
+<section class="verb-block verb-block-example">
+<header class="verb-lemma-head">
+<span class="chart-label">
+Example
+</span>
+<h4 class="sr-head" lang="sr">
+куповати
+</h4>
+</header>
+<div class="chart-pairs verb-pair-grid">
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ја
+</span>
+<span class="chart-form verb-form" lang="sr">
+купујем
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ми
+</span>
+<span class="chart-form verb-form" lang="sr">
+купујемо
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ти
+</span>
+<span class="chart-form verb-form" lang="sr">
+купујеш
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ви
+</span>
+<span class="chart-form verb-form" lang="sr">
+купујете
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+он/она/оно
+</span>
+<span class="chart-form verb-form" lang="sr">
+купује
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+они/оне/она
+</span>
+<span class="chart-form verb-form" lang="sr">
+купују
+</span>
+</div>
+</div>
+</section>
+</article>
+<article class="chart-panel verb-col" data-tone="irr">
+<header class="chart-panel-head">
+<span class="chart-label">
+Present
+</span>
+<h3>
+Irregular
+</h3>
+</header>
+<div class="verb-mini-list">
+<section class="verb-mini">
+<header class="verb-lemma-head">
+<h4 class="sr-head" lang="sr">
+бити
+</h4>
+<button aria-expanded="false" aria-haspopup="dialog" aria-label="full forms" class="tip-chip" data-verb-tip="0" type="button">
+?
+</button>
+</header>
+<div class="chart-pairs verb-pair-grid">
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ја
+</span>
+<span class="chart-form verb-form" lang="sr">
+сам
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ми
+</span>
+<span class="chart-form verb-form" lang="sr">
+смо
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ти
+</span>
+<span class="chart-form verb-form" lang="sr">
+си
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ви
+</span>
+<span class="chart-form verb-form" lang="sr">
+сте
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+он/она/оно
+</span>
+<span class="chart-form verb-form" lang="sr">
+је
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+они/оне/она
+</span>
+<span class="chart-form verb-form" lang="sr">
+су
+</span>
+</div>
+</div>
+<div class="verb-negative">
+<span class="chart-label">
+Negative
+</span>
+<p lang="sr">
+нисам, ниси, није, нисмо, нисте, нису
+</p>
+</div>
+</section>
+<section class="verb-mini">
+<header class="verb-lemma-head">
+<h4 class="sr-head" lang="sr">
+хтети
+</h4>
+</header>
+<div class="chart-pairs verb-pair-grid">
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ја
+</span>
+<span class="chart-form verb-form" lang="sr">
+хоћу
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ми
+</span>
+<span class="chart-form verb-form" lang="sr">
+хоћемо
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ти
+</span>
+<span class="chart-form verb-form" lang="sr">
+хоћеш
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ви
+</span>
+<span class="chart-form verb-form" lang="sr">
+хоћете
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+он/она/оно
+</span>
+<span class="chart-form verb-form" lang="sr">
+хоће
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+они/оне/она
+</span>
+<span class="chart-form verb-form" lang="sr">
+хоће
+</span>
+</div>
+</div>
+<div class="verb-negative">
+<span class="chart-label">
+Negative
+</span>
+<p lang="sr">
+нећу, нећеш, неће, нећемо, нећете, неће
+</p>
+</div>
+</section>
+<section class="verb-mini">
+<header class="verb-lemma-head">
+<h4 class="sr-head" lang="sr">
+моћи
+</h4>
+</header>
+<div class="chart-pairs verb-pair-grid">
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ја
+</span>
+<span class="chart-form verb-form" lang="sr">
+могу
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ми
+</span>
+<span class="chart-form verb-form" lang="sr">
+можемо
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ти
+</span>
+<span class="chart-form verb-form" lang="sr">
+можеш
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ви
+</span>
+<span class="chart-form verb-form" lang="sr">
+можете
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+он/она/оно
+</span>
+<span class="chart-form verb-form" lang="sr">
+може
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+они/оне/она
+</span>
+<span class="chart-form verb-form" lang="sr">
+могу
+</span>
+</div>
+</div>
+</section>
+</div>
+</article>
+<article class="chart-panel verb-col" data-tone="past">
+<header class="chart-panel-head">
+<span class="chart-label">
+Tense
+</span>
+<h3>
+Past
+</h3>
+</header>
+<section class="verb-block">
+<h4 class="chart-label">
+Formula
+</h4>
+<p class="verb-formula">
+<span lang="sr">
+сам/си/је/смо/сте/су
+</span>
+<span class="chart-sep">
++
+</span>
+<span class="verb-term">
+past participle
+</span>
+</p>
+</section>
+<section class="verb-block">
+<h4 class="chart-label">
+Placement
+</h4>
+<div class="verb-examples">
+<div class="chart-example verb-example">
+<span class="sr" lang="sr">
+Гледао сам филм.
+</span>
+<span class="tr">
+I watched a film. (m.)
+</span>
+</div>
+<div class="chart-example verb-example">
+<span class="sr" lang="sr">
+Ја сам гледао филм.
+</span>
+<span class="tr">
+I watched a film.
+</span>
+</div>
+<div class="chart-example verb-example">
+<span class="sr" lang="sr">
+Нисам гледао филм.
+</span>
+<span class="tr">
+I did not watch a film. (m.)
+</span>
+</div>
+<div class="chart-example verb-example">
+<span class="sr" lang="sr">
+Јуче сам гледао филм.
+</span>
+<span class="tr">
+Yesterday I watched a film.
+</span>
+</div>
+</div>
+</section>
+<section class="verb-block">
+<h4 class="chart-label">
+Participle
+</h4>
+<div class="chart-pairs verb-pair-grid">
+<div class="chart-pair">
+<span class="chart-label">
+M sg
+</span>
+<span class="chart-form verb-form">
+-о
+</span>
+</div>
+<div class="chart-pair">
+<span class="chart-label">
+M/mixed pl
+</span>
+<span class="chart-form verb-form">
+-ли
+</span>
+</div>
+<div class="chart-pair">
+<span class="chart-label">
+F sg
+</span>
+<span class="chart-form verb-form">
+-ла
+</span>
+</div>
+<div class="chart-pair">
+<span class="chart-label">
+F pl
+</span>
+<span class="chart-form verb-form">
+-ле
+</span>
+</div>
+<div class="chart-pair">
+<span class="chart-label">
+N sg
+</span>
+<span class="chart-form verb-form">
+-ло
+</span>
+</div>
+<div class="chart-pair">
+<span class="chart-label">
+N pl
+</span>
+<span class="chart-form verb-form">
+-ла
+</span>
+</div>
+</div>
+</section>
+</article>
+<article class="chart-panel verb-col" data-tone="future">
+<header class="chart-panel-head">
+<span class="chart-label">
+Tense
+</span>
+<h3>
+Future
+</h3>
+</header>
+<section class="verb-block">
+<h4 class="chart-label">
+Formula
+</h4>
+<p class="verb-formula">
+<span lang="sr">
+ћу/ћеш/ће/ћемо/ћете/ће
+</span>
+<span class="chart-sep">
++
+</span>
+<span class="verb-term">
+infinitive
+</span>
+</p>
+</section>
+<section class="verb-block">
+<h4 class="chart-label">
+Placement / spelling
+</h4>
+<div class="verb-examples">
+<div class="chart-example verb-example">
+<span class="sr" lang="sr">
+Ја ћу радити.
+</span>
+<span class="tr">
+I will work.
+</span>
+</div>
+<div class="chart-example verb-example">
+<span class="sr" lang="sr">
+Радићу.
+</span>
+<span class="tr">
+I will work.
+</span>
+</div>
+<div class="chart-example verb-example">
+<span class="sr" lang="sr">
+Нећу радити.
+</span>
+<span class="tr">
+I will not work.
+</span>
+</div>
+</div>
+</section>
+<section class="verb-block">
+<h4 class="chart-label">
+Merged forms
+</h4>
+<p class="verb-list" lang="sr">
+радити → радићу, радићеш, радиће
+</p>
+</section>
+<section class="verb-block">
+<h4 class="chart-label">
+-ći verbs
+</h4>
+<p class="verb-list" lang="sr">
+ићи ћу, доћи ћу
+</p>
+</section>
+</article>
+<article class="chart-panel verb-col" data-tone="clitic">
+<header class="chart-panel-head">
+<span class="chart-label">
+Clitic
+</span>
+<h3 lang="sr">
+се
+</h3>
+</header>
+<section class="verb-block">
+<p class="verb-note">
+<i lang="sr">
+се
+</i>
+follows the first stressed word.
+</p>
+<div class="verb-examples">
+<div class="chart-example verb-example">
+<span class="sr" lang="sr">
+Шетам се.
+</span>
+</div>
+<div class="chart-example verb-example">
+<span class="sr" lang="sr">
+Ја се шетам.
+</span>
+</div>
+<div class="chart-example verb-example">
+<span class="sr" lang="sr">
+Нисам се шетао.
+</span>
+</div>
+</div>
+</section>
+</article>
+### popover [data-verb-tip]|[["data-verb-tip","0"]]
+<article class="chart-tip">
+<h4>
+<span lang="sr">
+бити
+</span>
+· full forms
+</h4>
+<div class="chart-pairs">
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ја
+</span>
+<span class="chart-form verb-form" lang="sr">
+јесам
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ти
+</span>
+<span class="chart-form verb-form" lang="sr">
+јеси
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+он/она/оно
+</span>
+<span class="chart-form verb-form" lang="sr">
+јесте
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ми
+</span>
+<span class="chart-form verb-form" lang="sr">
+јесмо
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+ви
+</span>
+<span class="chart-form verb-form" lang="sr">
+јесте
+</span>
+</div>
+<div class="chart-pair">
+<span class="verb-pron" lang="sr">
+они/оне/она
+</span>
+<span class="chart-form verb-form" lang="sr">
+јесу
+</span>
+</div>
+</div>
+</article>

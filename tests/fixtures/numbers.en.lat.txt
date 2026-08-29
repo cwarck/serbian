@@ -1,0 +1,902 @@
+### mount numbersChart
+<section aria-label="Cardinal numbers" class="num-cardinals">
+<div class="num-grid">
+<article class="num-cell" data-band="ones">
+<span class="num-value">
+0
+</span>
+<span class="chart-form num-word" lang="sr">
+nula
+</span>
+</article>
+<article class="num-cell" data-band="ones">
+<span class="num-value">
+1
+</span>
+<span class="chart-form num-word" lang="sr">
+jedan
+</span>
+</article>
+<article class="num-cell" data-band="ones">
+<span class="num-value">
+2
+</span>
+<span class="chart-form num-word" lang="sr">
+dva
+</span>
+</article>
+<article class="num-cell" data-band="ones">
+<span class="num-value">
+3
+</span>
+<span class="chart-form num-word" lang="sr">
+tri
+</span>
+</article>
+<article class="num-cell" data-band="ones">
+<span class="num-value">
+4
+</span>
+<span class="chart-form num-word" lang="sr">
+četiri
+</span>
+</article>
+<article class="num-cell" data-band="ones">
+<span class="num-value">
+5
+</span>
+<span class="chart-form num-word" lang="sr">
+pet
+</span>
+</article>
+<article class="num-cell" data-band="ones">
+<span class="num-value">
+6
+</span>
+<span class="chart-form num-word" lang="sr">
+šest
+</span>
+</article>
+<article class="num-cell" data-band="ones">
+<span class="num-value">
+7
+</span>
+<span class="chart-form num-word" lang="sr">
+sedam
+</span>
+</article>
+<article class="num-cell" data-band="ones">
+<span class="num-value">
+8
+</span>
+<span class="chart-form num-word" lang="sr">
+osam
+</span>
+</article>
+<article class="num-cell" data-band="ones">
+<span class="num-value">
+9
+</span>
+<span class="chart-form num-word" lang="sr">
+devet
+</span>
+</article>
+<article class="num-cell" data-band="teens">
+<span class="num-value">
+10
+</span>
+<span class="chart-form num-word" lang="sr">
+deset
+</span>
+</article>
+<article class="num-cell" data-band="teens">
+<span class="num-value">
+11
+</span>
+<span class="chart-form num-word" lang="sr">
+jedanaest
+</span>
+</article>
+<article class="num-cell" data-band="teens">
+<span class="num-value">
+12
+</span>
+<span class="chart-form num-word" lang="sr">
+dvanaest
+</span>
+</article>
+<article class="num-cell" data-band="teens">
+<span class="num-value">
+13
+</span>
+<span class="chart-form num-word" lang="sr">
+trinaest
+</span>
+</article>
+<article class="num-cell" data-band="teens">
+<span class="num-value">
+14
+</span>
+<span class="chart-form num-word" lang="sr">
+četrnaest
+</span>
+</article>
+<article class="num-cell" data-band="teens">
+<span class="num-value">
+15
+</span>
+<span class="chart-form num-word" lang="sr">
+petnaest
+</span>
+</article>
+<article class="num-cell" data-band="teens">
+<span class="num-value">
+16
+</span>
+<span class="chart-form num-word" lang="sr">
+šesnaest
+</span>
+</article>
+<article class="num-cell" data-band="teens">
+<span class="num-value">
+17
+</span>
+<span class="chart-form num-word" lang="sr">
+sedamnaest
+</span>
+</article>
+<article class="num-cell" data-band="teens">
+<span class="num-value">
+18
+</span>
+<span class="chart-form num-word" lang="sr">
+osamnaest
+</span>
+</article>
+<article class="num-cell" data-band="teens">
+<span class="num-value">
+19
+</span>
+<span class="chart-form num-word" lang="sr">
+devetnaest
+</span>
+</article>
+<article class="num-cell" data-band="tens">
+<span class="num-value">
+20
+</span>
+<span class="chart-form num-word" lang="sr">
+dvadeset
+</span>
+</article>
+<article class="num-cell" data-band="tens">
+<span class="num-value">
+30
+</span>
+<span class="chart-form num-word" lang="sr">
+trideset
+</span>
+</article>
+<article class="num-cell" data-band="tens">
+<span class="num-value">
+40
+</span>
+<span class="chart-form num-word" lang="sr">
+četrdeset
+</span>
+</article>
+<article class="num-cell" data-band="tens">
+<span class="num-value">
+50
+</span>
+<span class="chart-form num-word" lang="sr">
+pedeset
+</span>
+</article>
+<article class="num-cell" data-band="tens">
+<span class="num-value">
+60
+</span>
+<span class="chart-form num-word" lang="sr">
+šezdeset
+</span>
+</article>
+<article class="num-cell" data-band="tens">
+<span class="num-value">
+70
+</span>
+<span class="chart-form num-word" lang="sr">
+sedamdeset
+</span>
+</article>
+<article class="num-cell" data-band="tens">
+<span class="num-value">
+80
+</span>
+<span class="chart-form num-word" lang="sr">
+osamdeset
+</span>
+</article>
+<article class="num-cell" data-band="tens">
+<span class="num-value">
+90
+</span>
+<span class="chart-form num-word" lang="sr">
+devedeset
+</span>
+</article>
+<article class="num-cell" data-band="hundreds">
+<span class="num-value">
+100
+</span>
+<span class="chart-form num-word" lang="sr">
+sto
+</span>
+</article>
+<article class="num-cell" data-band="hundreds">
+<span class="num-value">
+200
+</span>
+<span class="chart-form num-word" lang="sr">
+dvest
+<b class="num-end">
+a
+</b>
+</span>
+</article>
+<article class="num-cell" data-band="hundreds">
+<span class="num-value">
+300
+</span>
+<span class="chart-form num-word" lang="sr">
+trist
+<b class="num-end">
+a
+</b>
+</span>
+</article>
+<article class="num-cell" data-band="hundreds">
+<span class="num-value">
+400
+</span>
+<span class="chart-form num-word" lang="sr">
+četiristo
+</span>
+</article>
+<article class="num-cell" data-band="hundreds">
+<span class="num-value">
+500
+</span>
+<span class="chart-form num-word" lang="sr">
+petsto
+</span>
+</article>
+<article class="num-cell" data-band="hundreds">
+<span class="num-value">
+600
+</span>
+<span class="chart-form num-word" lang="sr">
+šeststo
+</span>
+</article>
+<article class="num-cell" data-band="hundreds">
+<span class="num-value">
+700
+</span>
+<span class="chart-form num-word" lang="sr">
+sedamsto
+</span>
+</article>
+<article class="num-cell" data-band="hundreds">
+<span class="num-value">
+800
+</span>
+<span class="chart-form num-word" lang="sr">
+osamsto
+</span>
+</article>
+<article class="num-cell" data-band="hundreds">
+<span class="num-value">
+900
+</span>
+<span class="chart-form num-word" lang="sr">
+devetsto
+</span>
+</article>
+<article class="num-cell" data-band="thousands">
+<span class="num-value">
+1 000
+</span>
+<span class="chart-form num-word" lang="sr">
+hiljad
+<b class="num-end">
+u
+</b>
+</span>
+</article>
+<article class="num-cell" data-band="thousands">
+<span class="num-value">
+2 000
+</span>
+<span class="chart-form num-word" lang="sr">
+dve hiljad
+<b class="num-end">
+e
+</b>
+</span>
+</article>
+<article class="num-cell" data-band="thousands">
+<span class="num-value">
+3 000
+</span>
+<span class="chart-form num-word" lang="sr">
+tri hiljad
+<b class="num-end">
+e
+</b>
+</span>
+</article>
+<article class="num-cell" data-band="thousands">
+<span class="num-value">
+4 000
+</span>
+<span class="chart-form num-word" lang="sr">
+četiri hiljad
+<b class="num-end">
+e
+</b>
+</span>
+</article>
+<article class="num-cell" data-band="thousands">
+<span class="num-value">
+5 000
+</span>
+<span class="chart-form num-word" lang="sr">
+pet hiljada
+</span>
+</article>
+<article class="num-cell" data-band="thousands">
+<span class="num-value">
+6 000
+</span>
+<span class="chart-form num-word" lang="sr">
+šest hiljada
+</span>
+</article>
+<article class="num-cell" data-band="thousands">
+<span class="num-value">
+7 000
+</span>
+<span class="chart-form num-word" lang="sr">
+sedam hiljada
+</span>
+</article>
+<article class="num-cell" data-band="thousands">
+<span class="num-value">
+8 000
+</span>
+<span class="chart-form num-word" lang="sr">
+osam hiljada
+</span>
+</article>
+<article class="num-cell" data-band="thousands">
+<span class="num-value">
+9 000
+</span>
+<span class="chart-form num-word" lang="sr">
+devet hiljada
+</span>
+</article>
+</div>
+</section>
+<section class="chart-group num-builds" data-tone="num-build">
+<header class="chart-group-head">
+<h3>
+Build numbers
+</h3>
+</header>
+<div class="chart-table">
+<article class="chart-row">
+<span class="chart-cell num-value" data-label="Number">
+21
+</span>
+<span class="chart-cell chart-form num-built" data-label="Parts" lang="sr">
+<span>
+dvadeset
+</span>
+<span class="chart-sep">
++
+</span>
+<span>
+jedan
+</span>
+</span>
+</article>
+<article class="chart-row">
+<span class="chart-cell num-value" data-label="Number">
+34
+</span>
+<span class="chart-cell chart-form num-built" data-label="Parts" lang="sr">
+<span>
+trideset
+</span>
+<span class="chart-sep">
++
+</span>
+<span>
+četiri
+</span>
+</span>
+</article>
+<article class="chart-row">
+<span class="chart-cell num-value" data-label="Number">
+58
+</span>
+<span class="chart-cell chart-form num-built" data-label="Parts" lang="sr">
+<span>
+pedeset
+</span>
+<span class="chart-sep">
++
+</span>
+<span>
+osam
+</span>
+</span>
+</article>
+<article class="chart-row">
+<span class="chart-cell num-value" data-label="Number">
+101
+</span>
+<span class="chart-cell chart-form num-built" data-label="Parts" lang="sr">
+<span>
+sto
+</span>
+<span class="chart-sep">
++
+</span>
+<span>
+jedan
+</span>
+</span>
+</article>
+<article class="chart-row">
+<span class="chart-cell num-value" data-label="Number">
+125
+</span>
+<span class="chart-cell chart-form num-built" data-label="Parts" lang="sr">
+<span>
+sto
+</span>
+<span class="chart-sep">
++
+</span>
+<span>
+dvadeset
+</span>
+<span class="chart-sep">
++
+</span>
+<span>
+pet
+</span>
+</span>
+</article>
+<article class="chart-row">
+<span class="chart-cell num-value" data-label="Number">
+2 345
+</span>
+<span class="chart-cell chart-form num-built" data-label="Parts" lang="sr">
+<span>
+dve
+</span>
+<span class="chart-sep">
++
+</span>
+<span>
+hiljade
+</span>
+<span class="chart-sep">
++
+</span>
+<span>
+trista
+</span>
+<span class="chart-sep">
++
+</span>
+<span>
+četrdeset
+</span>
+<span class="chart-sep">
++
+</span>
+<span>
+pet
+</span>
+</span>
+</article>
+</div>
+</section>
+<section class="chart-group num-nouns" data-tone="num-noun">
+<header class="chart-group-head">
+<h3>
+With nouns
+</h3>
+</header>
+<div class="chart-table">
+<article class="chart-row">
+<span class="chart-cell num-value" data-label="Number">
+1
+</span>
+<span class="chart-cell num-pattern" data-label="Pattern">
+agrees with noun
+</span>
+<div class="chart-cell num-examples" data-label="Examples" lang="sr">
+<span class="chart-form">
+jedan grad
+</span>
+<span class="chart-form">
+jedna žena
+</span>
+<span class="chart-form">
+jedno selo
+</span>
+</div>
+</article>
+<article class="chart-row">
+<span class="chart-cell num-value" data-label="Number">
+2
+</span>
+<span class="chart-cell num-pattern" data-label="Pattern">
+gender split
+</span>
+<div class="chart-cell num-examples" data-label="Examples" lang="sr">
+<span class="chart-form">
+dva grada
+</span>
+<span class="chart-form">
+dve žene
+</span>
+<span class="chart-form">
+dva sela
+</span>
+</div>
+</article>
+<article class="chart-row">
+<span class="chart-cell num-value" data-label="Number">
+3-4
+</span>
+<span class="chart-cell num-pattern" data-label="Pattern">
+counted form
+</span>
+<div class="chart-cell num-examples" data-label="Examples" lang="sr">
+<span class="chart-form">
+tri grada
+</span>
+<span class="chart-form">
+četiri žene
+</span>
+<span class="chart-form">
+tri sela
+</span>
+</div>
+</article>
+<article class="chart-row">
+<span class="chart-cell num-value" data-label="Number">
+5+
+</span>
+<span class="chart-cell num-pattern" data-label="Pattern">
+genitive plural
+</span>
+<div class="chart-cell num-examples" data-label="Examples" lang="sr">
+<span class="chart-form">
+pet gradova
+</span>
+<span class="chart-form">
+šest žena
+</span>
+<span class="chart-form">
+sedam sela
+</span>
+</div>
+</article>
+<article class="chart-row">
+<span class="chart-cell num-value" data-label="Number">
+21
+</span>
+<span class="chart-cell num-pattern" data-label="Pattern">
+last word: 1
+</span>
+<div class="chart-cell num-examples" data-label="Examples" lang="sr">
+<span class="chart-form">
+dvadeset jedan grad
+</span>
+<span class="chart-form">
+trideset jedna žena
+</span>
+<span class="chart-form">
+četrdeset jedno selo
+</span>
+</div>
+</article>
+<article class="chart-row">
+<span class="chart-cell num-value" data-label="Number">
+22-24
+</span>
+<span class="chart-cell num-pattern" data-label="Pattern">
+last word: 2-4
+</span>
+<div class="chart-cell num-examples" data-label="Examples" lang="sr">
+<span class="chart-form">
+dvadeset dva grada
+</span>
+<span class="chart-form">
+dvadeset tri žene
+</span>
+<span class="chart-form">
+dvadeset četiri sela
+</span>
+</div>
+</article>
+<article class="chart-row">
+<span class="chart-cell num-value" data-label="Number">
+25+
+</span>
+<span class="chart-cell num-pattern" data-label="Pattern">
+last word: 5+
+</span>
+<div class="chart-cell num-examples" data-label="Examples" lang="sr">
+<span class="chart-form">
+dvadeset pet gradova
+</span>
+<span class="chart-form">
+trideset šest žena
+</span>
+<span class="chart-form">
+četrdeset sedam sela
+</span>
+</div>
+</article>
+</div>
+</section>
+<section class="chart-group num-agreement" data-tone="num-agreement">
+<header class="chart-group-head">
+<h3>
+Verb agreement
+</h3>
+</header>
+<div class="chart-table">
+<article class="chart-row">
+<span class="chart-cell num-value" data-label="Number">
+1
+</span>
+<span class="chart-cell num-pattern" data-label="Verb">
+singular
+</span>
+<div class="chart-cell" data-label="Examples">
+<div class="chart-example">
+<span class="sr" lang="sr">
+Jedan grad je velik.
+</span>
+<span class="tr">
+One city is big.
+</span>
+</div>
+</div>
+</article>
+<article class="chart-row">
+<span class="chart-cell num-value" data-label="Number">
+2-4
+</span>
+<span class="chart-cell num-pattern" data-label="Verb">
+plural
+</span>
+<div class="chart-cell" data-label="Examples">
+<div class="chart-example">
+<span class="sr" lang="sr">
+Dva grada su velika.
+</span>
+<span class="tr">
+Two cities are big.
+</span>
+</div>
+</div>
+</article>
+<article class="chart-row">
+<span class="chart-cell num-value" data-label="Number">
+5+
+</span>
+<span class="chart-cell num-pattern" data-label="Verb">
+singular
+</span>
+<div class="chart-cell" data-label="Examples">
+<div class="chart-example">
+<span class="sr" lang="sr">
+Pet gradova je veliko.
+</span>
+<span class="tr">
+Five cities are big.
+</span>
+</div>
+</div>
+</article>
+</div>
+</section>
+<section class="chart-group num-ordinals" data-tone="num-ordinal">
+<header class="chart-group-head">
+<h3>
+Ordinals
+</h3>
+</header>
+<div class="chart-table">
+<article class="chart-row">
+<span class="chart-cell num-value" data-label="Number">
+1.
+</span>
+<span class="chart-cell chart-form num-word" data-gender="m" data-label="M" lang="sr">
+prvi
+</span>
+<span class="chart-cell chart-form num-word" data-gender="n" data-label="N" lang="sr">
+prvo
+</span>
+<span class="chart-cell chart-form num-word" data-gender="f" data-label="F" lang="sr">
+prva
+</span>
+</article>
+<article class="chart-row">
+<span class="chart-cell num-value" data-label="Number">
+2.
+</span>
+<span class="chart-cell chart-form num-word" data-gender="m" data-label="M" lang="sr">
+drugi
+</span>
+<span class="chart-cell chart-form num-word" data-gender="n" data-label="N" lang="sr">
+drugo
+</span>
+<span class="chart-cell chart-form num-word" data-gender="f" data-label="F" lang="sr">
+druga
+</span>
+</article>
+<article class="chart-row">
+<span class="chart-cell num-value" data-label="Number">
+3.
+</span>
+<span class="chart-cell chart-form num-word" data-gender="m" data-label="M" lang="sr">
+treći
+</span>
+<span class="chart-cell chart-form num-word" data-gender="n" data-label="N" lang="sr">
+treće
+</span>
+<span class="chart-cell chart-form num-word" data-gender="f" data-label="F" lang="sr">
+treća
+</span>
+</article>
+<article class="chart-row">
+<span class="chart-cell num-value" data-label="Number">
+4.
+</span>
+<span class="chart-cell chart-form num-word" data-gender="m" data-label="M" lang="sr">
+četvrti
+</span>
+<span class="chart-cell chart-form num-word" data-gender="n" data-label="N" lang="sr">
+četvrto
+</span>
+<span class="chart-cell chart-form num-word" data-gender="f" data-label="F" lang="sr">
+četvrta
+</span>
+</article>
+<article class="chart-row">
+<span class="chart-cell num-value" data-label="Number">
+5.
+</span>
+<span class="chart-cell chart-form num-word" data-gender="m" data-label="M" lang="sr">
+peti
+</span>
+<span class="chart-cell chart-form num-word" data-gender="n" data-label="N" lang="sr">
+peto
+</span>
+<span class="chart-cell chart-form num-word" data-gender="f" data-label="F" lang="sr">
+peta
+</span>
+</article>
+<article class="chart-row">
+<span class="chart-cell num-value" data-label="Number">
+6.
+</span>
+<span class="chart-cell chart-form num-word" data-gender="m" data-label="M" lang="sr">
+šesti
+</span>
+<span class="chart-cell chart-form num-word" data-gender="n" data-label="N" lang="sr">
+šesto
+</span>
+<span class="chart-cell chart-form num-word" data-gender="f" data-label="F" lang="sr">
+šesta
+</span>
+</article>
+<article class="chart-row">
+<span class="chart-cell num-value" data-label="Number">
+7.
+</span>
+<span class="chart-cell chart-form num-word" data-gender="m" data-label="M" lang="sr">
+sedmi
+</span>
+<span class="chart-cell chart-form num-word" data-gender="n" data-label="N" lang="sr">
+sedmo
+</span>
+<span class="chart-cell chart-form num-word" data-gender="f" data-label="F" lang="sr">
+sedma
+</span>
+</article>
+<article class="chart-row">
+<span class="chart-cell num-value" data-label="Number">
+8.
+</span>
+<span class="chart-cell chart-form num-word" data-gender="m" data-label="M" lang="sr">
+osmi
+</span>
+<span class="chart-cell chart-form num-word" data-gender="n" data-label="N" lang="sr">
+osmo
+</span>
+<span class="chart-cell chart-form num-word" data-gender="f" data-label="F" lang="sr">
+osma
+</span>
+</article>
+<article class="chart-row">
+<span class="chart-cell num-value" data-label="Number">
+9.
+</span>
+<span class="chart-cell chart-form num-word" data-gender="m" data-label="M" lang="sr">
+deveti
+</span>
+<span class="chart-cell chart-form num-word" data-gender="n" data-label="N" lang="sr">
+deveto
+</span>
+<span class="chart-cell chart-form num-word" data-gender="f" data-label="F" lang="sr">
+deveta
+</span>
+</article>
+<article class="chart-row">
+<span class="chart-cell num-value" data-label="Number">
+10.
+</span>
+<span class="chart-cell chart-form num-word" data-gender="m" data-label="M" lang="sr">
+deseti
+</span>
+<span class="chart-cell chart-form num-word" data-gender="n" data-label="N" lang="sr">
+deseto
+</span>
+<span class="chart-cell chart-form num-word" data-gender="f" data-label="F" lang="sr">
+deseta
+</span>
+</article>
+<article class="chart-row">
+<span class="chart-cell num-value" data-label="Number">
+20.
+</span>
+<span class="chart-cell chart-form num-word" data-gender="m" data-label="M" lang="sr">
+dvadeseti
+</span>
+<span class="chart-cell chart-form num-word" data-gender="n" data-label="N" lang="sr">
+dvadeseto
+</span>
+<span class="chart-cell chart-form num-word" data-gender="f" data-label="F" lang="sr">
+dvadeseta
+</span>
+</article>
+<article class="chart-row">
+<span class="chart-cell num-value" data-label="Number">
+21.
+</span>
+<span class="chart-cell chart-form num-word" data-gender="m" data-label="M" lang="sr">
+dvadeset prvi
+</span>
+<span class="chart-cell chart-form num-word" data-gender="n" data-label="N" lang="sr">
+dvadeset prvo
+</span>
+<span class="chart-cell chart-form num-word" data-gender="f" data-label="F" lang="sr">
+dvadeset prva
+</span>
+</article>
+</div>
+</section>

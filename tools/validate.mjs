@@ -1,22 +1,21 @@
 import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
 import path from 'node:path';
-import vm from 'node:vm';
 import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const errors = [];
 
-const chartDataFiles = {
-  'assets/charts/alphabet-data.js': ['ALPHABET'],
-  'assets/charts/aspect-data.js': ['CONTRAST', 'TIME_ROWS', 'PATTERNS', 'PREFIXES', 'COMMON_PAIRS'],
-  'assets/charts/cases-data.js': ['CASES', 'IDECL', 'WRINKLES', 'CAST', 'ENDING_AXES'],
-  'assets/charts/false-friends-data.js': ['FALSE_FRIEND_GROUPS'],
-  'assets/charts/numbers-data.js': ['CARDINALS', 'NUMBER_BUILDS', 'NOUN_COUNTS', 'ORDINALS'],
-  'assets/charts/pitch-stress-data.js': ['PITCH_ACCENTS', 'PITCH_RULES', 'PITCH_PARADIGMS', 'PITCH_PRIORITY', 'PITCH_READING', 'PITCH_NOTES'],
-  'assets/charts/prepositions-data.js': ['CASE_KEYS', 'PREP_GROUPS'],
-  'assets/charts/pronouns-data.js': ['PERSONAL', 'POSSESSIVES', 'DEMOS', 'QUESTIONS'],
-  'assets/charts/verbs-data.js': ['PRONOUNS', 'VERB_GROUPS', 'IRREGULARS', 'PAST', 'FUTURE'],
-};
+const chartModules = [
+  'src/content/alphabet.ts',
+  'src/content/aspect.ts',
+  'src/content/cases.ts',
+  'src/content/false-friends.ts',
+  'src/content/numbers.ts',
+  'src/content/pitch-stress.ts',
+  'src/content/prepositions.ts',
+  'src/content/pronouns.ts',
+  'src/content/verbs.ts',
+];
 
 function rel(file) {
   return path.relative(root, file);
@@ -68,99 +67,24 @@ function walk(dir, predicate, out = []) {
   return out;
 }
 
-function loadI18n() {
-  const context = { window: {}, console };
-  vm.createContext(context);
-  vm.runInContext(read('assets/i18n.js'), context, { filename: 'assets/i18n.js' });
-  return context.window.I18N;
-}
 
-function loadScriptConverter() {
-  const context = {
-    window: {},
-    console,
-    localStorage: { getItem: () => null, setItem: () => {} },
-    navigator: { languages: ['en'], language: 'en' },
-    document: {
-      readyState: 'loading',
-      addEventListener: () => {},
-      documentElement: { setAttribute: () => {} },
-      querySelectorAll: () => [],
-    },
-  };
-  vm.createContext(context);
-  vm.runInContext(read('assets/app.js'), context, { filename: 'assets/app.js' });
-  return context.window.SerbianFyi;
-}
-
-function loadData(relPath, names) {
-  const source = `${read(relPath)}\nglobalThis.__chartData = { ${names.join(', ')} };`;
-  const context = { console };
-  vm.createContext(context);
-  vm.runInContext(source, context, { filename: relPath });
-  return context.__chartData;
-}
-
-function loadGlossary(relPath) {
-  const context = { window: {}, console };
-  vm.createContext(context);
-  vm.runInContext(read(relPath), context, { filename: relPath });
-  return context.window.GLOSSARY;
-}
-
-const i18n = loadI18n();
-const scriptConverter = loadScriptConverter();
-const data = Object.fromEntries(
-  Object.entries(chartDataFiles).map(([file, names]) => [file, loadData(file, names)])
-);
-const glossary = loadGlossary('data/glossary.js');
-
-function collectHtmlI18nKeys(files) {
-  const keys = new Set();
-
-  for (const file of files) {
-    const source = readFileSync(file, 'utf8');
-    for (const match of source.matchAll(/\bdata-i18n="([^"]+)"/g)) {
-      keys.add(match[1]);
-    }
-    for (const match of source.matchAll(/\bdata-i18n-attr="([^"]+)"/g)) {
-      for (const pair of match[1].split(',')) {
-        const key = pair.trim().split(':')[1];
-        if (key) keys.add(key.trim());
-      }
-    }
-  }
-
-  return keys;
-}
-
-function collectJsLiteralI18nKeys(files) {
-  const keys = new Set();
-
-  for (const file of files) {
-    const source = readFileSync(file, 'utf8');
-    for (const match of source.matchAll(/\bt(?:Cases)?\(['"]([a-z][a-z0-9.-]+)['"]\)/g)) {
-      keys.add(match[1]);
-    }
-    for (const match of source.matchAll(/\bui\(['"]([a-z][a-z0-9.-]+)['"]\)/g)) {
-      const prefix = source.includes("function ui(key) { return t('aspect.' + key); }")
-        ? 'aspect'
-        : source.includes("function ui(key) { return t('pitch.' + key); }")
-          ? 'pitch'
-          : null;
-      if (prefix) keys.add(`${prefix}.${match[1]}`);
-    }
-  }
-
-  return keys;
-}
+const { DICTS: i18n } = await import(path.join(root, 'src/i18n/index.ts'));
+const scriptConverter = await import(path.join(root, 'src/lib/script.ts'));
+/* Content is TypeScript now; import it instead of running it through a
+   fake-browser shim. The `satisfies` annotations give presence and shape, so
+   what survives below is what types cannot express: values, ordering, and
+   cross-references. */
+const data = Object.fromEntries(await Promise.all(
+  chartModules.map(async file => [file, await import(path.join(root, file))])
+));
+const { GLOSSARY: glossary } = await import(path.join(root, 'src/glossary/glossary.ts'));
 
 function collectDataI18nKeys() {
   const keys = new Set();
   const add = key => keys.add(key);
   const addCaseKey = key => ['name', 'local', 'q'].forEach(suffix => add(`${key}.${suffix}`));
 
-  const cases = data['assets/charts/cases-data.js'];
+  const cases = data['src/content/cases.ts'];
   cases.CASES.forEach(c => {
     addCaseKey(c.key);
     Object.values(c.endings).forEach(byNumber => {
@@ -176,14 +100,14 @@ function collectDataI18nKeys() {
 
   add('numbers.cardinals');
 
-  const prep = data['assets/charts/prepositions-data.js'];
+  const prep = data['src/content/prepositions.ts'];
   Object.values(prep.CASE_KEYS).forEach(add);
   prep.PREP_GROUPS.forEach(group => add(group.key));
 
-  const falseFriends = data['assets/charts/false-friends-data.js'];
+  const falseFriends = data['src/content/false-friends.ts'];
   falseFriends.FALSE_FRIEND_GROUPS.forEach(group => add(group.key));
 
-  const pronouns = data['assets/charts/pronouns-data.js'];
+  const pronouns = data['src/content/pronouns.ts'];
   pronouns.PERSONAL.forEach(row => add(row.label));
   pronouns.POSSESSIVES.forEach(row => {
     add(row.owner);
@@ -196,7 +120,7 @@ function collectDataI18nKeys() {
   pronouns.QUESTIONS.whose.forEach(row => add(row.label));
   pronouns.QUESTIONS.whoWhat.forEach(row => add(row.key));
 
-  const verbs = data['assets/charts/verbs-data.js'];
+  const verbs = data['src/content/verbs.ts'];
   for (const part of [...verbs.PAST.formula, ...verbs.FUTURE.formula]) {
     if (part.key) add(part.key);
   }
@@ -205,32 +129,32 @@ function collectDataI18nKeys() {
   return keys;
 }
 
+/* The key GRAPH is gone: ru.ts is `Record<Key, string>`, so a missing or
+   typo'd key is a compile error, and translator() throws at build time on a
+   key that does not exist. What no type can see is the keys the CONTENT names
+   — a chart row carries its own `key` string — so those are still resolved
+   here, against both dictionaries. */
 function validateI18n() {
   const langs = Object.keys(i18n || {});
   expect(langs.includes('en') && langs.includes('ru'), 'i18n', 'en and ru dictionaries required');
 
-  const enKeys = new Set(Object.keys(i18n.en || {}));
-  const ruKeys = new Set(Object.keys(i18n.ru || {}));
-  for (const key of enKeys) expect(ruKeys.has(key), 'i18n', `ru missing key ${key}`);
-  for (const key of ruKeys) expect(enKeys.has(key), 'i18n', `en missing key ${key}`);
-
-  const htmlFiles = walk(root, file => file.endsWith('.html'));
-  const jsFiles = walk(path.join(root, 'assets'), file => file.endsWith('.js'));
-  const used = new Set([
-    ...collectHtmlI18nKeys(htmlFiles),
-    ...collectJsLiteralI18nKeys(jsFiles),
-    ...collectDataI18nKeys(),
-  ]);
-
-  for (const key of [...used].sort()) {
+  for (const key of [...collectDataI18nKeys()].sort()) {
     for (const lang of langs) {
-      expect(Object.hasOwn(i18n[lang], key), 'i18n', `${lang} missing used key ${key}`);
+      expect(Object.hasOwn(i18n[lang], key), 'i18n', `${lang} missing content key ${key}`);
     }
   }
 }
 
+/* Resolve links against the BUILT tree. Resolving them against the source
+   would validate pages that are no longer served, and pass even when the ones
+   that are served have nothing to point at. */
 function validateLinks() {
-  const files = walk(root, file => file.endsWith('.html'));
+  const dist = path.join(root, 'dist');
+  if (!existsSync(dist)) {
+    fail('links', 'dist/ is missing — run `bun run build` before validating');
+    return;
+  }
+  const files = walk(dist, file => file.endsWith('.html'));
   const attrs = ['href', 'src'];
 
   for (const file of files) {
@@ -243,24 +167,22 @@ function validateLinks() {
         const withoutHash = raw.split('#')[0];
         if (!withoutHash) continue;
 
-        const target = withoutHash === '/'
-          ? path.join(root, 'index.html')
-          : withoutHash.startsWith('/')
-            ? path.join(root, withoutHash.slice(1))
-            : path.resolve(path.dirname(file), withoutHash);
+        const candidates = withoutHash.startsWith('/')
+          ? [path.join(dist, withoutHash.slice(1))]
+          : [path.resolve(path.dirname(file), withoutHash)];
 
-        const finalTarget = existsSync(target) && statSync(target).isDirectory()
-          ? path.join(target, 'index.html')
-          : target;
-        expect(existsSync(finalTarget), rel(file), `${attr}="${raw}" points to missing ${rel(finalTarget)}`);
+        const resolved = candidates.map(target =>
+          existsSync(target) && statSync(target).isDirectory() ? path.join(target, 'index.html') : target);
+        expect(resolved.some(existsSync), rel(file), `${attr}="${raw}" points to missing ${rel(resolved[0])}`);
       }
     }
   }
 }
 
 function validateLocalFonts() {
-  const files = walk(root, file => file.endsWith('.html') || file.endsWith('.css'));
-  const css = read('assets/styles.css');
+  const files = walk(path.join(root, 'src'), file => file.endsWith('.html') || file.endsWith('.css'))
+    .concat(walk(path.join(root, 'dist'), file => file.endsWith('.html') || file.endsWith('.css')));
+  const css = read('src/styles/styles.css');
   const requiredCyrillicMarks = ['U+0300-0301', 'U+0304', 'U+030F', 'U+0311'];
 
   for (const file of files) {
@@ -283,7 +205,7 @@ function parseToneAssignments(css) {
 }
 
 function validateTones() {
-  const css = read('assets/styles.css');
+  const css = read('src/styles/styles.css');
   const tones = parseToneAssignments(css);
   const expected = {
     nom: 'var(--ink-soft)',
@@ -309,21 +231,20 @@ function validateTones() {
     expect(color !== 'var(--tone-orange)', 'tones', `${tone} claims brand orange`);
   }
 
-  // Parallel case maps (e.g. prepositions data-case) must agree with the canonical tones
-  for (const match of css.matchAll(/\[data-case="([^"]+)"\]\s*\{\s*--[\w-]+:\s*([^;]+);/g)) {
-    const [, caseKey, value] = match;
-    expect(expected[caseKey] === value.trim(), 'tones', `data-case ${caseKey} must map to ${expected[caseKey]}`);
-  }
+  // [data-tone] is the single case→hue map. A parallel map under any other
+  // attribute (the old prepositions data-case) forces dual-attribute emission
+  // and drifts from the canonical scale — ban it outright.
+  expect(!/\[data-case="/.test(css), 'tones', 'case hues must route through data-tone, not a parallel data-case map');
 
   expect(!css.includes('--gender-'), 'tones', 'genders carry no hue — ink typography only');
   expect(!/\[data-gender="[mnf]"\][^{]*\{[^}]*color:/.test(css), 'tones', 'gender labels must not be colored per-gender');
 
-  // Case hues may only be spent through the data-tone / data-case maps — any
-  // other selector using one is a chart-internal category wearing grammar
+  // Case hues may only be spent through the data-tone map — any other selector
+  // using one is a chart-internal category wearing grammar
   const caseHue = /var\(--tone-(red|yellow|green|cyan|blue|purple|magenta)\)/;
   for (const line of css.split('\n')) {
     if (!caseHue.test(line)) continue;
-    expect(/\[data-(tone|case)=/.test(line), 'tones', `case hue outside data-tone/data-case maps: ${line.trim()}`);
+    expect(/\[data-tone=/.test(line), 'tones', `case hue outside the data-tone map: ${line.trim()}`);
   }
   expect(/\[data-tone="im"\][\s\S]*\[data-tone="irr"\]\s*\{\s*--tone:\s*var\(--tone-orange\);/.test(css), 'tones', 'present verb family must share orange');
 }
@@ -387,13 +308,13 @@ function validateScriptConverter() {
 }
 
 function validateSerbianContentScript() {
-  const alphabet = data['assets/charts/alphabet-data.js'].ALPHABET;
+  const alphabet = data['src/content/alphabet.ts'].ALPHABET;
   alphabet.forEach((row, index) => {
     validateScriptPair(row.lat, row.cyr, `alphabet[${index}].letter`);
     validateScriptPair(row.wLat, row.wCyr, `alphabet[${index}].word`);
   });
 
-  const cases = data['assets/charts/cases-data.js'];
+  const cases = data['src/content/cases.ts'];
   cases.CASES.forEach((row, caseIndex) => {
     row.examples.forEach((example, exampleIndex) => {
       validateSerbianLatin(example.sr, `cases[${caseIndex}].examples[${exampleIndex}].sr`);
@@ -411,12 +332,8 @@ function validateSerbianContentScript() {
       validateSerbianLatin(example.to, `wrinkles[${rowIndex}].examples[${exampleIndex}].to`);
     });
   });
-  cases.CAST.forEach((row, rowIndex) => {
-    validateSerbianLatin(row.word, `cast[${rowIndex}].word`);
-    eachString(row.forms, value => validateSerbianLatin(value, `cast[${rowIndex}].forms`));
-  });
 
-  const numbers = data['assets/charts/numbers-data.js'];
+  const numbers = data['src/content/numbers.ts'];
   numbers.CARDINALS.forEach((row, rowIndex) => {
     validateSerbianLatin(row.sr, `cardinals[${rowIndex}].sr`);
     if (row.end) validateSerbianLatin(row.end, `cardinals[${rowIndex}].end`);
@@ -424,8 +341,9 @@ function validateSerbianContentScript() {
   numbers.NUMBER_BUILDS.forEach((row, rowIndex) => eachString(row.parts, value => validateSerbianLatin(value, `numberBuilds[${rowIndex}].parts`)));
   numbers.NOUN_COUNTS.forEach((row, rowIndex) => eachString(row.examples, value => validateSerbianLatin(value, `nounCounts[${rowIndex}].examples`)));
   numbers.ORDINALS.forEach((row, rowIndex) => eachString(row.forms, value => validateSerbianLatin(value, `ordinals[${rowIndex}].forms`)));
+  numbers.AGREEMENT.forEach((row, rowIndex) => validateSerbianLatin(row.sr, `agreement[${rowIndex}].sr`));
 
-  const prep = data['assets/charts/prepositions-data.js'];
+  const prep = data['src/content/prepositions.ts'];
   prep.PREP_GROUPS.forEach((group, groupIndex) => {
     group.rows.forEach((row, rowIndex) => {
       validateSerbianLatin(row.prep, `prepGroups[${groupIndex}].rows[${rowIndex}].prep`);
@@ -433,21 +351,24 @@ function validateSerbianContentScript() {
     });
   });
 
-  const pronouns = data['assets/charts/pronouns-data.js'];
+  const pronouns = data['src/content/pronouns.ts'];
   pronouns.PERSONAL.forEach((row, rowIndex) => {
-    ['subject', 'object', 'datloc', 'inst', 'poss'].forEach(field => validateSerbianLatin(row[field], `pronouns.personal[${rowIndex}].${field}`));
+    ['subject', 'object', 'datloc', 'inst'].forEach(field => validateSerbianLatin(row[field], `pronouns.personal[${rowIndex}].${field}`));
   });
   pronouns.POSSESSIVES.forEach((row, rowIndex) => eachString(row.forms, value => validateSerbianLatin(value, `pronouns.possessives[${rowIndex}].forms`)));
   pronouns.DEMOS.forEach((group, groupIndex) => group.rows.forEach((row, rowIndex) => eachString(row.forms, value => validateSerbianLatin(value, `pronouns.demos[${groupIndex}].rows[${rowIndex}].forms`))));
   pronouns.QUESTIONS.whose.forEach((row, rowIndex) => eachString(row.forms, value => validateSerbianLatin(value, `pronouns.questions.whose[${rowIndex}].forms`)));
   pronouns.QUESTIONS.whoWhat.forEach((row, rowIndex) => ['who', 'what'].forEach(field => validateSerbianLatin(row[field], `pronouns.questions.whoWhat[${rowIndex}].${field}`)));
 
-  const verbs = data['assets/charts/verbs-data.js'];
+  const verbs = data['src/content/verbs.ts'];
   verbs.PRONOUNS.forEach((row, rowIndex) => validateSerbianLatin(row.label, `verbs.pronouns[${rowIndex}].label`));
   verbs.VERB_GROUPS.forEach((group, groupIndex) => {
     eachString(group.endings, value => validateSerbianLatin(value, `verbGroups[${groupIndex}].endings`));
     eachString(group.patterns, value => validateSerbianLatin(value, `verbGroups[${groupIndex}].patterns`));
-    eachString(group.verbs, value => validateSerbianLatin(value, `verbGroups[${groupIndex}].verbs`));
+    group.verbs.forEach((verb, i) => {
+      validateSerbianLatin(verb.lemma, `verbGroups[${groupIndex}].verbs[${i}].lemma`);
+      validateSerbianLatin(verb.present, `verbGroups[${groupIndex}].verbs[${i}].present`);
+    });
     validateSerbianLatin(group.example.infinitive, `verbGroups[${groupIndex}].example.infinitive`);
     eachString(group.example.forms, value => validateSerbianLatin(value, `verbGroups[${groupIndex}].example.forms`));
   });
@@ -461,9 +382,10 @@ function validateSerbianContentScript() {
     tense.examples.forEach((example, exampleIndex) => validateSerbianLatin(example.sr, `verbs.tense[${tenseIndex}].examples[${exampleIndex}].sr`));
   });
   verbs.PAST.endings.forEach((row, rowIndex) => validateSerbianLatin(row.ending, `verbs.PAST.endings[${rowIndex}].ending`));
-  ['merged', 'exceptions', 'reflexive'].forEach(field => eachString(verbs.FUTURE[field], value => validateSerbianLatin(value, `verbs.FUTURE.${field}`)));
+  ['merged', 'exceptions'].forEach(field => eachString(verbs.FUTURE[field], value => validateSerbianLatin(value, `verbs.FUTURE.${field}`)));
+  eachString(verbs.CLITICS, value => validateSerbianLatin(value, 'verbs.CLITICS'));
 
-  const aspect = data['assets/charts/aspect-data.js'];
+  const aspect = data['src/content/aspect.ts'];
   aspect.CONTRAST.forEach((row, rowIndex) => ['impEx', 'perfEx'].forEach(field => validateSerbianLatin(row[field].sr, `aspect.contrast[${rowIndex}].${field}.sr`)));
   aspect.TIME_ROWS.forEach((row, rowIndex) => ['imp', 'perf'].forEach(field => validateSerbianLatin(row[field].sr, `aspect.time[${rowIndex}].${field}.sr`)));
   aspect.PATTERNS.forEach((row, rowIndex) => ['imp', 'perf'].forEach(field => validateSerbianLatin(row[field], `aspect.patterns[${rowIndex}].${field}`)));
@@ -476,7 +398,7 @@ function validateSerbianContentScript() {
     validateSerbianLatin(row.ex.sr, `aspect.commonPairs[${rowIndex}].ex.sr`);
   });
 
-  const pitch = data['assets/charts/pitch-stress-data.js'];
+  const pitch = data['src/content/pitch-stress.ts'];
   pitch.PITCH_ACCENTS.forEach((row, rowIndex) => row.examples.forEach((example, exampleIndex) => validateSerbianLatin(example.sr, `pitch.accents[${rowIndex}].examples[${exampleIndex}].sr`)));
   pitch.PITCH_RULES.forEach((row, rowIndex) => eachString(row.examples, value => validateSerbianLatin(value, `pitch.rules[${rowIndex}].examples`)));
   pitch.PITCH_PARADIGMS.forEach((row, rowIndex) => {
@@ -484,7 +406,7 @@ function validateSerbianContentScript() {
     row.cells.forEach((cell, cellIndex) => validateSerbianLatin(cell.sr, `pitch.paradigms[${rowIndex}].cells[${cellIndex}].sr`));
   });
 
-  const falseFriends = data['assets/charts/false-friends-data.js'];
+  const falseFriends = data['src/content/false-friends.ts'];
   falseFriends.FALSE_FRIEND_GROUPS.forEach((group, groupIndex) => {
     group.rows.forEach((row, rowIndex) => {
       validateSerbianLatin(row.sr, `falseFriends[${groupIndex}].rows[${rowIndex}].sr`);
@@ -493,61 +415,159 @@ function validateSerbianContentScript() {
   });
 }
 
+/* <i> is the script-converter hook (srGrammarHTML in src/lib/html.ts): whatever it
+   wraps flips Latin↔Cyrillic, everything around it stays in its own language.
+   Wrap a translation's OWN word in it and that word transliterates — an English
+   gloss sprouts a Russian-looking token ("to the pilot" → "to the пилот").
+   So an <i> payload must be Serbian, and provably so:
+
+     paired with an sr specimen  → the payload must be a word that specimen
+                                   actually contains, and must not be spelled
+                                   identically to its own gloss in that language
+                                   (a Serbian/English homograph like "pilot"
+                                   gains nothing from the marker and can only
+                                   mis-flip)
+     standalone prose            → the payload must be an attested lemma in
+                                   src/glossary/glossary.ts
+
+   Abstract shapes (-a, -ov-, -∅, ...) and bare letters (k, g, h) name patterns
+   rather than words and are exempt. Runtime-interpolated payloads are already
+   converted by SerbianFyi.sr() at render time, so they're skipped. */
+
+const I_MARKER = /<i\b[^>]*>([\s\S]*?)<\/i>/g;
+
+function markerPayloads(html) {
+  return [...String(html).matchAll(I_MARKER)].map(match => match[1].trim()).filter(Boolean);
+}
+
+function isAbstractShape(token) {
+  return token.startsWith('-') || token.endsWith('-') || token === '∅' || /^[.…]+$/.test(token);
+}
+
+/* ALPHABET stores each letter as an upper/lower pair ("A a", "Dž dž"). */
+const alphabetLetters = new Set(
+  data['src/content/alphabet.ts'].ALPHABET
+    .flatMap(row => [...row.lat.split(/\s+/), ...row.cyr.split(/\s+/)])
+    .map(letter => letter.toLowerCase())
+    .filter(Boolean)
+);
+
+function isLetterList(token) {
+  const pieces = token.split(',').map(piece => piece.trim()).filter(Boolean);
+  return pieces.length > 0 && pieces.every(piece => alphabetLetters.has(piece.toLowerCase()));
+}
+
+function fold(text) {
+  return scriptConverter
+    .stripDiacritics(String(text).normalize('NFD').replace(/\p{M}+/gu, ''))
+    .toLowerCase();
+}
+
+function specimenWords(html) {
+  return new Set(fold(String(html).replace(/<[^>]+>/g, ' ')).split(/[^\p{L}]+/u).filter(Boolean));
+}
+
+function markerLang(key) {
+  if (/^en$|En$/.test(key)) return 'en';
+  if (/^ru$|Ru$/.test(key)) return 'ru';
+  return null;
+}
+
+function checkMarkers(text, scope, specimen, lang) {
+  for (const token of markerPayloads(text)) {
+    if (token.includes('${')) continue;
+    if (isAbstractShape(token) || isLetterList(token)) continue;
+
+    if (specimen === null) {
+      expect(
+        Object.hasOwn(glossary, fold(token)),
+        'markers',
+        `${scope}: <i>${token}</i> is not a glossary lemma — <i> may only wrap Serbian`
+      );
+      continue;
+    }
+
+    const attested = specimenWords(specimen).has(fold(token));
+    expect(attested, 'markers', `${scope}: <i>${token}</i> is not a word of the paired Serbian specimen`);
+    if (!attested) continue;
+
+    const entry = glossary[fold(token)];
+    const gloss = lang && entry ? entry.gloss?.[lang] : null;
+    expect(
+      gloss !== token,
+      'markers',
+      `${scope}: <i>${token}</i> is spelled identically to its ${lang} gloss — drop the marker`
+    );
+  }
+}
+
+function walkMarkers(node, scope, inheritedSpecimen) {
+  if (Array.isArray(node)) {
+    node.forEach((item, index) => walkMarkers(item, `${scope}[${index}]`, inheritedSpecimen));
+    return;
+  }
+  if (!isObject(node)) return;
+
+  const specimen = typeof node.sr === 'string' ? node.sr : inheritedSpecimen;
+  for (const [key, value] of Object.entries(node)) {
+    const childScope = `${scope}.${key}`;
+    if (typeof value === 'string') {
+      if (key === 'sr') continue;
+      checkMarkers(value, childScope, specimen, markerLang(key));
+    } else {
+      walkMarkers(value, childScope, specimen);
+    }
+  }
+}
+
+function validateSerbianMarkers() {
+  for (const [file, chart] of Object.entries(data)) {
+    walkMarkers(chart, path.basename(file, '.js'), null);
+  }
+  for (const [lang, dict] of Object.entries(i18n)) {
+    for (const [key, value] of Object.entries(dict)) {
+      if (typeof value === 'string') checkMarkers(value, `i18n.${lang}.${key}`, null, lang);
+    }
+  }
+}
+
 function validateAlphabet() {
-  const { ALPHABET } = data['assets/charts/alphabet-data.js'];
-  expectArray(ALPHABET, 'alphabet', 'ALPHABET');
+  const { ALPHABET } = data['src/content/alphabet.ts'];
   expect(ALPHABET.length === 30, 'alphabet', 'ALPHABET must contain 30 letters');
   ALPHABET.forEach((row, index) => {
     const scope = `alphabet[${index}]`;
     expect(row.n === index + 1, scope, `n must be ${index + 1}`);
     ['cyr', 'lat', 'ipa', 'wCyr', 'wLat', 'kind'].forEach(field => expectString(row[field], scope, field));
-    expect(['unique', 'shared', 'diff'].includes(row.kind), scope, 'kind must be unique/shared/diff');
     if (row.tip) expectTranslation(row.tip, scope, 'tip');
   });
 }
 
 function validateCases() {
-  const { CASES, IDECL, WRINKLES, CAST, ENDING_AXES } = data['assets/charts/cases-data.js'];
+  const { CASES, IDECL, WRINKLES, ENDING_AXES } = data['src/content/cases.ts'];
   const caseAbbrs = ['NOM', 'GEN', 'DAT', 'AKU', 'VOK', 'INS', 'LOK'];
-  const genders = ['m', 'f', 'n'];
-  const numbers = ['sg', 'pl'];
 
-  expectArray(CASES, 'cases', 'CASES');
   expect(CASES.length === 7, 'cases', 'CASES must contain seven cases');
   CASES.forEach((row, index) => {
     const scope = `cases[${index}]`;
     expectString(row.key, scope, 'key');
     expect(row.abbr === caseAbbrs[index], scope, `abbr must be ${caseAbbrs[index]}`);
-    expectString(row.tone, scope, 'tone');
-    for (const gender of genders) {
-      expect(isObject(row.endings?.[gender]), scope, `endings.${gender} required`);
-      for (const number of numbers) expect(row.endings?.[gender]?.[number] !== undefined, scope, `endings.${gender}.${number} required`);
-    }
     expectArray(row.examples, scope, 'examples');
     row.examples.forEach((example, exIndex) => {
       ['sr', 'en', 'ru'].forEach(field => expectString(example[field], `${scope}.examples[${exIndex}]`, field));
     });
-    expect(Array.isArray(row.preps), scope, 'preps must be array');
   });
 
-  expectArray(WRINKLES, 'cases', 'WRINKLES');
   WRINKLES.forEach((row, index) => {
     const scope = `wrinkles[${index}]`;
     expectString(row.key, scope, 'key');
     expectArray(row.examples, scope, 'examples');
   });
 
-  expectArray(CAST, 'cases', 'CAST');
-  expectArray(ENDING_AXES, 'cases', 'ENDING_AXES');
-  expectArray(IDECL.cases, 'cases', 'IDECL.cases');
-  expectArray(IDECL.sg, 'cases', 'IDECL.sg');
-  expectArray(IDECL.pl, 'cases', 'IDECL.pl');
   expect(IDECL.cases.length === 7 && IDECL.sg.length === 7 && IDECL.pl.length === 7, 'cases', 'IDECL rows must align to seven cases');
 }
 
 function validateNumbers() {
-  const { CARDINALS, NUMBER_BUILDS, NOUN_COUNTS, ORDINALS } = data['assets/charts/numbers-data.js'];
-  expectArray(CARDINALS, 'numbers', 'CARDINALS');
+  const { AGREEMENT, CARDINALS, NUMBER_BUILDS, NOUN_COUNTS, ORDINALS } = data['src/content/numbers.ts'];
   CARDINALS.forEach((row, index) => {
     const scope = `cardinals[${index}]`;
     expectString(row.n, scope, 'n');
@@ -570,12 +590,19 @@ function validateNumbers() {
   ORDINALS.forEach((row, index) => {
     const scope = `ordinals[${index}]`;
     expectString(row.n, scope, 'n');
-    expect(Array.isArray(row.forms) && row.forms.length === 3, scope, 'forms must have m/f/n entries');
+    expect(row.forms.length === 3, scope, 'forms must have m/n/f entries');
+  });
+  AGREEMENT.forEach((row, index) => {
+    const scope = `agreement[${index}]`;
+    expectString(row.n, scope, 'n');
+    expectLocalized(row.form, scope, 'form');
+    expectString(row.sr, scope, 'sr');
+    expectTranslation(row.tr, scope, 'tr');
   });
 }
 
 function validatePrepositions() {
-  const { CASE_KEYS, PREP_GROUPS } = data['assets/charts/prepositions-data.js'];
+  const { CASE_KEYS, PREP_GROUPS } = data['src/content/prepositions.ts'];
   for (const key of ['gen', 'dat', 'aku', 'ins', 'lok']) expectString(CASE_KEYS[key], 'prepositions.CASE_KEYS', key);
   PREP_GROUPS.forEach((group, groupIndex) => {
     const scope = `prepGroups[${groupIndex}]`;
@@ -585,7 +612,6 @@ function validatePrepositions() {
       const rowScope = `${scope}.rows[${rowIndex}]`;
       expectString(row.prep, rowScope, 'prep');
       expectString(row.icon, rowScope, 'icon');
-      expectString(row.tone, rowScope, 'tone');
       expectArray(row.uses, rowScope, 'uses');
       row.uses.forEach((use, useIndex) => {
         const useScope = `${rowScope}.uses[${useIndex}]`;
@@ -599,7 +625,7 @@ function validatePrepositions() {
 }
 
 function validateAspect() {
-  const { CONTRAST, TIME_ROWS, PATTERNS, PREFIXES, COMMON_PAIRS } = data['assets/charts/aspect-data.js'];
+  const { CONTRAST, TIME_ROWS, PATTERNS, PREFIXES, COMMON_PAIRS } = data['src/content/aspect.ts'];
   CONTRAST.forEach((row, index) => {
     const scope = `aspect.contrast[${index}]`;
     ['key', 'imp', 'perf'].forEach(field => expectLocalized(row[field], scope, field));
@@ -626,7 +652,7 @@ function validateAspect() {
   });
   PREFIXES.forEach((row, index) => {
     const scope = `aspect.prefixes[${index}]`;
-    ['prefix', 'tone'].forEach(field => expectString(row[field], scope, field));
+    expectString(row.prefix, scope, 'prefix');
     expectLocalized(row.feel, scope, 'feel');
     expectArray(row.pairs, scope, 'pairs');
     if (row.note) {
@@ -644,7 +670,7 @@ function validateAspect() {
 }
 
 function validatePitch() {
-  const chart = data['assets/charts/pitch-stress-data.js'];
+  const chart = data['src/content/pitch-stress.ts'];
   chart.PITCH_ACCENTS.forEach((row, index) => {
     const scope = `pitch.accents[${index}]`;
     ['key', 'mark', 'pattern'].forEach(field => expectString(row[field], scope, field));
@@ -666,10 +692,10 @@ function validatePitch() {
 }
 
 function validatePronouns() {
-  const { PERSONAL, POSSESSIVES, DEMOS, QUESTIONS } = data['assets/charts/pronouns-data.js'];
+  const { PERSONAL, POSSESSIVES, DEMOS, QUESTIONS } = data['src/content/pronouns.ts'];
   PERSONAL.forEach((row, index) => {
     const scope = `pronouns.personal[${index}]`;
-    ['band', 'label', 'subject', 'object', 'datloc', 'inst', 'poss'].forEach(field => expectString(row[field], scope, field));
+    ['label', 'subject', 'object', 'datloc', 'inst'].forEach(field => expectString(row[field], scope, field));
   });
   POSSESSIVES.forEach((row, index) => {
     const scope = `pronouns.possessives[${index}]`;
@@ -686,7 +712,7 @@ function validatePronouns() {
 }
 
 function validateVerbs() {
-  const { PRONOUNS, VERB_GROUPS, IRREGULARS, PAST, FUTURE } = data['assets/charts/verbs-data.js'];
+  const { PRONOUNS, VERB_GROUPS, IRREGULARS, PAST, FUTURE, CLITICS } = data['src/content/verbs.ts'];
   expectArray(PRONOUNS, 'verbs', 'PRONOUNS');
   VERB_GROUPS.forEach((group, index) => {
     const scope = `verbGroups[${index}]`;
@@ -708,10 +734,11 @@ function validateVerbs() {
   expectArray(PAST.endings, 'verbs.PAST', 'endings');
   expectArray(FUTURE.formula, 'verbs.FUTURE', 'formula');
   expectArray(FUTURE.examples, 'verbs.FUTURE', 'examples');
+  expectArray(CLITICS, 'verbs', 'CLITICS');
 }
 
 function validateFalseFriends() {
-  const { FALSE_FRIEND_GROUPS } = data['assets/charts/false-friends-data.js'];
+  const { FALSE_FRIEND_GROUPS } = data['src/content/false-friends.ts'];
   FALSE_FRIEND_GROUPS.forEach((group, groupIndex) => {
     const scope = `falseFriends[${groupIndex}]`;
     expectString(group.key, scope, 'key');
@@ -719,6 +746,7 @@ function validateFalseFriends() {
     group.rows.forEach((row, rowIndex) => {
       const rowScope = `${scope}.rows[${rowIndex}]`;
       ['sr', 'means', 'trap', 'trapMeans'].forEach(field => expectString(row[field], rowScope, field));
+      if ('partial' in row) expect(row.partial === true, rowScope, 'partial must be true when present');
       expectString(row.ex?.sr, rowScope, 'ex.sr');
       expectString(row.ex?.ru, rowScope, 'ex.ru');
     });
@@ -792,14 +820,14 @@ function chartLemmas() {
   const out = [];
   const add = (lemma, where) => out.push({ lemma, where });
 
-  const verbs = data['assets/charts/verbs-data.js'];
+  const verbs = data['src/content/verbs.ts'];
   verbs.VERB_GROUPS.forEach((group, gi) => {
-    group.verbs.forEach((v, i) => add(v, `verbGroups[${gi}].verbs[${i}]`));
+    group.verbs.forEach((v, i) => add(v.lemma, `verbGroups[${gi}].verbs[${i}].lemma`));
     add(group.example.infinitive, `verbGroups[${gi}].example.infinitive`);
   });
   verbs.IRREGULARS.forEach((row, i) => add(row.title, `irregulars[${i}].title`));
 
-  const aspect = data['assets/charts/aspect-data.js'];
+  const aspect = data['src/content/aspect.ts'];
   aspect.PATTERNS.forEach((row, i) => {
     add(row.imp, `aspect.patterns[${i}].imp`);
     add(row.perf, `aspect.patterns[${i}].perf`);
@@ -809,19 +837,19 @@ function chartLemmas() {
     add(row.perf, `aspect.commonPairs[${i}].perf`);
   });
 
-  const prep = data['assets/charts/prepositions-data.js'];
+  const prep = data['src/content/prepositions.ts'];
   prep.PREP_GROUPS.forEach((group, gi) => {
     group.rows.forEach((row, ri) => {
       row.prep.split('/').forEach((piece, pi) => add(piece.trim(), `prepGroups[${gi}].rows[${ri}].prep[${pi}]`));
     });
   });
 
-  const falseFriends = data['assets/charts/false-friends-data.js'];
+  const falseFriends = data['src/content/false-friends.ts'];
   falseFriends.FALSE_FRIEND_GROUPS.forEach((group, gi) => {
     group.rows.forEach((row, ri) => add(row.sr, `falseFriends[${gi}].rows[${ri}].sr`));
   });
 
-  const alphabet = data['assets/charts/alphabet-data.js'].ALPHABET;
+  const alphabet = data['src/content/alphabet.ts'].ALPHABET;
   alphabet.forEach((row, i) => add(row.wLat, `alphabet[${i}].wLat`));
 
   return out;
@@ -834,6 +862,14 @@ function validateChartLemmaCoverage() {
   }
 }
 
+/* `satisfies` in src/content gives presence, shape and every union — a missing
+   field, a wrong primitive or a typo'd tone is now a compile error. What it
+   does NOT give is values: '' satisfies string, and a seven-element array
+   satisfies readonly T[] whatever order it is in.
+
+   So what is left below is exactly the part types cannot express — lengths,
+   ordering against the tone map, cross-references between charts, and the
+   non-emptiness of about 120 strings. Types PLUS these, never instead. */
 function validateDataShapes() {
   validateAlphabet();
   validateCases();
@@ -852,6 +888,7 @@ validateLocalFonts();
 validateTones();
 validateScriptConverter();
 validateSerbianContentScript();
+validateSerbianMarkers();
 validateDataShapes();
 validateGlossaryEntries();
 validateChartLemmaCoverage();

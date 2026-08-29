@@ -1,0 +1,782 @@
+### mount falseFriendsChart
+<section class="chart-group">
+<header class="chart-group-head">
+<h3>
+High-risk pairs
+</h3>
+</header>
+<div class="chart-table">
+<article class="chart-row">
+<div class="false-head">
+<span class="false-word" lang="sr">
+pozorište
+</span>
+<span class="false-means">
+театр
+</span>
+</div>
+<div class="false-trap">
+<span class="chart-label false-not">
+not
+</span>
+<span>
+позор
+</span>
+<small>
+стыд
+</small>
+</div>
+<div class="chart-example">
+<span class="sr" lang="sr">
+Idemo u pozorište.
+</span>
+<span class="tr">
+Идём в театр.
+</span>
+</div>
+</article>
+<article class="chart-row">
+<div class="false-head">
+<span class="false-word" lang="sr">
+hrana
+</span>
+<span class="false-means">
+еда, пища
+</span>
+</div>
+<div class="false-trap">
+<span class="chart-label false-not">
+not
+</span>
+<span>
+охрана, хранение
+</span>
+<small>
+защита, сохранение
+</small>
+</div>
+<div class="chart-example">
+<span class="sr" lang="sr">
+Kupujem hranu.
+</span>
+<span class="tr">
+Покупаю еду.
+</span>
+</div>
+</article>
+<article class="chart-row">
+<div class="false-head">
+<span class="false-word" lang="sr">
+vredan
+</span>
+<span class="false-means">
+трудолюбивый; ценный
+</span>
+</div>
+<div class="false-trap">
+<span class="chart-label false-not">
+not
+</span>
+<span>
+вредный
+</span>
+<small>
+наносящий вред
+</small>
+</div>
+<div class="chart-example">
+<span class="sr" lang="sr">
+On je vredan.
+</span>
+<span class="tr">
+Он трудолюбивый.
+</span>
+</div>
+</article>
+<article class="chart-row">
+<div class="false-head">
+<span class="false-word" lang="sr">
+ponos
+</span>
+<span class="false-means">
+гордость
+</span>
+</div>
+<div class="false-trap">
+<span class="chart-label false-not">
+not
+</span>
+<span>
+понос
+</span>
+<small>
+диарея
+</small>
+</div>
+<div class="chart-example">
+<span class="sr" lang="sr">
+To je moj ponos.
+</span>
+<span class="tr">
+Это моя гордость.
+</span>
+</div>
+</article>
+<article class="chart-row">
+<div class="false-head">
+<span class="false-word" lang="sr">
+poklon
+</span>
+<span class="false-means">
+подарок
+</span>
+</div>
+<div class="false-trap">
+<span class="chart-label false-not">
+not
+</span>
+<span>
+поклон
+</span>
+<small>
+наклон головы или корпуса
+</small>
+</div>
+<div class="chart-example">
+<span class="sr" lang="sr">
+Ovo je poklon.
+</span>
+<span class="tr">
+Это подарок.
+</span>
+</div>
+</article>
+<article class="chart-row">
+<div class="false-head">
+<span class="false-word" lang="sr">
+pravda
+</span>
+<span class="false-means">
+справедливость
+</span>
+</div>
+<div class="false-trap">
+<span class="chart-label false-not">
+not
+</span>
+<span>
+правда
+</span>
+<small>
+истина
+</small>
+</div>
+<div class="chart-example">
+<span class="sr" lang="sr">
+Tražim pravdu.
+</span>
+<span class="tr">
+Я ищу справедливости.
+</span>
+</div>
+</article>
+<article class="chart-row">
+<div class="false-head">
+<span class="false-word" lang="sr">
+reč
+</span>
+<span class="false-means">
+слово
+</span>
+</div>
+<div class="false-trap">
+<span class="chart-label false-not">
+not
+</span>
+<span>
+речь
+</span>
+<small>
+говорение, выступление
+</small>
+</div>
+<div class="chart-example">
+<span class="sr" lang="sr">
+Nova reč.
+</span>
+<span class="tr">
+Новое слово.
+</span>
+</div>
+</article>
+<article class="chart-row">
+<div class="false-head">
+<span class="false-word" lang="sr">
+iskustvo
+</span>
+<span class="false-means">
+опыт
+</span>
+</div>
+<div class="false-trap">
+<span class="chart-label false-not">
+not
+</span>
+<span>
+искусство
+</span>
+<small>
+художественная деятельность
+</small>
+</div>
+<div class="chart-example">
+<span class="sr" lang="sr">
+Imam iskustvo.
+</span>
+<span class="tr">
+У меня есть опыт.
+</span>
+</div>
+</article>
+<article class="chart-row">
+<div class="false-head">
+<span class="false-word" lang="sr">
+trudna
+</span>
+<span class="false-means">
+беременная
+</span>
+</div>
+<div class="false-trap">
+<span class="chart-label false-not">
+not
+</span>
+<span>
+трудная
+</span>
+<small>
+сложная
+</small>
+</div>
+<div class="chart-example">
+<span class="sr" lang="sr">
+Ona je trudna.
+</span>
+<span class="tr">
+Она беременна.
+</span>
+</div>
+</article>
+<article class="chart-row">
+<div class="false-head">
+<span class="false-word" lang="sr">
+skupo
+</span>
+<span class="false-means">
+дорого
+</span>
+</div>
+<div class="false-trap">
+<span class="chart-label false-not">
+not
+</span>
+<span>
+скупо
+</span>
+<small>
+скудно, в обрез
+</small>
+</div>
+<div class="chart-example">
+<span class="sr" lang="sr">
+To je skupo.
+</span>
+<span class="tr">
+Это дорого.
+</span>
+</div>
+</article>
+<article class="chart-row">
+<div class="false-head">
+<span class="false-word" lang="sr">
+ljubiti
+</span>
+<span class="false-means">
+целовать
+</span>
+</div>
+<div class="false-trap">
+<span class="chart-label false-not">
+not
+</span>
+<span>
+любить
+</span>
+<small>
+любить — по-сербски voleti
+</small>
+</div>
+<div class="chart-example">
+<span class="sr" lang="sr">
+Ljubim te.
+</span>
+<span class="tr">
+Целую тебя.
+</span>
+</div>
+</article>
+</div>
+</section>
+<section class="chart-group">
+<header class="chart-group-head">
+<h3>
+Objects & places
+</h3>
+</header>
+<div class="chart-table">
+<article class="chart-row">
+<div class="false-head">
+<span class="false-word" lang="sr">
+stolica
+</span>
+<span class="false-means">
+стул
+</span>
+</div>
+<div class="false-trap">
+<span class="chart-label false-not">
+not
+</span>
+<span>
+столица
+</span>
+<small>
+главный город
+</small>
+</div>
+<div class="chart-example">
+<span class="sr" lang="sr">
+Stolica je pored stola.
+</span>
+<span class="tr">
+Стул возле стола.
+</span>
+</div>
+</article>
+<article class="chart-row">
+<div class="false-head">
+<span class="false-word" lang="sr">
+stan
+</span>
+<span class="false-means">
+квартира
+</span>
+</div>
+<div class="false-trap">
+<span class="chart-label false-not">
+not
+</span>
+<span>
+стан
+</span>
+<small>
+лагерь, корпус, станок
+</small>
+</div>
+<div class="chart-example">
+<span class="sr" lang="sr">
+Živim u stanu.
+</span>
+<span class="tr">
+Я живу в квартире.
+</span>
+</div>
+</article>
+<article class="chart-row">
+<div class="false-head">
+<span class="false-word" lang="sr">
+sad
+</span>
+<span class="false-means">
+сейчас
+</span>
+</div>
+<div class="false-trap">
+<span class="chart-label false-not">
+not
+</span>
+<span>
+сад
+</span>
+<small>
+участок с деревьями
+</small>
+</div>
+<div class="chart-example">
+<span class="sr" lang="sr">
+Sad idem.
+</span>
+<span class="tr">
+Сейчас иду.
+</span>
+</div>
+</article>
+<article class="chart-row">
+<div class="false-head">
+<span class="false-word" lang="sr">
+sutra
+</span>
+<span class="false-means">
+завтра
+</span>
+</div>
+<div class="false-trap">
+<span class="chart-label false-not">
+not
+</span>
+<span>
+с утра
+</span>
+<small>
+начиная с утра
+</small>
+</div>
+<div class="chart-example">
+<span class="sr" lang="sr">
+Vidimo se sutra.
+</span>
+<span class="tr">
+Увидимся завтра.
+</span>
+</div>
+</article>
+<article class="chart-row">
+<div class="false-head">
+<span class="false-word" lang="sr">
+život
+</span>
+<span class="false-means">
+жизнь
+</span>
+</div>
+<div class="false-trap">
+<span class="chart-label false-not">
+not
+</span>
+<span>
+живот
+</span>
+<small>
+часть тела
+</small>
+</div>
+<div class="chart-example">
+<span class="sr" lang="sr">
+Život je lep.
+</span>
+<span class="tr">
+Жизнь прекрасна.
+</span>
+</div>
+</article>
+<article class="chart-row">
+<div class="false-head">
+<span class="false-word" lang="sr">
+jagoda
+</span>
+<span class="false-means">
+клубника, земляника
+</span>
+</div>
+<div class="false-trap">
+<span class="chart-label false-not">
+not
+</span>
+<span>
+ягода
+</span>
+<small>
+любой ягодный плод
+</small>
+</div>
+<div class="chart-example">
+<span class="sr" lang="sr">
+Jedem jagode.
+</span>
+<span class="tr">
+Ем клубнику.
+</span>
+</div>
+</article>
+<article class="chart-row">
+<div class="false-head">
+<span class="false-word" lang="sr">
+korica
+</span>
+<span class="false-means">
+корка; обложка
+</span>
+</div>
+<div class="false-trap">
+<span class="chart-label false-not">
+not
+</span>
+<span>
+корица
+</span>
+<small>
+пряность
+</small>
+</div>
+<div class="chart-example">
+<span class="sr" lang="sr">
+Korica hleba.
+</span>
+<span class="tr">
+Корка хлеба.
+</span>
+</div>
+</article>
+<article class="chart-row">
+<div class="false-head">
+<span class="false-word" lang="sr">
+bukva
+</span>
+<span class="false-means">
+бук
+</span>
+</div>
+<div class="false-trap">
+<span class="chart-label false-not">
+not
+</span>
+<span>
+буква
+</span>
+<small>
+знак алфавита
+</small>
+</div>
+<div class="chart-example">
+<span class="sr" lang="sr">
+Stara bukva raste u parku.
+</span>
+<span class="tr">
+Старый бук растёт в парке.
+</span>
+</div>
+</article>
+<article class="chart-row">
+<div class="false-head">
+<span class="false-word" lang="sr">
+slovo
+</span>
+<span class="false-means">
+буква
+</span>
+</div>
+<div class="false-trap">
+<span class="chart-label false-not">
+not
+</span>
+<span>
+слово
+</span>
+<small>
+единица речи
+</small>
+</div>
+<div class="chart-example">
+<span class="sr" lang="sr">
+Slovo ć.
+</span>
+<span class="tr">
+Буква ć.
+</span>
+</div>
+</article>
+</div>
+</section>
+<section class="chart-group">
+<header class="chart-group-head">
+<h3>
+Partial overlaps
+</h3>
+</header>
+<div class="chart-table">
+<article class="chart-row">
+<div class="false-head">
+<span class="false-word" lang="sr">
+vreme
+</span>
+<span class="false-means">
+время; погода
+</span>
+</div>
+<div class="false-trap">
+<span class="chart-label false-not">
+not only
+</span>
+<span>
+время
+</span>
+<small>
+время, не погода
+</small>
+</div>
+<div class="chart-example">
+<span class="sr" lang="sr">
+Kakvo je vreme?
+</span>
+<span class="tr">
+Какая погода?
+</span>
+</div>
+</article>
+<article class="chart-row">
+<div class="false-head">
+<span class="false-word" lang="sr">
+sto
+</span>
+<span class="false-means">
+стол; сто
+</span>
+</div>
+<div class="false-trap">
+<span class="chart-label false-not">
+not only
+</span>
+<span>
+сто
+</span>
+<small>
+число 100
+</small>
+</div>
+<div class="chart-example">
+<span class="sr" lang="sr">
+Knjiga je na stolu.
+</span>
+<span class="tr">
+Книга на столе.
+</span>
+</div>
+</article>
+<article class="chart-row">
+<div class="false-head">
+<span class="false-word" lang="sr">
+govor
+</span>
+<span class="false-means">
+речь; манера говорить
+</span>
+</div>
+<div class="false-trap">
+<span class="chart-label false-not">
+not
+</span>
+<span>
+говор
+</span>
+<small>
+диалект, выговор
+</small>
+</div>
+<div class="chart-example">
+<span class="sr" lang="sr">
+Njegov govor je jasan.
+</span>
+<span class="tr">
+Его речь ясна.
+</span>
+</div>
+</article>
+<article class="chart-row">
+<div class="false-head">
+<span class="false-word" lang="sr">
+sklad
+</span>
+<span class="false-means">
+гармония, лад
+</span>
+</div>
+<div class="false-trap">
+<span class="chart-label false-not">
+not
+</span>
+<span>
+склад
+</span>
+<small>
+хранилище; тип телосложения
+</small>
+</div>
+<div class="chart-example">
+<span class="sr" lang="sr">
+Žive u skladu.
+</span>
+<span class="tr">
+Живут в согласии.
+</span>
+</div>
+</article>
+<article class="chart-row">
+<div class="false-head">
+<span class="false-word" lang="sr">
+nedelja
+</span>
+<span class="false-means">
+воскресенье; неделя
+</span>
+</div>
+<div class="false-trap">
+<span class="chart-label false-not">
+not only
+</span>
+<span>
+неделя
+</span>
+<small>
+семь дней, но не воскресенье
+</small>
+</div>
+<div class="chart-example">
+<span class="sr" lang="sr">
+Vidimo se u nedelju.
+</span>
+<span class="tr">
+Увидимся в воскресенье.
+</span>
+</div>
+</article>
+<article class="chart-row">
+<div class="false-head">
+<span class="false-word" lang="sr">
+pravo
+</span>
+<span class="false-means">
+право; прямо (вперёд)
+</span>
+</div>
+<div class="false-trap">
+<span class="chart-label false-not">
+not only
+</span>
+<span>
+право
+</span>
+<small>
+право, закон, не «прямо»
+</small>
+</div>
+<div class="chart-example">
+<span class="sr" lang="sr">
+Idi pravo.
+</span>
+<span class="tr">
+Иди прямо.
+</span>
+</div>
+</article>
+</div>
+</section>

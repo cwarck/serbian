@@ -1,0 +1,7 @@
+# Cloudflare Workers Static Assets — _redirects
+# Served from the assets root (wrangler.jsonc: assets.directory = "./dist").
+# Docs: https://developers.cloudflare.com/workers/static-assets/redirects/
+
+# false-friends is written for Russian speakers and lives only under /ru/.
+# Permanent: no EN counterpart will ever exist.
+/charts/false-friends.html  /ru/charts/false-friends.html  301

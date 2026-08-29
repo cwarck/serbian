@@ -1,0 +1,941 @@
+### mount personalPronouns
+<table class="pron-table">
+<thead>
+<tr>
+<th class="chart-label" scope="col">
+<span data-tone="nom">
+Subject
+</span>
+</th>
+<th class="chart-label" scope="col">
+<span data-tone="aku">
+Acc
+</span>
+<span class="pron-slash">
+/
+</span>
+<span data-tone="gen">
+Gen
+</span>
+</th>
+<th class="chart-label" scope="col">
+<span data-tone="dat">
+Dat
+</span>
+<span class="pron-slash">
+/
+</span>
+<span data-tone="lok">
+Loc
+</span>
+</th>
+<th class="chart-label" scope="col">
+<span data-tone="ins">
+Instrumental
+</span>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">
+<span class="chart-label">
+I
+</span>
+<span class="chart-form pron-subject" lang="sr">
+ja
+</span>
+</th>
+<td>
+<span class="pron-pair" lang="sr">
+<span class="chart-form pron-long">
+mene
+<span class="pron-comma">
+,
+</span>
+</span>
+<span class="chart-form pron-short">
+me
+</span>
+</span>
+</td>
+<td>
+<span class="pron-pair" lang="sr">
+<span class="chart-form pron-long">
+meni
+<span class="pron-comma">
+,
+</span>
+</span>
+<span class="chart-form pron-short">
+mi
+</span>
+</span>
+</td>
+<td>
+<span class="pron-pair" lang="sr">
+<span class="chart-form pron-long">
+mnom
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th scope="row">
+<span class="chart-label">
+you
+</span>
+<span class="chart-form pron-subject" lang="sr">
+ti
+</span>
+</th>
+<td>
+<span class="pron-pair" lang="sr">
+<span class="chart-form pron-long">
+tebe
+<span class="pron-comma">
+,
+</span>
+</span>
+<span class="chart-form pron-short">
+te
+</span>
+</span>
+</td>
+<td>
+<span class="pron-pair" lang="sr">
+<span class="chart-form pron-long">
+tebi
+<span class="pron-comma">
+,
+</span>
+</span>
+<span class="chart-form pron-short">
+ti
+</span>
+</span>
+</td>
+<td>
+<span class="pron-pair" lang="sr">
+<span class="chart-form pron-long">
+tobom
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th scope="row">
+<span class="chart-label">
+he
+</span>
+<span class="chart-form pron-subject" lang="sr">
+on
+</span>
+</th>
+<td>
+<span class="pron-pair" lang="sr">
+<span class="chart-form pron-long">
+njega
+<span class="pron-comma">
+,
+</span>
+</span>
+<span class="chart-form pron-short">
+ga
+</span>
+</span>
+</td>
+<td>
+<span class="pron-pair" lang="sr">
+<span class="chart-form pron-long">
+njemu
+<span class="pron-comma">
+,
+</span>
+</span>
+<span class="chart-form pron-short">
+mu
+</span>
+</span>
+</td>
+<td>
+<span class="pron-pair" lang="sr">
+<span class="chart-form pron-long">
+njim
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th scope="row">
+<span class="chart-label">
+it
+</span>
+<span class="chart-form pron-subject" lang="sr">
+ono
+</span>
+</th>
+<td>
+<span class="pron-pair" lang="sr">
+<span class="chart-form pron-long">
+njega
+<span class="pron-comma">
+,
+</span>
+</span>
+<span class="chart-form pron-short">
+ga
+</span>
+</span>
+</td>
+<td>
+<span class="pron-pair" lang="sr">
+<span class="chart-form pron-long">
+njemu
+<span class="pron-comma">
+,
+</span>
+</span>
+<span class="chart-form pron-short">
+mu
+</span>
+</span>
+</td>
+<td>
+<span class="pron-pair" lang="sr">
+<span class="chart-form pron-long">
+njim
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th scope="row">
+<span class="chart-label">
+she
+</span>
+<span class="chart-form pron-subject" lang="sr">
+ona
+</span>
+</th>
+<td>
+<span class="pron-pair" lang="sr">
+<span class="chart-form pron-long">
+nju / nje
+<span class="pron-comma">
+,
+</span>
+</span>
+<span class="chart-form pron-short">
+je / ju
+</span>
+</span>
+</td>
+<td>
+<span class="pron-pair" lang="sr">
+<span class="chart-form pron-long">
+njoj
+<span class="pron-comma">
+,
+</span>
+</span>
+<span class="chart-form pron-short">
+joj
+</span>
+</span>
+</td>
+<td>
+<span class="pron-pair" lang="sr">
+<span class="chart-form pron-long">
+njom
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th scope="row">
+<span class="chart-label">
+we
+</span>
+<span class="chart-form pron-subject" lang="sr">
+mi
+</span>
+</th>
+<td>
+<span class="pron-pair" lang="sr">
+<span class="chart-form pron-long">
+nas
+</span>
+</span>
+</td>
+<td>
+<span class="pron-pair" lang="sr">
+<span class="chart-form pron-long">
+nama
+<span class="pron-comma">
+,
+</span>
+</span>
+<span class="chart-form pron-short">
+nam
+</span>
+</span>
+</td>
+<td>
+<span class="pron-pair" lang="sr">
+<span class="chart-form pron-long">
+nama
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th scope="row">
+<span class="chart-label">
+you
+</span>
+<span class="chart-form pron-subject" lang="sr">
+vi
+</span>
+</th>
+<td>
+<span class="pron-pair" lang="sr">
+<span class="chart-form pron-long">
+vas
+</span>
+</span>
+</td>
+<td>
+<span class="pron-pair" lang="sr">
+<span class="chart-form pron-long">
+vama
+<span class="pron-comma">
+,
+</span>
+</span>
+<span class="chart-form pron-short">
+vam
+</span>
+</span>
+</td>
+<td>
+<span class="pron-pair" lang="sr">
+<span class="chart-form pron-long">
+vama
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th scope="row">
+<span class="chart-label">
+they M
+</span>
+<span class="chart-form pron-subject" lang="sr">
+oni
+</span>
+</th>
+<td>
+<span class="pron-pair" lang="sr">
+<span class="chart-form pron-long">
+njih
+<span class="pron-comma">
+,
+</span>
+</span>
+<span class="chart-form pron-short">
+ih
+</span>
+</span>
+</td>
+<td>
+<span class="pron-pair" lang="sr">
+<span class="chart-form pron-long">
+njima
+<span class="pron-comma">
+,
+</span>
+</span>
+<span class="chart-form pron-short">
+im
+</span>
+</span>
+</td>
+<td>
+<span class="pron-pair" lang="sr">
+<span class="chart-form pron-long">
+njima
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th scope="row">
+<span class="chart-label">
+they N
+</span>
+<span class="chart-form pron-subject" lang="sr">
+ona
+</span>
+</th>
+<td>
+<span class="pron-pair" lang="sr">
+<span class="chart-form pron-long">
+njih
+<span class="pron-comma">
+,
+</span>
+</span>
+<span class="chart-form pron-short">
+ih
+</span>
+</span>
+</td>
+<td>
+<span class="pron-pair" lang="sr">
+<span class="chart-form pron-long">
+njima
+<span class="pron-comma">
+,
+</span>
+</span>
+<span class="chart-form pron-short">
+im
+</span>
+</span>
+</td>
+<td>
+<span class="pron-pair" lang="sr">
+<span class="chart-form pron-long">
+njima
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th scope="row">
+<span class="chart-label">
+they F
+</span>
+<span class="chart-form pron-subject" lang="sr">
+one
+</span>
+</th>
+<td>
+<span class="pron-pair" lang="sr">
+<span class="chart-form pron-long">
+njih
+<span class="pron-comma">
+,
+</span>
+</span>
+<span class="chart-form pron-short">
+ih
+</span>
+</span>
+</td>
+<td>
+<span class="pron-pair" lang="sr">
+<span class="chart-form pron-long">
+njima
+<span class="pron-comma">
+,
+</span>
+</span>
+<span class="chart-form pron-short">
+im
+</span>
+</span>
+</td>
+<td>
+<span class="pron-pair" lang="sr">
+<span class="chart-form pron-long">
+njima
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th scope="row">
+<span class="chart-label">
+self
+</span>
+<span class="chart-form pron-subject" lang="sr">
+-
+</span>
+</th>
+<td>
+<span class="pron-pair" lang="sr">
+<span class="chart-form pron-long">
+sebe
+<span class="pron-comma">
+,
+</span>
+</span>
+<span class="chart-form pron-short">
+se
+</span>
+</span>
+</td>
+<td>
+<span class="pron-pair" lang="sr">
+<span class="chart-form pron-long">
+sebi
+</span>
+</span>
+</td>
+<td>
+<span class="pron-pair" lang="sr">
+<span class="chart-form pron-long">
+sobom
+</span>
+</span>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="pron-rule-row">
+<p>
+<strong>
+Long / short.
+</strong>
+Long forms stand alone, after prepositions, or for contrast. Short forms sit in the clitic chain.
+</p>
+<p>
+<strong>
+<i lang="sr">
+svoj
+</i>
+</strong>
+Use for own: my own, your own, his own, their own.
+</p>
+</div>
+### mount possessives
+<div class="chart-label pron-mini-head pron-poss-head" role="row">
+<span data-gender="m" role="columnheader">
+M
+</span>
+<span data-gender="n" role="columnheader">
+N
+</span>
+<span data-gender="f" role="columnheader">
+F
+</span>
+</div>
+<article class="pron-poss-card" role="rowgroup">
+<h4 class="chart-label" id="pron-poss-owner-0">
+own
+</h4>
+<div aria-labelledby="pron-poss-owner-0" class="pron-gender-row" role="row">
+<span class="chart-form" lang="sr" role="cell">
+svoj
+</span>
+<span class="chart-form" lang="sr" role="cell">
+svoje
+</span>
+<span class="chart-form" lang="sr" role="cell">
+svoja
+</span>
+</div>
+<p>
+points back to the subject
+</p>
+</article>
+<article class="pron-poss-card" role="rowgroup">
+<h4 class="chart-label" id="pron-poss-owner-1">
+my
+</h4>
+<div aria-labelledby="pron-poss-owner-1" class="pron-gender-row" role="row">
+<span class="chart-form" lang="sr" role="cell">
+moj
+</span>
+<span class="chart-form" lang="sr" role="cell">
+moje
+</span>
+<span class="chart-form" lang="sr" role="cell">
+moja
+</span>
+</div>
+</article>
+<article class="pron-poss-card" role="rowgroup">
+<h4 class="chart-label" id="pron-poss-owner-2">
+your
+</h4>
+<div aria-labelledby="pron-poss-owner-2" class="pron-gender-row" role="row">
+<span class="chart-form" lang="sr" role="cell">
+tvoj
+</span>
+<span class="chart-form" lang="sr" role="cell">
+tvoje
+</span>
+<span class="chart-form" lang="sr" role="cell">
+tvoja
+</span>
+</div>
+</article>
+<article class="pron-poss-card" role="rowgroup">
+<h4 class="chart-label" id="pron-poss-owner-3">
+his / its
+</h4>
+<div aria-labelledby="pron-poss-owner-3" class="pron-gender-row" role="row">
+<span class="chart-form" lang="sr" role="cell">
+njegov
+</span>
+<span class="chart-form" lang="sr" role="cell">
+njegovo
+</span>
+<span class="chart-form" lang="sr" role="cell">
+njegova
+</span>
+</div>
+</article>
+<article class="pron-poss-card" role="rowgroup">
+<h4 class="chart-label" id="pron-poss-owner-4">
+her
+</h4>
+<div aria-labelledby="pron-poss-owner-4" class="pron-gender-row" role="row">
+<span class="chart-form" lang="sr" role="cell">
+njen
+</span>
+<span class="chart-form" lang="sr" role="cell">
+njeno
+</span>
+<span class="chart-form" lang="sr" role="cell">
+njena
+</span>
+</div>
+</article>
+<article class="pron-poss-card" role="rowgroup">
+<h4 class="chart-label" id="pron-poss-owner-5">
+our
+</h4>
+<div aria-labelledby="pron-poss-owner-5" class="pron-gender-row" role="row">
+<span class="chart-form" lang="sr" role="cell">
+naš
+</span>
+<span class="chart-form" lang="sr" role="cell">
+naše
+</span>
+<span class="chart-form" lang="sr" role="cell">
+naša
+</span>
+</div>
+</article>
+<article class="pron-poss-card" role="rowgroup">
+<h4 class="chart-label" id="pron-poss-owner-6">
+your pl.
+</h4>
+<div aria-labelledby="pron-poss-owner-6" class="pron-gender-row" role="row">
+<span class="chart-form" lang="sr" role="cell">
+vaš
+</span>
+<span class="chart-form" lang="sr" role="cell">
+vaše
+</span>
+<span class="chart-form" lang="sr" role="cell">
+vaša
+</span>
+</div>
+</article>
+<article class="pron-poss-card" role="rowgroup">
+<h4 class="chart-label" id="pron-poss-owner-7">
+their
+</h4>
+<div aria-labelledby="pron-poss-owner-7" class="pron-gender-row" role="row">
+<span class="chart-form" lang="sr" role="cell">
+njihov
+</span>
+<span class="chart-form" lang="sr" role="cell">
+njihovo
+</span>
+<span class="chart-form" lang="sr" role="cell">
+njihova
+</span>
+</div>
+</article>
+### mount demonstratives
+<section class="pron-demo-group">
+<h4 class="chart-label">
+Singular
+</h4>
+<div class="pron-subtable" role="table">
+<div class="chart-label pron-mini-head" role="row">
+<span role="columnheader">
+</span>
+<span data-gender="m" role="columnheader">
+M
+</span>
+<span data-gender="n" role="columnheader">
+N
+</span>
+<span data-gender="f" role="columnheader">
+F
+</span>
+</div>
+<div class="chart-pairs" role="rowgroup">
+<div class="chart-pair pron-matrix-row" role="row">
+<span class="chart-label" role="rowheader">
+this
+</span>
+<span class="chart-form pron-form" lang="sr" role="cell">
+ovaj
+</span>
+<span class="chart-form pron-form" lang="sr" role="cell">
+ovo
+</span>
+<span class="chart-form pron-form" lang="sr" role="cell">
+ova
+</span>
+</div>
+<div class="chart-pair pron-matrix-row" role="row">
+<span class="chart-label" role="rowheader">
+that
+</span>
+<span class="chart-form pron-form" lang="sr" role="cell">
+taj
+</span>
+<span class="chart-form pron-form" lang="sr" role="cell">
+to
+</span>
+<span class="chart-form pron-form" lang="sr" role="cell">
+ta
+</span>
+</div>
+<div class="chart-pair pron-matrix-row" role="row">
+<span class="chart-label" role="rowheader">
+that there
+</span>
+<span class="chart-form pron-form" lang="sr" role="cell">
+onaj
+</span>
+<span class="chart-form pron-form" lang="sr" role="cell">
+ono
+</span>
+<span class="chart-form pron-form" lang="sr" role="cell">
+ona
+</span>
+</div>
+</div>
+</div>
+</section>
+<section class="pron-demo-group">
+<h4 class="chart-label">
+Plural
+</h4>
+<div class="pron-subtable" role="table">
+<div class="chart-label pron-mini-head" role="row">
+<span role="columnheader">
+</span>
+<span data-gender="m" role="columnheader">
+M
+</span>
+<span data-gender="n" role="columnheader">
+N
+</span>
+<span data-gender="f" role="columnheader">
+F
+</span>
+</div>
+<div class="chart-pairs" role="rowgroup">
+<div class="chart-pair pron-matrix-row" role="row">
+<span class="chart-label" role="rowheader">
+these
+</span>
+<span class="chart-form pron-form" lang="sr" role="cell">
+ovi
+</span>
+<span class="chart-form pron-form" lang="sr" role="cell">
+ova
+</span>
+<span class="chart-form pron-form" lang="sr" role="cell">
+ove
+</span>
+</div>
+<div class="chart-pair pron-matrix-row" role="row">
+<span class="chart-label" role="rowheader">
+those
+</span>
+<span class="chart-form pron-form" lang="sr" role="cell">
+ti
+</span>
+<span class="chart-form pron-form" lang="sr" role="cell">
+ta
+</span>
+<span class="chart-form pron-form" lang="sr" role="cell">
+te
+</span>
+</div>
+<div class="chart-pair pron-matrix-row" role="row">
+<span class="chart-label" role="rowheader">
+those there
+</span>
+<span class="chart-form pron-form" lang="sr" role="cell">
+oni
+</span>
+<span class="chart-form pron-form" lang="sr" role="cell">
+ona
+</span>
+<span class="chart-form pron-form" lang="sr" role="cell">
+one
+</span>
+</div>
+</div>
+</div>
+</section>
+<div class="pron-rule-row">
+<p>
+<strong>
+<i lang="sr">
+Ovo je...
+</i>
+</strong>
+neuter singular for “this is / that is”.
+</p>
+<p>
+<strong>
+<i lang="sr">
+Ovaj pas
+</i>
+</strong>
+match the noun by gender, number, and case.
+</p>
+</div>
+### mount questions
+<section class="pron-question-block">
+<h4 class="chart-label">
+Whose
+</h4>
+<div class="pron-subtable" role="table">
+<div class="chart-label pron-mini-head" role="row">
+<span role="columnheader">
+</span>
+<span data-gender="m" role="columnheader">
+M
+</span>
+<span data-gender="n" role="columnheader">
+N
+</span>
+<span data-gender="f" role="columnheader">
+F
+</span>
+</div>
+<div class="chart-pairs" role="rowgroup">
+<div class="chart-pair pron-matrix-row" role="row">
+<span class="chart-label" role="rowheader">
+Singular
+</span>
+<span class="chart-form pron-form" lang="sr" role="cell">
+čiji
+</span>
+<span class="chart-form pron-form" lang="sr" role="cell">
+čije
+</span>
+<span class="chart-form pron-form" lang="sr" role="cell">
+čija
+</span>
+</div>
+<div class="chart-pair pron-matrix-row" role="row">
+<span class="chart-label" role="rowheader">
+Plural
+</span>
+<span class="chart-form pron-form" lang="sr" role="cell">
+čiji
+</span>
+<span class="chart-form pron-form" lang="sr" role="cell">
+čija
+</span>
+<span class="chart-form pron-form" lang="sr" role="cell">
+čije
+</span>
+</div>
+</div>
+</div>
+</section>
+<section class="pron-question-block">
+<h4 class="chart-label">
+Who / what
+</h4>
+<div class="pron-kw-table" role="table">
+<div class="chart-label pron-kw-head" role="row">
+<span role="columnheader">
+</span>
+<span role="columnheader">
+who
+</span>
+<span role="columnheader">
+what
+</span>
+</div>
+<div class="chart-pair pron-kw-row" role="row">
+<span class="chart-label" role="rowheader">
+<span data-tone="nom">
+Nominative
+</span>
+</span>
+<span class="chart-form" lang="sr" role="cell">
+ko
+</span>
+<span class="chart-form" lang="sr" role="cell">
+šta
+</span>
+</div>
+<div class="chart-pair pron-kw-row" role="row">
+<span class="chart-label" role="rowheader">
+<span data-tone="gen">
+Genitive
+</span>
+</span>
+<span class="chart-form" lang="sr" role="cell">
+koga
+</span>
+<span class="chart-form" lang="sr" role="cell">
+čega
+</span>
+</div>
+<div class="chart-pair pron-kw-row" role="row">
+<span class="chart-label" role="rowheader">
+<span data-tone="dat">
+Dat
+</span>
+<span class="pron-slash">
+/
+</span>
+<span data-tone="lok">
+Loc
+</span>
+</span>
+<span class="chart-form" lang="sr" role="cell">
+kome
+</span>
+<span class="chart-form" lang="sr" role="cell">
+čemu
+</span>
+</div>
+<div class="chart-pair pron-kw-row" role="row">
+<span class="chart-label" role="rowheader">
+<span data-tone="aku">
+Accusative
+</span>
+</span>
+<span class="chart-form" lang="sr" role="cell">
+koga
+</span>
+<span class="chart-form" lang="sr" role="cell">
+šta
+</span>
+</div>
+<div class="chart-pair pron-kw-row" role="row">
+<span class="chart-label" role="rowheader">
+<span data-tone="ins">
+Instrumental
+</span>
+</span>
+<span class="chart-form" lang="sr" role="cell">
+kim
+</span>
+<span class="chart-form" lang="sr" role="cell">
+čim
+</span>
+</div>
+</div>
+</section>

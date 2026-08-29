@@ -16,18 +16,38 @@ Charts and cheat sheets for learners of the Serbian language.
 
 ## Features
 
-- Bilingual UI — English and Russian, auto-detected from browser preferences.
-- Serbian script toggle — Latin and Cyrillic.
+- Bilingual — English at `/`, Russian at `/ru/`, each prerendered on its own
+  URL. A first visit from a Russian browser is redirected once; a `/ru/` link
+  you were sent is never bounced.
+- Serbian script toggle — Latin and Cyrillic. Both alphabets ship in the
+  markup and CSS picks one, so copy/paste and screen readers stay correct.
 - Light and dark themes, auto-detected from system preferences.
-- Mobile-friendly.
+- Mobile-first. One layout, scaled — no width breakpoints.
 
 ## Run locally
 
+Requires [Bun](https://bun.sh).
+
 ```sh
-python3 -m http.server 8000
+bun install
+bun run dev      # builds to dist/ and serves it on :3000, rebuilding on change
 ```
 
-Then open <http://localhost:8000>.
+Other scripts:
+
+```sh
+bun run build      # static output to dist/
+bun run validate   # build + content validation + tests + typecheck
+```
+
+## Deploying
+
+Cloudflare Workers Static Assets, from a git-connected build:
+
+- build command: `bun install && bun run validate && bun run build`
+- output directory: `dist`
+
+`bun.lock` must stay committed, or the build will not detect Bun.
 
 ## License
 

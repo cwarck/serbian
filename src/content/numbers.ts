@@ -1,0 +1,148 @@
+import type { Cardinal, NounCount, NumberAgreement, NumberBuild, Ordinal } from '../lib/types.ts';
+
+/* One continuous cardinal table (alphabet-chart playbook). Each order of
+   magnitude (ones, teens, tens, hundreds, thousands) gets its own neutral
+   background shade, derived from the value in the renderer — deepening with
+   magnitude, in place of range headers. `end` splits off a notable ending
+   marked with a brand-orange underline: the trailing "-a" of dvesta/trista
+   (vs the regular "-o" of četiristo, petsto…) and the count-driven case
+   endings of hiljadu / hiljade (hiljada, the 5+ base form, stays unmarked so
+   the changed endings stand out against it). */
+export const CARDINALS = [
+  { n: '0', sr: 'nula' },
+  { n: '1', sr: 'jedan' },
+  { n: '2', sr: 'dva' },
+  { n: '3', sr: 'tri' },
+  { n: '4', sr: 'četiri' },
+  { n: '5', sr: 'pet' },
+  { n: '6', sr: 'šest' },
+  { n: '7', sr: 'sedam' },
+  { n: '8', sr: 'osam' },
+  { n: '9', sr: 'devet' },
+
+  { n: '10', sr: 'deset' },
+  { n: '11', sr: 'jedanaest' },
+  { n: '12', sr: 'dvanaest' },
+  { n: '13', sr: 'trinaest' },
+  { n: '14', sr: 'četrnaest' },
+  { n: '15', sr: 'petnaest' },
+  { n: '16', sr: 'šesnaest' },
+  { n: '17', sr: 'sedamnaest' },
+  { n: '18', sr: 'osamnaest' },
+  { n: '19', sr: 'devetnaest' },
+
+  { n: '20', sr: 'dvadeset' },
+  { n: '30', sr: 'trideset' },
+  { n: '40', sr: 'četrdeset' },
+  { n: '50', sr: 'pedeset' },
+  { n: '60', sr: 'šezdeset' },
+  { n: '70', sr: 'sedamdeset' },
+  { n: '80', sr: 'osamdeset' },
+  { n: '90', sr: 'devedeset' },
+
+  { n: '100', sr: 'sto' },
+  { n: '200', sr: 'dvest', end: 'a' },
+  { n: '300', sr: 'trist', end: 'a' },
+  { n: '400', sr: 'četiristo' },
+  { n: '500', sr: 'petsto' },
+  { n: '600', sr: 'šeststo' },
+  { n: '700', sr: 'sedamsto' },
+  { n: '800', sr: 'osamsto' },
+  { n: '900', sr: 'devetsto' },
+
+  { n: '1 000', sr: 'hiljad', end: 'u' },
+  { n: '2 000', sr: 'dve hiljad', end: 'e' },
+  { n: '3 000', sr: 'tri hiljad', end: 'e' },
+  { n: '4 000', sr: 'četiri hiljad', end: 'e' },
+  { n: '5 000', sr: 'pet hiljada' },
+  { n: '6 000', sr: 'šest hiljada' },
+  { n: '7 000', sr: 'sedam hiljada' },
+  { n: '8 000', sr: 'osam hiljada' },
+  { n: '9 000', sr: 'devet hiljada' },
+] satisfies readonly Cardinal[];
+
+export const NUMBER_BUILDS = [
+  { n: '21', parts: ['dvadeset', 'jedan'], en: 'twenty one', ru: 'двадцать один' },
+  { n: '34', parts: ['trideset', 'četiri'], en: 'thirty four', ru: 'тридцать четыре' },
+  { n: '58', parts: ['pedeset', 'osam'], en: 'fifty eight', ru: 'пятьдесят восемь' },
+  { n: '101', parts: ['sto', 'jedan'], en: 'one hundred one', ru: 'сто один' },
+  { n: '125', parts: ['sto', 'dvadeset', 'pet'], en: 'one hundred twenty five', ru: 'сто двадцать пять' },
+  { n: '2 345', parts: ['dve', 'hiljade', 'trista', 'četrdeset', 'pet'], en: 'two thousand three hundred forty five', ru: 'две тысячи триста сорок пять' },
+] satisfies readonly NumberBuild[];
+
+export const NOUN_COUNTS = [
+  {
+    n: '1',
+    pattern: { en: 'agrees with noun', ru: 'согласуется с родом' },
+    examples: ['jedan grad', 'jedna žena', 'jedno selo']
+  },
+  {
+    n: '2',
+    pattern: { en: 'gender split', ru: 'форма по роду' },
+    examples: ['dva grada', 'dve žene', 'dva sela']
+  },
+  {
+    n: '3-4',
+    pattern: { en: 'counted form', ru: 'счётная форма' },
+    examples: ['tri grada', 'četiri žene', 'tri sela']
+  },
+  {
+    n: '5+',
+    pattern: { en: 'genitive plural', ru: 'родительный мн.' },
+    examples: ['pet gradova', 'šest žena', 'sedam sela']
+  },
+  {
+    n: '21',
+    pattern: { en: 'last word: 1', ru: 'последнее слово: 1' },
+    examples: ['dvadeset jedan grad', 'trideset jedna žena', 'četrdeset jedno selo']
+  },
+  {
+    n: '22-24',
+    pattern: { en: 'last word: 2-4', ru: 'последнее слово: 2-4' },
+    examples: ['dvadeset dva grada', 'dvadeset tri žene', 'dvadeset četiri sela']
+  },
+  {
+    n: '25+',
+    pattern: { en: 'last word: 5+', ru: 'последнее слово: 5+' },
+    examples: ['dvadeset pet gradova', 'trideset šest žena', 'četrdeset sedam sela']
+  }
+] satisfies readonly NounCount[];
+
+/* The single most common numeral error: what the VERB does. 2-4 take a plural
+   verb, 5+ take a third-person singular — and the adjective follows the verb,
+   not the noun. Nothing else on this chart shows a numeral inside a sentence. */
+export const AGREEMENT = [
+  {
+    n: '1',
+    form: { en: 'singular', ru: 'ед. число' },
+    sr: 'Jedan grad je velik.',
+    tr: { en: 'One city is big.', ru: 'Один город большой.' }
+  },
+  {
+    n: '2-4',
+    form: { en: 'plural', ru: 'мн. число' },
+    sr: 'Dva grada su velika.',
+    tr: { en: 'Two cities are big.', ru: 'Два города большие.' }
+  },
+  {
+    n: '5+',
+    form: { en: 'singular', ru: 'ед. число' },
+    sr: 'Pet gradova je veliko.',
+    tr: { en: 'Five cities are big.', ru: 'Пять городов большие.' }
+  },
+] satisfies readonly NumberAgreement[];
+
+export const ORDINALS = [
+  { n: '1.', forms: ['prvi', 'prvo', 'prva'] },
+  { n: '2.', forms: ['drugi', 'drugo', 'druga'] },
+  { n: '3.', forms: ['treći', 'treće', 'treća'] },
+  { n: '4.', forms: ['četvrti', 'četvrto', 'četvrta'] },
+  { n: '5.', forms: ['peti', 'peto', 'peta'] },
+  { n: '6.', forms: ['šesti', 'šesto', 'šesta'] },
+  { n: '7.', forms: ['sedmi', 'sedmo', 'sedma'] },
+  { n: '8.', forms: ['osmi', 'osmo', 'osma'] },
+  { n: '9.', forms: ['deveti', 'deveto', 'deveta'] },
+  { n: '10.', forms: ['deseti', 'deseto', 'deseta'] },
+  { n: '20.', forms: ['dvadeseti', 'dvadeseto', 'dvadeseta'] },
+  { n: '21.', forms: ['dvadeset prvi', 'dvadeset prvo', 'dvadeset prva'] },
+] satisfies readonly Ordinal[];

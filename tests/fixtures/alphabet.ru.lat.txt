@@ -1,0 +1,1041 @@
+### mount alphGrid
+<article class="letter" data-kind="shared">
+<div class="glyphs" lang="sr">
+<span class="cyr">
+А а
+</span>
+<span class="sep">
+·
+</span>
+<span class="lat">
+A a
+</span>
+</div>
+<div class="ipa-row">
+<span class="ipa">
+/a/
+</span>
+</div>
+<div class="example">
+<span class="word" lang="sr">
+<span class="word-cyr">
+авион
+</span>
+<span class="word-sep">
+·
+</span>
+<span class="word-lat">
+avion
+</span>
+</span>
+<span class="tr">
+самолёт
+</span>
+</div>
+</article>
+<article class="letter" data-kind="shared">
+<div class="glyphs" lang="sr">
+<span class="cyr">
+Б б
+</span>
+<span class="sep">
+·
+</span>
+<span class="lat">
+B b
+</span>
+</div>
+<div class="ipa-row">
+<span class="ipa">
+/b/
+</span>
+</div>
+<div class="example">
+<span class="word" lang="sr">
+<span class="word-cyr">
+банана
+</span>
+<span class="word-sep">
+·
+</span>
+<span class="word-lat">
+banana
+</span>
+</span>
+<span class="tr">
+банан
+</span>
+</div>
+</article>
+<article class="letter" data-kind="diff">
+<div class="glyphs" lang="sr">
+<span class="cyr">
+В в
+</span>
+<span class="sep">
+·
+</span>
+<span class="lat">
+V v
+</span>
+</div>
+<div class="ipa-row">
+<span class="ipa">
+/ʋ/
+</span>
+</div>
+<div class="example">
+<span class="word" lang="sr">
+<span class="word-cyr">
+вода
+</span>
+<span class="word-sep">
+·
+</span>
+<span class="word-lat">
+voda
+</span>
+</span>
+<span class="tr">
+вода
+</span>
+</div>
+</article>
+<article class="letter" data-kind="shared">
+<div class="glyphs" lang="sr">
+<span class="cyr">
+Г г
+</span>
+<span class="sep">
+·
+</span>
+<span class="lat">
+G g
+</span>
+</div>
+<div class="ipa-row">
+<span class="ipa">
+/ɡ/
+</span>
+</div>
+<div class="example">
+<span class="word" lang="sr">
+<span class="word-cyr">
+гора
+</span>
+<span class="word-sep">
+·
+</span>
+<span class="word-lat">
+gora
+</span>
+</span>
+<span class="tr">
+гора
+</span>
+</div>
+</article>
+<article class="letter" data-kind="shared">
+<div class="glyphs" lang="sr">
+<span class="cyr">
+Д д
+</span>
+<span class="sep">
+·
+</span>
+<span class="lat">
+D d
+</span>
+</div>
+<div class="ipa-row">
+<span class="ipa">
+/d/
+</span>
+</div>
+<div class="example">
+<span class="word" lang="sr">
+<span class="word-cyr">
+дом
+</span>
+<span class="word-sep">
+·
+</span>
+<span class="word-lat">
+dom
+</span>
+</span>
+<span class="tr">
+дом
+</span>
+</div>
+</article>
+<article class="letter" data-kind="unique">
+<div class="glyphs" lang="sr">
+<span class="cyr">
+Ђ ђ
+</span>
+<span class="sep">
+·
+</span>
+<span class="lat">
+Đ đ
+</span>
+</div>
+<div class="ipa-row">
+<span class="ipa">
+/dʑ/
+</span>
+<button aria-expanded="false" aria-haspopup="dialog" aria-label="как произнести" class="tip-chip" data-tip-idx="5" type="button">
+?
+</button>
+</div>
+<div class="example">
+<span class="word" lang="sr">
+<span class="word-cyr">
+ђак
+</span>
+<span class="word-sep">
+·
+</span>
+<span class="word-lat">
+đak
+</span>
+</span>
+<span class="tr">
+ученик
+</span>
+</div>
+</article>
+<article class="letter" data-kind="shared">
+<div class="glyphs" lang="sr">
+<span class="cyr">
+Е е
+</span>
+<span class="sep">
+·
+</span>
+<span class="lat">
+E e
+</span>
+</div>
+<div class="ipa-row">
+<span class="ipa">
+/e/
+</span>
+</div>
+<div class="example">
+<span class="word" lang="sr">
+<span class="word-cyr">
+екран
+</span>
+<span class="word-sep">
+·
+</span>
+<span class="word-lat">
+ekran
+</span>
+</span>
+<span class="tr">
+экран
+</span>
+</div>
+</article>
+<article class="letter" data-kind="shared">
+<div class="glyphs" lang="sr">
+<span class="cyr">
+Ж ж
+</span>
+<span class="sep">
+·
+</span>
+<span class="lat">
+Ž ž
+</span>
+</div>
+<div class="ipa-row">
+<span class="ipa">
+/ʒ/
+</span>
+</div>
+<div class="example">
+<span class="word" lang="sr">
+<span class="word-cyr">
+жена
+</span>
+<span class="word-sep">
+·
+</span>
+<span class="word-lat">
+žena
+</span>
+</span>
+<span class="tr">
+женщина / жена
+</span>
+</div>
+</article>
+<article class="letter" data-kind="shared">
+<div class="glyphs" lang="sr">
+<span class="cyr">
+З з
+</span>
+<span class="sep">
+·
+</span>
+<span class="lat">
+Z z
+</span>
+</div>
+<div class="ipa-row">
+<span class="ipa">
+/z/
+</span>
+</div>
+<div class="example">
+<span class="word" lang="sr">
+<span class="word-cyr">
+зима
+</span>
+<span class="word-sep">
+·
+</span>
+<span class="word-lat">
+zima
+</span>
+</span>
+<span class="tr">
+зима
+</span>
+</div>
+</article>
+<article class="letter" data-kind="shared">
+<div class="glyphs" lang="sr">
+<span class="cyr">
+И и
+</span>
+<span class="sep">
+·
+</span>
+<span class="lat">
+I i
+</span>
+</div>
+<div class="ipa-row">
+<span class="ipa">
+/i/
+</span>
+</div>
+<div class="example">
+<span class="word" lang="sr">
+<span class="word-cyr">
+игра
+</span>
+<span class="word-sep">
+·
+</span>
+<span class="word-lat">
+igra
+</span>
+</span>
+<span class="tr">
+игра
+</span>
+</div>
+</article>
+<article class="letter" data-kind="unique">
+<div class="glyphs" lang="sr">
+<span class="cyr">
+Ј ј
+</span>
+<span class="sep">
+·
+</span>
+<span class="lat">
+J j
+</span>
+</div>
+<div class="ipa-row">
+<span class="ipa">
+/j/
+</span>
+</div>
+<div class="example">
+<span class="word" lang="sr">
+<span class="word-cyr">
+јабука
+</span>
+<span class="word-sep">
+·
+</span>
+<span class="word-lat">
+jabuka
+</span>
+</span>
+<span class="tr">
+яблоко
+</span>
+</div>
+</article>
+<article class="letter" data-kind="shared">
+<div class="glyphs" lang="sr">
+<span class="cyr">
+К к
+</span>
+<span class="sep">
+·
+</span>
+<span class="lat">
+K k
+</span>
+</div>
+<div class="ipa-row">
+<span class="ipa">
+/k/
+</span>
+</div>
+<div class="example">
+<span class="word" lang="sr">
+<span class="word-cyr">
+књига
+</span>
+<span class="word-sep">
+·
+</span>
+<span class="word-lat">
+knjiga
+</span>
+</span>
+<span class="tr">
+книга
+</span>
+</div>
+</article>
+<article class="letter" data-kind="shared">
+<div class="glyphs" lang="sr">
+<span class="cyr">
+Л л
+</span>
+<span class="sep">
+·
+</span>
+<span class="lat">
+L l
+</span>
+</div>
+<div class="ipa-row">
+<span class="ipa">
+/l/
+</span>
+</div>
+<div class="example">
+<span class="word" lang="sr">
+<span class="word-cyr">
+лето
+</span>
+<span class="word-sep">
+·
+</span>
+<span class="word-lat">
+leto
+</span>
+</span>
+<span class="tr">
+лето
+</span>
+</div>
+</article>
+<article class="letter" data-kind="unique">
+<div class="glyphs" lang="sr">
+<span class="cyr">
+Љ љ
+</span>
+<span class="sep">
+·
+</span>
+<span class="lat">
+Lj lj
+</span>
+</div>
+<div class="ipa-row">
+<span class="ipa">
+/ʎ/
+</span>
+</div>
+<div class="example">
+<span class="word" lang="sr">
+<span class="word-cyr">
+љубав
+</span>
+<span class="word-sep">
+·
+</span>
+<span class="word-lat">
+ljubav
+</span>
+</span>
+<span class="tr">
+любовь
+</span>
+</div>
+</article>
+<article class="letter" data-kind="shared">
+<div class="glyphs" lang="sr">
+<span class="cyr">
+М м
+</span>
+<span class="sep">
+·
+</span>
+<span class="lat">
+M m
+</span>
+</div>
+<div class="ipa-row">
+<span class="ipa">
+/m/
+</span>
+</div>
+<div class="example">
+<span class="word" lang="sr">
+<span class="word-cyr">
+мост
+</span>
+<span class="word-sep">
+·
+</span>
+<span class="word-lat">
+most
+</span>
+</span>
+<span class="tr">
+мост
+</span>
+</div>
+</article>
+<article class="letter" data-kind="diff">
+<div class="glyphs" lang="sr">
+<span class="cyr">
+Н н
+</span>
+<span class="sep">
+·
+</span>
+<span class="lat">
+N n
+</span>
+</div>
+<div class="ipa-row">
+<span class="ipa">
+/n/
+</span>
+</div>
+<div class="example">
+<span class="word" lang="sr">
+<span class="word-cyr">
+небо
+</span>
+<span class="word-sep">
+·
+</span>
+<span class="word-lat">
+nebo
+</span>
+</span>
+<span class="tr">
+небо
+</span>
+</div>
+</article>
+<article class="letter" data-kind="unique">
+<div class="glyphs" lang="sr">
+<span class="cyr">
+Њ њ
+</span>
+<span class="sep">
+·
+</span>
+<span class="lat">
+Nj nj
+</span>
+</div>
+<div class="ipa-row">
+<span class="ipa">
+/ɲ/
+</span>
+</div>
+<div class="example">
+<span class="word" lang="sr">
+<span class="word-cyr">
+њива
+</span>
+<span class="word-sep">
+·
+</span>
+<span class="word-lat">
+njiva
+</span>
+</span>
+<span class="tr">
+поле
+</span>
+</div>
+</article>
+<article class="letter" data-kind="shared">
+<div class="glyphs" lang="sr">
+<span class="cyr">
+О о
+</span>
+<span class="sep">
+·
+</span>
+<span class="lat">
+O o
+</span>
+</div>
+<div class="ipa-row">
+<span class="ipa">
+/o/
+</span>
+</div>
+<div class="example">
+<span class="word" lang="sr">
+<span class="word-cyr">
+отац
+</span>
+<span class="word-sep">
+·
+</span>
+<span class="word-lat">
+otac
+</span>
+</span>
+<span class="tr">
+отец
+</span>
+</div>
+</article>
+<article class="letter" data-kind="shared">
+<div class="glyphs" lang="sr">
+<span class="cyr">
+П п
+</span>
+<span class="sep">
+·
+</span>
+<span class="lat">
+P p
+</span>
+</div>
+<div class="ipa-row">
+<span class="ipa">
+/p/
+</span>
+</div>
+<div class="example">
+<span class="word" lang="sr">
+<span class="word-cyr">
+птица
+</span>
+<span class="word-sep">
+·
+</span>
+<span class="word-lat">
+ptica
+</span>
+</span>
+<span class="tr">
+птица
+</span>
+</div>
+</article>
+<article class="letter" data-kind="diff">
+<div class="glyphs" lang="sr">
+<span class="cyr">
+Р р
+</span>
+<span class="sep">
+·
+</span>
+<span class="lat">
+R r
+</span>
+</div>
+<div class="ipa-row">
+<span class="ipa">
+/r/
+</span>
+</div>
+<div class="example">
+<span class="word" lang="sr">
+<span class="word-cyr">
+река
+</span>
+<span class="word-sep">
+·
+</span>
+<span class="word-lat">
+reka
+</span>
+</span>
+<span class="tr">
+река
+</span>
+</div>
+</article>
+<article class="letter" data-kind="diff">
+<div class="glyphs" lang="sr">
+<span class="cyr">
+С с
+</span>
+<span class="sep">
+·
+</span>
+<span class="lat">
+S s
+</span>
+</div>
+<div class="ipa-row">
+<span class="ipa">
+/s/
+</span>
+</div>
+<div class="example">
+<span class="word" lang="sr">
+<span class="word-cyr">
+сир
+</span>
+<span class="word-sep">
+·
+</span>
+<span class="word-lat">
+sir
+</span>
+</span>
+<span class="tr">
+сыр
+</span>
+</div>
+</article>
+<article class="letter" data-kind="shared">
+<div class="glyphs" lang="sr">
+<span class="cyr">
+Т т
+</span>
+<span class="sep">
+·
+</span>
+<span class="lat">
+T t
+</span>
+</div>
+<div class="ipa-row">
+<span class="ipa">
+/t/
+</span>
+</div>
+<div class="example">
+<span class="word" lang="sr">
+<span class="word-cyr">
+телефон
+</span>
+<span class="word-sep">
+·
+</span>
+<span class="word-lat">
+telefon
+</span>
+</span>
+<span class="tr">
+телефон
+</span>
+</div>
+</article>
+<article class="letter" data-kind="unique">
+<div class="glyphs" lang="sr">
+<span class="cyr">
+Ћ ћ
+</span>
+<span class="sep">
+·
+</span>
+<span class="lat">
+Ć ć
+</span>
+</div>
+<div class="ipa-row">
+<span class="ipa">
+/tɕ/
+</span>
+<button aria-expanded="false" aria-haspopup="dialog" aria-label="как произнести" class="tip-chip" data-tip-idx="22" type="button">
+?
+</button>
+</div>
+<div class="example">
+<span class="word" lang="sr">
+<span class="word-cyr">
+ћуран
+</span>
+<span class="word-sep">
+·
+</span>
+<span class="word-lat">
+ćuran
+</span>
+</span>
+<span class="tr">
+индюк
+</span>
+</div>
+</article>
+<article class="letter" data-kind="diff">
+<div class="glyphs" lang="sr">
+<span class="cyr">
+У у
+</span>
+<span class="sep">
+·
+</span>
+<span class="lat">
+U u
+</span>
+</div>
+<div class="ipa-row">
+<span class="ipa">
+/u/
+</span>
+</div>
+<div class="example">
+<span class="word" lang="sr">
+<span class="word-cyr">
+улица
+</span>
+<span class="word-sep">
+·
+</span>
+<span class="word-lat">
+ulica
+</span>
+</span>
+<span class="tr">
+улица
+</span>
+</div>
+</article>
+<article class="letter" data-kind="shared">
+<div class="glyphs" lang="sr">
+<span class="cyr">
+Ф ф
+</span>
+<span class="sep">
+·
+</span>
+<span class="lat">
+F f
+</span>
+</div>
+<div class="ipa-row">
+<span class="ipa">
+/f/
+</span>
+</div>
+<div class="example">
+<span class="word" lang="sr">
+<span class="word-cyr">
+фабрика
+</span>
+<span class="word-sep">
+·
+</span>
+<span class="word-lat">
+fabrika
+</span>
+</span>
+<span class="tr">
+фабрика
+</span>
+</div>
+</article>
+<article class="letter" data-kind="diff">
+<div class="glyphs" lang="sr">
+<span class="cyr">
+Х х
+</span>
+<span class="sep">
+·
+</span>
+<span class="lat">
+H h
+</span>
+</div>
+<div class="ipa-row">
+<span class="ipa">
+/x/
+</span>
+</div>
+<div class="example">
+<span class="word" lang="sr">
+<span class="word-cyr">
+хладно
+</span>
+<span class="word-sep">
+·
+</span>
+<span class="word-lat">
+hladno
+</span>
+</span>
+<span class="tr">
+холодно
+</span>
+</div>
+</article>
+<article class="letter" data-kind="shared">
+<div class="glyphs" lang="sr">
+<span class="cyr">
+Ц ц
+</span>
+<span class="sep">
+·
+</span>
+<span class="lat">
+C c
+</span>
+</div>
+<div class="ipa-row">
+<span class="ipa">
+/ts/
+</span>
+</div>
+<div class="example">
+<span class="word" lang="sr">
+<span class="word-cyr">
+цвет
+</span>
+<span class="word-sep">
+·
+</span>
+<span class="word-lat">
+cvet
+</span>
+</span>
+<span class="tr">
+цветок
+</span>
+</div>
+</article>
+<article class="letter" data-kind="shared">
+<div class="glyphs" lang="sr">
+<span class="cyr">
+Ч ч
+</span>
+<span class="sep">
+·
+</span>
+<span class="lat">
+Č č
+</span>
+</div>
+<div class="ipa-row">
+<span class="ipa">
+/tʃ/
+</span>
+<button aria-expanded="false" aria-haspopup="dialog" aria-label="как произнести" class="tip-chip" data-tip-idx="27" type="button">
+?
+</button>
+</div>
+<div class="example">
+<span class="word" lang="sr">
+<span class="word-cyr">
+час
+</span>
+<span class="word-sep">
+·
+</span>
+<span class="word-lat">
+čas
+</span>
+</span>
+<span class="tr">
+урок / час
+</span>
+</div>
+</article>
+<article class="letter" data-kind="unique">
+<div class="glyphs" lang="sr">
+<span class="cyr">
+Џ џ
+</span>
+<span class="sep">
+·
+</span>
+<span class="lat">
+Dž dž
+</span>
+</div>
+<div class="ipa-row">
+<span class="ipa">
+/dʒ/
+</span>
+<button aria-expanded="false" aria-haspopup="dialog" aria-label="как произнести" class="tip-chip" data-tip-idx="28" type="button">
+?
+</button>
+</div>
+<div class="example">
+<span class="word" lang="sr">
+<span class="word-cyr">
+џеп
+</span>
+<span class="word-sep">
+·
+</span>
+<span class="word-lat">
+džep
+</span>
+</span>
+<span class="tr">
+карман
+</span>
+</div>
+</article>
+<article class="letter" data-kind="shared">
+<div class="glyphs" lang="sr">
+<span class="cyr">
+Ш ш
+</span>
+<span class="sep">
+·
+</span>
+<span class="lat">
+Š š
+</span>
+</div>
+<div class="ipa-row">
+<span class="ipa">
+/ʃ/
+</span>
+</div>
+<div class="example">
+<span class="word" lang="sr">
+<span class="word-cyr">
+шума
+</span>
+<span class="word-sep">
+·
+</span>
+<span class="word-lat">
+šuma
+</span>
+</span>
+<span class="tr">
+лес
+</span>
+</div>
+</article>
+### popover .tip-chip|[["data-tip-idx","22"]]
+Мягкая версия «ч». Как будто ты одновременно говоришь «ть» и «ч». Звук лёгкий и «тонкий».
+### popover .tip-chip|[["data-tip-idx","27"]]
+Похоже на русский «ч» в слове «чай», но чуть твёрже и чётче.
+### popover .tip-chip|[["data-tip-idx","28"]]
+Просто «дж», как в слове «джаз». Твёрдый и звонкий звук.
+### popover .tip-chip|[["data-tip-idx","5"]]
+Мягкий звук между «дь» и «дж». Представь очень мягкое «д» в слове «дядя». Язык прижимается к нёбу, поэтому звук получается «нежным».

@@ -1,0 +1,53 @@
+# Cloudflare Workers Static Assets — _headers
+# Served from the assets root (wrangler.jsonc: assets.directory = "./dist").
+# Docs: https://developers.cloudflare.com/workers/static-assets/headers/
+#
+# SEMANTICS NOTE: rules are CUMULATIVE. A request matching several path
+# patterns inherits every matched rule's headers, and a header set twice is
+# JOINED with a comma (not overridden). The Cache-Control paths below are kept
+# mutually exclusive so no asset ever receives two DIFFERENT ones.
+#
+# The one deliberate exception is /*.html vs /ru/*.html. `*` spans segments, so
+# the first already covers the second — but _headers is fail-open, a pattern
+# that quietly stops matching costs a wrong Cache-Control with no error
+# anywhere, and routing added a whole second tree that every rule here predates.
+# Both carry the SAME value, so the worst case is `no-cache, no-cache`.
+
+# --- Security headers (site-wide, unique header names) ---
+#
+# The CSP ships now that both of its blockers are gone: there are no inline
+# style attributes left anywhere, and the one inline <script> (the
+# false-friends redirect) died with locale routing. Everything the pages load
+# is same-origin: one stylesheet, two scripts, twelve local woff2 subsets.
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: DENY
+  Permissions-Policy: geolocation=(), camera=(), microphone=()
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'
+
+# --- Fonts: content-stable woff2 subsets (and their OFL licences).
+#     Large files, never change under a stable path. ---
+/assets/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# --- CSS / JS: content-hashed filenames, so a deploy publishes new names
+#     rather than new bytes under old ones. Never revalidated. Every asset is
+#     hashed, including the render-blocking theme-init, so these patterns stay
+#     mutually exclusive — see the SEMANTICS NOTE above. ---
+/assets/*.css
+  Cache-Control: public, max-age=31536000, immutable
+/assets/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+# --- HTML: always revalidate; never long-cache a document. Routing added a
+#     whole second tree, so /ru/ is spelled out — a pattern that quietly stops
+#     matching would cost a wrong Cache-Control with no error anywhere. ---
+/*.html
+  Cache-Control: no-cache
+/ru/*.html
+  Cache-Control: no-cache
+/
+  Cache-Control: no-cache
+/ru/
+  Cache-Control: no-cache
