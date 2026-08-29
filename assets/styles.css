@@ -385,7 +385,11 @@ section { position: relative; }
   color: var(--ink-muted);
   transition: background .25s, color .25s;
 }
-.chip[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+/* The language chips are real links (they navigate to the counterpart
+   route), so they mark the current choice with aria-current; the script and
+   theme chips are toggles and use aria-pressed. Same treatment either way. */
+.chip[aria-pressed="true"],
+.chip[aria-current="true"] { background: var(--ink); color: var(--paper); }
 
 /* Keyboard focus — the house solid-accent ring, applied to the primary
    controls that previously fell back to the unstyled UA default. */
@@ -524,7 +528,8 @@ section { position: relative; }
 @media (hover: hover) and (pointer: fine) {
   .foot-charts-list a:hover { color: var(--accent); }
   .chip:hover { color: var(--ink); }
-  .chip[aria-pressed="true"]:hover { color: var(--paper); }
+  .chip[aria-pressed="true"]:hover,
+  .chip[aria-current="true"]:hover { color: var(--paper); }
   .chart-card:hover { background: var(--paper-deep); }
   .foot a:hover { color: var(--accent); }
   .tip-chip:hover {

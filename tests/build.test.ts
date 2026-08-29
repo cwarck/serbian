@@ -6,6 +6,7 @@ import { ROUTES } from '../src/lib/routes.ts';
 import { CASES } from '../src/content/cases.ts';
 import { CASE_TONES } from '../src/lib/types.ts';
 import { caseAnchor } from '../src/render/cases.ts';
+import { findTriggers, popoverKey } from '../src/lib/triggers.ts';
 
 /* Emission asserts that outlive the port. The snapshot gate compares renderer
    output; these check what the whole document must be true of, and would each
@@ -132,4 +133,80 @@ test('fonts land at dist/assets/fonts/', () => {
 test('the stylesheet is not collapsed to one line — the tone audit scans it', () => {
   const css = fs.readFileSync(path.join(OUT, 'assets/styles.css'), 'utf8');
   expect(css.split('\n').length).toBeGreaterThan(1000);
+});
+
+/* The build emits popover bodies as <template> nodes and the client looks them
+   up by a key derived from the trigger's own attributes. Nothing links the two
+   but that derivation — so assert it end to end on the real output. Every
+   trigger the page renders must resolve to a template that exists. */
+const TRIGGER_SELECTORS = [
+  '.tip-chip', '[data-note-trigger]', '[data-prep]',
+  '[data-verb-tip]', '[data-pitch-note]', '[data-aspect-note]',
+];
+
+test('every popover trigger resolves to a template in the same document', () => {
+  let checked = 0;
+  for (const [route, html] of pages) {
+    const templateIds = new Set(
+      [...html.matchAll(/<template id="([^"]+)"/g)].map(m => m[1]!));
+    for (const selector of TRIGGER_SELECTORS) {
+      for (const attrs of findTriggers(html, selector)) {
+        if (attrs['class']?.includes('tip-pop-close')) continue;
+        const key = popoverKey(attrs);
+        expect(templateIds.has(key), `${route}: no template for ${key}`).toBe(true);
+        checked++;
+      }
+    }
+  }
+  /* If this ever drops to zero the assertion above stops meaning anything. */
+  expect(checked).toBeGreaterThan(100);
+});
+
+test('no template is emitted that no trigger can reach', () => {
+  for (const [route, html] of pages) {
+    const reachable = new Set<string>();
+    for (const selector of TRIGGER_SELECTORS) {
+      for (const attrs of findTriggers(html, selector)) reachable.add(popoverKey(attrs));
+    }
+    for (const [, id] of html.matchAll(/<template id="([^"]+)"/g)) {
+      expect(reachable.has(id!), `${route}: unreachable template ${id}`).toBe(true);
+    }
+  }
+});
+
+/* Both scripts must be in the served bytes, or the toggle has nothing to
+   switch between — the failure mode is invisible until someone clicks. */
+test('every chart page ships both alphabets', () => {
+  for (const [route, html] of pages) {
+    if (route === '/' || route === '/ru/') continue;
+    /* The alphabet chart shows both scripts side by side — the columns ARE the
+       content — so it dual-emits nothing and the toggle correctly does nothing
+       there. Every other chart must carry both. */
+    if (route.endsWith('/alphabet.html')) continue;
+    const lat = (html.match(/data-s="lat"/g) ?? []).length;
+    const cyr = (html.match(/data-s="cyr"/g) ?? []).length;
+    expect(lat, route).toBeGreaterThan(10);
+    expect(cyr, route).toBe(lat);
+  }
+});
+
+/* The home page's card glyphs are the one place this could silently fail:
+   they used to be hand-typed, and no chart-data-driven test would notice. */
+test('the home cards dual-emit their Serbian glyphs', () => {
+  for (const route of ['/', '/ru/']) {
+    const html = pages.get(route)!;
+    const glyphs = [...html.matchAll(/<span class="chart-glyph"[^>]*>([\s\S]*?)<\/span>\s*<span class="chart-meta">/g)];
+    expect(glyphs.length, route).toBe(route === '/' ? 8 : 9);
+    const dual = glyphs.filter(m => m[1]!.includes('data-s="cyr"'));
+    /* Six carry Serbian; 1·2·3, the pitch marks and \u2260 are script-invariant. */
+    expect(dual.length, route).toBe(6);
+  }
+});
+
+test('the client bundle carries no transliteration table', () => {
+  const app = fs.readFileSync(path.join(OUT, 'assets/app.js'), 'utf8');
+  for (const cyrillic of ['\u0436', '\u0459', '\u045a', '\u045f']) {
+    expect(app, `app.js still ships ${cyrillic}`).not.toContain(cyrillic);
+  }
+  expect(app.length).toBeLessThan(20000);
 });

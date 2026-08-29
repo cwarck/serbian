@@ -10,7 +10,9 @@ import { counterpart, type Route } from '../lib/routes.ts';
 import { masthead, settingsMenu } from './nav.ts';
 import { footer } from './foot.ts';
 import { home, chartBody } from './body.ts';
+import { findTriggers, popoverKey } from '../lib/triggers.ts';
 import type { Chart } from '../render/chart.ts';
+import type { Lang } from '../lib/negotiate.ts';
 
 const ORIGIN = 'https://serbian.fyi';
 
@@ -31,7 +33,29 @@ function headKeys(name: string): { title: string; desc: string } {
   return { title: `page.${stem}.title`, desc: `page.${stem}.desc` };
 }
 
-export function documentHTML(route: Route, body: { main: Raw; beforeMain?: Raw }): string {
+/* Popover bodies ship as inert <template> nodes; the shell clones instead of
+   assigning innerHTML. Cheaper than it sounds and cheaper than today — the
+   markup is repetitive and compresses about 12:1, against the runtime cost of
+   shipping the data files and re-rendering on every open. */
+function popoverTemplates(chart: Chart, mounts: Record<string, string>, lang: Lang): Raw {
+  const pageHTML = Object.values(mounts).join('\n');
+  const seen = new Set<string>();
+  const out: string[] = [];
+  for (const reg of chart.popovers ?? []) {
+    for (const attrs of findTriggers(pageHTML, reg.match)) {
+      const key = popoverKey(attrs);
+      if (seen.has(key)) continue;
+      seen.add(key);
+      const markup = String(reg.render(attrs, lang) ?? '');
+      if (!markup) continue;
+      const tone = reg.tone?.(attrs) ?? '';
+      out.push(`<template id="${key}"${reg.variant ? ` data-variant="${reg.variant}"` : ''}${tone ? ` data-tone="${tone}"` : ''}>${markup}</template>`);
+    }
+  }
+  return raw(out.join('\n'));
+}
+
+export function documentHTML(route: Route, body: { main: Raw; beforeMain?: Raw; templates?: Raw }): string {
   const t = (key: string) => text(route.lang, key);
   const keys = headKeys(route.name);
   const other = counterpart(route);
@@ -66,6 +90,7 @@ ${masthead(route)}${body.beforeMain ?? ''}
 <noscript><p class="noscript-note">${t('nav.noscript')}</p></noscript>
 ${body.main}</main>
 ${footer(route)}${settingsMenu(route)}
+${body.templates ?? ''}
 <script src="/assets/app.js"></script>
 </body>
 </html>
@@ -93,5 +118,5 @@ export async function renderPage(route: Route): Promise<string> {
   const { chart } = await load();
   const mounts = chart.mounts(route.lang);
   const body = chartBody(chart, mounts, route);
-  return documentHTML(route, body);
+  return documentHTML(route, { ...body, templates: popoverTemplates(chart, mounts, route.lang) });
 }
