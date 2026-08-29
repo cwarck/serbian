@@ -560,11 +560,12 @@
     buildSettingsMenu();
     applyThemeChips();
 
-    const lang = detectLang();
-    applyI18n(lang);
-    document.dispatchEvent(new CustomEvent('langchange', { detail: { lang } }));
-    applyScript(defaultScript);
-    document.dispatchEvent(new CustomEvent('scriptchange', { detail: { script: defaultScript } }));
+    /* No langchange/scriptchange here. Chart scripts sit at end of body, so
+       they eval BEFORE DOMContentLoaded and render themselves once — already
+       correct, because theme-init.js stamped html[lang] pre-paint and sr()
+       reads the stored script directly. Dispatching would re-render every
+       chart twice before first paint. applyI18n ends in applyScript(). */
+    applyI18n(detectLang());
 
     // Wire controls
     document.querySelectorAll('[data-lang-chip]').forEach((chip) => {
