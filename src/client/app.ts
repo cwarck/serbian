@@ -10,6 +10,7 @@
    things, and knowing where the reader is on the page. */
 
 import { popoverKey } from '../lib/triggers.ts';
+import { readPref as read, removePref as remove, writePref as write } from '../lib/store.ts';
 
 const LS_THEME = 'as_theme';
 const LS_SCRIPT = 'as_script';
@@ -19,16 +20,6 @@ const SCRIPTS = ['lat', 'cyr'] as const;
 const THEMES = ['system', 'dark', 'light'] as const;
 
 type Script = (typeof SCRIPTS)[number];
-
-function read(key: string): string | null {
-  try { return localStorage.getItem(key); } catch { return null; }
-}
-function write(key: string, value: string): void {
-  try { localStorage.setItem(key, value); } catch { /* private mode */ }
-}
-function remove(key: string): void {
-  try { localStorage.removeItem(key); } catch { /* private mode */ }
-}
 
 const root = document.documentElement;
 
@@ -339,7 +330,8 @@ function init(): void {
   /* The language chips are real links to the counterpart route. Recording the
      choice BEFORE navigating is what makes the arrival agree with the redirect
      — otherwise a reader who picked EN from /ru/ would be bounced straight
-     back. */
+     back. writePref falls back to a cookie, so the record survives even where
+     localStorage throws. */
   for (const chip of document.querySelectorAll<HTMLElement>('[data-lang-chip]')) {
     chip.addEventListener('click', () => {
       const lang = chip.getAttribute('data-lang-chip');

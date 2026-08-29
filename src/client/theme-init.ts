@@ -10,20 +10,17 @@
    no CSP conflict. */
 
 import { resolveRedirect } from '../lib/negotiate.ts';
+import { readPref } from '../lib/store.ts';
 
 (function () {
   const root = document.documentElement;
-
-  function read(key: string): string | null {
-    try { return localStorage.getItem(key); } catch { return null; }
-  }
 
   /* EN is the negotiable tree; a /ru/ URL is an explicit statement and is
      never bounced. Redirects fire only on EN paths and only target RU paths,
      which never redirect — one hop maximum, structurally. */
   const target = resolveRedirect(
     location.pathname,
-    read('as_lang'),
+    readPref('as_lang'),
     navigator.languages && navigator.languages.length
       ? navigator.languages
       : [navigator.language || ''],
@@ -33,10 +30,10 @@ import { resolveRedirect } from '../lib/negotiate.ts';
     return;
   }
 
-  const script = read('as_script');
+  const script = readPref('as_script');
   root.setAttribute('data-script', script === 'cyr' ? 'cyr' : 'lat');
 
-  const storedTheme = read('as_theme');
+  const storedTheme = readPref('as_theme');
   const theme = storedTheme === 'light' || storedTheme === 'dark'
     ? storedTheme
     : (window.matchMedia?.('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
