@@ -82,6 +82,7 @@ export const en = {
   'alph.legend.unique': 'Unique to Serbian',
   'alph.legend.diff': 'Looks Latin, sounds different',
   'alph.tip.cta': 'how to say it',
+  'pop.title': 'Note',
   'pop.close': 'Close',
 
   /* Verbs page */

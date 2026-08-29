@@ -74,20 +74,30 @@ const popover = (() => {
   let bodyEl: HTMLElement | null = null;
   let active: HTMLElement | null = null;
 
+  /* The shell is built in JS, so its two strings cannot come from the i18n
+     dictionary — that never ships to the client. The build bakes them onto
+     <body> instead; nine RU pages otherwise announced an English "Close". */
+  function label(name: string, fallback: string): string {
+    return document.body.getAttribute('data-pop-' + name) || fallback;
+  }
+
   function ensure(): void {
     if (pop) return;
     pop = document.createElement('div');
     pop.className = 'tip-pop';
     pop.setAttribute('role', 'dialog');
     pop.setAttribute('aria-modal', 'false');
+    pop.setAttribute('aria-label', label('title', 'Note'));
     pop.hidden = true;
     pop.innerHTML =
       '<div class="tip-pop-card">' +
         '<div class="tip-pop-body"></div>' +
-        '<button type="button" class="tip-pop-close" aria-label="Close">×</button>' +
+        '<button type="button" class="tip-pop-close">×</button>' +
       '</div>';
     bodyEl = pop.querySelector('.tip-pop-body');
-    pop.querySelector('.tip-pop-close')!.addEventListener('click', closeAndReturnFocus);
+    const close = pop.querySelector('.tip-pop-close')!;
+    close.setAttribute('aria-label', label('close', 'Close'));
+    close.addEventListener('click', closeAndReturnFocus);
     document.body.appendChild(pop);
   }
 

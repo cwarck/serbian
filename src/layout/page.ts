@@ -84,7 +84,7 @@ ${raw(PRELOADS.map(href =>
   `<link rel="preload" href="${href}" as="font" type="font/woff2" crossorigin>`).join('\n'))}
 <link rel="stylesheet" href="/assets/styles.css">
 </head>
-<body>
+<body data-pop-title="${t('pop.title')}" data-pop-close="${t('pop.close')}">
 ${masthead(route)}${body.beforeMain ?? ''}
 <main id="content"${route.name === 'home' ? raw(' class="home shell"') : ''}>
 <noscript><p class="noscript-note">${t('nav.noscript')}</p></noscript>

@@ -84,6 +84,7 @@ export const ru: Record<Key, string> = {
   'alph.legend.unique': 'Только в сербском',
   'alph.legend.diff': 'Выглядит как латиница — звучит иначе',
   'alph.tip.cta': 'как произнести',
+  'pop.title': 'Заметка',
   'pop.close': 'Закрыть',
 
   /* Verbs */
