@@ -18,7 +18,7 @@ const CONTRAST = [
     imp: { en: 'now or generally', ru: 'сейчас или вообще' },
     perf: { en: 'future, sequence, condition', ru: 'будущее, последовательность, условие' },
     impEx: { sr: 'Gledam film.', en: 'I am watching a film.', ru: 'Я смотрю фильм.' },
-    perfEx: { sr: 'Kad pogledam, reći ću.', en: 'When I look, I will say.', ru: 'Когда посмотрю, скажу.' }
+    perfEx: { sr: 'Kad pogledam, reći ću ti.', en: 'When I take a look, I will tell you.', ru: 'Когда посмотрю, скажу тебе.' }
   }
 ];
 
@@ -26,7 +26,7 @@ const TIME_ROWS = [
   {
     tense: { en: 'Present', ru: 'Настоящее' },
     imp: { sr: 'Pišem.', en: 'now / habit', ru: 'сейчас / обычно' },
-    perf: { sr: 'Napišem.', en: 'when I write / I will write', ru: 'когда напишу / напишу' }
+    perf: { sr: 'Kad napišem…', en: 'never stands alone — needs a frame', ru: 'не стоит отдельно — нужна рамка' }
   },
   {
     tense: { en: 'Past', ru: 'Прошедшее' },
