@@ -77,7 +77,7 @@ export interface CaseRow {
   readonly abbr: string;
   readonly tone: CaseTone;
   readonly endings: { readonly [G in Gender]: { readonly [N in Number_]: Ending } };
-  readonly notes: Readonly<Record<string, CaseNote>>;
+  readonly notes: Readonly<Record<string, CaseNote | undefined>>;
   readonly examples: readonly CaseExample[];
   readonly preps: readonly string[];
 }

@@ -10,15 +10,16 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { PAGES, LANGS, SCRIPTS, renderPage } from './harness/render-legacy.mjs';
 import { normalizeHTML } from './harness/normalize.ts';
+import { dropBakedNoteLabels } from './harness/normalizers.ts';
 
 const DIR = path.join(process.cwd(), 'tests/fixtures');
 
 function fixtureName(page, lang, script) { return `${page}.${lang}.${script}.txt`; }
 
-function serialize({ mounts, popovers }) {
+function serialize({ mounts, popovers }, script) {
   const out = [];
   for (const [id, html] of Object.entries(mounts)) {
-    out.push(`### mount ${id}`, normalizeHTML(html));
+    out.push(`### mount ${id}`, normalizeHTML(dropBakedNoteLabels(html, script)));
   }
   for (const key of Object.keys(popovers).sort()) {
     out.push(`### popover ${key}`, normalizeHTML(popovers[key]));
@@ -46,7 +47,7 @@ if (mode === 'write') {
   eachCell((page, lang, script) => {
     const result = renderPage(page, lang, script);
     popovers += Object.keys(result.popovers).length;
-    fs.writeFileSync(path.join(DIR, fixtureName(page.name, lang, script)), serialize(result));
+    fs.writeFileSync(path.join(DIR, fixtureName(page.name, lang, script)), serialize(result, script));
     n++;
   });
   console.log(`wrote ${n} baselines (${popovers} popover fragments)`);
@@ -54,7 +55,7 @@ if (mode === 'write') {
   const failures = [];
   eachCell((page, lang, script) => {
     const file = path.join(DIR, fixtureName(page.name, lang, script));
-    const actual = serialize(renderPage(page, lang, script));
+    const actual = serialize(renderPage(page, lang, script), script);
     if (!fs.existsSync(file)) { failures.push(`missing baseline ${path.basename(file)}`); return; }
     const expected = fs.readFileSync(file, 'utf8');
     if (actual !== expected) failures.push(`${path.basename(file)} differs\n${firstDiff(expected, actual)}`);

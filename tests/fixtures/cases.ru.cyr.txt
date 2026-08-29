@@ -94,7 +94,7 @@ NOM
 <span lang="sr">
 -и
 </span>
-<button aria-expanded="false" aria-haspopup="dialog" aria-label="к, г, х смягчаются перед -и" class="tip-chip cell-note" data-case-idx="0" data-note-id="sib-i" data-note-trigger type="button">
+<button aria-expanded="false" aria-haspopup="dialog" class="tip-chip cell-note" data-case-idx="0" data-note-id="sib-i" data-note-trigger type="button">
 ?
 </button>
 </span>
@@ -460,7 +460,7 @@ DAT
 <span lang="sr">
 -и
 </span>
-<button aria-expanded="false" aria-haspopup="dialog" aria-label="к, г, х смягчаются перед -и" class="tip-chip cell-note" data-case-idx="2" data-note-id="sib-i" data-note-trigger type="button">
+<button aria-expanded="false" aria-haspopup="dialog" class="tip-chip cell-note" data-case-idx="2" data-note-id="sib-i" data-note-trigger type="button">
 ?
 </button>
 </span>
@@ -612,7 +612,7 @@ GEN
 <span lang="sr">
 -∅
 </span>
-<button aria-expanded="false" aria-haspopup="dialog" aria-label="Одушевлённые против всего остального" class="tip-chip cell-note" data-case-idx="3" data-note-id="animacy" data-note-trigger type="button">
+<button aria-expanded="false" aria-haspopup="dialog" class="tip-chip cell-note" data-case-idx="3" data-note-id="animacy" data-note-trigger type="button">
 ?
 </button>
 </span>
@@ -851,7 +851,7 @@ VOK
 <span lang="sr">
 -е
 </span>
-<button aria-expanded="false" aria-haspopup="dialog" aria-label="к, г, х превращаются в ч, ж, ш при обращении" class="tip-chip cell-note" data-case-idx="4" data-note-id="palatal" data-note-trigger type="button">
+<button aria-expanded="false" aria-haspopup="dialog" class="tip-chip cell-note" data-case-idx="4" data-note-id="palatal" data-note-trigger type="button">
 ?
 </button>
 </span>
@@ -862,7 +862,7 @@ VOK
 <span lang="sr">
 -у
 </span>
-<button aria-expanded="false" aria-haspopup="dialog" aria-label="После мягких согласных — -у вместо -е" class="tip-chip cell-note" data-case-idx="4" data-note-id="soft" data-note-trigger type="button">
+<button aria-expanded="false" aria-haspopup="dialog" class="tip-chip cell-note" data-case-idx="4" data-note-id="soft" data-note-trigger type="button">
 ?
 </button>
 </span>
@@ -896,7 +896,7 @@ NOM
 <span lang="sr">
 -о
 </span>
-<button aria-expanded="false" aria-haspopup="dialog" aria-label="Имена обычно сохраняют -а" class="tip-chip cell-note" data-case-idx="4" data-note-id="vok-f-name" data-note-trigger type="button">
+<button aria-expanded="false" aria-haspopup="dialog" class="tip-chip cell-note" data-case-idx="4" data-note-id="vok-f-name" data-note-trigger type="button">
 ?
 </button>
 </span>
@@ -1036,7 +1036,7 @@ INS
 <span lang="sr">
 -ом
 </span>
-<button aria-expanded="false" aria-haspopup="dialog" aria-label="После мягких согласных -ом становится -ем" class="tip-chip cell-note" data-case-idx="5" data-note-id="soft-em" data-note-trigger type="button">
+<button aria-expanded="false" aria-haspopup="dialog" class="tip-chip cell-note" data-case-idx="5" data-note-id="soft-em" data-note-trigger type="button">
 ?
 </button>
 </span>
@@ -1101,7 +1101,7 @@ DAT
 <span lang="sr">
 -ом
 </span>
-<button aria-expanded="false" aria-haspopup="dialog" aria-label="После мягких согласных -ом становится -ем" class="tip-chip cell-note" data-case-idx="5" data-note-id="soft-em" data-note-trigger type="button">
+<button aria-expanded="false" aria-haspopup="dialog" class="tip-chip cell-note" data-case-idx="5" data-note-id="soft-em" data-note-trigger type="button">
 ?
 </button>
 </span>
@@ -1273,7 +1273,7 @@ DAT
 <span lang="sr">
 -и
 </span>
-<button aria-expanded="false" aria-haspopup="dialog" aria-label="к, г, х смягчаются перед -и (как в Дательном)" class="tip-chip cell-note" data-case-idx="6" data-note-id="sib-i" data-note-trigger type="button">
+<button aria-expanded="false" aria-haspopup="dialog" class="tip-chip cell-note" data-case-idx="6" data-note-id="sib-i" data-note-trigger type="button">
 ?
 </button>
 </span>

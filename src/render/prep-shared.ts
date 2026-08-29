@@ -129,9 +129,12 @@ export function renderPrepCard(token: string, lang: Lang): Raw | string {
   const entity = lookupPrep(token);
   if (!entity) return '';
   const t = translator(lang);
-  const abbr = (c: string) =>
-    (PREP_CASE_ABBR as Record<string, string | undefined>)[c]
-      ?? t((CASE_KEYS as Record<string, string>)[c]!).value;
+  /* The chip reads the long case name, not the PREP_CASE_ABBR short form the
+     chart uses. Preserved verbatim through the port — the pre-rewrite card
+     looked the table up as `window.PREP_CASE_ABBR`, which a top-level `const`
+     never defines, so it always fell through to the name. Fixed separately,
+     against the snapshot gate, rather than smuggled in with the port. */
+  const abbr = (c: string) => t((CASE_KEYS as Record<string, string>)[c]!).value;
   const uses = entity.uses.map(use => html`
     <div class="prep-use" data-tone="${use.case}">
       <span class="prep-icon-cell">${raw(prepIcon(use.icon))}</span>

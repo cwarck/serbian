@@ -14,7 +14,7 @@ import type { Script } from './harness/normalizers.ts';
    Charts land here one at a time as they are ported; PORTED is the list that
    has. When it names all nine, phase 2 is done. */
 
-const PORTED = ['alphabet', 'false-friends', 'aspect', 'numbers', 'pronouns', 'pitch-stress', 'verbs', 'prepositions'] as const;
+const PORTED = ['alphabet', 'false-friends', 'aspect', 'numbers', 'pronouns', 'pitch-stress', 'verbs', 'prepositions', 'cases'] as const;
 
 const LANGS: Lang[] = ['en', 'ru'];
 const SCRIPTS: Script[] = ['lat', 'cyr'];

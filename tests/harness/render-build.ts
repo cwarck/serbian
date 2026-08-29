@@ -8,7 +8,7 @@
 
 import type { Chart } from '../../src/render/chart.ts';
 import type { Lang } from '../../src/lib/negotiate.ts';
-import { collapseDualEmit, type Script } from './normalizers.ts';
+import { collapseDualEmit, dropBakedNoteLabels, type Script } from './normalizers.ts';
 import { findTriggers } from './normalize.ts';
 
 export interface Rendered {
@@ -19,7 +19,7 @@ export interface Rendered {
 export function renderChart(chart: Chart, lang: Lang, script: Script): Rendered {
   const mounts: Record<string, string> = {};
   for (const [id, markup] of Object.entries(chart.mounts(lang))) {
-    mounts[id] = collapseDualEmit(markup, script);
+    mounts[id] = dropBakedNoteLabels(collapseDualEmit(markup, script), script);
   }
 
   const pageHTML = Object.values(mounts).join('\n');

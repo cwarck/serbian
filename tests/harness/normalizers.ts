@@ -20,3 +20,15 @@ export function collapseDualEmit(html: string, script: Script): string {
   }
   return out;
 }
+
+/* The one place dual-emit cannot reach: an aria-label. The `?` note trigger's
+   accessible name is the note title, which carries Serbian, and an attribute
+   has no CSS switch — so the build bakes Latin and the script toggle does not
+   reach it (see noteLabel() in src/render/cases.ts). The pre-rewrite renderer
+   re-rendered it per script, so in the Cyrillic column the two legitimately
+   disagree. Dropped from BOTH sides there, and compared exactly in Latin. */
+export function dropBakedNoteLabels(html: string, script: Script): string {
+  if (script === 'lat') return html;
+  return html.replace(/(<button[^>]*\bdata-note-trigger\b[^>]*>)/g,
+    tag => tag.replace(/\s*aria-label="[^"]*"/, ''));
+}

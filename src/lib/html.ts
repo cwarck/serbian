@@ -87,6 +87,27 @@ export function srGrammarHTML(markup: string): Raw {
   return new Raw(convertMarked(markup));
 }
 
+/* Convert only <i>-marked runs, with a single converter and no dual-emit. The
+   one caller is an attribute value, where dual-emit has no CSS equivalent. */
+export function markedText(markup: string, convert: (s: string) => string): string {
+  let depth = 0;
+  return String(markup)
+    .split(/(<[^>]+>|&[^;\s]+;)/g)
+    .map(part => {
+      if (!part || part.startsWith('&')) return part;
+      if (part.startsWith('<')) {
+        const m = part.match(/^<\s*(\/?)\s*([a-z][a-z0-9]*)/i);
+        if (m && m[2]!.toLowerCase() === 'i') {
+          if (m[1]) depth = Math.max(0, depth - 1);
+          else if (!/\/\s*>\s*$/.test(part)) depth++;
+        }
+        return part;
+      }
+      return depth > 0 ? convert(part) : part;
+    })
+    .join('');
+}
+
 function convertMarked(markup: string): string {
   let depth = 0;
   return String(markup)
