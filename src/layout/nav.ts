@@ -53,6 +53,10 @@ function langHref(route: Route, lang: Lang): string {
   return lang === 'en' ? '/' : '/ru/';
 }
 
+/* The language chip's state IS derivable at build time — it is the route. The
+   script and theme chips are not: theme-init has already read the stored
+   preference by the time this markup paints, so baking `lat`/`system` here
+   would assert the opposite of what the page is showing. app.js marks them. */
 export function settingsMenu(route: Route): Raw {
   const t = translator(route.lang);
   return html`
@@ -61,13 +65,13 @@ export function settingsMenu(route: Route): Raw {
     <div class="settings-row">
       <span class="settings-label">${t('settings.language')}</span>
       <div class="nav-controls" role="group" aria-label="${t('nav.langGroup')}">
-        ${(['en', 'ru'] as const).map(lang => html`<a class="chip" data-lang-chip="${lang}" href="${langHref(route, lang)}" aria-current="${lang === route.lang ? 'true' : false}">${ENDONYMS[lang]}</a>`)}
+        ${(['en', 'ru'] as const).map(lang => html`<a class="chip" data-lang-chip="${lang}" href="${langHref(route, lang)}"${lang === route.lang ? raw(' aria-current="true"') : ''}>${ENDONYMS[lang]}</a>`)}
       </div>
     </div>
     <div class="settings-row">
       <span class="settings-label">${t('settings.script')}</span>
       <div class="nav-controls script-controls" role="group" aria-label="${t('nav.scriptGroup')}">
-        ${SCRIPTS.map(s => html`<button type="button" class="chip script-chip" data-script-chip="${s}" aria-pressed="${s === 'lat' ? 'true' : 'false'}" aria-label="${t(s === 'lat' ? 'script.useLat' : 'script.useCyr')}">${t(s === 'lat' ? 'script.lat' : 'script.cyr')}</button>`)}
+        ${SCRIPTS.map(s => html`<button type="button" class="chip script-chip" data-script-chip="${s}" aria-label="${t(s === 'lat' ? 'script.useLat' : 'script.useCyr')}">${t(s === 'lat' ? 'script.lat' : 'script.cyr')}</button>`)}
       </div>
     </div>
     <div class="settings-row">
