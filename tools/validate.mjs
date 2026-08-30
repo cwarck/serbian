@@ -209,9 +209,9 @@ function validateTones() {
   const tones = parseToneAssignments(css);
   const expected = {
     nom: 'var(--ink-soft)',
-    gen: 'var(--tone-cyan)',
+    gen: 'var(--tone-purple)',
     dat: 'var(--tone-yellow)',
-    aku: 'var(--tone-purple)',
+    aku: 'var(--tone-cyan)',
     vok: 'var(--tone-red)',
     ins: 'var(--tone-blue)',
     lok: 'var(--tone-green)',

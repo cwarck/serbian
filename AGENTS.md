@@ -89,9 +89,9 @@ The gap between the bands **is** the encoding: tier 2 tops out at C .0511 agains
 | 1 | red       | VOK                                                                                         |
 | 1 | yellow    | DAT                                                                                         |
 | 1 | green     | LOK                                                                                         |
-| 1 | cyan      | GEN                                                                                         |
+| 1 | cyan      | AKU                                                                                         |
 | 1 | blue      | INS                                                                                         |
-| 1 | purple    | AKU                                                                                         |
+| 1 | purple    | GEN                                                                                         |
 | 1 | magenta   | unassigned — an empty tier-1 seat, spent only if Serbian grows an eighth case               |
 | 2 | green 150° | M                                                                                          |
 | 2 | violet 285° | N                                                                                         |

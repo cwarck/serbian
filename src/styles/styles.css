@@ -1063,9 +1063,13 @@ section { position: relative; }
    ink-tone rather than an accent, distinguishing it visually from the
    inflected cases. */
 [data-tone="nom"] { --tone: var(--ink-soft); }
-[data-tone="gen"] { --tone: var(--tone-cyan); }
+[data-tone="gen"] { --tone: var(--tone-purple); }
 [data-tone="dat"] { --tone: var(--tone-yellow); }
-[data-tone="aku"] { --tone: var(--tone-purple); }
+/* AKU holds cyan, and the pairing is load-bearing, not aesthetic: blue and
+   purple are indistinguishable to a protanope on the dark ground, and AKU|INS
+   is the most-compared case pair on the site by more than 2x. Purple on AKU
+   put the palette's worst hue pair on its heaviest case pair. */
+[data-tone="aku"] { --tone: var(--tone-cyan); }
 [data-tone="vok"] { --tone: var(--tone-red); }
 [data-tone="ins"] { --tone: var(--tone-blue); }
 [data-tone="lok"] { --tone: var(--tone-green); }
@@ -1823,7 +1827,7 @@ section { position: relative; }
   color: var(--tone, var(--ink-soft));
 }
 /* Short (clitic) forms step down one ink tone — position after the comma
-   plus the legend carry the long/short axis; no hue (cyan would read GEN). */
+   plus the legend carry the long/short axis; no hue (purple would read GEN). */
 .pron-short,
 .pron-comma,
 .pron-dash {
