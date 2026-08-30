@@ -113,6 +113,7 @@ export const en = {
   'past.mpl': 'M/mixed pl',
   'past.fpl': 'F pl',
   'past.npl': 'N pl',
+  'past.mixed': 'M plural also covers mixed groups.',
 
   /* Aspect page */
   'aspect.contrast': 'Core contrast',
@@ -216,8 +217,16 @@ export const en = {
   'cases.gender.m': 'M',
   'cases.gender.f': 'F',
   'cases.gender.n': 'N',
+  /* The provenance field prints a bare case abbr; the relation it states is
+     only visual, so it is spelled out for a screen reader. */
+  'cases.sameAs': 'same as',
   'cases.number.sg': 'Sg',
   'cases.number.pl': 'Pl',
+
+  /* Band headings over the ending chips. cases.number.* is an inline axis
+     label — too clipped to head a band. */
+  'band.sg': 'Singular',
+  'band.pl': 'Plural',
 
 
   'cases.extra.title': 'Feminines without <i>-a</i>',

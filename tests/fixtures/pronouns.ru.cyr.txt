@@ -511,145 +511,302 @@
 </p>
 </div>
 ### mount possessives
-<div class="chart-label pron-mini-head pron-poss-head" role="row">
-<span data-gender="m" role="columnheader">
-М
-</span>
-<span data-gender="n" role="columnheader">
-С
-</span>
-<span data-gender="f" role="columnheader">
-Ж
-</span>
-</div>
-<article class="pron-poss-card" role="rowgroup">
-<h4 class="chart-label" id="pron-poss-owner-0">
+<article class="pron-poss-card">
+<h4 class="chart-label">
 свой
 </h4>
-<div aria-labelledby="pron-poss-owner-0" class="pron-gender-row" role="row">
-<span class="chart-form" lang="sr" role="cell">
+<div class="gender-run">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
+М
+</span>
+<span class="eu-form">
+<span lang="sr">
 свој
 </span>
-<span class="chart-form" lang="sr" role="cell">
+</span>
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
+С
+</span>
+<span class="eu-form">
+<span lang="sr">
 своје
 </span>
-<span class="chart-form" lang="sr" role="cell">
+</span>
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
+Ж
+</span>
+<span class="eu-form">
+<span lang="sr">
 своја
+</span>
+</span>
 </span>
 </div>
 <p>
 отсылает к субъекту
 </p>
 </article>
-<article class="pron-poss-card" role="rowgroup">
-<h4 class="chart-label" id="pron-poss-owner-1">
+<article class="pron-poss-card">
+<h4 class="chart-label">
 мой
 </h4>
-<div aria-labelledby="pron-poss-owner-1" class="pron-gender-row" role="row">
-<span class="chart-form" lang="sr" role="cell">
+<div class="gender-run">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
+М
+</span>
+<span class="eu-form">
+<span lang="sr">
 мој
 </span>
-<span class="chart-form" lang="sr" role="cell">
+</span>
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
+С
+</span>
+<span class="eu-form">
+<span lang="sr">
 моје
 </span>
-<span class="chart-form" lang="sr" role="cell">
+</span>
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
+Ж
+</span>
+<span class="eu-form">
+<span lang="sr">
 моја
 </span>
+</span>
+</span>
 </div>
 </article>
-<article class="pron-poss-card" role="rowgroup">
-<h4 class="chart-label" id="pron-poss-owner-2">
+<article class="pron-poss-card">
+<h4 class="chart-label">
 твой
 </h4>
-<div aria-labelledby="pron-poss-owner-2" class="pron-gender-row" role="row">
-<span class="chart-form" lang="sr" role="cell">
+<div class="gender-run">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
+М
+</span>
+<span class="eu-form">
+<span lang="sr">
 твој
 </span>
-<span class="chart-form" lang="sr" role="cell">
+</span>
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
+С
+</span>
+<span class="eu-form">
+<span lang="sr">
 твоје
 </span>
-<span class="chart-form" lang="sr" role="cell">
+</span>
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
+Ж
+</span>
+<span class="eu-form">
+<span lang="sr">
 твоја
 </span>
+</span>
+</span>
 </div>
 </article>
-<article class="pron-poss-card" role="rowgroup">
-<h4 class="chart-label" id="pron-poss-owner-3">
+<article class="pron-poss-card">
+<h4 class="chart-label">
 его
 </h4>
-<div aria-labelledby="pron-poss-owner-3" class="pron-gender-row" role="row">
-<span class="chart-form" lang="sr" role="cell">
+<div class="gender-run">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
+М
+</span>
+<span class="eu-form">
+<span lang="sr">
 његов
 </span>
-<span class="chart-form" lang="sr" role="cell">
+</span>
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
+С
+</span>
+<span class="eu-form">
+<span lang="sr">
 његово
 </span>
-<span class="chart-form" lang="sr" role="cell">
+</span>
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
+Ж
+</span>
+<span class="eu-form">
+<span lang="sr">
 његова
 </span>
+</span>
+</span>
 </div>
 </article>
-<article class="pron-poss-card" role="rowgroup">
-<h4 class="chart-label" id="pron-poss-owner-4">
+<article class="pron-poss-card">
+<h4 class="chart-label">
 её
 </h4>
-<div aria-labelledby="pron-poss-owner-4" class="pron-gender-row" role="row">
-<span class="chart-form" lang="sr" role="cell">
+<div class="gender-run">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
+М
+</span>
+<span class="eu-form">
+<span lang="sr">
 њен
 </span>
-<span class="chart-form" lang="sr" role="cell">
+</span>
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
+С
+</span>
+<span class="eu-form">
+<span lang="sr">
 њено
 </span>
-<span class="chart-form" lang="sr" role="cell">
+</span>
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
+Ж
+</span>
+<span class="eu-form">
+<span lang="sr">
 њена
 </span>
+</span>
+</span>
 </div>
 </article>
-<article class="pron-poss-card" role="rowgroup">
-<h4 class="chart-label" id="pron-poss-owner-5">
+<article class="pron-poss-card">
+<h4 class="chart-label">
 наш
 </h4>
-<div aria-labelledby="pron-poss-owner-5" class="pron-gender-row" role="row">
-<span class="chart-form" lang="sr" role="cell">
+<div class="gender-run">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
+М
+</span>
+<span class="eu-form">
+<span lang="sr">
 наш
 </span>
-<span class="chart-form" lang="sr" role="cell">
+</span>
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
+С
+</span>
+<span class="eu-form">
+<span lang="sr">
 наше
 </span>
-<span class="chart-form" lang="sr" role="cell">
+</span>
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
+Ж
+</span>
+<span class="eu-form">
+<span lang="sr">
 наша
 </span>
+</span>
+</span>
 </div>
 </article>
-<article class="pron-poss-card" role="rowgroup">
-<h4 class="chart-label" id="pron-poss-owner-6">
+<article class="pron-poss-card">
+<h4 class="chart-label">
 ваш
 </h4>
-<div aria-labelledby="pron-poss-owner-6" class="pron-gender-row" role="row">
-<span class="chart-form" lang="sr" role="cell">
+<div class="gender-run">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
+М
+</span>
+<span class="eu-form">
+<span lang="sr">
 ваш
 </span>
-<span class="chart-form" lang="sr" role="cell">
+</span>
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
+С
+</span>
+<span class="eu-form">
+<span lang="sr">
 ваше
 </span>
-<span class="chart-form" lang="sr" role="cell">
+</span>
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
+Ж
+</span>
+<span class="eu-form">
+<span lang="sr">
 ваша
+</span>
+</span>
 </span>
 </div>
 </article>
-<article class="pron-poss-card" role="rowgroup">
-<h4 class="chart-label" id="pron-poss-owner-7">
+<article class="pron-poss-card">
+<h4 class="chart-label">
 их
 </h4>
-<div aria-labelledby="pron-poss-owner-7" class="pron-gender-row" role="row">
-<span class="chart-form" lang="sr" role="cell">
+<div class="gender-run">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
+М
+</span>
+<span class="eu-form">
+<span lang="sr">
 њихов
 </span>
-<span class="chart-form" lang="sr" role="cell">
+</span>
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
+С
+</span>
+<span class="eu-form">
+<span lang="sr">
 њихово
 </span>
-<span class="chart-form" lang="sr" role="cell">
+</span>
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
+Ж
+</span>
+<span class="eu-form">
+<span lang="sr">
 њихова
+</span>
+</span>
 </span>
 </div>
 </article>
@@ -658,62 +815,118 @@
 <h4 class="chart-label">
 Единственное
 </h4>
-<div class="pron-subtable" role="table">
-<div class="chart-label pron-mini-head" role="row">
-<span role="columnheader">
-</span>
-<span data-gender="m" role="columnheader">
-М
-</span>
-<span data-gender="n" role="columnheader">
-С
-</span>
-<span data-gender="f" role="columnheader">
-Ж
-</span>
-</div>
-<div class="chart-pairs" role="rowgroup">
-<div class="chart-pair pron-matrix-row" role="row">
-<span class="chart-label" role="rowheader">
+<div class="pron-subtable">
+<div class="chart-pairs">
+<div class="chart-pair pron-matrix-row">
+<span class="chart-label">
 этот
 </span>
-<span class="chart-form pron-form" lang="sr" role="cell">
+<div class="gender-run">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
+М
+</span>
+<span class="eu-form">
+<span lang="sr">
 овај
 </span>
-<span class="chart-form pron-form" lang="sr" role="cell">
+</span>
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
+С
+</span>
+<span class="eu-form">
+<span lang="sr">
 ово
 </span>
-<span class="chart-form pron-form" lang="sr" role="cell">
+</span>
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
+Ж
+</span>
+<span class="eu-form">
+<span lang="sr">
 ова
 </span>
+</span>
+</span>
 </div>
-<div class="chart-pair pron-matrix-row" role="row">
-<span class="chart-label" role="rowheader">
+</div>
+<div class="chart-pair pron-matrix-row">
+<span class="chart-label">
 тот
 </span>
-<span class="chart-form pron-form" lang="sr" role="cell">
+<div class="gender-run">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
+М
+</span>
+<span class="eu-form">
+<span lang="sr">
 тај
 </span>
-<span class="chart-form pron-form" lang="sr" role="cell">
+</span>
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
+С
+</span>
+<span class="eu-form">
+<span lang="sr">
 то
 </span>
-<span class="chart-form pron-form" lang="sr" role="cell">
+</span>
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
+Ж
+</span>
+<span class="eu-form">
+<span lang="sr">
 та
 </span>
+</span>
+</span>
 </div>
-<div class="chart-pair pron-matrix-row" role="row">
-<span class="chart-label" role="rowheader">
+</div>
+<div class="chart-pair pron-matrix-row">
+<span class="chart-label">
 вон тот
 </span>
-<span class="chart-form pron-form" lang="sr" role="cell">
+<div class="gender-run">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
+М
+</span>
+<span class="eu-form">
+<span lang="sr">
 онај
 </span>
-<span class="chart-form pron-form" lang="sr" role="cell">
+</span>
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
+С
+</span>
+<span class="eu-form">
+<span lang="sr">
 оно
 </span>
-<span class="chart-form pron-form" lang="sr" role="cell">
+</span>
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
+Ж
+</span>
+<span class="eu-form">
+<span lang="sr">
 она
 </span>
+</span>
+</span>
+</div>
 </div>
 </div>
 </div>
@@ -722,62 +935,118 @@
 <h4 class="chart-label">
 Множественное
 </h4>
-<div class="pron-subtable" role="table">
-<div class="chart-label pron-mini-head" role="row">
-<span role="columnheader">
-</span>
-<span data-gender="m" role="columnheader">
-М
-</span>
-<span data-gender="n" role="columnheader">
-С
-</span>
-<span data-gender="f" role="columnheader">
-Ж
-</span>
-</div>
-<div class="chart-pairs" role="rowgroup">
-<div class="chart-pair pron-matrix-row" role="row">
-<span class="chart-label" role="rowheader">
+<div class="pron-subtable">
+<div class="chart-pairs">
+<div class="chart-pair pron-matrix-row">
+<span class="chart-label">
 эти
 </span>
-<span class="chart-form pron-form" lang="sr" role="cell">
+<div class="gender-run">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
+М
+</span>
+<span class="eu-form">
+<span lang="sr">
 ови
 </span>
-<span class="chart-form pron-form" lang="sr" role="cell">
+</span>
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
+С
+</span>
+<span class="eu-form">
+<span lang="sr">
 ова
 </span>
-<span class="chart-form pron-form" lang="sr" role="cell">
+</span>
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
+Ж
+</span>
+<span class="eu-form">
+<span lang="sr">
 ове
 </span>
+</span>
+</span>
 </div>
-<div class="chart-pair pron-matrix-row" role="row">
-<span class="chart-label" role="rowheader">
+</div>
+<div class="chart-pair pron-matrix-row">
+<span class="chart-label">
 те
 </span>
-<span class="chart-form pron-form" lang="sr" role="cell">
+<div class="gender-run">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
+М
+</span>
+<span class="eu-form">
+<span lang="sr">
 ти
 </span>
-<span class="chart-form pron-form" lang="sr" role="cell">
+</span>
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
+С
+</span>
+<span class="eu-form">
+<span lang="sr">
 та
 </span>
-<span class="chart-form pron-form" lang="sr" role="cell">
+</span>
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
+Ж
+</span>
+<span class="eu-form">
+<span lang="sr">
 те
 </span>
+</span>
+</span>
 </div>
-<div class="chart-pair pron-matrix-row" role="row">
-<span class="chart-label" role="rowheader">
+</div>
+<div class="chart-pair pron-matrix-row">
+<span class="chart-label">
 вон те
 </span>
-<span class="chart-form pron-form" lang="sr" role="cell">
+<div class="gender-run">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
+М
+</span>
+<span class="eu-form">
+<span lang="sr">
 они
 </span>
-<span class="chart-form pron-form" lang="sr" role="cell">
+</span>
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
+С
+</span>
+<span class="eu-form">
+<span lang="sr">
 она
 </span>
-<span class="chart-form pron-form" lang="sr" role="cell">
+</span>
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
+Ж
+</span>
+<span class="eu-form">
+<span lang="sr">
 оне
 </span>
+</span>
+</span>
+</div>
 </div>
 </div>
 </div>
@@ -805,48 +1074,81 @@
 <h4 class="chart-label">
 Чей
 </h4>
-<div class="pron-subtable" role="table">
-<div class="chart-label pron-mini-head" role="row">
-<span role="columnheader">
-</span>
-<span data-gender="m" role="columnheader">
-М
-</span>
-<span data-gender="n" role="columnheader">
-С
-</span>
-<span data-gender="f" role="columnheader">
-Ж
-</span>
-</div>
-<div class="chart-pairs" role="rowgroup">
-<div class="chart-pair pron-matrix-row" role="row">
-<span class="chart-label" role="rowheader">
+<div class="pron-subtable">
+<div class="chart-pairs">
+<div class="chart-pair pron-matrix-row">
+<span class="chart-label">
 Ед.
 </span>
-<span class="chart-form pron-form" lang="sr" role="cell">
+<div class="gender-run">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
+М
+</span>
+<span class="eu-form">
+<span lang="sr">
 чији
 </span>
-<span class="chart-form pron-form" lang="sr" role="cell">
+</span>
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
+С
+</span>
+<span class="eu-form">
+<span lang="sr">
 чије
 </span>
-<span class="chart-form pron-form" lang="sr" role="cell">
+</span>
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
+Ж
+</span>
+<span class="eu-form">
+<span lang="sr">
 чија
+</span>
+</span>
 </span>
 </div>
-<div class="chart-pair pron-matrix-row" role="row">
-<span class="chart-label" role="rowheader">
+</div>
+<div class="chart-pair pron-matrix-row">
+<span class="chart-label">
 Мн.
 </span>
-<span class="chart-form pron-form" lang="sr" role="cell">
+<div class="gender-run">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
+М
+</span>
+<span class="eu-form">
+<span lang="sr">
 чији
 </span>
-<span class="chart-form pron-form" lang="sr" role="cell">
+</span>
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
+С
+</span>
+<span class="eu-form">
+<span lang="sr">
 чија
 </span>
-<span class="chart-form pron-form" lang="sr" role="cell">
+</span>
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
+Ж
+</span>
+<span class="eu-form">
+<span lang="sr">
 чије
 </span>
+</span>
+</span>
+</div>
 </div>
 </div>
 </div>

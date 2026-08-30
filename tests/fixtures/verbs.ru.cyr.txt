@@ -1126,55 +1126,82 @@ JEM | JU
 <h4 class="chart-label">
 Причастие
 </h4>
-<div class="chart-pairs verb-pair-grid">
-<div class="chart-pair">
+<div class="gender-band">
 <span class="chart-label">
-М ед.
+Ед. число
 </span>
-<span class="chart-form verb-form">
+<div class="gender-run">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
+М
+</span>
+<span class="eu-form">
+<span lang="sr">
 -о
 </span>
-</div>
-<div class="chart-pair">
-<span class="chart-label">
-М/смеш. мн.
 </span>
-<span class="chart-form verb-form">
--ли
 </span>
-</div>
-<div class="chart-pair">
-<span class="chart-label">
-Ж ед.
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
+С
 </span>
-<span class="chart-form verb-form">
--ла
-</span>
-</div>
-<div class="chart-pair">
-<span class="chart-label">
-Ж мн.
-</span>
-<span class="chart-form verb-form">
--ле
-</span>
-</div>
-<div class="chart-pair">
-<span class="chart-label">
-С ед.
-</span>
-<span class="chart-form verb-form">
+<span class="eu-form">
+<span lang="sr">
 -ло
 </span>
-</div>
-<div class="chart-pair">
-<span class="chart-label">
-С мн.
 </span>
-<span class="chart-form verb-form">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
+Ж
+</span>
+<span class="eu-form">
+<span lang="sr">
 -ла
 </span>
+</span>
+</span>
 </div>
+</div>
+<div class="gender-band">
+<span class="chart-label">
+Мн. число
+</span>
+<div class="gender-run">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
+М
+</span>
+<span class="eu-form">
+<span lang="sr">
+-ли
+</span>
+</span>
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
+С
+</span>
+<span class="eu-form">
+<span lang="sr">
+-ла
+</span>
+</span>
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
+Ж
+</span>
+<span class="eu-form">
+<span lang="sr">
+-ле
+</span>
+</span>
+</span>
+</div>
+<p class="gender-band-note">
+М мн. — также для смешанных групп.
+</p>
 </div>
 </section>
 </article>

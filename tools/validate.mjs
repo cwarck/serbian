@@ -236,9 +236,6 @@ function validateTones() {
   // and drifts from the canonical scale — ban it outright.
   expect(!/\[data-case="/.test(css), 'tones', 'case hues must route through data-tone, not a parallel data-case map');
 
-  expect(!css.includes('--gender-'), 'tones', 'genders carry no hue — ink typography only');
-  expect(!/\[data-gender="[mnf]"\][^{]*\{[^}]*color:/.test(css), 'tones', 'gender labels must not be colored per-gender');
-
   // Case hues may only be spent through the data-tone map — any other selector
   // using one is a chart-internal category wearing grammar
   const caseHue = /var\(--tone-(red|yellow|green|cyan|blue|purple|magenta)\)/;
@@ -247,6 +244,250 @@ function validateTones() {
     expect(/\[data-tone=/.test(line), 'tones', `case hue outside the data-tone map: ${line.trim()}`);
   }
   expect(/\[data-tone="im"\][\s\S]*\[data-tone="irr"\]\s*\{\s*--tone:\s*var\(--tone-orange\);/.test(css), 'tones', 'present verb family must share orange');
+}
+
+/* ---------- tier 2: facets ----------
+
+   Colour encodes two things at once by splitting the channel: CHROMA names
+   the axis, HUE names the value within it. Tier 1 (case accents) runs
+   C .085-.165 and owns the case axis alone; tier 2 (gender facets) runs
+   C .050; tier 0 is ink at C 0. The GAP between the bands is the encoding, so
+   the checks below MEASURE it rather than trusting the comments.
+
+   This replaces the old outright ban (`--gender-` forbidden, no per-gender
+   color). Gender is coloured now — it is the routing that is policed. */
+
+const FACET_GENDERS = ['m', 'n', 'f'];
+
+function parseRootTokens(css) {
+  const tokens = new Map();
+  for (const match of css.matchAll(/^\s*(--[a-z0-9-]+):\s*([^;]+);/gm)) {
+    if (!tokens.has(match[1])) tokens.set(match[1], match[2].trim());
+  }
+  return tokens;
+}
+
+/* --tone-* and --facet-* are light-dark() pairs over --fx-* refs or literals,
+   so a bare sRGB converter is not enough: flatten the var() indirection and
+   unwrap light-dark() before anything can be measured. */
+function resolveToken(tokens, value, depth = 0) {
+  if (depth > 8) return String(value).trim();
+  const ref = String(value).trim().match(/^var\((--[a-z0-9-]+)\)$/);
+  if (!ref) return String(value).trim();
+  const next = tokens.get(ref[1]);
+  return next === undefined ? String(value).trim() : resolveToken(tokens, next, depth + 1);
+}
+
+function groundPair(tokens, tokenName) {
+  const value = tokens.get(tokenName);
+  if (!value) return null;
+  const pair = value.match(/^light-dark\(\s*([^,]+),\s*(.+?)\s*\)$/);
+  const halves = pair ? [pair[1], pair[2]] : [value, value];
+  const hexes = halves.map(half => resolveToken(tokens, half));
+  return hexes.every(hex => /^#[0-9a-f]{6}$/i.test(hex)) ? { light: hexes[0], dark: hexes[1] } : null;
+}
+
+function srgbToLinear(channel) {
+  const c = channel / 255;
+  return c <= 0.04045 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
+}
+
+/* sRGB -> OKLab, then the chroma of OKLCh. One measurement, no dependency. */
+function chroma(hex) {
+  const [r, g, b] = [1, 3, 5].map(i => srgbToLinear(parseInt(hex.slice(i, i + 2), 16)));
+  const l = Math.cbrt(0.4122214708 * r + 0.5363325363 * g + 0.0514459929 * b);
+  const m = Math.cbrt(0.2119034982 * r + 0.6806995451 * g + 0.1073969566 * b);
+  const s = Math.cbrt(0.0883024619 * r + 0.2817188376 * g + 0.6299787005 * b);
+  const a = 1.9779984951 * l - 2.4285922050 * m + 0.4505937099 * s;
+  const bb = 0.0259040371 * l + 0.7827717662 * m - 0.8086757660 * s;
+  return Math.hypot(a, bb);
+}
+
+function validateFacetTokens(css) {
+  const tokens = parseRootTokens(css);
+
+  const facets = new Map();
+  for (const match of css.matchAll(/\.eu-gender\[data-gender="([mnf])"\]\s*\{([^}]*)\}/g)) {
+    const facet = match[2].match(/--facet:\s*var\((--facet-[mnf])\)/);
+    if (facet) facets.set(match[1], facet[1]);
+  }
+
+  // 1. Every facet token exists and the data-gender map routes each gender to
+  // its own — the mirror of the [data-tone] map assertion above. The map lives
+  // on the FIELD (.eu-gender), not the unit: a merged unit carries two
+  // differently-coloured gender fields, which one attribute cannot feed.
+  const claimed = new Map();
+  for (const gender of FACET_GENDERS) {
+    expect(groundPair(tokens, `--facet-${gender}`) !== null, 'facets',
+      `--facet-${gender} must be defined as a light-dark() hex pair`);
+    expect(facets.get(gender) === `--facet-${gender}`, 'facets',
+      `.eu-gender[data-gender="${gender}"] must map to var(--facet-${gender})`);
+    const token = facets.get(gender);
+    if (!token) continue;
+    expect(!claimed.has(token), 'facets', `${gender} duplicates ${claimed.get(token)} facet ${token}`);
+    claimed.set(token, gender);
+  }
+
+  // 2. A case hue on a gender is the exact failure this model exists to
+  // prevent: two axes on one channel, and nothing telling the reader which
+  // question a colour is answering.
+  for (const match of css.matchAll(/\[data-gender=[^{]*\{([^}]*)\}/g)) {
+    expect(!/var\(--tone-/.test(match[1]), 'facets', `case hue on a gender selector: ${match[1].trim()}`);
+  }
+
+  // 3. The sweep in the other direction, mirroring the case-hue sweep above:
+  // a facet may only be spent through the data-gender map.
+  for (const line of css.split('\n')) {
+    if (!/var\(--facet-[mnf]\)/.test(line)) continue;
+    expect(/\[data-gender=/.test(line), 'facets', `facet outside the data-gender map: ${line.trim()}`);
+  }
+
+  // 4. Band separation — the check that actually guards the design. Measured
+  // per ground, because both tiers are light-dark() pairs and only one half of
+  // each would otherwise be policed.
+  const toneNames = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'purple', 'magenta'];
+  for (const ground of ['light', 'dark']) {
+    const facetC = FACET_GENDERS.map(g => groundPair(tokens, `--facet-${g}`))
+      .filter(Boolean).map(pair => chroma(pair[ground]));
+    const toneC = toneNames.map(name => groundPair(tokens, `--tone-${name}`))
+      .filter(Boolean).map(pair => chroma(pair[ground]));
+    expect(facetC.length === FACET_GENDERS.length && toneC.length === toneNames.length, 'facets',
+      `${ground}: every tier-1 and tier-2 token must be measurable`);
+    if (!facetC.length || !toneC.length) continue;
+    const top = Math.max(...facetC), floor = Math.min(...toneC);
+    expect(top + 0.02 < floor, 'facets',
+      `${ground}: facet band (C ${top.toFixed(4)}) must clear the accent band (C ${floor.toFixed(4)}) by .02`);
+  }
+
+  // 5. The unit is where the two tiers physically MEET, so it is where the
+  // routing rule needs asserting: a gender field may only carry a facet, a
+  // provenance field only ink. .eu-source is deliberately neutral — tone text
+  // on a tint of its own tone is the recipe .case-tag already fails on.
+  /* Escape the WHOLE selector, not just its leading dot: `.eu-gender +
+     .eu-gender` otherwise compiles to a `+` quantifier over a space and
+     silently matches nothing, so a check on it would pass by never running. */
+  const ruleBody = selector => {
+    const pattern = selector.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const match = css.match(new RegExp(`^${pattern}\\s*\\{([^}]*)\\}`, 'm'));
+    return match ? match[1] : null;
+  };
+  const gender = ruleBody('.eu-gender');
+  const source = ruleBody('.eu-source');
+  expect(gender !== null && source !== null, 'facets',
+    '.eu-gender and .eu-source must each be a top-level rule');
+  if (gender) expect(!/var\(--tone-/.test(gender), 'facets',
+    'a gender field may not carry a case hue');
+  if (source) expect(!/var\(--facet-/.test(source) && !/var\(--tone-/.test(source), 'facets',
+    '.eu-source must stay neutral — neither tier paints it');
+
+  // 6. No .ending-unit nests another: the nested chip-in-a-chip is the bug
+  // class this construction exists to remove, and both shipped rendering bugs
+  // came from an align-items: baseline row inside it. .cell-alt was exactly
+  // the tempting way to bring the second one back.
+  for (const line of css.split('\n')) {
+    expect(!/\.ending-unit[^,{]*\.ending-unit/.test(line), 'facets',
+      `an ending unit must not nest another: ${line.trim()}`);
+  }
+  // Anchor the slice explicitly. Both ends are literal selectors, and the file
+  // invites internal reorganisation — group .ending-unit with anything and the
+  // start anchor stops matching. The slice then fails CLOSED (an empty or
+  // whole-file block), so the build breaks either way, but it breaks blaming
+  // align-items when the real fault is a moved anchor. Say which it is.
+  const unitStart = css.indexOf('.ending-unit {');
+  const unitEnd = css.indexOf('.eu-gender[data-gender="m"]');
+  expect(unitStart >= 0 && unitEnd > unitStart, 'facets',
+    'cannot locate the ending-unit block: the baseline guard needs `.ending-unit {` followed by the facet map');
+  const unitBlock = css.slice(unitStart, unitEnd);
+  expect(!/align-items:\s*baseline/.test(unitBlock), 'facets',
+    'align-items: baseline inside the ending unit — that is the construction both shipped bugs came from');
+
+  // The unit must not clip. A `?` note trigger renders inside .eu-form, and
+  // its 44x44 ::after hit area and its focus ring both extend past the ~26px
+  // unit box; overflow: hidden here crops the tap target to about 31x26 and
+  // slices the focus ring, all to round a 2px corner. The end fields carry
+  // the radius instead.
+  expect(!/overflow:\s*hidden/.test(unitBlock.replace(/\/\*[\s\S]*?\*\//g, '')), 'facets',
+    'the ending unit must not clip — it would crop the note trigger\'s tap target and focus ring');
+
+  // The merged-gender divider must be a BORDER. forced-colors forces
+  // box-shadow to none while flattening both fields onto one system ground,
+  // so an inset-shadow divider leaves the merged units reading `M N` as one
+  // token — the failure the sr-only comma fixes for screen readers.
+  const divider = ruleBody('.eu-gender + .eu-gender');
+  expect(divider !== null && /border-left:/.test(divider) && !/box-shadow:/.test(divider), 'facets',
+    'the divider between two merged gender fields must be a border-left, not a box-shadow (forced-colors drops shadows)');
+
+  // 7. The knockout is measured, not stylistic: a facet letter on a 16% facet
+  // tint tops out below the house 4.5:1 bar and cannot be re-solved. Keep the
+  // reason in the file so it cannot return as a reasonable-looking
+  // simplification.
+  expect(/16% facet tint/.test(css.replace(/\s+/g, ' ')), 'facets',
+    'the chip block must record why the tint recipe is banned');
+}
+
+/* Colour is the fast path; the letter is the guarantee. Under deuteranopia the
+   tier-1 accents already collapse and tier-2 M and F converge, so every
+   facet-coloured mark prints its abbreviation — checked against the RENDERED
+   tree, per locale. A naive includes('M') is wrong twice over: ru is М/Ж/С, so
+   n is С and f is Ж, and ru М is Cyrillic U+041C — a homoglyph that passes a
+   Latin check on the wrong string. Hence the dictionary guards too. */
+function validateFacetLetters() {
+  const dist = path.join(root, 'dist');
+  if (!existsSync(dist)) {
+    fail('facets', 'dist/ is missing — run `bun run build` before validating');
+    return;
+  }
+
+  const labelOf = (lang, gender) => String(i18n[lang]?.[`cases.gender.${gender}`] ?? '').normalize('NFC');
+  const scripts = { en: /^[A-Z]$/, ru: /^\p{Script=Cyrillic}$/u };
+  for (const [lang, pattern] of Object.entries(scripts)) {
+    for (const gender of FACET_GENDERS) {
+      expect(pattern.test(labelOf(lang, gender)), 'facets',
+        `${lang} cases.gender.${gender} must be a single ${lang === 'ru' ? 'Cyrillic' : 'Latin'} letter`);
+    }
+  }
+
+  const seen = { en: 0, ru: 0 };
+  for (const file of walk(dist, file => file.endsWith('.html'))) {
+    const source = readFileSync(file, 'utf8');
+    const lang = rel(file).split(path.sep).includes('ru') ? 'ru' : 'en';
+
+    /* A unit may now carry MORE THAN ONE gender field — the M+N merges — so
+       the check walks fields, not units, and every one must print its own
+       letter. */
+    for (const match of source.matchAll(/<span class="eu-gender" data-gender="([mnf])">([\s\S]*?)<\/span>/g)) {
+      seen[lang]++;
+      const expected = labelOf(lang, match[1]);
+      expect(match[2].normalize('NFC') === expected, rel(file),
+        `gender field "${match[1]}" prints "${match[2]}", expected "${expected}"`);
+      /* The letter is apparatus, not a specimen: a class="s" wrapper inside it
+         would let the script toggle transliterate the gender letters. */
+      expect(!match[2].includes('<'), rel(file),
+        `a gender field must not carry markup (no dual-emit): ${match[2]}`);
+    }
+
+    /* Two adjacent knockout letters are one token to a screen reader; the
+       hairline that divides them visually has no accessible equivalent. */
+    if (/<span class="eu-gender"[^>]*>[^<]*<\/span><span class="eu-gender"/.test(source)) {
+      fail(rel(file), 'merged gender fields must be separated for a screen reader');
+    }
+
+    /* The gender fields lead the unit: a source field between them would put
+       a case abbreviation inside the gender label. */
+    for (const match of source.matchAll(/<span class="ending-unit">([\s\S]*?)<span class="eu-form/g)) {
+      expect(!/eu-source/.test(match[1]), rel(file),
+        'the provenance field must follow the form field, never precede it');
+    }
+  }
+  for (const lang of ['en', 'ru']) {
+    expect(seen[lang] > 0, 'facets',
+      `${lang} pages render no gender chips — the letter check would pass vacuously`);
+  }
+}
+
+function validateFacets() {
+  validateFacetTokens(read('src/styles/styles.css'));
+  validateFacetLetters();
 }
 
 function convertSerbianHtml(value, convert) {
@@ -886,6 +1127,7 @@ validateI18n();
 validateLinks();
 validateLocalFonts();
 validateTones();
+validateFacets();
 validateScriptConverter();
 validateSerbianContentScript();
 validateSerbianMarkers();

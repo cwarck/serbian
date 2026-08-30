@@ -3,9 +3,13 @@ import { toLatin, toCyrillic } from '../lib/script.ts';
 import type { Lang } from '../lib/negotiate.ts';
 import { translator } from '../i18n/index.ts';
 import { CASES, IDECL, WRINKLES, ENDING_AXES } from '../content/cases.ts';
-import type { CaseRow, CaseNote, Ending, EndingAxis } from '../lib/types.ts';
+import { GENDERS, type CaseRow, type CaseNote, type Ending, type EndingAxis, type Gender, type Number_ } from '../lib/types.ts';
 import { lookupPrep, renderPrepCard } from './prep-shared.ts';
-import type { Chart } from './chart.ts';
+import { endingUnit, type Chart } from './chart.ts';
+
+/* The two ending bands. Number is a band heading, never a chip: a chip says
+   which gender, the band it sits in says which number. */
+const NUMBERS = ['sg', 'pl'] as const satisfies readonly Number_[];
 
 type T = (key: string) => Raw;
 
@@ -82,17 +86,28 @@ function computeSyncretism(): Record<number, Record<string, Branch[]>> {
 
 const SYNC = computeSyncretism();
 
-/* Tone-dotted chip: on an echo cell, name the case the shape came from — the
-   chip's data-tone paints it in that case's hue. */
-function pills(targets: (string | null)[]): Raw | string {
-  const list = targets.filter((t): t is string => !!t);
-  if (!list.length) return '';
-  const chips = list.map(t => html`
-    <span class="cell-share" data-target="${t}" data-tone="${String(t).toLowerCase()}">
-      <span class="share-label">${t}</span>
-    </span>
-  `.value).join('');
-  return raw(`<span class="cell-shares" aria-label="same as">${chips}</span>`);
+/* One source of truth for the syncretism key. SYNC is keyed by
+   ENDING_AXES[].key, so the key must be READ from that array, never rebuilt
+   by template: a mismatch fails OPEN — `SYNC[i]?.[key] ?? []` leaves every
+   branch undefined, so every ending renders novel and all sixteen provenance
+   fields plus the whole echo recession vanish with no error. Only the pinned
+   fixtures would catch it, and only if the diff is read. */
+const AXIS_KEY = new Map<string, string>(
+  (ENDING_AXES as readonly EndingAxis[]).map(ax => [`${ax.g}/${ax.n}`, ax.key]));
+
+function axisKey(g: Gender, n: Number_): string {
+  const key = AXIS_KEY.get(`${g}/${n}`);
+  if (!key) throw new Error(`cases: no ENDING_AXES entry for ${g}/${n}`);
+  return key;
+}
+
+/* The provenance field: on an echo cell, name the case the shape came from.
+   Deliberately neutral — see .eu-source in styles.css. The relation ("same
+   as") is invisible in text, so it is spelled for a screen reader; an
+   aria-label on a generic span is not reliably exposed. */
+function sourceField(target: string | null, t: T): string {
+  if (!target) return '';
+  return html`<span class="eu-source"><span class="sr-only">${t('cases.sameAs')} </span>${target}</span>`.value;
 }
 
 /* The `?` trigger's accessible name is the note title, which carries Serbian
@@ -105,23 +120,29 @@ function noteLabel(note: CaseNote | undefined, lang: Lang): string {
   return markedText(title, toLatin).replace(/<[^>]*>/g, '');
 }
 
-function cellHTML(entry: Ending | null | undefined, caseIdx: number, axisKey: string, lang: Lang): Raw {
-  if (entry == null) return raw('<span class="cell cell-empty"><span class="end">—</span></span>');
+/* One cell's worth of ending FIELDS. Normally one; a syncretic split (AKU
+   animacy) yields two, which stack as two whole units — each ending reuses a
+   different case, so each needs its own provenance field. */
+interface Field { readonly form: string; readonly source: string; readonly echo: boolean }
+
+function endingFields(entry: Ending | null | undefined, caseIdx: number, axisKey: string, lang: Lang, t: T): Field[] {
+  if (entry == null) return [{ form: '—', source: '', echo: false }];
   const branches = SYNC[caseIdx]?.[axisKey] ?? [];
   const c = (CASES as readonly CaseRow[])[caseIdx];
 
   const noteMark = (id: string) => raw(
     `<button type="button" class="tip-chip cell-note" aria-haspopup="dialog" aria-expanded="false" aria-label="${escape(noteLabel(c?.notes?.[id], lang))}" data-note-trigger data-case-idx="${caseIdx}" data-note-id="${id}">?</button>`);
 
-  /* One ending + its trailing note + (if it's an echo) the source-case chip. */
-  const endHTML = (value: string, branch: Branch | undefined, note: Raw | string) => {
-    const echo = branch && !branch.novel;
-    return `<span class="end${echo ? ' is-echo' : ''}"><span lang="sr">${sr(value).value}</span>${String(note ?? '')}</span>${echo ? String(pills([branch.source])) : ''}`;
+  const one = (value: string, branch: Branch | undefined, note: Raw | string): Field => {
+    const echo = !!branch && !branch.novel;
+    return {
+      form: `<span lang="sr">${sr(value).value}</span>${String(note ?? '')}`,
+      source: echo ? sourceField(branch.source, t) : '',
+      echo,
+    };
   };
 
-  if (typeof entry === 'string') {
-    return raw(`<span class="cell">${endHTML(entry, branches[0], '')}</span>`);
-  }
+  if (typeof entry === 'string') return [one(entry, branches[0], '')];
 
   if ('split' in entry) {
     const variants = entry.split;
@@ -130,26 +151,68 @@ function cellHTML(entry: Ending | null | undefined, caseIdx: number, axisKey: st
     const sharedNote = variants.every(s => s.n && s.n === variants[0]!.n) ? variants[0]!.n : null;
 
     /* Syncretic split (AKU animacy): each ending reuses a known case, so it
-       stacks with its source-case chip. The criterion that picks between them
-       (alive vs thing) lives in the ? note, not inline. */
+       gets its own unit and its own source field. The criterion that picks
+       between them (alive vs thing) lives in the ? note, not inline. */
     if (entry.syncretic) {
-      const rows = variants.map((s, idx) => {
+      return variants.map((s, idx) => {
         const m = sharedNote && idx === variants.length - 1 ? noteMark(sharedNote)
                 : !sharedNote && s.n ? noteMark(s.n) : '';
-        return `<span class="end-row">${endHTML(s.v, branches[idx], m)}</span>`;
-      }).join('');
-      return raw(`<span class="cell cell-alt cell-alt-stack">${rows}</span>`);
+        return one(s.v, branches[idx], m);
+      });
     }
 
+    /* A sound-conditioned alternation is ONE statement, so it stays inline in
+       one form field. It must not become a baseline row — that construction is
+       what the unit exists to delete. */
     const ends = variants.map((s, idx) => {
       const m = !sharedNote && s.n ? noteMark(s.n) : '';
-      return endHTML(s.v, branches[idx], m);
+      return one(s.v, branches[idx], m).form;
     }).join('<span class="cell-sep" aria-hidden="true">/</span>');
     const tail = sharedNote ? String(noteMark(sharedNote)) : '';
-    return raw(`<span class="cell cell-alt">${ends}${tail}</span>`);
+    /* Every variant of a conditioned alternation shares one provenance (they
+       are all novel, or all echo the same case), so the first branch speaks
+       for the cell. */
+    const lead = branches[0];
+    const echo = !!lead && !lead.novel;
+    return [{ form: ends + tail, source: echo ? sourceField(lead.source, t) : '', echo }];
   }
 
-  return raw(`<span class="cell">${endHTML(entry.v, branches[0], entry.n ? noteMark(entry.n) : '')}</span>`);
+  return [one(entry.v, branches[0], entry.n ? noteMark(entry.n) : '')];
+}
+
+/* ── The merge ─────────────────────────────────────────────────────────
+   Genders that make the same STATEMENT share one unit. The key is the whole
+   branch signature — value AND note AND provenance — not the ending string,
+   because three groups in CASES agree on a string while disagreeing about
+   what it is: GEN pl -a (N echoes NOM, M and F are novel), VOK sg -o (N
+   echoes NOM, F carries vok-f-name), INS sg -om (M and N carry soft-em, F
+   does not). A single form field cannot hold both states, and merging on the
+   string alone would print the soft-stem -em alternation as true for the
+   feminine, which it is not. The rendered field markup IS that signature.
+
+   Only CONTIGUOUS runs in GENDERS order merge: a unit's gender fields must be
+   adjacent to read as one label. Every merge in the paradigm turns out to be
+   M+N — the masculine/neuter syncretism, the largest regularity there is — so
+   the M-N-F order is load-bearing, not cosmetic. (GEN pl M and F match too,
+   but merging them would cost the seven M+N merges.) */
+interface Group { readonly genders: Gender[]; readonly fields: Field[] }
+
+function signature(fields: readonly Field[]): string {
+  return fields.map(f => `${f.form}\u0000${f.source}\u0000${f.echo}`).join('\u0001');
+}
+
+function mergeBand(c: CaseRow, caseIdx: number, n: Number_, lang: Lang, t: T): Group[] {
+  const groups: Group[] = [];
+  let lastSig: string | null = null;
+  for (const g of GENDERS) {
+    const fields = endingFields(c.endings[g][n], caseIdx, axisKey(g, n), lang, t);
+    const sig = signature(fields);
+    const last = groups[groups.length - 1];
+    if (last && sig === lastSig) last.genders.push(g);
+    else groups.push({ genders: [g], fields });
+    lastSig = sig;
+  }
+  return groups;
 }
 
 /* The case question ("ko? / šta? — who, what.") leads with a Serbian run in
@@ -193,10 +256,6 @@ export function notePopoverHTML(caseIdx: number, noteId: string, lang: Lang): Ra
     </article>`;
 }
 
-function axisLabel(ax: EndingAxis, t: T): string {
-  return `${t('cases.gender.' + ax.g).value}.${t('cases.number.' + ax.n).value}`;
-}
-
 export const chart: Chart = {
   name: 'cases',
   /* The pre-rewrite renderer re-asserted class="case-list" on every render. */
@@ -204,7 +263,6 @@ export const chart: Chart = {
 
   mounts: (lang: Lang) => {
     const t = translator(lang);
-    const axes = ENDING_AXES as readonly EndingAxis[];
 
     const caseStripList = (CASES as readonly CaseRow[]).map(c => html`
     <li class="case-strip-cell" data-tone="${c.tone}">
@@ -226,10 +284,22 @@ export const chart: Chart = {
       </div>`;
 
     const caseList = (CASES as readonly CaseRow[]).map((c, i) => {
-      const endCells = axes.map(ax => html`
-      <div class="case-cell case-cell-end" data-axis="${ax.key}" data-gender="${ax.g}">
-        <span class="cell-axis">${axisLabel(ax, t)}</span>
-        ${cellHTML(c.endings[ax.g][ax.n], i, ax.key, lang)}
+      /* One band per number, a wrapping run of units under it, M-N-F per
+         GENDERS. The `M.SG` axis label is gone: the unit names the gender and
+         the band names the number. Genders that make the SAME STATEMENT share
+         one unit — see mergeBand(). */
+      const endCells = NUMBERS.map(n => html`
+      <div class="case-cell case-cell-band" data-band="${n}">
+        <span class="cell-axis">${t('band.' + n)}</span>
+      </div>
+      <div class="case-cell case-cell-end" data-band="${n}">
+        <div class="gender-run">${raw(mergeBand(c, i, n, lang, t).map(group => {
+          const labels = group.genders.map(g => ({ g, label: t('cases.gender.' + g) }));
+          const units = group.fields
+            .map(f => endingUnit(labels, raw(f.form), { source: f.source, echo: f.echo }).value);
+          /* A syncretic split stacks two whole units — one per reused case. */
+          return units.length > 1 ? `<span class="eu-stack">${units.join('')}</span>` : units.join('');
+        }).join(''))}</div>
       </div>
     `.value).join('');
 

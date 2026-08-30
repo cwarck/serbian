@@ -115,6 +115,7 @@ export const ru: Record<Key, string> = {
   'past.mpl': 'М/смеш. мн.',
   'past.fpl': 'Ж мн.',
   'past.npl': 'С мн.',
+  'past.mixed': 'М мн. — также для смешанных групп.',
 
   /* Aspect */
   'aspect.contrast': 'Главное различие',
@@ -215,11 +216,15 @@ export const ru: Record<Key, string> = {
   'cases.examples': 'Примеры',
   'cases.preps': 'Предлоги',
   'cases.local.tooltip': 'Сербское название падежа',
+  'cases.sameAs': 'как у',
   'cases.gender.m': 'М',
   'cases.gender.f': 'Ж',
   'cases.gender.n': 'С',
   'cases.number.sg': 'Ед.',
   'cases.number.pl': 'Мн.',
+
+  'band.sg': 'Ед. число',
+  'band.pl': 'Мн. число',
 
 
 

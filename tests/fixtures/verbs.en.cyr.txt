@@ -1126,55 +1126,82 @@ Yesterday I watched a film.
 <h4 class="chart-label">
 Participle
 </h4>
-<div class="chart-pairs verb-pair-grid">
-<div class="chart-pair">
+<div class="gender-band">
 <span class="chart-label">
-M sg
+Singular
 </span>
-<span class="chart-form verb-form">
+<div class="gender-run">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
+M
+</span>
+<span class="eu-form">
+<span lang="sr">
 -о
 </span>
-</div>
-<div class="chart-pair">
-<span class="chart-label">
-M/mixed pl
 </span>
-<span class="chart-form verb-form">
--ли
 </span>
-</div>
-<div class="chart-pair">
-<span class="chart-label">
-F sg
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
+N
 </span>
-<span class="chart-form verb-form">
--ла
-</span>
-</div>
-<div class="chart-pair">
-<span class="chart-label">
-F pl
-</span>
-<span class="chart-form verb-form">
--ле
-</span>
-</div>
-<div class="chart-pair">
-<span class="chart-label">
-N sg
-</span>
-<span class="chart-form verb-form">
+<span class="eu-form">
+<span lang="sr">
 -ло
 </span>
-</div>
-<div class="chart-pair">
-<span class="chart-label">
-N pl
 </span>
-<span class="chart-form verb-form">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
+F
+</span>
+<span class="eu-form">
+<span lang="sr">
 -ла
 </span>
+</span>
+</span>
 </div>
+</div>
+<div class="gender-band">
+<span class="chart-label">
+Plural
+</span>
+<div class="gender-run">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
+M
+</span>
+<span class="eu-form">
+<span lang="sr">
+-ли
+</span>
+</span>
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
+N
+</span>
+<span class="eu-form">
+<span lang="sr">
+-ла
+</span>
+</span>
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
+F
+</span>
+<span class="eu-form">
+<span lang="sr">
+-ле
+</span>
+</span>
+</span>
+</div>
+<p class="gender-band-note">
+M plural also covers mixed groups.
+</p>
 </div>
 </section>
 </article>

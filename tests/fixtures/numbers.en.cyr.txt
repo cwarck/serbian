@@ -734,169 +734,445 @@ Ordinals
 <span class="chart-cell num-value" data-label="Number">
 1.
 </span>
-<span class="chart-cell chart-form num-word" data-gender="m" data-label="M" lang="sr">
+<div class="gender-run">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
+M
+</span>
+<span class="eu-form">
+<span lang="sr">
 први
 </span>
-<span class="chart-cell chart-form num-word" data-gender="n" data-label="N" lang="sr">
+</span>
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
+N
+</span>
+<span class="eu-form">
+<span lang="sr">
 прво
 </span>
-<span class="chart-cell chart-form num-word" data-gender="f" data-label="F" lang="sr">
+</span>
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
+F
+</span>
+<span class="eu-form">
+<span lang="sr">
 прва
 </span>
+</span>
+</span>
+</div>
 </article>
 <article class="chart-row">
 <span class="chart-cell num-value" data-label="Number">
 2.
 </span>
-<span class="chart-cell chart-form num-word" data-gender="m" data-label="M" lang="sr">
+<div class="gender-run">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
+M
+</span>
+<span class="eu-form">
+<span lang="sr">
 други
 </span>
-<span class="chart-cell chart-form num-word" data-gender="n" data-label="N" lang="sr">
+</span>
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
+N
+</span>
+<span class="eu-form">
+<span lang="sr">
 друго
 </span>
-<span class="chart-cell chart-form num-word" data-gender="f" data-label="F" lang="sr">
+</span>
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
+F
+</span>
+<span class="eu-form">
+<span lang="sr">
 друга
 </span>
+</span>
+</span>
+</div>
 </article>
 <article class="chart-row">
 <span class="chart-cell num-value" data-label="Number">
 3.
 </span>
-<span class="chart-cell chart-form num-word" data-gender="m" data-label="M" lang="sr">
+<div class="gender-run">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
+M
+</span>
+<span class="eu-form">
+<span lang="sr">
 трећи
 </span>
-<span class="chart-cell chart-form num-word" data-gender="n" data-label="N" lang="sr">
+</span>
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
+N
+</span>
+<span class="eu-form">
+<span lang="sr">
 треће
 </span>
-<span class="chart-cell chart-form num-word" data-gender="f" data-label="F" lang="sr">
+</span>
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
+F
+</span>
+<span class="eu-form">
+<span lang="sr">
 трећа
 </span>
+</span>
+</span>
+</div>
 </article>
 <article class="chart-row">
 <span class="chart-cell num-value" data-label="Number">
 4.
 </span>
-<span class="chart-cell chart-form num-word" data-gender="m" data-label="M" lang="sr">
+<div class="gender-run">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
+M
+</span>
+<span class="eu-form">
+<span lang="sr">
 четврти
 </span>
-<span class="chart-cell chart-form num-word" data-gender="n" data-label="N" lang="sr">
+</span>
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
+N
+</span>
+<span class="eu-form">
+<span lang="sr">
 четврто
 </span>
-<span class="chart-cell chart-form num-word" data-gender="f" data-label="F" lang="sr">
+</span>
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
+F
+</span>
+<span class="eu-form">
+<span lang="sr">
 четврта
 </span>
+</span>
+</span>
+</div>
 </article>
 <article class="chart-row">
 <span class="chart-cell num-value" data-label="Number">
 5.
 </span>
-<span class="chart-cell chart-form num-word" data-gender="m" data-label="M" lang="sr">
+<div class="gender-run">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
+M
+</span>
+<span class="eu-form">
+<span lang="sr">
 пети
 </span>
-<span class="chart-cell chart-form num-word" data-gender="n" data-label="N" lang="sr">
+</span>
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
+N
+</span>
+<span class="eu-form">
+<span lang="sr">
 пето
 </span>
-<span class="chart-cell chart-form num-word" data-gender="f" data-label="F" lang="sr">
+</span>
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
+F
+</span>
+<span class="eu-form">
+<span lang="sr">
 пета
 </span>
+</span>
+</span>
+</div>
 </article>
 <article class="chart-row">
 <span class="chart-cell num-value" data-label="Number">
 6.
 </span>
-<span class="chart-cell chart-form num-word" data-gender="m" data-label="M" lang="sr">
+<div class="gender-run">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
+M
+</span>
+<span class="eu-form">
+<span lang="sr">
 шести
 </span>
-<span class="chart-cell chart-form num-word" data-gender="n" data-label="N" lang="sr">
+</span>
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
+N
+</span>
+<span class="eu-form">
+<span lang="sr">
 шесто
 </span>
-<span class="chart-cell chart-form num-word" data-gender="f" data-label="F" lang="sr">
+</span>
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
+F
+</span>
+<span class="eu-form">
+<span lang="sr">
 шеста
 </span>
+</span>
+</span>
+</div>
 </article>
 <article class="chart-row">
 <span class="chart-cell num-value" data-label="Number">
 7.
 </span>
-<span class="chart-cell chart-form num-word" data-gender="m" data-label="M" lang="sr">
+<div class="gender-run">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
+M
+</span>
+<span class="eu-form">
+<span lang="sr">
 седми
 </span>
-<span class="chart-cell chart-form num-word" data-gender="n" data-label="N" lang="sr">
+</span>
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
+N
+</span>
+<span class="eu-form">
+<span lang="sr">
 седмо
 </span>
-<span class="chart-cell chart-form num-word" data-gender="f" data-label="F" lang="sr">
+</span>
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
+F
+</span>
+<span class="eu-form">
+<span lang="sr">
 седма
 </span>
+</span>
+</span>
+</div>
 </article>
 <article class="chart-row">
 <span class="chart-cell num-value" data-label="Number">
 8.
 </span>
-<span class="chart-cell chart-form num-word" data-gender="m" data-label="M" lang="sr">
+<div class="gender-run">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
+M
+</span>
+<span class="eu-form">
+<span lang="sr">
 осми
 </span>
-<span class="chart-cell chart-form num-word" data-gender="n" data-label="N" lang="sr">
+</span>
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
+N
+</span>
+<span class="eu-form">
+<span lang="sr">
 осмо
 </span>
-<span class="chart-cell chart-form num-word" data-gender="f" data-label="F" lang="sr">
+</span>
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
+F
+</span>
+<span class="eu-form">
+<span lang="sr">
 осма
 </span>
+</span>
+</span>
+</div>
 </article>
 <article class="chart-row">
 <span class="chart-cell num-value" data-label="Number">
 9.
 </span>
-<span class="chart-cell chart-form num-word" data-gender="m" data-label="M" lang="sr">
+<div class="gender-run">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
+M
+</span>
+<span class="eu-form">
+<span lang="sr">
 девети
 </span>
-<span class="chart-cell chart-form num-word" data-gender="n" data-label="N" lang="sr">
+</span>
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
+N
+</span>
+<span class="eu-form">
+<span lang="sr">
 девето
 </span>
-<span class="chart-cell chart-form num-word" data-gender="f" data-label="F" lang="sr">
+</span>
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
+F
+</span>
+<span class="eu-form">
+<span lang="sr">
 девета
 </span>
+</span>
+</span>
+</div>
 </article>
 <article class="chart-row">
 <span class="chart-cell num-value" data-label="Number">
 10.
 </span>
-<span class="chart-cell chart-form num-word" data-gender="m" data-label="M" lang="sr">
+<div class="gender-run">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
+M
+</span>
+<span class="eu-form">
+<span lang="sr">
 десети
 </span>
-<span class="chart-cell chart-form num-word" data-gender="n" data-label="N" lang="sr">
+</span>
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
+N
+</span>
+<span class="eu-form">
+<span lang="sr">
 десето
 </span>
-<span class="chart-cell chart-form num-word" data-gender="f" data-label="F" lang="sr">
+</span>
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
+F
+</span>
+<span class="eu-form">
+<span lang="sr">
 десета
 </span>
+</span>
+</span>
+</div>
 </article>
 <article class="chart-row">
 <span class="chart-cell num-value" data-label="Number">
 20.
 </span>
-<span class="chart-cell chart-form num-word" data-gender="m" data-label="M" lang="sr">
+<div class="gender-run">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
+M
+</span>
+<span class="eu-form">
+<span lang="sr">
 двадесети
 </span>
-<span class="chart-cell chart-form num-word" data-gender="n" data-label="N" lang="sr">
+</span>
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
+N
+</span>
+<span class="eu-form">
+<span lang="sr">
 двадесето
 </span>
-<span class="chart-cell chart-form num-word" data-gender="f" data-label="F" lang="sr">
+</span>
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
+F
+</span>
+<span class="eu-form">
+<span lang="sr">
 двадесета
 </span>
+</span>
+</span>
+</div>
 </article>
 <article class="chart-row">
 <span class="chart-cell num-value" data-label="Number">
 21.
 </span>
-<span class="chart-cell chart-form num-word" data-gender="m" data-label="M" lang="sr">
+<div class="gender-run">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
+M
+</span>
+<span class="eu-form">
+<span lang="sr">
 двадесет први
 </span>
-<span class="chart-cell chart-form num-word" data-gender="n" data-label="N" lang="sr">
+</span>
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
+N
+</span>
+<span class="eu-form">
+<span lang="sr">
 двадесет прво
 </span>
-<span class="chart-cell chart-form num-word" data-gender="f" data-label="F" lang="sr">
+</span>
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
+F
+</span>
+<span class="eu-form">
+<span lang="sr">
 двадесет прва
 </span>
+</span>
+</span>
+</div>
 </article>
 </div>
 </section>
