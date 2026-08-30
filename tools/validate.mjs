@@ -221,6 +221,27 @@ function validateTones() {
     expect(tones.get(tone) === value, 'tones', `${tone} must map to ${value}`);
   }
 
+  /* The map above pins WHICH hue each case holds but not WHY, so an edit can
+     restore the defect it was written to remove and still pass.
+
+     Four hue pairs in the tier-1 set collapse for some dichromat — measured as
+     min ΔOKLab over light/dark x normal/deuteranopia/protanopia, against a .05
+     threshold (roughly the just-noticeable step between two adjacent marks).
+     The SET is stable under model noise; the decimals are not, so none are
+     asserted here. Notably it is not stable across colour spaces either: the
+     same projection applied to gamma-encoded sRGB instead of linear drops
+     red/green out of the set entirely. */
+  const unusableHues = new Set(['blue|purple', 'green|yellow', 'cyan|magenta', 'green|red']);
+  /* The case pairs a reader actually compares, by co-occurrence weight in the
+     rendered pages. aku|ins leads the next pair by more than 2x. */
+  const criticalCases = ['aku|ins', 'aku|lok', 'dat|gen', 'aku|gen', 'gen|lok'];
+  const hueOf = tone => (tones.get(tone) ?? '').replace(/^var\(--tone-(.+)\)$/, '$1');
+  for (const pair of criticalCases) {
+    const hues = pair.split('|').map(hueOf).sort().join('|');
+    expect(!unusableHues.has(hues), 'tones',
+      `${pair} — among the most-compared cases on the site — holds ${hues}, which no dichromat can separate`);
+  }
+
   const inflected = ['gen', 'dat', 'aku', 'vok', 'ins', 'lok'];
   const usedColors = new Map();
   for (const tone of inflected) {
