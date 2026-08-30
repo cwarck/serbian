@@ -307,22 +307,21 @@ function validateFacetTokens(css) {
   const tokens = parseRootTokens(css);
 
   const facets = new Map();
-  const corners = new Map();
-  for (const match of css.matchAll(/\.gender-unit\[data-gender="([mnf])"\]\s*\{([^}]*)\}/g)) {
+  for (const match of css.matchAll(/\.eu-gender\[data-gender="([mnf])"\]\s*\{([^}]*)\}/g)) {
     const facet = match[2].match(/--facet:\s*var\((--facet-[mnf])\)/);
     if (facet) facets.set(match[1], facet[1]);
-    const radius = match[2].match(/border-radius:\s*([^;]+)/);
-    if (radius) corners.set(match[1], radius[1].trim());
   }
 
   // 1. Every facet token exists and the data-gender map routes each gender to
-  // its own — the mirror of the [data-tone] map assertion above.
+  // its own — the mirror of the [data-tone] map assertion above. The map lives
+  // on the FIELD (.eu-gender), not the unit: a merged unit carries two
+  // differently-coloured gender fields, which one attribute cannot feed.
   const claimed = new Map();
   for (const gender of FACET_GENDERS) {
     expect(groundPair(tokens, `--facet-${gender}`) !== null, 'facets',
       `--facet-${gender} must be defined as a light-dark() hex pair`);
     expect(facets.get(gender) === `--facet-${gender}`, 'facets',
-      `.gender-unit[data-gender="${gender}"] must map to var(--facet-${gender})`);
+      `.eu-gender[data-gender="${gender}"] must map to var(--facet-${gender})`);
     const token = facets.get(gender);
     if (!token) continue;
     expect(!claimed.has(token), 'facets', `${gender} duplicates ${claimed.get(token)} facet ${token}`);
@@ -360,24 +359,36 @@ function validateFacetTokens(css) {
       `${ground}: facet band (C ${top.toFixed(4)}) must clear the accent band (C ${floor.toFixed(4)}) by .02`);
   }
 
-  // 5. The corner family is driven from one token, by rules scoped to
-  // .gender-unit. A bare [data-gender="n"] would pass a naive version of this
-  // and leak a radius onto every gender-marked element on the site.
-  expect((css.match(/^\s*--facet-r:/gm) || []).length === 1, 'facets',
-    '--facet-r must be defined exactly once');
-  for (const line of css.split('\n')) {
-    if (!/var\(--facet-r\)/.test(line)) continue;
-    expect(line.trim().startsWith('.gender-unit[data-gender='), 'facets',
-      `--facet-r must only be read by a .gender-unit corner rule: ${line.trim()}`);
-  }
-  for (const gender of FACET_GENDERS) {
-    expect(corners.has(gender), 'facets',
-      `${gender} must set its silhouette on a .gender-unit-scoped border-radius`);
-  }
-  expect(new Set(corners.values()).size === corners.size, 'facets',
-    'the three silhouettes must differ — shape is what groups pre-attentively');
+  // 5. The unit is where the two tiers physically MEET, so it is where the
+  // routing rule needs asserting: a gender field may only carry a facet, a
+  // provenance field only ink. .eu-source is deliberately neutral — tone text
+  // on a tint of its own tone is the recipe .case-tag already fails on.
+  const ruleBody = selector => {
+    const match = css.match(new RegExp(`^\\${selector}\\s*\\{([^}]*)\\}`, 'm'));
+    return match ? match[1] : null;
+  };
+  const gender = ruleBody('.eu-gender');
+  const source = ruleBody('.eu-source');
+  expect(gender !== null && source !== null, 'facets',
+    '.eu-gender and .eu-source must each be a top-level rule');
+  if (gender) expect(!/var\(--tone-/.test(gender), 'facets',
+    'a gender field may not carry a case hue');
+  if (source) expect(!/var\(--facet-/.test(source) && !/var\(--tone-/.test(source), 'facets',
+    '.eu-source must stay neutral — neither tier paints it');
 
-  // 6. The knockout is measured, not stylistic: a facet letter on a 16% facet
+  // 6. No .ending-unit nests another: the nested chip-in-a-chip is the bug
+  // class this construction exists to remove, and both shipped rendering bugs
+  // came from an align-items: baseline row inside it. .cell-alt was exactly
+  // the tempting way to bring the second one back.
+  for (const line of css.split('\n')) {
+    expect(!/\.ending-unit[^,{]*\.ending-unit/.test(line), 'facets',
+      `an ending unit must not nest another: ${line.trim()}`);
+  }
+  const unitBlock = css.slice(css.indexOf('.ending-unit {'), css.indexOf('.eu-gender[data-gender="m"]'));
+  expect(unitBlock.length > 0 && !/align-items:\s*baseline/.test(unitBlock), 'facets',
+    'align-items: baseline inside the ending unit — that is the construction both shipped bugs came from');
+
+  // 7. The knockout is measured, not stylistic: a facet letter on a 16% facet
   // tint tops out below the house 4.5:1 bar and cannot be re-solved. Keep the
   // reason in the file so it cannot return as a reasonable-looking
   // simplification.
@@ -412,18 +423,31 @@ function validateFacetLetters() {
     const source = readFileSync(file, 'utf8');
     const lang = rel(file).split(path.sep).includes('ru') ? 'ru' : 'en';
 
-    for (const match of source.matchAll(/<span class="gender-unit" data-gender="([mnf])"><span class="gender-tag">([\s\S]*?)<\/span>/g)) {
+    /* A unit may now carry MORE THAN ONE gender field — the M+N merges — so
+       the check walks fields, not units, and every one must print its own
+       letter. */
+    for (const match of source.matchAll(/<span class="eu-gender" data-gender="([mnf])">([\s\S]*?)<\/span>/g)) {
       seen[lang]++;
       const expected = labelOf(lang, match[1]);
       expect(match[2].normalize('NFC') === expected, rel(file),
-        `gender chip "${match[1]}" prints "${match[2]}", expected "${expected}"`);
+        `gender field "${match[1]}" prints "${match[2]}", expected "${expected}"`);
+      /* The letter is apparatus, not a specimen: a class="s" wrapper inside it
+         would let the script toggle transliterate the gender letters. */
+      expect(!match[2].includes('<'), rel(file),
+        `a gender field must not carry markup (no dual-emit): ${match[2]}`);
     }
 
-    /* The chip label is apparatus, not a specimen: a class="s" wrapper inside
-       it would let the script toggle transliterate the gender letters. */
-    for (const match of source.matchAll(/<span class="gender-tag">([\s\S]*?)<\/span>/g)) {
-      expect(!match[1].includes('<'), rel(file),
-        `a gender chip label must not carry markup (no dual-emit): ${match[1]}`);
+    /* Two adjacent knockout letters are one token to a screen reader; the
+       hairline that divides them visually has no accessible equivalent. */
+    if (/<span class="eu-gender"[^>]*>[^<]*<\/span><span class="eu-gender"/.test(source)) {
+      fail(rel(file), 'merged gender fields must be separated for a screen reader');
+    }
+
+    /* The gender fields lead the unit: a source field between them would put
+       a case abbreviation inside the gender label. */
+    for (const match of source.matchAll(/<span class="ending-unit">([\s\S]*?)<span class="eu-form/g)) {
+      expect(!/eu-source/.test(match[1]), rel(file),
+        'the provenance field must follow the form field, never precede it');
     }
   }
   for (const lang of ['en', 'ru']) {
