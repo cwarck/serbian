@@ -384,9 +384,26 @@ function validateFacetTokens(css) {
     expect(!/\.ending-unit[^,{]*\.ending-unit/.test(line), 'facets',
       `an ending unit must not nest another: ${line.trim()}`);
   }
-  const unitBlock = css.slice(css.indexOf('.ending-unit {'), css.indexOf('.eu-gender[data-gender="m"]'));
-  expect(unitBlock.length > 0 && !/align-items:\s*baseline/.test(unitBlock), 'facets',
+  // Anchor the slice explicitly. Both ends are literal selectors, and the file
+  // invites internal reorganisation — group .ending-unit with anything and the
+  // start anchor stops matching. The slice then fails CLOSED (an empty or
+  // whole-file block), so the build breaks either way, but it breaks blaming
+  // align-items when the real fault is a moved anchor. Say which it is.
+  const unitStart = css.indexOf('.ending-unit {');
+  const unitEnd = css.indexOf('.eu-gender[data-gender="m"]');
+  expect(unitStart >= 0 && unitEnd > unitStart, 'facets',
+    'cannot locate the ending-unit block: the baseline guard needs `.ending-unit {` followed by the facet map');
+  const unitBlock = css.slice(unitStart, unitEnd);
+  expect(!/align-items:\s*baseline/.test(unitBlock), 'facets',
     'align-items: baseline inside the ending unit — that is the construction both shipped bugs came from');
+
+  // The unit must not clip. A `?` note trigger renders inside .eu-form, and
+  // its 44x44 ::after hit area and its focus ring both extend past the ~26px
+  // unit box; overflow: hidden here crops the tap target to about 31x26 and
+  // slices the focus ring, all to round a 2px corner. The end fields carry
+  // the radius instead.
+  expect(!/overflow:\s*hidden/.test(unitBlock.replace(/\/\*[\s\S]*?\*\//g, '')), 'facets',
+    'the ending unit must not clip — it would crop the note trigger\'s tap target and focus ring');
 
   // 7. The knockout is measured, not stylistic: a facet letter on a 16% facet
   // tint tops out below the house 4.5:1 bar and cannot be re-solved. Keep the

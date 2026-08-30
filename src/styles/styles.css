@@ -1273,11 +1273,23 @@ section { position: relative; }
   display: inline-flex;
   align-items: stretch;
   min-width: 0;
-  overflow: hidden;
   border: 1px solid var(--ink-muted);
   border-radius: var(--rad);
 }
 .ending-unit > * { display: inline-flex; align-items: center; line-height: 1; }
+/* The corner is cut on the END FIELDS, never with overflow: hidden on the
+   unit. A `?` note trigger lives inside .eu-form, and its 44x44 ::after hit
+   area and its focus ring both extend past the ~26px unit box — a clipping
+   box here would crop the tap target to about 31x26 and slice the focus ring
+   top and bottom, to buy a 2px radius. */
+.ending-unit > :first-child {
+  border-start-start-radius: var(--rad);
+  border-end-start-radius: var(--rad);
+}
+.ending-unit > :last-child {
+  border-start-end-radius: var(--rad);
+  border-end-end-radius: var(--rad);
+}
 /* Only the form field may shrink. The letter is the guarantee — under
    deuteranopia it is the ONLY carrier left — so it must never be clipped by
    the unit's overflow: hidden. */
