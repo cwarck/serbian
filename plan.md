@@ -1,7 +1,11 @@
 # serbian.fyi — the ending unit
 
-Status: proposed, not started. Supersedes the facet-tier plan, which shipped in
-`a0734b1`..`6f67b21`.
+Status: **shipped** in `d2872e6`..`0c4c0ed`. Supersedes the facet-tier plan,
+which shipped in `a0734b1`..`6f67b21`.
+
+Branched from `6f67b21`, not from `main` as written below: the facet tier this
+plan builds on has not been merged to `main` yet, so cutting from `main` would
+have dropped it.
 
 Two rendering bugs in the shipped gender chip turn out to share one cause, and fixing that
 cause properly forces a decision the facet tier deferred: the per-gender silhouette blocks the
@@ -313,8 +317,23 @@ restyle, and a wrong grouping will look like a rendering bug.
   ground — which is why `.eu-source` is specified neutral here rather than joining the defect.
 - The twelve mute `data-tone` values, and glossary gender.
 
-## Open
+## Open — resolved
 
-- `--ink-muted` on `--paper` at 1px: confirm ≥3:1 on both grounds before the unit border lands.
-- `.cell-note`'s `translateY(-.2em)` inside a centred form field.
-- 320px behaviour of `[M N | -ima | DAT]`.
+- **`--ink-muted` on `--paper` at 1px.** 4.97:1 light (`#6F6E69` on `#FFFCF0`),
+  9.31:1 dark (`#B7B5AC` on `#100F0F`). Both clear the 3:1 non-text floor by a
+  wide margin, so the neutral unit border lands as specified and `--hairline`
+  raises no finding here — it is an internal divider, not the object's outline.
+- **`.cell-note`'s `translateY(-.2em)`.** Deleted. The constant was tuned to lift
+  a `?` off a baseline row; inside a centred `.eu-form` the button is a flex item
+  on `align-items: center` and needs no correction.
+- **320px behaviour of `[M N | -ima | DAT]`.** Measured against the real font
+  metrics (Source Serif 4 / Source Sans 3 advance widths at root 16px): the
+  column is 284.8px, the widest unit is 148.7px, and the widest whole band
+  (`[M N | -ima | DAT]` + `[F | -ama | DAT]` + gap) is 283.2px — one line, 1.6px
+  to spare. The failure mode if a face ever measures wider is a wrap, not an
+  overflow, because the band is a `flex-wrap: wrap` run.
+
+One thing beyond the plan: `.eu-gender` and `.eu-source` are pinned
+`flex: 0 0 auto`, so only the form field may shrink. The unit keeps
+`overflow: hidden`, and the letter is the last carrier under deuteranopia — it
+must never be the field that gets clipped.
