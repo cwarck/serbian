@@ -19,7 +19,7 @@ Cut a branch from `main`, land it in the phase order below, `bun run validate` p
 | --- | --- |
 | The widget | **One segmented unit**, up to three fields: gender · form · source. Not a chip inside a chip. |
 | Silhouette | **Retired.** One uniform `--rad` (2px) corner. `--facet-r` goes with it. |
-| Gender merge | **On**, keyed on the whole branch signature — value + note + provenance. 42 units become 35. |
+| Gender merge | **On**, keyed on the whole branch signature — value + note + provenance. 42 cells become 36 units. |
 | Facet hue | **Kept**, on the gender fields. The unit's border is neutral. |
 | Case abbreviation | **Three letters.** One letter is rejected — see below. |
 
@@ -198,7 +198,10 @@ two letters do not run together.
 (value + note + source), keeping only **contiguous** runs in `GENDERS` order
 (`src/lib/types.ts:24`), then emit one unit per group.
 
-Measured over `CASES`: **42 units become 35.** Seven of the fourteen bands merge.
+Measured over `CASES`: **42 cells become 36 units.** Seven of the fourteen bands merge, all of
+them M+N. The count is 36 rather than 35 because `AKU sg M` is a *syncretic* split (`-a` from
+GEN, `-∅` from NOM): each branch reuses a different case, so each needs its own provenance
+field and becomes a whole unit — one cell, two units.
 
 | band | merges to |
 | --- | --- |
@@ -301,7 +304,7 @@ Write this **after** Phase 2 lands, so the prose describes what shipped.
 
 ## Phase 6 — fixtures
 
-`bun tests/snapshot.ts`. Every gender-bearing chart churns: cases most (35 units where there
+`bun tests/snapshot.ts`. Every gender-bearing chart churns: cases most (36 units where there
 were 42, plus `data-axis` disappearing from merged cells), pronouns/numbers/verbs by class,
 corner and specimen colour. Read the diff — the merge is a content-shape change, not a
 restyle, and a wrong grouping will look like a rendering bug.
