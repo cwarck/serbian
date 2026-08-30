@@ -516,28 +516,34 @@ Use for own: my own, your own, his own, their own.
 own
 </h4>
 <div class="gender-run">
-<span class="gender-unit" data-gender="m">
-<span class="gender-tag">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
 M
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 svoj
 </span>
 </span>
-<span class="gender-unit" data-gender="n">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
 N
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 svoje
 </span>
 </span>
-<span class="gender-unit" data-gender="f">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
 F
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 svoja
+</span>
 </span>
 </span>
 </div>
@@ -550,28 +556,34 @@ points back to the subject
 my
 </h4>
 <div class="gender-run">
-<span class="gender-unit" data-gender="m">
-<span class="gender-tag">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
 M
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 moj
 </span>
 </span>
-<span class="gender-unit" data-gender="n">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
 N
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 moje
 </span>
 </span>
-<span class="gender-unit" data-gender="f">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
 F
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 moja
+</span>
 </span>
 </span>
 </div>
@@ -581,28 +593,34 @@ moja
 your
 </h4>
 <div class="gender-run">
-<span class="gender-unit" data-gender="m">
-<span class="gender-tag">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
 M
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 tvoj
 </span>
 </span>
-<span class="gender-unit" data-gender="n">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
 N
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 tvoje
 </span>
 </span>
-<span class="gender-unit" data-gender="f">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
 F
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 tvoja
+</span>
 </span>
 </span>
 </div>
@@ -612,28 +630,34 @@ tvoja
 his / its
 </h4>
 <div class="gender-run">
-<span class="gender-unit" data-gender="m">
-<span class="gender-tag">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
 M
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 njegov
 </span>
 </span>
-<span class="gender-unit" data-gender="n">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
 N
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 njegovo
 </span>
 </span>
-<span class="gender-unit" data-gender="f">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
 F
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 njegova
+</span>
 </span>
 </span>
 </div>
@@ -643,28 +667,34 @@ njegova
 her
 </h4>
 <div class="gender-run">
-<span class="gender-unit" data-gender="m">
-<span class="gender-tag">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
 M
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 njen
 </span>
 </span>
-<span class="gender-unit" data-gender="n">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
 N
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 njeno
 </span>
 </span>
-<span class="gender-unit" data-gender="f">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
 F
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 njena
+</span>
 </span>
 </span>
 </div>
@@ -674,28 +704,34 @@ njena
 our
 </h4>
 <div class="gender-run">
-<span class="gender-unit" data-gender="m">
-<span class="gender-tag">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
 M
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 naš
 </span>
 </span>
-<span class="gender-unit" data-gender="n">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
 N
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 naše
 </span>
 </span>
-<span class="gender-unit" data-gender="f">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
 F
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 naša
+</span>
 </span>
 </span>
 </div>
@@ -705,28 +741,34 @@ naša
 your pl.
 </h4>
 <div class="gender-run">
-<span class="gender-unit" data-gender="m">
-<span class="gender-tag">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
 M
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 vaš
 </span>
 </span>
-<span class="gender-unit" data-gender="n">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
 N
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 vaše
 </span>
 </span>
-<span class="gender-unit" data-gender="f">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
 F
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 vaša
+</span>
 </span>
 </span>
 </div>
@@ -736,28 +778,34 @@ vaša
 their
 </h4>
 <div class="gender-run">
-<span class="gender-unit" data-gender="m">
-<span class="gender-tag">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
 M
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 njihov
 </span>
 </span>
-<span class="gender-unit" data-gender="n">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
 N
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 njihovo
 </span>
 </span>
-<span class="gender-unit" data-gender="f">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
 F
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 njihova
+</span>
 </span>
 </span>
 </div>
@@ -774,28 +822,34 @@ Singular
 this
 </span>
 <div class="gender-run">
-<span class="gender-unit" data-gender="m">
-<span class="gender-tag">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
 M
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 ovaj
 </span>
 </span>
-<span class="gender-unit" data-gender="n">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
 N
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 ovo
 </span>
 </span>
-<span class="gender-unit" data-gender="f">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
 F
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 ova
+</span>
 </span>
 </span>
 </div>
@@ -805,28 +859,34 @@ ova
 that
 </span>
 <div class="gender-run">
-<span class="gender-unit" data-gender="m">
-<span class="gender-tag">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
 M
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 taj
 </span>
 </span>
-<span class="gender-unit" data-gender="n">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
 N
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 to
 </span>
 </span>
-<span class="gender-unit" data-gender="f">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
 F
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 ta
+</span>
 </span>
 </span>
 </div>
@@ -836,28 +896,34 @@ ta
 that there
 </span>
 <div class="gender-run">
-<span class="gender-unit" data-gender="m">
-<span class="gender-tag">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
 M
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 onaj
 </span>
 </span>
-<span class="gender-unit" data-gender="n">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
 N
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 ono
 </span>
 </span>
-<span class="gender-unit" data-gender="f">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
 F
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 ona
+</span>
 </span>
 </span>
 </div>
@@ -876,28 +942,34 @@ Plural
 these
 </span>
 <div class="gender-run">
-<span class="gender-unit" data-gender="m">
-<span class="gender-tag">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
 M
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 ovi
 </span>
 </span>
-<span class="gender-unit" data-gender="n">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
 N
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 ova
 </span>
 </span>
-<span class="gender-unit" data-gender="f">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
 F
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 ove
+</span>
 </span>
 </span>
 </div>
@@ -907,28 +979,34 @@ ove
 those
 </span>
 <div class="gender-run">
-<span class="gender-unit" data-gender="m">
-<span class="gender-tag">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
 M
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 ti
 </span>
 </span>
-<span class="gender-unit" data-gender="n">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
 N
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 ta
 </span>
 </span>
-<span class="gender-unit" data-gender="f">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
 F
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 te
+</span>
 </span>
 </span>
 </div>
@@ -938,28 +1016,34 @@ te
 those there
 </span>
 <div class="gender-run">
-<span class="gender-unit" data-gender="m">
-<span class="gender-tag">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
 M
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 oni
 </span>
 </span>
-<span class="gender-unit" data-gender="n">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
 N
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 ona
 </span>
 </span>
-<span class="gender-unit" data-gender="f">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
 F
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 one
+</span>
 </span>
 </span>
 </div>
@@ -997,28 +1081,34 @@ Whose
 Singular
 </span>
 <div class="gender-run">
-<span class="gender-unit" data-gender="m">
-<span class="gender-tag">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
 M
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 čiji
 </span>
 </span>
-<span class="gender-unit" data-gender="n">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
 N
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 čije
 </span>
 </span>
-<span class="gender-unit" data-gender="f">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
 F
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 čija
+</span>
 </span>
 </span>
 </div>
@@ -1028,28 +1118,34 @@ F
 Plural
 </span>
 <div class="gender-run">
-<span class="gender-unit" data-gender="m">
-<span class="gender-tag">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
 M
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 čiji
 </span>
 </span>
-<span class="gender-unit" data-gender="n">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
 N
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 čija
 </span>
 </span>
-<span class="gender-unit" data-gender="f">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
 F
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 čije
+</span>
 </span>
 </span>
 </div>

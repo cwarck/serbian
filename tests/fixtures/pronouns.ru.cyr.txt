@@ -516,28 +516,34 @@
 свой
 </h4>
 <div class="gender-run">
-<span class="gender-unit" data-gender="m">
-<span class="gender-tag">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
 М
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 свој
 </span>
 </span>
-<span class="gender-unit" data-gender="n">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
 С
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 своје
 </span>
 </span>
-<span class="gender-unit" data-gender="f">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
 Ж
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 своја
+</span>
 </span>
 </span>
 </div>
@@ -550,28 +556,34 @@
 мой
 </h4>
 <div class="gender-run">
-<span class="gender-unit" data-gender="m">
-<span class="gender-tag">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
 М
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 мој
 </span>
 </span>
-<span class="gender-unit" data-gender="n">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
 С
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 моје
 </span>
 </span>
-<span class="gender-unit" data-gender="f">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
 Ж
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 моја
+</span>
 </span>
 </span>
 </div>
@@ -581,28 +593,34 @@
 твой
 </h4>
 <div class="gender-run">
-<span class="gender-unit" data-gender="m">
-<span class="gender-tag">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
 М
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 твој
 </span>
 </span>
-<span class="gender-unit" data-gender="n">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
 С
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 твоје
 </span>
 </span>
-<span class="gender-unit" data-gender="f">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
 Ж
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 твоја
+</span>
 </span>
 </span>
 </div>
@@ -612,28 +630,34 @@
 его
 </h4>
 <div class="gender-run">
-<span class="gender-unit" data-gender="m">
-<span class="gender-tag">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
 М
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 његов
 </span>
 </span>
-<span class="gender-unit" data-gender="n">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
 С
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 његово
 </span>
 </span>
-<span class="gender-unit" data-gender="f">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
 Ж
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 његова
+</span>
 </span>
 </span>
 </div>
@@ -643,30 +667,36 @@
 её
 </h4>
 <div class="gender-run">
-<span class="gender-unit" data-gender="m">
-<span class="gender-tag">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
 М
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 њен
 </span>
 </span>
-<span class="gender-unit" data-gender="n">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
 С
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 њено
 </span>
 </span>
-<span class="gender-unit" data-gender="f">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
 Ж
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 њена
 </span>
 </span>
+</span>
 </div>
 </article>
 <article class="pron-poss-card">
@@ -674,28 +704,34 @@
 наш
 </h4>
 <div class="gender-run">
-<span class="gender-unit" data-gender="m">
-<span class="gender-tag">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
 М
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 наш
 </span>
 </span>
-<span class="gender-unit" data-gender="n">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
 С
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 наше
 </span>
 </span>
-<span class="gender-unit" data-gender="f">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
 Ж
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 наша
+</span>
 </span>
 </span>
 </div>
@@ -705,28 +741,34 @@
 ваш
 </h4>
 <div class="gender-run">
-<span class="gender-unit" data-gender="m">
-<span class="gender-tag">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
 М
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 ваш
 </span>
 </span>
-<span class="gender-unit" data-gender="n">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
 С
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 ваше
 </span>
 </span>
-<span class="gender-unit" data-gender="f">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
 Ж
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 ваша
+</span>
 </span>
 </span>
 </div>
@@ -736,28 +778,34 @@
 их
 </h4>
 <div class="gender-run">
-<span class="gender-unit" data-gender="m">
-<span class="gender-tag">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
 М
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 њихов
 </span>
 </span>
-<span class="gender-unit" data-gender="n">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
 С
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 њихово
 </span>
 </span>
-<span class="gender-unit" data-gender="f">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
 Ж
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 њихова
+</span>
 </span>
 </span>
 </div>
@@ -774,28 +822,34 @@
 этот
 </span>
 <div class="gender-run">
-<span class="gender-unit" data-gender="m">
-<span class="gender-tag">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
 М
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 овај
 </span>
 </span>
-<span class="gender-unit" data-gender="n">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
 С
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 ово
 </span>
 </span>
-<span class="gender-unit" data-gender="f">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
 Ж
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 ова
+</span>
 </span>
 </span>
 </div>
@@ -805,28 +859,34 @@
 тот
 </span>
 <div class="gender-run">
-<span class="gender-unit" data-gender="m">
-<span class="gender-tag">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
 М
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 тај
 </span>
 </span>
-<span class="gender-unit" data-gender="n">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
 С
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 то
 </span>
 </span>
-<span class="gender-unit" data-gender="f">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
 Ж
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 та
+</span>
 </span>
 </span>
 </div>
@@ -836,28 +896,34 @@
 вон тот
 </span>
 <div class="gender-run">
-<span class="gender-unit" data-gender="m">
-<span class="gender-tag">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
 М
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 онај
 </span>
 </span>
-<span class="gender-unit" data-gender="n">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
 С
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 оно
 </span>
 </span>
-<span class="gender-unit" data-gender="f">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
 Ж
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 она
+</span>
 </span>
 </span>
 </div>
@@ -876,28 +942,34 @@
 эти
 </span>
 <div class="gender-run">
-<span class="gender-unit" data-gender="m">
-<span class="gender-tag">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
 М
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 ови
 </span>
 </span>
-<span class="gender-unit" data-gender="n">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
 С
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 ова
 </span>
 </span>
-<span class="gender-unit" data-gender="f">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
 Ж
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 ове
+</span>
 </span>
 </span>
 </div>
@@ -907,28 +979,34 @@
 те
 </span>
 <div class="gender-run">
-<span class="gender-unit" data-gender="m">
-<span class="gender-tag">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
 М
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 ти
 </span>
 </span>
-<span class="gender-unit" data-gender="n">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
 С
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 та
 </span>
 </span>
-<span class="gender-unit" data-gender="f">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
 Ж
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 те
+</span>
 </span>
 </span>
 </div>
@@ -938,28 +1016,34 @@
 вон те
 </span>
 <div class="gender-run">
-<span class="gender-unit" data-gender="m">
-<span class="gender-tag">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
 М
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 они
 </span>
 </span>
-<span class="gender-unit" data-gender="n">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
 С
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 она
 </span>
 </span>
-<span class="gender-unit" data-gender="f">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
 Ж
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 оне
+</span>
 </span>
 </span>
 </div>
@@ -997,28 +1081,34 @@
 Ед.
 </span>
 <div class="gender-run">
-<span class="gender-unit" data-gender="m">
-<span class="gender-tag">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
 М
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 чији
 </span>
 </span>
-<span class="gender-unit" data-gender="n">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
 С
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 чије
 </span>
 </span>
-<span class="gender-unit" data-gender="f">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
 Ж
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 чија
+</span>
 </span>
 </span>
 </div>
@@ -1028,28 +1118,34 @@
 Мн.
 </span>
 <div class="gender-run">
-<span class="gender-unit" data-gender="m">
-<span class="gender-tag">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
 М
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 чији
 </span>
 </span>
-<span class="gender-unit" data-gender="n">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
 С
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 чија
 </span>
 </span>
-<span class="gender-unit" data-gender="f">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
 Ж
 </span>
-<span class="chart-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 чије
+</span>
 </span>
 </span>
 </div>

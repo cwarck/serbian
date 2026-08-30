@@ -1131,28 +1131,34 @@ Participle
 Singular
 </span>
 <div class="gender-run">
-<span class="gender-unit" data-gender="m">
-<span class="gender-tag">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
 M
 </span>
-<span class="chart-form verb-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 -о
 </span>
 </span>
-<span class="gender-unit" data-gender="n">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
 N
 </span>
-<span class="chart-form verb-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 -ло
 </span>
 </span>
-<span class="gender-unit" data-gender="f">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
 F
 </span>
-<span class="chart-form verb-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 -ла
+</span>
 </span>
 </span>
 </div>
@@ -1162,28 +1168,34 @@ F
 Plural
 </span>
 <div class="gender-run">
-<span class="gender-unit" data-gender="m">
-<span class="gender-tag">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
 M
 </span>
-<span class="chart-form verb-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 -ли
 </span>
 </span>
-<span class="gender-unit" data-gender="n">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
 N
 </span>
-<span class="chart-form verb-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 -ла
 </span>
 </span>
-<span class="gender-unit" data-gender="f">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
 F
 </span>
-<span class="chart-form verb-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 -ле
+</span>
 </span>
 </span>
 </div>

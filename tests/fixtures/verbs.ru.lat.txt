@@ -1131,28 +1131,34 @@ Juče sam gledao film.
 Ед. число
 </span>
 <div class="gender-run">
-<span class="gender-unit" data-gender="m">
-<span class="gender-tag">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
 М
 </span>
-<span class="chart-form verb-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 -o
 </span>
 </span>
-<span class="gender-unit" data-gender="n">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
 С
 </span>
-<span class="chart-form verb-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 -lo
 </span>
 </span>
-<span class="gender-unit" data-gender="f">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
 Ж
 </span>
-<span class="chart-form verb-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 -la
+</span>
 </span>
 </span>
 </div>
@@ -1162,28 +1168,34 @@ Juče sam gledao film.
 Мн. число
 </span>
 <div class="gender-run">
-<span class="gender-unit" data-gender="m">
-<span class="gender-tag">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
 М
 </span>
-<span class="chart-form verb-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 -li
 </span>
 </span>
-<span class="gender-unit" data-gender="n">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
 С
 </span>
-<span class="chart-form verb-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 -la
 </span>
 </span>
-<span class="gender-unit" data-gender="f">
-<span class="gender-tag">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
 Ж
 </span>
-<span class="chart-form verb-form" lang="sr">
+<span class="eu-form">
+<span lang="sr">
 -le
+</span>
 </span>
 </span>
 </div>

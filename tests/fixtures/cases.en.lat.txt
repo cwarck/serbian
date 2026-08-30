@@ -78,60 +78,52 @@ ko? / šta?
 Singular
 </span>
 </div>
-<div class="case-cell case-cell-end" data-axis="m-sg">
-<span class="gender-unit" data-gender="m">
-<span class="gender-tag">
+<div class="case-cell case-cell-end" data-band="sg">
+<div class="gender-run">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
 M
 </span>
-<span class="cell">
-<span class="end">
+<span class="eu-form">
 <span lang="sr">
 -∅
 </span>
 </span>
 </span>
-</span>
-</div>
-<div class="case-cell case-cell-end" data-axis="n-sg">
-<span class="gender-unit" data-gender="n">
-<span class="gender-tag">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
 N
 </span>
-<span class="cell">
-<span class="end">
+<span class="eu-form">
 <span lang="sr">
 -o
 </span>
 </span>
 </span>
-</span>
-</div>
-<div class="case-cell case-cell-end" data-axis="f-sg">
-<span class="gender-unit" data-gender="f">
-<span class="gender-tag">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
 F
 </span>
-<span class="cell">
-<span class="end">
+<span class="eu-form">
 <span lang="sr">
 -a
 </span>
 </span>
 </span>
-</span>
+</div>
 </div>
 <div class="case-cell case-cell-band" data-band="pl">
 <span class="cell-axis">
 Plural
 </span>
 </div>
-<div class="case-cell case-cell-end" data-axis="m-pl">
-<span class="gender-unit" data-gender="m">
-<span class="gender-tag">
+<div class="case-cell case-cell-end" data-band="pl">
+<div class="gender-run">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
 M
 </span>
-<span class="cell">
-<span class="end">
+<span class="eu-form">
 <span lang="sr">
 -i
 </span>
@@ -140,35 +132,27 @@ M
 </button>
 </span>
 </span>
-</span>
-</div>
-<div class="case-cell case-cell-end" data-axis="n-pl">
-<span class="gender-unit" data-gender="n">
-<span class="gender-tag">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
 N
 </span>
-<span class="cell">
-<span class="end">
+<span class="eu-form">
 <span lang="sr">
 -a
 </span>
 </span>
 </span>
-</span>
-</div>
-<div class="case-cell case-cell-end" data-axis="f-pl">
-<span class="gender-unit" data-gender="f">
-<span class="gender-tag">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
 F
 </span>
-<span class="cell">
-<span class="end">
+<span class="eu-form">
 <span lang="sr">
 -e
 </span>
 </span>
 </span>
-</span>
+</div>
 </div>
 <div class="case-cell case-cell-ex">
 <span class="cell-axis">
@@ -242,101 +226,80 @@ koga? / čega?
 Singular
 </span>
 </div>
-<div class="case-cell case-cell-end" data-axis="m-sg">
-<span class="gender-unit" data-gender="m">
-<span class="gender-tag">
+<div class="case-cell case-cell-end" data-band="sg">
+<div class="gender-run">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
 M
 </span>
-<span class="cell">
-<span class="end">
-<span lang="sr">
--a
+<span class="sr-only">
+,
 </span>
-</span>
-</span>
-</span>
-</div>
-<div class="case-cell case-cell-end" data-axis="n-sg">
-<span class="gender-unit" data-gender="n">
-<span class="gender-tag">
+<span class="eu-gender" data-gender="n">
 N
 </span>
-<span class="cell">
-<span class="end">
+<span class="eu-form">
 <span lang="sr">
 -a
 </span>
 </span>
 </span>
-</span>
-</div>
-<div class="case-cell case-cell-end" data-axis="f-sg">
-<span class="gender-unit" data-gender="f">
-<span class="gender-tag">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
 F
 </span>
-<span class="cell">
-<span class="end">
+<span class="eu-form">
 <span lang="sr">
 -e
 </span>
 </span>
 </span>
-</span>
+</div>
 </div>
 <div class="case-cell case-cell-band" data-band="pl">
 <span class="cell-axis">
 Plural
 </span>
 </div>
-<div class="case-cell case-cell-end" data-axis="m-pl">
-<span class="gender-unit" data-gender="m">
-<span class="gender-tag">
+<div class="case-cell case-cell-end" data-band="pl">
+<div class="gender-run">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
 M
 </span>
-<span class="cell">
-<span class="end">
+<span class="eu-form">
 <span lang="sr">
 -a
 </span>
 </span>
 </span>
-</span>
-</div>
-<div class="case-cell case-cell-end" data-axis="n-pl">
-<span class="gender-unit" data-gender="n">
-<span class="gender-tag">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
 N
 </span>
-<span class="cell">
-<span class="end is-echo">
+<span class="eu-form is-echo">
 <span lang="sr">
 -a
 </span>
 </span>
-<span aria-label="same as" class="cell-shares">
-<span class="cell-share" data-target="NOM" data-tone="nom">
-<span class="share-label">
+<span class="eu-source">
+<span class="sr-only">
+same as
+</span>
 NOM
 </span>
 </span>
-</span>
-</span>
-</span>
-</div>
-<div class="case-cell case-cell-end" data-axis="f-pl">
-<span class="gender-unit" data-gender="f">
-<span class="gender-tag">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
 F
 </span>
-<span class="cell">
-<span class="end">
+<span class="eu-form">
 <span lang="sr">
 -a
 </span>
 </span>
 </span>
-</span>
+</div>
 </div>
 <div class="case-cell case-cell-ex">
 <span class="cell-axis">
@@ -476,41 +439,29 @@ kome? / čemu?
 Singular
 </span>
 </div>
-<div class="case-cell case-cell-end" data-axis="m-sg">
-<span class="gender-unit" data-gender="m">
-<span class="gender-tag">
+<div class="case-cell case-cell-end" data-band="sg">
+<div class="gender-run">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
 M
 </span>
-<span class="cell">
-<span class="end">
-<span lang="sr">
--u
+<span class="sr-only">
+,
 </span>
-</span>
-</span>
-</span>
-</div>
-<div class="case-cell case-cell-end" data-axis="n-sg">
-<span class="gender-unit" data-gender="n">
-<span class="gender-tag">
+<span class="eu-gender" data-gender="n">
 N
 </span>
-<span class="cell">
-<span class="end">
+<span class="eu-form">
 <span lang="sr">
 -u
 </span>
 </span>
 </span>
-</span>
-</div>
-<div class="case-cell case-cell-end" data-axis="f-sg">
-<span class="gender-unit" data-gender="f">
-<span class="gender-tag">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
 F
 </span>
-<span class="cell">
-<span class="end">
+<span class="eu-form">
 <span lang="sr">
 -i
 </span>
@@ -519,54 +470,42 @@ F
 </button>
 </span>
 </span>
-</span>
+</div>
 </div>
 <div class="case-cell case-cell-band" data-band="pl">
 <span class="cell-axis">
 Plural
 </span>
 </div>
-<div class="case-cell case-cell-end" data-axis="m-pl">
-<span class="gender-unit" data-gender="m">
-<span class="gender-tag">
+<div class="case-cell case-cell-end" data-band="pl">
+<div class="gender-run">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
 M
 </span>
-<span class="cell">
-<span class="end">
-<span lang="sr">
--ima
+<span class="sr-only">
+,
 </span>
-</span>
-</span>
-</span>
-</div>
-<div class="case-cell case-cell-end" data-axis="n-pl">
-<span class="gender-unit" data-gender="n">
-<span class="gender-tag">
+<span class="eu-gender" data-gender="n">
 N
 </span>
-<span class="cell">
-<span class="end">
+<span class="eu-form">
 <span lang="sr">
 -ima
 </span>
 </span>
 </span>
-</span>
-</div>
-<div class="case-cell case-cell-end" data-axis="f-pl">
-<span class="gender-unit" data-gender="f">
-<span class="gender-tag">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
 F
 </span>
-<span class="cell">
-<span class="end">
+<span class="eu-form">
 <span lang="sr">
 -ama
 </span>
 </span>
 </span>
-</span>
+</div>
 </div>
 <div class="case-cell case-cell-ex">
 <span class="cell-axis">
@@ -659,28 +598,30 @@ koga? / šta?
 Singular
 </span>
 </div>
-<div class="case-cell case-cell-end" data-axis="m-sg">
-<span class="gender-unit" data-gender="m">
-<span class="gender-tag">
+<div class="case-cell case-cell-end" data-band="sg">
+<div class="gender-run">
+<span class="eu-stack">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
 M
 </span>
-<span class="cell cell-alt cell-alt-stack">
-<span class="end-row">
-<span class="end is-echo">
+<span class="eu-form is-echo">
 <span lang="sr">
 -a
 </span>
 </span>
-<span aria-label="same as" class="cell-shares">
-<span class="cell-share" data-target="GEN" data-tone="gen">
-<span class="share-label">
+<span class="eu-source">
+<span class="sr-only">
+same as
+</span>
 GEN
 </span>
 </span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
+M
 </span>
-</span>
-<span class="end-row">
-<span class="end is-echo">
+<span class="eu-form is-echo">
 <span lang="sr">
 -∅
 </span>
@@ -688,112 +629,92 @@ GEN
 ?
 </button>
 </span>
-<span aria-label="same as" class="cell-shares">
-<span class="cell-share" data-target="NOM" data-tone="nom">
-<span class="share-label">
+<span class="eu-source">
+<span class="sr-only">
+same as
+</span>
 NOM
 </span>
 </span>
 </span>
-</span>
-</span>
-</span>
-</div>
-<div class="case-cell case-cell-end" data-axis="n-sg">
-<span class="gender-unit" data-gender="n">
-<span class="gender-tag">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
 N
 </span>
-<span class="cell">
-<span class="end is-echo">
+<span class="eu-form is-echo">
 <span lang="sr">
 -o
 </span>
 </span>
-<span aria-label="same as" class="cell-shares">
-<span class="cell-share" data-target="NOM" data-tone="nom">
-<span class="share-label">
+<span class="eu-source">
+<span class="sr-only">
+same as
+</span>
 NOM
 </span>
 </span>
-</span>
-</span>
-</span>
-</div>
-<div class="case-cell case-cell-end" data-axis="f-sg">
-<span class="gender-unit" data-gender="f">
-<span class="gender-tag">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
 F
 </span>
-<span class="cell">
-<span class="end">
+<span class="eu-form">
 <span lang="sr">
 -u
 </span>
 </span>
 </span>
-</span>
+</div>
 </div>
 <div class="case-cell case-cell-band" data-band="pl">
 <span class="cell-axis">
 Plural
 </span>
 </div>
-<div class="case-cell case-cell-end" data-axis="m-pl">
-<span class="gender-unit" data-gender="m">
-<span class="gender-tag">
+<div class="case-cell case-cell-end" data-band="pl">
+<div class="gender-run">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
 M
 </span>
-<span class="cell">
-<span class="end">
+<span class="eu-form">
 <span lang="sr">
 -e
 </span>
 </span>
 </span>
-</span>
-</div>
-<div class="case-cell case-cell-end" data-axis="n-pl">
-<span class="gender-unit" data-gender="n">
-<span class="gender-tag">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
 N
 </span>
-<span class="cell">
-<span class="end is-echo">
+<span class="eu-form is-echo">
 <span lang="sr">
 -a
 </span>
 </span>
-<span aria-label="same as" class="cell-shares">
-<span class="cell-share" data-target="NOM" data-tone="nom">
-<span class="share-label">
+<span class="eu-source">
+<span class="sr-only">
+same as
+</span>
 NOM
 </span>
 </span>
-</span>
-</span>
-</span>
-</div>
-<div class="case-cell case-cell-end" data-axis="f-pl">
-<span class="gender-unit" data-gender="f">
-<span class="gender-tag">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
 F
 </span>
-<span class="cell">
-<span class="end is-echo">
+<span class="eu-form is-echo">
 <span lang="sr">
 -e
 </span>
 </span>
-<span aria-label="same as" class="cell-shares">
-<span class="cell-share" data-target="NOM" data-tone="nom">
-<span class="share-label">
+<span class="eu-source">
+<span class="sr-only">
+same as
+</span>
 NOM
 </span>
 </span>
-</span>
-</span>
-</span>
+</div>
 </div>
 <div class="case-cell case-cell-ex">
 <span class="cell-axis">
@@ -935,24 +856,22 @@ O, Marija!
 Singular
 </span>
 </div>
-<div class="case-cell case-cell-end" data-axis="m-sg">
-<span class="gender-unit" data-gender="m">
-<span class="gender-tag">
+<div class="case-cell case-cell-end" data-band="sg">
+<div class="gender-run">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
 M
 </span>
-<span class="cell cell-alt">
-<span class="end">
+<span class="eu-form">
 <span lang="sr">
 -e
 </span>
 <button aria-expanded="false" aria-haspopup="dialog" aria-label="k, g, h turn into č, ž, š when calling out" class="tip-chip cell-note" data-case-idx="4" data-note-id="palatal" data-note-trigger type="button">
 ?
 </button>
-</span>
 <span aria-hidden="true" class="cell-sep">
 /
 </span>
-<span class="end">
 <span lang="sr">
 -u
 </span>
@@ -961,36 +880,27 @@ M
 </button>
 </span>
 </span>
-</span>
-</div>
-<div class="case-cell case-cell-end" data-axis="n-sg">
-<span class="gender-unit" data-gender="n">
-<span class="gender-tag">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
 N
 </span>
-<span class="cell">
-<span class="end is-echo">
+<span class="eu-form is-echo">
 <span lang="sr">
 -o
 </span>
 </span>
-<span aria-label="same as" class="cell-shares">
-<span class="cell-share" data-target="NOM" data-tone="nom">
-<span class="share-label">
+<span class="eu-source">
+<span class="sr-only">
+same as
+</span>
 NOM
 </span>
 </span>
-</span>
-</span>
-</span>
-</div>
-<div class="case-cell case-cell-end" data-axis="f-sg">
-<span class="gender-unit" data-gender="f">
-<span class="gender-tag">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
 F
 </span>
-<span class="cell">
-<span class="end">
+<span class="eu-form">
 <span lang="sr">
 -o
 </span>
@@ -999,75 +909,64 @@ F
 </button>
 </span>
 </span>
-</span>
+</div>
 </div>
 <div class="case-cell case-cell-band" data-band="pl">
 <span class="cell-axis">
 Plural
 </span>
 </div>
-<div class="case-cell case-cell-end" data-axis="m-pl">
-<span class="gender-unit" data-gender="m">
-<span class="gender-tag">
+<div class="case-cell case-cell-end" data-band="pl">
+<div class="gender-run">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
 M
 </span>
-<span class="cell">
-<span class="end is-echo">
+<span class="eu-form is-echo">
 <span lang="sr">
 -i
 </span>
 </span>
-<span aria-label="same as" class="cell-shares">
-<span class="cell-share" data-target="NOM" data-tone="nom">
-<span class="share-label">
+<span class="eu-source">
+<span class="sr-only">
+same as
+</span>
 NOM
 </span>
 </span>
-</span>
-</span>
-</span>
-</div>
-<div class="case-cell case-cell-end" data-axis="n-pl">
-<span class="gender-unit" data-gender="n">
-<span class="gender-tag">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
 N
 </span>
-<span class="cell">
-<span class="end is-echo">
+<span class="eu-form is-echo">
 <span lang="sr">
 -a
 </span>
 </span>
-<span aria-label="same as" class="cell-shares">
-<span class="cell-share" data-target="NOM" data-tone="nom">
-<span class="share-label">
+<span class="eu-source">
+<span class="sr-only">
+same as
+</span>
 NOM
 </span>
 </span>
-</span>
-</span>
-</span>
-</div>
-<div class="case-cell case-cell-end" data-axis="f-pl">
-<span class="gender-unit" data-gender="f">
-<span class="gender-tag">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
 F
 </span>
-<span class="cell">
-<span class="end is-echo">
+<span class="eu-form is-echo">
 <span lang="sr">
 -e
 </span>
 </span>
-<span aria-label="same as" class="cell-shares">
-<span class="cell-share" data-target="NOM" data-tone="nom">
-<span class="share-label">
+<span class="eu-source">
+<span class="sr-only">
+same as
+</span>
 NOM
 </span>
 </span>
-</span>
-</span>
-</span>
+</div>
 </div>
 <div class="case-cell case-cell-ex">
 <span class="cell-axis">
@@ -1145,30 +1044,19 @@ INS
 Singular
 </span>
 </div>
-<div class="case-cell case-cell-end" data-axis="m-sg">
-<span class="gender-unit" data-gender="m">
-<span class="gender-tag">
+<div class="case-cell case-cell-end" data-band="sg">
+<div class="gender-run">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
 M
 </span>
-<span class="cell">
-<span class="end">
-<span lang="sr">
--om
+<span class="sr-only">
+,
 </span>
-<button aria-expanded="false" aria-haspopup="dialog" aria-label="After soft consonants, -om becomes -em" class="tip-chip cell-note" data-case-idx="5" data-note-id="soft-em" data-note-trigger type="button">
-?
-</button>
-</span>
-</span>
-</span>
-</div>
-<div class="case-cell case-cell-end" data-axis="n-sg">
-<span class="gender-unit" data-gender="n">
-<span class="gender-tag">
+<span class="eu-gender" data-gender="n">
 N
 </span>
-<span class="cell">
-<span class="end">
+<span class="eu-form">
 <span lang="sr">
 -om
 </span>
@@ -1177,89 +1065,64 @@ N
 </button>
 </span>
 </span>
-</span>
-</div>
-<div class="case-cell case-cell-end" data-axis="f-sg">
-<span class="gender-unit" data-gender="f">
-<span class="gender-tag">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
 F
 </span>
-<span class="cell">
-<span class="end">
+<span class="eu-form">
 <span lang="sr">
 -om
 </span>
 </span>
 </span>
-</span>
+</div>
 </div>
 <div class="case-cell case-cell-band" data-band="pl">
 <span class="cell-axis">
 Plural
 </span>
 </div>
-<div class="case-cell case-cell-end" data-axis="m-pl">
-<span class="gender-unit" data-gender="m">
-<span class="gender-tag">
+<div class="case-cell case-cell-end" data-band="pl">
+<div class="gender-run">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
 M
 </span>
-<span class="cell">
-<span class="end is-echo">
-<span lang="sr">
--ima
+<span class="sr-only">
+,
 </span>
-</span>
-<span aria-label="same as" class="cell-shares">
-<span class="cell-share" data-target="DAT" data-tone="dat">
-<span class="share-label">
-DAT
-</span>
-</span>
-</span>
-</span>
-</span>
-</div>
-<div class="case-cell case-cell-end" data-axis="n-pl">
-<span class="gender-unit" data-gender="n">
-<span class="gender-tag">
+<span class="eu-gender" data-gender="n">
 N
 </span>
-<span class="cell">
-<span class="end is-echo">
+<span class="eu-form is-echo">
 <span lang="sr">
 -ima
 </span>
 </span>
-<span aria-label="same as" class="cell-shares">
-<span class="cell-share" data-target="DAT" data-tone="dat">
-<span class="share-label">
+<span class="eu-source">
+<span class="sr-only">
+same as
+</span>
 DAT
 </span>
 </span>
-</span>
-</span>
-</span>
-</div>
-<div class="case-cell case-cell-end" data-axis="f-pl">
-<span class="gender-unit" data-gender="f">
-<span class="gender-tag">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
 F
 </span>
-<span class="cell">
-<span class="end is-echo">
+<span class="eu-form is-echo">
 <span lang="sr">
 -ama
 </span>
 </span>
-<span aria-label="same as" class="cell-shares">
-<span class="cell-share" data-target="DAT" data-tone="dat">
-<span class="share-label">
+<span class="eu-source">
+<span class="sr-only">
+same as
+</span>
 DAT
 </span>
 </span>
-</span>
-</span>
-</span>
+</div>
 </div>
 <div class="case-cell case-cell-ex">
 <span class="cell-axis">
@@ -1366,55 +1229,35 @@ o kome? / o čemu?
 Singular
 </span>
 </div>
-<div class="case-cell case-cell-end" data-axis="m-sg">
-<span class="gender-unit" data-gender="m">
-<span class="gender-tag">
+<div class="case-cell case-cell-end" data-band="sg">
+<div class="gender-run">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
 M
 </span>
-<span class="cell">
-<span class="end is-echo">
-<span lang="sr">
--u
+<span class="sr-only">
+,
 </span>
-</span>
-<span aria-label="same as" class="cell-shares">
-<span class="cell-share" data-target="DAT" data-tone="dat">
-<span class="share-label">
-DAT
-</span>
-</span>
-</span>
-</span>
-</span>
-</div>
-<div class="case-cell case-cell-end" data-axis="n-sg">
-<span class="gender-unit" data-gender="n">
-<span class="gender-tag">
+<span class="eu-gender" data-gender="n">
 N
 </span>
-<span class="cell">
-<span class="end is-echo">
+<span class="eu-form is-echo">
 <span lang="sr">
 -u
 </span>
 </span>
-<span aria-label="same as" class="cell-shares">
-<span class="cell-share" data-target="DAT" data-tone="dat">
-<span class="share-label">
+<span class="eu-source">
+<span class="sr-only">
+same as
+</span>
 DAT
 </span>
 </span>
-</span>
-</span>
-</span>
-</div>
-<div class="case-cell case-cell-end" data-axis="f-sg">
-<span class="gender-unit" data-gender="f">
-<span class="gender-tag">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
 F
 </span>
-<span class="cell">
-<span class="end is-echo">
+<span class="eu-form is-echo">
 <span lang="sr">
 -i
 </span>
@@ -1422,83 +1265,61 @@ F
 ?
 </button>
 </span>
-<span aria-label="same as" class="cell-shares">
-<span class="cell-share" data-target="DAT" data-tone="dat">
-<span class="share-label">
+<span class="eu-source">
+<span class="sr-only">
+same as
+</span>
 DAT
 </span>
 </span>
-</span>
-</span>
-</span>
+</div>
 </div>
 <div class="case-cell case-cell-band" data-band="pl">
 <span class="cell-axis">
 Plural
 </span>
 </div>
-<div class="case-cell case-cell-end" data-axis="m-pl">
-<span class="gender-unit" data-gender="m">
-<span class="gender-tag">
+<div class="case-cell case-cell-end" data-band="pl">
+<div class="gender-run">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
 M
 </span>
-<span class="cell">
-<span class="end is-echo">
-<span lang="sr">
--ima
+<span class="sr-only">
+,
 </span>
-</span>
-<span aria-label="same as" class="cell-shares">
-<span class="cell-share" data-target="DAT" data-tone="dat">
-<span class="share-label">
-DAT
-</span>
-</span>
-</span>
-</span>
-</span>
-</div>
-<div class="case-cell case-cell-end" data-axis="n-pl">
-<span class="gender-unit" data-gender="n">
-<span class="gender-tag">
+<span class="eu-gender" data-gender="n">
 N
 </span>
-<span class="cell">
-<span class="end is-echo">
+<span class="eu-form is-echo">
 <span lang="sr">
 -ima
 </span>
 </span>
-<span aria-label="same as" class="cell-shares">
-<span class="cell-share" data-target="DAT" data-tone="dat">
-<span class="share-label">
+<span class="eu-source">
+<span class="sr-only">
+same as
+</span>
 DAT
 </span>
 </span>
-</span>
-</span>
-</span>
-</div>
-<div class="case-cell case-cell-end" data-axis="f-pl">
-<span class="gender-unit" data-gender="f">
-<span class="gender-tag">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
 F
 </span>
-<span class="cell">
-<span class="end is-echo">
+<span class="eu-form is-echo">
 <span lang="sr">
 -ama
 </span>
 </span>
-<span aria-label="same as" class="cell-shares">
-<span class="cell-share" data-target="DAT" data-tone="dat">
-<span class="share-label">
+<span class="eu-source">
+<span class="sr-only">
+same as
+</span>
 DAT
 </span>
 </span>
-</span>
-</span>
-</span>
+</div>
 </div>
 <div class="case-cell case-cell-ex">
 <span class="cell-axis">
