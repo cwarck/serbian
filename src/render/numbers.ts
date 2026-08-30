@@ -112,7 +112,7 @@ export const chart: Chart = {
           <article class="chart-row">
             <span class="chart-cell num-value" data-label="${t('numbers.number')}">${row.n}</span>
             <div class="gender-run">${GENDERS.map((g, idx) =>
-              genderUnit(g, t('cases.gender.' + g), html`<span class="chart-form num-word" lang="sr">${sr(row.forms[idx] ?? '')}</span>`))}</div>
+              genderUnit(g, t('cases.gender.' + g), html`<span lang="sr">${sr(row.forms[idx] ?? '')}</span>`))}</div>
           </article>
         `)}
       </div>

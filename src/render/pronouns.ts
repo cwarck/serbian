@@ -46,14 +46,18 @@ function personalCell(value: string): Raw {
   return raw(`<span class="pron-pair" lang="sr">${forms.join(' ')}</span>`);
 }
 
-/* The gender axis used to be three columns with a head row. It is three chips
+/* The gender axis used to be three columns with a head row. It is three units
    now: the axis moved from the structure into each cell, so a screen reader
    reads "M njihov" off the content instead of off a columnheader. That is why
    these blocks are no longer ARIA tables — a table whose column headers are
-   gone is worse than no table. */
+   gone is worse than no table.
+
+   No row here ever merges: all eighteen three-form rows differ in every
+   gender. The specimen sits in .eu-form, which is full ink — the facet fill
+   is the only coloured thing in the unit. */
 function genderRun(t: T, forms: readonly string[]): Raw {
   return raw(`<div class="gender-run">` + GENDERS.map((g, i) =>
-    genderUnit(g, t('cases.gender.' + g), html`<span class="chart-form" lang="sr">${sr(forms[i] ?? '')}</span>`).value
+    genderUnit(g, t('cases.gender.' + g), html`<span lang="sr">${sr(forms[i] ?? '')}</span>`).value
   ).join('') + `</div>`);
 }
 

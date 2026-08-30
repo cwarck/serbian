@@ -149,7 +149,7 @@ export const chart: Chart = {
             <span class="chart-label">${t('band.' + number)}</span>
             <div class="gender-run">${GENDERS.map(gender =>
               genderUnit(gender, t('cases.gender.' + gender),
-                html`<span class="chart-form verb-form" lang="sr">${sr(pastEnding(gender, number))}</span>`))}</div>
+                html`<span lang="sr">${sr(pastEnding(gender, number))}</span>`))}</div>
             ${number === 'pl' ? html`<p class="gender-band-note">${t('past.mixed')}</p>` : ''}
           </div>
         `)}
