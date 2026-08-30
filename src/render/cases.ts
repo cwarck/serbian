@@ -3,7 +3,7 @@ import { toLatin, toCyrillic } from '../lib/script.ts';
 import type { Lang } from '../lib/negotiate.ts';
 import { translator } from '../i18n/index.ts';
 import { CASES, IDECL, WRINKLES, ENDING_AXES } from '../content/cases.ts';
-import { GENDERS, type CaseRow, type CaseNote, type Ending, type EndingAxis, type Number_ } from '../lib/types.ts';
+import { GENDERS, type CaseRow, type CaseNote, type Ending, type EndingAxis, type Gender, type Number_ } from '../lib/types.ts';
 import { lookupPrep, renderPrepCard } from './prep-shared.ts';
 import { endingUnit, type Chart } from './chart.ts';
 
@@ -165,6 +165,41 @@ function endingFields(entry: Ending | null | undefined, caseIdx: number, axisKey
   return [one(entry.v, branches[0], entry.n ? noteMark(entry.n) : '')];
 }
 
+/* ── The merge ─────────────────────────────────────────────────────────
+   Genders that make the same STATEMENT share one unit. The key is the whole
+   branch signature — value AND note AND provenance — not the ending string,
+   because three groups in CASES agree on a string while disagreeing about
+   what it is: GEN pl -a (N echoes NOM, M and F are novel), VOK sg -o (N
+   echoes NOM, F carries vok-f-name), INS sg -om (M and N carry soft-em, F
+   does not). A single form field cannot hold both states, and merging on the
+   string alone would print the soft-stem -em alternation as true for the
+   feminine, which it is not. The rendered field markup IS that signature.
+
+   Only CONTIGUOUS runs in GENDERS order merge: a unit's gender fields must be
+   adjacent to read as one label. Every merge in the paradigm turns out to be
+   M+N — the masculine/neuter syncretism, the largest regularity there is — so
+   the M-N-F order is load-bearing, not cosmetic. (GEN pl M and F match too,
+   but merging them would cost the seven M+N merges.) */
+interface Group { readonly genders: Gender[]; readonly fields: Field[] }
+
+function signature(fields: readonly Field[]): string {
+  return fields.map(f => `${f.form}\u0000${f.source}\u0000${f.echo}`).join('\u0001');
+}
+
+function mergeBand(c: CaseRow, caseIdx: number, n: Number_, lang: Lang, t: T): Group[] {
+  const groups: Group[] = [];
+  let lastSig: string | null = null;
+  for (const g of GENDERS) {
+    const fields = endingFields(c.endings[g][n], caseIdx, `${g}-${n}`, lang, t);
+    const sig = signature(fields);
+    const last = groups[groups.length - 1];
+    if (last && sig === lastSig) last.genders.push(g);
+    else groups.push({ genders: [g], fields });
+    lastSig = sig;
+  }
+  return groups;
+}
+
 /* The case question ("ko? / šta? — who, what.") leads with a Serbian run in
    <strong>; only that run flips script. */
 function srStrongHTML(markup: string): Raw {
@@ -236,15 +271,17 @@ export const chart: Chart = {
     const caseList = (CASES as readonly CaseRow[]).map((c, i) => {
       /* One band per number, a wrapping run of units under it, M-N-F per
          GENDERS. The `M.SG` axis label is gone: the unit names the gender and
-         the band names the number. */
+         the band names the number. Genders that make the SAME STATEMENT share
+         one unit — see mergeBand(). */
       const endCells = NUMBERS.map(n => html`
       <div class="case-cell case-cell-band" data-band="${n}">
         <span class="cell-axis">${t('band.' + n)}</span>
       </div>
       <div class="case-cell case-cell-end" data-band="${n}">
-        <div class="gender-run">${raw(GENDERS.map(g => {
-          const units = endingFields(c.endings[g][n], i, `${g}-${n}`, lang, t)
-            .map(f => endingUnit([{ g, label: t('cases.gender.' + g) }], raw(f.form), { source: f.source, echo: f.echo }).value);
+        <div class="gender-run">${raw(mergeBand(c, i, n, lang, t).map(group => {
+          const labels = group.genders.map(g => ({ g, label: t('cases.gender.' + g) }));
+          const units = group.fields
+            .map(f => endingUnit(labels, raw(f.form), { source: f.source, echo: f.echo }).value);
           /* A syncretic split stacks two whole units — one per reused case. */
           return units.length > 1 ? `<span class="eu-stack">${units.join('')}</span>` : units.join('');
         }).join(''))}</div>
