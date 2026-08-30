@@ -363,8 +363,12 @@ function validateFacetTokens(css) {
   // routing rule needs asserting: a gender field may only carry a facet, a
   // provenance field only ink. .eu-source is deliberately neutral — tone text
   // on a tint of its own tone is the recipe .case-tag already fails on.
+  /* Escape the WHOLE selector, not just its leading dot: `.eu-gender +
+     .eu-gender` otherwise compiles to a `+` quantifier over a space and
+     silently matches nothing, so a check on it would pass by never running. */
   const ruleBody = selector => {
-    const match = css.match(new RegExp(`^\\${selector}\\s*\\{([^}]*)\\}`, 'm'));
+    const pattern = selector.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const match = css.match(new RegExp(`^${pattern}\\s*\\{([^}]*)\\}`, 'm'));
     return match ? match[1] : null;
   };
   const gender = ruleBody('.eu-gender');
@@ -404,6 +408,14 @@ function validateFacetTokens(css) {
   // the radius instead.
   expect(!/overflow:\s*hidden/.test(unitBlock.replace(/\/\*[\s\S]*?\*\//g, '')), 'facets',
     'the ending unit must not clip — it would crop the note trigger\'s tap target and focus ring');
+
+  // The merged-gender divider must be a BORDER. forced-colors forces
+  // box-shadow to none while flattening both fields onto one system ground,
+  // so an inset-shadow divider leaves the merged units reading `M N` as one
+  // token — the failure the sr-only comma fixes for screen readers.
+  const divider = ruleBody('.eu-gender + .eu-gender');
+  expect(divider !== null && /border-left:/.test(divider) && !/box-shadow:/.test(divider), 'facets',
+    'the divider between two merged gender fields must be a border-left, not a box-shadow (forced-colors drops shadows)');
 
   // 7. The knockout is measured, not stylistic: a facet letter on a 16% facet
   // tint tops out below the house 4.5:1 bar and cannot be re-solved. Keep the

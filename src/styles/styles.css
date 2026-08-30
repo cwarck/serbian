@@ -1305,9 +1305,14 @@ section { position: relative; }
   background: var(--facet, var(--ink-muted));
 }
 /* A merged unit's second gender field: divided by a knockout hairline, never
-   a gap — a gap would read as two units. */
+   a gap — a gap would read as two units.
+
+   A BORDER, not an inset box-shadow. forced-colors forces box-shadow to none
+   while flattening both fields to one system ground, which would leave the
+   seven merged units reading `M N` as a single token — the exact failure the
+   sr-only comma fixes for screen readers. Borders survive HCM. */
 .eu-gender + .eu-gender {
-  box-shadow: inset 1px 0 0 color-mix(in oklab, var(--paper) 55%, transparent);
+  border-left: 1px solid color-mix(in oklab, var(--paper) 55%, transparent);
 }
 /* The specimen is body ink, never case-hued: inside a facet-filled unit a
    case tone would be a second colour on one small object, and two hues on one
