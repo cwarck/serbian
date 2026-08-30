@@ -216,6 +216,7 @@ export const ru: Record<Key, string> = {
   'cases.examples': 'Примеры',
   'cases.preps': 'Предлоги',
   'cases.local.tooltip': 'Сербское название падежа',
+  'cases.sameAs': 'как у',
   'cases.gender.m': 'М',
   'cases.gender.f': 'Ж',
   'cases.gender.n': 'С',

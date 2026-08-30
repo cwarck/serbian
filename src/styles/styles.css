@@ -174,9 +174,6 @@
   --facet-n:        light-dark(#717091, #7A7A9A); /* L .558/.591  C .0508/.0486  h 286/285 */
   --facet-f:        light-dark(#8B6D58, #967661); /* L .559/.591  C .0493/.0507  h  57/ 55 */
 
-  /* One radius drives the whole corner family (square / diagonal / pill). */
-  --facet-r:        11px;
-
   /* Two voices: serif carries the language (Serbian specimens, headings),
      sans carries the apparatus (labels, captions, UI, prose around the data). */
   --ff-display:   'Source Serif 4', Georgia, serif;
@@ -1158,11 +1155,11 @@ section { position: relative; }
   gap: 0;
 }
 
-/* Two bands of three chips — SINGULAR over M N F, then PLURAL. Number is a
-   band heading; gender is the chip. Three tracks at 320px is the tightest
-   thing on the site: the endings are short (-ima is the worst case), and the
-   fallback if it ever fails is two bands of three that WRAP, never a width
-   query. */
+/* Two bands of ending units — SINGULAR, then PLURAL. Number is a band
+   heading; gender is a field inside the unit. Each band is a WRAPPING run,
+   not three fixed tracks: a merged unit covers two genders and has no
+   per-gender column to sit in. The grid still spans three columns for the
+   head, example and preposition rows. */
 .case-row {
   scroll-margin-top: calc(var(--sticky-offset, 120px) + .5rem);
   display: grid;
@@ -1170,9 +1167,9 @@ section { position: relative; }
   grid-template-areas:
     "head  head  head"
     "sg-l  sg-l  sg-l"
-    "m-sg  n-sg  f-sg"
+    "sg    sg    sg"
     "pl-l  pl-l  pl-l"
-    "m-pl  n-pl  f-pl"
+    "pl    pl    pl"
     "ex    ex    ex"
     "preps preps preps";
   gap: .55rem;
@@ -1200,12 +1197,10 @@ section { position: relative; }
 .case-cell-head    { grid-area: head; }
 .case-cell-band[data-band="sg"] { grid-area: sg-l; }
 .case-cell-band[data-band="pl"] { grid-area: pl-l; }
-.case-cell-end[data-axis="m-sg"] { grid-area: m-sg; }
-.case-cell-end[data-axis="m-pl"] { grid-area: m-pl; }
-.case-cell-end[data-axis="f-sg"] { grid-area: f-sg; }
-.case-cell-end[data-axis="f-pl"] { grid-area: f-pl; }
-.case-cell-end[data-axis="n-sg"] { grid-area: n-sg; }
-.case-cell-end[data-axis="n-pl"] { grid-area: n-pl; }
+/* A band is one run now, not three fixed columns: a merged unit spans two
+   genders, so there is no per-gender track for it to sit in. */
+.case-cell-end[data-band="sg"] { grid-area: sg; }
+.case-cell-end[data-band="pl"] { grid-area: pl; }
 .case-cell-ex      { grid-area: ex; }
 .case-cell-preps   { grid-area: preps; }
 .case-row .case-cell-ex { margin-top: .65rem; }
@@ -1237,12 +1232,23 @@ section { position: relative; }
   line-height: 1;
 }
 /* -----------------------------------------------------------
-   Tier 2 — the gender chip.
+   The ending unit — where tier 2 meets tier 1.
 
-   Sits beside .case-tag on purpose: the two tiers should read together in
-   source. A case-tag is tone-coloured text on a tint of its own tone; a
-   gender chip is the inverse — a solid facet fill with the letter KNOCKED
-   OUT of it.
+   ONE segmented object, up to three FIELDS: gender · form · source. Not a
+   chip inside a chip — gender does not contain case, and nesting one badge in
+   another asserts a containment that is not true. Detaching the source
+   instead is worse: it loses which ending it annotates the moment a run wraps.
+
+   align-items: stretch is what puts every field on one vertical rule. The old
+   construction was an inline-flex box in an align-items: baseline row, which
+   produced both shipped bugs at once — an inline-flex box aligns on the
+   baseline of its own first line, already displaced by its own top padding,
+   so the letter, the ending and the source chip each sat on a different line.
+   Equal height BETWEEN units comes from the run (a flex container at the
+   default stretch), never from these paddings.
+
+   A case-tag is tone-coloured text on a tint of its own tone; a gender field
+   is the inverse — a solid facet fill with the letter KNOCKED OUT of it.
 
    The knockout is not a style preference. A facet-coloured letter on a 16%
    facet tint measures 4.03:1 light and 2.92:1 dark against its own cell, and
@@ -1254,55 +1260,78 @@ section { position: relative; }
    pair as fill-on-ground, so the solved lightnesses hold at 4.61-4.63:1 on
    both grounds. Do not "simplify" this back to a tint.
 
-   The border runs at FULL facet, never a tint: it is the carrier for the
-   silhouette, and a 38% tint measures 1.42:1 in light — under even the 3:1
-   non-text floor, let alone what pre-attentive grouping needs.
-
    Colour is the fast path; the letter is the guarantee. Under deuteranopia
    M and F converge, so every facet-coloured mark prints its abbreviation —
-   permanently, via genderUnit() in src/render/chart.ts.
+   permanently, via endingUnit() in src/render/chart.ts.
 
-   The letter and its specimen are ONE bounded object: proximity alone loses
-   the pairing the moment a row wraps.
-
-   Selectors are scoped to .gender-unit, never a bare [data-gender="m"].
+   Selectors are scoped to .eu-gender, never a bare [data-gender="m"].
    data-gender marks the facet AXIS, and the axis is carried by things that
-   are not chips (the glossary knows a gender for every noun) — an unscoped
-   rule would hand them a radius and a --facet they have no use for.
-   var(--facet, var(--ink-muted)) mirrors the house var(--tone, var(--accent))
-   idiom so a unit with no gender degrades to ink rather than dropping its
-   border to an invalid value.
+   are not fields (the glossary knows a gender for every noun) — an unscoped
+   rule would hand them a --facet they have no use for.
    ----------------------------------------------------------- */
-.gender-unit {
+.ending-unit {
   display: inline-flex;
-  align-items: center;
+  align-items: stretch;
   min-width: 0;
   overflow: hidden;
-  border: 1px solid var(--facet, var(--ink-muted));
+  border: 1px solid var(--ink-muted);
+  border-radius: var(--rad);
 }
-.gender-tag {
-  align-self: stretch;
-  display: inline-flex;
-  align-items: center;
+.ending-unit > * { display: inline-flex; align-items: center; line-height: 1; }
+/* Only the form field may shrink. The letter is the guarantee — under
+   deuteranopia it is the ONLY carrier left — so it must never be clipped by
+   the unit's overflow: hidden. */
+.eu-gender, .eu-source { flex: 0 0 auto; }
+.eu-gender {
   font-family: var(--ff-body);
   font-size: var(--fs-label);
   font-weight: 500;
   letter-spacing: var(--track-label);
   text-transform: uppercase;
-  line-height: 1;
-  padding: .26rem .46rem;
+  padding: .3rem .46rem;
   color: var(--paper);
   background: var(--facet, var(--ink-muted));
 }
-/* Inline padding clears the pill's cap: a two-character specimen (`to`, `-a`)
-   must not be clipped by the radius. */
-.gender-unit > .chart-form,
-.gender-unit > .cell,
-.gender-unit > .end { padding: .12rem .5rem .16rem; }
-/* The specimen keeps the house tone idiom, so a chip reads ink-soft where no
-   tone is set. Ending cells are the exception — see .cell .end: the chip is
-   the only coloured thing inside a case cell. */
-.gender-unit > .chart-form { color: var(--tone, var(--ink-soft)); }
+/* A merged unit's second gender field: divided by a knockout hairline, never
+   a gap — a gap would read as two units. */
+.eu-gender + .eu-gender {
+  box-shadow: inset 1px 0 0 color-mix(in oklab, var(--paper) 55%, transparent);
+}
+/* The specimen is body ink, never case-hued: inside a facet-filled unit a
+   case tone would be a second colour on one small object, and two hues on one
+   object read as a gradient rather than as two axes. The case is already
+   stated by the section the unit sits in; the gender fields state the gender. */
+.eu-form {
+  font-family: var(--ff-display);
+  font-style: normal;
+  font-weight: 400;
+  font-size: var(--fs-lead);
+  color: var(--ink);
+  letter-spacing: -.01em;
+  padding: .24rem .55rem;
+  white-space: nowrap;
+  min-width: 0;
+}
+/* An ending that merely repeats a shape an earlier case introduced recedes to
+   ink-faint; the .eu-source field names the case it came from. */
+.eu-form.is-echo { color: var(--ink-faint); }
+/* Deliberately NEUTRAL. Tone text on a 12% tint of its own tone is the recipe
+   .case-tag already fails on — 4/7 tones in light, 6/7 in dark — so writing it
+   here would only create a second site to migrate. The field names its case in
+   text; the hue was redundant. --ink-soft on --paper-mark measures 5.75:1
+   light and 11.69:1 dark. */
+.eu-source {
+  font-family: var(--ff-body);
+  font-size: var(--fs-label);
+  font-weight: 500;
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  padding: .3rem .5rem;
+  color: var(--ink-soft);
+  background: var(--paper-mark);
+  border-left: 1px solid var(--hairline);
+  white-space: nowrap;
+}
 
 /* A wrapping run of chips — what replaced the three gender columns. */
 .gender-run {
@@ -1326,11 +1355,14 @@ section { position: relative; }
   color: var(--ink-muted);
 }
 
-/* The corner family — one token, three silhouettes. Judge a change to it on
-   grouping across a grid, not on legibility of one chip. */
-.gender-unit[data-gender="m"] { --facet: var(--facet-m); border-radius: 0; }
-.gender-unit[data-gender="n"] { --facet: var(--facet-n); border-radius: var(--facet-r) 0 var(--facet-r) 0; }
-.gender-unit[data-gender="f"] { --facet: var(--facet-f); border-radius: 999px; }
+/* The facet map. --facet is assigned NOWHERE else site-wide: delete these and
+   every unit drops to the --ink-muted fallback and turns tier 2 grey
+   silently, because the fallback is a valid value. data-gender belongs on the
+   FIELD, not the unit — one attribute on .ending-unit cannot feed two
+   differently-coloured gender fields in a merged unit. */
+.eu-gender[data-gender="m"] { --facet: var(--facet-m); }
+.eu-gender[data-gender="n"] { --facet: var(--facet-n); }
+.eu-gender[data-gender="f"] { --facet: var(--facet-f); }
 
 .case-head-title h3 {
   font-family: var(--ff-display);
@@ -1366,14 +1398,10 @@ section { position: relative; }
 }
 .case-cell-head .q strong { font-family: var(--ff-display); font-style: normal; font-weight: 500; color: var(--tone, var(--ink-soft)); }
 
-/* The cell is a grid slot, nothing more: the .gender-unit inside carries the
-   frame now, and a framed cell around a framed chip is a box in a box. */
-.case-cell-end {
-  display: flex;
-  align-items: flex-start;
-  min-width: 0;
-}
-/* Band heading over its three chips. */
+/* The cell is a grid slot, nothing more: the units inside carry the frame,
+   and a framed cell around a framed unit is a box in a box. */
+.case-cell-end { min-width: 0; }
+/* Band heading over its run of units. */
 .case-cell-band {
   margin-top: .35rem;
   padding-bottom: .15rem;
@@ -1398,62 +1426,11 @@ section { position: relative; }
 .case-cell-ex .examples,
 .case-cell-preps .prep-list { max-width: 60ch; }
 
-.cell {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: .15rem .55rem;
-}
-/* The ending is body ink, never case-hued: inside a facet-filled chip the
-   case tone was a second colour on one object. The case is already stated by
-   the section it sits in; the chip states the gender. */
-.cell .end {
-  font-family: var(--ff-display);
-  font-style: normal;
-  font-weight: 400;
-  font-size: var(--fs-lead);
-  color: var(--ink);
-  line-height: 1;
-  letter-spacing: -.01em;
-  white-space: nowrap;
-}
-/* Per-cell syncretism pills — replace the old "= NOM" / "= DAT" text with
-   small tone-dotted chips so the cross-case map shows visually. */
-.cell-shares {
-  display: inline-flex;
-  align-items: center;
-  gap: .35rem;
-  margin-left: .15rem;
-  flex-wrap: wrap;
-}
-.cell-share {
-  display: inline-flex;
-  align-items: center;
-  font-family: var(--ff-body);
-  font-size: var(--fs-label);
-  font-weight: 500;
-  letter-spacing: var(--track-label);
-  text-transform: uppercase;
-  color: var(--tone, var(--ink-soft));
-  background: color-mix(in oklab, var(--tone, var(--ink-soft)) 10%, transparent);
-  padding: .32rem .5rem .31rem .54rem;
-  line-height: 1;
-  white-space: nowrap;
-}
-.share-label {
-  letter-spacing: inherit;
-}
 .cell-note {
   margin-left: .22rem;
-  transform: translateY(-.2em);
 }
-/* Alternation cell: -a / -∅¹  — qualifier + identity moved to a note. */
-.cell-alt {
-  display: flex;
-  align-items: baseline;
-  flex-wrap: nowrap;
-  gap: .15rem .35rem;
-}
+/* The connector in an inline alternation (`-e¹ / -u²`). One statement, one
+   form field — never a second flex row inside the unit. */
 .cell-sep {
   font-family: var(--ff-display);
   font-style: normal;
@@ -1463,25 +1440,15 @@ section { position: relative; }
   line-height: 1;
   margin: 0 .15em;
 }
-/* Syncretic split (AKU animacy): each reused ending stacks with its source
-   chip — "-a [GEN]" over "-∅ [NOM]" — narrow enough for the column, the
-   alive/thing criterion deferred to the ? note. */
-.cell-alt-stack {
+/* Syncretic split (AKU animacy): the two endings reuse DIFFERENT cases, so
+   they cannot share one provenance field — they stack as two whole units,
+   the alive/thing criterion deferred to the ? note. */
+.eu-stack {
+  display: inline-flex;
   flex-direction: column;
-  align-items: stretch;
+  align-items: flex-start;
   gap: .4rem;
-}
-.cell-alt-stack .end-row {
-  display: flex;
-  align-items: baseline;
-  gap: .35rem;
-}
-/* ── Syncretism recession ─────────────────────────────────────────────
-   An ending that merely repeats a shape an earlier case already introduced
-   recedes to ink, so only the genuinely-new endings keep their hue — paired
-   with a tone chip (.cell-shares) naming its source case. */
-.end.is-echo {
-  color: var(--ink-faint);
+  min-width: 0;
 }
 
 /* ── Settings menu ─────────────────────────────────────────────────────

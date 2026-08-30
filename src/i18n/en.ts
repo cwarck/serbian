@@ -217,6 +217,9 @@ export const en = {
   'cases.gender.m': 'M',
   'cases.gender.f': 'F',
   'cases.gender.n': 'N',
+  /* The provenance field prints a bare case abbr; the relation it states is
+     only visual, so it is spelled out for a screen reader. */
+  'cases.sameAs': 'same as',
   'cases.number.sg': 'Sg',
   'cases.number.pl': 'Pl',
 
