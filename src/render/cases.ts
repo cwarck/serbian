@@ -86,6 +86,21 @@ function computeSyncretism(): Record<number, Record<string, Branch[]>> {
 
 const SYNC = computeSyncretism();
 
+/* One source of truth for the syncretism key. SYNC is keyed by
+   ENDING_AXES[].key, so the key must be READ from that array, never rebuilt
+   by template: a mismatch fails OPEN — `SYNC[i]?.[key] ?? []` leaves every
+   branch undefined, so every ending renders novel and all sixteen provenance
+   fields plus the whole echo recession vanish with no error. Only the pinned
+   fixtures would catch it, and only if the diff is read. */
+const AXIS_KEY = new Map<string, string>(
+  (ENDING_AXES as readonly EndingAxis[]).map(ax => [`${ax.g}/${ax.n}`, ax.key]));
+
+function axisKey(g: Gender, n: Number_): string {
+  const key = AXIS_KEY.get(`${g}/${n}`);
+  if (!key) throw new Error(`cases: no ENDING_AXES entry for ${g}/${n}`);
+  return key;
+}
+
 /* The provenance field: on an echo cell, name the case the shape came from.
    Deliberately neutral — see .eu-source in styles.css. The relation ("same
    as") is invisible in text, so it is spelled for a screen reader; an
@@ -190,7 +205,7 @@ function mergeBand(c: CaseRow, caseIdx: number, n: Number_, lang: Lang, t: T): G
   const groups: Group[] = [];
   let lastSig: string | null = null;
   for (const g of GENDERS) {
-    const fields = endingFields(c.endings[g][n], caseIdx, `${g}-${n}`, lang, t);
+    const fields = endingFields(c.endings[g][n], caseIdx, axisKey(g, n), lang, t);
     const sig = signature(fields);
     const last = groups[groups.length - 1];
     if (last && sig === lastSig) last.genders.push(g);
