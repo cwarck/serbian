@@ -144,14 +144,11 @@ export const en = {
   /* Numbers page */
   'numbers.cardinals': 'Cardinal numbers',
   'numbers.build': 'Build numbers',
-  'numbers.nouns': 'With nouns',
-  'numbers.agreement': 'Verb agreement',
-  'numbers.verb': 'Verb',
+  'numbers.agreement': 'Agreement',
+  'numbers.nouns': 'Nouns',
+  'numbers.verbs': 'Verbs',
   'numbers.ordinals': 'Ordinals',
-  'numbers.number': 'Number',
-  'numbers.parts': 'Parts',
-  'numbers.pattern': 'Pattern',
-  'numbers.examples': 'Examples',
+  'numbers.ordSoft': 'Soft stem: <i>treći</i> takes <i>-e</i> in the neuter.',
 
   /* Prepositions page */
   'prep.group.place': 'Place / motion',

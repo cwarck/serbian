@@ -168,7 +168,10 @@ export function chartBody(chart: Chart, mounts: Record<string, string>, route: R
       const spec = SIMPLE[chart.name];
       if (!spec) throw new Error(`no layout for chart "${chart.name}"`);
       const [mountId, wrapperClass, ariaLabel, h1Key] = spec;
-      return { main: html`
+      return { beforeMain: chart.name === 'numbers' ? html`
+<nav class="case-strip" aria-label="${t('numbers.cardinals')}">
+  <ol class="case-strip-list number-strip-list">${raw(mounts['numberStripList'] ?? '')}</ol>
+</nav>` : undefined, main: html`
 <section class="chart-section"${ariaLabel ? raw(` aria-label="${ariaLabel}"`) : ''}${chart.name === 'false-friends' ? raw(' data-lang-only="ru"') : ''}>
   <div class="shell">
     ${h1(h1Key)}

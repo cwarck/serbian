@@ -1,12 +1,29 @@
-import { html, raw, sr, type Raw } from '../lib/html.ts';
+import { escape, html, raw, sr, srGrammarHTML, srHTML, type Raw } from '../lib/html.ts';
 import type { Lang } from '../lib/negotiate.ts';
 import { translator } from '../i18n/index.ts';
-import { AGREEMENT, CARDINALS, NUMBER_BUILDS, NOUN_COUNTS, ORDINALS } from '../content/numbers.ts';
-import { GENDERS, type Cardinal } from '../lib/types.ts';
+import { CARDINALS, NUMBER_BUILDS, NOUN_COUNTS, ORDINAL_ENDINGS, ORDINALS } from '../content/numbers.ts';
+import { CASES } from '../content/cases.ts';
+import { GENDERS, type Cardinal, type CaseRow, type CaseTone } from '../lib/types.ts';
 import { genderUnit, type Chart } from './chart.ts';
 
 function srParts(parts: readonly string[]): Raw {
   return raw(parts.map(part => `<span>${sr(part).value}</span>`).join('<span class="chart-sep">+</span>'));
+}
+
+/* The cases chart's own chip, and deliberately not a copy of it: the
+   abbreviation is resolved out of the shared CASES table by tone, so the two
+   charts cannot drift. A tone with no case is a build error, never an empty
+   chip. */
+function caseTag(tone: CaseTone): Raw {
+  const row = (CASES as readonly CaseRow[]).find(c => c.tone === tone);
+  if (!row) throw new Error(`numbers: no case carries tone ${tone}`);
+  return html`<span class="case-tag" data-tone="${tone}">${row.abbr}</span>`;
+}
+
+/* The numbers that land in one noun-count band, read as alternatives. Digits,
+   not Serbian: they never dual-emit. */
+function srTriggers(triggers: readonly string[]): Raw {
+  return raw(triggers.map(escape).join('<span class="chart-sep">\u00b7</span>'));
 }
 
 /* The inflecting tail of `hiljadu / dve hiljade` rides in its own <b>. */
@@ -15,15 +32,35 @@ function numWord(row: Cardinal): Raw {
   return row.end ? raw(`${stem.value}<b class="num-end">${sr(row.end).value}</b>`) : stem;
 }
 
-/* Order of magnitude -> background-shade band. Derived from the value so the
-   data stays a plain list; the separator in "1 000" is stripped before parsing. */
-function numBand(n: string): string {
-  const v = parseInt(String(n).replace(/\D/g, ''), 10);
-  if (v < 10) return 'ones';
-  if (v < 20) return 'teens';
-  if (v < 100) return 'tens';
-  if (v < 1000) return 'hundreds';
-  return 'thousands';
+/* The card shell every block on this sheet now uses — the cases chart's row,
+   with only the areas it fills. */
+function cardHead(title: Raw | string): Raw {
+  return html`
+    <div class="case-cell case-cell-head">
+      <header class="case-head">
+        <div class="case-head-title"><h3>${title}</h3></div>
+      </header>
+    </div>`;
+}
+
+/* The six cards, as a PARTITION: each range runs from its own `min` up to
+   the next one's, and the last is open. A per-range upper bound left gaps
+   (91–99, 101–999, 10 000+), and a cardinal that fell in one rendered on
+   no card at all — silently, because a row that simply never matched is
+   invisible to the build. `label` is the strip's visible text and a prefix
+   of `name`, its accessible one. */
+const CARDINAL_RANGES = [
+  { name: '0–9', label: '0', min: 0 },
+  { name: '10–19', label: '10', min: 10 },
+  { name: '20–29', label: '20', min: 20 },
+  { name: '30–99', label: '30', min: 30 },
+  { name: '100–999', label: '100', min: 100 },
+  { name: '1 000+', label: '1 000', min: 1000 },
+] as const;
+
+/* Digits only — the separator in "1 000" is stripped before parsing. */
+function cardinalValue(n: string): number {
+  return Number(n.replace(/\D/g, ''));
 }
 
 export const chart: Chart = {
@@ -33,92 +70,97 @@ export const chart: Chart = {
     const pick = (v: { en: string; ru: string }) => v[lang] || v.en;
 
     const cardinals = html`
-    <section class="num-cardinals" aria-label="${t('numbers.cardinals')}">
-      <div class="num-grid">
-        ${CARDINALS.map(row => html`
-    <article class="num-cell" data-band="${numBand(row.n)}">
-      <span class="num-value">${row.n}</span>
-      <span class="chart-form num-word" lang="sr">${numWord(row)}</span>
-    </article>
-  `)}
-      </div>
+    <section class="num-cardinals case-list" id="cardinalList" aria-label="${t('numbers.cardinals')}">
+      ${CARDINAL_RANGES.map((group, index) => html`
+        <article class="case-row num-cardinal-card" id="numbers-${group.min}">
+          ${cardHead(group.name)}
+          <div class="case-cell case-cell-ex">
+            <div class="examples">${CARDINALS.filter(row => {
+              const next = CARDINAL_RANGES[index + 1];
+              const value = cardinalValue(row.n);
+              return value >= group.min && (!next || value < next.min);
+            }).map(row => html`
+              <div class="ex">
+                <div class="sr">${row.n} · <span lang="sr">${numWord(row)}</span></div>
+              </div>`)}
+            </div>
+          </div>
+        </article>`)}
     </section>
   `;
 
     const builds = html`
-    <section class="chart-group num-builds" data-tone="num-build">
-      <header class="chart-group-head">
-        <h3>${t('numbers.build')}</h3>
-      </header>
-      <div class="chart-table">
-        ${NUMBER_BUILDS.map(row => html`
-          <article class="chart-row">
-            <span class="chart-cell num-value" data-label="${t('numbers.number')}">${row.n}</span>
-            <span class="chart-cell chart-form num-built" data-label="${t('numbers.parts')}" lang="sr">${srParts(row.parts)}</span>
-          </article>
-        `)}
+    <article class="case-row num-build-card">
+      ${cardHead(t('numbers.build'))}
+      <div class="case-cell case-cell-ex">
+        <div class="examples">
+          ${NUMBER_BUILDS.map(row => html`
+            <div class="ex">
+              <span class="num-value">${row.n}</span>
+              <span class="sr num-built" lang="sr">${srParts(row.parts)}</span>
+            </div>`)}
+        </div>
       </div>
-    </section>
+    </article>
   `;
 
     const nouns = html`
-    <section class="chart-group num-nouns" data-tone="num-noun">
-      <header class="chart-group-head">
-        <h3>${t('numbers.nouns')}</h3>
-      </header>
-      <div class="chart-table">
-        ${NOUN_COUNTS.map(row => html`
-          <article class="chart-row">
-            <span class="chart-cell num-value" data-label="${t('numbers.number')}">${row.n}</span>
-            <span class="chart-cell num-pattern" data-label="${t('numbers.pattern')}">${pick(row.pattern)}</span>
-            <div class="chart-cell num-examples" data-label="${t('numbers.examples')}" lang="sr">
-              ${row.examples.map(example => html`<span class="chart-form">${sr(example)}</span>`)}
-            </div>
-          </article>
-        `)}
-      </div>
-    </section>
-  `;
-
-    const agreement = html`
-    <section class="chart-group num-agreement" data-tone="num-agreement">
-      <header class="chart-group-head">
-        <h3>${t('numbers.agreement')}</h3>
-      </header>
-      <div class="chart-table">
-        ${AGREEMENT.map(row => html`
-          <article class="chart-row">
-            <span class="chart-cell num-value" data-label="${t('numbers.number')}">${row.n}</span>
-            <span class="chart-cell num-pattern" data-label="${t('numbers.verb')}">${pick(row.form)}</span>
-            <div class="chart-cell" data-label="${t('numbers.examples')}">
+    <article class="case-row num-agreement-card">
+      ${cardHead(t('numbers.agreement'))}
+      <section class="num-agreement-nouns">
+        <header class="case-cell-band"><h4 class="cell-axis">${t('numbers.nouns')}</h4></header>
+        <div class="chart-table">
+          ${NOUN_COUNTS.map(row => html`
+            <article class="chart-row num-band">
+              <h5 class="num-band-head">
+                <span class="num-value">${srTriggers(row.triggers)}</span>
+                ${caseTag(row.case)}
+                <span>${t('band.' + row.number)}</span>
+              </h5>
+              <div class="num-count-run">${GENDERS.map((g, idx) =>
+                genderUnit(g, t('cases.gender.' + g), html`<span lang="sr">${sr(row.examples[idx] ?? '')}</span>`))}</div>
+            </article>`)}
+        </div>
+      </section>
+      <section class="num-agreement-verbs">
+        <header class="case-cell-band"><h4 class="cell-axis">${t('numbers.verbs')}</h4></header>
+        <div class="chart-table">
+          ${NOUN_COUNTS.map(row => html`
+            <article class="chart-row num-band">
+              <h5 class="num-band-head"><span class="num-value">${srTriggers(row.triggers)}</span></h5>
               <div class="chart-example">
-                <span class="sr" lang="sr">${sr(row.sr)}</span>
-                <span class="tr">${pick(row.tr)}</span>
+                <span class="sr" lang="sr">${srHTML(row.agreement.sr)}</span>
+                <span class="tr">${pick(row.agreement.tr)}</span>
               </div>
-            </div>
-          </article>
-        `)}
-      </div>
-    </section>
+            </article>`)}
+        </div>
+      </section>
+    </article>
   `;
 
     const ordinals = html`
-    <section class="chart-group num-ordinals" data-tone="num-ordinal">
-      <header class="chart-group-head">
-        <h3>${t('numbers.ordinals')}</h3>
-      </header>
-      <div class="chart-table">
-        ${ORDINALS.map(row => html`
-          <article class="chart-row">
-            <span class="chart-cell num-value" data-label="${t('numbers.number')}">${row.n}</span>
-            <div class="gender-run">${GENDERS.map((g, idx) =>
-              genderUnit(g, t('cases.gender.' + g), html`<span lang="sr">${sr(row.forms[idx] ?? '')}</span>`))}</div>
-          </article>
-        `)}
+    <article class="case-row num-ordinal-card">
+      ${cardHead(t('numbers.ordinals'))}
+      <div class="case-cell num-ord-rule">
+        <div class="gender-run">${GENDERS.map((g, idx) =>
+          genderUnit(g, t('cases.gender.' + g), html`<span lang="sr">${sr(ORDINAL_ENDINGS[idx] ?? '')}</span>`))}</div>
+        <p class="gender-band-note">${srGrammarHTML(t('numbers.ordSoft').value)}</p>
       </div>
-    </section>
+      <div class="case-cell case-cell-ex">
+        <div class="examples">
+          ${ORDINALS.map(row => html`
+            <div class="ex">
+              <div class="sr">${row.n} · <span lang="sr">${sr(row.forms[0])}</span></div>
+            </div>`)}
+        </div>
+      </div>
+    </article>
   `;
 
-    return { numbersChart: [cardinals, builds, nouns, agreement, ordinals].map(x => x.value).join('') };
+    const numberStripList = CARDINAL_RANGES.map(group => html`
+      <li class="case-strip-cell">
+        <a href="#numbers-${group.min}" aria-label="${group.name}"><span class="strip-abbr">${group.label}</span></a>
+      </li>`.value).join('');
+    return { numberStripList, numbersChart: [cardinals, builds, nouns, ordinals].map(x => x.value).join('') };
   },
 };

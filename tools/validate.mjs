@@ -383,7 +383,7 @@ function validateFacetTokens(css) {
   // 5. The unit is where the two tiers physically MEET, so it is where the
   // routing rule needs asserting: a gender field may only carry a facet, a
   // provenance field only ink. .eu-source is deliberately neutral — tone text
-  // on a tint of its own tone is the recipe .case-tag already fails on.
+  // on a tint of its own tone is the recipe .case-tag was migrated off.
   /* Escape the WHOLE selector, not just its leading dot: `.eu-gender +
      .eu-gender` otherwise compiles to a `+` quantifier over a space and
      silently matches nothing, so a check on it would pass by never running. */
@@ -603,7 +603,7 @@ function validateSerbianContentScript() {
   numbers.NUMBER_BUILDS.forEach((row, rowIndex) => eachString(row.parts, value => validateSerbianLatin(value, `numberBuilds[${rowIndex}].parts`)));
   numbers.NOUN_COUNTS.forEach((row, rowIndex) => eachString(row.examples, value => validateSerbianLatin(value, `nounCounts[${rowIndex}].examples`)));
   numbers.ORDINALS.forEach((row, rowIndex) => eachString(row.forms, value => validateSerbianLatin(value, `ordinals[${rowIndex}].forms`)));
-  numbers.AGREEMENT.forEach((row, rowIndex) => validateSerbianLatin(row.sr, `agreement[${rowIndex}].sr`));
+  numbers.NOUN_COUNTS.forEach((row, rowIndex) => validateSerbianLatin(row.agreement.sr, `agreement[${rowIndex}].sr`));
 
   const prep = data['src/content/prepositions.ts'];
   prep.PREP_GROUPS.forEach((group, groupIndex) => {
@@ -725,6 +725,18 @@ function fold(text) {
     .toLowerCase();
 }
 
+/* fold() is applied to the token so the lemma lookup is diacritic- and
+   case-insensitive — but the KEYS have to be folded to match, or every lemma
+   carrying a diacritic (žena, učiti, treći: most of the glossary) misses and
+   the check below reports a real lemma as unknown. Folding can collide
+   (sto / što), so the index keeps the first entry: membership is what the
+   marker check needs, and the gloss-identity lint below tolerates a tie. */
+const glossaryFolded = new Map();
+for (const [lemma, entry] of Object.entries(glossary ?? {})) {
+  const key = fold(lemma);
+  if (!glossaryFolded.has(key)) glossaryFolded.set(key, entry);
+}
+
 function specimenWords(html) {
   return new Set(fold(String(html).replace(/<[^>]+>/g, ' ')).split(/[^\p{L}]+/u).filter(Boolean));
 }
@@ -742,7 +754,7 @@ function checkMarkers(text, scope, specimen, lang) {
 
     if (specimen === null) {
       expect(
-        Object.hasOwn(glossary, fold(token)),
+        glossaryFolded.has(fold(token)),
         'markers',
         `${scope}: <i>${token}</i> is not a glossary lemma — <i> may only wrap Serbian`
       );
@@ -753,7 +765,7 @@ function checkMarkers(text, scope, specimen, lang) {
     expect(attested, 'markers', `${scope}: <i>${token}</i> is not a word of the paired Serbian specimen`);
     if (!attested) continue;
 
-    const entry = glossary[fold(token)];
+    const entry = glossaryFolded.get(fold(token));
     const gloss = lang && entry ? entry.gloss?.[lang] : null;
     expect(
       gloss !== token,
@@ -829,10 +841,14 @@ function validateCases() {
 }
 
 function validateNumbers() {
-  const { AGREEMENT, CARDINALS, NUMBER_BUILDS, NOUN_COUNTS, ORDINALS } = data['src/content/numbers.ts'];
+  const { CARDINALS, NUMBER_BUILDS, NOUN_COUNTS, ORDINAL_ENDINGS, ORDINALS } = data['src/content/numbers.ts'];
   CARDINALS.forEach((row, index) => {
     const scope = `cardinals[${index}]`;
     expectString(row.n, scope, 'n');
+    /* The renderer files a cardinal by the digits in `n`, and a row with none
+       parses as 0 and lands on the first card. The range table is a partition
+       so nothing can fall through it; this is the other half of that. */
+    expect(/\d/.test(row.n), scope, `n must carry a digit, got ${row.n}`);
     expectString(row.sr, scope, 'sr');
     if (Object.hasOwn(row, 'end')) expectString(row.end, scope, 'end');
   });
@@ -845,20 +861,38 @@ function validateNumbers() {
   });
   NOUN_COUNTS.forEach((row, index) => {
     const scope = `nounCounts[${index}]`;
-    expectString(row.n, scope, 'n');
-    expectTranslation(row.pattern, scope, 'pattern');
-    expectArray(row.examples, scope, 'examples');
+    expectArray(row.triggers, scope, 'triggers');
+    /* A cross-chart reference: the band prints the cases chart's chip, so its
+       tone must name a case that chart actually has. */
+    expect(data['src/content/cases.ts'].CASES.some(c => c.tone === row.case), scope,
+      `case must be a tone the cases chart carries, got ${row.case}`);
+    expect(row.number === 'sg' || row.number === 'pl', scope, 'number must be sg or pl');
+    expect(row.examples.length === 3, scope, 'examples must have m/n/f entries');
   });
+  /* The ordinals block PRINTS the pattern once and the M forms below it, so
+     the pattern has to be true of every row it summarises — derived here, not
+     trusted as a comment. The soft-stem exception list is pinned: a second
+     soft ordinal must break the build, because the note names only treći. */
+  const [ordM, ordN, ordF] = ORDINAL_ENDINGS.map(ending => ending.replace(/^-/, ''));
+  const soft = [];
   ORDINALS.forEach((row, index) => {
     const scope = `ordinals[${index}]`;
     expectString(row.n, scope, 'n');
     expect(row.forms.length === 3, scope, 'forms must have m/n/f entries');
+    const [m, n, f] = row.forms;
+    if (!m.endsWith(ordM)) { fail(scope, `m form ${m} must end in ${ordM}`); return; }
+    const stem = m.slice(0, -ordM.length);
+    expect(f === stem + ordF, scope, `f form ${f} must be ${stem}${ordF}`);
+    if (n === stem + ordN) return;
+    expect(n === stem + 'e', scope, `n form ${n} must be ${stem}${ordN} or the soft ${stem}e`);
+    soft.push(m);
   });
-  AGREEMENT.forEach((row, index) => {
+  expect(soft.join(' ') === 'treći', 'numbers',
+    `numbers.ordSoft names treći alone; the soft-stem ordinals are: ${soft.join(' ') || 'none'}`);
+  NOUN_COUNTS.forEach(({ agreement: row }, index) => {
     const scope = `agreement[${index}]`;
-    expectString(row.n, scope, 'n');
-    expectLocalized(row.form, scope, 'form');
     expectString(row.sr, scope, 'sr');
+    expect(/<mark>[^<]+<\/mark>/.test(row.sr), scope, 'sr must mark the verb run it exists to show');
     expectTranslation(row.tr, scope, 'tr');
   });
 }

@@ -246,7 +246,7 @@ function stickyOffset(): void {
 function caseStripVisibility(): void {
   const strip = document.querySelector<HTMLElement>('.case-strip');
   const header = document.querySelector<HTMLElement>('header.nav');
-  const list = document.getElementById('caseList');
+  const list = document.querySelector<HTMLElement>('#caseList, #cardinalList');
   if (!strip || !list) return;
 
   let lastY = window.scrollY;
@@ -287,7 +287,7 @@ function caseStripVisibility(): void {
    sticky header. The anchors are build-time ids now. */
 function scrollSpy(): void {
   const cells = document.querySelectorAll<HTMLElement>('.case-strip-cell');
-  const rows = document.querySelectorAll<HTMLElement>('#caseList .case-row[id]');
+  const rows = document.querySelectorAll<HTMLElement>('#caseList .case-row[id], #cardinalList .case-row[id]');
   if (!cells.length || !rows.length) return;
 
   const update = () => {
@@ -349,7 +349,7 @@ function init(): void {
     });
   }
 
-  if (document.getElementById('caseList')) {
+  if (document.querySelector<HTMLElement>('#caseList, #cardinalList')) {
     stickyOffset();
     window.addEventListener('resize', stickyOffset);
     window.addEventListener('load', stickyOffset);

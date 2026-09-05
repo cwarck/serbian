@@ -120,22 +120,26 @@ export interface NumberBuild {
 }
 
 export interface NounCount {
-  readonly n: string;
-  readonly pattern: Localized;
-  readonly examples: readonly string[];
-}
-
-export interface NumberAgreement {
-  readonly n: string;
-  /* What the verb does, not what the noun does. */
-  readonly form: Localized;
-  readonly sr: string;
-  readonly tr: Localized;
+  /* Every number that lands in this band — the simple trigger and the
+     compounds that end in it. The compound rule IS this list. */
+  readonly triggers: readonly string[];
+  /* What the counted NOUN does, as a reference into the case axis rather than
+     prose: the chart prints the cases chart's own chip. The numeral's own
+     gender inflection is left to the examples, which show it. */
+  readonly case: CaseTone;
+  readonly number: Number_;
+  /* M, N, F — the site-wide gender column order. */
+  readonly examples: readonly [string, string, string];
+  /* The same count band in a sentence; mark only the agreeing verb. */
+  readonly agreement: { readonly sr: string; readonly tr: Localized };
 }
 
 export interface Ordinal {
-  /* M, N, F — the site-wide gender column order. */
   readonly n: string;
+  /* M, N, F — the site-wide gender column order. Only M is printed: the other
+     two are the ORDINAL_ENDINGS pattern applied to the same stem, and
+     validate.mjs derives that pattern from this tuple so the printed rule
+     cannot drift from the data it claims to summarise. */
   readonly forms: readonly [string, string, string];
 }
 

@@ -632,7 +632,7 @@ section { position: relative; }
 .chart-row > * {
   min-width: 0;
 }
-.chart-row h4 {
+.chart-row :is(h4, h5) {
   margin: 0;
   display: flex;
   align-items: center;
@@ -1107,6 +1107,8 @@ section { position: relative; }
   gap: 0;
 }
 
+.number-strip-list { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+
 .case-strip-cell {
   position: relative;
   border-right: 1px solid var(--hairline-soft);
@@ -1221,8 +1223,18 @@ section { position: relative; }
 }
 .case-head-title h3 { flex: 1 1 auto; min-width: 0; }
 .case-head-title .case-tag { flex: 0 0 auto; }
-/* Case badge chip — the abbr in a tone-tinted pill. Shared by the detailed
-   head and the basic word-grid row labels. */
+/* Case badge chip — the abbr KNOCKED OUT of a solid tone fill, the same
+   recipe .eu-gender uses one tier down. It used to be tone text on a 10% tint
+   of its own tone, which is the construction the ending-unit block below
+   rejects on measurement: GEN read 3.75:1 on the dark ground, under this
+   project's own 4.5:1 bar, and most tones failed on one ground or the other.
+   Inverting costs nothing — knockout-on-fill is the same colour pair as
+   fill-on-ground, so every tone inherits the ≥4.5:1 the --tone-* tokens are
+   hand-fit for: worst case 4.59:1 (VOK dark), NOM 7.14:1 light / 15:1 dark.
+   Do not "simplify" this back to a tint.
+
+   Used by the cases chart head and by the noun-count bands on the numbers
+   chart, which reference the case axis rather than restating it in prose. */
 .case-tag {
   display: inline-block;
   font-family: var(--ff-body);
@@ -1230,8 +1242,9 @@ section { position: relative; }
   font-weight: 500;
   letter-spacing: var(--track-label);
   text-transform: uppercase;
-  color: var(--tone, var(--ink-soft));
-  background: color-mix(in oklab, var(--tone, var(--ink-soft)) 10%, transparent);
+  color: var(--paper);
+  background: var(--tone, var(--ink-soft));
+  border-radius: var(--rad);
   padding: .35rem .75rem;
   line-height: 1;
 }
@@ -1251,8 +1264,9 @@ section { position: relative; }
    Equal height BETWEEN units comes from the run (a flex container at the
    default stretch), never from these paddings.
 
-   A case-tag is tone-coloured text on a tint of its own tone; a gender field
-   is the inverse — a solid facet fill with the letter KNOCKED OUT of it.
+   A gender field is a solid facet fill with the letter KNOCKED OUT of it —
+   the same recipe .case-tag now uses one tier up, for the same measured
+   reason.
 
    The knockout is not a style preference. A facet-coloured letter on a 16%
    facet tint measures 4.03:1 light and 2.92:1 dark against its own cell, and
@@ -1337,8 +1351,8 @@ section { position: relative; }
    ink-faint; the .eu-source field names the case it came from. */
 .eu-form.is-echo { color: var(--ink-faint); }
 /* Deliberately NEUTRAL. Tone text on a 12% tint of its own tone is the recipe
-   .case-tag already fails on — 4/7 tones in light, 6/7 in dark — so writing it
-   here would only create a second site to migrate. The field names its case in
+   .case-tag was migrated off — it failed 4/7 tones in light and 6/7 in dark —
+   so writing it here would only reintroduce it. The field names its case in
    text; the hue was redundant. --ink-soft on --paper-mark measures 5.75:1
    light and 11.69:1 dark. */
 .eu-source {
@@ -2094,51 +2108,29 @@ section { position: relative; }
    Numbers
    ----------------------------------------------------------- */
 
-/* Cardinal groups: one fluid rule at every width. auto-fit grows the grid
-   from two columns on a phone to a full single row on a wide screen — column
-   count tracks the viewport with no per-breakpoint steps and no side-by-side
-   panel split. Rows separate with a hairline, columns with a gap; no vertical
-   rules to appear and vanish across breakpoints. */
-/* Cardinals — one continuous table on the alphabet-chart playbook: a single
-   auto-fit grid framed like .alph-grid (container top+left borders + pseudo
-   edges close the right and bottom, so a partial last row can't open the
-   frame), with cells carrying the inner dividers. Columns follow the viewport
-   from two on a phone up to a full row on a wide screen. */
-.num-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
-  border-top: 1px solid var(--hairline);
-  border-left: 1px solid var(--hairline);
-  position: relative;
+/* Every block on this sheet is one card: the cases chart's row with only the
+   areas it fills. Cardinals and builds are head + examples; ordinals slot the
+   ending rule between the two. Numeric values keep tabular figures. */
+.num-cardinal-card,
+.num-build-card {
+  grid-template-areas: "head head head" "ex ex ex";
 }
-.num-grid::before,
-.num-grid::after {
-  content: "";
-  position: absolute;
-  background: var(--hairline);
-  pointer-events: none;
+.num-ordinal-card {
+  grid-template-areas: "head head head" "rule rule rule" "ex ex ex";
 }
-.num-grid::before { left: 0; right: 0; bottom: 0; height: 1px; }
-.num-grid::after { top: 0; bottom: 0; right: 0; width: 1px; }
-
-.num-cell {
-  display: grid;
-  gap: .25rem;
-  align-content: start;
-  padding: .85rem .6rem;
-  border-right: 1px solid var(--hairline);
-  border-bottom: 1px solid var(--hairline);
+.num-cardinal-card .sr,
+.num-ordinal-card .sr {
+  font-feature-settings: "tnum";
 }
-/* Each order of magnitude gets its own neutral background shade, deepening
-   with magnitude, standing in for the old per-range headers. Shades are
-   ink-tones, not hues — magnitude isn't a grammatical category. Every step is
-   ≥ AA for the number text (ink stays ≥6.4:1) and every step skips fx-150 /
-   fx-850, the hairline colour, so the cell dividers never vanish into a band.
-   Ones (0–9) keep plain paper: the base is unmarked. */
-.num-cell[data-band="teens"]     { background: light-dark(var(--fx-50),  var(--fx-950)); }
-.num-cell[data-band="tens"]      { background: light-dark(var(--fx-100), var(--fx-900)); }
-.num-cell[data-band="hundreds"]  { background: light-dark(var(--fx-200), var(--fx-800)); }
-.num-cell[data-band="thousands"] { background: light-dark(var(--fx-300), var(--fx-700)); }
+/* A card opens with its own 3px bar, so its closing hairline is only ever a
+   divider when the next bar lands on it. Inside the cardinal list it does —
+   the list's gap is 0. Between the top-level cards `.chart-layout` holds a
+   1.6rem gap, and the hairline draws a second, weaker rule floating above the
+   real one. */
+.num-layout > .case-row,
+.num-cardinals .case-row:last-child {
+  border-bottom: 0;
+}
 
 /* Notable endings — the trailing -a of dvesta/trista, the count-driven
    -u / -e of hiljadu / hiljade. The letters stay ink (AA on every band); the
@@ -2152,14 +2144,6 @@ section { position: relative; }
   text-underline-offset: .17em;
   text-decoration-skip-ink: none;
 }
-/* Keep number words whole: the fixed-min track already blocks page-level
-   overflow, so the .chart-form `anywhere` net isn't needed here — and it
-   would split "sedamnaest" mid-word. Two-word thousands still wrap at the
-   space. */
-.num-word {
-  overflow-wrap: normal;
-}
-
 /* The digit is the index key, not apparatus: you read the number first,
    then the Serbian form. Sits on the title tier, one step above the
    specimen (--fs-lead), in full ink. */
@@ -2172,6 +2156,24 @@ section { position: relative; }
   font-feature-settings: "tnum";
 }
 
+/* Build numbers — one example row per compound. The digit is the row key and
+   the parts run beside it: a digit next to Serbian words needs no caption.
+
+   The key track lives on the LIST and the rows adopt it with `subgrid`; a
+   per-row `max-content` would size each row's digit independently and start
+   every chain at a different x. One shared column is what makes the repeated
+   first part (sto + jedan / sto + dvadeset + pet) line up as a column, and the
+   widest number sets the width without a magic rem. */
+.num-build-card .examples {
+  grid-template-columns: max-content minmax(0, 1fr);
+}
+.num-build-card .ex {
+  grid-column: 1 / -1;
+  grid-template-columns: subgrid;
+  align-items: baseline;
+  gap: .7rem;
+}
+
 .num-built {
   display: flex;
   flex-wrap: wrap;
@@ -2179,15 +2181,69 @@ section { position: relative; }
   gap: .35rem;
 }
 
-.num-pattern {
-  font-size: var(--fs-body);
-  line-height: var(--lh-prose);
-  color: var(--ink-muted);
+/* The banded row — shared by the noun-count and verb-agreement blocks. One
+   head vocabulary for the whole chart: a serif key on the title tier, then
+   whatever names the band — a case chip, a number label — on one baseline. */
+.num-band {
+  gap: .55rem;
+}
+.num-band-head {
+  align-items: baseline;
+}
+/* The head is a .chart-row h4, so the ALL-CAPS label treatment inherits into
+   the digits — the tracking has to come back off. The separator carries its
+   own space: .num-value is a text run, not the flex box .num-built is. */
+.num-band-head .num-value {
+  letter-spacing: 0;
+}
+.num-band-head .chart-sep {
+  margin-inline: .3rem;
 }
 
-.num-examples {
+/* With nouns — the examples stack rather than run: these are phrases, not
+   endings, and three of them side by side overflow 320px and wrap 2+1, which
+   reads as an accident. One max-content column stretches every unit in a band
+   to the width of the band's widest, so the run is a block, not a staircase. */
+.num-count-run {
   display: grid;
-  gap: .35rem;
+  grid-template-columns: max-content;
+  gap: .4rem;
+}
+/* M is wider than F, so shrink-wrapped letter fields start the three
+   specimens at three different x. Here the letter is a fixed-width field. */
+.num-count-run .eu-gender {
+  min-width: 1.75rem;
+  justify-content: center;
+}
+
+/* Verb agreement — the marked run isolates radi/rade. Marker ink on an
+   underline, the recipe .num-end already uses: the letters stay ink, so
+   contrast never depends on the orange. Not the .ex recipe (mark takes the
+   section tone) — this section has no case, so its tone falls to --ink-soft
+   and a "highlight" would come out dimmer than the words around it.
+
+   SCOPED to this section on purpose. `.chart-example` is shared with aspect,
+   prepositions, pitch-stress, false-friends and verbs; unscoped, the first
+   <mark> added to any of those would silently take a recipe argued from a
+   premise ("this section has no case") that holds only here. */
+.num-agreement-verbs .chart-example .sr mark {
+  background: transparent;
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: .11em;
+  text-underline-offset: .17em;
+  text-decoration-skip-ink: none;
+}
+
+/* Ordinals — the pattern sits ABOVE the word list: the list prints one gender
+   of three, and the rule is what tells a reader that. Its own band, not a
+   headed one: three ending units and a caveat need no label above them. */
+.num-ord-rule {
+  grid-area: rule;
+  display: grid;
+  gap: .5rem;
+  margin-top: .65rem;
 }
 
 /* -----------------------------------------------------------
@@ -2652,3 +2708,11 @@ section { position: relative; }
   position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
   overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
 }
+
+/* Agreement uses the case card's heading and band labels. */
+.num-agreement-card {
+  grid-template-areas: "head head head" "nouns nouns nouns" "verbs verbs verbs";
+}
+.num-agreement-nouns { grid-area: nouns; }
+.num-agreement-verbs { grid-area: verbs; }
+.num-agreement-card .chart-row:last-child { border-bottom: 0; }

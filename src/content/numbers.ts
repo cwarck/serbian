@@ -1,13 +1,7 @@
-import type { Cardinal, NounCount, NumberAgreement, NumberBuild, Ordinal } from '../lib/types.ts';
+import type { Cardinal, NounCount, NumberBuild, Ordinal } from '../lib/types.ts';
 
-/* One continuous cardinal table (alphabet-chart playbook). Each order of
-   magnitude (ones, teens, tens, hundreds, thousands) gets its own neutral
-   background shade, derived from the value in the renderer — deepening with
-   magnitude, in place of range headers. `end` splits off a notable ending
-   marked with a brand-orange underline: the trailing "-a" of dvesta/trista
-   (vs the regular "-o" of četiristo, petsto…) and the count-driven case
-   endings of hiljadu / hiljade (hiljada, the 5+ base form, stays unmarked so
-   the changed endings stand out against it). */
+/* Cardinal examples, grouped into six range cards by the renderer. `end`
+   marks the notable endings of dvesta/trista and hiljadu/hiljade. */
 export const CARDINALS = [
   { n: '0', sr: 'nula' },
   { n: '1', sr: 'jedan' },
@@ -32,6 +26,15 @@ export const CARDINALS = [
   { n: '19', sr: 'devetnaest' },
 
   { n: '20', sr: 'dvadeset' },
+  { n: '21', sr: 'dvadeset jedan' },
+  { n: '22', sr: 'dvadeset dva' },
+  { n: '23', sr: 'dvadeset tri' },
+  { n: '24', sr: 'dvadeset četiri' },
+  { n: '25', sr: 'dvadeset pet' },
+  { n: '26', sr: 'dvadeset šest' },
+  { n: '27', sr: 'dvadeset sedam' },
+  { n: '28', sr: 'dvadeset osam' },
+  { n: '29', sr: 'dvadeset devet' },
   { n: '30', sr: 'trideset' },
   { n: '40', sr: 'četrdeset' },
   { n: '50', sr: 'pedeset' },
@@ -61,76 +64,75 @@ export const CARDINALS = [
   { n: '9 000', sr: 'devet hiljada' },
 ] satisfies readonly Cardinal[];
 
+/* Only the builds the cardinal cards do NOT already spell out. The 20-29 card
+   prints `dvadeset jedan` in full, so a two-digit row here restates a card two
+   screens up; hundreds and thousands are the first place the chain is longer
+   than anything listed. */
 export const NUMBER_BUILDS = [
-  { n: '21', parts: ['dvadeset', 'jedan'], en: 'twenty one', ru: 'двадцать один' },
-  { n: '34', parts: ['trideset', 'četiri'], en: 'thirty four', ru: 'тридцать четыре' },
-  { n: '58', parts: ['pedeset', 'osam'], en: 'fifty eight', ru: 'пятьдесят восемь' },
   { n: '101', parts: ['sto', 'jedan'], en: 'one hundred one', ru: 'сто один' },
   { n: '125', parts: ['sto', 'dvadeset', 'pet'], en: 'one hundred twenty five', ru: 'сто двадцать пять' },
   { n: '2 345', parts: ['dve', 'hiljade', 'trista', 'četrdeset', 'pet'], en: 'two thousand three hundred forty five', ru: 'две тысячи триста сорок пять' },
 ] satisfies readonly NumberBuild[];
 
+/* Three bands, one case axis — not seven rows on three different axes.
+
+   The column this chart used to call "pattern" named three different things at
+   once: what the NUMERAL does (1 "agrees with noun", 2 "gender split"), what
+   the NOUN does (3-4 "counted form", 5+ "genitive plural"), and a pointer to
+   another row (21/22-24/25+ "last word: N"). One axis now — the case and
+   number the counted noun takes — and the compound triggers collapse into the
+   band they always matched, so 21 sits beside 1 instead of pointing at it.
+   That also turns a two-hop lookup into one.
+
+   Naming the case rather than a form makes the whole chart one sentence: a
+   number puts its noun in the GENITIVE, singular for 2-4 and plural for 5+.
+   The 2-4 band was labelled "counted form" — the paucal, historically the
+   dual. It is spelled exactly like the genitive singular for every noun on
+   this sheet, and GEN sg is what a learner needs to look up; the distinction
+   is a diachronic one and costs the band its place in the case axis.
+
+   The numeral's own gender inflection needs no prose: jedan/jedno/jedna and
+   dva/dve are visible in the examples. Which is why the 2-4 band is
+   exemplified with dva and not tri — two is where the numeral splits. Inside a
+   band the numeral is held constant so the noun ending is the only variable.
+
+   The agreement sentences drop the noun the bands use for a verb that
+   inflects in BOTH glosses. radi/rade mirrors работает/работают/работает
+   down to the 5+ singular; the earlier ima/imaju had no natural Russian
+   counterpart — «есть» is invariant, so all three glosses read alike and
+   the one thing the section exists to show was visible in the Serbian
+   only. English still cannot carry row 3 (five restaurants ARE open). */
 export const NOUN_COUNTS = [
   {
-    n: '1',
-    pattern: { en: 'agrees with noun', ru: 'согласуется с родом' },
-    examples: ['jedan grad', 'jedna žena', 'jedno selo']
+    triggers: ['1', '21', '101'],
+    case: 'nom', number: 'sg',
+    examples: ['jedan grad', 'jedno selo', 'jedna žena'],
+    agreement: { sr: 'Jedan restoran <mark>radi</mark>.', tr: { en: 'One restaurant is open.', ru: 'Один ресторан работает.' } },
   },
   {
-    n: '2',
-    pattern: { en: 'gender split', ru: 'форма по роду' },
-    examples: ['dva grada', 'dve žene', 'dva sela']
+    triggers: ['2-4', '22-24'],
+    case: 'gen', number: 'sg',
+    examples: ['dva grada', 'dva sela', 'dve žene'],
+    agreement: { sr: 'Dva restorana <mark>rade</mark>.', tr: { en: 'Two restaurants are open.', ru: 'Два ресторана работают.' } },
   },
   {
-    n: '3-4',
-    pattern: { en: 'counted form', ru: 'счётная форма' },
-    examples: ['tri grada', 'četiri žene', 'tri sela']
+    triggers: ['5+', '25+'],
+    case: 'gen', number: 'pl',
+    examples: ['pet gradova', 'pet sela', 'pet žena'],
+    agreement: { sr: 'Pet restorana <mark>radi</mark>.', tr: { en: 'Five restaurants are open.', ru: 'Пять ресторанов работает.' } },
   },
-  {
-    n: '5+',
-    pattern: { en: 'genitive plural', ru: 'родительный мн.' },
-    examples: ['pet gradova', 'šest žena', 'sedam sela']
-  },
-  {
-    n: '21',
-    pattern: { en: 'last word: 1', ru: 'последнее слово: 1' },
-    examples: ['dvadeset jedan grad', 'trideset jedna žena', 'četrdeset jedno selo']
-  },
-  {
-    n: '22-24',
-    pattern: { en: 'last word: 2-4', ru: 'последнее слово: 2-4' },
-    examples: ['dvadeset dva grada', 'dvadeset tri žene', 'dvadeset četiri sela']
-  },
-  {
-    n: '25+',
-    pattern: { en: 'last word: 5+', ru: 'последнее слово: 5+' },
-    examples: ['dvadeset pet gradova', 'trideset šest žena', 'četrdeset sedam sela']
-  }
 ] satisfies readonly NounCount[];
 
-/* The single most common numeral error: what the VERB does. 2-4 take a plural
-   verb, 5+ take a third-person singular — and the adjective follows the verb,
-   not the noun. Nothing else on this chart shows a numeral inside a sentence. */
-export const AGREEMENT = [
-  {
-    n: '1',
-    form: { en: 'singular', ru: 'ед. число' },
-    sr: 'Jedan grad je velik.',
-    tr: { en: 'One city is big.', ru: 'Один город большой.' }
-  },
-  {
-    n: '2-4',
-    form: { en: 'plural', ru: 'мн. число' },
-    sr: 'Dva grada su velika.',
-    tr: { en: 'Two cities are big.', ru: 'Два города большие.' }
-  },
-  {
-    n: '5+',
-    form: { en: 'singular', ru: 'ед. число' },
-    sr: 'Pet gradova je veliko.',
-    tr: { en: 'Five cities are big.', ru: 'Пять городов большие.' }
-  },
-] satisfies readonly NumberAgreement[];
+/* An ordinal is an adjective: one stem, three endings, every row. Printing 36
+   cells to say that fills a matrix instead of showing a rule — so the pattern
+   is stated once, as a run of ending units, and the list below carries the
+   concrete words in their citation (M) form.
+
+   The one thing the pattern cannot carry: treći is a soft stem, so its neuter
+   takes -e. validate.mjs derives the pattern from ORDINALS and pins the
+   exception list, so a second soft ordinal is a build error rather than a
+   quietly wrong rule. */
+export const ORDINAL_ENDINGS = ['-i', '-o', '-a'] satisfies readonly string[];
 
 export const ORDINALS = [
   { n: '1.', forms: ['prvi', 'prvo', 'prva'] },

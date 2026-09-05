@@ -1,454 +1,614 @@
-### mount numbersChart
-<section aria-label="Cardinal numbers" class="num-cardinals">
-<div class="num-grid">
-<article class="num-cell" data-band="ones">
-<span class="num-value">
+### mount numberStripList
+<li class="case-strip-cell">
+<a aria-label="0–9" href="#numbers-0">
+<span class="strip-abbr">
 0
 </span>
-<span class="chart-form num-word" lang="sr">
-нула
-</span>
-</article>
-<article class="num-cell" data-band="ones">
-<span class="num-value">
-1
-</span>
-<span class="chart-form num-word" lang="sr">
-један
-</span>
-</article>
-<article class="num-cell" data-band="ones">
-<span class="num-value">
-2
-</span>
-<span class="chart-form num-word" lang="sr">
-два
-</span>
-</article>
-<article class="num-cell" data-band="ones">
-<span class="num-value">
-3
-</span>
-<span class="chart-form num-word" lang="sr">
-три
-</span>
-</article>
-<article class="num-cell" data-band="ones">
-<span class="num-value">
-4
-</span>
-<span class="chart-form num-word" lang="sr">
-четири
-</span>
-</article>
-<article class="num-cell" data-band="ones">
-<span class="num-value">
-5
-</span>
-<span class="chart-form num-word" lang="sr">
-пет
-</span>
-</article>
-<article class="num-cell" data-band="ones">
-<span class="num-value">
-6
-</span>
-<span class="chart-form num-word" lang="sr">
-шест
-</span>
-</article>
-<article class="num-cell" data-band="ones">
-<span class="num-value">
-7
-</span>
-<span class="chart-form num-word" lang="sr">
-седам
-</span>
-</article>
-<article class="num-cell" data-band="ones">
-<span class="num-value">
-8
-</span>
-<span class="chart-form num-word" lang="sr">
-осам
-</span>
-</article>
-<article class="num-cell" data-band="ones">
-<span class="num-value">
-9
-</span>
-<span class="chart-form num-word" lang="sr">
-девет
-</span>
-</article>
-<article class="num-cell" data-band="teens">
-<span class="num-value">
+</a>
+</li>
+<li class="case-strip-cell">
+<a aria-label="10–19" href="#numbers-10">
+<span class="strip-abbr">
 10
 </span>
-<span class="chart-form num-word" lang="sr">
-десет
-</span>
-</article>
-<article class="num-cell" data-band="teens">
-<span class="num-value">
-11
-</span>
-<span class="chart-form num-word" lang="sr">
-једанаест
-</span>
-</article>
-<article class="num-cell" data-band="teens">
-<span class="num-value">
-12
-</span>
-<span class="chart-form num-word" lang="sr">
-дванаест
-</span>
-</article>
-<article class="num-cell" data-band="teens">
-<span class="num-value">
-13
-</span>
-<span class="chart-form num-word" lang="sr">
-тринаест
-</span>
-</article>
-<article class="num-cell" data-band="teens">
-<span class="num-value">
-14
-</span>
-<span class="chart-form num-word" lang="sr">
-четрнаест
-</span>
-</article>
-<article class="num-cell" data-band="teens">
-<span class="num-value">
-15
-</span>
-<span class="chart-form num-word" lang="sr">
-петнаест
-</span>
-</article>
-<article class="num-cell" data-band="teens">
-<span class="num-value">
-16
-</span>
-<span class="chart-form num-word" lang="sr">
-шеснаест
-</span>
-</article>
-<article class="num-cell" data-band="teens">
-<span class="num-value">
-17
-</span>
-<span class="chart-form num-word" lang="sr">
-седамнаест
-</span>
-</article>
-<article class="num-cell" data-band="teens">
-<span class="num-value">
-18
-</span>
-<span class="chart-form num-word" lang="sr">
-осамнаест
-</span>
-</article>
-<article class="num-cell" data-band="teens">
-<span class="num-value">
-19
-</span>
-<span class="chart-form num-word" lang="sr">
-деветнаест
-</span>
-</article>
-<article class="num-cell" data-band="tens">
-<span class="num-value">
+</a>
+</li>
+<li class="case-strip-cell">
+<a aria-label="20–29" href="#numbers-20">
+<span class="strip-abbr">
 20
 </span>
-<span class="chart-form num-word" lang="sr">
-двадесет
-</span>
-</article>
-<article class="num-cell" data-band="tens">
-<span class="num-value">
+</a>
+</li>
+<li class="case-strip-cell">
+<a aria-label="30–99" href="#numbers-30">
+<span class="strip-abbr">
 30
 </span>
-<span class="chart-form num-word" lang="sr">
-тридесет
-</span>
-</article>
-<article class="num-cell" data-band="tens">
-<span class="num-value">
-40
-</span>
-<span class="chart-form num-word" lang="sr">
-четрдесет
-</span>
-</article>
-<article class="num-cell" data-band="tens">
-<span class="num-value">
-50
-</span>
-<span class="chart-form num-word" lang="sr">
-педесет
-</span>
-</article>
-<article class="num-cell" data-band="tens">
-<span class="num-value">
-60
-</span>
-<span class="chart-form num-word" lang="sr">
-шездесет
-</span>
-</article>
-<article class="num-cell" data-band="tens">
-<span class="num-value">
-70
-</span>
-<span class="chart-form num-word" lang="sr">
-седамдесет
-</span>
-</article>
-<article class="num-cell" data-band="tens">
-<span class="num-value">
-80
-</span>
-<span class="chart-form num-word" lang="sr">
-осамдесет
-</span>
-</article>
-<article class="num-cell" data-band="tens">
-<span class="num-value">
-90
-</span>
-<span class="chart-form num-word" lang="sr">
-деведесет
-</span>
-</article>
-<article class="num-cell" data-band="hundreds">
-<span class="num-value">
+</a>
+</li>
+<li class="case-strip-cell">
+<a aria-label="100–999" href="#numbers-100">
+<span class="strip-abbr">
 100
 </span>
-<span class="chart-form num-word" lang="sr">
+</a>
+</li>
+<li class="case-strip-cell">
+<a aria-label="1 000+" href="#numbers-1000">
+<span class="strip-abbr">
+1 000
+</span>
+</a>
+</li>
+### mount numbersChart
+<section aria-label="Cardinal numbers" class="num-cardinals case-list" id="cardinalList">
+<article class="case-row num-cardinal-card" id="numbers-0">
+<div class="case-cell case-cell-head">
+<header class="case-head">
+<div class="case-head-title">
+<h3>
+0–9
+</h3>
+</div>
+</header>
+</div>
+<div class="case-cell case-cell-ex">
+<div class="examples">
+<div class="ex">
+<div class="sr">
+0 ·
+<span lang="sr">
+нула
+</span>
+</div>
+</div>
+<div class="ex">
+<div class="sr">
+1 ·
+<span lang="sr">
+један
+</span>
+</div>
+</div>
+<div class="ex">
+<div class="sr">
+2 ·
+<span lang="sr">
+два
+</span>
+</div>
+</div>
+<div class="ex">
+<div class="sr">
+3 ·
+<span lang="sr">
+три
+</span>
+</div>
+</div>
+<div class="ex">
+<div class="sr">
+4 ·
+<span lang="sr">
+четири
+</span>
+</div>
+</div>
+<div class="ex">
+<div class="sr">
+5 ·
+<span lang="sr">
+пет
+</span>
+</div>
+</div>
+<div class="ex">
+<div class="sr">
+6 ·
+<span lang="sr">
+шест
+</span>
+</div>
+</div>
+<div class="ex">
+<div class="sr">
+7 ·
+<span lang="sr">
+седам
+</span>
+</div>
+</div>
+<div class="ex">
+<div class="sr">
+8 ·
+<span lang="sr">
+осам
+</span>
+</div>
+</div>
+<div class="ex">
+<div class="sr">
+9 ·
+<span lang="sr">
+девет
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="case-row num-cardinal-card" id="numbers-10">
+<div class="case-cell case-cell-head">
+<header class="case-head">
+<div class="case-head-title">
+<h3>
+10–19
+</h3>
+</div>
+</header>
+</div>
+<div class="case-cell case-cell-ex">
+<div class="examples">
+<div class="ex">
+<div class="sr">
+10 ·
+<span lang="sr">
+десет
+</span>
+</div>
+</div>
+<div class="ex">
+<div class="sr">
+11 ·
+<span lang="sr">
+једанаест
+</span>
+</div>
+</div>
+<div class="ex">
+<div class="sr">
+12 ·
+<span lang="sr">
+дванаест
+</span>
+</div>
+</div>
+<div class="ex">
+<div class="sr">
+13 ·
+<span lang="sr">
+тринаест
+</span>
+</div>
+</div>
+<div class="ex">
+<div class="sr">
+14 ·
+<span lang="sr">
+четрнаест
+</span>
+</div>
+</div>
+<div class="ex">
+<div class="sr">
+15 ·
+<span lang="sr">
+петнаест
+</span>
+</div>
+</div>
+<div class="ex">
+<div class="sr">
+16 ·
+<span lang="sr">
+шеснаест
+</span>
+</div>
+</div>
+<div class="ex">
+<div class="sr">
+17 ·
+<span lang="sr">
+седамнаест
+</span>
+</div>
+</div>
+<div class="ex">
+<div class="sr">
+18 ·
+<span lang="sr">
+осамнаест
+</span>
+</div>
+</div>
+<div class="ex">
+<div class="sr">
+19 ·
+<span lang="sr">
+деветнаест
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="case-row num-cardinal-card" id="numbers-20">
+<div class="case-cell case-cell-head">
+<header class="case-head">
+<div class="case-head-title">
+<h3>
+20–29
+</h3>
+</div>
+</header>
+</div>
+<div class="case-cell case-cell-ex">
+<div class="examples">
+<div class="ex">
+<div class="sr">
+20 ·
+<span lang="sr">
+двадесет
+</span>
+</div>
+</div>
+<div class="ex">
+<div class="sr">
+21 ·
+<span lang="sr">
+двадесет један
+</span>
+</div>
+</div>
+<div class="ex">
+<div class="sr">
+22 ·
+<span lang="sr">
+двадесет два
+</span>
+</div>
+</div>
+<div class="ex">
+<div class="sr">
+23 ·
+<span lang="sr">
+двадесет три
+</span>
+</div>
+</div>
+<div class="ex">
+<div class="sr">
+24 ·
+<span lang="sr">
+двадесет четири
+</span>
+</div>
+</div>
+<div class="ex">
+<div class="sr">
+25 ·
+<span lang="sr">
+двадесет пет
+</span>
+</div>
+</div>
+<div class="ex">
+<div class="sr">
+26 ·
+<span lang="sr">
+двадесет шест
+</span>
+</div>
+</div>
+<div class="ex">
+<div class="sr">
+27 ·
+<span lang="sr">
+двадесет седам
+</span>
+</div>
+</div>
+<div class="ex">
+<div class="sr">
+28 ·
+<span lang="sr">
+двадесет осам
+</span>
+</div>
+</div>
+<div class="ex">
+<div class="sr">
+29 ·
+<span lang="sr">
+двадесет девет
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="case-row num-cardinal-card" id="numbers-30">
+<div class="case-cell case-cell-head">
+<header class="case-head">
+<div class="case-head-title">
+<h3>
+30–99
+</h3>
+</div>
+</header>
+</div>
+<div class="case-cell case-cell-ex">
+<div class="examples">
+<div class="ex">
+<div class="sr">
+30 ·
+<span lang="sr">
+тридесет
+</span>
+</div>
+</div>
+<div class="ex">
+<div class="sr">
+40 ·
+<span lang="sr">
+четрдесет
+</span>
+</div>
+</div>
+<div class="ex">
+<div class="sr">
+50 ·
+<span lang="sr">
+педесет
+</span>
+</div>
+</div>
+<div class="ex">
+<div class="sr">
+60 ·
+<span lang="sr">
+шездесет
+</span>
+</div>
+</div>
+<div class="ex">
+<div class="sr">
+70 ·
+<span lang="sr">
+седамдесет
+</span>
+</div>
+</div>
+<div class="ex">
+<div class="sr">
+80 ·
+<span lang="sr">
+осамдесет
+</span>
+</div>
+</div>
+<div class="ex">
+<div class="sr">
+90 ·
+<span lang="sr">
+деведесет
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="case-row num-cardinal-card" id="numbers-100">
+<div class="case-cell case-cell-head">
+<header class="case-head">
+<div class="case-head-title">
+<h3>
+100–999
+</h3>
+</div>
+</header>
+</div>
+<div class="case-cell case-cell-ex">
+<div class="examples">
+<div class="ex">
+<div class="sr">
+100 ·
+<span lang="sr">
 сто
 </span>
-</article>
-<article class="num-cell" data-band="hundreds">
-<span class="num-value">
-200
-</span>
-<span class="chart-form num-word" lang="sr">
+</div>
+</div>
+<div class="ex">
+<div class="sr">
+200 ·
+<span lang="sr">
 двест
 <b class="num-end">
 а
 </b>
 </span>
-</article>
-<article class="num-cell" data-band="hundreds">
-<span class="num-value">
-300
-</span>
-<span class="chart-form num-word" lang="sr">
+</div>
+</div>
+<div class="ex">
+<div class="sr">
+300 ·
+<span lang="sr">
 трист
 <b class="num-end">
 а
 </b>
 </span>
-</article>
-<article class="num-cell" data-band="hundreds">
-<span class="num-value">
-400
-</span>
-<span class="chart-form num-word" lang="sr">
+</div>
+</div>
+<div class="ex">
+<div class="sr">
+400 ·
+<span lang="sr">
 четиристо
 </span>
-</article>
-<article class="num-cell" data-band="hundreds">
-<span class="num-value">
-500
-</span>
-<span class="chart-form num-word" lang="sr">
+</div>
+</div>
+<div class="ex">
+<div class="sr">
+500 ·
+<span lang="sr">
 петсто
 </span>
-</article>
-<article class="num-cell" data-band="hundreds">
-<span class="num-value">
-600
-</span>
-<span class="chart-form num-word" lang="sr">
+</div>
+</div>
+<div class="ex">
+<div class="sr">
+600 ·
+<span lang="sr">
 шестсто
 </span>
-</article>
-<article class="num-cell" data-band="hundreds">
-<span class="num-value">
-700
-</span>
-<span class="chart-form num-word" lang="sr">
+</div>
+</div>
+<div class="ex">
+<div class="sr">
+700 ·
+<span lang="sr">
 седамсто
 </span>
-</article>
-<article class="num-cell" data-band="hundreds">
-<span class="num-value">
-800
-</span>
-<span class="chart-form num-word" lang="sr">
+</div>
+</div>
+<div class="ex">
+<div class="sr">
+800 ·
+<span lang="sr">
 осамсто
 </span>
-</article>
-<article class="num-cell" data-band="hundreds">
-<span class="num-value">
-900
-</span>
-<span class="chart-form num-word" lang="sr">
+</div>
+</div>
+<div class="ex">
+<div class="sr">
+900 ·
+<span lang="sr">
 деветсто
 </span>
+</div>
+</div>
+</div>
+</div>
 </article>
-<article class="num-cell" data-band="thousands">
-<span class="num-value">
-1 000
-</span>
-<span class="chart-form num-word" lang="sr">
+<article class="case-row num-cardinal-card" id="numbers-1000">
+<div class="case-cell case-cell-head">
+<header class="case-head">
+<div class="case-head-title">
+<h3>
+1 000+
+</h3>
+</div>
+</header>
+</div>
+<div class="case-cell case-cell-ex">
+<div class="examples">
+<div class="ex">
+<div class="sr">
+1 000 ·
+<span lang="sr">
 хиљад
 <b class="num-end">
 у
 </b>
 </span>
-</article>
-<article class="num-cell" data-band="thousands">
-<span class="num-value">
-2 000
-</span>
-<span class="chart-form num-word" lang="sr">
+</div>
+</div>
+<div class="ex">
+<div class="sr">
+2 000 ·
+<span lang="sr">
 две хиљад
 <b class="num-end">
 е
 </b>
 </span>
-</article>
-<article class="num-cell" data-band="thousands">
-<span class="num-value">
-3 000
-</span>
-<span class="chart-form num-word" lang="sr">
+</div>
+</div>
+<div class="ex">
+<div class="sr">
+3 000 ·
+<span lang="sr">
 три хиљад
 <b class="num-end">
 е
 </b>
 </span>
-</article>
-<article class="num-cell" data-band="thousands">
-<span class="num-value">
-4 000
-</span>
-<span class="chart-form num-word" lang="sr">
+</div>
+</div>
+<div class="ex">
+<div class="sr">
+4 000 ·
+<span lang="sr">
 четири хиљад
 <b class="num-end">
 е
 </b>
 </span>
-</article>
-<article class="num-cell" data-band="thousands">
-<span class="num-value">
-5 000
-</span>
-<span class="chart-form num-word" lang="sr">
+</div>
+</div>
+<div class="ex">
+<div class="sr">
+5 000 ·
+<span lang="sr">
 пет хиљада
 </span>
-</article>
-<article class="num-cell" data-band="thousands">
-<span class="num-value">
-6 000
-</span>
-<span class="chart-form num-word" lang="sr">
+</div>
+</div>
+<div class="ex">
+<div class="sr">
+6 000 ·
+<span lang="sr">
 шест хиљада
 </span>
-</article>
-<article class="num-cell" data-band="thousands">
-<span class="num-value">
-7 000
-</span>
-<span class="chart-form num-word" lang="sr">
+</div>
+</div>
+<div class="ex">
+<div class="sr">
+7 000 ·
+<span lang="sr">
 седам хиљада
 </span>
-</article>
-<article class="num-cell" data-band="thousands">
-<span class="num-value">
-8 000
-</span>
-<span class="chart-form num-word" lang="sr">
+</div>
+</div>
+<div class="ex">
+<div class="sr">
+8 000 ·
+<span lang="sr">
 осам хиљада
 </span>
-</article>
-<article class="num-cell" data-band="thousands">
-<span class="num-value">
-9 000
-</span>
-<span class="chart-form num-word" lang="sr">
+</div>
+</div>
+<div class="ex">
+<div class="sr">
+9 000 ·
+<span lang="sr">
 девет хиљада
 </span>
-</article>
 </div>
+</div>
+</div>
+</div>
+</article>
 </section>
-<section class="chart-group num-builds" data-tone="num-build">
-<header class="chart-group-head">
+<article class="case-row num-build-card">
+<div class="case-cell case-cell-head">
+<header class="case-head">
+<div class="case-head-title">
 <h3>
 Build numbers
 </h3>
+</div>
 </header>
-<div class="chart-table">
-<article class="chart-row">
-<span class="chart-cell num-value" data-label="Number">
-21
-</span>
-<span class="chart-cell chart-form num-built" data-label="Parts" lang="sr">
-<span>
-двадесет
-</span>
-<span class="chart-sep">
-+
-</span>
-<span>
-један
-</span>
-</span>
-</article>
-<article class="chart-row">
-<span class="chart-cell num-value" data-label="Number">
-34
-</span>
-<span class="chart-cell chart-form num-built" data-label="Parts" lang="sr">
-<span>
-тридесет
-</span>
-<span class="chart-sep">
-+
-</span>
-<span>
-четири
-</span>
-</span>
-</article>
-<article class="chart-row">
-<span class="chart-cell num-value" data-label="Number">
-58
-</span>
-<span class="chart-cell chart-form num-built" data-label="Parts" lang="sr">
-<span>
-педесет
-</span>
-<span class="chart-sep">
-+
-</span>
-<span>
-осам
-</span>
-</span>
-</article>
-<article class="chart-row">
-<span class="chart-cell num-value" data-label="Number">
+</div>
+<div class="case-cell case-cell-ex">
+<div class="examples">
+<div class="ex">
+<span class="num-value">
 101
 </span>
-<span class="chart-cell chart-form num-built" data-label="Parts" lang="sr">
+<span class="sr num-built" lang="sr">
 <span>
 сто
 </span>
@@ -459,12 +619,12 @@ Build numbers
 један
 </span>
 </span>
-</article>
-<article class="chart-row">
-<span class="chart-cell num-value" data-label="Number">
+</div>
+<div class="ex">
+<span class="num-value">
 125
 </span>
-<span class="chart-cell chart-form num-built" data-label="Parts" lang="sr">
+<span class="sr num-built" lang="sr">
 <span>
 сто
 </span>
@@ -481,12 +641,12 @@ Build numbers
 пет
 </span>
 </span>
-</article>
-<article class="chart-row">
-<span class="chart-cell num-value" data-label="Number">
+</div>
+<div class="ex">
+<span class="num-value">
 2 345
 </span>
-<span class="chart-cell chart-form num-built" data-label="Parts" lang="sr">
+<span class="sr num-built" lang="sr">
 <span>
 две
 </span>
@@ -515,664 +675,416 @@ Build numbers
 пет
 </span>
 </span>
-</article>
 </div>
-</section>
-<section class="chart-group num-nouns" data-tone="num-noun">
-<header class="chart-group-head">
+</div>
+</div>
+</article>
+<article class="case-row num-agreement-card">
+<div class="case-cell case-cell-head">
+<header class="case-head">
+<div class="case-head-title">
 <h3>
-With nouns
+Agreement
 </h3>
+</div>
+</header>
+</div>
+<section class="num-agreement-nouns">
+<header class="case-cell-band">
+<h4 class="cell-axis">
+Nouns
+</h4>
 </header>
 <div class="chart-table">
-<article class="chart-row">
-<span class="chart-cell num-value" data-label="Number">
+<article class="chart-row num-band">
+<h5 class="num-band-head">
+<span class="num-value">
 1
+<span class="chart-sep">
+·
 </span>
-<span class="chart-cell num-pattern" data-label="Pattern">
-agrees with noun
+21
+<span class="chart-sep">
+·
 </span>
-<div class="chart-cell num-examples" data-label="Examples" lang="sr">
-<span class="chart-form">
+101
+</span>
+<span class="case-tag" data-tone="nom">
+NOM
+</span>
+<span>
+Singular
+</span>
+</h5>
+<div class="num-count-run">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
+M
+</span>
+<span class="eu-form">
+<span lang="sr">
 један град
 </span>
-<span class="chart-form">
-једна жена
 </span>
-<span class="chart-form">
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
+N
+</span>
+<span class="eu-form">
+<span lang="sr">
 једно село
 </span>
-</div>
-</article>
-<article class="chart-row">
-<span class="chart-cell num-value" data-label="Number">
-2
 </span>
-<span class="chart-cell num-pattern" data-label="Pattern">
-gender split
 </span>
-<div class="chart-cell num-examples" data-label="Examples" lang="sr">
-<span class="chart-form">
-два града
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
+F
 </span>
-<span class="chart-form">
-две жене
+<span class="eu-form">
+<span lang="sr">
+једна жена
 </span>
-<span class="chart-form">
-два села
+</span>
 </span>
 </div>
 </article>
-<article class="chart-row">
-<span class="chart-cell num-value" data-label="Number">
-3-4
+<article class="chart-row num-band">
+<h5 class="num-band-head">
+<span class="num-value">
+2-4
+<span class="chart-sep">
+·
 </span>
-<span class="chart-cell num-pattern" data-label="Pattern">
-counted form
-</span>
-<div class="chart-cell num-examples" data-label="Examples" lang="sr">
-<span class="chart-form">
-три града
-</span>
-<span class="chart-form">
-четири жене
-</span>
-<span class="chart-form">
-три села
-</span>
-</div>
-</article>
-<article class="chart-row">
-<span class="chart-cell num-value" data-label="Number">
-5+
-</span>
-<span class="chart-cell num-pattern" data-label="Pattern">
-genitive plural
-</span>
-<div class="chart-cell num-examples" data-label="Examples" lang="sr">
-<span class="chart-form">
-пет градова
-</span>
-<span class="chart-form">
-шест жена
-</span>
-<span class="chart-form">
-седам села
-</span>
-</div>
-</article>
-<article class="chart-row">
-<span class="chart-cell num-value" data-label="Number">
-21
-</span>
-<span class="chart-cell num-pattern" data-label="Pattern">
-last word: 1
-</span>
-<div class="chart-cell num-examples" data-label="Examples" lang="sr">
-<span class="chart-form">
-двадесет један град
-</span>
-<span class="chart-form">
-тридесет једна жена
-</span>
-<span class="chart-form">
-четрдесет једно село
-</span>
-</div>
-</article>
-<article class="chart-row">
-<span class="chart-cell num-value" data-label="Number">
 22-24
 </span>
-<span class="chart-cell num-pattern" data-label="Pattern">
-last word: 2-4
+<span class="case-tag" data-tone="gen">
+GEN
 </span>
-<div class="chart-cell num-examples" data-label="Examples" lang="sr">
-<span class="chart-form">
-двадесет два града
+<span>
+Singular
 </span>
-<span class="chart-form">
-двадесет три жене
+</h5>
+<div class="num-count-run">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
+M
 </span>
-<span class="chart-form">
-двадесет четири села
+<span class="eu-form">
+<span lang="sr">
+два града
+</span>
+</span>
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
+N
+</span>
+<span class="eu-form">
+<span lang="sr">
+два села
+</span>
+</span>
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
+F
+</span>
+<span class="eu-form">
+<span lang="sr">
+две жене
+</span>
+</span>
 </span>
 </div>
 </article>
-<article class="chart-row">
-<span class="chart-cell num-value" data-label="Number">
+<article class="chart-row num-band">
+<h5 class="num-band-head">
+<span class="num-value">
+5+
+<span class="chart-sep">
+·
+</span>
 25+
 </span>
-<span class="chart-cell num-pattern" data-label="Pattern">
-last word: 5+
+<span class="case-tag" data-tone="gen">
+GEN
 </span>
-<div class="chart-cell num-examples" data-label="Examples" lang="sr">
-<span class="chart-form">
-двадесет пет градова
+<span>
+Plural
 </span>
-<span class="chart-form">
-тридесет шест жена
+</h5>
+<div class="num-count-run">
+<span class="ending-unit">
+<span class="eu-gender" data-gender="m">
+M
 </span>
-<span class="chart-form">
-четрдесет седам села
+<span class="eu-form">
+<span lang="sr">
+пет градова
+</span>
+</span>
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
+N
+</span>
+<span class="eu-form">
+<span lang="sr">
+пет села
+</span>
+</span>
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
+F
+</span>
+<span class="eu-form">
+<span lang="sr">
+пет жена
+</span>
+</span>
 </span>
 </div>
 </article>
 </div>
 </section>
-<section class="chart-group num-agreement" data-tone="num-agreement">
-<header class="chart-group-head">
-<h3>
-Verb agreement
-</h3>
+<section class="num-agreement-verbs">
+<header class="case-cell-band">
+<h4 class="cell-axis">
+Verbs
+</h4>
 </header>
 <div class="chart-table">
-<article class="chart-row">
-<span class="chart-cell num-value" data-label="Number">
+<article class="chart-row num-band">
+<h5 class="num-band-head">
+<span class="num-value">
 1
+<span class="chart-sep">
+·
 </span>
-<span class="chart-cell num-pattern" data-label="Verb">
-singular
+21
+<span class="chart-sep">
+·
 </span>
-<div class="chart-cell" data-label="Examples">
+101
+</span>
+</h5>
 <div class="chart-example">
 <span class="sr" lang="sr">
-Један град је велик.
+Један ресторан
+<mark>
+ради
+</mark>
+.
 </span>
 <span class="tr">
-One city is big.
+One restaurant is open.
 </span>
 </div>
-</div>
 </article>
-<article class="chart-row">
-<span class="chart-cell num-value" data-label="Number">
+<article class="chart-row num-band">
+<h5 class="num-band-head">
+<span class="num-value">
 2-4
+<span class="chart-sep">
+·
 </span>
-<span class="chart-cell num-pattern" data-label="Verb">
-plural
+22-24
 </span>
-<div class="chart-cell" data-label="Examples">
+</h5>
 <div class="chart-example">
 <span class="sr" lang="sr">
-Два града су велика.
+Два ресторана
+<mark>
+раде
+</mark>
+.
 </span>
 <span class="tr">
-Two cities are big.
+Two restaurants are open.
 </span>
-</div>
 </div>
 </article>
-<article class="chart-row">
-<span class="chart-cell num-value" data-label="Number">
+<article class="chart-row num-band">
+<h5 class="num-band-head">
+<span class="num-value">
 5+
+<span class="chart-sep">
+·
 </span>
-<span class="chart-cell num-pattern" data-label="Verb">
-singular
+25+
 </span>
-<div class="chart-cell" data-label="Examples">
+</h5>
 <div class="chart-example">
 <span class="sr" lang="sr">
-Пет градова је велико.
+Пет ресторана
+<mark>
+ради
+</mark>
+.
 </span>
 <span class="tr">
-Five cities are big.
+Five restaurants are open.
 </span>
-</div>
 </div>
 </article>
 </div>
 </section>
-<section class="chart-group num-ordinals" data-tone="num-ordinal">
-<header class="chart-group-head">
+</article>
+<article class="case-row num-ordinal-card">
+<div class="case-cell case-cell-head">
+<header class="case-head">
+<div class="case-head-title">
 <h3>
 Ordinals
 </h3>
+</div>
 </header>
-<div class="chart-table">
-<article class="chart-row">
-<span class="chart-cell num-value" data-label="Number">
-1.
-</span>
+</div>
+<div class="case-cell num-ord-rule">
 <div class="gender-run">
 <span class="ending-unit">
 <span class="eu-gender" data-gender="m">
 M
 </span>
 <span class="eu-form">
+<span lang="sr">
+-и
+</span>
+</span>
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="n">
+N
+</span>
+<span class="eu-form">
+<span lang="sr">
+-о
+</span>
+</span>
+</span>
+<span class="ending-unit">
+<span class="eu-gender" data-gender="f">
+F
+</span>
+<span class="eu-form">
+<span lang="sr">
+-а
+</span>
+</span>
+</span>
+</div>
+<p class="gender-band-note">
+Soft stem:
+<i lang="sr">
+трећи
+</i>
+takes
+<i lang="sr">
+-е
+</i>
+in the neuter.
+</p>
+</div>
+<div class="case-cell case-cell-ex">
+<div class="examples">
+<div class="ex">
+<div class="sr">
+1. ·
 <span lang="sr">
 први
 </span>
-</span>
-</span>
-<span class="ending-unit">
-<span class="eu-gender" data-gender="n">
-N
-</span>
-<span class="eu-form">
-<span lang="sr">
-прво
-</span>
-</span>
-</span>
-<span class="ending-unit">
-<span class="eu-gender" data-gender="f">
-F
-</span>
-<span class="eu-form">
-<span lang="sr">
-прва
-</span>
-</span>
-</span>
 </div>
-</article>
-<article class="chart-row">
-<span class="chart-cell num-value" data-label="Number">
-2.
-</span>
-<div class="gender-run">
-<span class="ending-unit">
-<span class="eu-gender" data-gender="m">
-M
-</span>
-<span class="eu-form">
+</div>
+<div class="ex">
+<div class="sr">
+2. ·
 <span lang="sr">
 други
 </span>
-</span>
-</span>
-<span class="ending-unit">
-<span class="eu-gender" data-gender="n">
-N
-</span>
-<span class="eu-form">
-<span lang="sr">
-друго
-</span>
-</span>
-</span>
-<span class="ending-unit">
-<span class="eu-gender" data-gender="f">
-F
-</span>
-<span class="eu-form">
-<span lang="sr">
-друга
-</span>
-</span>
-</span>
 </div>
-</article>
-<article class="chart-row">
-<span class="chart-cell num-value" data-label="Number">
-3.
-</span>
-<div class="gender-run">
-<span class="ending-unit">
-<span class="eu-gender" data-gender="m">
-M
-</span>
-<span class="eu-form">
+</div>
+<div class="ex">
+<div class="sr">
+3. ·
 <span lang="sr">
 трећи
 </span>
-</span>
-</span>
-<span class="ending-unit">
-<span class="eu-gender" data-gender="n">
-N
-</span>
-<span class="eu-form">
-<span lang="sr">
-треће
-</span>
-</span>
-</span>
-<span class="ending-unit">
-<span class="eu-gender" data-gender="f">
-F
-</span>
-<span class="eu-form">
-<span lang="sr">
-трећа
-</span>
-</span>
-</span>
 </div>
-</article>
-<article class="chart-row">
-<span class="chart-cell num-value" data-label="Number">
-4.
-</span>
-<div class="gender-run">
-<span class="ending-unit">
-<span class="eu-gender" data-gender="m">
-M
-</span>
-<span class="eu-form">
+</div>
+<div class="ex">
+<div class="sr">
+4. ·
 <span lang="sr">
 четврти
 </span>
-</span>
-</span>
-<span class="ending-unit">
-<span class="eu-gender" data-gender="n">
-N
-</span>
-<span class="eu-form">
-<span lang="sr">
-четврто
-</span>
-</span>
-</span>
-<span class="ending-unit">
-<span class="eu-gender" data-gender="f">
-F
-</span>
-<span class="eu-form">
-<span lang="sr">
-четврта
-</span>
-</span>
-</span>
 </div>
-</article>
-<article class="chart-row">
-<span class="chart-cell num-value" data-label="Number">
-5.
-</span>
-<div class="gender-run">
-<span class="ending-unit">
-<span class="eu-gender" data-gender="m">
-M
-</span>
-<span class="eu-form">
+</div>
+<div class="ex">
+<div class="sr">
+5. ·
 <span lang="sr">
 пети
 </span>
-</span>
-</span>
-<span class="ending-unit">
-<span class="eu-gender" data-gender="n">
-N
-</span>
-<span class="eu-form">
-<span lang="sr">
-пето
-</span>
-</span>
-</span>
-<span class="ending-unit">
-<span class="eu-gender" data-gender="f">
-F
-</span>
-<span class="eu-form">
-<span lang="sr">
-пета
-</span>
-</span>
-</span>
 </div>
-</article>
-<article class="chart-row">
-<span class="chart-cell num-value" data-label="Number">
-6.
-</span>
-<div class="gender-run">
-<span class="ending-unit">
-<span class="eu-gender" data-gender="m">
-M
-</span>
-<span class="eu-form">
+</div>
+<div class="ex">
+<div class="sr">
+6. ·
 <span lang="sr">
 шести
 </span>
-</span>
-</span>
-<span class="ending-unit">
-<span class="eu-gender" data-gender="n">
-N
-</span>
-<span class="eu-form">
-<span lang="sr">
-шесто
-</span>
-</span>
-</span>
-<span class="ending-unit">
-<span class="eu-gender" data-gender="f">
-F
-</span>
-<span class="eu-form">
-<span lang="sr">
-шеста
-</span>
-</span>
-</span>
 </div>
-</article>
-<article class="chart-row">
-<span class="chart-cell num-value" data-label="Number">
-7.
-</span>
-<div class="gender-run">
-<span class="ending-unit">
-<span class="eu-gender" data-gender="m">
-M
-</span>
-<span class="eu-form">
+</div>
+<div class="ex">
+<div class="sr">
+7. ·
 <span lang="sr">
 седми
 </span>
-</span>
-</span>
-<span class="ending-unit">
-<span class="eu-gender" data-gender="n">
-N
-</span>
-<span class="eu-form">
-<span lang="sr">
-седмо
-</span>
-</span>
-</span>
-<span class="ending-unit">
-<span class="eu-gender" data-gender="f">
-F
-</span>
-<span class="eu-form">
-<span lang="sr">
-седма
-</span>
-</span>
-</span>
 </div>
-</article>
-<article class="chart-row">
-<span class="chart-cell num-value" data-label="Number">
-8.
-</span>
-<div class="gender-run">
-<span class="ending-unit">
-<span class="eu-gender" data-gender="m">
-M
-</span>
-<span class="eu-form">
+</div>
+<div class="ex">
+<div class="sr">
+8. ·
 <span lang="sr">
 осми
 </span>
-</span>
-</span>
-<span class="ending-unit">
-<span class="eu-gender" data-gender="n">
-N
-</span>
-<span class="eu-form">
-<span lang="sr">
-осмо
-</span>
-</span>
-</span>
-<span class="ending-unit">
-<span class="eu-gender" data-gender="f">
-F
-</span>
-<span class="eu-form">
-<span lang="sr">
-осма
-</span>
-</span>
-</span>
 </div>
-</article>
-<article class="chart-row">
-<span class="chart-cell num-value" data-label="Number">
-9.
-</span>
-<div class="gender-run">
-<span class="ending-unit">
-<span class="eu-gender" data-gender="m">
-M
-</span>
-<span class="eu-form">
+</div>
+<div class="ex">
+<div class="sr">
+9. ·
 <span lang="sr">
 девети
 </span>
-</span>
-</span>
-<span class="ending-unit">
-<span class="eu-gender" data-gender="n">
-N
-</span>
-<span class="eu-form">
-<span lang="sr">
-девето
-</span>
-</span>
-</span>
-<span class="ending-unit">
-<span class="eu-gender" data-gender="f">
-F
-</span>
-<span class="eu-form">
-<span lang="sr">
-девета
-</span>
-</span>
-</span>
 </div>
-</article>
-<article class="chart-row">
-<span class="chart-cell num-value" data-label="Number">
-10.
-</span>
-<div class="gender-run">
-<span class="ending-unit">
-<span class="eu-gender" data-gender="m">
-M
-</span>
-<span class="eu-form">
+</div>
+<div class="ex">
+<div class="sr">
+10. ·
 <span lang="sr">
 десети
 </span>
-</span>
-</span>
-<span class="ending-unit">
-<span class="eu-gender" data-gender="n">
-N
-</span>
-<span class="eu-form">
-<span lang="sr">
-десето
-</span>
-</span>
-</span>
-<span class="ending-unit">
-<span class="eu-gender" data-gender="f">
-F
-</span>
-<span class="eu-form">
-<span lang="sr">
-десета
-</span>
-</span>
-</span>
 </div>
-</article>
-<article class="chart-row">
-<span class="chart-cell num-value" data-label="Number">
-20.
-</span>
-<div class="gender-run">
-<span class="ending-unit">
-<span class="eu-gender" data-gender="m">
-M
-</span>
-<span class="eu-form">
+</div>
+<div class="ex">
+<div class="sr">
+20. ·
 <span lang="sr">
 двадесети
 </span>
-</span>
-</span>
-<span class="ending-unit">
-<span class="eu-gender" data-gender="n">
-N
-</span>
-<span class="eu-form">
-<span lang="sr">
-двадесето
-</span>
-</span>
-</span>
-<span class="ending-unit">
-<span class="eu-gender" data-gender="f">
-F
-</span>
-<span class="eu-form">
-<span lang="sr">
-двадесета
-</span>
-</span>
-</span>
 </div>
-</article>
-<article class="chart-row">
-<span class="chart-cell num-value" data-label="Number">
-21.
-</span>
-<div class="gender-run">
-<span class="ending-unit">
-<span class="eu-gender" data-gender="m">
-M
-</span>
-<span class="eu-form">
+</div>
+<div class="ex">
+<div class="sr">
+21. ·
 <span lang="sr">
 двадесет први
 </span>
-</span>
-</span>
-<span class="ending-unit">
-<span class="eu-gender" data-gender="n">
-N
-</span>
-<span class="eu-form">
-<span lang="sr">
-двадесет прво
-</span>
-</span>
-</span>
-<span class="ending-unit">
-<span class="eu-gender" data-gender="f">
-F
-</span>
-<span class="eu-form">
-<span lang="sr">
-двадесет прва
-</span>
-</span>
-</span>
+</div>
+</div>
+</div>
 </div>
 </article>
-</div>
-</section>

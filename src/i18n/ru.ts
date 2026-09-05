@@ -146,14 +146,11 @@ export const ru: Record<Key, string> = {
   /* Numbers */
   'numbers.cardinals': 'Количественные числительные',
   'numbers.build': 'Составные числа',
-  'numbers.nouns': 'С существительными',
-  'numbers.agreement': 'Согласование глагола',
-  'numbers.verb': 'Глагол',
+  'numbers.agreement': 'Согласование',
+  'numbers.nouns': 'Существительные',
+  'numbers.verbs': 'Глаголы',
   'numbers.ordinals': 'Порядковые',
-  'numbers.number': 'Число',
-  'numbers.parts': 'Части',
-  'numbers.pattern': 'Схема',
-  'numbers.examples': 'Примеры',
+  'numbers.ordSoft': 'Мягкая основа: у <i>treći</i> средний род на <i>-e</i>.',
 
   /* Prepositions */
   'prep.group.place': 'Место / движение',
