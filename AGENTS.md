@@ -182,6 +182,14 @@ diff before committing it.
 tone audit scans it line by line. Reorganize it internally; do not split it into
 scoped component styles.
 
+**Fonts are built, not downloaded.** Stock Source Serif 4 has no Serbian pitch
+marks (U+030F, U+0311, U+0200–0217), so `bun tools/fonts/build.mjs` cuts the
+six `source-serif-4-sr-*` subsets from a pinned Google Fonts build after
+`extend-source-serif.py` assembles the missing glyphs from the font's own grave
+and breve. The unicode-ranges come from `styles.css`, and `validate.mjs` shapes
+every string the pitch table can emit against the shipped bytes with HarfBuzz.
+`/assets/fonts/*` is served immutable: a new cut needs a new file name.
+
 ## Development
 
 - Run `bun run validate` before committing changes — it builds, validates,
