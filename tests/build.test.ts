@@ -1,7 +1,5 @@
 import { expect, test, beforeAll } from 'bun:test';
-import fs from 'node:fs';
-import path from 'node:path';
-import { build } from '../build.ts';
+import { build, type Tree } from '../build.ts';
 import { ROUTES } from '../src/lib/routes.ts';
 import { CASES } from '../src/content/cases.ts';
 import { CASE_TONES } from '../src/lib/types.ts';
@@ -12,20 +10,35 @@ import { findTriggers, popoverKey } from '../src/lib/triggers.ts';
    output; these check what the whole document must be true of, and would each
    have caught a real class of silent failure. */
 
-const OUT = 'dist';
+/* Asserted on the tree build() returns, never on dist/: the tests then grade
+   the build they just ran, not whatever the last `bun run build` left behind,
+   and nothing here writes a directory some other reader may be walking. */
+let tree: Tree;
 const pages = new Map<string, string>();
+
+function text(key: string): string {
+  const contents = tree.get(key);
+  expect(contents, key).toBeDefined();
+  return typeof contents === 'string' ? contents : new TextDecoder().decode(contents);
+}
+
+/* Direct children of a directory, as dist-relative keys. */
+function under(dir: string): string[] {
+  const prefix = dir + '/';
+  return [...tree.keys()].filter(k => k.startsWith(prefix) && !k.slice(prefix.length).includes('/'));
+}
 
 /* Assets are content-hashed, so find them by extension rather than by name. */
 function asset(ext: '.css' | '.js', match?: string): string {
-  const found = fs.readdirSync(path.join(OUT, 'assets'))
-    .filter(f => f.endsWith(ext) && (!match || f.startsWith(match)));
+  const found = under('assets')
+    .filter(f => f.endsWith(ext) && (!match || f.startsWith('assets/' + match)));
   expect(found.length, `one ${match ?? ''}${ext} asset`).toBe(1);
-  return path.join(OUT, 'assets', found[0]!);
+  return found[0]!;
 }
 
 beforeAll(async () => {
-  await build();
-  for (const route of ROUTES) pages.set(route.path, fs.readFileSync(path.join(OUT, route.file), 'utf8'));
+  tree = await build();
+  for (const route of ROUTES) pages.set(route.path, text(route.file));
 });
 
 test('every route emits a document', () => {
@@ -37,11 +50,11 @@ test('every route emits a document', () => {
    silently stop reaching: they were hand-typed into the HTML with
    `data-sr-script` and rewritten in place, so they never passed through sr().
    No such attribute may survive into the build. */
-test('no data-sr-script survives into dist', () => {
+test('no data-sr-script survives into the build', () => {
   for (const [route, html] of pages) expect(html, route).not.toContain('data-sr-script');
 });
 
-test('no runtime i18n attributes survive into dist', () => {
+test('no runtime i18n attributes survive into the build', () => {
   for (const [route, html] of pages) {
     expect(html, route).not.toContain('data-i18n');
   }
@@ -56,7 +69,7 @@ test('sr() never emits class="sr" — .sr is a live specimen class', () => {
 /* Symmetric display rules would render `žena жена` on any document without
    data-script. The baseline must hide exactly one variant. */
 test('the attribute-less rendering hides exactly one script', () => {
-  const css = fs.readFileSync(asset('.css'), 'utf8');
+  const css = text(asset('.css'));
   const baseline = css.match(/^\[data-s="(lat|cyr)"\]\s*\{\s*display:\s*none/m);
   expect(baseline, 'a baseline [data-s] display:none rule must exist').not.toBeNull();
   const flip = css.match(/\[data-script="cyr"\][^{]*\[data-s="(lat|cyr)"\]/g);
@@ -125,21 +138,20 @@ test('every chart page marks its Serbian with lang="sr"', () => {
 });
 
 test('_headers and _redirects land at the dist root', () => {
-  expect(fs.existsSync(path.join(OUT, '_headers'))).toBe(true);
-  expect(fs.existsSync(path.join(OUT, '_redirects'))).toBe(true);
-  expect(fs.existsSync(path.join(OUT, 'public'))).toBe(false);
+  expect(tree.has('_headers')).toBe(true);
+  expect(tree.has('_redirects')).toBe(true);
+  expect([...tree.keys()].some(k => k.startsWith('public/'))).toBe(false);
 });
 
 /* Three things hard-code this prefix and none of them should move: _headers'
    immutable rule, the preload tags, and the 12 url('fonts/…') declarations in
    styles.css, which resolve relative to the stylesheet's own directory. */
 test('fonts land at dist/assets/fonts/', () => {
-  const fonts = fs.readdirSync(path.join(OUT, 'assets/fonts'));
-  expect(fonts.filter(f => f.endsWith('.woff2')).length).toBe(12);
+  expect(under('assets/fonts').filter(f => f.endsWith('.woff2')).length).toBe(12);
 });
 
 test('the stylesheet is not collapsed to one line — the tone audit scans it', () => {
-  const css = fs.readFileSync(asset('.css'), 'utf8');
+  const css = text(asset('.css'));
   expect(css.split('\n').length).toBeGreaterThan(1000);
 });
 
@@ -212,7 +224,7 @@ test('the home cards dual-emit their Serbian glyphs', () => {
 });
 
 test('the client bundle carries no transliteration table', () => {
-  const app = fs.readFileSync(asset('.js', 'app.'), 'utf8');
+  const app = text(asset('.js', 'app.'));
   for (const cyrillic of ['\u0436', '\u0459', '\u045a', '\u045f']) {
     expect(app, `app.js still ships ${cyrillic}`).not.toContain(cyrillic);
   }
@@ -221,11 +233,10 @@ test('the client bundle carries no transliteration table', () => {
 
 /* ---------- headers and hashing ---------- */
 
-const headers = () => fs.readFileSync(path.join(OUT, '_headers'), 'utf8');
+const headers = () => text('_headers');
 
 test('every CSS and JS asset is content-hashed', () => {
-  const assets = fs.readdirSync(path.join(OUT, 'assets'))
-    .filter(f => f.endsWith('.js') || f.endsWith('.css'));
+  const assets = under('assets').filter(f => f.endsWith('.js') || f.endsWith('.css'));
   expect(assets.length).toBeGreaterThan(0);
   for (const file of assets) {
     expect(file, `${file} is not content-hashed`).toMatch(/\.[0-9a-f]{8}\.(js|css)$/);
@@ -235,7 +246,7 @@ test('every CSS and JS asset is content-hashed', () => {
 test('every hashed asset a page links actually exists', () => {
   for (const [route, html] of pages) {
     for (const [, href] of html.matchAll(/(?:href|src)="(\/assets\/[^"]+)"/g)) {
-      expect(fs.existsSync(path.join(OUT, href!.slice(1))), `${route} -> ${href}`).toBe(true);
+      expect(tree.has(href!.slice(1)), `${route} -> ${href}`).toBe(true);
     }
   }
 });
@@ -243,10 +254,10 @@ test('every hashed asset a page links actually exists', () => {
 /* The hashed stylesheet must stay in /assets/ or its 12 relative
    url('fonts/…') declarations break. */
 test('the stylesheet stays beside the fonts directory', () => {
-  const contents = fs.readFileSync(asset('.css'), 'utf8');
+  const contents = text(asset('.css'));
   expect(contents).toContain("url('fonts/");
   for (const [, url] of contents.matchAll(/url\('(fonts\/[^']+)'\)/g)) {
-    expect(fs.existsSync(path.join(OUT, 'assets', url!)), url).toBe(true);
+    expect(tree.has(`assets/${url}`), url).toBe(true);
   }
 });
 
@@ -273,16 +284,16 @@ test('no path gets two different Cache-Control values', () => {
 });
 
 test('the false-friends EN path redirects to the RU page', () => {
-  const redirects = fs.readFileSync(path.join(OUT, '_redirects'), 'utf8');
+  const redirects = text('_redirects');
   expect(redirects).toMatch(/^\/charts\/false-friends\.html\s+\/ru\/charts\/false-friends\.html\s+301$/m);
-  expect(fs.existsSync(path.join(OUT, 'charts/false-friends.html'))).toBe(false);
-  expect(fs.existsSync(path.join(OUT, 'ru/charts/false-friends.html'))).toBe(true);
+  expect(tree.has('charts/false-friends.html')).toBe(false);
+  expect(tree.has('ru/charts/false-friends.html')).toBe(true);
 });
 
 /* ---------- indexing ---------- */
 
 test('the sitemap lists every route with its alternates', () => {
-  const xml = fs.readFileSync(path.join(OUT, 'sitemap.xml'), 'utf8');
+  const xml = text('sitemap.xml');
   const locs = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1]!);
   expect(locs.length).toBe(19);
   for (const route of ROUTES) expect(locs).toContain(`https://serbian.fyi${route.path}`);
@@ -293,14 +304,14 @@ test('the sitemap lists every route with its alternates', () => {
 });
 
 test('robots points at the sitemap', () => {
-  const robots = fs.readFileSync(path.join(OUT, 'robots.txt'), 'utf8');
+  const robots = text('robots.txt');
   expect(robots).toContain('Sitemap: https://serbian.fyi/sitemap.xml');
 });
 
 /* Comments in this stylesheet discuss the rules they guard, so strip them
    before scanning for the rules themselves. */
 function declarations(): string {
-  return fs.readFileSync(asset('.css'), 'utf8').replace(/\/\*[\s\S]*?\*\//g, '');
+  return text(asset('.css')).replace(/\/\*[\s\S]*?\*\//g, '');
 }
 
 /* AGENTS.md sanctions exactly three media queries — hover,
@@ -327,7 +338,7 @@ test('vw appears only in the root clamp and viewport-safety caps', () => {
 });
 
 test('view transitions ship with a reduced-motion opt-out', () => {
-  const css = fs.readFileSync(asset('.css'), 'utf8');
+  const css = text(asset('.css'));
   expect(css).toContain('@view-transition');
   const reduced = css.slice(css.indexOf('@media (prefers-reduced-motion: reduce)'));
   expect(reduced).toContain('::view-transition-group(*)');

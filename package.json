@@ -1,7 +1,7 @@
 {
   "scripts": {
     "build": "bun build.ts",
-    "dev": "bun build.ts dev",
+    "dev": "bun --watch build.ts dev",
     "typecheck": "tsc --noEmit",
     "test": "bun test",
     "validate": "bun run build && bun tools/validate.mjs && bun test && tsc --noEmit",
