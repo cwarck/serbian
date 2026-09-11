@@ -194,6 +194,36 @@ function validateLocalFonts() {
   for (const range of requiredCyrillicMarks) {
     expect(css.includes(range), 'fonts', `Cyrillic font ranges must include pitch-stress mark ${range}`);
   }
+  validateSerifPitchCoverage(css);
+}
+
+/* The bytes, not the CSS: unicode-range promises coverage the file may not
+   hold (the stock subsets advertised U+030F and shipped none). Each specimen
+   @font-face is opened with fontTools and shaped with HarfBuzz against every
+   string the pitch table can emit — see tools/fonts/check.py. */
+function validateSerifPitchCoverage(css) {
+  const faces = [];
+  for (const block of css.match(/@font-face\s*{[^}]*}/g) ?? []) {
+    const file = block.match(/url\('fonts\/(source-serif-4[^']+)'\)/)?.[1];
+    const range = block.match(/unicode-range:\s*([^;]+);/)?.[1];
+    if (!file || !range) continue;
+    const abs = path.join(root, 'public/assets/fonts', file);
+    if (!existsSync(abs)) { fail('fonts', `${file} referenced by styles.css is missing`); continue; }
+    faces.push({ path: abs, range: range.replace(/\s+/g, '') });
+  }
+  expect(faces.length === 6, 'fonts', `expected 6 Source Serif 4 @font-face blocks, found ${faces.length}`);
+  const table = Object.entries(scriptConverter.ACCENT_TO_CYR);
+  const spec = { faces, latin: table.map(([lat]) => lat), cyr: table.map(([, cyr]) => cyr) };
+  const proc = Bun.spawnSync(
+    ['uv', 'run', '--with', 'fonttools==4.65.0', '--with', 'brotli==1.2.0', '--with', 'uharfbuzz==0.56.1',
+      'python', path.join(root, 'tools/fonts/check.py')],
+    { stdin: new TextEncoder().encode(JSON.stringify(spec)), stdout: 'pipe', stderr: 'pipe' },
+  );
+  const out = new TextDecoder().decode(proc.stdout).trim();
+  if (proc.exitCode !== 0) {
+    const err = new TextDecoder().decode(proc.stderr).trim();
+    for (const line of (out || err || `check.py exited ${proc.exitCode}`).split('\n')) fail('fonts', line);
+  }
 }
 
 function parseToneAssignments(css) {
