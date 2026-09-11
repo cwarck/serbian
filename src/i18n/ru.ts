@@ -81,8 +81,6 @@ export const ru: Record<Key, string> = {
   'foot.author': 'Илья Акимов',
 
   /* Alphabet */
-  'alph.legend.unique': 'Только в сербском',
-  'alph.legend.diff': 'Выглядит как латиница — звучит иначе',
   'alph.tip.cta': 'как произнести',
   'pop.title': 'Заметка',
   'pop.close': 'Закрыть',

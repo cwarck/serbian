@@ -93,11 +93,6 @@ export function chartBody(chart: Chart, mounts: Record<string, string>, route: R
 <section class="alph-section">
   <div class="shell">
     ${h1('page.alphabet.h1')}
-    <div class="alph-legend">
-      <span><span class="alph-mark unique">SR</span><span>${t('alph.legend.unique')}</span></span>
-      <span><span class="alph-mark diff">!=</span><span>${t('alph.legend.diff')}</span></span>
-    </div>
-
     ${raw(`<div class="alph-grid" id="alphGrid" aria-label="Serbian alphabet">${mounts['alphGrid'] ?? ''}</div>`)}
   </div>
 </section>

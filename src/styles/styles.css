@@ -799,33 +799,6 @@ section { position: relative; }
   padding-block: 2.5rem;
 }
 
-.alph-legend {
-  display: flex; gap: 1.4rem; flex-wrap: wrap;
-  font-family: var(--ff-body);
-  font-size: var(--fs-label);
-  letter-spacing: var(--track-label);
-  text-transform: uppercase;
-  color: var(--ink-muted);
-  padding-bottom: 2rem;
-}
-.alph-mark {
-  display: inline-grid;
-  place-items: center;
-  width: 2.35rem;
-  height: 1.35rem;
-  margin-right: .55rem;
-  border: 1px solid var(--hairline);
-  font-size: var(--fs-label);
-  font-weight: 500;
-  letter-spacing: 0;
-  line-height: 1;
-  color: var(--ink-soft);
-  vertical-align: middle;
-}
-.alph-mark.diff {
-  border-style: dashed;
-}
-
 .alph-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -919,33 +892,6 @@ section { position: relative; }
   font-size: var(--fs-caption);
   margin-top: .35rem;
   line-height: var(--lh-snug);
-}
-
-.letter::after {
-  content: "";
-  position: absolute;
-  top: 1.15rem;
-  right: 1.15rem;
-  display: none;
-  place-items: center;
-  width: 2.35rem;
-  height: 1.35rem;
-  border: 1px solid var(--hairline);
-  font-family: var(--ff-body);
-  font-size: var(--fs-label);
-  font-weight: 500;
-  letter-spacing: 0;
-  line-height: 1;
-  color: var(--ink-soft);
-}
-.letter[data-kind="unique"]::after {
-  content: "SR";
-  display: grid;
-}
-.letter[data-kind="diff"]::after {
-  content: "!=";
-  display: grid;
-  border-style: dashed;
 }
 
 /* Small `?` glyph used by alphabet and case-note popovers */
@@ -2671,22 +2617,11 @@ section { position: relative; }
 /* -----------------------------------------------------------
    Forced colors (Windows High Contrast Mode)
 
-   The OS swaps every author color for a small system palette, so two
-   colour-only codes lose their signal: the alphabet's solid-vs-dashed
-   badge (both cyr/lat share one border color) and the six case hues
-   (all --tone accents map to one system color). We restore each with a
-   channel forced-colors keeps.
+   The OS swaps every author color for a small system palette, so the
+   six case hues lose their signal (all --tone accents map to one system
+   color). We restore them with a channel forced-colors keeps.
    ----------------------------------------------------------- */
 @media (forced-colors: active) {
-  /* Alphabet badge. The solid (unique "SR") vs dashed (diff "!=")
-     border-STYLE survives HCM untouched — only the color is swapped —
-     so the two categories stay distinct on style + glyph alone. Pin the
-     styles explicitly (defensive) and paint with a system color so the
-     badge outline never drops to a value HCM would render invisibly. */
-  .letter::after { border-color: CanvasText; }
-  .letter[data-kind="unique"]::after { border-style: solid; }
-  .letter[data-kind="diff"]::after   { border-style: dashed; }
-
   /* Case tones. The per-case accent lives in two decorative 3px marker
      bars — .case-strip-cell::before (nav) and .case-row::before (row).
      These are the pure colour code; opt them out of the forced-colors
