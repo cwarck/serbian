@@ -48,7 +48,7 @@ Tokens live in `src/styles/styles.css` `:root`.
 - New Serbian-bearing selectors must set `font-family: var(--ff-display)`. Do not repeat the base family or weight reset on `h1`–`h5`.
 - Mark inline Serbian in foreign prose with `<i>`. `srGrammarHTML()` (`src/lib/html.ts`) dual-emits these runs with `lang="sr"`; unmarked translation text never switches script.
 - `<i>` wraps only Serbian, never translation emphasis. `validateSerbianMarkers()` requires a token beside an `sr` specimen to occur in that specimen and differ from its own gloss. Standalone prose tokens must be glossary lemmas. Abstract shapes (`-a`, `-ov-`, `-∅`) and bare letters (`k, g, h`) are exempt.
-- Preserve Serbian Cyrillic `locl` support in both fonts and `font-language-override: "SRB"` on `body`. Test replacement fonts for Serbian italic alternates.
+- Preserve Serbian Cyrillic `locl` support in both fonts. `font-language-override: "SRB"` applies only to Serbian carriers (`[lang="sr"]`, `.s`), never to `body`: translation text must keep the reader's letterforms. Test replacement fonts for Serbian italic alternates.
 - Keep `font-optical-sizing: auto` on `body`. No manual `opsz` settings except `h1, h2`: `"opsz" 60`. Source Serif 4 supports 8–60.
 - Line-heights: `1` for single-line labels; `var(--lh-snug)` (1.3) for titles; `var(--lh-prose)` (1.55) for prose. `h1`–`h5` retain the `1.05` reset; decorative glyphs may differ.
 - Data cells containing digits use `font-feature-settings: "tnum"`.
