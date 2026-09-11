@@ -21,7 +21,7 @@ const ORIGIN = 'https://serbian.fyi';
    relative to its own directory. */
 const PRELOADS = [
   '/assets/fonts/source-sans-3-normal-latin.woff2',
-  '/assets/fonts/source-serif-4-normal-latin.woff2',
+  '/assets/fonts/source-serif-4-sr-normal-latin.woff2',
 ];
 
 /* Page name -> the i18n key stem for its title and description. */

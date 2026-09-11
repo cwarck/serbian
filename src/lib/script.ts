@@ -58,10 +58,10 @@ const LAT_TO_CYR: Record<string, string> = {
   "Ž": "Ж",
 };
 
-/* Pitch marks. Only the Cyrillic font subsets carry U+030F / U+0311, so a Latin
-   specimen wearing them falls back to a system face — see the @font-face
-   unicode-ranges in styles.css. */
-const ACCENT_TO_CYR: Record<string, string> = {
+/* Pitch marks. Stock Source Serif 4 has no U+030F / U+0311 and no U+0200-0217;
+   the shipped serif subsets are extended with them by tools/fonts/build.mjs and
+   validate.mjs checks every codepoint this table can emit against the bytes. */
+export const ACCENT_TO_CYR: Record<string, string> = {
   "à": "а̀",
   "á": "а́",
   "ā": "а̄",
