@@ -1984,6 +1984,7 @@ section { position: relative; }
   color: var(--ink-muted);
 }
 .verb-list-glossed .verb-gloss {
+  font-family: var(--ff-body);
   font-size: var(--fs-caption);
   color: var(--ink-soft);
 }
