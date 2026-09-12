@@ -1407,7 +1407,7 @@ Prepositions
 ### mount extraPack
 <article class="extra-panel extra-panel-idecl">
 <header class="extra-panel-head">
-<h3 class="extra-panel-title">
+<h3 class="extra-panel-title" id="idecl-title">
 Feminines without
 <i lang="sr">
 -а
@@ -1421,6 +1421,7 @@ Feminines without
 </span>
 </header>
 <div class="extra-panel-body">
+<div aria-labelledby="idecl-title" class="i-decl-wrap" role="region" tabindex="0">
 <table class="i-decl">
 <thead>
 <tr>
@@ -1542,6 +1543,7 @@ LOK
 </tr>
 </tbody>
 </table>
+</div>
 </div>
 </article>
 <article class="extra-panel">

@@ -343,10 +343,11 @@ export const chart: Chart = {
     const idPanel = html`
     <article class="extra-panel extra-panel-idecl">
       <header class="extra-panel-head">
-        <h3 class="extra-panel-title">${srGrammarHTML(t('cases.extra.title').value)}</h3>
+        <h3 class="extra-panel-title" id="idecl-title">${srGrammarHTML(t('cases.extra.title').value)}</h3>
         <span class="extra-panel-sub"><em lang="sr">${sr('ljubav')}</em>${idGloss ? raw(' · ' + idGloss) : ''}</span>
       </header>
       <div class="extra-panel-body">
+        <div class="i-decl-wrap" role="region" aria-labelledby="idecl-title" tabindex="0">
         <table class="i-decl">
           <thead>
             <tr>
@@ -357,6 +358,7 @@ export const chart: Chart = {
           </thead>
           <tbody>${raw(idRows)}</tbody>
         </table>
+        </div>
       </div>
     </article>
   `.value;

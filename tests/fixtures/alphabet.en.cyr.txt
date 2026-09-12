@@ -1,5 +1,6 @@
 ### mount alphGrid
 <article class="letter" data-kind="shared">
+<div class="head">
 <div class="glyphs" lang="sr">
 <span class="cyr">
 А а
@@ -15,6 +16,7 @@ A a
 <span class="ipa">
 /a/
 </span>
+</div>
 </div>
 <div class="example">
 <span class="word" lang="sr">
@@ -34,6 +36,7 @@ airplane
 </div>
 </article>
 <article class="letter" data-kind="shared">
+<div class="head">
 <div class="glyphs" lang="sr">
 <span class="cyr">
 Б б
@@ -49,6 +52,7 @@ B b
 <span class="ipa">
 /b/
 </span>
+</div>
 </div>
 <div class="example">
 <span class="word" lang="sr">
@@ -68,6 +72,7 @@ banana
 </div>
 </article>
 <article class="letter" data-kind="diff">
+<div class="head">
 <div class="glyphs" lang="sr">
 <span class="cyr">
 В в
@@ -83,6 +88,7 @@ V v
 <span class="ipa">
 /ʋ/
 </span>
+</div>
 </div>
 <div class="example">
 <span class="word" lang="sr">
@@ -102,6 +108,7 @@ water
 </div>
 </article>
 <article class="letter" data-kind="shared">
+<div class="head">
 <div class="glyphs" lang="sr">
 <span class="cyr">
 Г г
@@ -117,6 +124,7 @@ G g
 <span class="ipa">
 /ɡ/
 </span>
+</div>
 </div>
 <div class="example">
 <span class="word" lang="sr">
@@ -136,6 +144,7 @@ mountain
 </div>
 </article>
 <article class="letter" data-kind="shared">
+<div class="head">
 <div class="glyphs" lang="sr">
 <span class="cyr">
 Д д
@@ -151,6 +160,7 @@ D d
 <span class="ipa">
 /d/
 </span>
+</div>
 </div>
 <div class="example">
 <span class="word" lang="sr">
@@ -170,6 +180,7 @@ home
 </div>
 </article>
 <article class="letter" data-kind="unique">
+<div class="head">
 <div class="glyphs" lang="sr">
 <span class="cyr">
 Ђ ђ
@@ -189,6 +200,7 @@ home
 ?
 </button>
 </div>
+</div>
 <div class="example">
 <span class="word" lang="sr">
 <span class="word-cyr">
@@ -207,6 +219,7 @@ pupil / schoolkid
 </div>
 </article>
 <article class="letter" data-kind="shared">
+<div class="head">
 <div class="glyphs" lang="sr">
 <span class="cyr">
 Е е
@@ -222,6 +235,7 @@ E e
 <span class="ipa">
 /e/
 </span>
+</div>
 </div>
 <div class="example">
 <span class="word" lang="sr">
@@ -241,6 +255,7 @@ screen
 </div>
 </article>
 <article class="letter" data-kind="shared">
+<div class="head">
 <div class="glyphs" lang="sr">
 <span class="cyr">
 Ж ж
@@ -256,6 +271,7 @@ screen
 <span class="ipa">
 /ʒ/
 </span>
+</div>
 </div>
 <div class="example">
 <span class="word" lang="sr">
@@ -275,6 +291,7 @@ woman / wife
 </div>
 </article>
 <article class="letter" data-kind="shared">
+<div class="head">
 <div class="glyphs" lang="sr">
 <span class="cyr">
 З з
@@ -290,6 +307,7 @@ Z z
 <span class="ipa">
 /z/
 </span>
+</div>
 </div>
 <div class="example">
 <span class="word" lang="sr">
@@ -309,6 +327,7 @@ winter
 </div>
 </article>
 <article class="letter" data-kind="shared">
+<div class="head">
 <div class="glyphs" lang="sr">
 <span class="cyr">
 И и
@@ -324,6 +343,7 @@ I i
 <span class="ipa">
 /i/
 </span>
+</div>
 </div>
 <div class="example">
 <span class="word" lang="sr">
@@ -343,6 +363,7 @@ game / play
 </div>
 </article>
 <article class="letter" data-kind="unique">
+<div class="head">
 <div class="glyphs" lang="sr">
 <span class="cyr">
 Ј ј
@@ -358,6 +379,7 @@ J j
 <span class="ipa">
 /j/
 </span>
+</div>
 </div>
 <div class="example">
 <span class="word" lang="sr">
@@ -377,6 +399,7 @@ apple
 </div>
 </article>
 <article class="letter" data-kind="shared">
+<div class="head">
 <div class="glyphs" lang="sr">
 <span class="cyr">
 К к
@@ -392,6 +415,7 @@ K k
 <span class="ipa">
 /k/
 </span>
+</div>
 </div>
 <div class="example">
 <span class="word" lang="sr">
@@ -411,6 +435,7 @@ book
 </div>
 </article>
 <article class="letter" data-kind="shared">
+<div class="head">
 <div class="glyphs" lang="sr">
 <span class="cyr">
 Л л
@@ -426,6 +451,7 @@ L l
 <span class="ipa">
 /l/
 </span>
+</div>
 </div>
 <div class="example">
 <span class="word" lang="sr">
@@ -445,6 +471,7 @@ summer
 </div>
 </article>
 <article class="letter" data-kind="unique">
+<div class="head">
 <div class="glyphs" lang="sr">
 <span class="cyr">
 Љ љ
@@ -460,6 +487,7 @@ Lj lj
 <span class="ipa">
 /ʎ/
 </span>
+</div>
 </div>
 <div class="example">
 <span class="word" lang="sr">
@@ -479,6 +507,7 @@ love
 </div>
 </article>
 <article class="letter" data-kind="shared">
+<div class="head">
 <div class="glyphs" lang="sr">
 <span class="cyr">
 М м
@@ -494,6 +523,7 @@ M m
 <span class="ipa">
 /m/
 </span>
+</div>
 </div>
 <div class="example">
 <span class="word" lang="sr">
@@ -513,6 +543,7 @@ bridge
 </div>
 </article>
 <article class="letter" data-kind="diff">
+<div class="head">
 <div class="glyphs" lang="sr">
 <span class="cyr">
 Н н
@@ -528,6 +559,7 @@ N n
 <span class="ipa">
 /n/
 </span>
+</div>
 </div>
 <div class="example">
 <span class="word" lang="sr">
@@ -547,6 +579,7 @@ sky
 </div>
 </article>
 <article class="letter" data-kind="unique">
+<div class="head">
 <div class="glyphs" lang="sr">
 <span class="cyr">
 Њ њ
@@ -562,6 +595,7 @@ Nj nj
 <span class="ipa">
 /ɲ/
 </span>
+</div>
 </div>
 <div class="example">
 <span class="word" lang="sr">
@@ -581,6 +615,7 @@ field (cultivated)
 </div>
 </article>
 <article class="letter" data-kind="shared">
+<div class="head">
 <div class="glyphs" lang="sr">
 <span class="cyr">
 О о
@@ -596,6 +631,7 @@ O o
 <span class="ipa">
 /o/
 </span>
+</div>
 </div>
 <div class="example">
 <span class="word" lang="sr">
@@ -615,6 +651,7 @@ father
 </div>
 </article>
 <article class="letter" data-kind="shared">
+<div class="head">
 <div class="glyphs" lang="sr">
 <span class="cyr">
 П п
@@ -630,6 +667,7 @@ P p
 <span class="ipa">
 /p/
 </span>
+</div>
 </div>
 <div class="example">
 <span class="word" lang="sr">
@@ -649,6 +687,7 @@ bird
 </div>
 </article>
 <article class="letter" data-kind="diff">
+<div class="head">
 <div class="glyphs" lang="sr">
 <span class="cyr">
 Р р
@@ -664,6 +703,7 @@ R r
 <span class="ipa">
 /r/
 </span>
+</div>
 </div>
 <div class="example">
 <span class="word" lang="sr">
@@ -683,6 +723,7 @@ river
 </div>
 </article>
 <article class="letter" data-kind="diff">
+<div class="head">
 <div class="glyphs" lang="sr">
 <span class="cyr">
 С с
@@ -698,6 +739,7 @@ S s
 <span class="ipa">
 /s/
 </span>
+</div>
 </div>
 <div class="example">
 <span class="word" lang="sr">
@@ -717,6 +759,7 @@ cheese
 </div>
 </article>
 <article class="letter" data-kind="shared">
+<div class="head">
 <div class="glyphs" lang="sr">
 <span class="cyr">
 Т т
@@ -732,6 +775,7 @@ T t
 <span class="ipa">
 /t/
 </span>
+</div>
 </div>
 <div class="example">
 <span class="word" lang="sr">
@@ -751,6 +795,7 @@ phone
 </div>
 </article>
 <article class="letter" data-kind="unique">
+<div class="head">
 <div class="glyphs" lang="sr">
 <span class="cyr">
 Ћ ћ
@@ -770,6 +815,7 @@ phone
 ?
 </button>
 </div>
+</div>
 <div class="example">
 <span class="word" lang="sr">
 <span class="word-cyr">
@@ -788,6 +834,7 @@ turkey
 </div>
 </article>
 <article class="letter" data-kind="diff">
+<div class="head">
 <div class="glyphs" lang="sr">
 <span class="cyr">
 У у
@@ -803,6 +850,7 @@ U u
 <span class="ipa">
 /u/
 </span>
+</div>
 </div>
 <div class="example">
 <span class="word" lang="sr">
@@ -822,6 +870,7 @@ street
 </div>
 </article>
 <article class="letter" data-kind="shared">
+<div class="head">
 <div class="glyphs" lang="sr">
 <span class="cyr">
 Ф ф
@@ -837,6 +886,7 @@ F f
 <span class="ipa">
 /f/
 </span>
+</div>
 </div>
 <div class="example">
 <span class="word" lang="sr">
@@ -856,6 +906,7 @@ factory
 </div>
 </article>
 <article class="letter" data-kind="diff">
+<div class="head">
 <div class="glyphs" lang="sr">
 <span class="cyr">
 Х х
@@ -871,6 +922,7 @@ H h
 <span class="ipa">
 /x/
 </span>
+</div>
 </div>
 <div class="example">
 <span class="word" lang="sr">
@@ -890,6 +942,7 @@ cold(ly)
 </div>
 </article>
 <article class="letter" data-kind="shared">
+<div class="head">
 <div class="glyphs" lang="sr">
 <span class="cyr">
 Ц ц
@@ -905,6 +958,7 @@ C c
 <span class="ipa">
 /ts/
 </span>
+</div>
 </div>
 <div class="example">
 <span class="word" lang="sr">
@@ -924,6 +978,7 @@ flower
 </div>
 </article>
 <article class="letter" data-kind="shared">
+<div class="head">
 <div class="glyphs" lang="sr">
 <span class="cyr">
 Ч ч
@@ -943,6 +998,7 @@ flower
 ?
 </button>
 </div>
+</div>
 <div class="example">
 <span class="word" lang="sr">
 <span class="word-cyr">
@@ -961,6 +1017,7 @@ lesson / class; hour
 </div>
 </article>
 <article class="letter" data-kind="unique">
+<div class="head">
 <div class="glyphs" lang="sr">
 <span class="cyr">
 Џ џ
@@ -980,6 +1037,7 @@ Dž dž
 ?
 </button>
 </div>
+</div>
 <div class="example">
 <span class="word" lang="sr">
 <span class="word-cyr">
@@ -998,6 +1056,7 @@ pocket
 </div>
 </article>
 <article class="letter" data-kind="shared">
+<div class="head">
 <div class="glyphs" lang="sr">
 <span class="cyr">
 Ш ш
@@ -1013,6 +1072,7 @@ pocket
 <span class="ipa">
 /ʃ/
 </span>
+</div>
 </div>
 <div class="example">
 <span class="word" lang="sr">
