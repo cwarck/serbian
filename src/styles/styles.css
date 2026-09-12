@@ -233,7 +233,7 @@ body {
   line-height: var(--lh-prose);
   color: var(--ink);
   background: var(--paper);
-  font-feature-settings: "kern", "liga", "onum";
+  font-feature-settings: "kern", "liga";
   font-optical-sizing: auto;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
