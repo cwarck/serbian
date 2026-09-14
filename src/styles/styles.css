@@ -353,7 +353,9 @@ section { position: relative; }
   z-index: 0;
 }
 .nav-inner {
-  display: flex; align-items: center; gap: .75rem;
+  /* Wrap is the no-media-query fallback: at enlarged text on a 320px column
+     the controls drop under the wordmark instead of overflowing it. */
+  display: flex; flex-wrap: wrap; align-items: center; gap: .5rem;
   padding-block: 1.1rem;
   position: relative;
   z-index: 1;
@@ -404,6 +406,7 @@ section { position: relative; }
 .chip:focus-visible,
 .foot-charts-list a:focus-visible,
 .settings-btn:focus-visible,
+.charts-btn:focus-visible,
 .chart-card:focus-visible,
 .case-strip-cell a:focus-visible,
 .foot a:focus-visible {
@@ -1434,7 +1437,7 @@ section { position: relative; }
    One masthead button opens a small floating panel with every site toggle.
    Non-modal; scales/fades up from the trigger (reduced-motion reset applies). */
 .settings-btn {
-  width: 42px; height: 42px;
+  width: 2.625rem; height: 2.625rem;
   display: inline-grid; place-items: center;
   border-radius: 50%;
   border: 1px solid var(--hairline);
@@ -1446,8 +1449,12 @@ section { position: relative; }
 .settings-btn[aria-expanded="true"] { background: var(--paper-deep); color: var(--ink); }
 
 .settings-menu {
-  position: fixed;
-  z-index: 1200;
+  position: absolute;
+  right: var(--pad-x);
+  top: calc(100% - .6rem);
+  /* Never wider than the column minus both gutters. */
+  width: min(17.5rem, calc(100% - 2 * var(--pad-x)));
+  z-index: 2;
   opacity: 0;
   transform: scale(.97) translateY(-6px);
   transform-origin: top right;
@@ -1460,7 +1467,7 @@ section { position: relative; }
   pointer-events: auto;
 }
 .settings-menu-card {
-  width: min(17.5rem, calc(100vw - 24px));
+  width: 100%;
   background: var(--paper-deep);
   border: 1px solid var(--hairline);
   border-radius: 12px;
@@ -1490,6 +1497,79 @@ section { position: relative; }
 /* Compact chips inside the panel; a too-wide group wraps within its capsule. */
 .settings-menu .nav-controls { flex-wrap: wrap; gap: .15rem; }
 .settings-menu .chip { padding: 0 .7rem; }
+
+/* ── Charts switcher ───────────────────────────────────────────────────
+   A masthead disclosure listing every chart. The panel lives inside the
+   sticky masthead and spans the column; --sticky-offset (app.js) drops it
+   below the case strip, which stays visible while the panel is open. */
+.charts-btn {
+  display: inline-flex; align-items: center; gap: .2rem;
+  min-height: 2.625rem;
+  padding: 0 .55rem 0 .85rem;
+  border-radius: 999px;
+  border: 1px solid var(--hairline);
+  font-family: var(--ff-body);
+  font-size: var(--fs-caption);
+  line-height: 1;
+  color: var(--ink-soft);
+  white-space: nowrap;
+  transition: background .25s, color .25s;
+}
+.charts-btn svg { width: .9rem; height: .9rem; transition: transform .16s ease; }
+.charts-btn[aria-expanded="true"] { background: var(--paper-deep); color: var(--ink); }
+.charts-btn[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+.charts-menu {
+  position: absolute;
+  /* --sticky-offset is measured from the masthead's top; this box starts
+     below its safe-area padding. */
+  top: calc(var(--sticky-offset, 100%) - env(safe-area-inset-top, 0px));
+  left: 0; right: 0;
+  z-index: 2;
+  padding: .5rem .5rem 0;
+  opacity: 0;
+  transform: translateY(-.375rem);
+  transition: opacity .16s ease, transform .16s ease;
+  pointer-events: none;
+}
+.charts-menu.is-open {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+.charts-menu-list {
+  list-style: none; margin: 0; padding: 0;
+  /* Viewport-safety cap: nine RU rows must stay reachable in a short viewport. */
+  max-height: calc(100vh - var(--sticky-offset, 0px) - 1.5rem);
+  max-height: calc(100dvh - var(--sticky-offset, 0px) - 1.5rem);
+  overflow-y: auto;
+  background: var(--paper-deep);
+  border: 1px solid var(--hairline);
+  border-radius: 12px;
+  box-shadow: 0 18px 38px -22px var(--shadow), 0 8px 18px -16px var(--shadow);
+}
+.charts-menu-list li + li { border-top: 1px solid var(--hairline-soft); }
+.charts-menu-list a {
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  min-height: 2.75rem;
+  padding: .55rem 1.2rem;
+  font-family: var(--ff-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-snug);
+  color: var(--ink-soft);
+  text-decoration: none;
+  transition: background .25s, color .25s;
+}
+.charts-menu-list a[aria-current="page"] {
+  color: var(--ink);
+  background: color-mix(in oklab, var(--ink) 6%, transparent);
+}
+.charts-menu-check { width: 1.125rem; height: 1.125rem; flex: none; }
+.charts-menu-list a:focus-visible { outline: 2px solid var(--accent); outline-offset: -3px; }
+@media (hover: hover) {
+  .charts-btn:hover { color: var(--ink); }
+  .charts-menu-list a:hover { color: var(--ink); }
+}
 
 .note-title {
   font-style: italic;

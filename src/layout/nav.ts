@@ -8,7 +8,8 @@
 import { html, raw, type Raw } from '../lib/html.ts';
 import { translator } from '../i18n/index.ts';
 import type { Lang } from '../lib/negotiate.ts';
-import { counterpart, type Route } from '../lib/routes.ts';
+import { counterpart, PAGES, routeFor, type Route } from '../lib/routes.ts';
+import { cardKey } from './foot.ts';
 
 const SLIDERS_SVG = raw(`
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
@@ -16,6 +17,13 @@ const SLIDERS_SVG = raw(`
       <line x1="4" y1="15" x2="20" y2="15"></line>
       <circle cx="15" cy="9" r="2.3"></circle>
       <circle cx="9" cy="15" r="2.3"></circle>
+    </svg>`);
+
+const CHECK_SVG = raw(`<svg class="charts-menu-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="5 12.5 10 17.5 19 7"></polyline></svg>`);
+
+const CHEVRON_SVG = raw(`
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polyline points="6 9 12 15 18 9"></polyline>
     </svg>`);
 
 /* Language endonyms are never translated — a reader looking for their own
@@ -36,10 +44,32 @@ export function masthead(route: Route): Raw {
       <span>${t('nav.brand')}</span>
     </a>
     <div class="nav-actions">
+      ${route.name === 'home' ? '' : html`<button type="button" class="charts-btn" data-charts-toggle aria-expanded="false" aria-controls="chartsMenu"><span>${t('nav.chartsMenu')}</span>${CHEVRON_SVG}</button>${chartsMenu(route)}`}
       <button type="button" class="settings-btn" data-settings-toggle aria-haspopup="dialog" aria-expanded="false" aria-label="${t('nav.settings')}">${SLIDERS_SVG}</button>
+      ${settingsMenu(route)}
     </div>
   </div>
 </header>
+`;
+}
+
+/* The quick switcher: every chart in the reader's locale, the current one
+   marked. Home is the chart list already, so it carries no switcher. Both
+   panels follow their buttons in DOM order, so Tab enters them next; they
+   are absolute inside the sticky masthead, so nothing is placed by JS. */
+function chartsMenu(route: Route): Raw {
+  const t = translator(route.lang);
+  const charts = PAGES.filter(page => page.name !== 'home' && page.langs.includes(route.lang));
+  return html`
+<nav class="charts-menu" id="chartsMenu" hidden aria-label="${t('nav.charts')}">
+  <ul class="charts-menu-list">
+    ${charts.map(page => {
+      const target = routeFor(page, route.lang);
+      const current = target.name === route.name;
+      return html`<li><a href="${target.path}"${current ? raw(' aria-current="page"') : ''}>${t(cardKey(page.name))}${current ? CHECK_SVG : ''}</a></li>`;
+    })}
+  </ul>
+</nav>
 `;
 }
 
@@ -57,7 +87,7 @@ function langHref(route: Route, lang: Lang): string {
    script and theme chips are not: theme-init has already read the stored
    preference by the time this markup paints, so baking `lat`/`system` here
    would assert the opposite of what the page is showing. app.js marks them. */
-export function settingsMenu(route: Route): Raw {
+function settingsMenu(route: Route): Raw {
   const t = translator(route.lang);
   return html`
 <div class="settings-menu" id="settingsMenu" hidden role="dialog" aria-label="${t('nav.settings')}">

@@ -7,6 +7,7 @@ import type { Key } from './en.ts';
 export const ru: Record<Key, string> = {
   'nav.brand': 'serbian<span class="brand-tld">.fyi</span>',
   'nav.settings': 'Настройки',
+  'nav.chartsMenu': 'Разделы',
   'nav.langGroup': 'Язык',
   'nav.scriptGroup': 'Сербская письменность',
   'settings.language': 'Язык',

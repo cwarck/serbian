@@ -188,47 +188,50 @@ const popover = (() => {
   return { close };
 })();
 
-/* ---------- settings menu ----------
-   The markup arrives from the build; only the opening and closing is here. */
+/* ---------- floating panels ----------
+   The settings menu and the charts switcher arrive as build markup and are
+   placed by CSS inside the masthead; only the opening and closing is here.
+   One panel open at a time. */
 
-function wireSettingsMenu(): void {
-  const btn = document.querySelector<HTMLElement>('[data-settings-toggle]');
-  const menu = document.getElementById('settingsMenu');
-  const card = menu?.querySelector<HTMLElement>('.settings-menu-card');
-  if (!btn || !menu || !card) return;
+const panels: Array<() => void> = [];
+
+function wireDisclosure(toggleSelector: string, menuId: string, onToggle?: (open: boolean) => void): void {
+  const btn = document.querySelector<HTMLElement>(toggleSelector);
+  const menu = document.getElementById(menuId);
+  if (!btn || !menu) return;
 
   let open = false;
-  const position = () => {
-    const r = btn.getBoundingClientRect();
-    const gutter = 12;
-    const cardW = card.offsetWidth || 280;
-    let left = r.right - cardW;
-    left = Math.max(gutter, Math.min(left, window.innerWidth - cardW - gutter));
-    menu.style.left = left + 'px';
-    menu.style.top = (r.bottom + 8) + 'px';
-  };
   const setOpen = (next: boolean) => {
+    if (next === open) return;
+    if (next) for (const close of panels) close();
     open = next;
     btn.setAttribute('aria-expanded', String(open));
+    onToggle?.(open);
     if (open) {
       menu.hidden = false;
-      requestAnimationFrame(() => { position(); menu.classList.add('is-open'); });
+      requestAnimationFrame(() => { if (open) menu.classList.add('is-open'); });
     } else {
       menu.classList.remove('is-open');
       menu.hidden = true;
     }
   };
+  panels.push(() => setOpen(false));
+
+  const inside = (node: EventTarget | null) =>
+    node instanceof Node && (menu.contains(node) || btn.contains(node));
 
   btn.addEventListener('click', (e) => { e.stopPropagation(); setOpen(!open); });
-  document.addEventListener('click', (e) => {
-    const target = e.target as Node;
-    if (open && !menu.contains(target) && !btn.contains(target)) setOpen(false);
-  });
+  document.addEventListener('click', (e) => { if (open && !inside(e.target)) setOpen(false); });
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && open) { setOpen(false); btn.focus({ preventScroll: true }); }
   });
-  window.addEventListener('resize', () => { if (open) position(); });
-  window.addEventListener('scroll', () => { if (open) position(); }, { passive: true });
+  /* Tabbing out closes without moving focus. A null relatedTarget is a
+     pointer landing on something unfocusable — the click handler owns that. */
+  for (const el of [btn, menu]) {
+    el.addEventListener('focusout', (e) => {
+      if (open && e.relatedTarget && !inside(e.relatedTarget)) setOpen(false);
+    });
+  }
 }
 
 /* ---------- case strip ---------- */
@@ -241,6 +244,10 @@ function stickyOffset(): void {
   root.style.setProperty('--sticky-offset', (navHeight + (strip?.offsetHeight ?? 0)) + 'px');
 }
 
+/* Set by caseStripVisibility on pages that have a strip. While the charts
+   panel is open the strip stays put, so the panel below it has a fixed top. */
+let holdCaseStrip: (on: boolean) => void = () => {};
+
 /* Labels the cases table only. Hide once the reader scrolls past the whole
    case list (into the off-paradigm panel); bring it back on any upward scroll. */
 function caseStripVisibility(): void {
@@ -252,6 +259,7 @@ function caseStripVisibility(): void {
   let lastY = window.scrollY;
   let ticking = false;
   let pointerFocused = false;
+  let held = false;
 
   const setHidden = (hidden: boolean) => {
     strip.classList.toggle('is-hidden', hidden);
@@ -262,6 +270,7 @@ function caseStripVisibility(): void {
   const update = () => {
     ticking = false;
     const y = window.scrollY;
+    if (held) { setHidden(false); lastY = y; return; }
     const headerHeight = header?.offsetHeight ?? 0;
     const passedList = list.getBoundingClientRect().bottom <= headerHeight + 12;
     const keyboardFocusInStrip = strip.matches(':focus-within') && !pointerFocused;
@@ -280,6 +289,7 @@ function caseStripVisibility(): void {
   strip.addEventListener('keydown', () => { pointerFocused = false; });
   strip.addEventListener('focusin', () => setHidden(false));
   strip.addEventListener('focusout', () => { pointerFocused = false; });
+  holdCaseStrip = (on) => { held = on; if (on) setHidden(false); };
   update();
 }
 
@@ -328,7 +338,9 @@ function init(): void {
   const script = read(LS_SCRIPT);
   applyScript(script === 'cyr' ? 'cyr' : 'lat');
 
-  wireSettingsMenu();
+  wireDisclosure('[data-settings-toggle]', 'settingsMenu');
+  /* Late-bound: caseStripVisibility installs the real hold after this runs. */
+  wireDisclosure('[data-charts-toggle]', 'chartsMenu', open => holdCaseStrip(open));
 
   for (const chip of document.querySelectorAll<HTMLElement>('[data-script-chip]')) {
     chip.addEventListener('click', () => setScript(chip.getAttribute('data-script-chip') ?? ''));
@@ -349,10 +361,12 @@ function init(): void {
     });
   }
 
+  /* --sticky-offset also places the charts panel, so it is measured everywhere. */
+  stickyOffset();
+  window.addEventListener('resize', stickyOffset);
+  window.addEventListener('load', stickyOffset);
+
   if (document.querySelector<HTMLElement>('#caseList, #cardinalList')) {
-    stickyOffset();
-    window.addEventListener('resize', stickyOffset);
-    window.addEventListener('load', stickyOffset);
     caseStripVisibility();
     scrollSpy();
   }

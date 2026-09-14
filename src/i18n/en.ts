@@ -5,6 +5,7 @@
 export const en = {
   'nav.brand': 'serbian<span class="brand-tld">.fyi</span>',
   'nav.settings': 'Settings',
+  'nav.chartsMenu': 'Charts',
   'nav.langGroup': 'Language',
   'nav.scriptGroup': 'Serbian script',
   'settings.language': 'Language',

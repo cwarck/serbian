@@ -7,7 +7,7 @@
 import { html, raw, type Raw } from '../lib/html.ts';
 import { text } from '../i18n/index.ts';
 import { counterpart, type Route } from '../lib/routes.ts';
-import { masthead, settingsMenu } from './nav.ts';
+import { masthead } from './nav.ts';
 import { footer } from './foot.ts';
 import { home, chartBody } from './body.ts';
 import { findTriggers, popoverKey } from '../lib/triggers.ts';
@@ -89,7 +89,7 @@ ${masthead(route)}${body.beforeMain ?? ''}
 <main id="content"${route.name === 'home' ? raw(' class="home shell"') : ''}>
 <noscript><p class="noscript-note">${t('nav.noscript')}</p></noscript>
 ${body.main}</main>
-${footer(route)}${settingsMenu(route)}
+${footer(route)}
 ${body.templates ?? ''}
 <script src="/assets/app.js"></script>
 </body>
