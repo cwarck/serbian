@@ -1,4 +1,4 @@
-import type { Irregular, VerbGroup } from '../lib/types.ts';
+import type { FormulaPart, Irregular, VerbGroup } from '../lib/types.ts';
 
 export const PRONOUNS = [
   { key: 'ja', label: 'ja' },
@@ -76,13 +76,15 @@ export const VERB_GROUPS = [
 export const IRREGULARS = [
   {
     title: 'biti',
-    forms: ['sam', 'si', 'je', 'smo', 'ste', 'su'],
+    short: ['sam', 'si', 'je', 'smo', 'ste', 'su'],
     negative: ['nisam', 'nisi', 'nije', 'nismo', 'niste', 'nisu'],
-    full: ['jesam', 'jesi', 'jeste', 'jesmo', 'jeste', 'jesu']
+    perfective: ['budem', 'budeš', 'bude', 'budemo', 'budete', 'budu'],
+    emphatic: ['jesam', 'jesi', 'jeste', 'jesmo', 'jeste', 'jesu']
   },
   {
     title: 'hteti',
-    forms: ['hoću', 'hoćeš', 'hoće', 'hoćemo', 'hoćete', 'hoće'],
+    full: ['hoću', 'hoćeš', 'hoće', 'hoćemo', 'hoćete', 'hoće'],
+    short: ['ću', 'ćeš', 'će', 'ćemo', 'ćete', 'će'],
     negative: ['neću', 'nećeš', 'neće', 'nećemo', 'nećete', 'neće']
   },
   {
@@ -92,8 +94,11 @@ export const IRREGULARS = [
   },
 ] satisfies readonly Irregular[];
 
+/* Formulas name the auxiliary by lemma and paradigm; the six forms live on
+   the auxiliary's own card, and the formula links there. */
 export const PAST = {
-  formula: [{ sr:'sam/si/je/smo/ste/su' }, { text:'+' }, { key:'verbs.term.pastParticiple' }],
+  meaning: { en:'The usual tense for past actions and states.', ru:'Основное время для действий и состояний в прошлом.' },
+  formula: [{ aux: { lemma:'biti', field:'short' } }, { text:'+' }, { key:'verbs.term.pastParticiple' }] satisfies readonly FormulaPart[],
   examples: [
     { sr:'Gledao sam film.', en:'I watched a film.', ru:'Я смотрел фильм.' },
     { sr:'Ja sam gledao film.', en:'I watched a film.', ru:'Я смотрел фильм.' },
@@ -111,7 +116,8 @@ export const PAST = {
 };
 
 export const FUTURE = {
-  formula: [{ sr:'ću/ćeš/će/ćemo/ćete/će' }, { text:'+' }, { key:'verbs.term.infinitive' }],
+  meaning: { en:'The usual tense for future actions and states.', ru:'Основное время для будущих действий и состояний.' },
+  formula: [{ aux: { lemma:'hteti', field:'short' } }, { text:'+' }, { key:'verbs.term.infinitive' }] satisfies readonly FormulaPart[],
   examples: [
     { sr:'Ja ću raditi.', en:'I will work.', ru:'Я буду работать.' },
     { sr:'Radiću.', en:'I will work.', ru:'Я буду работать.' },
@@ -123,9 +129,10 @@ export const FUTURE = {
 
 /* Futur II: the same agreeing participle as the Perfekat, so its endings are
    not repeated here — the formula names the participle and the Perfekat bands
-   hold the six forms. */
+   hold the six forms; budem… sits on the biti card. */
 export const FUTURE2 = {
-  formula: [{ sr:'budem/budeš/bude/budemo/budete/budu' }, { text:'+' }, { key:'verbs.term.pastParticiple' }],
+  meaning: { en:'A future action or state in a subordinate clause.', ru:'Будущее действие или состояние в придаточной части.' },
+  formula: [{ aux: { lemma:'biti', field:'perfective' } }, { text:'+' }, { key:'verbs.term.pastParticiple' }] satisfies readonly FormulaPart[],
   examples: [
     { sr:'Kad budem imao vremena, doći ću.', en:'When I have time, I will come.', ru:'Когда у меня будет время, я приду.' },
     { sr:'Ako budeš imala vremena, dođi.', en:'If you have time, come.', ru:'Если у тебя будет время, приходи.' },

@@ -904,14 +904,14 @@ sell
 be
 </em>
 </h3>
-<button aria-expanded="false" aria-haspopup="dialog" aria-label="full forms" class="tip-chip" data-verb-tip="0" type="button">
-?
-</button>
 </div>
 </header>
-<section class="card-section">
+<section class="card-section" id="aux-biti-short">
 <h4 class="card-section-label">
-Present
+Short forms
+<button aria-expanded="false" aria-haspopup="dialog" aria-label="emphatic forms" class="tip-chip" data-verb-tip="0" type="button">
+?
+</button>
 </h4>
 <table class="verb-paradigm">
 <thead>
@@ -994,7 +994,7 @@ Plural
 </tbody>
 </table>
 </section>
-<section class="card-section">
+<section class="card-section" id="aux-biti-negative">
 <h4 class="card-section-label">
 Negative
 </h4>
@@ -1079,6 +1079,91 @@ Plural
 </tbody>
 </table>
 </section>
+<section class="card-section" id="aux-biti-perfective">
+<h4 class="card-section-label">
+Perfective present
+</h4>
+<table class="verb-paradigm">
+<thead>
+<tr>
+<th scope="col">
+Singular
+</th>
+<th scope="col">
+Plural
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+ја
+</span>
+<span class="verb-form" lang="sr">
+будем
+</span>
+</div>
+</td>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+ми
+</span>
+<span class="verb-form" lang="sr">
+будемо
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+ти
+</span>
+<span class="verb-form" lang="sr">
+будеш
+</span>
+</div>
+</td>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+ви
+</span>
+<span class="verb-form" lang="sr">
+будете
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+он/она/оно
+</span>
+<span class="verb-form" lang="sr">
+буде
+</span>
+</div>
+</td>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+они/оне/она
+</span>
+<span class="verb-form" lang="sr">
+буду
+</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
 </article>
 <article class="card" data-tone="irr">
 <header class="card-head">
@@ -1093,9 +1178,9 @@ want / will
 </h3>
 </div>
 </header>
-<section class="card-section">
+<section class="card-section" id="aux-hteti-full">
 <h4 class="card-section-label">
-Present
+Full forms
 </h4>
 <table class="verb-paradigm">
 <thead>
@@ -1178,7 +1263,92 @@ Plural
 </tbody>
 </table>
 </section>
-<section class="card-section">
+<section class="card-section" id="aux-hteti-short">
+<h4 class="card-section-label">
+Short forms
+</h4>
+<table class="verb-paradigm">
+<thead>
+<tr>
+<th scope="col">
+Singular
+</th>
+<th scope="col">
+Plural
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+ја
+</span>
+<span class="verb-form" lang="sr">
+ћу
+</span>
+</div>
+</td>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+ми
+</span>
+<span class="verb-form" lang="sr">
+ћемо
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+ти
+</span>
+<span class="verb-form" lang="sr">
+ћеш
+</span>
+</div>
+</td>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+ви
+</span>
+<span class="verb-form" lang="sr">
+ћете
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+он/она/оно
+</span>
+<span class="verb-form" lang="sr">
+ће
+</span>
+</div>
+</td>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+они/оне/она
+</span>
+<span class="verb-form" lang="sr">
+ће
+</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="card-section" id="aux-hteti-negative">
 <h4 class="card-section-label">
 Negative
 </h4>
@@ -1277,7 +1447,7 @@ can / be able to
 </h3>
 </div>
 </header>
-<section class="card-section">
+<section class="card-section" id="aux-moci-forms">
 <h4 class="card-section-label">
 Present
 </h4>
@@ -1378,27 +1548,22 @@ Past
 </header>
 <section class="card-section">
 <h4 class="card-section-label">
+Meaning
+</h4>
+<p class="verb-prose">
+The usual tense for past actions and states.
+</p>
+</section>
+<section class="card-section">
+<h4 class="card-section-label">
 Formula
 </h4>
 <p class="verb-formula">
+<a href="#aux-biti-short">
 <span lang="sr">
-сам/
-<wbr>
-</wbr>
-си/
-<wbr>
-</wbr>
-је/
-<wbr>
-</wbr>
-смо/
-<wbr>
-</wbr>
-сте/
-<wbr>
-</wbr>
-су
+бити (сам)
 </span>
+</a>
 <span class="chart-sep">
 +
 </span>
@@ -1546,27 +1711,22 @@ Future I
 </header>
 <section class="card-section">
 <h4 class="card-section-label">
+Meaning
+</h4>
+<p class="verb-prose">
+The usual tense for future actions and states.
+</p>
+</section>
+<section class="card-section">
+<h4 class="card-section-label">
 Formula
 </h4>
 <p class="verb-formula">
+<a href="#aux-hteti-short">
 <span lang="sr">
-ћу/
-<wbr>
-</wbr>
-ћеш/
-<wbr>
-</wbr>
-ће/
-<wbr>
-</wbr>
-ћемо/
-<wbr>
-</wbr>
-ћете/
-<wbr>
-</wbr>
-ће
+хтети (ћу)
 </span>
+</a>
 <span class="chart-sep">
 +
 </span>
@@ -1638,27 +1798,22 @@ Future II
 </header>
 <section class="card-section">
 <h4 class="card-section-label">
+Meaning
+</h4>
+<p class="verb-prose">
+A future action or state in a subordinate clause.
+</p>
+</section>
+<section class="card-section">
+<h4 class="card-section-label">
 Formula
 </h4>
 <p class="verb-formula">
+<a href="#aux-biti-perfective">
 <span lang="sr">
-будем/
-<wbr>
-</wbr>
-будеш/
-<wbr>
-</wbr>
-буде/
-<wbr>
-</wbr>
-будемо/
-<wbr>
-</wbr>
-будете/
-<wbr>
-</wbr>
-буду
+бити (будем)
 </span>
+</a>
 <span class="chart-sep">
 +
 </span>
@@ -1780,7 +1935,7 @@ The infinitive ending alone does not pick the present pattern. Use the 1sg form 
 Subordinate clauses
 </h4>
 <p>
-Marks a future condition or time in a subordinate clause. The main clause often takes Futur I, but other forms are possible, and a perfective present can stand in the subordinate clause too.
+The main clause often uses Futur I, but other forms are possible. A perfective verb in the subordinate clause can use its present form instead of Futur II.
 </p>
 </article>
 ### popover [data-verb-note]|[["data-verb-note","se"]]
@@ -1806,7 +1961,7 @@ Clitics, the short unstressed words, normally stand as one group after the first
 <span lang="sr">
 бити
 </span>
-· full forms
+· emphatic forms
 </h4>
 <table class="verb-paradigm">
 <thead>

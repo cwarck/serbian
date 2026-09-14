@@ -904,14 +904,14 @@ biti
 быть
 </em>
 </h3>
-<button aria-expanded="false" aria-haspopup="dialog" aria-label="полные формы" class="tip-chip" data-verb-tip="0" type="button">
-?
-</button>
 </div>
 </header>
-<section class="card-section">
+<section class="card-section" id="aux-biti-short">
 <h4 class="card-section-label">
-Настоящее
+Краткие формы
+<button aria-expanded="false" aria-haspopup="dialog" aria-label="ударные формы" class="tip-chip" data-verb-tip="0" type="button">
+?
+</button>
 </h4>
 <table class="verb-paradigm">
 <thead>
@@ -994,7 +994,7 @@ su
 </tbody>
 </table>
 </section>
-<section class="card-section">
+<section class="card-section" id="aux-biti-negative">
 <h4 class="card-section-label">
 Отрицание
 </h4>
@@ -1079,6 +1079,91 @@ nisu
 </tbody>
 </table>
 </section>
+<section class="card-section" id="aux-biti-perfective">
+<h4 class="card-section-label">
+Настоящее совершенного вида
+</h4>
+<table class="verb-paradigm">
+<thead>
+<tr>
+<th scope="col">
+Ед. число
+</th>
+<th scope="col">
+Мн. число
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+ja
+</span>
+<span class="verb-form" lang="sr">
+budem
+</span>
+</div>
+</td>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+mi
+</span>
+<span class="verb-form" lang="sr">
+budemo
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+ti
+</span>
+<span class="verb-form" lang="sr">
+budeš
+</span>
+</div>
+</td>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+vi
+</span>
+<span class="verb-form" lang="sr">
+budete
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+on/ona/ono
+</span>
+<span class="verb-form" lang="sr">
+bude
+</span>
+</div>
+</td>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+oni/one/ona
+</span>
+<span class="verb-form" lang="sr">
+budu
+</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
 </article>
 <article class="card" data-tone="irr">
 <header class="card-head">
@@ -1093,9 +1178,9 @@ hteti
 </h3>
 </div>
 </header>
-<section class="card-section">
+<section class="card-section" id="aux-hteti-full">
 <h4 class="card-section-label">
-Настоящее
+Полные формы
 </h4>
 <table class="verb-paradigm">
 <thead>
@@ -1178,7 +1263,92 @@ hoće
 </tbody>
 </table>
 </section>
-<section class="card-section">
+<section class="card-section" id="aux-hteti-short">
+<h4 class="card-section-label">
+Краткие формы
+</h4>
+<table class="verb-paradigm">
+<thead>
+<tr>
+<th scope="col">
+Ед. число
+</th>
+<th scope="col">
+Мн. число
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+ja
+</span>
+<span class="verb-form" lang="sr">
+ću
+</span>
+</div>
+</td>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+mi
+</span>
+<span class="verb-form" lang="sr">
+ćemo
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+ti
+</span>
+<span class="verb-form" lang="sr">
+ćeš
+</span>
+</div>
+</td>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+vi
+</span>
+<span class="verb-form" lang="sr">
+ćete
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+on/ona/ono
+</span>
+<span class="verb-form" lang="sr">
+će
+</span>
+</div>
+</td>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+oni/one/ona
+</span>
+<span class="verb-form" lang="sr">
+će
+</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="card-section" id="aux-hteti-negative">
 <h4 class="card-section-label">
 Отрицание
 </h4>
@@ -1277,7 +1447,7 @@ moći
 </h3>
 </div>
 </header>
-<section class="card-section">
+<section class="card-section" id="aux-moci-forms">
 <h4 class="card-section-label">
 Настоящее
 </h4>
@@ -1378,27 +1548,22 @@ Perfekat
 </header>
 <section class="card-section">
 <h4 class="card-section-label">
+Значение
+</h4>
+<p class="verb-prose">
+Основное время для действий и состояний в прошлом.
+</p>
+</section>
+<section class="card-section">
+<h4 class="card-section-label">
 Формула
 </h4>
 <p class="verb-formula">
+<a href="#aux-biti-short">
 <span lang="sr">
-sam/
-<wbr>
-</wbr>
-si/
-<wbr>
-</wbr>
-je/
-<wbr>
-</wbr>
-smo/
-<wbr>
-</wbr>
-ste/
-<wbr>
-</wbr>
-su
+biti (sam)
 </span>
+</a>
 <span class="chart-sep">
 +
 </span>
@@ -1546,27 +1711,22 @@ Futur I
 </header>
 <section class="card-section">
 <h4 class="card-section-label">
+Значение
+</h4>
+<p class="verb-prose">
+Основное время для будущих действий и состояний.
+</p>
+</section>
+<section class="card-section">
+<h4 class="card-section-label">
 Формула
 </h4>
 <p class="verb-formula">
+<a href="#aux-hteti-short">
 <span lang="sr">
-ću/
-<wbr>
-</wbr>
-ćeš/
-<wbr>
-</wbr>
-će/
-<wbr>
-</wbr>
-ćemo/
-<wbr>
-</wbr>
-ćete/
-<wbr>
-</wbr>
-će
+hteti (ću)
 </span>
+</a>
 <span class="chart-sep">
 +
 </span>
@@ -1638,27 +1798,22 @@ Futur II
 </header>
 <section class="card-section">
 <h4 class="card-section-label">
+Значение
+</h4>
+<p class="verb-prose">
+Будущее действие или состояние в придаточной части.
+</p>
+</section>
+<section class="card-section">
+<h4 class="card-section-label">
 Формула
 </h4>
 <p class="verb-formula">
+<a href="#aux-biti-perfective">
 <span lang="sr">
-budem/
-<wbr>
-</wbr>
-budeš/
-<wbr>
-</wbr>
-bude/
-<wbr>
-</wbr>
-budemo/
-<wbr>
-</wbr>
-budete/
-<wbr>
-</wbr>
-budu
+biti (budem)
 </span>
+</a>
 <span class="chart-sep">
 +
 </span>
@@ -1780,7 +1935,7 @@ se
 Придаточные части
 </h4>
 <p>
-Обозначает будущее условие или время действия в придаточной части. В главной части часто стоит Futur I, но возможны и другие формы; в придаточной может стоять и настоящее совершенного вида.
+В главной части часто стоит будущее время, но возможны и другие формы. Глагол совершенного вида в придаточной части может стоять в настоящем времени вместо Futur II.
 </p>
 </article>
 ### popover [data-verb-note]|[["data-verb-note","se"]]
@@ -1806,7 +1961,7 @@ se
 <span lang="sr">
 biti
 </span>
-· полные формы
+· ударные формы
 </h4>
 <table class="verb-paradigm">
 <thead>

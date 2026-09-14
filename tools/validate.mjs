@@ -663,11 +663,18 @@ function validateSerbianContentScript() {
     });
   });
   verbs.IRREGULARS.forEach((row, rowIndex) => {
-    ['title', 'forms', 'negative', 'full'].forEach(field => eachString(row[field], value => validateSerbianLatin(value, `irregulars[${rowIndex}].${field}`)));
+    ['title', 'forms', 'full', 'short', 'negative', 'perfective', 'emphatic'].forEach(field => eachString(row[field], value => validateSerbianLatin(value, `irregulars[${rowIndex}].${field}`)));
   });
   [verbs.PAST, verbs.FUTURE, verbs.FUTURE2].forEach((tense, tenseIndex) => {
+    expectTranslation(tense.meaning, `verbs.tense[${tenseIndex}]`, 'meaning');
     tense.formula.forEach((part, partIndex) => {
-      if (part.sr) validateSerbianLatin(part.sr, `verbs.tense[${tenseIndex}].formula[${partIndex}].sr`);
+      const scope = `verbs.tense[${tenseIndex}].formula[${partIndex}]`;
+      if (part.sr) validateSerbianLatin(part.sr, `${scope}.sr`);
+      if (part.aux) {
+        const item = verbs.IRREGULARS.find(row => row.title === part.aux.lemma);
+        expect(Array.isArray(item?.[part.aux.field]) && item[part.aux.field].length === 6, 'verbs',
+          `${scope} names ${part.aux.lemma}.${part.aux.field}, which no card shows`);
+      }
     });
     tense.examples.forEach((example, exampleIndex) => validateSerbianLatin(example.sr, `verbs.tense[${tenseIndex}].examples[${exampleIndex}].sr`));
   });
@@ -1049,8 +1056,11 @@ function validateVerbs() {
   IRREGULARS.forEach((row, index) => {
     const scope = `irregulars[${index}]`;
     expectString(row.title, scope, 'title');
-    expectArray(row.forms, scope, 'forms');
+    expect(['forms', 'full', 'short'].some(field => Array.isArray(row[field]) && row[field].length), scope, 'needs a present paradigm');
     expect(Array.isArray(row.negative), scope, 'negative must be array');
+    ['forms', 'full', 'short', 'perfective', 'emphatic'].forEach(field => {
+      if (row[field] !== undefined) expect(Array.isArray(row[field]) && row[field].length === 6, scope, `${field} must hold six person forms`);
+    });
   });
   expectArray(PAST.formula, 'verbs.PAST', 'formula');
   expectArray(PAST.examples, 'verbs.PAST', 'examples');

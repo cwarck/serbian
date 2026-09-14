@@ -1121,6 +1121,8 @@ section { position: relative; }
   padding: 2.2rem 0;
 }
 .card > * { min-width: 0; }
+/* A section a formula links to lands below the sticky masthead, like a card. */
+.card-section[id] { scroll-margin-top: calc(var(--sticky-offset, 120px) + .5rem); }
 .card::before {
   content: "";
   position: absolute;
@@ -1913,6 +1915,15 @@ section { position: relative; }
   font-family: var(--ff-body);
   font-size: var(--fs-caption);
   color: var(--ink-soft);
+}
+/* A one-sentence statement in a section (the tense meaning): body prose. */
+.verb-prose {
+  margin: 0;
+  font-family: var(--ff-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-prose);
+  color: var(--ink-soft);
+  max-width: 34ch;
 }
 /* The clitic in an example rides the shared accent underline (.num-end,
    see the Numbers section). The card has no case, so a .card-item mark would

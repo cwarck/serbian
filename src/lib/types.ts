@@ -166,9 +166,28 @@ export interface VerbGroup {
 
 export interface Irregular {
   readonly title: string;
-  readonly forms: readonly string[];
-  readonly negative?: readonly string[];
+  /* Paradigms, each its own section when present. `forms` is the plain
+     present; an auxiliary splits it into `full` and `short` (hoću / ću). */
+  readonly forms?: readonly string[];
   readonly full?: readonly string[];
+  readonly short?: readonly string[];
+  readonly negative?: readonly string[];
+  /* The perfective present (biti: budem…), the Futur II auxiliary. */
+  readonly perfective?: readonly string[];
+  /* The stressed long forms (biti: jesam…), rare enough for a ? reveal. */
+  readonly emphatic?: readonly string[];
+}
+
+export type AuxField = 'forms' | 'full' | 'short' | 'perfective';
+
+/* One token of a tense formula: a Serbian run, a translated term, a connector,
+   or the auxiliary named by lemma plus the paradigm to use — rendered as
+   `biti (sam)` and linked to that paradigm's section. */
+export interface FormulaPart {
+  readonly sr?: string;
+  readonly key?: string;
+  readonly text?: string;
+  readonly aux?: { readonly lemma: string; readonly field: AuxField };
 }
 
 /* ---------- pronouns ---------- */
