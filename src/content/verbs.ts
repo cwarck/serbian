@@ -1,4 +1,4 @@
-import type { Irregular, VerbGroup } from '../lib/types.ts';
+import type { FormulaPart, Irregular, VerbGroup } from '../lib/types.ts';
 
 export const PRONOUNS = [
   { key: 'ja', label: 'ja' },
@@ -13,7 +13,6 @@ export const VERB_GROUPS = [
   {
     key: 'verbs.group.im',
     tone: 'im',
-    title: 'IM | E',
     endings: { ja:'-im', ti:'-iš', on:'-i', mi:'-imo', vi:'-ite', oni:'-e' },
     patterns: ['-iti', '-eti'],
     verbs: [
@@ -24,16 +23,12 @@ export const VERB_GROUPS = [
       { lemma: 'voleti', present: 'volim' },
       { lemma: 'živeti', present: 'živim' },
       { lemma: 'sedeti', present: 'sedim' },
-    ],
-    example: {
-      infinitive: 'raditi',
-      forms: { ja:'radim', ti:'radiš', on:'radi', mi:'radimo', vi:'radite', oni:'rade' }
-    }
+    ]
   },
   {
     key: 'verbs.group.am',
     tone: 'am',
-    title: 'AM | AJU',
+    note: 'ati',
     endings: { ja:'-am', ti:'-aš', on:'-a', mi:'-amo', vi:'-ate', oni:'-aju' },
     patterns: ['-ati'],
     verbs: [
@@ -44,16 +39,12 @@ export const VERB_GROUPS = [
       { lemma: 'slušati', present: 'slušam' },
       { lemma: 'čekati', present: 'čekam' },
       { lemma: 'igrati', present: 'igram' },
-    ],
-    example: {
-      infinitive: 'čitati',
-      forms: { ja:'čitam', ti:'čitaš', on:'čita', mi:'čitamo', vi:'čitate', oni:'čitaju' }
-    }
+    ]
   },
   {
     key: 'verbs.group.em',
     tone: 'em',
-    title: 'EM | U',
+    note: 'ati',
     endings: { ja:'-em', ti:'-eš', on:'-e', mi:'-emo', vi:'-ete', oni:'-u' },
     patterns: ['-ati', '-ći'],
     verbs: [
@@ -64,16 +55,11 @@ export const VERB_GROUPS = [
       { lemma: 'prati', present: 'perem' },
       { lemma: 'kazati', present: 'kažem' },
       { lemma: 'plakati', present: 'plačem' },
-    ],
-    example: {
-      infinitive: 'lagati',
-      forms: { ja:'lažem', ti:'lažeš', on:'laže', mi:'lažemo', vi:'lažete', oni:'lažu' }
-    }
+    ]
   },
   {
     key: 'verbs.group.jem',
     tone: 'jem',
-    title: 'JEM | JU',
     endings: { ja:'-jem', ti:'-ješ', on:'-je', mi:'-jemo', vi:'-jete', oni:'-ju' },
     patterns: ['-ovati', '-ivati', '-avati'],
     verbs: [
@@ -83,24 +69,23 @@ export const VERB_GROUPS = [
       { lemma: 'verovati', present: 'verujem' },
       { lemma: 'pokazivati', present: 'pokazujem' },
       { lemma: 'prodavati', present: 'prodajem' },
-    ],
-    example: {
-      infinitive: 'kupovati',
-      forms: { ja:'kupujem', ti:'kupuješ', on:'kupuje', mi:'kupujemo', vi:'kupujete', oni:'kupuju' }
-    }
+    ]
   },
 ] satisfies readonly VerbGroup[];
 
 export const IRREGULARS = [
   {
     title: 'biti',
-    forms: ['sam', 'si', 'je', 'smo', 'ste', 'su'],
+    short: ['sam', 'si', 'je', 'smo', 'ste', 'su'],
     negative: ['nisam', 'nisi', 'nije', 'nismo', 'niste', 'nisu'],
-    full: ['jesam', 'jesi', 'jeste', 'jesmo', 'jeste', 'jesu']
+    perfective: ['budem', 'budeš', 'bude', 'budemo', 'budete', 'budu'],
+    conditional: ['bih', 'bi', 'bi', 'bismo', 'biste', 'bi'],
+    emphatic: ['jesam', 'jesi', 'jeste', 'jesmo', 'jeste', 'jesu']
   },
   {
     title: 'hteti',
-    forms: ['hoću', 'hoćeš', 'hoće', 'hoćemo', 'hoćete', 'hoće'],
+    full: ['hoću', 'hoćeš', 'hoće', 'hoćemo', 'hoćete', 'hoće'],
+    short: ['ću', 'ćeš', 'će', 'ćemo', 'ćete', 'će'],
     negative: ['neću', 'nećeš', 'neće', 'nećemo', 'nećete', 'neće']
   },
   {
@@ -110,13 +95,16 @@ export const IRREGULARS = [
   },
 ] satisfies readonly Irregular[];
 
+/* Formulas name the auxiliary by lemma and paradigm; the six forms live on
+   the auxiliary's own card, and the formula links there. */
 export const PAST = {
-  formula: [{ sr:'sam/si/je/smo/ste/su' }, { text:'+' }, { key:'verbs.term.pastParticiple' }],
+  meaning: { en:'The everyday past: what happened or how things were.', ru:'Основное прошедшее: то, что было.' },
+  formula: [{ aux: { lemma:'biti', field:'short' } }, { text:'+' }, { key:'verbs.term.pastParticiple' }] satisfies readonly FormulaPart[],
   examples: [
-    { sr:'Gledao sam film.', en:'I watched a film. (m.)', ru:'Я смотрел фильм. (м.)' },
-    { sr:'Ja sam gledao film.', en:'I watched a film.', ru:'Я смотрел фильм.' },
-    { sr:'Nisam gledao film.', en:'I did not watch a film. (m.)', ru:'Я не смотрел фильм. (м.)' },
-    { sr:'Juče sam gledao film.', en:'Yesterday I watched a film.', ru:'Вчера я смотрел фильм.' },
+    { sr:'Gledao si film.', en:'You watched a film.', ru:'Ты смотрел фильм.' },
+    { sr:'Ona je gledala film.', en:'She watched a film.', ru:'Она смотрела фильм.' },
+    { sr:'Nismo gledali film.', en:'We did not watch a film.', ru:'Мы не смотрели фильм.' },
+    { sr:'Juče su gledali film.', en:'Yesterday they watched a film.', ru:'Вчера они смотрели фильм.' },
   ],
   endings: [
     { key:'past.msg', ending:'-o' },
@@ -129,16 +117,50 @@ export const PAST = {
 };
 
 export const FUTURE = {
-  formula: [{ sr:'ću/ćeš/će/ćemo/ćete/će' }, { text:'+' }, { key:'verbs.term.infinitive' }],
+  meaning: { en:'What will happen or how things will be.', ru:'То, что будет.' },
+  formula: [{ aux: { lemma:'hteti', field:'short' } }, { text:'+' }, { key:'verbs.term.infinitive' }] satisfies readonly FormulaPart[],
   examples: [
-    { sr:'Ja ću raditi.', en:'I will work.', ru:'Я буду работать.' },
-    { sr:'Radiću.', en:'I will work.', ru:'Я буду работать.' },
-    { sr:'Neću raditi.', en:'I will not work.', ru:'Я не буду работать.' },
+    { sr:'Oni će raditi.', en:'They will work.', ru:'Они будут работать.' },
+    { sr:'Radićeš.', en:'You will work.', ru:'Ты будешь работать.' },
+    { sr:'Nećemo raditi.', en:'We will not work.', ru:'Мы не будем работать.' },
   ],
-  merged: ['raditi → radiću', 'radićeš', 'radiće'],
+  merged: { from:'raditi', to:['radiću', 'radićeš', 'radiće'] },
   exceptions: ['ići ću', 'doći ću'],
 };
 
+/* Futur II: the same agreeing participle as the Perfekat, so its endings are
+   not repeated here — the formula names the participle and the Perfekat bands
+   hold the six forms; budem… sits on the biti card. */
+export const FUTURE2 = {
+  meaning: { en:'The future in <i>kad</i> (when), <i>ako</i> (if), <i>čim</i> (as soon as) clauses.', ru:'Будущее в частях с <i>kad</i> (когда), <i>ako</i> (если), <i>čim</i> (как только).' },
+  formula: [{ aux: { lemma:'biti', field:'perfective' } }, { text:'+' }, { key:'verbs.term.pastParticiple' }] satisfies readonly FormulaPart[],
+  examples: [
+    { sr:'Kad budem imao vremena, doći ću.', en:'When I have time, I will come.', ru:'Когда у меня будет время, я приду.' },
+    { sr:'Ako budeš imala vremena, dođi.', en:'If you have time, come.', ru:'Если у тебя будет время, приходи.' },
+    { sr:'Čim budemo završili posao, javićemo se.', en:'As soon as we finish the work, we will get in touch.', ru:'Как только закончим работу, мы свяжемся.' },
+  ],
+};
+
+/* Potencijal is a mood: conditions, wishes, polite requests. Its auxiliary is
+   a clitic, so the examples double as placement facts; ne bih stays two words,
+   so no negated paradigm. */
+export const POTENCIJAL = {
+  meaning: { en:'What you would do, or would like.', ru:'Что сделали бы или хотели бы.' },
+  formula: [{ aux: { lemma:'biti', field:'conditional' } }, { text:'+' }, { key:'verbs.term.pastParticiple' }] satisfies readonly FormulaPart[],
+  examples: [
+    { sr:'Radio bih da imam vremena.', en:'I would work if I had time.', ru:'Я бы работал, если бы было время.' },
+    { sr:'Ona bi želela kafu.', en:'She would like a coffee.', ru:'Она бы хотела кофе.' },
+    { sr:'Da li biste došli?', en:'Would you come?', ru:'Вы бы пришли?' },
+    { sr:'Ne bismo išli.', en:'We would not go.', ru:'Мы бы не пошли.' },
+  ],
+};
+
 /* Clitic placement is not a tense fact — these examples are present and past,
-   so they get their own panel instead of riding inside FUTURE. */
-export const CLITICS = ['Šetam se.', 'Ja se šetam.', 'Nisam se šetao.'];
+   so they get their own card instead of riding inside FUTURE. <mark> isolates
+   the clitic group; the word before it is whatever came first, and inside
+   the group the auxiliary precedes se. */
+export const CLITICS = [
+  { sr:'Šetam <mark>se</mark>.', en:'I take a walk.', ru:'Я гуляю.' },
+  { sr:'Ja <mark>sam se</mark> šetao.', en:'I took a walk.', ru:'Я гулял.' },
+  { sr:'Nisam <mark>se</mark> šetao.', en:'I did not take a walk.', ru:'Я не гулял.' },
+];

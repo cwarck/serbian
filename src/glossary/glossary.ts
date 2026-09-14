@@ -255,6 +255,12 @@ export const GLOSSARY = {
   'skupo':        { pos:'adv', gloss:{ en:'expensively / dear', ru:'дорого' }, level:'A1' },
   'sutra':        { pos:'adv', gloss:{ en:'tomorrow', ru:'завтра' }, level:'A1' },
 
+  /* ---------- conjunctions ---------- */
+
+  'kad':          { pos:'conj', gloss:{ en:'when', ru:'когда' }, level:'A1' },
+  'ako':          { pos:'conj', gloss:{ en:'if', ru:'если' }, level:'A1' },
+  'čim':          { pos:'conj', gloss:{ en:'as soon as', ru:'как только' }, level:'A2' },
+
   /* ---------- prepositions ---------- */
 
   'u':            { pos:'prep', gloss:{ en:'in / into', ru:'в' }, government:['aku','lok'], level:'A0' },

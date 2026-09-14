@@ -153,21 +153,44 @@ export interface VerbGroup {
   /* Present-tense buckets all carry the brand orange via [data-tone] — marker
      ink ("here's the live paradigm"), not a grammatical hue. */
   readonly tone: 'im' | 'am' | 'em' | 'jem';
-  readonly title: string;
   readonly endings: PersonForms;
   readonly patterns: readonly string[];
+  /* A `?` note on the cues, keyed verbs.<note>.title/body — set where a cue
+     does not pick the group by itself (-ati lands in both -am and -em). */
+  readonly note?: string;
   /* The 1sg present beside the lemma. Without it a learner reads the -em
      bucket and produces *pisem, *zvem, *brem — the stem mutations are the
      only hard part of the group and they were not on the chart. */
   readonly verbs: readonly { readonly lemma: string; readonly present: string }[];
-  readonly example: { readonly infinitive: string; readonly forms: PersonForms };
 }
 
 export interface Irregular {
   readonly title: string;
-  readonly forms: readonly string[];
-  readonly negative?: readonly string[];
+  /* Paradigms, each its own section when present. `forms` is the plain
+     present; an auxiliary splits it into `full` and `short` (hoću / ću). */
+  readonly forms?: readonly string[];
   readonly full?: readonly string[];
+  readonly short?: readonly string[];
+  readonly negative?: readonly string[];
+  /* The perfective present (biti: budem…), the Futur II auxiliary. */
+  readonly perfective?: readonly string[];
+  /* The stressed long forms (biti: jesam…), rare enough for a ? reveal. */
+  readonly emphatic?: readonly string[];
+  /* The conditional clitics (biti: bih…), the Potencijal auxiliary. Not the
+     aorist: 3pl is bi, not biše. */
+  readonly conditional?: readonly string[];
+}
+
+export type AuxField = 'forms' | 'full' | 'short' | 'perfective' | 'conditional';
+
+/* One token of a tense formula: a Serbian run, a translated term, a connector,
+   or the auxiliary named by lemma plus the paradigm to use — rendered as
+   `biti (sam)` and linked to that paradigm's section. */
+export interface FormulaPart {
+  readonly sr?: string;
+  readonly key?: string;
+  readonly text?: string;
+  readonly aux?: { readonly lemma: string; readonly field: AuxField };
 }
 
 /* ---------- pronouns ---------- */
@@ -230,7 +253,7 @@ export interface FalseFriendGroup {
 
 /* ---------- glossary ---------- */
 
-export const POS = ['verb', 'noun', 'adj', 'adv', 'prep', 'pron', 'num'] as const;
+export const POS = ['verb', 'noun', 'adj', 'adv', 'prep', 'pron', 'num', 'conj'] as const;
 export type Pos = (typeof POS)[number];
 
 export interface GlossaryEntry {

@@ -1,8 +1,8 @@
-import { html, raw, sr, srGrammarHTML, type Raw } from '../lib/html.ts';
+import { html, raw, sr, srHTML, srGrammarHTML, type Raw } from '../lib/html.ts';
 import type { Lang } from '../lib/negotiate.ts';
 import { translator } from '../i18n/index.ts';
-import { PRONOUNS, VERB_GROUPS, IRREGULARS, PAST, FUTURE, CLITICS } from '../content/verbs.ts';
-import { GENDERS, type PersonForms, type VerbGroup, type Irregular, type Gender, type Number_ } from '../lib/types.ts';
+import { PRONOUNS, VERB_GROUPS, IRREGULARS, PAST, FUTURE, FUTURE2, POTENCIJAL, CLITICS } from '../content/verbs.ts';
+import { GENDERS, type PersonForms, type VerbGroup, type Irregular, type AuxField, type FormulaPart, type Gender, type Number_ } from '../lib/types.ts';
 import { gloss, genderUnit, type Chart } from './chart.ts';
 
 const NUMBERS = ['sg', 'pl'] as const satisfies readonly Number_[];
@@ -17,202 +17,300 @@ function pastEnding(gender: Gender, number: Number_): string {
 
 type T = (key: string) => Raw;
 
-/* Paired paradigm order: SG | PL side by side, three visual rows
-   (ja|mi, ti|vi, on|oni) inside a .verb-pair-grid container. */
+/* Paradigm order: SG | PL side by side, three rows (ja|mi, ti|vi, on|oni). */
 const PAIR_ORDER = [0, 3, 1, 4, 2, 5];
 
-function pronounRows(values: PersonForms): Raw {
-  return raw(PAIR_ORDER.map(i => PRONOUNS[i]!).map(p => html`
-    <div class="chart-pair">
-      <span class="verb-pron" lang="sr">${sr(p.label)}</span>
-      <span class="chart-form verb-form" lang="sr">${sr(values[p.key as keyof PersonForms])}</span>
-    </div>
-  `.value).join(''));
+function personForms(values: PersonForms): readonly string[] {
+  return PRONOUNS.map(p => values[p.key as keyof PersonForms]);
 }
 
-function formRows(forms: readonly string[], paired?: boolean): Raw {
-  const order = paired ? PAIR_ORDER : forms.map((_, i) => i);
-  return raw(order.map(i => html`
-    <div class="chart-pair">
-      <span class="verb-pron" lang="sr">${sr(PRONOUNS[i]!.label)}</span>
-      <span class="chart-form verb-form" lang="sr">${sr(forms[i]!)}</span>
-    </div>
-  `.value).join(''));
+/* The one paradigm layout on the sheet: a two-column table, number in the
+   column headers (never a chip), each cell stacking the pronoun over the
+   form. `abstract` marks bare endings, which carry emphasis weight;
+   irregular forms are specimens. */
+function paradigm(forms: readonly string[], t: T, abstract = false): Raw {
+  const cell = (i: number) => `<td><div class="verb-cell">
+          <span class="verb-pron" lang="sr">${sr(PRONOUNS[i]!.label).value}</span>
+          <span class="verb-form" lang="sr">${sr(forms[i]!).value}</span>
+        </div></td>`;
+  const rows = [0, 1, 2].map(r => `
+        <tr>${cell(PAIR_ORDER[r * 2]!)}${cell(PAIR_ORDER[r * 2 + 1]!)}</tr>`).join('');
+  return raw(`<table class="verb-paradigm${abstract ? ' is-abstract' : ''}">
+      <thead>
+        <tr><th scope="col">${t('band.sg').value}</th><th scope="col">${t('band.pl').value}</th></tr>
+      </thead>
+      <tbody>${rows}
+      </tbody>
+    </table>`);
 }
+
+function tipChip(label: Raw, attr: string): Raw {
+  return raw(`<button class="tip-chip" type="button" aria-haspopup="dialog" aria-expanded="false" aria-label="${label.value}" ${attr}>?</button>`);
+}
+
+/* Every ? note the sheet can open: the groups' cue notes, the clitic rule
+   and the Futur II usage note. Keyed verbs.<note>.title / .body. */
+const NOTES = new Set<string>([...VERB_GROUPS.flatMap(g => g.note ? [g.note] : []), 'se', 'fut2']);
+
+/* The anchor of one auxiliary paradigm section — what a tense formula links
+   to. ASCII: moći → moci. */
+function auxAnchor(title: string, field: string): string {
+  return `aux-${title.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase()}-${field}`;
+}
+
+/* The auxiliary an aux formula part names, or a build error: a formula that
+   pointed at a paradigm no card shows would render a dead link. */
+function auxParadigm(lemma: string, field: AuxField): { item: Irregular; forms: readonly string[] } {
+  const item = IRREGULARS.find(r => r.title === lemma);
+  const forms = item?.[field];
+  if (!item || !forms?.length) throw new Error(`verbs: formula names ${lemma}.${field}, which no card shows`);
+  return { item, forms };
+}
+
+/* A group is named by its 1sg and 3pl endings: -im / -e. */
+function groupName(group: VerbGroup): string {
+  return `${group.endings.ja} / ${group.endings.oni}`;
+}
+
+/* The strip's six cells, one per contiguous run of cards; each links to the
+   run's first card, so the spy needs no card→cell map. Present and irregular
+   cells carry marker orange like their cards; the tense cells fall to ink. */
+const VERB_RUNS = [
+  { id: 'verbs-present',     abbr: 'verbs.strip.present',     name: 'verbs.present',     tone: 'im' },
+  { id: 'verbs-irregular',   abbr: 'verbs.strip.irregular',   name: 'verbs.irregular',   tone: 'irr' },
+  { id: 'verbs-past',        abbr: 'verbs.strip.past',        name: 'verbs.past' },
+  { id: 'verbs-future',      abbr: 'verbs.strip.future',      name: 'verbs.futures' },
+  { id: 'verbs-conditional', abbr: 'verbs.strip.conditional', name: 'verbs.conditional' },
+  { id: 'verbs-clitics',     abbr: 'verbs.strip.clitics',     name: 'verbs.clitics' },
+] as const;
+
+type RunId = typeof VERB_RUNS[number]['id'];
+const runId = (id: RunId | undefined) => id ? raw(` id="${id}"`) : '';
 
 export const chart: Chart = {
   name: 'verbs',
+  mountAttrs: { verbGrid: { class: 'card-list' } },
+
   mounts: (lang: Lang) => {
     const t = translator(lang);
 
+    const cardHead = (title: Raw, em: Raw, extra: Raw | string = '') => html`
+      <header class="card-head">
+        <div class="card-title">
+          <h3><span lang="sr">${title}</span><em>${em}</em></h3>${raw(String(extra))}
+        </div>
+      </header>`;
+
     const examples = (items: readonly { sr: string; en: string; ru: string }[]) =>
       raw(items.map(ex => html`
-    <div class="chart-example verb-example">
-      <span class="sr" lang="sr">${sr(ex.sr)}</span>
-      <span class="tr">${srGrammarHTML(ex[lang] || ex.en)}</span>
-    </div>
-  `.value).join(''));
+          <div class="card-item">
+            <div class="sr" lang="sr">${sr(ex.sr)}</div>
+            <div class="tr">${srGrammarHTML(ex[lang] || ex.en)}</div>
+          </div>`.value).join(''));
 
     /* Only the lang="sr" run is a specimen. The translated term ("past
-       participle") is apparatus and the "+" a connector, so both speak sans. */
-    const formula = (parts: readonly { sr?: string; key?: string; text?: string }[]) =>
+       participle") is apparatus and the "+" a connector, so both speak sans.
+       An aux part names the auxiliary by lemma with its 1sg as the cue —
+       `biti (sam)` — and links to the paradigm on the auxiliary's card. */
+    const formula = (parts: readonly FormulaPart[]) =>
       raw(parts.map(part => {
+        if (part.aux) {
+          const { forms } = auxParadigm(part.aux.lemma, part.aux.field);
+          return `<a href="#${auxAnchor(part.aux.lemma, part.aux.field)}"><span lang="sr">${sr(`${part.aux.lemma} (${forms[0]})`).value}</span></a>`;
+        }
         if (part.sr) return `<span lang="sr">${sr(part.sr).value}</span>`;
         if (part.key) return `<span class="verb-term">${t(part.key).value}</span>`;
         return part.text ? `<span class="chart-sep">${part.text}</span>` : '';
       }).join(' '));
 
-    const regular = (group: VerbGroup) => html`
-    <article class="chart-panel verb-col" data-tone="${group.tone}">
-      <header class="chart-panel-head">
-        <span class="chart-label">${t('verbs.present')}</span>
-        <h3>${group.title}</h3>
-      </header>
-      <div class="chart-pairs verb-pair-grid" aria-label="${t('verbs.endings')}">
-        ${pronounRows(group.endings)}
-      </div>
-      <section class="verb-block">
-        <h4 class="chart-label">${t('verbs.inf.cues')}</h4>
-        <div class="verb-patterns">
-          ${group.patterns.map(pattern => html`<span class="verb-pattern" lang="sr">${sr(pattern)}</span>`)}
-        </div>
+    const srList = (items: readonly string[]) => raw(items.map(item => sr(item).value).join(', '));
+
+    /* lemma → form(s): the arrow is apparatus, never part of the specimen. */
+    const arrowPair = (from: string, to: readonly string[]) =>
+      raw(`<span lang="sr">${sr(from).value}</span> <span class="chart-sep" aria-hidden="true">→</span> <span lang="sr">${srList(to).value}</span>`);
+
+    const regular = (group: VerbGroup, idx: number) => html`
+    <article class="card" data-tone="${group.tone}"${runId(idx === 0 ? 'verbs-present' : undefined)}>
+      ${cardHead(sr(groupName(group)), t('verbs.present'))}
+      <section class="card-section">
+        <h4 class="card-section-label">${t('verbs.infinitive')}${group.note
+          ? tipChip(t('verbs.note'), `data-verb-note="${group.note}"`) : ''}</h4>
+        <p class="verb-cues" lang="sr">${srList(group.patterns)}</p>
       </section>
-      <section class="verb-block">
-        <h4 class="chart-label">${t('verbs.common')}</h4>
-        <ul class="verb-list verb-list-glossed">
-          ${group.verbs.map(verb => html`
-            <li>
-              <span class="verb-lemma" lang="sr">${sr(verb.lemma)}</span>
-              <span class="verb-stem" lang="sr">${sr(verb.present)}</span>
-              <span class="verb-gloss">${gloss(verb.lemma, lang)}</span>
-            </li>
-          `)}
-        </ul>
+      <section class="card-section">
+        <h4 class="card-section-label">${t('verbs.endings')}</h4>
+        ${paradigm(personForms(group.endings), t, true)}
       </section>
-      <section class="verb-block verb-block-example">
-        <header class="verb-lemma-head">
-          <span class="chart-label">${t('verbs.example')}</span>
-          <h4 class="sr-head" lang="sr">${sr(group.example.infinitive)}</h4>
-        </header>
-        <div class="chart-pairs verb-pair-grid">
-          ${pronounRows(group.example.forms)}
+      <section class="card-section">
+        <h4 class="card-section-label">${t('verbs.common')}</h4>
+        <div class="card-items">${group.verbs.map(verb => html`
+          <div class="card-item">
+            <div class="sr">${arrowPair(verb.lemma, [verb.present])}</div>
+            <div class="tr">${gloss(verb.lemma, lang)}</div>
+          </div>`)}
         </div>
       </section>
     </article>
   `;
 
-    const irregulars = html`
-    <article class="chart-panel verb-col" data-tone="irr">
-      <header class="chart-panel-head">
-        <span class="chart-label">${t('verbs.present')}</span>
-        <h3>${t('verbs.irregulars')}</h3>
-      </header>
-      <div class="verb-mini-list">${IRREGULARS.map((item: Irregular, idx) => html`
-    <section class="verb-mini">
-      <header class="verb-lemma-head">
-        <h4 class="sr-head" lang="sr">${sr(item.title)}</h4>
-        ${item.full
-          ? raw(`<button class="tip-chip" type="button" aria-haspopup="dialog" aria-expanded="false" aria-label="${t('verbs.full.forms').value}" data-verb-tip="${idx}">?</button>`)
-          : ''}
-      </header>
-      <div class="chart-pairs verb-pair-grid">
-        ${formRows(item.forms, true)}
-      </div>
-      ${item.negative && item.negative.length ? html`
-        <div class="verb-negative">
-          <span class="chart-label">${t('verbs.negative')}</span>
-          <p lang="sr">${raw(item.negative.map(form => sr(form).value).join(', '))}</p>
-        </div>` : ''}
-    </section>
-  `)}</div>
+    /* Every paradigm an auxiliary owns sits on its own card, each in a
+       section a tense formula can link to, so the formula names the lemma and
+       its 1sg cue alone. */
+    const paradigmSection = (item: Irregular, field: AuxField | 'negative', label: string, extra: Raw | string = '') => {
+      const forms = item[field];
+      return forms && forms.length ? html`
+      <section class="card-section" id="${auxAnchor(item.title, field)}">
+        <h4 class="card-section-label">${t(label)}${raw(String(extra))}</h4>
+        ${paradigm(forms, t)}
+      </section>` : '';
+    };
+
+    const irregular = (item: Irregular, idx: number) => html`
+    <article class="card" data-tone="irr"${runId(idx === 0 ? 'verbs-irregular' : undefined)}>
+      ${cardHead(sr(item.title), raw(gloss(item.title, lang)))}
+      ${paradigmSection(item, 'forms', 'verbs.present')}
+      ${paradigmSection(item, 'full', 'verbs.full')}
+      ${paradigmSection(item, 'short', 'verbs.short',
+        item.emphatic ? tipChip(t('verbs.emphatic'), `data-verb-tip="${idx}"`) : '')}
+      ${paradigmSection(item, 'negative', 'verbs.negative')}
+      ${paradigmSection(item, 'perfective', 'verbs.perfective')}
+      ${paradigmSection(item, 'conditional', 'verbs.conditional')}
     </article>
   `;
+
+    /* The tense head: what the tense means, then how it is built. */
+    const tenseLead = (tense: { meaning: { en: string; ru: string }; formula: readonly FormulaPart[] }) => html`
+      <section class="card-section">
+        <h4 class="card-section-label">${t('verbs.meaning')}</h4>
+        <p class="verb-prose">${srGrammarHTML(tense.meaning[lang] || tense.meaning.en)}</p>
+      </section>
+      <section class="card-section">
+        <h4 class="card-section-label">${t('verbs.formula')}</h4>
+        <p class="verb-formula">${formula(tense.formula)}</p>
+      </section>`;
 
     const past = html`
-    <article class="chart-panel verb-col" data-tone="past">
-      <header class="chart-panel-head">
-        <span class="chart-label">${t('verbs.tense')}</span>
-        <h3>${t('verbs.past')}</h3>
-      </header>
-      <section class="verb-block">
-        <h4 class="chart-label">${t('verbs.formula')}</h4>
-        <p class="verb-formula">${formula(PAST.formula)}</p>
-      </section>
-      <section class="verb-block">
-        <h4 class="chart-label">${t('verbs.placement')}</h4>
-        <div class="verb-examples">${examples(PAST.examples)}</div>
-      </section>
-      <section class="verb-block">
-        <h4 class="chart-label">${t('verbs.participle')}</h4>
-        ${NUMBERS.map(number => html`
+    <article class="card" data-tone="past" id="verbs-past">
+      ${cardHead(sr('Perfekat'), t('verbs.past'))}
+      ${tenseLead(PAST)}
+      <section class="card-section">
+        <h4 class="card-section-label">${t('verbs.participle')}</h4>
+        <div class="verb-bands">${NUMBERS.map(number => html`
           <div class="gender-band">
-            <span class="chart-label">${t('band.' + number)}</span>
+            <h5 class="chart-label">${t('band.' + number)}</h5>
             <div class="gender-run">${GENDERS.map(gender =>
               genderUnit(gender, t('cases.gender.' + gender),
                 html`<span lang="sr">${sr(pastEnding(gender, number))}</span>`))}</div>
             ${number === 'pl' ? html`<p class="gender-band-note">${t('past.mixed')}</p>` : ''}
-          </div>
-        `)}
+          </div>`)}
+        </div>
+      </section>
+      <section class="card-section">
+        <h4 class="card-section-label">${t('verbs.placement')}</h4>
+        <div class="card-items">${examples(PAST.examples)}</div>
       </section>
     </article>
   `;
 
     const future = html`
-    <article class="chart-panel verb-col" data-tone="future">
-      <header class="chart-panel-head">
-        <span class="chart-label">${t('verbs.tense')}</span>
-        <h3>${t('verbs.future')}</h3>
-      </header>
-      <section class="verb-block">
-        <h4 class="chart-label">${t('verbs.formula')}</h4>
-        <p class="verb-formula">${formula(FUTURE.formula)}</p>
+    <article class="card" data-tone="future" id="verbs-future">
+      ${cardHead(sr('Futur I'), t('verbs.future'))}
+      ${tenseLead(FUTURE)}
+      <section class="card-section">
+        <h4 class="card-section-label">${t('verbs.orthography')}</h4>
+        <div class="card-items">${examples(FUTURE.examples)}</div>
       </section>
-      <section class="verb-block">
-        <h4 class="chart-label">${t('verbs.orthography')}</h4>
-        <div class="verb-examples">${examples(FUTURE.examples)}</div>
+      <section class="card-section">
+        <h4 class="card-section-label">${t('verbs.merged')}</h4>
+        <p class="verb-list">${arrowPair(FUTURE.merged.from, FUTURE.merged.to)}</p>
       </section>
-      <section class="verb-block">
-        <h4 class="chart-label">${t('verbs.merged')}</h4>
-        <p class="verb-list" lang="sr">${raw(FUTURE.merged.map(item => sr(item).value).join(', '))}</p>
-      </section>
-      <section class="verb-block">
-        <h4 class="chart-label">${t('verbs.ici.exception')}</h4>
-        <p class="verb-list" lang="sr">${raw(FUTURE.exceptions.map(item => sr(item).value).join(', '))}</p>
+      <section class="card-section">
+        <h4 class="card-section-label">${t('verbs.ici.exception')}</h4>
+        <p class="verb-list" lang="sr">${srList(FUTURE.exceptions)}</p>
       </section>
     </article>
   `;
 
-    const clitics = html`
-    <article class="chart-panel verb-col" data-tone="clitic">
-      <header class="chart-panel-head">
-        <span class="chart-label">${t('verbs.clitics')}</span>
-        <h3 lang="sr">${sr('se')}</h3>
-      </header>
-      <section class="verb-block">
-        <p class="verb-note">${srGrammarHTML(t('verbs.se.rule').value)}</p>
-        <div class="verb-examples">${raw(CLITICS.map(s => `<div class="chart-example verb-example"><span class="sr" lang="sr">${sr(s).value}</span></div>`).join(''))}</div>
+    const future2 = html`
+    <article class="card" data-tone="future">
+      ${cardHead(sr('Futur II'), t('verbs.future2'))}
+      ${tenseLead(FUTURE2)}
+      <section class="card-section">
+        <h4 class="card-section-label">${t('cases.examples')}${tipChip(t('verbs.note'), 'data-verb-note="fut2"')}</h4>
+        <div class="card-items">${examples(FUTURE2.examples)}</div>
       </section>
     </article>
   `;
+
+    const potencijal = html`
+    <article class="card" data-tone="potencijal" id="verbs-conditional">
+      ${cardHead(sr('Potencijal'), t('verbs.conditional'))}
+      ${tenseLead(POTENCIJAL)}
+      <section class="card-section">
+        <h4 class="card-section-label">${t('cases.examples')}</h4>
+        <div class="card-items">${examples(POTENCIJAL.examples)}</div>
+      </section>
+    </article>
+  `;
+
+    /* The placement rule is an explanation, so it lives behind the ? on the
+       examples; the marked se in each example is the visible fact. */
+    const clitics = html`
+    <article class="card verb-clitic" data-tone="clitic" id="verbs-clitics">
+      ${cardHead(sr('se'), t('verbs.clitics'))}
+      <section class="card-section">
+        <h4 class="card-section-label">${t('cases.examples')}${tipChip(t('verbs.note'), 'data-verb-note="se"')}</h4>
+        <div class="card-items">${CLITICS.map(ex => html`
+          <div class="card-item">
+            <div class="sr" lang="sr">${srHTML(ex.sr)}</div>
+            <div class="tr">${srGrammarHTML(ex[lang] || ex.en)}</div>
+          </div>`)}
+        </div>
+      </section>
+    </article>
+  `;
+
+    const verbStripList = VERB_RUNS.map(run => html`
+      <li class="case-strip-cell"${'tone' in run ? raw(` data-tone="${run.tone}"`) : ''}>
+        <a href="#${run.id}" aria-label="${t(run.name)}"><span class="strip-abbr">${t(run.abbr)}</span></a>
+      </li>`.value).join('');
 
     return {
-      verbGrid: [...VERB_GROUPS.map(regular), irregulars, past, future, clitics]
+      verbStripList,
+      verbGrid: [...VERB_GROUPS.map(regular), ...IRREGULARS.map(irregular), past, future, future2, potencijal, clitics]
         .map(x => x.value).join(''),
     };
   },
 
-  popovers: [{
-    match: '[data-verb-tip]',
-    variant: 'chart-pop',
-    render: (attrs, lang) => {
-      const t = translator(lang);
-      const item = IRREGULARS[Number(attrs['data-verb-tip'])];
-      return item?.full ? html`
+  popovers: [
+    {
+      match: '[data-verb-tip]',
+      variant: 'chart-pop',
+      render: (attrs, lang) => {
+        const t = translator(lang);
+        const item = IRREGULARS[Number(attrs['data-verb-tip'])];
+        return item?.emphatic ? html`
       <article class="chart-tip">
-        <h4><span lang="sr">${sr(item.title)}</span> · ${t('verbs.full.forms')}</h4>
-        <div class="chart-pairs">${formRows(item.full)}</div>
+        <h4><span lang="sr">${sr(item.title)}</span> · ${t('verbs.emphatic')}</h4>
+        ${paradigm(item.emphatic, t)}
       </article>
     ` : '';
+      },
     },
-  }],
+    {
+      match: '[data-verb-note]',
+      variant: 'chart-pop',
+      render: (attrs, lang) => {
+        const t = translator(lang);
+        const note = attrs['data-verb-note'];
+        if (!note || !NOTES.has(note)) return '';
+        return html`
+      <article class="chart-tip">
+        <h4>${srGrammarHTML(t(`verbs.${note}.title`).value)}</h4>
+        <p>${srGrammarHTML(t(`verbs.${note}.body`).value)}</p>
+      </article>
+    `;
+      },
+    },
+  ],
 };

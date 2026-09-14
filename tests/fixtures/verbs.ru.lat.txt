@@ -1,1080 +1,1697 @@
-### mount verbGrid
-<article class="chart-panel verb-col" data-tone="im">
-<header class="chart-panel-head">
-<span class="chart-label">
-Настоящее
+### mount verbStripList
+<li class="case-strip-cell" data-tone="im">
+<a aria-label="Настоящее" href="#verbs-present">
+<span class="strip-abbr">
+Наст
 </span>
+</a>
+</li>
+<li class="case-strip-cell" data-tone="irr">
+<a aria-label="Неправильные глаголы" href="#verbs-irregular">
+<span class="strip-abbr">
+Непр
+</span>
+</a>
+</li>
+<li class="case-strip-cell">
+<a aria-label="Прошедшее" href="#verbs-past">
+<span class="strip-abbr">
+Прош
+</span>
+</a>
+</li>
+<li class="case-strip-cell">
+<a aria-label="Будущее I и II" href="#verbs-future">
+<span class="strip-abbr">
+Буд
+</span>
+</a>
+</li>
+<li class="case-strip-cell">
+<a aria-label="Условное наклонение" href="#verbs-conditional">
+<span class="strip-abbr">
+Усл
+</span>
+</a>
+</li>
+<li class="case-strip-cell">
+<a aria-label="Возвратная частица" href="#verbs-clitics">
+<span class="strip-abbr">
+Возв
+</span>
+</a>
+</li>
+### mount verbGrid
+<article class="card" data-tone="im" id="verbs-present">
+<header class="card-head">
+<div class="card-title">
 <h3>
-IM | E
+<span lang="sr">
+-im / -e
+</span>
+<em>
+Настоящее
+</em>
 </h3>
+</div>
 </header>
-<div aria-label="Окончания" class="chart-pairs verb-pair-grid">
-<div class="chart-pair">
+<section class="card-section">
+<h4 class="card-section-label">
+Инфинитив
+</h4>
+<p class="verb-cues" lang="sr">
+-iti, -eti
+</p>
+</section>
+<section class="card-section">
+<h4 class="card-section-label">
+Окончания
+</h4>
+<table class="verb-paradigm is-abstract">
+<thead>
+<tr>
+<th scope="col">
+Ед. число
+</th>
+<th scope="col">
+Мн. число
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<div class="verb-cell">
 <span class="verb-pron" lang="sr">
 ja
 </span>
-<span class="chart-form verb-form" lang="sr">
+<span class="verb-form" lang="sr">
 -im
 </span>
 </div>
-<div class="chart-pair">
+</td>
+<td>
+<div class="verb-cell">
 <span class="verb-pron" lang="sr">
 mi
 </span>
-<span class="chart-form verb-form" lang="sr">
+<span class="verb-form" lang="sr">
 -imo
 </span>
 </div>
-<div class="chart-pair">
+</td>
+</tr>
+<tr>
+<td>
+<div class="verb-cell">
 <span class="verb-pron" lang="sr">
 ti
 </span>
-<span class="chart-form verb-form" lang="sr">
+<span class="verb-form" lang="sr">
 -iš
 </span>
 </div>
-<div class="chart-pair">
+</td>
+<td>
+<div class="verb-cell">
 <span class="verb-pron" lang="sr">
 vi
 </span>
-<span class="chart-form verb-form" lang="sr">
+<span class="verb-form" lang="sr">
 -ite
 </span>
 </div>
-<div class="chart-pair">
+</td>
+</tr>
+<tr>
+<td>
+<div class="verb-cell">
 <span class="verb-pron" lang="sr">
 on/ona/ono
 </span>
-<span class="chart-form verb-form" lang="sr">
+<span class="verb-form" lang="sr">
 -i
 </span>
 </div>
-<div class="chart-pair">
+</td>
+<td>
+<div class="verb-cell">
 <span class="verb-pron" lang="sr">
 oni/one/ona
 </span>
-<span class="chart-form verb-form" lang="sr">
+<span class="verb-form" lang="sr">
 -e
 </span>
 </div>
-</div>
-<section class="verb-block">
-<h4 class="chart-label">
-Инф. подсказки
-</h4>
-<div class="verb-patterns">
-<span class="verb-pattern" lang="sr">
--iti
-</span>
-<span class="verb-pattern" lang="sr">
--eti
-</span>
-</div>
+</td>
+</tr>
+</tbody>
+</table>
 </section>
-<section class="verb-block">
-<h4 class="chart-label">
+<section class="card-section">
+<h4 class="card-section-label">
 Частые глаголы
 </h4>
-<ul class="verb-list verb-list-glossed">
-<li>
-<span class="verb-lemma" lang="sr">
+<div class="card-items">
+<div class="card-item">
+<div class="sr">
+<span lang="sr">
 raditi
 </span>
-<span class="verb-stem" lang="sr">
+<span aria-hidden="true" class="chart-sep">
+→
+</span>
+<span lang="sr">
 radim
 </span>
-<span class="verb-gloss">
+</div>
+<div class="tr">
 работать / делать
-</span>
-</li>
-<li>
-<span class="verb-lemma" lang="sr">
+</div>
+</div>
+<div class="card-item">
+<div class="sr">
+<span lang="sr">
 govoriti
 </span>
-<span class="verb-stem" lang="sr">
+<span aria-hidden="true" class="chart-sep">
+→
+</span>
+<span lang="sr">
 govorim
 </span>
-<span class="verb-gloss">
+</div>
+<div class="tr">
 говорить
-</span>
-</li>
-<li>
-<span class="verb-lemma" lang="sr">
+</div>
+</div>
+<div class="card-item">
+<div class="sr">
+<span lang="sr">
 učiti
 </span>
-<span class="verb-stem" lang="sr">
+<span aria-hidden="true" class="chart-sep">
+→
+</span>
+<span lang="sr">
 učim
 </span>
-<span class="verb-gloss">
+</div>
+<div class="tr">
 учить
-</span>
-</li>
-<li>
-<span class="verb-lemma" lang="sr">
+</div>
+</div>
+<div class="card-item">
+<div class="sr">
+<span lang="sr">
 videti
 </span>
-<span class="verb-stem" lang="sr">
+<span aria-hidden="true" class="chart-sep">
+→
+</span>
+<span lang="sr">
 vidim
 </span>
-<span class="verb-gloss">
+</div>
+<div class="tr">
 видеть
-</span>
-</li>
-<li>
-<span class="verb-lemma" lang="sr">
+</div>
+</div>
+<div class="card-item">
+<div class="sr">
+<span lang="sr">
 voleti
 </span>
-<span class="verb-stem" lang="sr">
+<span aria-hidden="true" class="chart-sep">
+→
+</span>
+<span lang="sr">
 volim
 </span>
-<span class="verb-gloss">
+</div>
+<div class="tr">
 любить
-</span>
-</li>
-<li>
-<span class="verb-lemma" lang="sr">
+</div>
+</div>
+<div class="card-item">
+<div class="sr">
+<span lang="sr">
 živeti
 </span>
-<span class="verb-stem" lang="sr">
+<span aria-hidden="true" class="chart-sep">
+→
+</span>
+<span lang="sr">
 živim
 </span>
-<span class="verb-gloss">
+</div>
+<div class="tr">
 жить
-</span>
-</li>
-<li>
-<span class="verb-lemma" lang="sr">
+</div>
+</div>
+<div class="card-item">
+<div class="sr">
+<span lang="sr">
 sedeti
 </span>
-<span class="verb-stem" lang="sr">
+<span aria-hidden="true" class="chart-sep">
+→
+</span>
+<span lang="sr">
 sedim
 </span>
-<span class="verb-gloss">
+</div>
+<div class="tr">
 сидеть
-</span>
-</li>
-</ul>
-</section>
-<section class="verb-block verb-block-example">
-<header class="verb-lemma-head">
-<span class="chart-label">
-Пример
-</span>
-<h4 class="sr-head" lang="sr">
-raditi
-</h4>
-</header>
-<div class="chart-pairs verb-pair-grid">
-<div class="chart-pair">
-<span class="verb-pron" lang="sr">
-ja
-</span>
-<span class="chart-form verb-form" lang="sr">
-radim
-</span>
 </div>
-<div class="chart-pair">
-<span class="verb-pron" lang="sr">
-mi
-</span>
-<span class="chart-form verb-form" lang="sr">
-radimo
-</span>
-</div>
-<div class="chart-pair">
-<span class="verb-pron" lang="sr">
-ti
-</span>
-<span class="chart-form verb-form" lang="sr">
-radiš
-</span>
-</div>
-<div class="chart-pair">
-<span class="verb-pron" lang="sr">
-vi
-</span>
-<span class="chart-form verb-form" lang="sr">
-radite
-</span>
-</div>
-<div class="chart-pair">
-<span class="verb-pron" lang="sr">
-on/ona/ono
-</span>
-<span class="chart-form verb-form" lang="sr">
-radi
-</span>
-</div>
-<div class="chart-pair">
-<span class="verb-pron" lang="sr">
-oni/one/ona
-</span>
-<span class="chart-form verb-form" lang="sr">
-rade
-</span>
 </div>
 </div>
 </section>
 </article>
-<article class="chart-panel verb-col" data-tone="am">
-<header class="chart-panel-head">
-<span class="chart-label">
-Настоящее
-</span>
+<article class="card" data-tone="am">
+<header class="card-head">
+<div class="card-title">
 <h3>
-AM | AJU
+<span lang="sr">
+-am / -aju
+</span>
+<em>
+Настоящее
+</em>
 </h3>
+</div>
 </header>
-<div aria-label="Окончания" class="chart-pairs verb-pair-grid">
-<div class="chart-pair">
+<section class="card-section">
+<h4 class="card-section-label">
+Инфинитив
+<button aria-expanded="false" aria-haspopup="dialog" aria-label="примечание" class="tip-chip" data-verb-note="ati" type="button">
+?
+</button>
+</h4>
+<p class="verb-cues" lang="sr">
+-ati
+</p>
+</section>
+<section class="card-section">
+<h4 class="card-section-label">
+Окончания
+</h4>
+<table class="verb-paradigm is-abstract">
+<thead>
+<tr>
+<th scope="col">
+Ед. число
+</th>
+<th scope="col">
+Мн. число
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<div class="verb-cell">
 <span class="verb-pron" lang="sr">
 ja
 </span>
-<span class="chart-form verb-form" lang="sr">
+<span class="verb-form" lang="sr">
 -am
 </span>
 </div>
-<div class="chart-pair">
+</td>
+<td>
+<div class="verb-cell">
 <span class="verb-pron" lang="sr">
 mi
 </span>
-<span class="chart-form verb-form" lang="sr">
+<span class="verb-form" lang="sr">
 -amo
 </span>
 </div>
-<div class="chart-pair">
+</td>
+</tr>
+<tr>
+<td>
+<div class="verb-cell">
 <span class="verb-pron" lang="sr">
 ti
 </span>
-<span class="chart-form verb-form" lang="sr">
+<span class="verb-form" lang="sr">
 -aš
 </span>
 </div>
-<div class="chart-pair">
+</td>
+<td>
+<div class="verb-cell">
 <span class="verb-pron" lang="sr">
 vi
 </span>
-<span class="chart-form verb-form" lang="sr">
+<span class="verb-form" lang="sr">
 -ate
 </span>
 </div>
-<div class="chart-pair">
+</td>
+</tr>
+<tr>
+<td>
+<div class="verb-cell">
 <span class="verb-pron" lang="sr">
 on/ona/ono
 </span>
-<span class="chart-form verb-form" lang="sr">
+<span class="verb-form" lang="sr">
 -a
 </span>
 </div>
-<div class="chart-pair">
+</td>
+<td>
+<div class="verb-cell">
 <span class="verb-pron" lang="sr">
 oni/one/ona
 </span>
-<span class="chart-form verb-form" lang="sr">
+<span class="verb-form" lang="sr">
 -aju
 </span>
 </div>
-</div>
-<section class="verb-block">
-<h4 class="chart-label">
-Инф. подсказки
-</h4>
-<div class="verb-patterns">
-<span class="verb-pattern" lang="sr">
--ati
-</span>
-</div>
+</td>
+</tr>
+</tbody>
+</table>
 </section>
-<section class="verb-block">
-<h4 class="chart-label">
+<section class="card-section">
+<h4 class="card-section-label">
 Частые глаголы
 </h4>
-<ul class="verb-list verb-list-glossed">
-<li>
-<span class="verb-lemma" lang="sr">
+<div class="card-items">
+<div class="card-item">
+<div class="sr">
+<span lang="sr">
 čitati
 </span>
-<span class="verb-stem" lang="sr">
+<span aria-hidden="true" class="chart-sep">
+→
+</span>
+<span lang="sr">
 čitam
 </span>
-<span class="verb-gloss">
+</div>
+<div class="tr">
 читать
-</span>
-</li>
-<li>
-<span class="verb-lemma" lang="sr">
+</div>
+</div>
+<div class="card-item">
+<div class="sr">
+<span lang="sr">
 znati
 </span>
-<span class="verb-stem" lang="sr">
+<span aria-hidden="true" class="chart-sep">
+→
+</span>
+<span lang="sr">
 znam
 </span>
-<span class="verb-gloss">
+</div>
+<div class="tr">
 знать
-</span>
-</li>
-<li>
-<span class="verb-lemma" lang="sr">
+</div>
+</div>
+<div class="card-item">
+<div class="sr">
+<span lang="sr">
 imati
 </span>
-<span class="verb-stem" lang="sr">
+<span aria-hidden="true" class="chart-sep">
+→
+</span>
+<span lang="sr">
 imam
 </span>
-<span class="verb-gloss">
+</div>
+<div class="tr">
 иметь
-</span>
-</li>
-<li>
-<span class="verb-lemma" lang="sr">
+</div>
+</div>
+<div class="card-item">
+<div class="sr">
+<span lang="sr">
 gledati
 </span>
-<span class="verb-stem" lang="sr">
+<span aria-hidden="true" class="chart-sep">
+→
+</span>
+<span lang="sr">
 gledam
 </span>
-<span class="verb-gloss">
+</div>
+<div class="tr">
 смотреть
-</span>
-</li>
-<li>
-<span class="verb-lemma" lang="sr">
+</div>
+</div>
+<div class="card-item">
+<div class="sr">
+<span lang="sr">
 slušati
 </span>
-<span class="verb-stem" lang="sr">
+<span aria-hidden="true" class="chart-sep">
+→
+</span>
+<span lang="sr">
 slušam
 </span>
-<span class="verb-gloss">
+</div>
+<div class="tr">
 слушать
-</span>
-</li>
-<li>
-<span class="verb-lemma" lang="sr">
+</div>
+</div>
+<div class="card-item">
+<div class="sr">
+<span lang="sr">
 čekati
 </span>
-<span class="verb-stem" lang="sr">
+<span aria-hidden="true" class="chart-sep">
+→
+</span>
+<span lang="sr">
 čekam
 </span>
-<span class="verb-gloss">
+</div>
+<div class="tr">
 ждать
-</span>
-</li>
-<li>
-<span class="verb-lemma" lang="sr">
+</div>
+</div>
+<div class="card-item">
+<div class="sr">
+<span lang="sr">
 igrati
 </span>
-<span class="verb-stem" lang="sr">
+<span aria-hidden="true" class="chart-sep">
+→
+</span>
+<span lang="sr">
 igram
 </span>
-<span class="verb-gloss">
+</div>
+<div class="tr">
 играть
-</span>
-</li>
-</ul>
-</section>
-<section class="verb-block verb-block-example">
-<header class="verb-lemma-head">
-<span class="chart-label">
-Пример
-</span>
-<h4 class="sr-head" lang="sr">
-čitati
-</h4>
-</header>
-<div class="chart-pairs verb-pair-grid">
-<div class="chart-pair">
-<span class="verb-pron" lang="sr">
-ja
-</span>
-<span class="chart-form verb-form" lang="sr">
-čitam
-</span>
 </div>
-<div class="chart-pair">
-<span class="verb-pron" lang="sr">
-mi
-</span>
-<span class="chart-form verb-form" lang="sr">
-čitamo
-</span>
-</div>
-<div class="chart-pair">
-<span class="verb-pron" lang="sr">
-ti
-</span>
-<span class="chart-form verb-form" lang="sr">
-čitaš
-</span>
-</div>
-<div class="chart-pair">
-<span class="verb-pron" lang="sr">
-vi
-</span>
-<span class="chart-form verb-form" lang="sr">
-čitate
-</span>
-</div>
-<div class="chart-pair">
-<span class="verb-pron" lang="sr">
-on/ona/ono
-</span>
-<span class="chart-form verb-form" lang="sr">
-čita
-</span>
-</div>
-<div class="chart-pair">
-<span class="verb-pron" lang="sr">
-oni/one/ona
-</span>
-<span class="chart-form verb-form" lang="sr">
-čitaju
-</span>
 </div>
 </div>
 </section>
 </article>
-<article class="chart-panel verb-col" data-tone="em">
-<header class="chart-panel-head">
-<span class="chart-label">
-Настоящее
-</span>
+<article class="card" data-tone="em">
+<header class="card-head">
+<div class="card-title">
 <h3>
-EM | U
+<span lang="sr">
+-em / -u
+</span>
+<em>
+Настоящее
+</em>
 </h3>
+</div>
 </header>
-<div aria-label="Окончания" class="chart-pairs verb-pair-grid">
-<div class="chart-pair">
+<section class="card-section">
+<h4 class="card-section-label">
+Инфинитив
+<button aria-expanded="false" aria-haspopup="dialog" aria-label="примечание" class="tip-chip" data-verb-note="ati" type="button">
+?
+</button>
+</h4>
+<p class="verb-cues" lang="sr">
+-ati, -ći
+</p>
+</section>
+<section class="card-section">
+<h4 class="card-section-label">
+Окончания
+</h4>
+<table class="verb-paradigm is-abstract">
+<thead>
+<tr>
+<th scope="col">
+Ед. число
+</th>
+<th scope="col">
+Мн. число
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<div class="verb-cell">
 <span class="verb-pron" lang="sr">
 ja
 </span>
-<span class="chart-form verb-form" lang="sr">
+<span class="verb-form" lang="sr">
 -em
 </span>
 </div>
-<div class="chart-pair">
+</td>
+<td>
+<div class="verb-cell">
 <span class="verb-pron" lang="sr">
 mi
 </span>
-<span class="chart-form verb-form" lang="sr">
+<span class="verb-form" lang="sr">
 -emo
 </span>
 </div>
-<div class="chart-pair">
+</td>
+</tr>
+<tr>
+<td>
+<div class="verb-cell">
 <span class="verb-pron" lang="sr">
 ti
 </span>
-<span class="chart-form verb-form" lang="sr">
+<span class="verb-form" lang="sr">
 -eš
 </span>
 </div>
-<div class="chart-pair">
+</td>
+<td>
+<div class="verb-cell">
 <span class="verb-pron" lang="sr">
 vi
 </span>
-<span class="chart-form verb-form" lang="sr">
+<span class="verb-form" lang="sr">
 -ete
 </span>
 </div>
-<div class="chart-pair">
+</td>
+</tr>
+<tr>
+<td>
+<div class="verb-cell">
 <span class="verb-pron" lang="sr">
 on/ona/ono
 </span>
-<span class="chart-form verb-form" lang="sr">
+<span class="verb-form" lang="sr">
 -e
 </span>
 </div>
-<div class="chart-pair">
+</td>
+<td>
+<div class="verb-cell">
 <span class="verb-pron" lang="sr">
 oni/one/ona
 </span>
-<span class="chart-form verb-form" lang="sr">
+<span class="verb-form" lang="sr">
 -u
 </span>
 </div>
-</div>
-<section class="verb-block">
-<h4 class="chart-label">
-Инф. подсказки
-</h4>
-<div class="verb-patterns">
-<span class="verb-pattern" lang="sr">
--ati
-</span>
-<span class="verb-pattern" lang="sr">
--ći
-</span>
-</div>
+</td>
+</tr>
+</tbody>
+</table>
 </section>
-<section class="verb-block">
-<h4 class="chart-label">
+<section class="card-section">
+<h4 class="card-section-label">
 Частые глаголы
 </h4>
-<ul class="verb-list verb-list-glossed">
-<li>
-<span class="verb-lemma" lang="sr">
+<div class="card-items">
+<div class="card-item">
+<div class="sr">
+<span lang="sr">
 lagati
 </span>
-<span class="verb-stem" lang="sr">
+<span aria-hidden="true" class="chart-sep">
+→
+</span>
+<span lang="sr">
 lažem
 </span>
-<span class="verb-gloss">
+</div>
+<div class="tr">
 лгать
-</span>
-</li>
-<li>
-<span class="verb-lemma" lang="sr">
+</div>
+</div>
+<div class="card-item">
+<div class="sr">
+<span lang="sr">
 pisati
 </span>
-<span class="verb-stem" lang="sr">
+<span aria-hidden="true" class="chart-sep">
+→
+</span>
+<span lang="sr">
 pišem
 </span>
-<span class="verb-gloss">
+</div>
+<div class="tr">
 писать
-</span>
-</li>
-<li>
-<span class="verb-lemma" lang="sr">
+</div>
+</div>
+<div class="card-item">
+<div class="sr">
+<span lang="sr">
 zvati
 </span>
-<span class="verb-stem" lang="sr">
+<span aria-hidden="true" class="chart-sep">
+→
+</span>
+<span lang="sr">
 zovem
 </span>
-<span class="verb-gloss">
+</div>
+<div class="tr">
 звать
-</span>
-</li>
-<li>
-<span class="verb-lemma" lang="sr">
+</div>
+</div>
+<div class="card-item">
+<div class="sr">
+<span lang="sr">
 brati
 </span>
-<span class="verb-stem" lang="sr">
+<span aria-hidden="true" class="chart-sep">
+→
+</span>
+<span lang="sr">
 berem
 </span>
-<span class="verb-gloss">
+</div>
+<div class="tr">
 собирать
-</span>
-</li>
-<li>
-<span class="verb-lemma" lang="sr">
+</div>
+</div>
+<div class="card-item">
+<div class="sr">
+<span lang="sr">
 prati
 </span>
-<span class="verb-stem" lang="sr">
+<span aria-hidden="true" class="chart-sep">
+→
+</span>
+<span lang="sr">
 perem
 </span>
-<span class="verb-gloss">
+</div>
+<div class="tr">
 мыть / стирать
-</span>
-</li>
-<li>
-<span class="verb-lemma" lang="sr">
+</div>
+</div>
+<div class="card-item">
+<div class="sr">
+<span lang="sr">
 kazati
 </span>
-<span class="verb-stem" lang="sr">
+<span aria-hidden="true" class="chart-sep">
+→
+</span>
+<span lang="sr">
 kažem
 </span>
-<span class="verb-gloss">
+</div>
+<div class="tr">
 говорить / сказать
-</span>
-</li>
-<li>
-<span class="verb-lemma" lang="sr">
+</div>
+</div>
+<div class="card-item">
+<div class="sr">
+<span lang="sr">
 plakati
 </span>
-<span class="verb-stem" lang="sr">
+<span aria-hidden="true" class="chart-sep">
+→
+</span>
+<span lang="sr">
 plačem
 </span>
-<span class="verb-gloss">
+</div>
+<div class="tr">
 плакать
-</span>
-</li>
-</ul>
-</section>
-<section class="verb-block verb-block-example">
-<header class="verb-lemma-head">
-<span class="chart-label">
-Пример
-</span>
-<h4 class="sr-head" lang="sr">
-lagati
-</h4>
-</header>
-<div class="chart-pairs verb-pair-grid">
-<div class="chart-pair">
-<span class="verb-pron" lang="sr">
-ja
-</span>
-<span class="chart-form verb-form" lang="sr">
-lažem
-</span>
 </div>
-<div class="chart-pair">
-<span class="verb-pron" lang="sr">
-mi
-</span>
-<span class="chart-form verb-form" lang="sr">
-lažemo
-</span>
-</div>
-<div class="chart-pair">
-<span class="verb-pron" lang="sr">
-ti
-</span>
-<span class="chart-form verb-form" lang="sr">
-lažeš
-</span>
-</div>
-<div class="chart-pair">
-<span class="verb-pron" lang="sr">
-vi
-</span>
-<span class="chart-form verb-form" lang="sr">
-lažete
-</span>
-</div>
-<div class="chart-pair">
-<span class="verb-pron" lang="sr">
-on/ona/ono
-</span>
-<span class="chart-form verb-form" lang="sr">
-laže
-</span>
-</div>
-<div class="chart-pair">
-<span class="verb-pron" lang="sr">
-oni/one/ona
-</span>
-<span class="chart-form verb-form" lang="sr">
-lažu
-</span>
 </div>
 </div>
 </section>
 </article>
-<article class="chart-panel verb-col" data-tone="jem">
-<header class="chart-panel-head">
-<span class="chart-label">
-Настоящее
-</span>
+<article class="card" data-tone="jem">
+<header class="card-head">
+<div class="card-title">
 <h3>
-JEM | JU
+<span lang="sr">
+-jem / -ju
+</span>
+<em>
+Настоящее
+</em>
 </h3>
+</div>
 </header>
-<div aria-label="Окончания" class="chart-pairs verb-pair-grid">
-<div class="chart-pair">
+<section class="card-section">
+<h4 class="card-section-label">
+Инфинитив
+</h4>
+<p class="verb-cues" lang="sr">
+-ovati, -ivati, -avati
+</p>
+</section>
+<section class="card-section">
+<h4 class="card-section-label">
+Окончания
+</h4>
+<table class="verb-paradigm is-abstract">
+<thead>
+<tr>
+<th scope="col">
+Ед. число
+</th>
+<th scope="col">
+Мн. число
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<div class="verb-cell">
 <span class="verb-pron" lang="sr">
 ja
 </span>
-<span class="chart-form verb-form" lang="sr">
+<span class="verb-form" lang="sr">
 -jem
 </span>
 </div>
-<div class="chart-pair">
+</td>
+<td>
+<div class="verb-cell">
 <span class="verb-pron" lang="sr">
 mi
 </span>
-<span class="chart-form verb-form" lang="sr">
+<span class="verb-form" lang="sr">
 -jemo
 </span>
 </div>
-<div class="chart-pair">
+</td>
+</tr>
+<tr>
+<td>
+<div class="verb-cell">
 <span class="verb-pron" lang="sr">
 ti
 </span>
-<span class="chart-form verb-form" lang="sr">
+<span class="verb-form" lang="sr">
 -ješ
 </span>
 </div>
-<div class="chart-pair">
+</td>
+<td>
+<div class="verb-cell">
 <span class="verb-pron" lang="sr">
 vi
 </span>
-<span class="chart-form verb-form" lang="sr">
+<span class="verb-form" lang="sr">
 -jete
 </span>
 </div>
-<div class="chart-pair">
+</td>
+</tr>
+<tr>
+<td>
+<div class="verb-cell">
 <span class="verb-pron" lang="sr">
 on/ona/ono
 </span>
-<span class="chart-form verb-form" lang="sr">
+<span class="verb-form" lang="sr">
 -je
 </span>
 </div>
-<div class="chart-pair">
+</td>
+<td>
+<div class="verb-cell">
 <span class="verb-pron" lang="sr">
 oni/one/ona
 </span>
-<span class="chart-form verb-form" lang="sr">
+<span class="verb-form" lang="sr">
 -ju
 </span>
 </div>
-</div>
-<section class="verb-block">
-<h4 class="chart-label">
-Инф. подсказки
-</h4>
-<div class="verb-patterns">
-<span class="verb-pattern" lang="sr">
--ovati
-</span>
-<span class="verb-pattern" lang="sr">
--ivati
-</span>
-<span class="verb-pattern" lang="sr">
--avati
-</span>
-</div>
+</td>
+</tr>
+</tbody>
+</table>
 </section>
-<section class="verb-block">
-<h4 class="chart-label">
+<section class="card-section">
+<h4 class="card-section-label">
 Частые глаголы
 </h4>
-<ul class="verb-list verb-list-glossed">
-<li>
-<span class="verb-lemma" lang="sr">
+<div class="card-items">
+<div class="card-item">
+<div class="sr">
+<span lang="sr">
 kupovati
 </span>
-<span class="verb-stem" lang="sr">
+<span aria-hidden="true" class="chart-sep">
+→
+</span>
+<span lang="sr">
 kupujem
 </span>
-<span class="verb-gloss">
+</div>
+<div class="tr">
 покупать
-</span>
-</li>
-<li>
-<span class="verb-lemma" lang="sr">
+</div>
+</div>
+<div class="card-item">
+<div class="sr">
+<span lang="sr">
 putovati
 </span>
-<span class="verb-stem" lang="sr">
+<span aria-hidden="true" class="chart-sep">
+→
+</span>
+<span lang="sr">
 putujem
 </span>
-<span class="verb-gloss">
+</div>
+<div class="tr">
 путешествовать
-</span>
-</li>
-<li>
-<span class="verb-lemma" lang="sr">
+</div>
+</div>
+<div class="card-item">
+<div class="sr">
+<span lang="sr">
 stanovati
 </span>
-<span class="verb-stem" lang="sr">
+<span aria-hidden="true" class="chart-sep">
+→
+</span>
+<span lang="sr">
 stanujem
 </span>
-<span class="verb-gloss">
+</div>
+<div class="tr">
 проживать
-</span>
-</li>
-<li>
-<span class="verb-lemma" lang="sr">
+</div>
+</div>
+<div class="card-item">
+<div class="sr">
+<span lang="sr">
 verovati
 </span>
-<span class="verb-stem" lang="sr">
+<span aria-hidden="true" class="chart-sep">
+→
+</span>
+<span lang="sr">
 verujem
 </span>
-<span class="verb-gloss">
+</div>
+<div class="tr">
 верить
-</span>
-</li>
-<li>
-<span class="verb-lemma" lang="sr">
+</div>
+</div>
+<div class="card-item">
+<div class="sr">
+<span lang="sr">
 pokazivati
 </span>
-<span class="verb-stem" lang="sr">
+<span aria-hidden="true" class="chart-sep">
+→
+</span>
+<span lang="sr">
 pokazujem
 </span>
-<span class="verb-gloss">
+</div>
+<div class="tr">
 показывать
-</span>
-</li>
-<li>
-<span class="verb-lemma" lang="sr">
+</div>
+</div>
+<div class="card-item">
+<div class="sr">
+<span lang="sr">
 prodavati
 </span>
-<span class="verb-stem" lang="sr">
+<span aria-hidden="true" class="chart-sep">
+→
+</span>
+<span lang="sr">
 prodajem
 </span>
-<span class="verb-gloss">
+</div>
+<div class="tr">
 продавать
-</span>
-</li>
-</ul>
-</section>
-<section class="verb-block verb-block-example">
-<header class="verb-lemma-head">
-<span class="chart-label">
-Пример
-</span>
-<h4 class="sr-head" lang="sr">
-kupovati
-</h4>
-</header>
-<div class="chart-pairs verb-pair-grid">
-<div class="chart-pair">
-<span class="verb-pron" lang="sr">
-ja
-</span>
-<span class="chart-form verb-form" lang="sr">
-kupujem
-</span>
 </div>
-<div class="chart-pair">
-<span class="verb-pron" lang="sr">
-mi
-</span>
-<span class="chart-form verb-form" lang="sr">
-kupujemo
-</span>
-</div>
-<div class="chart-pair">
-<span class="verb-pron" lang="sr">
-ti
-</span>
-<span class="chart-form verb-form" lang="sr">
-kupuješ
-</span>
-</div>
-<div class="chart-pair">
-<span class="verb-pron" lang="sr">
-vi
-</span>
-<span class="chart-form verb-form" lang="sr">
-kupujete
-</span>
-</div>
-<div class="chart-pair">
-<span class="verb-pron" lang="sr">
-on/ona/ono
-</span>
-<span class="chart-form verb-form" lang="sr">
-kupuje
-</span>
-</div>
-<div class="chart-pair">
-<span class="verb-pron" lang="sr">
-oni/one/ona
-</span>
-<span class="chart-form verb-form" lang="sr">
-kupuju
-</span>
 </div>
 </div>
 </section>
 </article>
-<article class="chart-panel verb-col" data-tone="irr">
-<header class="chart-panel-head">
-<span class="chart-label">
-Настоящее
-</span>
+<article class="card" data-tone="irr" id="verbs-irregular">
+<header class="card-head">
+<div class="card-title">
 <h3>
-Исключения
-</h3>
-</header>
-<div class="verb-mini-list">
-<section class="verb-mini">
-<header class="verb-lemma-head">
-<h4 class="sr-head" lang="sr">
+<span lang="sr">
 biti
-</h4>
-<button aria-expanded="false" aria-haspopup="dialog" aria-label="полные формы" class="tip-chip" data-verb-tip="0" type="button">
+</span>
+<em>
+быть
+</em>
+</h3>
+</div>
+</header>
+<section class="card-section" id="aux-biti-short">
+<h4 class="card-section-label">
+Краткие формы
+<button aria-expanded="false" aria-haspopup="dialog" aria-label="ударные формы" class="tip-chip" data-verb-tip="0" type="button">
 ?
 </button>
-</header>
-<div class="chart-pairs verb-pair-grid">
-<div class="chart-pair">
+</h4>
+<table class="verb-paradigm">
+<thead>
+<tr>
+<th scope="col">
+Ед. число
+</th>
+<th scope="col">
+Мн. число
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<div class="verb-cell">
 <span class="verb-pron" lang="sr">
 ja
 </span>
-<span class="chart-form verb-form" lang="sr">
+<span class="verb-form" lang="sr">
 sam
 </span>
 </div>
-<div class="chart-pair">
+</td>
+<td>
+<div class="verb-cell">
 <span class="verb-pron" lang="sr">
 mi
 </span>
-<span class="chart-form verb-form" lang="sr">
+<span class="verb-form" lang="sr">
 smo
 </span>
 </div>
-<div class="chart-pair">
+</td>
+</tr>
+<tr>
+<td>
+<div class="verb-cell">
 <span class="verb-pron" lang="sr">
 ti
 </span>
-<span class="chart-form verb-form" lang="sr">
+<span class="verb-form" lang="sr">
 si
 </span>
 </div>
-<div class="chart-pair">
+</td>
+<td>
+<div class="verb-cell">
 <span class="verb-pron" lang="sr">
 vi
 </span>
-<span class="chart-form verb-form" lang="sr">
+<span class="verb-form" lang="sr">
 ste
 </span>
 </div>
-<div class="chart-pair">
+</td>
+</tr>
+<tr>
+<td>
+<div class="verb-cell">
 <span class="verb-pron" lang="sr">
 on/ona/ono
 </span>
-<span class="chart-form verb-form" lang="sr">
+<span class="verb-form" lang="sr">
 je
 </span>
 </div>
-<div class="chart-pair">
+</td>
+<td>
+<div class="verb-cell">
 <span class="verb-pron" lang="sr">
 oni/one/ona
 </span>
-<span class="chart-form verb-form" lang="sr">
+<span class="verb-form" lang="sr">
 su
 </span>
 </div>
-</div>
-<div class="verb-negative">
-<span class="chart-label">
-Отрицание
-</span>
-<p lang="sr">
-nisam, nisi, nije, nismo, niste, nisu
-</p>
-</div>
+</td>
+</tr>
+</tbody>
+</table>
 </section>
-<section class="verb-mini">
-<header class="verb-lemma-head">
-<h4 class="sr-head" lang="sr">
-hteti
+<section class="card-section" id="aux-biti-negative">
+<h4 class="card-section-label">
+Отрицание
 </h4>
-</header>
-<div class="chart-pairs verb-pair-grid">
-<div class="chart-pair">
+<table class="verb-paradigm">
+<thead>
+<tr>
+<th scope="col">
+Ед. число
+</th>
+<th scope="col">
+Мн. число
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<div class="verb-cell">
 <span class="verb-pron" lang="sr">
 ja
 </span>
-<span class="chart-form verb-form" lang="sr">
+<span class="verb-form" lang="sr">
+nisam
+</span>
+</div>
+</td>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+mi
+</span>
+<span class="verb-form" lang="sr">
+nismo
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+ti
+</span>
+<span class="verb-form" lang="sr">
+nisi
+</span>
+</div>
+</td>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+vi
+</span>
+<span class="verb-form" lang="sr">
+niste
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+on/ona/ono
+</span>
+<span class="verb-form" lang="sr">
+nije
+</span>
+</div>
+</td>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+oni/one/ona
+</span>
+<span class="verb-form" lang="sr">
+nisu
+</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="card-section" id="aux-biti-perfective">
+<h4 class="card-section-label">
+Настоящее совершенного вида
+</h4>
+<table class="verb-paradigm">
+<thead>
+<tr>
+<th scope="col">
+Ед. число
+</th>
+<th scope="col">
+Мн. число
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+ja
+</span>
+<span class="verb-form" lang="sr">
+budem
+</span>
+</div>
+</td>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+mi
+</span>
+<span class="verb-form" lang="sr">
+budemo
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+ti
+</span>
+<span class="verb-form" lang="sr">
+budeš
+</span>
+</div>
+</td>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+vi
+</span>
+<span class="verb-form" lang="sr">
+budete
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+on/ona/ono
+</span>
+<span class="verb-form" lang="sr">
+bude
+</span>
+</div>
+</td>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+oni/one/ona
+</span>
+<span class="verb-form" lang="sr">
+budu
+</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="card-section" id="aux-biti-conditional">
+<h4 class="card-section-label">
+Условное наклонение
+</h4>
+<table class="verb-paradigm">
+<thead>
+<tr>
+<th scope="col">
+Ед. число
+</th>
+<th scope="col">
+Мн. число
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+ja
+</span>
+<span class="verb-form" lang="sr">
+bih
+</span>
+</div>
+</td>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+mi
+</span>
+<span class="verb-form" lang="sr">
+bismo
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+ti
+</span>
+<span class="verb-form" lang="sr">
+bi
+</span>
+</div>
+</td>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+vi
+</span>
+<span class="verb-form" lang="sr">
+biste
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+on/ona/ono
+</span>
+<span class="verb-form" lang="sr">
+bi
+</span>
+</div>
+</td>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+oni/one/ona
+</span>
+<span class="verb-form" lang="sr">
+bi
+</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+</article>
+<article class="card" data-tone="irr">
+<header class="card-head">
+<div class="card-title">
+<h3>
+<span lang="sr">
+hteti
+</span>
+<em>
+хотеть
+</em>
+</h3>
+</div>
+</header>
+<section class="card-section" id="aux-hteti-full">
+<h4 class="card-section-label">
+Полные формы
+</h4>
+<table class="verb-paradigm">
+<thead>
+<tr>
+<th scope="col">
+Ед. число
+</th>
+<th scope="col">
+Мн. число
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+ja
+</span>
+<span class="verb-form" lang="sr">
 hoću
 </span>
 </div>
-<div class="chart-pair">
+</td>
+<td>
+<div class="verb-cell">
 <span class="verb-pron" lang="sr">
 mi
 </span>
-<span class="chart-form verb-form" lang="sr">
+<span class="verb-form" lang="sr">
 hoćemo
 </span>
 </div>
-<div class="chart-pair">
+</td>
+</tr>
+<tr>
+<td>
+<div class="verb-cell">
 <span class="verb-pron" lang="sr">
 ti
 </span>
-<span class="chart-form verb-form" lang="sr">
+<span class="verb-form" lang="sr">
 hoćeš
 </span>
 </div>
-<div class="chart-pair">
+</td>
+<td>
+<div class="verb-cell">
 <span class="verb-pron" lang="sr">
 vi
 </span>
-<span class="chart-form verb-form" lang="sr">
+<span class="verb-form" lang="sr">
 hoćete
 </span>
 </div>
-<div class="chart-pair">
+</td>
+</tr>
+<tr>
+<td>
+<div class="verb-cell">
 <span class="verb-pron" lang="sr">
 on/ona/ono
 </span>
-<span class="chart-form verb-form" lang="sr">
+<span class="verb-form" lang="sr">
 hoće
 </span>
 </div>
-<div class="chart-pair">
+</td>
+<td>
+<div class="verb-cell">
 <span class="verb-pron" lang="sr">
 oni/one/ona
 </span>
-<span class="chart-form verb-form" lang="sr">
+<span class="verb-form" lang="sr">
 hoće
 </span>
 </div>
-</div>
-<div class="verb-negative">
-<span class="chart-label">
-Отрицание
-</span>
-<p lang="sr">
-neću, nećeš, neće, nećemo, nećete, neće
-</p>
-</div>
+</td>
+</tr>
+</tbody>
+</table>
 </section>
-<section class="verb-mini">
-<header class="verb-lemma-head">
-<h4 class="sr-head" lang="sr">
-moći
+<section class="card-section" id="aux-hteti-short">
+<h4 class="card-section-label">
+Краткие формы
 </h4>
-</header>
-<div class="chart-pairs verb-pair-grid">
-<div class="chart-pair">
+<table class="verb-paradigm">
+<thead>
+<tr>
+<th scope="col">
+Ед. число
+</th>
+<th scope="col">
+Мн. число
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<div class="verb-cell">
 <span class="verb-pron" lang="sr">
 ja
 </span>
-<span class="chart-form verb-form" lang="sr">
-mogu
+<span class="verb-form" lang="sr">
+ću
 </span>
 </div>
-<div class="chart-pair">
+</td>
+<td>
+<div class="verb-cell">
 <span class="verb-pron" lang="sr">
 mi
 </span>
-<span class="chart-form verb-form" lang="sr">
-možemo
+<span class="verb-form" lang="sr">
+ćemo
 </span>
 </div>
-<div class="chart-pair">
+</td>
+</tr>
+<tr>
+<td>
+<div class="verb-cell">
 <span class="verb-pron" lang="sr">
 ti
 </span>
-<span class="chart-form verb-form" lang="sr">
-možeš
+<span class="verb-form" lang="sr">
+ćeš
 </span>
 </div>
-<div class="chart-pair">
+</td>
+<td>
+<div class="verb-cell">
 <span class="verb-pron" lang="sr">
 vi
 </span>
-<span class="chart-form verb-form" lang="sr">
-možete
+<span class="verb-form" lang="sr">
+ćete
 </span>
 </div>
-<div class="chart-pair">
+</td>
+</tr>
+<tr>
+<td>
+<div class="verb-cell">
 <span class="verb-pron" lang="sr">
 on/ona/ono
 </span>
-<span class="chart-form verb-form" lang="sr">
-može
+<span class="verb-form" lang="sr">
+će
 </span>
 </div>
-<div class="chart-pair">
+</td>
+<td>
+<div class="verb-cell">
 <span class="verb-pron" lang="sr">
 oni/one/ona
 </span>
-<span class="chart-form verb-form" lang="sr">
+<span class="verb-form" lang="sr">
+će
+</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="card-section" id="aux-hteti-negative">
+<h4 class="card-section-label">
+Отрицание
+</h4>
+<table class="verb-paradigm">
+<thead>
+<tr>
+<th scope="col">
+Ед. число
+</th>
+<th scope="col">
+Мн. число
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+ja
+</span>
+<span class="verb-form" lang="sr">
+neću
+</span>
+</div>
+</td>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+mi
+</span>
+<span class="verb-form" lang="sr">
+nećemo
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+ti
+</span>
+<span class="verb-form" lang="sr">
+nećeš
+</span>
+</div>
+</td>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+vi
+</span>
+<span class="verb-form" lang="sr">
+nećete
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+on/ona/ono
+</span>
+<span class="verb-form" lang="sr">
+neće
+</span>
+</div>
+</td>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+oni/one/ona
+</span>
+<span class="verb-form" lang="sr">
+neće
+</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+</article>
+<article class="card" data-tone="irr">
+<header class="card-head">
+<div class="card-title">
+<h3>
+<span lang="sr">
+moći
+</span>
+<em>
+мочь
+</em>
+</h3>
+</div>
+</header>
+<section class="card-section" id="aux-moci-forms">
+<h4 class="card-section-label">
+Настоящее
+</h4>
+<table class="verb-paradigm">
+<thead>
+<tr>
+<th scope="col">
+Ед. число
+</th>
+<th scope="col">
+Мн. число
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+ja
+</span>
+<span class="verb-form" lang="sr">
 mogu
 </span>
 </div>
-</div>
-</section>
-</div>
-</article>
-<article class="chart-panel verb-col" data-tone="past">
-<header class="chart-panel-head">
-<span class="chart-label">
-Время
+</td>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+mi
 </span>
+<span class="verb-form" lang="sr">
+možemo
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+ti
+</span>
+<span class="verb-form" lang="sr">
+možeš
+</span>
+</div>
+</td>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+vi
+</span>
+<span class="verb-form" lang="sr">
+možete
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+on/ona/ono
+</span>
+<span class="verb-form" lang="sr">
+može
+</span>
+</div>
+</td>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+oni/one/ona
+</span>
+<span class="verb-form" lang="sr">
+mogu
+</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+</article>
+<article class="card" data-tone="past" id="verbs-past">
+<header class="card-head">
+<div class="card-title">
 <h3>
+<span lang="sr">
+Perfekat
+</span>
+<em>
 Прошедшее
+</em>
 </h3>
+</div>
 </header>
-<section class="verb-block">
-<h4 class="chart-label">
+<section class="card-section">
+<h4 class="card-section-label">
+Значение
+</h4>
+<p class="verb-prose">
+Основное прошедшее: то, что было.
+</p>
+</section>
+<section class="card-section">
+<h4 class="card-section-label">
 Формула
 </h4>
 <p class="verb-formula">
+<a href="#aux-biti-short">
 <span lang="sr">
-sam/si/je/smo/ste/su
+biti (sam)
 </span>
+</a>
 <span class="chart-sep">
 +
 </span>
@@ -1083,53 +1700,15 @@ sam/si/je/smo/ste/su
 </span>
 </p>
 </section>
-<section class="verb-block">
-<h4 class="chart-label">
-Порядок
-</h4>
-<div class="verb-examples">
-<div class="chart-example verb-example">
-<span class="sr" lang="sr">
-Gledao sam film.
-</span>
-<span class="tr">
-Я смотрел фильм. (м.)
-</span>
-</div>
-<div class="chart-example verb-example">
-<span class="sr" lang="sr">
-Ja sam gledao film.
-</span>
-<span class="tr">
-Я смотрел фильм.
-</span>
-</div>
-<div class="chart-example verb-example">
-<span class="sr" lang="sr">
-Nisam gledao film.
-</span>
-<span class="tr">
-Я не смотрел фильм. (м.)
-</span>
-</div>
-<div class="chart-example verb-example">
-<span class="sr" lang="sr">
-Juče sam gledao film.
-</span>
-<span class="tr">
-Вчера я смотрел фильм.
-</span>
-</div>
-</div>
-</section>
-<section class="verb-block">
-<h4 class="chart-label">
+<section class="card-section">
+<h4 class="card-section-label">
 Причастие
 </h4>
+<div class="verb-bands">
 <div class="gender-band">
-<span class="chart-label">
+<h5 class="chart-label">
 Ед. число
-</span>
+</h5>
 <div class="gender-run">
 <span class="ending-unit">
 <span class="eu-gender" data-gender="m">
@@ -1164,9 +1743,9 @@ Juče sam gledao film.
 </div>
 </div>
 <div class="gender-band">
-<span class="chart-label">
+<h5 class="chart-label">
 Мн. число
-</span>
+</h5>
 <div class="gender-run">
 <span class="ending-unit">
 <span class="eu-gender" data-gender="m">
@@ -1203,25 +1782,79 @@ Juče sam gledao film.
 М мн. — также для смешанных групп.
 </p>
 </div>
+</div>
+</section>
+<section class="card-section">
+<h4 class="card-section-label">
+Порядок
+</h4>
+<div class="card-items">
+<div class="card-item">
+<div class="sr" lang="sr">
+Gledao si film.
+</div>
+<div class="tr">
+Ты смотрел фильм.
+</div>
+</div>
+<div class="card-item">
+<div class="sr" lang="sr">
+Ona je gledala film.
+</div>
+<div class="tr">
+Она смотрела фильм.
+</div>
+</div>
+<div class="card-item">
+<div class="sr" lang="sr">
+Nismo gledali film.
+</div>
+<div class="tr">
+Мы не смотрели фильм.
+</div>
+</div>
+<div class="card-item">
+<div class="sr" lang="sr">
+Juče su gledali film.
+</div>
+<div class="tr">
+Вчера они смотрели фильм.
+</div>
+</div>
+</div>
 </section>
 </article>
-<article class="chart-panel verb-col" data-tone="future">
-<header class="chart-panel-head">
-<span class="chart-label">
-Время
-</span>
+<article class="card" data-tone="future" id="verbs-future">
+<header class="card-head">
+<div class="card-title">
 <h3>
-Будущее
+<span lang="sr">
+Futur I
+</span>
+<em>
+Будущее I
+</em>
 </h3>
+</div>
 </header>
-<section class="verb-block">
-<h4 class="chart-label">
+<section class="card-section">
+<h4 class="card-section-label">
+Значение
+</h4>
+<p class="verb-prose">
+То, что будет.
+</p>
+</section>
+<section class="card-section">
+<h4 class="card-section-label">
 Формула
 </h4>
 <p class="verb-formula">
+<a href="#aux-hteti-short">
 <span lang="sr">
-ću/ćeš/će/ćemo/ćete/će
+hteti (ću)
 </span>
+</a>
 <span class="chart-sep">
 +
 </span>
@@ -1230,47 +1863,55 @@ Juče sam gledao film.
 </span>
 </p>
 </section>
-<section class="verb-block">
-<h4 class="chart-label">
+<section class="card-section">
+<h4 class="card-section-label">
 Порядок / письмо
 </h4>
-<div class="verb-examples">
-<div class="chart-example verb-example">
-<span class="sr" lang="sr">
-Ja ću raditi.
-</span>
-<span class="tr">
-Я буду работать.
-</span>
+<div class="card-items">
+<div class="card-item">
+<div class="sr" lang="sr">
+Oni će raditi.
 </div>
-<div class="chart-example verb-example">
-<span class="sr" lang="sr">
-Radiću.
-</span>
-<span class="tr">
-Я буду работать.
-</span>
+<div class="tr">
+Они будут работать.
 </div>
-<div class="chart-example verb-example">
-<span class="sr" lang="sr">
-Neću raditi.
-</span>
-<span class="tr">
-Я не буду работать.
-</span>
+</div>
+<div class="card-item">
+<div class="sr" lang="sr">
+Radićeš.
+</div>
+<div class="tr">
+Ты будешь работать.
+</div>
+</div>
+<div class="card-item">
+<div class="sr" lang="sr">
+Nećemo raditi.
+</div>
+<div class="tr">
+Мы не будем работать.
+</div>
 </div>
 </div>
 </section>
-<section class="verb-block">
-<h4 class="chart-label">
+<section class="card-section">
+<h4 class="card-section-label">
 Слитные формы
 </h4>
-<p class="verb-list" lang="sr">
-raditi → radiću, radićeš, radiće
+<p class="verb-list">
+<span lang="sr">
+raditi
+</span>
+<span aria-hidden="true" class="chart-sep">
+→
+</span>
+<span lang="sr">
+radiću, radićeš, radiće
+</span>
 </p>
 </section>
-<section class="verb-block">
-<h4 class="chart-label">
+<section class="card-section">
+<h4 class="card-section-label">
 Глаголы на -ći
 </h4>
 <p class="verb-list" lang="sr">
@@ -1278,40 +1919,268 @@ ići ću, doći ću
 </p>
 </section>
 </article>
-<article class="chart-panel verb-col" data-tone="clitic">
-<header class="chart-panel-head">
-<span class="chart-label">
-Клитика
+<article class="card" data-tone="future">
+<header class="card-head">
+<div class="card-title">
+<h3>
+<span lang="sr">
+Futur II
 </span>
-<h3 lang="sr">
-se
+<em>
+Будущее II
+</em>
 </h3>
+</div>
 </header>
-<section class="verb-block">
-<p class="verb-note">
+<section class="card-section">
+<h4 class="card-section-label">
+Значение
+</h4>
+<p class="verb-prose">
+Будущее в частях с
 <i lang="sr">
-se
+kad
 </i>
-стоит после первого ударного слова.
+(когда),
+<i lang="sr">
+ako
+</i>
+(если),
+<i lang="sr">
+čim
+</i>
+(как только).
 </p>
-<div class="verb-examples">
-<div class="chart-example verb-example">
-<span class="sr" lang="sr">
-Šetam se.
+</section>
+<section class="card-section">
+<h4 class="card-section-label">
+Формула
+</h4>
+<p class="verb-formula">
+<a href="#aux-biti-perfective">
+<span lang="sr">
+biti (budem)
 </span>
+</a>
+<span class="chart-sep">
++
+</span>
+<span class="verb-term">
+причастие прошедшего времени
+</span>
+</p>
+</section>
+<section class="card-section">
+<h4 class="card-section-label">
+Примеры
+<button aria-expanded="false" aria-haspopup="dialog" aria-label="примечание" class="tip-chip" data-verb-note="fut2" type="button">
+?
+</button>
+</h4>
+<div class="card-items">
+<div class="card-item">
+<div class="sr" lang="sr">
+Kad budem imao vremena, doći ću.
 </div>
-<div class="chart-example verb-example">
-<span class="sr" lang="sr">
-Ja se šetam.
-</span>
+<div class="tr">
+Когда у меня будет время, я приду.
 </div>
-<div class="chart-example verb-example">
-<span class="sr" lang="sr">
-Nisam se šetao.
-</span>
+</div>
+<div class="card-item">
+<div class="sr" lang="sr">
+Ako budeš imala vremena, dođi.
+</div>
+<div class="tr">
+Если у тебя будет время, приходи.
+</div>
+</div>
+<div class="card-item">
+<div class="sr" lang="sr">
+Čim budemo završili posao, javićemo se.
+</div>
+<div class="tr">
+Как только закончим работу, мы свяжемся.
+</div>
 </div>
 </div>
 </section>
+</article>
+<article class="card" data-tone="potencijal" id="verbs-conditional">
+<header class="card-head">
+<div class="card-title">
+<h3>
+<span lang="sr">
+Potencijal
+</span>
+<em>
+Условное наклонение
+</em>
+</h3>
+</div>
+</header>
+<section class="card-section">
+<h4 class="card-section-label">
+Значение
+</h4>
+<p class="verb-prose">
+Что сделали бы или хотели бы.
+</p>
+</section>
+<section class="card-section">
+<h4 class="card-section-label">
+Формула
+</h4>
+<p class="verb-formula">
+<a href="#aux-biti-conditional">
+<span lang="sr">
+biti (bih)
+</span>
+</a>
+<span class="chart-sep">
++
+</span>
+<span class="verb-term">
+причастие прошедшего времени
+</span>
+</p>
+</section>
+<section class="card-section">
+<h4 class="card-section-label">
+Примеры
+</h4>
+<div class="card-items">
+<div class="card-item">
+<div class="sr" lang="sr">
+Radio bih da imam vremena.
+</div>
+<div class="tr">
+Я бы работал, если бы было время.
+</div>
+</div>
+<div class="card-item">
+<div class="sr" lang="sr">
+Ona bi želela kafu.
+</div>
+<div class="tr">
+Она бы хотела кофе.
+</div>
+</div>
+<div class="card-item">
+<div class="sr" lang="sr">
+Da li biste došli?
+</div>
+<div class="tr">
+Вы бы пришли?
+</div>
+</div>
+<div class="card-item">
+<div class="sr" lang="sr">
+Ne bismo išli.
+</div>
+<div class="tr">
+Мы бы не пошли.
+</div>
+</div>
+</div>
+</section>
+</article>
+<article class="card verb-clitic" data-tone="clitic" id="verbs-clitics">
+<header class="card-head">
+<div class="card-title">
+<h3>
+<span lang="sr">
+se
+</span>
+<em>
+Возвратная частица
+</em>
+</h3>
+</div>
+</header>
+<section class="card-section">
+<h4 class="card-section-label">
+Примеры
+<button aria-expanded="false" aria-haspopup="dialog" aria-label="примечание" class="tip-chip" data-verb-note="se" type="button">
+?
+</button>
+</h4>
+<div class="card-items">
+<div class="card-item">
+<div class="sr" lang="sr">
+Šetam
+<mark>
+se
+</mark>
+.
+</div>
+<div class="tr">
+Я гуляю.
+</div>
+</div>
+<div class="card-item">
+<div class="sr" lang="sr">
+Ja
+<mark>
+sam se
+</mark>
+šetao.
+</div>
+<div class="tr">
+Я гулял.
+</div>
+</div>
+<div class="card-item">
+<div class="sr" lang="sr">
+Nisam
+<mark>
+se
+</mark>
+šetao.
+</div>
+<div class="tr">
+Я не гулял.
+</div>
+</div>
+</div>
+</section>
+</article>
+### popover [data-verb-note]|[["data-verb-note","ati"]]
+<article class="chart-tip">
+<h4>
+<i lang="sr">
+-ati
+</i>
+: форма настоящего
+</h4>
+<p>
+По окончанию инфинитива группу не определить. Смотрите на форму 1-го лица единственного числа настоящего времени рядом с глаголом.
+</p>
+</article>
+### popover [data-verb-note]|[["data-verb-note","fut2"]]
+<article class="chart-tip">
+<h4>
+Придаточные части
+</h4>
+<p>
+В главной части часто стоит будущее время, но возможны и другие формы. Глагол совершенного вида в придаточной части может стоять в настоящем времени вместо Futur II.
+</p>
+</article>
+### popover [data-verb-note]|[["data-verb-note","se"]]
+<article class="chart-tip">
+<h4>
+Вторая позиция
+</h4>
+<p>
+Короткие безударные слова — клитики — обычно стоят одной группой после первого слова или словосочетания в своей части предложения. Перед
+<i lang="sr">
+se
+</i>
+могут стоять другие клитики. С
+<i lang="sr">
+se
+</i>
+эту часть предложения не начинают.
+</p>
 </article>
 ### popover [data-verb-tip]|[["data-verb-tip","0"]]
 <article class="chart-tip">
@@ -1319,56 +2188,86 @@ Nisam se šetao.
 <span lang="sr">
 biti
 </span>
-· полные формы
+· ударные формы
 </h4>
-<div class="chart-pairs">
-<div class="chart-pair">
+<table class="verb-paradigm">
+<thead>
+<tr>
+<th scope="col">
+Ед. число
+</th>
+<th scope="col">
+Мн. число
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<div class="verb-cell">
 <span class="verb-pron" lang="sr">
 ja
 </span>
-<span class="chart-form verb-form" lang="sr">
+<span class="verb-form" lang="sr">
 jesam
 </span>
 </div>
-<div class="chart-pair">
-<span class="verb-pron" lang="sr">
-ti
-</span>
-<span class="chart-form verb-form" lang="sr">
-jesi
-</span>
-</div>
-<div class="chart-pair">
-<span class="verb-pron" lang="sr">
-on/ona/ono
-</span>
-<span class="chart-form verb-form" lang="sr">
-jeste
-</span>
-</div>
-<div class="chart-pair">
+</td>
+<td>
+<div class="verb-cell">
 <span class="verb-pron" lang="sr">
 mi
 </span>
-<span class="chart-form verb-form" lang="sr">
+<span class="verb-form" lang="sr">
 jesmo
 </span>
 </div>
-<div class="chart-pair">
+</td>
+</tr>
+<tr>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+ti
+</span>
+<span class="verb-form" lang="sr">
+jesi
+</span>
+</div>
+</td>
+<td>
+<div class="verb-cell">
 <span class="verb-pron" lang="sr">
 vi
 </span>
-<span class="chart-form verb-form" lang="sr">
+<span class="verb-form" lang="sr">
 jeste
 </span>
 </div>
-<div class="chart-pair">
+</td>
+</tr>
+<tr>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+on/ona/ono
+</span>
+<span class="verb-form" lang="sr">
+jeste
+</span>
+</div>
+</td>
+<td>
+<div class="verb-cell">
 <span class="verb-pron" lang="sr">
 oni/one/ona
 </span>
-<span class="chart-form verb-form" lang="sr">
+<span class="verb-form" lang="sr">
 jesu
 </span>
 </div>
-</div>
+</td>
+</tr>
+</tbody>
+</table>
 </article>

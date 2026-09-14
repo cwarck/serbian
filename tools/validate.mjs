@@ -121,7 +121,7 @@ function collectDataI18nKeys() {
   pronouns.QUESTIONS.whoWhat.forEach(row => add(row.key));
 
   const verbs = data['src/content/verbs.ts'];
-  for (const part of [...verbs.PAST.formula, ...verbs.FUTURE.formula]) {
+  for (const part of [...verbs.PAST.formula, ...verbs.FUTURE.formula, ...verbs.FUTURE2.formula]) {
     if (part.key) add(part.key);
   }
   verbs.PAST.endings.forEach(row => add(row.key));
@@ -661,21 +661,26 @@ function validateSerbianContentScript() {
       validateSerbianLatin(verb.lemma, `verbGroups[${groupIndex}].verbs[${i}].lemma`);
       validateSerbianLatin(verb.present, `verbGroups[${groupIndex}].verbs[${i}].present`);
     });
-    validateSerbianLatin(group.example.infinitive, `verbGroups[${groupIndex}].example.infinitive`);
-    eachString(group.example.forms, value => validateSerbianLatin(value, `verbGroups[${groupIndex}].example.forms`));
   });
   verbs.IRREGULARS.forEach((row, rowIndex) => {
-    ['title', 'forms', 'negative', 'full'].forEach(field => eachString(row[field], value => validateSerbianLatin(value, `irregulars[${rowIndex}].${field}`)));
+    ['title', 'forms', 'full', 'short', 'negative', 'perfective', 'conditional', 'emphatic'].forEach(field => eachString(row[field], value => validateSerbianLatin(value, `irregulars[${rowIndex}].${field}`)));
   });
-  [verbs.PAST, verbs.FUTURE].forEach((tense, tenseIndex) => {
+  [verbs.PAST, verbs.FUTURE, verbs.FUTURE2, verbs.POTENCIJAL].forEach((tense, tenseIndex) => {
+    expectTranslation(tense.meaning, `verbs.tense[${tenseIndex}]`, 'meaning');
     tense.formula.forEach((part, partIndex) => {
-      if (part.sr) validateSerbianLatin(part.sr, `verbs.tense[${tenseIndex}].formula[${partIndex}].sr`);
+      const scope = `verbs.tense[${tenseIndex}].formula[${partIndex}]`;
+      if (part.sr) validateSerbianLatin(part.sr, `${scope}.sr`);
+      if (part.aux) {
+        const item = verbs.IRREGULARS.find(row => row.title === part.aux.lemma);
+        expect(Array.isArray(item?.[part.aux.field]) && item[part.aux.field].length === 6, 'verbs',
+          `${scope} names ${part.aux.lemma}.${part.aux.field}, which no card shows`);
+      }
     });
     tense.examples.forEach((example, exampleIndex) => validateSerbianLatin(example.sr, `verbs.tense[${tenseIndex}].examples[${exampleIndex}].sr`));
   });
   verbs.PAST.endings.forEach((row, rowIndex) => validateSerbianLatin(row.ending, `verbs.PAST.endings[${rowIndex}].ending`));
   ['merged', 'exceptions'].forEach(field => eachString(verbs.FUTURE[field], value => validateSerbianLatin(value, `verbs.FUTURE.${field}`)));
-  eachString(verbs.CLITICS, value => validateSerbianLatin(value, 'verbs.CLITICS'));
+  verbs.CLITICS.forEach((row, i) => validateSerbianLatin(row.sr, `verbs.CLITICS[${i}].sr`));
 
   const aspect = data['src/content/aspect.ts'];
   aspect.CONTRAST.forEach((row, rowIndex) => ['impEx', 'perfEx'].forEach(field => validateSerbianLatin(row[field].sr, `aspect.contrast[${rowIndex}].${field}.sr`)));
@@ -1038,28 +1043,41 @@ function validatePronouns() {
 }
 
 function validateVerbs() {
-  const { PRONOUNS, VERB_GROUPS, IRREGULARS, PAST, FUTURE, CLITICS } = data['src/content/verbs.ts'];
+  const { PRONOUNS, VERB_GROUPS, IRREGULARS, PAST, FUTURE, FUTURE2, POTENCIJAL, CLITICS } = data['src/content/verbs.ts'];
   expectArray(PRONOUNS, 'verbs', 'PRONOUNS');
   VERB_GROUPS.forEach((group, index) => {
     const scope = `verbGroups[${index}]`;
-    ['key', 'tone', 'title'].forEach(field => expectString(group[field], scope, field));
+    ['key', 'tone'].forEach(field => expectString(group[field], scope, field));
     expect(isObject(group.endings), scope, 'endings must be object');
     PRONOUNS.forEach(pronoun => expectString(group.endings[pronoun.key], scope, `endings.${pronoun.key}`));
     expectArray(group.patterns, scope, 'patterns');
     expectArray(group.verbs, scope, 'verbs');
-    expectString(group.example?.infinitive, scope, 'example.infinitive');
   });
   IRREGULARS.forEach((row, index) => {
     const scope = `irregulars[${index}]`;
     expectString(row.title, scope, 'title');
-    expectArray(row.forms, scope, 'forms');
+    expect(['forms', 'full', 'short'].some(field => Array.isArray(row[field]) && row[field].length), scope, 'needs a present paradigm');
     expect(Array.isArray(row.negative), scope, 'negative must be array');
+    ['forms', 'full', 'short', 'perfective', 'conditional', 'emphatic'].forEach(field => {
+      if (row[field] !== undefined) expect(Array.isArray(row[field]) && row[field].length === 6, scope, `${field} must hold six person forms`);
+    });
   });
   expectArray(PAST.formula, 'verbs.PAST', 'formula');
   expectArray(PAST.examples, 'verbs.PAST', 'examples');
   expectArray(PAST.endings, 'verbs.PAST', 'endings');
   expectArray(FUTURE.formula, 'verbs.FUTURE', 'formula');
   expectArray(FUTURE.examples, 'verbs.FUTURE', 'examples');
+  expectArray(FUTURE2.formula, 'verbs.FUTURE2', 'formula');
+  expectArray(FUTURE2.examples, 'verbs.FUTURE2', 'examples');
+  FUTURE2.examples.forEach((row, i) => expectTranslation({ en: row.en, ru: row.ru }, `verbs.FUTURE2.examples[${i}]`, 'tr'));
+  expectArray(POTENCIJAL.formula, 'verbs.POTENCIJAL', 'formula');
+  expectArray(POTENCIJAL.examples, 'verbs.POTENCIJAL', 'examples');
+  POTENCIJAL.examples.forEach((row, i) => expectTranslation({ en: row.en, ru: row.ru }, `verbs.POTENCIJAL.examples[${i}]`, 'tr'));
+  CLITICS.forEach((row, i) => {
+    const scope = `verbs.CLITICS[${i}]`;
+    expect(/<mark>[^<]+<\/mark>/.test(row.sr), scope, 'sr must mark the clitic it exists to show');
+    expectTranslation({ en: row.en, ru: row.ru }, scope, 'tr');
+  });
   expectArray(CLITICS, 'verbs', 'CLITICS');
 }
 
@@ -1079,7 +1097,7 @@ function validateFalseFriends() {
   });
 }
 
-const VALID_POS = new Set(['verb', 'noun', 'adj', 'adv', 'prep', 'pron', 'num']);
+const VALID_POS = new Set(['verb', 'noun', 'adj', 'adv', 'prep', 'pron', 'num', 'conj']);
 const VALID_LEVELS = new Set(['A0', 'A1', 'A2', 'B1', 'B2']);
 const VALID_ASPECTS = new Set(['ipf', 'pf']);
 const VALID_GENDERS = new Set(['m', 'f', 'n']);
@@ -1149,7 +1167,6 @@ function chartLemmas() {
   const verbs = data['src/content/verbs.ts'];
   verbs.VERB_GROUPS.forEach((group, gi) => {
     group.verbs.forEach((v, i) => add(v.lemma, `verbGroups[${gi}].verbs[${i}].lemma`));
-    add(group.example.infinitive, `verbGroups[${gi}].example.infinitive`);
   });
   verbs.IRREGULARS.forEach((row, i) => add(row.title, `irregulars[${i}].title`));
 

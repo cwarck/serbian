@@ -571,7 +571,7 @@ section { position: relative; }
    .chart-sep                        connector glyph in a specimen run
    .chart-tiles / .chart-tile        stacked card rows
    .chart-panel-grid / .chart-panel  bordered panel mosaic with a tone
-                                     strip (pronouns, verbs)
+                                     strip (pronouns)
    .chart-pop / .chart-tip           `?` popover card body
    ----------------------------------------------------------- */
 
@@ -1054,7 +1054,8 @@ section { position: relative; }
   gap: 0;
 }
 
-.number-strip-list { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+.number-strip-list,
+.verb-strip-list { grid-template-columns: repeat(6, minmax(0, 1fr)); }
 
 .case-strip-cell {
   position: relative;
@@ -1121,6 +1122,8 @@ section { position: relative; }
   padding: 2.2rem 0;
 }
 .card > * { min-width: 0; }
+/* A section a formula links to lands below the sticky masthead, like a card. */
+.card-section[id] { scroll-margin-top: calc(var(--sticky-offset, 120px) + .5rem); }
 .card::before {
   content: "";
   position: absolute;
@@ -1662,15 +1665,20 @@ section { position: relative; }
   outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
-.i-decl {
+ /* The sheet's one table recipe — shared with the verb paradigm: a label
+   row over a solid hairline, dashed rules between data rows, none after
+   the last. */
+.i-decl,
+.verb-paradigm {
   width: 100%;
   border-collapse: collapse;
 }
 .i-decl tbody td .end { white-space: nowrap; }
-.i-decl thead th {
+.i-decl thead th,
+.verb-paradigm thead th {
   font-family: var(--ff-body);
   font-size: var(--fs-label);
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: var(--track-label);
   text-transform: uppercase;
   color: var(--ink-muted);
@@ -1685,7 +1693,8 @@ section { position: relative; }
   padding: .7rem 1rem .7rem 0;
   border-bottom: 1px dashed var(--hairline);
 }
-.i-decl tbody td {
+.i-decl tbody td,
+.verb-paradigm tbody td {
   padding: .7rem .6rem .7rem 0;
   border-bottom: 1px dashed var(--hairline);
 }
@@ -1698,7 +1707,8 @@ section { position: relative; }
   letter-spacing: -.005em;
 }
 .i-decl tbody tr:last-child th,
-.i-decl tbody tr:last-child td { border-bottom: 0; }
+.i-decl tbody tr:last-child td,
+.verb-paradigm tbody tr:last-child td { border-bottom: 0; }
 
 /* Sound-change pair inside a card item: from → to on the specimen line. */
 .card-item .arrow {
@@ -1845,178 +1855,91 @@ section { position: relative; }
 
 /* Present forms (all four conjugation buckets + irregulars) share the
    brand marker orange — chrome ink, not a grammatical hue. Past and
-   future fall through to the ink-soft baseline. */
+   future fall through to the ink-soft baseline. The tone reaches the card
+   bar only: endings, forms and lemmas are ink. */
 [data-tone="im"],
 [data-tone="am"],
 [data-tone="em"],
 [data-tone="jem"],
 [data-tone="irr"] { --tone: var(--tone-orange); }
 
-/* h4s that hold a Serbian lemma (raditi, biti, se) speak in the specimen
-   voice, not the caps-label apparatus voice. */
-.verb-col .sr-head {
-  font-family: var(--ff-display);
-  font-size: var(--fs-body);
-  font-weight: 500;
-  letter-spacing: 0;
-  text-transform: none;
-  color: var(--ink-muted);
+/* The paradigm table (recipe shared with .i-decl above): SG | PL columns
+   headed by the number, three rows (ja|mi, ti|vi, on|oni — PAIR_ORDER in
+   verbs.ts). A cell stacks the pronoun over the form, so oni/one/ona never
+   competes with the form for a 320px column. Fixed layout: the two columns
+   split the width whatever the forms measure. */
+.verb-paradigm {
+  table-layout: fixed;
 }
-/* Serbian pronoun labels (ja, ti, on/ona/ono) — specimen voice, lowercase. */
+.verb-cell {
+  display: grid;
+  gap: .25rem;
+  min-width: 0;
+}
+/* Serbian pronoun labels (ja, on/ona/ono) — specimen voice, lowercase. A
+   full slash label may break at a slash rather than push the column. */
 .verb-pron {
   font-family: var(--ff-display);
   font-style: italic;
   font-size: var(--fs-caption);
   line-height: var(--lh-snug);
-  color: var(--ink-faint);
+  color: var(--ink-muted);
+  overflow-wrap: anywhere;
 }
 .verb-form {
-  color: var(--tone, var(--ink-soft));
+  font-family: var(--ff-display);
+  font-size: var(--fs-lead);
+  font-weight: 400;
+  line-height: var(--lh-snug);
+  color: var(--ink);
+  overflow-wrap: anywhere;
 }
+/* A bare ending is the pattern, not a word: emphasis weight. */
+.verb-paradigm.is-abstract .verb-form { font-weight: 500; }
 
-.verb-block {
-  display: grid;
-  gap: .65rem;
-}
-.verb-patterns {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .45rem;
-}
-.verb-pattern {
-  display: inline-flex;
-  align-items: center;
-  min-height: 2.2rem;
-  padding: .42rem .62rem;
-  border: 1px solid var(--hairline-soft);
-  font-family: var(--ff-display);
-  font-size: var(--fs-body);
-  font-weight: 400;
-  letter-spacing: 0;
-  line-height: 1;
-  color: var(--tone, var(--ink-soft));
-  background: color-mix(in oklab, var(--tone, var(--ink-soft)) 8%, transparent);
-}
-.verb-list,
+/* Serbian runs in a text section: infinitive cues, the tense formula, the
+   merged-form and -ći lists. */
+.verb-cues,
 .verb-formula,
-.verb-note,
-.verb-negative p {
+.verb-list {
   margin: 0;
-  color: var(--ink);
-  line-height: var(--lh-prose);
-}
-.verb-list,
-.verb-formula {
   font-family: var(--ff-display);
   font-size: var(--fs-lead);
   font-weight: 400;
   letter-spacing: 0;
-}
-.verb-list-glossed {
-  list-style: none;
-  padding: 0;
-  display: grid;
-  gap: 0.35rem;
-}
-.verb-list-glossed li {
-  display: flex;
-  align-items: baseline;
-  gap: 0.6em;
-  flex-wrap: wrap;
-}
-.verb-list-glossed .verb-lemma {
-  font-family: var(--ff-display);
-  font-size: var(--fs-lead);
+  line-height: var(--lh-prose);
   color: var(--ink);
-}
-/* The 1sg present. The stem mutation is the only hard part of a bucket
-   (pisati -> pišem, not *pisem), so it sits in the specimen voice beside the
-   lemma, with the arrow as apparatus. */
-.verb-list-glossed .verb-stem {
-  font-family: var(--ff-display);
-  font-size: var(--fs-body);
-  color: var(--ink-soft);
-}
-.verb-list-glossed .verb-stem::before {
-  content: "→";
-  margin-inline-end: .4em;
-  font-family: var(--ff-body);
-  color: var(--ink-muted);
-}
-.verb-list-glossed .verb-gloss {
-  font-family: var(--ff-body);
-  font-size: var(--fs-caption);
-  color: var(--ink-soft);
-}
-.verb-note,
-.verb-negative p {
-  font-size: var(--fs-body);
-}
-/* Negative paradigm (nisam, nisi…) is Serbian data, not prose. */
-.verb-negative p {
-  font-family: var(--ff-display);
-}
-.verb-formula {
-  color: var(--tone, var(--ink-soft));
 }
 /* Apparatus inside the formula — the grammatical term naming what the Serbian
    run combines with. Sans voice, caption size; the specimen keeps the serif. */
 .verb-formula .verb-term {
   font-family: var(--ff-body);
   font-size: var(--fs-caption);
+  color: var(--ink-soft);
 }
-
-.verb-mini-list {
+/* A one-sentence statement in a section (the tense meaning): body prose. */
+.verb-prose {
+  margin: 0;
+  font-family: var(--ff-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-prose);
+  color: var(--ink-soft);
+  max-width: 34ch;
+}
+/* The clitic in an example rides the shared accent underline (.num-end,
+   see the Numbers section). The card has no case, so a .card-item mark would
+   fall to --ink-soft and dim the one word the card exists to show. */
+.verb-clitic .card-item .sr mark { color: inherit; }
+/* The participle bands: one section, a heading per number. */
+.verb-bands {
   display: grid;
-  gap: 0;
-  border-top: 1px solid var(--hairline-soft);
+  gap: 1rem;
 }
-.verb-mini {
-  padding: 1rem 0;
-  border-bottom: 1px solid var(--hairline-soft);
-  display: grid;
-  gap: .75rem;
-}
-.verb-mini:last-child { border-bottom: 0; padding-bottom: 0; }
-/* One lemma-head treatment page-wide: an apparatus label (or a tip chip)
-   beside the lemma, the lemma itself in the panel's tone. Without the label the
-   example lemma read as a glossless item of the COMMON VERBS list above it. */
-.verb-lemma-head {
-  display: flex;
-  align-items: baseline;
-  gap: .55rem;
-}
-.verb-lemma-head .sr-head {
-  color: var(--tone, var(--ink-soft));
-}
-.verb-negative {
-  display: grid;
-  gap: .35rem;
-}
-
-.verb-examples {
-  display: grid;
-  gap: 0;
-  border-top: 1px solid var(--hairline-soft);
-}
-.verb-example {
-  padding: .72rem 0;
-  border-bottom: 1px dashed var(--hairline-soft);
-}
-.verb-example:last-child { border-bottom: 0; }
-
-/* SG | PL paired paradigms — six cells reading as three rows.
-   DOM order is ja,mi / ti,vi / on,oni (PAIR_ORDER in verbs.js). */
-.verb-pair-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  column-gap: 1.1rem;
-}
-.verb-pair-grid .chart-pair {
-  grid-template-columns: auto minmax(0, 1fr);
-  gap: .55rem;
-}
-.verb-pair-grid .chart-pair:nth-last-child(-n+2) {
-  border-bottom: 0;
+.gender-band > h5 { margin: 0; }
+/* A ? riding a section label sits on the label's line. */
+.card-section-label .tip-chip {
+  margin-left: .45rem;
+  vertical-align: middle;
 }
 
 
@@ -2037,14 +1960,16 @@ section { position: relative; }
    -u / -e of hiljadu / hiljade. The letters stay ink (AA on every band); the
    brand orange rides an underline as marker ink, so contrast never depends on
    the orange itself. */
-.num-end {
-  font-weight: 500;
+.num-end,
+.num-agreement-verbs .chart-example .sr mark,
+.verb-clitic .card-item .sr mark {
   text-decoration: underline;
   text-decoration-color: var(--accent);
   text-decoration-thickness: .11em;
   text-underline-offset: .17em;
   text-decoration-skip-ink: none;
 }
+.num-end { font-weight: 500; }
 /* The digit is the index key, not apparatus: you read the number first,
    then the Serbian form. Sits on the title tier, one step above the
    specimen (--fs-lead), in full ink. */
@@ -2130,11 +2055,6 @@ section { position: relative; }
 .num-agreement-verbs .chart-example .sr mark {
   background: transparent;
   color: inherit;
-  text-decoration: underline;
-  text-decoration-color: var(--accent);
-  text-decoration-thickness: .11em;
-  text-underline-offset: .17em;
-  text-decoration-skip-ink: none;
 }
 
 /* Ordinals — the pattern sits ABOVE the word list: the list prints one gender
