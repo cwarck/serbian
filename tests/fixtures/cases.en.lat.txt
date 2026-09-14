@@ -1727,6 +1727,29 @@ day · days (exception, plain
 )
 </div>
 </div>
+<div class="card-item">
+<div class="sr">
+<span lang="sr">
+sat
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span lang="sr">
+sat
+<span class="lit">
+i
+</span>
+</span>
+</div>
+<div class="tr">
+hour · hours (exception, plain
+<i lang="sr">
+-i
+</i>
+)
+</div>
+</div>
 </div>
 </section>
 </article>
@@ -1906,29 +1929,6 @@ u
 </div>
 <div class="tr">
 leg → of legs (special gen. pl.)
-</div>
-</div>
-<div class="card-item">
-<div class="sr">
-<span lang="sr">
-sat
-</span>
-<span aria-hidden="true" class="arrow">
-→
-</span>
-<span lang="sr">
-sat
-<span class="lit">
-i
-</span>
-</span>
-</div>
-<div class="tr">
-hour → hours (no
-<i lang="sr">
--ov-
-</i>
-infix)
 </div>
 </div>
 <div class="card-item">

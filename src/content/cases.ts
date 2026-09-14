@@ -235,6 +235,7 @@ export const WRINKLES = [
       { from:'grad', to:'gradovi', en:'city · cities',               ru:'город · города' },
       { from:'muž',  to:'muževi',  en:'husband · husbands (soft → <i>-ev-</i>)', ru:'муж · мужья (мягк. → <i>-ev-</i>)' },
       { from:'dan',  to:'dani',    en:'day · days (exception, plain <i>-i</i>)', ru:'день · дни (исключение, просто <i>-i</i>)' },
+      { from:'sat',  to:'sati',    en:'hour · hours (exception, plain <i>-i</i>)', ru:'час · часы (исключение, просто <i>-i</i>)' },
     ],
   },
   {
@@ -248,7 +249,6 @@ export const WRINKLES = [
       { from:'vreme', to:'vremena',  en:'time → times (n-stem extension)',      ru:'время → времена (наращение -n-)' },
       { from:'ruka',  to:'ruku',     en:'hand → of hands (special gen. pl.)',   ru:'рука → рук (особый род. мн.)' },
       { from:'noga',  to:'nogu',     en:'leg → of legs (special gen. pl.)',     ru:'нога → ног (особый род. мн.)' },
-      { from:'sat',   to:'sati',     en:'hour → hours (no <i>-ov-</i> infix)',         ru:'час → часы (без <i>-ov-</i>)' },
       { from:'nebo',  to:'nebesa',   en:'sky → skies (s-stem extension)',       ru:'небо → небеса (наращение -s-)' },
     ],
   },

@@ -1724,6 +1724,29 @@ LOK
 )
 </div>
 </div>
+<div class="card-item">
+<div class="sr">
+<span lang="sr">
+сат
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span lang="sr">
+сат
+<span class="lit">
+и
+</span>
+</span>
+</div>
+<div class="tr">
+час · часы (исключение, просто
+<i lang="sr">
+-и
+</i>
+)
+</div>
+</div>
 </div>
 </section>
 </article>
@@ -1903,29 +1926,6 @@ LOK
 </div>
 <div class="tr">
 нога → ног (особый род. мн.)
-</div>
-</div>
-<div class="card-item">
-<div class="sr">
-<span lang="sr">
-сат
-</span>
-<span aria-hidden="true" class="arrow">
-→
-</span>
-<span lang="sr">
-сат
-<span class="lit">
-и
-</span>
-</span>
-</div>
-<div class="tr">
-час → часы (без
-<i lang="sr">
--ов-
-</i>
-)
 </div>
 </div>
 <div class="card-item">

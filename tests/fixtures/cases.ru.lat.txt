@@ -1724,6 +1724,29 @@ i
 )
 </div>
 </div>
+<div class="card-item">
+<div class="sr">
+<span lang="sr">
+sat
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span lang="sr">
+sat
+<span class="lit">
+i
+</span>
+</span>
+</div>
+<div class="tr">
+час · часы (исключение, просто
+<i lang="sr">
+-i
+</i>
+)
+</div>
+</div>
 </div>
 </section>
 </article>
@@ -1903,29 +1926,6 @@ u
 </div>
 <div class="tr">
 нога → ног (особый род. мн.)
-</div>
-</div>
-<div class="card-item">
-<div class="sr">
-<span lang="sr">
-sat
-</span>
-<span aria-hidden="true" class="arrow">
-→
-</span>
-<span lang="sr">
-sat
-<span class="lit">
-i
-</span>
-</span>
-</div>
-<div class="tr">
-час → часы (без
-<i lang="sr">
--ov-
-</i>
-)
 </div>
 </div>
 <div class="card-item">

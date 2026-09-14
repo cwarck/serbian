@@ -1727,6 +1727,29 @@ day · days (exception, plain
 )
 </div>
 </div>
+<div class="card-item">
+<div class="sr">
+<span lang="sr">
+сат
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span lang="sr">
+сат
+<span class="lit">
+и
+</span>
+</span>
+</div>
+<div class="tr">
+hour · hours (exception, plain
+<i lang="sr">
+-и
+</i>
+)
+</div>
+</div>
 </div>
 </section>
 </article>
@@ -1906,29 +1929,6 @@ hand → of hands (special gen. pl.)
 </div>
 <div class="tr">
 leg → of legs (special gen. pl.)
-</div>
-</div>
-<div class="card-item">
-<div class="sr">
-<span lang="sr">
-сат
-</span>
-<span aria-hidden="true" class="arrow">
-→
-</span>
-<span lang="sr">
-сат
-<span class="lit">
-и
-</span>
-</span>
-</div>
-<div class="tr">
-hour → hours (no
-<i lang="sr">
--ов-
-</i>
-infix)
 </div>
 </div>
 <div class="card-item">
