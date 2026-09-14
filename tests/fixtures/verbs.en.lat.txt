@@ -1551,7 +1551,7 @@ Past
 Meaning
 </h4>
 <p class="verb-prose">
-The usual tense for past actions and states.
+What happened or how things were.
 </p>
 </section>
 <section class="card-section">
@@ -1714,7 +1714,7 @@ Future I
 Meaning
 </h4>
 <p class="verb-prose">
-The usual tense for future actions and states.
+What will happen or how things will be.
 </p>
 </section>
 <section class="card-section">
@@ -1809,7 +1809,7 @@ Future II
 Meaning
 </h4>
 <p class="verb-prose">
-A future action or state in a subordinate clause.
+The future in “when…”, “if…” and “as soon as…” clauses.
 </p>
 </section>
 <section class="card-section">

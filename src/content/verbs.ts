@@ -97,7 +97,7 @@ export const IRREGULARS = [
 /* Formulas name the auxiliary by lemma and paradigm; the six forms live on
    the auxiliary's own card, and the formula links there. */
 export const PAST = {
-  meaning: { en:'The usual tense for past actions and states.', ru:'Основное время для действий и состояний в прошлом.' },
+  meaning: { en:'What happened or how things were.', ru:'То, что было.' },
   formula: [{ aux: { lemma:'biti', field:'short' } }, { text:'+' }, { key:'verbs.term.pastParticiple' }] satisfies readonly FormulaPart[],
   examples: [
     { sr:'Gledao si film.', en:'You watched a film.', ru:'Ты смотрел фильм.' },
@@ -116,7 +116,7 @@ export const PAST = {
 };
 
 export const FUTURE = {
-  meaning: { en:'The usual tense for future actions and states.', ru:'Основное время для будущих действий и состояний.' },
+  meaning: { en:'What will happen or how things will be.', ru:'То, что будет.' },
   formula: [{ aux: { lemma:'hteti', field:'short' } }, { text:'+' }, { key:'verbs.term.infinitive' }] satisfies readonly FormulaPart[],
   examples: [
     { sr:'Oni će raditi.', en:'They will work.', ru:'Они будут работать.' },
@@ -131,7 +131,7 @@ export const FUTURE = {
    not repeated here — the formula names the participle and the Perfekat bands
    hold the six forms; budem… sits on the biti card. */
 export const FUTURE2 = {
-  meaning: { en:'A future action or state in a subordinate clause.', ru:'Будущее действие или состояние в придаточной части.' },
+  meaning: { en:'The future in “when…”, “if…” and “as soon as…” clauses.', ru:'Будущее в частях с «когда», «если», «как только».' },
   formula: [{ aux: { lemma:'biti', field:'perfective' } }, { text:'+' }, { key:'verbs.term.pastParticiple' }] satisfies readonly FormulaPart[],
   examples: [
     { sr:'Kad budem imao vremena, doći ću.', en:'When I have time, I will come.', ru:'Когда у меня будет время, я приду.' },
