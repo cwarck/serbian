@@ -1054,7 +1054,8 @@ section { position: relative; }
   gap: 0;
 }
 
-.number-strip-list { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+.number-strip-list,
+.verb-strip-list { grid-template-columns: repeat(6, minmax(0, 1fr)); }
 
 .case-strip-cell {
   position: relative;

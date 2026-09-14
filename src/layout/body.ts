@@ -163,9 +163,10 @@ export function chartBody(chart: Chart, mounts: Record<string, string>, route: R
       const spec = SIMPLE[chart.name];
       if (!spec) throw new Error(`no layout for chart "${chart.name}"`);
       const [mountId, wrapperClass, ariaLabel, h1Key] = spec;
-      return { beforeMain: chart.name === 'numbers' ? html`
-<nav class="case-strip" aria-label="${t('numbers.cardinals')}">
-  <ol class="case-strip-list number-strip-list">${raw(mounts['numberStripList'] ?? '')}</ol>
+      const strip = STRIPS[chart.name];
+      return { beforeMain: strip ? html`
+<nav class="case-strip" aria-label="${t(strip.labelKey)}">
+  <ol class="case-strip-list ${strip.listClass}">${raw(mounts[strip.mountId] ?? '')}</ol>
 </nav>` : undefined, main: html`
 <section class="chart-section"${ariaLabel ? raw(` aria-label="${ariaLabel}"`) : ''}${chart.name === 'false-friends' ? raw(' data-lang-only="ru"') : ''}>
   <div class="shell">
@@ -177,6 +178,12 @@ export function chartBody(chart: Chart, mounts: Record<string, string>, route: R
     }
   }
 }
+
+/* Six-cell strips over the simple layouts; the cases strip is in its branch. */
+const STRIPS: Record<string, { mountId: string; listClass: string; labelKey: string } | undefined> = {
+  numbers: { mountId: 'numberStripList', listClass: 'number-strip-list', labelKey: 'numbers.cardinals' },
+  verbs:   { mountId: 'verbStripList',   listClass: 'verb-strip-list',   labelKey: 'verbs.strip.label' },
+};
 
 /* [mount id, wrapper class, section aria-label, h1 key] — verbatim from the
    shells these replace. */

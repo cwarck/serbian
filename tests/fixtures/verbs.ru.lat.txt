@@ -1,5 +1,48 @@
+### mount verbStripList
+<li class="case-strip-cell" data-tone="im">
+<a aria-label="Настоящее" href="#verbs-present">
+<span class="strip-abbr">
+Наст
+</span>
+</a>
+</li>
+<li class="case-strip-cell" data-tone="irr">
+<a aria-label="Неправильные глаголы" href="#verbs-irregular">
+<span class="strip-abbr">
+Непр
+</span>
+</a>
+</li>
+<li class="case-strip-cell">
+<a aria-label="Прошедшее" href="#verbs-past">
+<span class="strip-abbr">
+Прош
+</span>
+</a>
+</li>
+<li class="case-strip-cell">
+<a aria-label="Будущее I и II" href="#verbs-future">
+<span class="strip-abbr">
+Буд
+</span>
+</a>
+</li>
+<li class="case-strip-cell">
+<a aria-label="Условное наклонение" href="#verbs-conditional">
+<span class="strip-abbr">
+Усл
+</span>
+</a>
+</li>
+<li class="case-strip-cell">
+<a aria-label="Возвратная частица" href="#verbs-clitics">
+<span class="strip-abbr">
+Возв
+</span>
+</a>
+</li>
 ### mount verbGrid
-<article class="card" data-tone="im">
+<article class="card" data-tone="im" id="verbs-present">
 <header class="card-head">
 <div class="card-title">
 <h3>
@@ -893,7 +936,7 @@ prodajem
 </div>
 </section>
 </article>
-<article class="card" data-tone="irr">
+<article class="card" data-tone="irr" id="verbs-irregular">
 <header class="card-head">
 <div class="card-title">
 <h3>
@@ -1618,7 +1661,7 @@ mogu
 </table>
 </section>
 </article>
-<article class="card" data-tone="past">
+<article class="card" data-tone="past" id="verbs-past">
 <header class="card-head">
 <div class="card-title">
 <h3>
@@ -1781,7 +1824,7 @@ Juče su gledali film.
 </div>
 </section>
 </article>
-<article class="card" data-tone="future">
+<article class="card" data-tone="future" id="verbs-future">
 <header class="card-head">
 <div class="card-title">
 <h3>
@@ -1962,7 +2005,7 @@ Ako budeš imala vremena, dođi.
 </div>
 </section>
 </article>
-<article class="card" data-tone="potencijal">
+<article class="card" data-tone="potencijal" id="verbs-conditional">
 <header class="card-head">
 <div class="card-title">
 <h3>
@@ -2041,7 +2084,7 @@ Ne bismo išli.
 </div>
 </section>
 </article>
-<article class="card verb-clitic" data-tone="clitic">
+<article class="card verb-clitic" data-tone="clitic" id="verbs-clitics">
 <header class="card-head">
 <div class="card-title">
 <h3>

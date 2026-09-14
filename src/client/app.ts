@@ -248,12 +248,12 @@ function stickyOffset(): void {
    panel is open the strip stays put, so the panel below it has a fixed top. */
 let holdCaseStrip: (on: boolean) => void = () => {};
 
-/* Labels the cases table only. Hide once the reader scrolls past the whole
-   case list (into the off-paradigm panel); bring it back on any upward scroll. */
+/* Labels the chart list (cases, cardinals, verbs). Hide once the reader scrolls past the whole
+   list (into the trailing panels or footer); bring it back on any upward scroll. */
 function caseStripVisibility(): void {
   const strip = document.querySelector<HTMLElement>('.case-strip');
   const header = document.querySelector<HTMLElement>('header.nav');
-  const list = document.querySelector<HTMLElement>('#caseList, #cardinalList');
+  const list = document.querySelector<HTMLElement>('#caseList, #cardinalList, #verbGrid');
   if (!strip || !list) return;
 
   let lastY = window.scrollY;
@@ -293,29 +293,32 @@ function caseStripVisibility(): void {
   update();
 }
 
-/* Mark the strip cell whose row is nearest the top of the viewport, below the
-   sticky header. The anchors are build-time ids now. */
+/* Mark the cell whose target is the last one to have passed the probe below
+   the sticky chrome. Targets come from the strip's own anchors in DOM order,
+   so a cell may head a run of several cards (verbs) without a card→cell map. */
 function scrollSpy(): void {
-  const cells = document.querySelectorAll<HTMLElement>('.case-strip-cell');
-  const rows = document.querySelectorAll<HTMLElement>('#caseList .card[id], #cardinalList .card[id]');
-  if (!cells.length || !rows.length) return;
+  const cells = [...document.querySelectorAll<HTMLElement>('.case-strip-cell')]
+    .map(cell => {
+      const a = cell.querySelector('a');
+      const target = a && document.getElementById((a.getAttribute('href') ?? '').slice(1));
+      return a && target ? { cell, a, target } : null;
+    })
+    .filter((x): x is NonNullable<typeof x> => x !== null);
+  if (!cells.length) return;
 
   const update = () => {
     const off = parseInt(getComputedStyle(root).getPropertyValue('--sticky-offset')) || 0;
     const probe = off + 24;
-    let candidateId = rows[0]!.id;
-    for (const row of rows) {
-      if (row.getBoundingClientRect().top - probe <= 0) candidateId = row.id;
+    let current = cells[0]!;
+    for (const entry of cells) {
+      if (entry.target.getBoundingClientRect().top - probe <= 0) current = entry;
       else break;
     }
-    for (const cell of cells) {
-      const a = cell.querySelector('a');
-      const match = !!a && a.getAttribute('href') === '#' + candidateId;
-      cell.classList.toggle('is-current', match);
-      if (a) {
-        if (match) a.setAttribute('aria-current', 'location');
-        else a.removeAttribute('aria-current');
-      }
+    for (const entry of cells) {
+      const match = entry === current;
+      entry.cell.classList.toggle('is-current', match);
+      if (match) entry.a.setAttribute('aria-current', 'location');
+      else entry.a.removeAttribute('aria-current');
     }
   };
 
@@ -366,7 +369,7 @@ function init(): void {
   window.addEventListener('resize', stickyOffset);
   window.addEventListener('load', stickyOffset);
 
-  if (document.querySelector<HTMLElement>('#caseList, #cardinalList')) {
+  if (document.querySelector<HTMLElement>('#caseList, #cardinalList, #verbGrid')) {
     caseStripVisibility();
     scrollSpy();
   }

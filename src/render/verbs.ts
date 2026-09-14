@@ -72,6 +72,21 @@ function groupName(group: VerbGroup): string {
   return `${group.endings.ja} / ${group.endings.oni}`;
 }
 
+/* The strip's six cells, one per contiguous run of cards; each links to the
+   run's first card, so the spy needs no card→cell map. Present and irregular
+   cells carry marker orange like their cards; the tense cells fall to ink. */
+const VERB_RUNS = [
+  { id: 'verbs-present',     abbr: 'verbs.strip.present',     name: 'verbs.present',     tone: 'im' },
+  { id: 'verbs-irregular',   abbr: 'verbs.strip.irregular',   name: 'verbs.irregular',   tone: 'irr' },
+  { id: 'verbs-past',        abbr: 'verbs.strip.past',        name: 'verbs.past' },
+  { id: 'verbs-future',      abbr: 'verbs.strip.future',      name: 'verbs.futures' },
+  { id: 'verbs-conditional', abbr: 'verbs.strip.conditional', name: 'verbs.conditional' },
+  { id: 'verbs-clitics',     abbr: 'verbs.strip.clitics',     name: 'verbs.clitics' },
+] as const;
+
+type RunId = typeof VERB_RUNS[number]['id'];
+const runId = (id: RunId | undefined) => id ? raw(` id="${id}"`) : '';
+
 export const chart: Chart = {
   name: 'verbs',
   mountAttrs: { verbGrid: { class: 'card-list' } },
@@ -114,8 +129,8 @@ export const chart: Chart = {
     const arrowPair = (from: string, to: readonly string[]) =>
       raw(`<span lang="sr">${sr(from).value}</span> <span class="chart-sep" aria-hidden="true">→</span> <span lang="sr">${srList(to).value}</span>`);
 
-    const regular = (group: VerbGroup) => html`
-    <article class="card" data-tone="${group.tone}">
+    const regular = (group: VerbGroup, idx: number) => html`
+    <article class="card" data-tone="${group.tone}"${runId(idx === 0 ? 'verbs-present' : undefined)}>
       ${cardHead(sr(groupName(group)), t('verbs.present'))}
       <section class="card-section">
         <h4 class="card-section-label">${t('verbs.infinitive')}${group.note
@@ -151,7 +166,7 @@ export const chart: Chart = {
     };
 
     const irregular = (item: Irregular, idx: number) => html`
-    <article class="card" data-tone="irr">
+    <article class="card" data-tone="irr"${runId(idx === 0 ? 'verbs-irregular' : undefined)}>
       ${cardHead(sr(item.title), raw(gloss(item.title, lang)))}
       ${paradigmSection(item, 'forms', 'verbs.present')}
       ${paradigmSection(item, 'full', 'verbs.full')}
@@ -175,7 +190,7 @@ export const chart: Chart = {
       </section>`;
 
     const past = html`
-    <article class="card" data-tone="past">
+    <article class="card" data-tone="past" id="verbs-past">
       ${cardHead(sr('Perfekat'), t('verbs.past'))}
       ${tenseLead(PAST)}
       <section class="card-section">
@@ -198,7 +213,7 @@ export const chart: Chart = {
   `;
 
     const future = html`
-    <article class="card" data-tone="future">
+    <article class="card" data-tone="future" id="verbs-future">
       ${cardHead(sr('Futur I'), t('verbs.future'))}
       ${tenseLead(FUTURE)}
       <section class="card-section">
@@ -228,7 +243,7 @@ export const chart: Chart = {
   `;
 
     const potencijal = html`
-    <article class="card" data-tone="potencijal">
+    <article class="card" data-tone="potencijal" id="verbs-conditional">
       ${cardHead(sr('Potencijal'), t('verbs.conditional'))}
       ${tenseLead(POTENCIJAL)}
       <section class="card-section">
@@ -241,7 +256,7 @@ export const chart: Chart = {
     /* The placement rule is an explanation, so it lives behind the ? on the
        examples; the marked se in each example is the visible fact. */
     const clitics = html`
-    <article class="card verb-clitic" data-tone="clitic">
+    <article class="card verb-clitic" data-tone="clitic" id="verbs-clitics">
       ${cardHead(sr('se'), t('verbs.clitics'))}
       <section class="card-section">
         <h4 class="card-section-label">${t('cases.examples')}${tipChip(t('verbs.note'), 'data-verb-note="se"')}</h4>
@@ -255,7 +270,13 @@ export const chart: Chart = {
     </article>
   `;
 
+    const verbStripList = VERB_RUNS.map(run => html`
+      <li class="case-strip-cell"${'tone' in run ? raw(` data-tone="${run.tone}"`) : ''}>
+        <a href="#${run.id}" aria-label="${t(run.name)}"><span class="strip-abbr">${t(run.abbr)}</span></a>
+      </li>`.value).join('');
+
     return {
+      verbStripList,
       verbGrid: [...VERB_GROUPS.map(regular), ...IRREGULARS.map(irregular), past, future, future2, potencijal, clitics]
         .map(x => x.value).join(''),
     };
