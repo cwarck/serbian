@@ -2,9 +2,8 @@ import { escape, html, raw, sr, srGrammarHTML, srHTML, type Raw } from '../lib/h
 import type { Lang } from '../lib/negotiate.ts';
 import { translator } from '../i18n/index.ts';
 import { CARDINALS, NUMBER_BUILDS, NOUN_COUNTS, ORDINAL_ENDINGS, ORDINALS } from '../content/numbers.ts';
-import { CASES } from '../content/cases.ts';
-import { GENDERS, type Cardinal, type CaseRow, type CaseTone } from '../lib/types.ts';
-import { genderUnit, type Chart } from './chart.ts';
+import { GENDERS, type Cardinal } from '../lib/types.ts';
+import { caseTag, genderUnit, type Chart } from './chart.ts';
 
 function srParts(parts: readonly string[]): Raw {
   return raw(parts.map(part => `<span>${sr(part).value}</span>`).join('<span class="chart-sep">+</span>'));
@@ -14,12 +13,6 @@ function srParts(parts: readonly string[]): Raw {
    abbreviation is resolved out of the shared CASES table by tone, so the two
    charts cannot drift. A tone with no case is a build error, never an empty
    chip. */
-function caseTag(tone: CaseTone): Raw {
-  const row = (CASES as readonly CaseRow[]).find(c => c.tone === tone);
-  if (!row) throw new Error(`numbers: no case carries tone ${tone}`);
-  return html`<span class="case-tag" data-tone="${tone}">${row.abbr}</span>`;
-}
-
 /* The numbers that land in one noun-count band, read as alternatives. Digits,
    not Serbian: they never dual-emit. */
 function srTriggers(triggers: readonly string[]): Raw {

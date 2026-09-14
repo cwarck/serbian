@@ -5,7 +5,7 @@ import { translator } from '../i18n/index.ts';
 import { CASES, IDECL, WRINKLES, ENDING_AXES } from '../content/cases.ts';
 import { GENDERS, type CaseRow, type CaseNote, type Ending, type EndingAxis, type Gender, type Number_ } from '../lib/types.ts';
 import { lookupPrep, renderPrepCard } from './prep-shared.ts';
-import { endingUnit, type Chart } from './chart.ts';
+import { caseTag, endingUnit, type Chart } from './chart.ts';
 
 /* The two ending bands. Number is a band heading, never a chip: a chip says
    which gender, the band it sits in says which number. */
@@ -325,13 +325,17 @@ export const chart: Chart = {
       </article>`.value;
     }).join('');
 
-    const idRows = IDECL.cases.map((abbr, i) => html`
+    const idRows = IDECL.cases.map((abbr, i) => {
+      const tone = (CASES as readonly CaseRow[]).find(c => c.abbr === abbr)?.tone;
+      if (!tone) throw new Error(`cases: IDECL names unknown case ${abbr}`);
+      return html`
     <tr>
-      <th scope="row" class="num">${abbr}</th>
+      <th scope="row">${caseTag(tone)}</th>
       <td><span class="end" lang="sr">${sr(IDECL.sg[i]!)}</span></td>
       <td><span class="end" lang="sr">${sr(IDECL.pl[i]!)}</span></td>
     </tr>
-  `.value).join('');
+  `.value;
+    }).join('');
 
     const idGloss = t('cases.extra.gloss').value;
     /* The off-paradigm pack is a run of untoned cards: the same shell as a

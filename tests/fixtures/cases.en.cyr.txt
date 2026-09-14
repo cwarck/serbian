@@ -1402,8 +1402,10 @@ Pl
 </thead>
 <tbody>
 <tr>
-<th class="num" scope="row">
+<th scope="row">
+<span class="case-tag" data-tone="nom">
 NOM
+</span>
 </th>
 <td>
 <span class="end" lang="sr">
@@ -1417,8 +1419,10 @@ NOM
 </td>
 </tr>
 <tr>
-<th class="num" scope="row">
+<th scope="row">
+<span class="case-tag" data-tone="gen">
 GEN
+</span>
 </th>
 <td>
 <span class="end" lang="sr">
@@ -1432,8 +1436,10 @@ GEN
 </td>
 </tr>
 <tr>
-<th class="num" scope="row">
+<th scope="row">
+<span class="case-tag" data-tone="dat">
 DAT
+</span>
 </th>
 <td>
 <span class="end" lang="sr">
@@ -1447,8 +1453,10 @@ DAT
 </td>
 </tr>
 <tr>
-<th class="num" scope="row">
+<th scope="row">
+<span class="case-tag" data-tone="aku">
 AKU
+</span>
 </th>
 <td>
 <span class="end" lang="sr">
@@ -1462,8 +1470,10 @@ AKU
 </td>
 </tr>
 <tr>
-<th class="num" scope="row">
+<th scope="row">
+<span class="case-tag" data-tone="vok">
 VOK
+</span>
 </th>
 <td>
 <span class="end" lang="sr">
@@ -1477,8 +1487,10 @@ VOK
 </td>
 </tr>
 <tr>
-<th class="num" scope="row">
+<th scope="row">
+<span class="case-tag" data-tone="ins">
 INS
+</span>
 </th>
 <td>
 <span class="end" lang="sr">
@@ -1492,8 +1504,10 @@ INS
 </td>
 </tr>
 <tr>
-<th class="num" scope="row">
+<th scope="row">
+<span class="case-tag" data-tone="lok">
 LOK
+</span>
 </th>
 <td>
 <span class="end" lang="sr">

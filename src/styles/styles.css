@@ -1678,22 +1678,16 @@ section { position: relative; }
   padding: .2rem .6rem .6rem 0;
   border-bottom: 1px solid var(--hairline);
 }
-.i-decl tbody th.num {
-  font-family: var(--ff-body);
-  font-size: var(--fs-label);
-  letter-spacing: var(--track-label);
-  text-transform: uppercase;
-  color: var(--ink-faint);
-  font-weight: 400;
+.i-decl tbody th {
   text-align: left;
   width: 1%;
   white-space: nowrap;
   padding: .7rem 1rem .7rem 0;
-  border-bottom: 1px dashed var(--hairline-soft);
+  border-bottom: 1px dashed var(--hairline);
 }
 .i-decl tbody td {
   padding: .7rem .6rem .7rem 0;
-  border-bottom: 1px dashed var(--hairline-soft);
+  border-bottom: 1px dashed var(--hairline);
 }
 .i-decl tbody td .end {
   font-family: var(--ff-display);
