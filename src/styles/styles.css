@@ -1914,6 +1914,27 @@ section { position: relative; }
   font-size: var(--fs-caption);
   color: var(--ink-soft);
 }
+/* A grammar rule in a section: body prose, not a specimen. */
+.verb-rule {
+  margin: 0;
+  font-family: var(--ff-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-prose);
+  color: var(--ink-soft);
+  max-width: 34ch;
+}
+/* The clitic in an example rides an accent underline — the .num-end recipe:
+   letters stay ink, so contrast never depends on the orange. The card has
+   no case, so a .card-item mark would fall to --ink-soft and dim the one word
+   the card exists to show. */
+.verb-clitic .card-item .sr mark {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: .11em;
+  text-underline-offset: .17em;
+  text-decoration-skip-ink: none;
+}
 /* The participle bands: one section, a heading per number. */
 .verb-bands {
   display: grid;

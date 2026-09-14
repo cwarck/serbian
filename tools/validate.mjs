@@ -673,7 +673,7 @@ function validateSerbianContentScript() {
   });
   verbs.PAST.endings.forEach((row, rowIndex) => validateSerbianLatin(row.ending, `verbs.PAST.endings[${rowIndex}].ending`));
   ['merged', 'exceptions'].forEach(field => eachString(verbs.FUTURE[field], value => validateSerbianLatin(value, `verbs.FUTURE.${field}`)));
-  eachString(verbs.CLITICS, value => validateSerbianLatin(value, 'verbs.CLITICS'));
+  verbs.CLITICS.forEach((row, i) => validateSerbianLatin(row.sr, `verbs.CLITICS[${i}].sr`));
 
   const aspect = data['src/content/aspect.ts'];
   aspect.CONTRAST.forEach((row, rowIndex) => ['impEx', 'perfEx'].forEach(field => validateSerbianLatin(row[field].sr, `aspect.contrast[${rowIndex}].${field}.sr`)));
@@ -1057,6 +1057,11 @@ function validateVerbs() {
   expectArray(PAST.endings, 'verbs.PAST', 'endings');
   expectArray(FUTURE.formula, 'verbs.FUTURE', 'formula');
   expectArray(FUTURE.examples, 'verbs.FUTURE', 'examples');
+  CLITICS.forEach((row, i) => {
+    const scope = `verbs.CLITICS[${i}]`;
+    expect(/<mark>[^<]+<\/mark>/.test(row.sr), scope, 'sr must mark the clitic it exists to show');
+    expectTranslation({ en: row.en, ru: row.ru }, scope, 'tr');
+  });
   expectArray(CLITICS, 'verbs', 'CLITICS');
 }
 

@@ -1593,7 +1593,7 @@ ići ću, doći ću
 </p>
 </section>
 </article>
-<article class="card" data-tone="clitic">
+<article class="card verb-clitic" data-tone="clitic">
 <header class="card-head">
 <div class="card-title">
 <h3>
@@ -1605,31 +1605,58 @@ se
 </em>
 </h3>
 </div>
-<p class="card-q">
-<i lang="sr">
-se
-</i>
-стоит после первого ударного слова.
-</p>
 </header>
 <section class="card-section">
 <h4 class="card-section-label">
-Порядок
+Вторая позиция
+</h4>
+<p class="verb-rule">
+Клитика вроде
+<i lang="sr">
+se
+</i>
+стоит сразу после первого ударного слова или группы слов, никогда не в начале.
+</p>
+</section>
+<section class="card-section">
+<h4 class="card-section-label">
+Примеры
 </h4>
 <div class="card-items">
 <div class="card-item">
 <div class="sr" lang="sr">
-Šetam se.
+Šetam
+<mark>
+se
+</mark>
+.
+</div>
+<div class="tr">
+Я гуляю.
 </div>
 </div>
 <div class="card-item">
 <div class="sr" lang="sr">
-Ja se šetam.
+Ja
+<mark>
+se
+</mark>
+šetam.
+</div>
+<div class="tr">
+Я гуляю.
 </div>
 </div>
 <div class="card-item">
 <div class="sr" lang="sr">
-Nisam se šetao.
+Nisam
+<mark>
+se
+</mark>
+šetao.
+</div>
+<div class="tr">
+Я не гулял. (м.)
 </div>
 </div>
 </div>

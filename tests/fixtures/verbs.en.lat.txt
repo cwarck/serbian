@@ -1593,7 +1593,7 @@ ići ću, doći ću
 </p>
 </section>
 </article>
-<article class="card" data-tone="clitic">
+<article class="card verb-clitic" data-tone="clitic">
 <header class="card-head">
 <div class="card-title">
 <h3>
@@ -1605,31 +1605,58 @@ Clitic
 </em>
 </h3>
 </div>
-<p class="card-q">
-<i lang="sr">
-se
-</i>
-follows the first stressed word.
-</p>
 </header>
 <section class="card-section">
 <h4 class="card-section-label">
-Placement
+Second position
+</h4>
+<p class="verb-rule">
+A clitic like
+<i lang="sr">
+se
+</i>
+stands right after the first stressed word or phrase of the clause, never first.
+</p>
+</section>
+<section class="card-section">
+<h4 class="card-section-label">
+Examples
 </h4>
 <div class="card-items">
 <div class="card-item">
 <div class="sr" lang="sr">
-Šetam se.
+Šetam
+<mark>
+se
+</mark>
+.
+</div>
+<div class="tr">
+I take a walk.
 </div>
 </div>
 <div class="card-item">
 <div class="sr" lang="sr">
-Ja se šetam.
+Ja
+<mark>
+se
+</mark>
+šetam.
+</div>
+<div class="tr">
+I take a walk.
 </div>
 </div>
 <div class="card-item">
 <div class="sr" lang="sr">
-Nisam se šetao.
+Nisam
+<mark>
+se
+</mark>
+šetao.
+</div>
+<div class="tr">
+I did not take a walk. (m.)
 </div>
 </div>
 </div>

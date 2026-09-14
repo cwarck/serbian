@@ -1,4 +1,4 @@
-import { html, raw, sr, srGrammarHTML, type Raw } from '../lib/html.ts';
+import { html, raw, sr, srHTML, srGrammarHTML, type Raw } from '../lib/html.ts';
 import type { Lang } from '../lib/negotiate.ts';
 import { translator } from '../i18n/index.ts';
 import { PRONOUNS, VERB_GROUPS, IRREGULARS, PAST, FUTURE, CLITICS } from '../content/verbs.ts';
@@ -173,18 +173,23 @@ export const chart: Chart = {
     </article>
   `;
 
+    /* A rule is prose, not a specimen, so it is a labelled body-size section
+       rather than a .card-q line. */
     const clitics = html`
-    <article class="card" data-tone="clitic">
-      <header class="card-head">
-        <div class="card-title">
-          <h3><span lang="sr">${sr('se')}</span><em>${t('verbs.clitics')}</em></h3>
-        </div>
-        <p class="card-q">${srGrammarHTML(t('verbs.se.rule').value)}</p>
-      </header>
+    <article class="card verb-clitic" data-tone="clitic">
+      ${cardHead(sr('se'), t('verbs.clitics'))}
       <section class="card-section">
-        <h4 class="card-section-label">${t('verbs.placement')}</h4>
-        <div class="card-items">${raw(CLITICS.map(s =>
-          `<div class="card-item"><div class="sr" lang="sr">${sr(s).value}</div></div>`).join(''))}</div>
+        <h4 class="card-section-label">${t('verbs.position')}</h4>
+        <p class="verb-rule">${srGrammarHTML(t('verbs.position.rule').value)}</p>
+      </section>
+      <section class="card-section">
+        <h4 class="card-section-label">${t('cases.examples')}</h4>
+        <div class="card-items">${CLITICS.map(ex => html`
+          <div class="card-item">
+            <div class="sr" lang="sr">${srHTML(ex.sr)}</div>
+            <div class="tr">${srGrammarHTML(ex[lang] || ex.en)}</div>
+          </div>`)}
+        </div>
       </section>
     </article>
   `;

@@ -122,5 +122,10 @@ export const FUTURE = {
 };
 
 /* Clitic placement is not a tense fact — these examples are present and past,
-   so they get their own panel instead of riding inside FUTURE. */
-export const CLITICS = ['Šetam se.', 'Ja se šetam.', 'Nisam se šetao.'];
+   so they get their own card instead of riding inside FUTURE. <mark> isolates
+   the clitic; the word before it is whatever came first. */
+export const CLITICS = [
+  { sr:'Šetam <mark>se</mark>.', en:'I take a walk.', ru:'Я гуляю.' },
+  { sr:'Ja <mark>se</mark> šetam.', en:'I take a walk.', ru:'Я гуляю.' },
+  { sr:'Nisam <mark>se</mark> šetao.', en:'I did not take a walk. (m.)', ru:'Я не гулял. (м.)' },
+];
