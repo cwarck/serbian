@@ -1630,12 +1630,12 @@ I take a walk.
 <div class="sr" lang="sr">
 Ja
 <mark>
-se
+sam se
 </mark>
-šetam.
+šetao.
 </div>
 <div class="tr">
-I take a walk.
+I took a walk. (m.)
 </div>
 </div>
 <div class="card-item">
@@ -1671,11 +1671,15 @@ The infinitive ending alone does not pick the present pattern. Use the 1sg form 
 Second position
 </h4>
 <p>
-A clitic like
+Clitics form one group right after the first word or phrase of the clause. Inside the group an auxiliary comes before
 <i lang="sr">
 se
 </i>
-stands right after the first stressed word or phrase of the clause, never first.
+;
+<i lang="sr">
+se
+</i>
+never opens the clause.
 </p>
 </article>
 ### popover [data-verb-tip]|[["data-verb-tip","0"]]

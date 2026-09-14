@@ -106,7 +106,7 @@ export const en = {
   'verbs.ici.exception': '-ći verbs',
   'verbs.clitics': 'Reflexive clitic',
   'verbs.se.title': 'Second position',
-  'verbs.se.body': 'A clitic like <i>se</i> stands right after the first stressed word or phrase of the clause, never first.',
+  'verbs.se.body': 'Clitics form one group right after the first word or phrase of the clause. Inside the group an auxiliary comes before <i>se</i>; <i>se</i> never opens the clause.',
   'past.msg': 'M sg',
   'past.fsg': 'F sg',
   'past.nsg': 'N sg',

@@ -123,9 +123,10 @@ export const FUTURE = {
 
 /* Clitic placement is not a tense fact — these examples are present and past,
    so they get their own card instead of riding inside FUTURE. <mark> isolates
-   the clitic; the word before it is whatever came first. */
+   the clitic group; the word before it is whatever came first, and inside
+   the group the auxiliary precedes se. */
 export const CLITICS = [
   { sr:'Šetam <mark>se</mark>.', en:'I take a walk.', ru:'Я гуляю.' },
-  { sr:'Ja <mark>se</mark> šetam.', en:'I take a walk.', ru:'Я гуляю.' },
+  { sr:'Ja <mark>sam se</mark> šetao.', en:'I took a walk. (m.)', ru:'Я гулял. (м.)' },
   { sr:'Nisam <mark>se</mark> šetao.', en:'I did not take a walk. (m.)', ru:'Я не гулял. (м.)' },
 ];
