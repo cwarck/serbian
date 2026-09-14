@@ -285,7 +285,7 @@ export const GLOSSARY = {
   'pre':          { pos:'prep', gloss:{ en:'before', ru:'до / перед' }, government:'gen', level:'A1' },
   'posle':        { pos:'prep', gloss:{ en:'after', ru:'после' }, government:'gen', level:'A1' },
   'o':            { pos:'prep', gloss:{ en:'about (a topic)', ru:'о / про' }, government:'lok', level:'A1' },
-  'po':           { pos:'prep', gloss:{ en:'around / by pattern', ru:'по / вокруг' }, government:'lok', level:'A1' },
+  'po':           { pos:'prep', gloss:{ en:'around / by pattern; to fetch (aku)', ru:'по / вокруг; за (вин.)' }, government:['lok','aku'], level:'A1' },
   'pri':          { pos:'prep', gloss:{ en:'attached to / at', ru:'при / у' }, government:'lok', level:'A2' },
   'bez':          { pos:'prep', gloss:{ en:'without', ru:'без' }, government:'gen', level:'A1' },
   'kod':          { pos:'prep', gloss:{ en:"at someone's place / near", ru:'у / возле' }, government:'gen', level:'A1' },
@@ -296,6 +296,14 @@ export const GLOSSARY = {
   'ispod':        { pos:'prep', gloss:{ en:'under / below', ru:'под' }, government:'gen', level:'A1', related:['pod'] },
   'ispred':       { pos:'prep', gloss:{ en:'in front of', ru:'перед' }, government:'gen', level:'A1', related:['pred'] },
   'između':       { pos:'prep', gloss:{ en:'between / among', ru:'между' }, government:'gen', level:'A1', related:['među'] },
+  'pored':        { pos:'prep', gloss:{ en:'beside / next to', ru:'рядом с / возле' }, government:'gen', level:'A1' },
+  'preko':        { pos:'prep', gloss:{ en:'across / over / via', ru:'через / по' }, government:'gen', level:'A1' },
+  'tokom':        { pos:'prep', gloss:{ en:'during', ru:'в течение / во время' }, government:'gen', level:'A2' },
+  'protiv':       { pos:'prep', gloss:{ en:'against', ru:'против' }, government:'gen', level:'A2' },
+  'zbog':         { pos:'prep', gloss:{ en:'because of', ru:'из-за' }, government:'gen', level:'A1' },
+  'umesto':       { pos:'prep', gloss:{ en:'instead of', ru:'вместо' }, government:'gen', level:'A2' },
+  'osim':         { pos:'prep', gloss:{ en:'except', ru:'кроме' }, government:'gen', level:'A2' },
+  'uprkos':       { pos:'prep', gloss:{ en:'despite', ru:'несмотря на' }, government:'dat', level:'B1' },
 
   /* ---------- pronouns ---------- */
 

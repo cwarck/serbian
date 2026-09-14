@@ -1,12 +1,15 @@
 ### mount prepChart
-<section class="chart-group">
-<header class="chart-group-head">
+<article class="card prep-card-group" id="prep-group-place">
+<header class="card-head">
+<div class="card-title">
 <h3>
 Место / движение
 </h3>
+</div>
 </header>
-<div class="chart-table">
-<article class="chart-row prep-row">
+<section class="card-section">
+<div class="card-items">
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 у
 </div>
@@ -14,13 +17,13 @@
 <div class="prep-use" data-tone="aku">
 <span class="prep-icon-cell">
 <svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
-<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
-</rect>
-<circle class="prep-icon-dot" cx="18" cy="32" r="9">
-</circle>
-<path class="prep-icon-arrow" d="M26 32H45">
+<path class="prep-icon-object" d="M30 16V46H58V16">
 </path>
-<path class="prep-icon-arrow" d="M37 24L47 32L37 40">
+<circle class="prep-icon-dot" cx="14" cy="10" r="9">
+</circle>
+<path class="prep-icon-arrow" d="M24 10H38C42 10 44 12 44 16V30">
+</path>
+<path class="prep-icon-arrow" d="M37 24L44 32L51 24">
 </path>
 </svg>
 <span class="sr-only">
@@ -29,7 +32,7 @@
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="aku">
 AKU
 </span>
 <span class="prep-meaning">
@@ -49,9 +52,9 @@ AKU
 <div class="prep-use" data-tone="lok">
 <span class="prep-icon-cell">
 <svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
-<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
-</rect>
-<circle class="prep-icon-dot" cx="44" cy="32" r="9">
+<path class="prep-icon-object" d="M30 16V46H58V16">
+</path>
+<circle class="prep-icon-dot" cx="44" cy="34" r="9">
 </circle>
 </svg>
 <span class="sr-only">
@@ -60,7 +63,7 @@ AKU
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="lok">
 LOK
 </span>
 <span class="prep-meaning">
@@ -78,8 +81,8 @@ LOK
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 на
 </div>
@@ -87,13 +90,13 @@ LOK
 <div class="prep-use" data-tone="aku">
 <span class="prep-icon-cell">
 <svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
-<rect class="prep-icon-object" height="28" width="28" x="30" y="28">
-</rect>
-<circle class="prep-icon-dot" cx="19" cy="18" r="9">
-</circle>
-<path class="prep-icon-arrow" d="M27 18C34 18 38 21 42 25">
+<path class="prep-icon-object" d="M30 54V30H58V54">
 </path>
-<path class="prep-icon-arrow" d="M31 26L44 26L40 14">
+<circle class="prep-icon-dot" cx="14" cy="8" r="9">
+</circle>
+<path class="prep-icon-arrow" d="M24 8H38C42 8 44 10 44 14V24">
+</path>
+<path class="prep-icon-arrow" d="M37 18L44 26L51 18">
 </path>
 </svg>
 <span class="sr-only">
@@ -102,7 +105,7 @@ LOK
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="aku">
 AKU
 </span>
 <span class="prep-meaning">
@@ -122,9 +125,9 @@ AKU
 <div class="prep-use" data-tone="lok">
 <span class="prep-icon-cell">
 <svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
-<rect class="prep-icon-object" height="28" width="28" x="30" y="28">
-</rect>
-<circle class="prep-icon-dot" cx="44" cy="24" r="9">
+<path class="prep-icon-object" d="M30 54V30H58V54">
+</path>
+<circle class="prep-icon-dot" cx="44" cy="21" r="9">
 </circle>
 </svg>
 <span class="sr-only">
@@ -133,7 +136,7 @@ AKU
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="lok">
 LOK
 </span>
 <span class="prep-meaning">
@@ -151,17 +154,21 @@ LOK
 </div>
 </div>
 </div>
-</article>
+</div>
 </div>
 </section>
-<section class="chart-group">
-<header class="chart-group-head">
+</article>
+<article class="card prep-card-group" id="prep-group-static">
+<header class="card-head">
+<div class="card-title">
 <h3>
 Положение
 </h3>
+</div>
 </header>
-<div class="chart-table">
-<article class="chart-row prep-row">
+<section class="card-section">
+<div class="card-items">
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 изнад
 </div>
@@ -169,9 +176,9 @@ LOK
 <div class="prep-use" data-tone="gen">
 <span class="prep-icon-cell">
 <svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
-<rect class="prep-icon-object" height="28" width="28" x="30" y="30">
-</rect>
-<circle class="prep-icon-dot" cx="44" cy="14" r="9">
+<path class="prep-icon-object" d="M30 54V30H58V54">
+</path>
+<circle class="prep-icon-dot" cx="44" cy="12" r="9">
 </circle>
 </svg>
 <span class="sr-only">
@@ -180,7 +187,7 @@ LOK
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -198,8 +205,8 @@ GEN
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 испод
 </div>
@@ -207,9 +214,9 @@ GEN
 <div class="prep-use" data-tone="gen">
 <span class="prep-icon-cell">
 <svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
-<rect class="prep-icon-object" height="28" width="28" x="30" y="10">
-</rect>
-<circle class="prep-icon-dot" cx="44" cy="52" r="9">
+<path class="prep-icon-object" d="M30 30V10H58V30">
+</path>
+<circle class="prep-icon-dot" cx="44" cy="46" r="9">
 </circle>
 </svg>
 <span class="sr-only">
@@ -218,7 +225,7 @@ GEN
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -236,8 +243,8 @@ GEN
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 испред
 </div>
@@ -245,9 +252,9 @@ GEN
 <div class="prep-use" data-tone="gen">
 <span class="prep-icon-cell">
 <svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
-<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
-</rect>
-<circle class="prep-icon-dot" cx="22" cy="32" r="9">
+<path class="prep-icon-object prep-icon-solid" d="M30 18H58V46H30Z">
+</path>
+<circle class="prep-icon-dot" cx="30" cy="42" r="9">
 </circle>
 </svg>
 <span class="sr-only">
@@ -256,7 +263,7 @@ GEN
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -274,8 +281,46 @@ GEN
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
+<div class="prep-name" lang="sr">
+иза
+</div>
+<div class="prep-uses">
+<div class="prep-use" data-tone="gen">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<circle class="prep-icon-dot" cx="58" cy="24" r="9">
+</circle>
+<path class="prep-icon-object prep-icon-solid" d="M30 18H58V46H30Z">
+</path>
+</svg>
+<span class="sr-only">
+Родительный
+</span>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="case-tag" data-tone="gen">
+GEN
+</span>
+<span class="prep-meaning">
+за, позади
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Ауто је иза куће.
+</span>
+<span class="tr">
+Машина за домом.
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 између
 </div>
@@ -294,7 +339,7 @@ GEN
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -312,17 +357,217 @@ GEN
 </div>
 </div>
 </div>
-</article>
+</div>
+<div class="card-item prep-row">
+<div class="prep-name" lang="sr">
+поред
+</div>
+<div class="prep-uses">
+<div class="prep-use" data-tone="gen">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<path class="prep-icon-object" d="M40 16V46H68V16">
+</path>
+<circle class="prep-icon-dot" cx="30" cy="32" r="9">
+</circle>
+</svg>
+<span class="sr-only">
+Родительный
+</span>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="case-tag" data-tone="gen">
+GEN
+</span>
+<span class="prep-meaning">
+рядом с, возле
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Седим поред прозора.
+</span>
+<span class="tr">
+Я сижу у окна.
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="card-item prep-row">
+<div class="prep-name" lang="sr">
+код
+</div>
+<div class="prep-uses">
+<div class="prep-use" data-tone="gen">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<path class="prep-icon-object" d="M40 16V46H68V16">
+</path>
+<circle class="prep-icon-dot" cx="16" cy="32" r="9">
+</circle>
+</svg>
+<span class="sr-only">
+Родительный
+</span>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="case-tag" data-tone="gen">
+GEN
+</span>
+<span class="prep-meaning">
+у, возле
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Спавам код брата.
+</span>
+<span class="tr">
+Я ночую у брата.
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="card-item prep-row">
+<div class="prep-name" lang="sr">
+близу
+</div>
+<div class="prep-uses">
+<div class="prep-use" data-tone="gen">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<path class="prep-icon-object" d="M40 16V46H68V16">
+</path>
+<circle class="prep-icon-dot" cx="16" cy="32" r="9">
+</circle>
+</svg>
+<span class="sr-only">
+Родительный
+</span>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="case-tag" data-tone="gen">
+GEN
+</span>
+<span class="prep-meaning">
+близко к
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Стан је близу центра.
+</span>
+<span class="tr">
+Квартира близко к центру.
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="card-item prep-row">
+<div class="prep-name" lang="sr">
+око
+</div>
+<div class="prep-uses">
+<div class="prep-use" data-tone="gen">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<path class="prep-icon-object" d="M30 16V46H58V16">
+</path>
+<path class="prep-icon-line" d="M58 12C66 16 72 24 72 32C72 46 60 56 44 56C28 56 16 46 16 32C16 22 22 14 32 10">
+</path>
+<path class="prep-icon-arrow" d="M26 4L34 10L27 17">
+</path>
+<circle class="prep-icon-dot" cx="16" cy="32" r="9">
+</circle>
+</svg>
+<span class="sr-only">
+Родительный
+</span>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="case-tag" data-tone="gen">
+GEN
+</span>
+<span class="prep-meaning">
+около, вокруг
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Седимо око стола.
+</span>
+<span class="tr">
+Мы сидим вокруг стола.
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="card-item prep-row">
+<div class="prep-name" lang="sr">
+насупрот
+</div>
+<div class="prep-uses">
+<div class="prep-use" data-tone="dat">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<circle class="prep-icon-dot" cx="16" cy="32" r="9">
+</circle>
+<path class="prep-icon-dash" d="M44 12V52">
+</path>
+<circle class="prep-icon-hollow" cx="70" cy="32" r="9">
+</circle>
+</svg>
+<span class="sr-only">
+Дательный
+</span>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="case-tag" data-tone="dat">
+DAT
+</span>
+<span class="prep-meaning">
+напротив
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Седим насупрот брату.
+</span>
+<span class="tr">
+Я сижу напротив брата.
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 </section>
-<section class="chart-group">
-<header class="chart-group-head">
+</article>
+<article class="card prep-card-group" id="prep-group-position">
+<header class="card-head">
+<div class="card-title">
 <h3>
 Движение и место
 </h3>
+</div>
 </header>
-<div class="chart-table">
-<article class="chart-row prep-row">
+<section class="card-section">
+<div class="card-items">
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 под
 </div>
@@ -330,13 +575,13 @@ GEN
 <div class="prep-use" data-tone="aku">
 <span class="prep-icon-cell">
 <svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
-<rect class="prep-icon-object" height="28" width="28" x="30" y="10">
-</rect>
-<circle class="prep-icon-dot" cx="18" cy="52" r="9">
-</circle>
-<path class="prep-icon-arrow" d="M27 52H44">
+<path class="prep-icon-object" d="M30 30V10H58V30">
 </path>
-<path class="prep-icon-arrow" d="M36 44L46 52L36 60">
+<circle class="prep-icon-dot" cx="14" cy="46" r="9">
+</circle>
+<path class="prep-icon-arrow" d="M23 46H42">
+</path>
+<path class="prep-icon-arrow" d="M35 39L43 46L35 53">
 </path>
 </svg>
 <span class="sr-only">
@@ -345,7 +590,7 @@ GEN
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="aku">
 AKU
 </span>
 <span class="prep-meaning">
@@ -365,9 +610,9 @@ AKU
 <div class="prep-use" data-tone="ins">
 <span class="prep-icon-cell">
 <svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
-<rect class="prep-icon-object" height="28" width="28" x="30" y="10">
-</rect>
-<circle class="prep-icon-dot" cx="44" cy="52" r="9">
+<path class="prep-icon-object" d="M30 30V10H58V30">
+</path>
+<circle class="prep-icon-dot" cx="44" cy="46" r="9">
 </circle>
 </svg>
 <span class="sr-only">
@@ -376,11 +621,11 @@ AKU
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="ins">
 INS
 </span>
 <span class="prep-meaning">
-под, место (обычно ispod)
+под, место (= ispod)
 </span>
 </div>
 <div class="chart-example prep-example">
@@ -394,8 +639,8 @@ INS
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 пред
 </div>
@@ -403,13 +648,13 @@ INS
 <div class="prep-use" data-tone="aku">
 <span class="prep-icon-cell">
 <svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
-<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
-</rect>
-<circle class="prep-icon-dot" cx="14" cy="32" r="9">
-</circle>
-<path class="prep-icon-arrow" d="M22 32H34">
+<path class="prep-icon-object prep-icon-solid" d="M30 18H58V46H30Z">
 </path>
-<path class="prep-icon-arrow" d="M26 24L36 32L26 40">
+<circle class="prep-icon-dot" cx="9" cy="46" r="9">
+</circle>
+<path class="prep-icon-arrow" d="M19 46H37">
+</path>
+<path class="prep-icon-arrow" d="M30 40L38 46L30 52">
 </path>
 </svg>
 <span class="sr-only">
@@ -418,7 +663,7 @@ INS
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="aku">
 AKU
 </span>
 <span class="prep-meaning">
@@ -438,9 +683,9 @@ AKU
 <div class="prep-use" data-tone="ins">
 <span class="prep-icon-cell">
 <svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
-<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
-</rect>
-<circle class="prep-icon-dot" cx="22" cy="32" r="9">
+<path class="prep-icon-object prep-icon-solid" d="M30 18H58V46H30Z">
+</path>
+<circle class="prep-icon-dot" cx="30" cy="42" r="9">
 </circle>
 </svg>
 <span class="sr-only">
@@ -449,11 +694,11 @@ AKU
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="ins">
 INS
 </span>
 <span class="prep-meaning">
-перед, место (обычно ispred)
+перед, место (= ispred)
 </span>
 </div>
 <div class="chart-example prep-example">
@@ -467,8 +712,8 @@ INS
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 над
 </div>
@@ -476,13 +721,13 @@ INS
 <div class="prep-use" data-tone="aku">
 <span class="prep-icon-cell">
 <svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
-<rect class="prep-icon-object" height="28" width="28" x="30" y="30">
-</rect>
-<circle class="prep-icon-dot" cx="18" cy="14" r="9">
-</circle>
-<path class="prep-icon-arrow" d="M27 14H44">
+<path class="prep-icon-object" d="M30 54V30H58V54">
 </path>
-<path class="prep-icon-arrow" d="M36 6L46 14L36 22">
+<circle class="prep-icon-dot" cx="14" cy="42" r="9">
+</circle>
+<path class="prep-icon-arrow" d="M14 30V16C14 12 16 10 20 10H40">
+</path>
+<path class="prep-icon-arrow" d="M33 3L41 10L33 17">
 </path>
 </svg>
 <span class="sr-only">
@@ -491,7 +736,7 @@ INS
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="aku">
 AKU
 </span>
 <span class="prep-meaning">
@@ -511,9 +756,9 @@ AKU
 <div class="prep-use" data-tone="ins">
 <span class="prep-icon-cell">
 <svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
-<rect class="prep-icon-object" height="28" width="28" x="30" y="30">
-</rect>
-<circle class="prep-icon-dot" cx="44" cy="14" r="9">
+<path class="prep-icon-object" d="M30 54V30H58V54">
+</path>
+<circle class="prep-icon-dot" cx="44" cy="12" r="9">
 </circle>
 </svg>
 <span class="sr-only">
@@ -522,11 +767,11 @@ AKU
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="ins">
 INS
 </span>
 <span class="prep-meaning">
-над, место (обычно iznad)
+над, место (= iznad)
 </span>
 </div>
 <div class="chart-example prep-example">
@@ -540,8 +785,8 @@ INS
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 међу
 </div>
@@ -551,11 +796,11 @@ INS
 <svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
 <path class="prep-icon-line" d="M25 10V54M63 10V54">
 </path>
-<circle class="prep-icon-dot" cx="14" cy="32" r="9">
+<circle class="prep-icon-dot" cx="10" cy="32" r="9">
 </circle>
-<path class="prep-icon-arrow" d="M23 32H44">
+<path class="prep-icon-arrow" d="M19 32H40">
 </path>
-<path class="prep-icon-arrow" d="M36 24L46 32L36 40">
+<path class="prep-icon-arrow" d="M33 25L41 32L33 39">
 </path>
 </svg>
 <span class="sr-only">
@@ -564,7 +809,7 @@ INS
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="aku">
 AKU
 </span>
 <span class="prep-meaning">
@@ -595,11 +840,11 @@ AKU
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="ins">
 INS
 </span>
 <span class="prep-meaning">
-между, место (обычно između)
+среди, место
 </span>
 </div>
 <div class="chart-example prep-example">
@@ -607,14 +852,14 @@ INS
 Стојим међу људима.
 </span>
 <span class="tr">
-Я стою между людьми.
+Я стою среди людей.
 </span>
 </div>
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 за
 </div>
@@ -622,13 +867,13 @@ INS
 <div class="prep-use" data-tone="aku">
 <span class="prep-icon-cell">
 <svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
-<rect class="prep-icon-object" height="28" width="28" x="28" y="18">
-</rect>
-<circle class="prep-icon-dot" cx="70" cy="36" r="9">
+<circle class="prep-icon-dot" cx="80" cy="30" r="9">
 </circle>
-<path class="prep-icon-arrow" d="M68 36H56">
+<path class="prep-icon-arrow" d="M71 30H48">
 </path>
-<path class="prep-icon-arrow" d="M64 28L54 36L64 44">
+<path class="prep-icon-arrow" d="M66 24L59 30L66 36">
+</path>
+<path class="prep-icon-object prep-icon-solid" d="M30 18H58V46H30Z">
 </path>
 </svg>
 <span class="sr-only">
@@ -637,7 +882,7 @@ INS
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="aku">
 AKU
 </span>
 <span class="prep-meaning">
@@ -657,10 +902,10 @@ AKU
 <div class="prep-use" data-tone="ins">
 <span class="prep-icon-cell">
 <svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
-<rect class="prep-icon-object" height="28" width="28" x="28" y="18">
-</rect>
-<circle class="prep-icon-dot" cx="58" cy="36" r="9">
+<circle class="prep-icon-dot" cx="58" cy="24" r="9">
 </circle>
+<path class="prep-icon-object prep-icon-solid" d="M30 18H58V46H30Z">
+</path>
 </svg>
 <span class="sr-only">
 Творительный
@@ -668,7 +913,7 @@ AKU
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="ins">
 INS
 </span>
 <span class="prep-meaning">
@@ -686,17 +931,21 @@ INS
 </div>
 </div>
 </div>
-</article>
+</div>
 </div>
 </section>
-<section class="chart-group">
-<header class="chart-group-head">
+</article>
+<article class="card prep-card-group" id="prep-group-path">
+<header class="card-head">
+<div class="card-title">
 <h3>
 Путь
 </h3>
+</div>
 </header>
-<div class="chart-table">
-<article class="chart-row prep-row">
+<section class="card-section">
+<div class="card-items">
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 кроз
 </div>
@@ -704,14 +953,14 @@ INS
 <div class="prep-use" data-tone="aku">
 <span class="prep-icon-cell">
 <svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
-<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
-</rect>
-<path class="prep-icon-arrow" d="M16 33H70">
+<path class="prep-icon-object" d="M30 46V18H58V46">
 </path>
-<path class="prep-icon-arrow" d="M62 25L72 33L62 41">
-</path>
-<circle class="prep-icon-dot" cx="24" cy="33" r="9">
+<circle class="prep-icon-dot" cx="12" cy="32" r="9">
 </circle>
+<path class="prep-icon-arrow" d="M21 32H76">
+</path>
+<path class="prep-icon-arrow" d="M68 25L77 32L68 39">
+</path>
 </svg>
 <span class="sr-only">
 Винительный
@@ -719,7 +968,7 @@ INS
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="aku">
 AKU
 </span>
 <span class="prep-meaning">
@@ -737,8 +986,50 @@ AKU
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
+<div class="prep-name" lang="sr">
+преко
+</div>
+<div class="prep-uses">
+<div class="prep-use" data-tone="gen">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<path class="prep-icon-object" d="M36 50V34H56V50">
+</path>
+<circle class="prep-icon-dot" cx="12" cy="44" r="9">
+</circle>
+<path class="prep-icon-arrow" d="M20 40C28 10 62 10 72 38">
+</path>
+<path class="prep-icon-arrow" d="M62 32L73 40L74 28">
+</path>
+</svg>
+<span class="sr-only">
+Родительный
+</span>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="case-tag" data-tone="gen">
+GEN
+</span>
+<span class="prep-meaning">
+через, по
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Идем преко моста.
+</span>
+<span class="tr">
+Я иду через мост.
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 низ
 </div>
@@ -761,7 +1052,7 @@ AKU
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="aku">
 AKU
 </span>
 <span class="prep-meaning">
@@ -779,8 +1070,8 @@ AKU
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 уз
 </div>
@@ -803,7 +1094,7 @@ AKU
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="aku">
 AKU
 </span>
 <span class="prep-meaning">
@@ -821,17 +1112,21 @@ AKU
 </div>
 </div>
 </div>
-</article>
+</div>
 </div>
 </section>
-<section class="chart-group">
-<header class="chart-group-head">
+</article>
+<article class="card prep-card-group" id="prep-group-source">
+<header class="card-head">
+<div class="card-title">
 <h3>
 Источник / направление
 </h3>
+</div>
 </header>
-<div class="chart-table">
-<article class="chart-row prep-row">
+<section class="card-section">
+<div class="card-items">
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 из
 </div>
@@ -839,13 +1134,13 @@ AKU
 <div class="prep-use" data-tone="gen">
 <span class="prep-icon-cell">
 <svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
-<rect class="prep-icon-object" height="26" width="26" x="20" y="26">
-</rect>
-<circle class="prep-icon-dot" cx="28" cy="39" r="9">
-</circle>
-<path class="prep-icon-arrow" d="M36 30C45 14 55 13 67 15">
+<path class="prep-icon-object" d="M30 16V46H58V16">
 </path>
-<path class="prep-icon-arrow" d="M58 8L71 15L58 22">
+<circle class="prep-icon-dot" cx="44" cy="38" r="9">
+</circle>
+<path class="prep-icon-arrow" d="M44 28V14C44 11 46 10 50 10H70">
+</path>
+<path class="prep-icon-arrow" d="M63 3L71 10L63 17">
 </path>
 </svg>
 <span class="sr-only">
@@ -854,7 +1149,7 @@ AKU
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -872,8 +1167,8 @@ GEN
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 од
 </div>
@@ -881,13 +1176,13 @@ GEN
 <div class="prep-use" data-tone="gen">
 <span class="prep-icon-cell">
 <svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
-<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
-</rect>
-<circle class="prep-icon-dot" cx="56" cy="32" r="9">
-</circle>
-<path class="prep-icon-arrow" d="M48 32H16">
+<path class="prep-icon-line" d="M70 12V52">
 </path>
-<path class="prep-icon-arrow" d="M24 24L14 32L24 40">
+<circle class="prep-icon-dot" cx="60" cy="32" r="9">
+</circle>
+<path class="prep-icon-arrow" d="M50 32H18">
+</path>
+<path class="prep-icon-arrow" d="M26 25L17 32L26 39">
 </path>
 </svg>
 <span class="sr-only">
@@ -896,7 +1191,7 @@ GEN
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -914,8 +1209,8 @@ GEN
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 с/са
 </div>
@@ -923,13 +1218,13 @@ GEN
 <div class="prep-use" data-tone="gen">
 <span class="prep-icon-cell">
 <svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
-<rect class="prep-icon-object" height="28" width="28" x="30" y="28">
-</rect>
-<circle class="prep-icon-dot" cx="44" cy="24" r="9">
-</circle>
-<path class="prep-icon-arrow" d="M39 23C31 22 24 26 19 35">
+<path class="prep-icon-object" d="M30 54V30H58V54">
 </path>
-<path class="prep-icon-arrow" d="M17 23L18 38L31 31">
+<circle class="prep-icon-dot" cx="44" cy="21" r="9">
+</circle>
+<path class="prep-icon-arrow" d="M52 16H62C66 16 68 18 68 22V42">
+</path>
+<path class="prep-icon-arrow" d="M61 35L68 43L75 35">
 </path>
 </svg>
 <span class="sr-only">
@@ -938,11 +1233,11 @@ GEN
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
-с, сверху/из
+с, сверху
 </span>
 </div>
 <div class="chart-example prep-example">
@@ -956,8 +1251,8 @@ GEN
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 до
 </div>
@@ -965,13 +1260,13 @@ GEN
 <div class="prep-use" data-tone="gen">
 <span class="prep-icon-cell">
 <svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
-<path class="prep-icon-line" d="M62 12V52">
+<path class="prep-icon-line" d="M68 12V52">
 </path>
-<circle class="prep-icon-dot" cx="22" cy="32" r="9">
+<circle class="prep-icon-dot" cx="14" cy="32" r="9">
 </circle>
-<path class="prep-icon-arrow" d="M32 32H58">
+<path class="prep-icon-arrow" d="M24 32H64">
 </path>
-<path class="prep-icon-arrow" d="M50 24L60 32L50 40">
+<path class="prep-icon-arrow" d="M57 25L65 32L57 39">
 </path>
 </svg>
 <span class="sr-only">
@@ -980,7 +1275,7 @@ GEN
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -998,8 +1293,8 @@ GEN
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 к/ка
 </div>
@@ -1007,13 +1302,13 @@ GEN
 <div class="prep-use" data-tone="dat">
 <span class="prep-icon-cell">
 <svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
-<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
-</rect>
-<circle class="prep-icon-dot" cx="18" cy="32" r="9">
-</circle>
-<path class="prep-icon-arrow" d="M28 32H66">
+<path class="prep-icon-line" d="M70 12V52">
 </path>
-<path class="prep-icon-arrow" d="M58 24L68 32L58 40">
+<circle class="prep-icon-dot" cx="14" cy="32" r="9">
+</circle>
+<path class="prep-icon-arrow" d="M24 32H52">
+</path>
+<path class="prep-icon-arrow" d="M45 25L53 32L45 39">
 </path>
 </svg>
 <span class="sr-only">
@@ -1022,7 +1317,7 @@ GEN
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="dat">
 DAT
 </span>
 <span class="prep-meaning">
@@ -1040,8 +1335,8 @@ DAT
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 према
 </div>
@@ -1049,13 +1344,13 @@ DAT
 <div class="prep-use" data-tone="dat">
 <span class="prep-icon-cell">
 <svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
-<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
-</rect>
-<circle class="prep-icon-dot" cx="18" cy="32" r="9">
-</circle>
-<path class="prep-icon-arrow" d="M28 32H66">
+<path class="prep-icon-line" d="M70 12V52">
 </path>
-<path class="prep-icon-arrow" d="M58 24L68 32L58 40">
+<circle class="prep-icon-dot" cx="14" cy="32" r="9">
+</circle>
+<path class="prep-icon-arrow" d="M24 32H52">
+</path>
+<path class="prep-icon-arrow" d="M45 25L53 32L45 39">
 </path>
 </svg>
 <span class="sr-only">
@@ -1064,7 +1359,7 @@ DAT
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="dat">
 DAT
 </span>
 <span class="prep-meaning">
@@ -1076,23 +1371,73 @@ DAT
 Окренут сам према мору.
 </span>
 <span class="tr">
-Я повернут к морю.
+Я повёрнут к морю.
 </span>
 </div>
 </div>
 </div>
 </div>
-</article>
+</div>
+<div class="card-item prep-row">
+<div class="prep-name" lang="sr">
+по
+</div>
+<div class="prep-uses">
+<div class="prep-use" data-tone="aku">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<path class="prep-icon-object" d="M52 16V46H80V16">
+</path>
+<circle class="prep-icon-dot" cx="10" cy="32" r="9">
+</circle>
+<path class="prep-icon-arrow" d="M22 26H42">
+</path>
+<path class="prep-icon-arrow" d="M35 19L43 26L35 33">
+</path>
+<path class="prep-icon-arrow" d="M42 38H22">
+</path>
+<path class="prep-icon-arrow" d="M29 31L21 38L29 45">
+</path>
+</svg>
+<span class="sr-only">
+Винительный
+</span>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="case-tag" data-tone="aku">
+AKU
+</span>
+<span class="prep-meaning">
+за (чем-то)
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Идем по хлеб.
+</span>
+<span class="tr">
+Я иду за хлебом.
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 </section>
-<section class="chart-group">
-<header class="chart-group-head">
+</article>
+<article class="card prep-card-group" id="prep-group-time">
+<header class="card-head">
+<div class="card-title">
 <h3>
 Время / цель
 </h3>
+</div>
 </header>
-<div class="chart-table">
-<article class="chart-row prep-row">
+<section class="card-section">
+<div class="card-items">
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 пре
 </div>
@@ -1100,11 +1445,11 @@ DAT
 <div class="prep-use" data-tone="gen">
 <span class="prep-icon-cell">
 <svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
-<path class="prep-icon-line" d="M20 32H68">
-</path>
-<circle class="prep-icon-dot" cx="30" cy="32" r="9">
+<circle class="prep-icon-dot" cx="14" cy="32" r="9">
 </circle>
-<path class="prep-icon-line" d="M48 18V46">
+<path class="prep-icon-line" d="M30 14V50">
+</path>
+<path class="prep-icon-object" d="M42 20V44H70V20">
 </path>
 </svg>
 <span class="sr-only">
@@ -1113,11 +1458,11 @@ DAT
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
-до, перед
+до, перед; назад
 </span>
 </div>
 <div class="chart-example prep-example">
@@ -1131,8 +1476,8 @@ GEN
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 после
 </div>
@@ -1140,11 +1485,11 @@ GEN
 <div class="prep-use" data-tone="gen">
 <span class="prep-icon-cell">
 <svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
-<path class="prep-icon-line" d="M20 32H68">
+<path class="prep-icon-object" d="M18 20V44H46V20">
 </path>
-<path class="prep-icon-line" d="M40 18V46">
+<path class="prep-icon-line" d="M58 14V50">
 </path>
-<circle class="prep-icon-dot" cx="58" cy="32" r="9">
+<circle class="prep-icon-dot" cx="74" cy="32" r="9">
 </circle>
 </svg>
 <span class="sr-only">
@@ -1153,7 +1498,7 @@ GEN
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -1171,8 +1516,48 @@ GEN
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
+<div class="prep-name" lang="sr">
+током
+</div>
+<div class="prep-uses">
+<div class="prep-use" data-tone="gen">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<path class="prep-icon-line" d="M10 32H78">
+</path>
+<path class="prep-icon-line" d="M28 20V44M60 20V44">
+</path>
+<circle class="prep-icon-dot" cx="44" cy="32" r="9">
+</circle>
+</svg>
+<span class="sr-only">
+Родительный
+</span>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="case-tag" data-tone="gen">
+GEN
+</span>
+<span class="prep-meaning">
+в течение, во время
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Током лета радим.
+</span>
+<span class="tr">
+Летом я работаю.
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 за
 </div>
@@ -1180,15 +1565,15 @@ GEN
 <div class="prep-use" data-tone="aku">
 <span class="prep-icon-cell">
 <svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
-<path class="prep-icon-line" d="M16 32H72">
+<path class="prep-icon-line" d="M12 40H60">
 </path>
-<path class="prep-icon-line" d="M40 18V46">
+<path class="prep-icon-line" d="M32 26V54">
 </path>
-<circle class="prep-icon-dot" cx="58" cy="32" r="9">
+<circle class="prep-icon-dot" cx="58" cy="26" r="9">
 </circle>
-<path class="prep-icon-arrow" d="M45 32H70">
+<path class="prep-icon-arrow" d="M52 40H76">
 </path>
-<path class="prep-icon-arrow" d="M62 24L72 32L62 40">
+<path class="prep-icon-arrow" d="M68 33L77 40L68 47">
 </path>
 </svg>
 <span class="sr-only">
@@ -1197,7 +1582,7 @@ GEN
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="aku">
 AKU
 </span>
 <span class="prep-meaning">
@@ -1217,11 +1602,13 @@ AKU
 <div class="prep-use" data-tone="aku">
 <span class="prep-icon-cell">
 <svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
-<circle class="prep-icon-dot" cx="24" cy="32" r="9">
-</circle>
-<path class="prep-icon-arrow" d="M34 32H64">
+<path class="prep-icon-object" d="M50 16V46H78V16">
 </path>
-<path class="prep-icon-arrow" d="M56 24L66 32L56 40">
+<circle class="prep-icon-dot" cx="14" cy="32" r="9">
+</circle>
+<path class="prep-icon-arrow" d="M24 32H44">
+</path>
+<path class="prep-icon-arrow" d="M37 25L45 32L37 39">
 </path>
 </svg>
 <span class="sr-only">
@@ -1230,7 +1617,7 @@ AKU
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="aku">
 AKU
 </span>
 <span class="prep-meaning">
@@ -1248,17 +1635,21 @@ AKU
 </div>
 </div>
 </div>
-</article>
+</div>
 </div>
 </section>
-<section class="chart-group">
-<header class="chart-group-head">
+</article>
+<article class="card prep-card-group" id="prep-group-fixed">
+<header class="card-head">
+<div class="card-title">
 <h3>
 Фиксированный падеж
 </h3>
+</div>
 </header>
-<div class="chart-table">
-<article class="chart-row prep-row">
+<section class="card-section">
+<div class="card-items">
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 с/са
 </div>
@@ -1266,9 +1657,9 @@ AKU
 <div class="prep-use" data-tone="ins">
 <span class="prep-icon-cell">
 <svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
-<circle class="prep-icon-dot" cx="34" cy="32" r="9">
+<circle class="prep-icon-dot" cx="30" cy="32" r="9">
 </circle>
-<circle class="prep-icon-dot" cx="54" cy="32" r="9">
+<circle class="prep-icon-hollow" cx="56" cy="32" r="9">
 </circle>
 </svg>
 <span class="sr-only">
@@ -1277,7 +1668,7 @@ AKU
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="ins">
 INS
 </span>
 <span class="prep-meaning">
@@ -1295,8 +1686,8 @@ INS
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 уз
 </div>
@@ -1304,9 +1695,9 @@ INS
 <div class="prep-use" data-tone="aku">
 <span class="prep-icon-cell">
 <svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
-<circle class="prep-icon-dot" cx="34" cy="32" r="9">
+<circle class="prep-icon-dot" cx="30" cy="32" r="9">
 </circle>
-<circle class="prep-icon-dot" cx="54" cy="32" r="9">
+<circle class="prep-icon-hollow" cx="56" cy="32" r="9">
 </circle>
 </svg>
 <span class="sr-only">
@@ -1315,7 +1706,7 @@ INS
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="aku">
 AKU
 </span>
 <span class="prep-meaning">
@@ -1333,8 +1724,8 @@ AKU
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 о
 </div>
@@ -1342,12 +1733,12 @@ AKU
 <div class="prep-use" data-tone="lok">
 <span class="prep-icon-cell">
 <svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
-<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
-</rect>
-<path class="prep-icon-arrow" d="M27 21C35 8 58 9 65 23">
+<path class="prep-icon-object" d="M30 18H70V46H30Z">
 </path>
-<path class="prep-icon-arrow" d="M53 20L66 24L62 11">
+<path class="prep-icon-line" d="M38 27H62M38 34H62M38 41H54">
 </path>
+<circle class="prep-icon-dot" cx="16" cy="32" r="9">
+</circle>
 </svg>
 <span class="sr-only">
 Предложный
@@ -1355,7 +1746,7 @@ AKU
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="lok">
 LOK
 </span>
 <span class="prep-meaning">
@@ -1373,8 +1764,8 @@ LOK
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 по
 </div>
@@ -1382,12 +1773,14 @@ LOK
 <div class="prep-use" data-tone="lok">
 <span class="prep-icon-cell">
 <svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
-<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
-</rect>
-<path class="prep-icon-arrow" d="M22 32C22 12 66 12 66 32C66 52 22 52 22 32">
+<path class="prep-icon-object" d="M30 16V46H58V16">
 </path>
-<path class="prep-icon-arrow" d="M58 25L67 33L58 40">
+<path class="prep-icon-line" d="M58 12C66 16 72 24 72 32C72 46 60 56 44 56C28 56 16 46 16 32C16 22 22 14 32 10">
 </path>
+<path class="prep-icon-arrow" d="M26 4L34 10L27 17">
+</path>
+<circle class="prep-icon-dot" cx="16" cy="32" r="9">
+</circle>
 </svg>
 <span class="sr-only">
 Предложный
@@ -1395,7 +1788,7 @@ LOK
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="lok">
 LOK
 </span>
 <span class="prep-meaning">
@@ -1413,8 +1806,8 @@ LOK
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 при
 </div>
@@ -1422,9 +1815,9 @@ LOK
 <div class="prep-use" data-tone="lok">
 <span class="prep-icon-cell">
 <svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
-<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
-</rect>
-<circle class="prep-icon-dot" cx="20" cy="32" r="9">
+<path class="prep-icon-object" d="M40 16V46H68V16">
+</path>
+<circle class="prep-icon-dot" cx="16" cy="32" r="9">
 </circle>
 </svg>
 <span class="sr-only">
@@ -1433,7 +1826,7 @@ LOK
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="lok">
 LOK
 </span>
 <span class="prep-meaning">
@@ -1451,8 +1844,8 @@ LOK
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 без
 </div>
@@ -1460,11 +1853,11 @@ LOK
 <div class="prep-use" data-tone="gen">
 <span class="prep-icon-cell">
 <svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
-<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
-</rect>
-<circle class="prep-icon-dot" cx="44" cy="32" r="9">
+<circle class="prep-icon-dot" cx="20" cy="32" r="9">
 </circle>
-<path class="prep-icon-line" d="M26 52L62 12">
+<circle class="prep-icon-hollow" cx="58" cy="32" r="9">
+</circle>
+<path class="prep-icon-line" d="M46 20L70 44M70 20L46 44">
 </path>
 </svg>
 <span class="sr-only">
@@ -1473,7 +1866,7 @@ LOK
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -1491,96 +1884,24 @@ GEN
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
-код
+против
 </div>
 <div class="prep-uses">
 <div class="prep-use" data-tone="gen">
 <span class="prep-icon-cell">
 <svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
-<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
-</rect>
-<circle class="prep-icon-dot" cx="20" cy="32" r="9">
+<circle class="prep-icon-dot" cx="16" cy="32" r="9">
 </circle>
-</svg>
-<span class="sr-only">
-Родительный
-</span>
-</span>
-<div class="prep-use-text">
-<div class="prep-use-head">
-<span class="chart-label prep-case">
-GEN
-</span>
-<span class="prep-meaning">
-у, возле
-</span>
-</div>
-<div class="chart-example prep-example">
-<span class="sr" lang="sr">
-Спавам код брата.
-</span>
-<span class="tr">
-Я ночую у брата.
-</span>
-</div>
-</div>
-</div>
-</div>
-</article>
-<article class="chart-row prep-row">
-<div class="prep-name" lang="sr">
-близу
-</div>
-<div class="prep-uses">
-<div class="prep-use" data-tone="gen">
-<span class="prep-icon-cell">
-<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
-<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
-</rect>
-<circle class="prep-icon-dot" cx="20" cy="32" r="9">
-</circle>
-</svg>
-<span class="sr-only">
-Родительный
-</span>
-</span>
-<div class="prep-use-text">
-<div class="prep-use-head">
-<span class="chart-label prep-case">
-GEN
-</span>
-<span class="prep-meaning">
-близко к
-</span>
-</div>
-<div class="chart-example prep-example">
-<span class="sr" lang="sr">
-Стан је близу центра.
-</span>
-<span class="tr">
-Квартира близко к центру.
-</span>
-</div>
-</div>
-</div>
-</div>
-</article>
-<article class="chart-row prep-row">
-<div class="prep-name" lang="sr">
-око
-</div>
-<div class="prep-uses">
-<div class="prep-use" data-tone="gen">
-<span class="prep-icon-cell">
-<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
-<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
-</rect>
-<path class="prep-icon-arrow" d="M22 32C22 12 66 12 66 32C66 52 22 52 22 32">
+<path class="prep-icon-arrow" d="M26 32H42">
 </path>
-<path class="prep-icon-arrow" d="M58 25L67 33L58 40">
+<path class="prep-icon-arrow" d="M35 25L43 32L35 39">
+</path>
+<path class="prep-icon-arrow" d="M76 32H52">
+</path>
+<path class="prep-icon-arrow" d="M59 25L51 32L59 39">
 </path>
 </svg>
 <span class="sr-only">
@@ -1589,36 +1910,40 @@ GEN
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
-около, вокруг
+против
 </span>
 </div>
 <div class="chart-example prep-example">
 <span class="sr" lang="sr">
-Седимо око стола.
+Играмо против њих.
 </span>
 <span class="tr">
-Мы сидим вокруг стола.
+Мы играем против них.
 </span>
 </div>
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
-иза
+због
 </div>
 <div class="prep-uses">
 <div class="prep-use" data-tone="gen">
 <span class="prep-icon-cell">
 <svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
-<rect class="prep-icon-object" height="28" width="28" x="28" y="18">
-</rect>
-<circle class="prep-icon-dot" cx="58" cy="36" r="9">
+<path class="prep-icon-object" d="M14 16V46H42V16">
+</path>
+<path class="prep-icon-arrow" d="M46 32H60">
+</path>
+<path class="prep-icon-arrow" d="M53 25L61 32L53 39">
+</path>
+<circle class="prep-icon-dot" cx="74" cy="32" r="9">
 </circle>
 </svg>
 <span class="sr-only">
@@ -1627,40 +1952,126 @@ GEN
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
-за, позади
+из-за
 </span>
 </div>
 <div class="chart-example prep-example">
 <span class="sr" lang="sr">
-Ауто је иза куће.
+Касним због кише.
 </span>
 <span class="tr">
-Машина за домом.
+Я опаздываю из-за дождя.
 </span>
 </div>
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
-насупрот
+уместо
+</div>
+<div class="prep-uses">
+<div class="prep-use" data-tone="gen">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<circle class="prep-icon-hollow" cx="16" cy="32" r="9">
+</circle>
+<path class="prep-icon-arrow" d="M28 32H56">
+</path>
+<path class="prep-icon-arrow" d="M49 25L57 32L49 39">
+</path>
+<circle class="prep-icon-dot" cx="70" cy="32" r="9">
+</circle>
+</svg>
+<span class="sr-only">
+Родительный
+</span>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="case-tag" data-tone="gen">
+GEN
+</span>
+<span class="prep-meaning">
+вместо
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Пијем чај уместо кафе.
+</span>
+<span class="tr">
+Я пью чай вместо кофе.
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="card-item prep-row">
+<div class="prep-name" lang="sr">
+осим
+</div>
+<div class="prep-uses">
+<div class="prep-use" data-tone="gen">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<circle class="prep-icon-hollow" cx="16" cy="32" r="9">
+</circle>
+<circle class="prep-icon-hollow" cx="34" cy="32" r="9">
+</circle>
+<circle class="prep-icon-hollow" cx="52" cy="32" r="9">
+</circle>
+<path class="prep-icon-line" d="M63 14V50">
+</path>
+<circle class="prep-icon-dot" cx="76" cy="32" r="9">
+</circle>
+</svg>
+<span class="sr-only">
+Родительный
+</span>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="case-tag" data-tone="gen">
+GEN
+</span>
+<span class="prep-meaning">
+кроме
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Сви осим брата.
+</span>
+<span class="tr">
+Все, кроме брата.
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="card-item prep-row">
+<div class="prep-name" lang="sr">
+упркос
 </div>
 <div class="prep-uses">
 <div class="prep-use" data-tone="dat">
 <span class="prep-icon-cell">
 <svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
-<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
-</rect>
+<path class="prep-icon-line" d="M46 12V52">
+</path>
 <circle class="prep-icon-dot" cx="14" cy="32" r="9">
 </circle>
-<circle class="prep-icon-dot" cx="74" cy="32" r="9">
-</circle>
-<path class="prep-icon-dash" d="M23 32H65">
+<path class="prep-icon-arrow" d="M24 32H70">
+</path>
+<path class="prep-icon-arrow" d="M62 25L71 32L62 39">
 </path>
 </svg>
 <span class="sr-only">
@@ -1669,24 +2080,25 @@ GEN
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="dat">
 DAT
 </span>
 <span class="prep-meaning">
-напротив
+несмотря на
 </span>
 </div>
 <div class="chart-example prep-example">
 <span class="sr" lang="sr">
-Седим насупрот брату.
+Идемо упркос киши.
 </span>
 <span class="tr">
-Я сижу напротив брата.
+Мы идём несмотря на дождь.
 </span>
 </div>
 </div>
 </div>
 </div>
-</article>
+</div>
 </div>
 </section>
+</article>

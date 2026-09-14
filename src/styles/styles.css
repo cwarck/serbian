@@ -2249,7 +2249,8 @@ section { position: relative; }
 /* The lemma is a compact row header over its uses — one column, because each
    use already spends a column on its own icon. */
 .prep-row {
-  gap: .5rem;
+  display: grid;
+  gap: .6rem;
 }
 
 /* The dot is the case marker: its hue comes from the cell's own data-tone
@@ -2286,6 +2287,16 @@ section { position: relative; }
   vector-effect: non-scaling-stroke;
 }
 
+/* The other party — ink like the frames, never case-coloured. */
+.prep-icon-hollow {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  vector-effect: non-scaling-stroke;
+}
+/* Depth by occlusion: a paper-filled frame hides what it is drawn over. */
+.prep-icon-solid { fill: var(--paper); }
+
 .prep-icon-arrow {
   fill: none;
   stroke: var(--ink);
@@ -2295,12 +2306,12 @@ section { position: relative; }
   vector-effect: non-scaling-stroke;
 }
 
-/* The row name stays neutral ink — a dual-case prep (pod/pred/nad…) carries one
-   row tone, so colouring the name would read as a single phantom case. Case
-   colour lives on the per-use icon dots and chips instead. */
+/* The lemma is a card item's specimen, one size under the card's h3 — a
+   dual-case prep (pod/pred/nad…) has no single tone, so it stays neutral ink
+   and colour lives on the per-use chips and icon dots. */
 .prep-name {
   font-family: var(--ff-display);
-  font-size: var(--fs-head);
+  font-size: var(--fs-title);
   font-weight: 400;
   line-height: 1;
   color: var(--ink);
@@ -2341,14 +2352,6 @@ section { position: relative; }
   align-items: baseline;
   gap: .55rem;
   flex-wrap: wrap;
-}
-
-.prep-case {
-  display: inline-flex;
-  align-items: center;
-  color: var(--tone, var(--ink-soft));
-  background: color-mix(in oklab, var(--tone, var(--ink-soft)) 12%, transparent);
-  padding: .36rem .52rem .34rem;
 }
 
 .prep-meaning {

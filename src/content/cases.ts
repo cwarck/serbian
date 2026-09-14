@@ -62,7 +62,7 @@ export const CASES = [
       { sr:'Nemam <mark>vremena</mark>.',         en:'I have no time.',              ru:'У меня нет времени.' },
       { sr:'Ovde nema <mark>žena</mark>.',        en:'There are no women here. <em>(f. pl. — <i>-a</i>, same shape as Nom sg)</em>', ru:'Здесь нет женщин. <em>(ж. мн. — <i>-a</i>, совпадает с Им. ед.)</em>' },
     ],
-    preps: ['od','iz','do','kod','blizu','iza','oko','bez','pre','posle']
+    preps: ['od','iz','s/sa','do','kod','pored','blizu','iza','oko','iznad','ispod','ispred','između','preko','bez','pre','posle','tokom','zbog','protiv','umesto','osim']
   },
 
   {
@@ -86,7 +86,7 @@ export const CASES = [
       { sr:'Idem ka <mark>moru</mark>.',            en:'I\'m going to the sea.',            ru:'Я еду к морю.' },
       { sr:'Pomažem <mark>prijateljici</mark>.',    en:'I\'m helping a friend (f.).',       ru:'Я помогаю подруге.' },
     ],
-    preps: ['k/ka','prema','nasuprot']
+    preps: ['k/ka','prema','nasuprot','uprkos']
   },
 
   {
@@ -116,7 +116,7 @@ export const CASES = [
       { sr:'Vidim <mark>grad</mark>.',       en:'I see the city. <em>(non-living → <i>-∅</i>, like Nom)</em>', ru:'Я вижу город. <em>(неодуш. → <i>-∅</i>, как Им.)</em>' },
       { sr:'Idem u <mark>grad</mark>.',      en:'I\'m going to the city. <em>(motion: <i>u</i> + Acc)</em>',  ru:'Я еду в город. <em>(движение: <i>u</i> + Acc)</em>' },
     ],
-    preps: ['u','na','kroz','niz','uz','pod','pred','nad','među','za']
+    preps: ['u','na','po','kroz','niz','uz','pod','pred','nad','među','za']
   },
 
   {
