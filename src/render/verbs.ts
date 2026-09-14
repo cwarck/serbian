@@ -110,6 +110,10 @@ export const chart: Chart = {
 
     const srList = (items: readonly string[]) => raw(items.map(item => sr(item).value).join(', '));
 
+    /* lemma → form(s): the arrow is apparatus, never part of the specimen. */
+    const arrowPair = (from: string, to: readonly string[]) =>
+      raw(`<span lang="sr">${sr(from).value}</span> <span class="chart-sep" aria-hidden="true">→</span> <span lang="sr">${srList(to).value}</span>`);
+
     const regular = (group: VerbGroup) => html`
     <article class="card" data-tone="${group.tone}">
       ${cardHead(sr(groupName(group)), t('verbs.present'))}
@@ -126,7 +130,7 @@ export const chart: Chart = {
         <h4 class="card-section-label">${t('verbs.common')}</h4>
         <div class="card-items">${group.verbs.map(verb => html`
           <div class="card-item">
-            <div class="sr"><span lang="sr">${sr(verb.lemma)}</span> <span class="chart-sep" aria-hidden="true">→</span> <span lang="sr">${sr(verb.present)}</span></div>
+            <div class="sr">${arrowPair(verb.lemma, [verb.present])}</div>
             <div class="tr">${gloss(verb.lemma, lang)}</div>
           </div>`)}
         </div>
@@ -202,7 +206,7 @@ export const chart: Chart = {
       </section>
       <section class="card-section">
         <h4 class="card-section-label">${t('verbs.merged')}</h4>
-        <p class="verb-list" lang="sr">${srList(FUTURE.merged)}</p>
+        <p class="verb-list">${arrowPair(FUTURE.merged.from, FUTURE.merged.to)}</p>
       </section>
       <section class="card-section">
         <h4 class="card-section-label">${t('verbs.ici.exception')}</h4>

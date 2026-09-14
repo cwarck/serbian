@@ -1770,8 +1770,16 @@
 <h4 class="card-section-label">
 Слитные формы
 </h4>
-<p class="verb-list" lang="sr">
-радити → радићу, радићеш, радиће
+<p class="verb-list">
+<span lang="sr">
+радити
+</span>
+<span aria-hidden="true" class="chart-sep">
+→
+</span>
+<span lang="sr">
+радићу, радићеш, радиће
+</span>
 </p>
 </section>
 <section class="card-section">
