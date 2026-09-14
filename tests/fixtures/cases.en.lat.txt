@@ -2788,10 +2788,13 @@ bez
 <path class="prep-icon-line" d="M26 52L62 12">
 </path>
 </svg>
+<span class="sr-only">
+Genitive
+</span>
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -2826,10 +2829,13 @@ blizu
 <circle class="prep-icon-dot" cx="20" cy="32" r="9">
 </circle>
 </svg>
+<span class="sr-only">
+Genitive
+</span>
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -2868,10 +2874,13 @@ do
 <path class="prep-icon-arrow" d="M50 24L60 32L50 40">
 </path>
 </svg>
+<span class="sr-only">
+Genitive
+</span>
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -2906,10 +2915,13 @@ ispod
 <circle class="prep-icon-dot" cx="44" cy="52" r="9">
 </circle>
 </svg>
+<span class="sr-only">
+Genitive
+</span>
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -2944,10 +2956,13 @@ ispred
 <circle class="prep-icon-dot" cx="22" cy="32" r="9">
 </circle>
 </svg>
+<span class="sr-only">
+Genitive
+</span>
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -2986,10 +3001,13 @@ iz
 <path class="prep-icon-arrow" d="M58 8L71 15L58 22">
 </path>
 </svg>
+<span class="sr-only">
+Genitive
+</span>
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -3024,10 +3042,13 @@ iza
 <circle class="prep-icon-dot" cx="58" cy="36" r="9">
 </circle>
 </svg>
+<span class="sr-only">
+Genitive
+</span>
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -3062,10 +3083,13 @@ između
 <circle class="prep-icon-dot" cx="44" cy="32" r="9">
 </circle>
 </svg>
+<span class="sr-only">
+Genitive
+</span>
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -3100,10 +3124,13 @@ iznad
 <circle class="prep-icon-dot" cx="44" cy="14" r="9">
 </circle>
 </svg>
+<span class="sr-only">
+Genitive
+</span>
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -3142,10 +3169,13 @@ k/ka
 <path class="prep-icon-arrow" d="M58 24L68 32L58 40">
 </path>
 </svg>
+<span class="sr-only">
+Dative
+</span>
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="dat">
 DAT
 </span>
 <span class="prep-meaning">
@@ -3180,10 +3210,13 @@ kod
 <circle class="prep-icon-dot" cx="20" cy="32" r="9">
 </circle>
 </svg>
+<span class="sr-only">
+Genitive
+</span>
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -3222,10 +3255,13 @@ kroz
 <circle class="prep-icon-dot" cx="24" cy="33" r="9">
 </circle>
 </svg>
+<span class="sr-only">
+Accusative
+</span>
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="aku">
 AKU
 </span>
 <span class="prep-meaning">
@@ -3264,10 +3300,13 @@ među
 <path class="prep-icon-arrow" d="M36 24L46 32L36 40">
 </path>
 </svg>
+<span class="sr-only">
+Accusative
+</span>
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="aku">
 AKU
 </span>
 <span class="prep-meaning">
@@ -3292,10 +3331,13 @@ I go among the people.
 <circle class="prep-icon-dot" cx="44" cy="32" r="9">
 </circle>
 </svg>
+<span class="sr-only">
+Instrumental
+</span>
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="ins">
 INS
 </span>
 <span class="prep-meaning">
@@ -3334,10 +3376,13 @@ na
 <path class="prep-icon-arrow" d="M31 26L44 26L40 14">
 </path>
 </svg>
+<span class="sr-only">
+Accusative
+</span>
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="aku">
 AKU
 </span>
 <span class="prep-meaning">
@@ -3362,10 +3407,13 @@ I put the book onto the table.
 <circle class="prep-icon-dot" cx="44" cy="24" r="9">
 </circle>
 </svg>
+<span class="sr-only">
+Locative
+</span>
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="lok">
 LOK
 </span>
 <span class="prep-meaning">
@@ -3404,10 +3452,13 @@ nad
 <path class="prep-icon-arrow" d="M36 6L46 14L36 22">
 </path>
 </svg>
+<span class="sr-only">
+Accusative
+</span>
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="aku">
 AKU
 </span>
 <span class="prep-meaning">
@@ -3432,10 +3483,13 @@ I hang the lamp above the table.
 <circle class="prep-icon-dot" cx="44" cy="14" r="9">
 </circle>
 </svg>
+<span class="sr-only">
+Instrumental
+</span>
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="ins">
 INS
 </span>
 <span class="prep-meaning">
@@ -3474,10 +3528,13 @@ nasuprot
 <path class="prep-icon-dash" d="M23 32H65">
 </path>
 </svg>
+<span class="sr-only">
+Dative
+</span>
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="dat">
 DAT
 </span>
 <span class="prep-meaning">
@@ -3516,10 +3573,13 @@ niz
 <circle class="prep-icon-dot" cx="24" cy="16" r="9">
 </circle>
 </svg>
+<span class="sr-only">
+Accusative
+</span>
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="aku">
 AKU
 </span>
 <span class="prep-meaning">
@@ -3556,10 +3616,13 @@ o
 <path class="prep-icon-arrow" d="M53 20L66 24L62 11">
 </path>
 </svg>
+<span class="sr-only">
+Locative
+</span>
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="lok">
 LOK
 </span>
 <span class="prep-meaning">
@@ -3598,10 +3661,13 @@ od
 <path class="prep-icon-arrow" d="M24 24L14 32L24 40">
 </path>
 </svg>
+<span class="sr-only">
+Genitive
+</span>
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -3638,10 +3704,13 @@ oko
 <path class="prep-icon-arrow" d="M58 25L67 33L58 40">
 </path>
 </svg>
+<span class="sr-only">
+Genitive
+</span>
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -3676,10 +3745,13 @@ osim
 <circle class="prep-icon-dot" cx="44" cy="32" r="9">
 </circle>
 </svg>
+<span class="sr-only">
+Genitive
+</span>
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -3714,10 +3786,13 @@ po
 <circle class="prep-icon-dot" cx="44" cy="32" r="9">
 </circle>
 </svg>
+<span class="sr-only">
+Accusative
+</span>
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="aku">
 AKU
 </span>
 <span class="prep-meaning">
@@ -3744,10 +3819,13 @@ I am going to get bread.
 <path class="prep-icon-arrow" d="M58 25L67 33L58 40">
 </path>
 </svg>
+<span class="sr-only">
+Locative
+</span>
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="lok">
 LOK
 </span>
 <span class="prep-meaning">
@@ -3786,10 +3864,13 @@ pod
 <path class="prep-icon-arrow" d="M36 44L46 52L36 60">
 </path>
 </svg>
+<span class="sr-only">
+Accusative
+</span>
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="aku">
 AKU
 </span>
 <span class="prep-meaning">
@@ -3814,10 +3895,13 @@ The cat goes under the table.
 <circle class="prep-icon-dot" cx="44" cy="52" r="9">
 </circle>
 </svg>
+<span class="sr-only">
+Instrumental
+</span>
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="ins">
 INS
 </span>
 <span class="prep-meaning">
@@ -3852,10 +3936,13 @@ pored
 <circle class="prep-icon-dot" cx="44" cy="32" r="9">
 </circle>
 </svg>
+<span class="sr-only">
+Genitive
+</span>
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -3892,10 +3979,13 @@ posle
 <circle class="prep-icon-dot" cx="58" cy="32" r="9">
 </circle>
 </svg>
+<span class="sr-only">
+Genitive
+</span>
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -3932,10 +4022,13 @@ pre
 <path class="prep-icon-line" d="M48 18V46">
 </path>
 </svg>
+<span class="sr-only">
+Genitive
+</span>
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -3974,10 +4067,13 @@ pred
 <path class="prep-icon-arrow" d="M26 24L36 32L26 40">
 </path>
 </svg>
+<span class="sr-only">
+Accusative
+</span>
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="aku">
 AKU
 </span>
 <span class="prep-meaning">
@@ -4002,10 +4098,13 @@ I step in front of the house.
 <circle class="prep-icon-dot" cx="22" cy="32" r="9">
 </circle>
 </svg>
+<span class="sr-only">
+Instrumental
+</span>
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="ins">
 INS
 </span>
 <span class="prep-meaning">
@@ -4040,10 +4139,13 @@ preko
 <circle class="prep-icon-dot" cx="44" cy="32" r="9">
 </circle>
 </svg>
+<span class="sr-only">
+Genitive
+</span>
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -4082,10 +4184,13 @@ prema
 <path class="prep-icon-arrow" d="M58 24L68 32L58 40">
 </path>
 </svg>
+<span class="sr-only">
+Dative
+</span>
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="dat">
 DAT
 </span>
 <span class="prep-meaning">
@@ -4120,10 +4225,13 @@ pri
 <circle class="prep-icon-dot" cx="20" cy="32" r="9">
 </circle>
 </svg>
+<span class="sr-only">
+Locative
+</span>
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="lok">
 LOK
 </span>
 <span class="prep-meaning">
@@ -4158,10 +4266,13 @@ protiv
 <circle class="prep-icon-dot" cx="44" cy="32" r="9">
 </circle>
 </svg>
+<span class="sr-only">
+Genitive
+</span>
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -4200,10 +4311,13 @@ s/sa
 <path class="prep-icon-arrow" d="M17 23L18 38L31 31">
 </path>
 </svg>
+<span class="sr-only">
+Genitive
+</span>
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -4228,10 +4342,13 @@ I am getting off the bus.
 <circle class="prep-icon-dot" cx="54" cy="32" r="9">
 </circle>
 </svg>
+<span class="sr-only">
+Instrumental
+</span>
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="ins">
 INS
 </span>
 <span class="prep-meaning">
@@ -4266,10 +4383,13 @@ tokom
 <circle class="prep-icon-dot" cx="44" cy="32" r="9">
 </circle>
 </svg>
+<span class="sr-only">
+Genitive
+</span>
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -4308,10 +4428,13 @@ u
 <path class="prep-icon-arrow" d="M37 24L47 32L37 40">
 </path>
 </svg>
+<span class="sr-only">
+Accusative
+</span>
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="aku">
 AKU
 </span>
 <span class="prep-meaning">
@@ -4336,10 +4459,13 @@ I am going into town.
 <circle class="prep-icon-dot" cx="44" cy="32" r="9">
 </circle>
 </svg>
+<span class="sr-only">
+Locative
+</span>
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="lok">
 LOK
 </span>
 <span class="prep-meaning">
@@ -4374,10 +4500,13 @@ umesto
 <circle class="prep-icon-dot" cx="44" cy="32" r="9">
 </circle>
 </svg>
+<span class="sr-only">
+Genitive
+</span>
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -4412,10 +4541,13 @@ uprkos
 <circle class="prep-icon-dot" cx="44" cy="32" r="9">
 </circle>
 </svg>
+<span class="sr-only">
+Dative
+</span>
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="dat">
 DAT
 </span>
 <span class="prep-meaning">
@@ -4454,10 +4586,13 @@ uz
 <circle class="prep-icon-dot" cx="24" cy="48" r="9">
 </circle>
 </svg>
+<span class="sr-only">
+Accusative
+</span>
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="aku">
 AKU
 </span>
 <span class="prep-meaning">
@@ -4482,10 +4617,13 @@ I go up the stairs.
 <circle class="prep-icon-dot" cx="54" cy="32" r="9">
 </circle>
 </svg>
+<span class="sr-only">
+Accusative
+</span>
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="aku">
 AKU
 </span>
 <span class="prep-meaning">
@@ -4524,10 +4662,13 @@ za
 <path class="prep-icon-arrow" d="M64 28L54 36L64 44">
 </path>
 </svg>
+<span class="sr-only">
+Accusative
+</span>
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="aku">
 AKU
 </span>
 <span class="prep-meaning">
@@ -4552,10 +4693,13 @@ I hide behind the house.
 <circle class="prep-icon-dot" cx="58" cy="36" r="9">
 </circle>
 </svg>
+<span class="sr-only">
+Instrumental
+</span>
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="ins">
 INS
 </span>
 <span class="prep-meaning">
@@ -4586,10 +4730,13 @@ I am sitting at the table.
 <path class="prep-icon-arrow" d="M62 24L72 32L62 40">
 </path>
 </svg>
+<span class="sr-only">
+Accusative
+</span>
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="aku">
 AKU
 </span>
 <span class="prep-meaning">
@@ -4616,10 +4763,13 @@ I am coming back in an hour.
 <path class="prep-icon-arrow" d="M56 24L66 32L56 40">
 </path>
 </svg>
+<span class="sr-only">
+Accusative
+</span>
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="aku">
 AKU
 </span>
 <span class="prep-meaning">
@@ -4654,10 +4804,13 @@ zbog
 <circle class="prep-icon-dot" cx="44" cy="32" r="9">
 </circle>
 </svg>
+<span class="sr-only">
+Genitive
+</span>
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">

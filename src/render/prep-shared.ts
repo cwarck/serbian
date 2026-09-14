@@ -10,8 +10,9 @@ import { html, raw, sr, type Raw } from '../lib/html.ts';
 import { stripDiacritics } from '../lib/script.ts';
 import type { Lang } from '../lib/negotiate.ts';
 import { translator } from '../i18n/index.ts';
-import { CASE_KEYS, PREP_CASE_ABBR, PREP_GROUPS } from '../content/prepositions.ts';
-import type { Localized, PrepUse } from '../lib/types.ts';
+import { CASE_KEYS, PREP_GROUPS } from '../content/prepositions.ts';
+import type { CaseTone, Localized, PrepUse } from '../lib/types.ts';
+import { caseTag } from './chart.ts';
 
 /* The case glyph vocabulary, shared by the chart and the card. */
 export function prepIcon(kind: string | undefined): string {
@@ -58,7 +59,7 @@ export function prepIcon(kind: string | undefined): string {
   return `<svg class="prep-icon" viewBox="0 0 88 64" aria-hidden="true">${(kind && icons[kind]) || icons.in}</svg>`;
 }
 export interface PrepUseEntry {
-  readonly case: string;
+  readonly case: CaseTone;
   readonly icon?: string;
   readonly meaning: Localized;
   readonly sr: string;
@@ -123,25 +124,20 @@ export function lookupPrep(token: string): PrepEntity | null {
 
 export const PREP_LEMMAS = PREP_BY_LEMMA;
 
-/* Reuses the chart's .prep-* classes; each use is tone-coloured by its own
-   case via data-tone. */
-export function renderPrepCard(token: string, lang: Lang): Raw | string {
-  const entity = lookupPrep(token);
-  if (!entity) return '';
+/* One use row, shared by the chart and the popover card: icon | chip +
+   meaning + example. The chip is the universal case-tag, so abbreviation
+   and hue resolve from CASES; the sr-only long name serves the icon. */
+export function renderPrepUse(use: PrepUse, rowIcon: string | undefined, lang: Lang): Raw {
   const t = translator(lang);
-  /* The same short form the chart's chips use. The pre-rewrite card looked the
-     table up as `window.PREP_CASE_ABBR`, which a top-level `const` never
-     defines, so it always fell through to the long case name — "Genitive" in a
-     chip beside a chart that said "GEN". */
-  const abbr = (c: string) =>
-    (PREP_CASE_ABBR as Record<string, string | undefined>)[c]
-      ?? t((CASE_KEYS as Record<string, string>)[c]!).value;
-  const uses = entity.uses.map(use => html`
+  return html`
     <div class="prep-use" data-tone="${use.case}">
-      <span class="prep-icon-cell">${raw(prepIcon(use.icon))}</span>
+      <span class="prep-icon-cell">
+        ${raw(prepIcon(use.icon || rowIcon))}
+        <span class="sr-only">${t((CASE_KEYS as Record<string, string>)[use.case]!)}</span>
+      </span>
       <div class="prep-use-text">
         <div class="prep-use-head">
-          <span class="chart-label prep-case">${raw(abbr(use.case))}</span>
+          ${caseTag(use.case)}
           <span class="prep-meaning">${use.meaning[lang] || use.meaning.en}</span>
         </div>
         <div class="chart-example prep-example">
@@ -149,7 +145,14 @@ export function renderPrepCard(token: string, lang: Lang): Raw | string {
           <span class="tr">${use.tr[lang] || use.tr.en}</span>
         </div>
       </div>
-    </div>`.value).join('');
+    </div>`;
+}
+
+/* The popover card: every use of one lemma, stacked. */
+export function renderPrepCard(token: string, lang: Lang): Raw | string {
+  const entity = lookupPrep(token);
+  if (!entity) return '';
+  const uses = entity.uses.map(use => renderPrepUse(use, use.icon, lang).value).join('');
   return html`
     <article class="prep-card">
       <header class="prep-card-head"><span class="prep-card-name" lang="sr">${sr(entity.display)}</span></header>

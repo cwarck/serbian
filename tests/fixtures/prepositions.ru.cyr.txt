@@ -1,12 +1,15 @@
 ### mount prepChart
-<section class="chart-group">
-<header class="chart-group-head">
+<article class="card prep-card-group" id="prep-group-place">
+<header class="card-head">
+<div class="card-title">
 <h3>
 Место / движение
 </h3>
+</div>
 </header>
-<div class="chart-table">
-<article class="chart-row prep-row">
+<section class="card-section">
+<div class="card-items">
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 у
 </div>
@@ -29,7 +32,7 @@
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="aku">
 AKU
 </span>
 <span class="prep-meaning">
@@ -60,7 +63,7 @@ AKU
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="lok">
 LOK
 </span>
 <span class="prep-meaning">
@@ -78,8 +81,8 @@ LOK
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 на
 </div>
@@ -102,7 +105,7 @@ LOK
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="aku">
 AKU
 </span>
 <span class="prep-meaning">
@@ -133,7 +136,7 @@ AKU
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="lok">
 LOK
 </span>
 <span class="prep-meaning">
@@ -151,17 +154,21 @@ LOK
 </div>
 </div>
 </div>
-</article>
+</div>
 </div>
 </section>
-<section class="chart-group">
-<header class="chart-group-head">
+</article>
+<article class="card prep-card-group" id="prep-group-static">
+<header class="card-head">
+<div class="card-title">
 <h3>
 Положение
 </h3>
+</div>
 </header>
-<div class="chart-table">
-<article class="chart-row prep-row">
+<section class="card-section">
+<div class="card-items">
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 изнад
 </div>
@@ -180,7 +187,7 @@ LOK
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -198,8 +205,8 @@ GEN
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 испод
 </div>
@@ -218,7 +225,7 @@ GEN
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -236,8 +243,8 @@ GEN
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 испред
 </div>
@@ -256,7 +263,7 @@ GEN
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -274,8 +281,8 @@ GEN
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 иза
 </div>
@@ -294,7 +301,7 @@ GEN
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -312,8 +319,8 @@ GEN
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 између
 </div>
@@ -332,7 +339,7 @@ GEN
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -350,8 +357,8 @@ GEN
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 поред
 </div>
@@ -370,7 +377,7 @@ GEN
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -388,8 +395,8 @@ GEN
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 код
 </div>
@@ -408,7 +415,7 @@ GEN
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -426,8 +433,8 @@ GEN
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 близу
 </div>
@@ -446,7 +453,7 @@ GEN
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -464,8 +471,8 @@ GEN
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 око
 </div>
@@ -486,7 +493,7 @@ GEN
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -504,8 +511,8 @@ GEN
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 насупрот
 </div>
@@ -528,7 +535,7 @@ GEN
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="dat">
 DAT
 </span>
 <span class="prep-meaning">
@@ -546,17 +553,21 @@ DAT
 </div>
 </div>
 </div>
-</article>
+</div>
 </div>
 </section>
-<section class="chart-group">
-<header class="chart-group-head">
+</article>
+<article class="card prep-card-group" id="prep-group-position">
+<header class="card-head">
+<div class="card-title">
 <h3>
 Движение и место
 </h3>
+</div>
 </header>
-<div class="chart-table">
-<article class="chart-row prep-row">
+<section class="card-section">
+<div class="card-items">
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 под
 </div>
@@ -579,7 +590,7 @@ DAT
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="aku">
 AKU
 </span>
 <span class="prep-meaning">
@@ -610,7 +621,7 @@ AKU
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="ins">
 INS
 </span>
 <span class="prep-meaning">
@@ -628,8 +639,8 @@ INS
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 пред
 </div>
@@ -652,7 +663,7 @@ INS
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="aku">
 AKU
 </span>
 <span class="prep-meaning">
@@ -683,7 +694,7 @@ AKU
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="ins">
 INS
 </span>
 <span class="prep-meaning">
@@ -701,8 +712,8 @@ INS
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 над
 </div>
@@ -725,7 +736,7 @@ INS
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="aku">
 AKU
 </span>
 <span class="prep-meaning">
@@ -756,7 +767,7 @@ AKU
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="ins">
 INS
 </span>
 <span class="prep-meaning">
@@ -774,8 +785,8 @@ INS
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 међу
 </div>
@@ -798,7 +809,7 @@ INS
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="aku">
 AKU
 </span>
 <span class="prep-meaning">
@@ -829,7 +840,7 @@ AKU
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="ins">
 INS
 </span>
 <span class="prep-meaning">
@@ -847,8 +858,8 @@ INS
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 за
 </div>
@@ -871,7 +882,7 @@ INS
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="aku">
 AKU
 </span>
 <span class="prep-meaning">
@@ -902,7 +913,7 @@ AKU
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="ins">
 INS
 </span>
 <span class="prep-meaning">
@@ -920,17 +931,21 @@ INS
 </div>
 </div>
 </div>
-</article>
+</div>
 </div>
 </section>
-<section class="chart-group">
-<header class="chart-group-head">
+</article>
+<article class="card prep-card-group" id="prep-group-path">
+<header class="card-head">
+<div class="card-title">
 <h3>
 Путь
 </h3>
+</div>
 </header>
-<div class="chart-table">
-<article class="chart-row prep-row">
+<section class="card-section">
+<div class="card-items">
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 кроз
 </div>
@@ -953,7 +968,7 @@ INS
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="aku">
 AKU
 </span>
 <span class="prep-meaning">
@@ -971,8 +986,8 @@ AKU
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 преко
 </div>
@@ -991,7 +1006,7 @@ AKU
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -1009,8 +1024,8 @@ GEN
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 низ
 </div>
@@ -1033,7 +1048,7 @@ GEN
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="aku">
 AKU
 </span>
 <span class="prep-meaning">
@@ -1051,8 +1066,8 @@ AKU
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 уз
 </div>
@@ -1075,7 +1090,7 @@ AKU
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="aku">
 AKU
 </span>
 <span class="prep-meaning">
@@ -1093,17 +1108,21 @@ AKU
 </div>
 </div>
 </div>
-</article>
+</div>
 </div>
 </section>
-<section class="chart-group">
-<header class="chart-group-head">
+</article>
+<article class="card prep-card-group" id="prep-group-source">
+<header class="card-head">
+<div class="card-title">
 <h3>
 Источник / направление
 </h3>
+</div>
 </header>
-<div class="chart-table">
-<article class="chart-row prep-row">
+<section class="card-section">
+<div class="card-items">
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 из
 </div>
@@ -1126,7 +1145,7 @@ AKU
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -1144,8 +1163,8 @@ GEN
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 од
 </div>
@@ -1168,7 +1187,7 @@ GEN
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -1186,8 +1205,8 @@ GEN
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 с/са
 </div>
@@ -1210,7 +1229,7 @@ GEN
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -1228,8 +1247,8 @@ GEN
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 до
 </div>
@@ -1252,7 +1271,7 @@ GEN
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -1270,8 +1289,8 @@ GEN
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 к/ка
 </div>
@@ -1294,7 +1313,7 @@ GEN
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="dat">
 DAT
 </span>
 <span class="prep-meaning">
@@ -1312,8 +1331,8 @@ DAT
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 према
 </div>
@@ -1336,7 +1355,7 @@ DAT
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="dat">
 DAT
 </span>
 <span class="prep-meaning">
@@ -1354,8 +1373,8 @@ DAT
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 по
 </div>
@@ -1374,7 +1393,7 @@ DAT
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="aku">
 AKU
 </span>
 <span class="prep-meaning">
@@ -1392,17 +1411,21 @@ AKU
 </div>
 </div>
 </div>
-</article>
+</div>
 </div>
 </section>
-<section class="chart-group">
-<header class="chart-group-head">
+</article>
+<article class="card prep-card-group" id="prep-group-time">
+<header class="card-head">
+<div class="card-title">
 <h3>
 Время / цель
 </h3>
+</div>
 </header>
-<div class="chart-table">
-<article class="chart-row prep-row">
+<section class="card-section">
+<div class="card-items">
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 пре
 </div>
@@ -1423,7 +1446,7 @@ AKU
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -1441,8 +1464,8 @@ GEN
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 после
 </div>
@@ -1463,7 +1486,7 @@ GEN
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -1481,8 +1504,8 @@ GEN
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 током
 </div>
@@ -1501,7 +1524,7 @@ GEN
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -1519,8 +1542,8 @@ GEN
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 за
 </div>
@@ -1545,7 +1568,7 @@ GEN
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="aku">
 AKU
 </span>
 <span class="prep-meaning">
@@ -1578,7 +1601,7 @@ AKU
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="aku">
 AKU
 </span>
 <span class="prep-meaning">
@@ -1596,17 +1619,21 @@ AKU
 </div>
 </div>
 </div>
-</article>
+</div>
 </div>
 </section>
-<section class="chart-group">
-<header class="chart-group-head">
+</article>
+<article class="card prep-card-group" id="prep-group-fixed">
+<header class="card-head">
+<div class="card-title">
 <h3>
 Фиксированный падеж
 </h3>
+</div>
 </header>
-<div class="chart-table">
-<article class="chart-row prep-row">
+<section class="card-section">
+<div class="card-items">
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 с/са
 </div>
@@ -1625,7 +1652,7 @@ AKU
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="ins">
 INS
 </span>
 <span class="prep-meaning">
@@ -1643,8 +1670,8 @@ INS
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 уз
 </div>
@@ -1663,7 +1690,7 @@ INS
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="aku">
 AKU
 </span>
 <span class="prep-meaning">
@@ -1681,8 +1708,8 @@ AKU
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 о
 </div>
@@ -1703,7 +1730,7 @@ AKU
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="lok">
 LOK
 </span>
 <span class="prep-meaning">
@@ -1721,8 +1748,8 @@ LOK
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 по
 </div>
@@ -1743,7 +1770,7 @@ LOK
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="lok">
 LOK
 </span>
 <span class="prep-meaning">
@@ -1761,8 +1788,8 @@ LOK
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 при
 </div>
@@ -1781,7 +1808,7 @@ LOK
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="lok">
 LOK
 </span>
 <span class="prep-meaning">
@@ -1799,8 +1826,8 @@ LOK
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 без
 </div>
@@ -1821,7 +1848,7 @@ LOK
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -1839,8 +1866,8 @@ GEN
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 против
 </div>
@@ -1859,7 +1886,7 @@ GEN
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -1877,8 +1904,8 @@ GEN
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 због
 </div>
@@ -1897,7 +1924,7 @@ GEN
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -1915,8 +1942,8 @@ GEN
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 уместо
 </div>
@@ -1935,7 +1962,7 @@ GEN
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -1953,8 +1980,8 @@ GEN
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 осим
 </div>
@@ -1973,7 +2000,7 @@ GEN
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -1991,8 +2018,8 @@ GEN
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 упркос
 </div>
@@ -2011,7 +2038,7 @@ GEN
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="dat">
 DAT
 </span>
 <span class="prep-meaning">
@@ -2029,6 +2056,7 @@ DAT
 </div>
 </div>
 </div>
-</article>
+</div>
 </div>
 </section>
+</article>

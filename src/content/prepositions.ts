@@ -8,14 +8,6 @@ export const CASE_KEYS = {
   lok: 'case.7.name'
 };
 
-export const PREP_CASE_ABBR = {
-  gen: 'GEN',
-  dat: 'DAT',
-  aku: 'AKU',
-  ins: 'INS',
-  lok: 'LOK'
-};
-
 export const PREP_GROUPS = [
   {
     key: 'prep.group.place',

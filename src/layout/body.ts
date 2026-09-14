@@ -192,6 +192,6 @@ const SIMPLE: Record<string, [string, string, string, string] | undefined> = {
   'false-friends': ['falseFriendsChart', 'chart-layout false-layout', 'Serbian false friends for Russian speakers', 'page.falseFriends.h1'],
   numbers: ['numbersChart', 'chart-layout num-layout', 'Serbian numbers and counting', 'page.numbers.h1'],
   'pitch-stress': ['pitchChart', 'chart-layout pitch-layout', 'Serbian pitch and stress', 'page.pitch.h1'],
-  prepositions: ['prepChart', 'chart-layout prep-layout', 'Serbian prepositions', 'page.prepositions.h1'],
+  prepositions: ['prepChart', 'card-list', 'Serbian prepositions', 'page.prepositions.h1'],
   verbs: ['verbGrid', 'card-list', 'Serbian verbs and conjugation', 'page.verbs.h1'],
 };

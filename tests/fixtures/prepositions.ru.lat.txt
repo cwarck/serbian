@@ -1,12 +1,15 @@
 ### mount prepChart
-<section class="chart-group">
-<header class="chart-group-head">
+<article class="card prep-card-group" id="prep-group-place">
+<header class="card-head">
+<div class="card-title">
 <h3>
 Место / движение
 </h3>
+</div>
 </header>
-<div class="chart-table">
-<article class="chart-row prep-row">
+<section class="card-section">
+<div class="card-items">
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 u
 </div>
@@ -29,7 +32,7 @@ u
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="aku">
 AKU
 </span>
 <span class="prep-meaning">
@@ -60,7 +63,7 @@ Idem u grad.
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="lok">
 LOK
 </span>
 <span class="prep-meaning">
@@ -78,8 +81,8 @@ LOK
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 na
 </div>
@@ -102,7 +105,7 @@ na
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="aku">
 AKU
 </span>
 <span class="prep-meaning">
@@ -133,7 +136,7 @@ Stavljam knjigu na sto.
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="lok">
 LOK
 </span>
 <span class="prep-meaning">
@@ -151,17 +154,21 @@ Knjiga je na stolu.
 </div>
 </div>
 </div>
-</article>
+</div>
 </div>
 </section>
-<section class="chart-group">
-<header class="chart-group-head">
+</article>
+<article class="card prep-card-group" id="prep-group-static">
+<header class="card-head">
+<div class="card-title">
 <h3>
 Положение
 </h3>
+</div>
 </header>
-<div class="chart-table">
-<article class="chart-row prep-row">
+<section class="card-section">
+<div class="card-items">
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 iznad
 </div>
@@ -180,7 +187,7 @@ iznad
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -198,8 +205,8 @@ Lampa je iznad stola.
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 ispod
 </div>
@@ -218,7 +225,7 @@ ispod
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -236,8 +243,8 @@ Mačka je ispod stola.
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 ispred
 </div>
@@ -256,7 +263,7 @@ ispred
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -274,8 +281,8 @@ Stojim ispred kuće.
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 iza
 </div>
@@ -294,7 +301,7 @@ iza
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -312,8 +319,8 @@ Auto je iza kuće.
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 između
 </div>
@@ -332,7 +339,7 @@ između
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -350,8 +357,8 @@ Stojim između kuća.
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 pored
 </div>
@@ -370,7 +377,7 @@ pored
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -388,8 +395,8 @@ Sedim pored prozora.
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 kod
 </div>
@@ -408,7 +415,7 @@ kod
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -426,8 +433,8 @@ Spavam kod brata.
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 blizu
 </div>
@@ -446,7 +453,7 @@ blizu
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -464,8 +471,8 @@ Stan je blizu centra.
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 oko
 </div>
@@ -486,7 +493,7 @@ oko
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -504,8 +511,8 @@ Sedimo oko stola.
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 nasuprot
 </div>
@@ -528,7 +535,7 @@ nasuprot
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="dat">
 DAT
 </span>
 <span class="prep-meaning">
@@ -546,17 +553,21 @@ Sedim nasuprot bratu.
 </div>
 </div>
 </div>
-</article>
+</div>
 </div>
 </section>
-<section class="chart-group">
-<header class="chart-group-head">
+</article>
+<article class="card prep-card-group" id="prep-group-position">
+<header class="card-head">
+<div class="card-title">
 <h3>
 Движение и место
 </h3>
+</div>
 </header>
-<div class="chart-table">
-<article class="chart-row prep-row">
+<section class="card-section">
+<div class="card-items">
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 pod
 </div>
@@ -579,7 +590,7 @@ pod
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="aku">
 AKU
 </span>
 <span class="prep-meaning">
@@ -610,7 +621,7 @@ Mačka ide pod sto.
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="ins">
 INS
 </span>
 <span class="prep-meaning">
@@ -628,8 +639,8 @@ Mačka je pod stolom.
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 pred
 </div>
@@ -652,7 +663,7 @@ pred
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="aku">
 AKU
 </span>
 <span class="prep-meaning">
@@ -683,7 +694,7 @@ Stajem pred kuću.
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="ins">
 INS
 </span>
 <span class="prep-meaning">
@@ -701,8 +712,8 @@ Stojim pred kućom.
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 nad
 </div>
@@ -725,7 +736,7 @@ nad
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="aku">
 AKU
 </span>
 <span class="prep-meaning">
@@ -756,7 +767,7 @@ Vešam lampu nad sto.
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="ins">
 INS
 </span>
 <span class="prep-meaning">
@@ -774,8 +785,8 @@ Lampa je nad stolom.
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 među
 </div>
@@ -798,7 +809,7 @@ među
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="aku">
 AKU
 </span>
 <span class="prep-meaning">
@@ -829,7 +840,7 @@ Ulazim među ljude.
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="ins">
 INS
 </span>
 <span class="prep-meaning">
@@ -847,8 +858,8 @@ Stojim među ljudima.
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 za
 </div>
@@ -871,7 +882,7 @@ za
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="aku">
 AKU
 </span>
 <span class="prep-meaning">
@@ -902,7 +913,7 @@ Sakrivam se za kuću.
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="ins">
 INS
 </span>
 <span class="prep-meaning">
@@ -920,17 +931,21 @@ Sedim za stolom.
 </div>
 </div>
 </div>
-</article>
+</div>
 </div>
 </section>
-<section class="chart-group">
-<header class="chart-group-head">
+</article>
+<article class="card prep-card-group" id="prep-group-path">
+<header class="card-head">
+<div class="card-title">
 <h3>
 Путь
 </h3>
+</div>
 </header>
-<div class="chart-table">
-<article class="chart-row prep-row">
+<section class="card-section">
+<div class="card-items">
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 kroz
 </div>
@@ -953,7 +968,7 @@ kroz
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="aku">
 AKU
 </span>
 <span class="prep-meaning">
@@ -971,8 +986,8 @@ Idem kroz park.
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 preko
 </div>
@@ -991,7 +1006,7 @@ preko
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -1009,8 +1024,8 @@ Idem preko mosta.
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 niz
 </div>
@@ -1033,7 +1048,7 @@ niz
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="aku">
 AKU
 </span>
 <span class="prep-meaning">
@@ -1051,8 +1066,8 @@ Idem niz ulicu.
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 uz
 </div>
@@ -1075,7 +1090,7 @@ uz
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="aku">
 AKU
 </span>
 <span class="prep-meaning">
@@ -1093,17 +1108,21 @@ Idem uz stepenice.
 </div>
 </div>
 </div>
-</article>
+</div>
 </div>
 </section>
-<section class="chart-group">
-<header class="chart-group-head">
+</article>
+<article class="card prep-card-group" id="prep-group-source">
+<header class="card-head">
+<div class="card-title">
 <h3>
 Источник / направление
 </h3>
+</div>
 </header>
-<div class="chart-table">
-<article class="chart-row prep-row">
+<section class="card-section">
+<div class="card-items">
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 iz
 </div>
@@ -1126,7 +1145,7 @@ iz
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -1144,8 +1163,8 @@ Izlazim iz kuće.
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 od
 </div>
@@ -1168,7 +1187,7 @@ od
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -1186,8 +1205,8 @@ Dolazim od prijatelja.
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 s/sa
 </div>
@@ -1210,7 +1229,7 @@ s/sa
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -1228,8 +1247,8 @@ Silazim sa autobusa.
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 do
 </div>
@@ -1252,7 +1271,7 @@ do
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -1270,8 +1289,8 @@ Idem do stanice.
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 k/ka
 </div>
@@ -1294,7 +1313,7 @@ k/ka
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="dat">
 DAT
 </span>
 <span class="prep-meaning">
@@ -1312,8 +1331,8 @@ Idem ka gradu.
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 prema
 </div>
@@ -1336,7 +1355,7 @@ prema
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="dat">
 DAT
 </span>
 <span class="prep-meaning">
@@ -1354,8 +1373,8 @@ Okrenut sam prema moru.
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 po
 </div>
@@ -1374,7 +1393,7 @@ po
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="aku">
 AKU
 </span>
 <span class="prep-meaning">
@@ -1392,17 +1411,21 @@ Idem po hleb.
 </div>
 </div>
 </div>
-</article>
+</div>
 </div>
 </section>
-<section class="chart-group">
-<header class="chart-group-head">
+</article>
+<article class="card prep-card-group" id="prep-group-time">
+<header class="card-head">
+<div class="card-title">
 <h3>
 Время / цель
 </h3>
+</div>
 </header>
-<div class="chart-table">
-<article class="chart-row prep-row">
+<section class="card-section">
+<div class="card-items">
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 pre
 </div>
@@ -1423,7 +1446,7 @@ pre
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -1441,8 +1464,8 @@ Pre ručka pijem vodu.
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 posle
 </div>
@@ -1463,7 +1486,7 @@ posle
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -1481,8 +1504,8 @@ Posle časa idem kući.
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 tokom
 </div>
@@ -1501,7 +1524,7 @@ tokom
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -1519,8 +1542,8 @@ Tokom leta radim.
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 za
 </div>
@@ -1545,7 +1568,7 @@ za
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="aku">
 AKU
 </span>
 <span class="prep-meaning">
@@ -1578,7 +1601,7 @@ Vraćam se za sat vremena.
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="aku">
 AKU
 </span>
 <span class="prep-meaning">
@@ -1596,17 +1619,21 @@ Poklon je za majku.
 </div>
 </div>
 </div>
-</article>
+</div>
 </div>
 </section>
-<section class="chart-group">
-<header class="chart-group-head">
+</article>
+<article class="card prep-card-group" id="prep-group-fixed">
+<header class="card-head">
+<div class="card-title">
 <h3>
 Фиксированный падеж
 </h3>
+</div>
 </header>
-<div class="chart-table">
-<article class="chart-row prep-row">
+<section class="card-section">
+<div class="card-items">
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 s/sa
 </div>
@@ -1625,7 +1652,7 @@ s/sa
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="ins">
 INS
 </span>
 <span class="prep-meaning">
@@ -1643,8 +1670,8 @@ Putujem sa sestrom.
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 uz
 </div>
@@ -1663,7 +1690,7 @@ uz
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="aku">
 AKU
 </span>
 <span class="prep-meaning">
@@ -1681,8 +1708,8 @@ Pijem kafu uz kolač.
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 o
 </div>
@@ -1703,7 +1730,7 @@ o
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="lok">
 LOK
 </span>
 <span class="prep-meaning">
@@ -1721,8 +1748,8 @@ Pričamo o filmu.
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 po
 </div>
@@ -1743,7 +1770,7 @@ po
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="lok">
 LOK
 </span>
 <span class="prep-meaning">
@@ -1761,8 +1788,8 @@ LOK
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 pri
 </div>
@@ -1781,7 +1808,7 @@ pri
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="lok">
 LOK
 </span>
 <span class="prep-meaning">
@@ -1799,8 +1826,8 @@ Radim pri školi.
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 bez
 </div>
@@ -1821,7 +1848,7 @@ bez
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -1839,8 +1866,8 @@ Kafa bez šećera.
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 protiv
 </div>
@@ -1859,7 +1886,7 @@ protiv
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -1877,8 +1904,8 @@ Igramo protiv njih.
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 zbog
 </div>
@@ -1897,7 +1924,7 @@ zbog
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -1915,8 +1942,8 @@ Kasnim zbog kiše.
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 umesto
 </div>
@@ -1935,7 +1962,7 @@ umesto
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -1953,8 +1980,8 @@ Pijem čaj umesto kafe.
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 osim
 </div>
@@ -1973,7 +2000,7 @@ osim
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="gen">
 GEN
 </span>
 <span class="prep-meaning">
@@ -1991,8 +2018,8 @@ Svi osim brata.
 </div>
 </div>
 </div>
-</article>
-<article class="chart-row prep-row">
+</div>
+<div class="card-item prep-row">
 <div class="prep-name" lang="sr">
 uprkos
 </div>
@@ -2011,7 +2038,7 @@ uprkos
 </span>
 <div class="prep-use-text">
 <div class="prep-use-head">
-<span class="chart-label prep-case">
+<span class="case-tag" data-tone="dat">
 DAT
 </span>
 <span class="prep-meaning">
@@ -2029,6 +2056,7 @@ Idemo uprkos kiši.
 </div>
 </div>
 </div>
-</article>
+</div>
 </div>
 </section>
+</article>
