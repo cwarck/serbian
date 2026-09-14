@@ -2287,6 +2287,16 @@ section { position: relative; }
   vector-effect: non-scaling-stroke;
 }
 
+/* The other party — ink like the frames, never case-coloured. */
+.prep-icon-hollow {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  vector-effect: non-scaling-stroke;
+}
+/* Depth by occlusion: a paper-filled frame hides what it is drawn over. */
+.prep-icon-solid { fill: var(--paper); }
+
 .prep-icon-arrow {
   fill: none;
   stroke: var(--ink);
