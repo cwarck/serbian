@@ -371,12 +371,20 @@ Prepositions
 из
 </button>
 ,
+<button aria-expanded="false" class="prep-trigger" data-prep="s/sa" type="button">
+с/са
+</button>
+,
 <button aria-expanded="false" class="prep-trigger" data-prep="do" type="button">
 до
 </button>
 ,
 <button aria-expanded="false" class="prep-trigger" data-prep="kod" type="button">
 код
+</button>
+,
+<button aria-expanded="false" class="prep-trigger" data-prep="pored" type="button">
+поред
 </button>
 ,
 <button aria-expanded="false" class="prep-trigger" data-prep="blizu" type="button">
@@ -391,6 +399,26 @@ Prepositions
 око
 </button>
 ,
+<button aria-expanded="false" class="prep-trigger" data-prep="iznad" type="button">
+изнад
+</button>
+,
+<button aria-expanded="false" class="prep-trigger" data-prep="ispod" type="button">
+испод
+</button>
+,
+<button aria-expanded="false" class="prep-trigger" data-prep="ispred" type="button">
+испред
+</button>
+,
+<button aria-expanded="false" class="prep-trigger" data-prep="između" type="button">
+између
+</button>
+,
+<button aria-expanded="false" class="prep-trigger" data-prep="preko" type="button">
+преко
+</button>
+,
 <button aria-expanded="false" class="prep-trigger" data-prep="bez" type="button">
 без
 </button>
@@ -401,6 +429,26 @@ Prepositions
 ,
 <button aria-expanded="false" class="prep-trigger" data-prep="posle" type="button">
 после
+</button>
+,
+<button aria-expanded="false" class="prep-trigger" data-prep="tokom" type="button">
+током
+</button>
+,
+<button aria-expanded="false" class="prep-trigger" data-prep="zbog" type="button">
+због
+</button>
+,
+<button aria-expanded="false" class="prep-trigger" data-prep="protiv" type="button">
+против
+</button>
+,
+<button aria-expanded="false" class="prep-trigger" data-prep="umesto" type="button">
+уместо
+</button>
+,
+<button aria-expanded="false" class="prep-trigger" data-prep="osim" type="button">
+осим
 </button>
 </p>
 </section>
@@ -554,6 +602,10 @@ Prepositions
 ,
 <button aria-expanded="false" class="prep-trigger" data-prep="nasuprot" type="button">
 насупрот
+</button>
+,
+<button aria-expanded="false" class="prep-trigger" data-prep="uprkos" type="button">
+упркос
 </button>
 </p>
 </section>
@@ -774,6 +826,10 @@ Prepositions
 ,
 <button aria-expanded="false" class="prep-trigger" data-prep="na" type="button">
 на
+</button>
+,
+<button aria-expanded="false" class="prep-trigger" data-prep="po" type="button">
+по
 </button>
 ,
 <button aria-expanded="false" class="prep-trigger" data-prep="kroz" type="button">
@@ -2819,7 +2875,7 @@ The apartment is near the center.
 GEN
 </span>
 <span class="prep-meaning">
-up to, until
+up to, as far as
 </span>
 </div>
 <div class="chart-example prep-example">
@@ -2827,7 +2883,83 @@ up to, until
 Идем до станице.
 </span>
 <span class="tr">
-I am going up to the station.
+I am going as far as the station.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+### popover [data-prep]|[["data-prep","ispod"]]
+<article class="prep-card">
+<header class="prep-card-head">
+<span class="prep-card-name" lang="sr">
+испод
+</span>
+</header>
+<div class="prep-card-uses">
+<div class="prep-use" data-tone="gen">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="10">
+</rect>
+<circle class="prep-icon-dot" cx="44" cy="52" r="9">
+</circle>
+</svg>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+GEN
+</span>
+<span class="prep-meaning">
+under, below
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Мачка је испод стола.
+</span>
+<span class="tr">
+The cat is under the table.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+### popover [data-prep]|[["data-prep","ispred"]]
+<article class="prep-card">
+<header class="prep-card-head">
+<span class="prep-card-name" lang="sr">
+испред
+</span>
+</header>
+<div class="prep-card-uses">
+<div class="prep-use" data-tone="gen">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
+</rect>
+<circle class="prep-icon-dot" cx="22" cy="32" r="9">
+</circle>
+</svg>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+GEN
+</span>
+<span class="prep-meaning">
+in front of
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Стојим испред куће.
+</span>
+<span class="tr">
+I stand in front of the house.
 </span>
 </div>
 </div>
@@ -2914,6 +3046,82 @@ The car is behind the house.
 </div>
 </div>
 </article>
+### popover [data-prep]|[["data-prep","između"]]
+<article class="prep-card">
+<header class="prep-card-head">
+<span class="prep-card-name" lang="sr">
+између
+</span>
+</header>
+<div class="prep-card-uses">
+<div class="prep-use" data-tone="gen">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<path class="prep-icon-line" d="M25 10V54M63 10V54">
+</path>
+<circle class="prep-icon-dot" cx="44" cy="32" r="9">
+</circle>
+</svg>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+GEN
+</span>
+<span class="prep-meaning">
+between
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Стојим између кућа.
+</span>
+<span class="tr">
+I stand between the houses.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+### popover [data-prep]|[["data-prep","iznad"]]
+<article class="prep-card">
+<header class="prep-card-head">
+<span class="prep-card-name" lang="sr">
+изнад
+</span>
+</header>
+<div class="prep-card-uses">
+<div class="prep-use" data-tone="gen">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="30">
+</rect>
+<circle class="prep-icon-dot" cx="44" cy="14" r="9">
+</circle>
+</svg>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+GEN
+</span>
+<span class="prep-meaning">
+above, over
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Лампа је изнад стола.
+</span>
+<span class="tr">
+The lamp is above the table.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
 ### popover [data-prep]|[["data-prep","k/ka"]]
 <article class="prep-card">
 <header class="prep-card-head">
@@ -2979,7 +3187,7 @@ I am going toward town.
 GEN
 </span>
 <span class="prep-meaning">
-at someone's place
+at (someone's place)
 </span>
 </div>
 <div class="chart-example prep-example">
@@ -3063,7 +3271,7 @@ I walk through the park.
 AKU
 </span>
 <span class="prep-meaning">
-to among, between
+to among
 </span>
 </div>
 <div class="chart-example prep-example">
@@ -3091,7 +3299,7 @@ I go among the people.
 INS
 </span>
 <span class="prep-meaning">
-among (marked; usually između)
+among (place)
 </span>
 </div>
 <div class="chart-example prep-example">
@@ -3231,7 +3439,7 @@ I hang the lamp above the table.
 INS
 </span>
 <span class="prep-meaning">
-above (marked; usually iznad)
+above (place; = iznad)
 </span>
 </div>
 <div class="chart-example prep-example">
@@ -3452,6 +3660,44 @@ We sit around the table.
 </div>
 </div>
 </article>
+### popover [data-prep]|[["data-prep","osim"]]
+<article class="prep-card">
+<header class="prep-card-head">
+<span class="prep-card-name" lang="sr">
+осим
+</span>
+</header>
+<div class="prep-card-uses">
+<div class="prep-use" data-tone="gen">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
+</rect>
+<circle class="prep-icon-dot" cx="44" cy="32" r="9">
+</circle>
+</svg>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+GEN
+</span>
+<span class="prep-meaning">
+except
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Сви осим брата.
+</span>
+<span class="tr">
+Everyone except my brother.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
 ### popover [data-prep]|[["data-prep","po"]]
 <article class="prep-card">
 <header class="prep-card-head">
@@ -3460,6 +3706,34 @@ We sit around the table.
 </span>
 </header>
 <div class="prep-card-uses">
+<div class="prep-use" data-tone="aku">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
+</rect>
+<circle class="prep-icon-dot" cx="44" cy="32" r="9">
+</circle>
+</svg>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+AKU
+</span>
+<span class="prep-meaning">
+to fetch, for
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Идем по хлеб.
+</span>
+<span class="tr">
+I am going to get bread.
+</span>
+</div>
+</div>
+</div>
 <div class="prep-use" data-tone="lok">
 <span class="prep-icon-cell">
 <svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
@@ -3547,7 +3821,7 @@ The cat goes under the table.
 INS
 </span>
 <span class="prep-meaning">
-under (marked; usually ispod)
+under (place; = ispod)
 </span>
 </div>
 <div class="chart-example prep-example">
@@ -3556,6 +3830,44 @@ under (marked; usually ispod)
 </span>
 <span class="tr">
 The cat is under the table.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+### popover [data-prep]|[["data-prep","pored"]]
+<article class="prep-card">
+<header class="prep-card-head">
+<span class="prep-card-name" lang="sr">
+поред
+</span>
+</header>
+<div class="prep-card-uses">
+<div class="prep-use" data-tone="gen">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
+</rect>
+<circle class="prep-icon-dot" cx="44" cy="32" r="9">
+</circle>
+</svg>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+GEN
+</span>
+<span class="prep-meaning">
+beside, next to
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Седим поред прозора.
+</span>
+<span class="tr">
+I sit by the window.
 </span>
 </div>
 </div>
@@ -3627,7 +3939,7 @@ After class I go home.
 GEN
 </span>
 <span class="prep-meaning">
-before
+before; ago
 </span>
 </div>
 <div class="chart-example prep-example">
@@ -3697,7 +4009,7 @@ I step in front of the house.
 INS
 </span>
 <span class="prep-meaning">
-in front of (marked; usually ispred)
+in front of (place; = ispred)
 </span>
 </div>
 <div class="chart-example prep-example">
@@ -3706,6 +4018,44 @@ in front of (marked; usually ispred)
 </span>
 <span class="tr">
 I stand in front of the house.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+### popover [data-prep]|[["data-prep","preko"]]
+<article class="prep-card">
+<header class="prep-card-head">
+<span class="prep-card-name" lang="sr">
+преко
+</span>
+</header>
+<div class="prep-card-uses">
+<div class="prep-use" data-tone="gen">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
+</rect>
+<circle class="prep-icon-dot" cx="44" cy="32" r="9">
+</circle>
+</svg>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+GEN
+</span>
+<span class="prep-meaning">
+across, over, via
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Идем преко моста.
+</span>
+<span class="tr">
+I cross the bridge.
 </span>
 </div>
 </div>
@@ -3792,6 +4142,44 @@ I work at the school.
 </div>
 </div>
 </article>
+### popover [data-prep]|[["data-prep","protiv"]]
+<article class="prep-card">
+<header class="prep-card-head">
+<span class="prep-card-name" lang="sr">
+против
+</span>
+</header>
+<div class="prep-card-uses">
+<div class="prep-use" data-tone="gen">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
+</rect>
+<circle class="prep-icon-dot" cx="44" cy="32" r="9">
+</circle>
+</svg>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+GEN
+</span>
+<span class="prep-meaning">
+against
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Играмо против њих.
+</span>
+<span class="tr">
+We play against them.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
 ### popover [data-prep]|[["data-prep","s/sa"]]
 <article class="prep-card">
 <header class="prep-card-head">
@@ -3819,7 +4207,7 @@ I work at the school.
 GEN
 </span>
 <span class="prep-meaning">
-from off, down from
+off, down from
 </span>
 </div>
 <div class="chart-example prep-example">
@@ -3856,6 +4244,44 @@ with
 </span>
 <span class="tr">
 I travel with my sister.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+### popover [data-prep]|[["data-prep","tokom"]]
+<article class="prep-card">
+<header class="prep-card-head">
+<span class="prep-card-name" lang="sr">
+током
+</span>
+</header>
+<div class="prep-card-uses">
+<div class="prep-use" data-tone="gen">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
+</rect>
+<circle class="prep-icon-dot" cx="44" cy="32" r="9">
+</circle>
+</svg>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+GEN
+</span>
+<span class="prep-meaning">
+during
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Током лета радим.
+</span>
+<span class="tr">
+During the summer I work.
 </span>
 </div>
 </div>
@@ -3926,6 +4352,82 @@ in, at
 </span>
 <span class="tr">
 I live in town.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+### popover [data-prep]|[["data-prep","umesto"]]
+<article class="prep-card">
+<header class="prep-card-head">
+<span class="prep-card-name" lang="sr">
+уместо
+</span>
+</header>
+<div class="prep-card-uses">
+<div class="prep-use" data-tone="gen">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
+</rect>
+<circle class="prep-icon-dot" cx="44" cy="32" r="9">
+</circle>
+</svg>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+GEN
+</span>
+<span class="prep-meaning">
+instead of
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Пијем чај уместо кафе.
+</span>
+<span class="tr">
+I drink tea instead of coffee.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+### popover [data-prep]|[["data-prep","uprkos"]]
+<article class="prep-card">
+<header class="prep-card-head">
+<span class="prep-card-name" lang="sr">
+упркос
+</span>
+</header>
+<div class="prep-card-uses">
+<div class="prep-use" data-tone="dat">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
+</rect>
+<circle class="prep-icon-dot" cx="44" cy="32" r="9">
+</circle>
+</svg>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+DAT
+</span>
+<span class="prep-meaning">
+despite
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Идемо упркос киши.
+</span>
+<span class="tr">
+We go despite the rain.
 </span>
 </div>
 </div>
@@ -4091,7 +4593,7 @@ I am sitting at the table.
 AKU
 </span>
 <span class="prep-meaning">
-in, for a span
+in, after a span
 </span>
 </div>
 <div class="chart-example prep-example">
@@ -4130,6 +4632,44 @@ for, intended for
 </span>
 <span class="tr">
 The gift is for mother.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+### popover [data-prep]|[["data-prep","zbog"]]
+<article class="prep-card">
+<header class="prep-card-head">
+<span class="prep-card-name" lang="sr">
+због
+</span>
+</header>
+<div class="prep-card-uses">
+<div class="prep-use" data-tone="gen">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
+</rect>
+<circle class="prep-icon-dot" cx="44" cy="32" r="9">
+</circle>
+</svg>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+GEN
+</span>
+<span class="prep-meaning">
+because of
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Касним због кише.
+</span>
+<span class="tr">
+I am late because of the rain.
 </span>
 </div>
 </div>

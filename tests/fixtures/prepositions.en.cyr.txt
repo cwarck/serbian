@@ -277,6 +277,44 @@ I stand in front of the house.
 </article>
 <article class="chart-row prep-row">
 <div class="prep-name" lang="sr">
+иза
+</div>
+<div class="prep-uses">
+<div class="prep-use" data-tone="gen">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="28" y="18">
+</rect>
+<circle class="prep-icon-dot" cx="58" cy="36" r="9">
+</circle>
+</svg>
+<span class="sr-only">
+Genitive
+</span>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+GEN
+</span>
+<span class="prep-meaning">
+behind
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Ауто је иза куће.
+</span>
+<span class="tr">
+The car is behind the house.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="chart-row prep-row">
+<div class="prep-name" lang="sr">
 између
 </div>
 <div class="prep-uses">
@@ -298,7 +336,7 @@ Genitive
 GEN
 </span>
 <span class="prep-meaning">
-between, among
+between
 </span>
 </div>
 <div class="chart-example prep-example">
@@ -307,6 +345,202 @@ between, among
 </span>
 <span class="tr">
 I stand between the houses.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="chart-row prep-row">
+<div class="prep-name" lang="sr">
+поред
+</div>
+<div class="prep-uses">
+<div class="prep-use" data-tone="gen">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
+</rect>
+<circle class="prep-icon-dot" cx="44" cy="32" r="9">
+</circle>
+</svg>
+<span class="sr-only">
+Genitive
+</span>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+GEN
+</span>
+<span class="prep-meaning">
+beside, next to
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Седим поред прозора.
+</span>
+<span class="tr">
+I sit by the window.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="chart-row prep-row">
+<div class="prep-name" lang="sr">
+код
+</div>
+<div class="prep-uses">
+<div class="prep-use" data-tone="gen">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
+</rect>
+<circle class="prep-icon-dot" cx="20" cy="32" r="9">
+</circle>
+</svg>
+<span class="sr-only">
+Genitive
+</span>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+GEN
+</span>
+<span class="prep-meaning">
+at (someone's place)
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Спавам код брата.
+</span>
+<span class="tr">
+I sleep at my brother's place.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="chart-row prep-row">
+<div class="prep-name" lang="sr">
+близу
+</div>
+<div class="prep-uses">
+<div class="prep-use" data-tone="gen">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
+</rect>
+<circle class="prep-icon-dot" cx="20" cy="32" r="9">
+</circle>
+</svg>
+<span class="sr-only">
+Genitive
+</span>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+GEN
+</span>
+<span class="prep-meaning">
+near
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Стан је близу центра.
+</span>
+<span class="tr">
+The apartment is near the center.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="chart-row prep-row">
+<div class="prep-name" lang="sr">
+око
+</div>
+<div class="prep-uses">
+<div class="prep-use" data-tone="gen">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
+</rect>
+<path class="prep-icon-arrow" d="M22 32C22 12 66 12 66 32C66 52 22 52 22 32">
+</path>
+<path class="prep-icon-arrow" d="M58 25L67 33L58 40">
+</path>
+</svg>
+<span class="sr-only">
+Genitive
+</span>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+GEN
+</span>
+<span class="prep-meaning">
+around
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Седимо око стола.
+</span>
+<span class="tr">
+We sit around the table.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="chart-row prep-row">
+<div class="prep-name" lang="sr">
+насупрот
+</div>
+<div class="prep-uses">
+<div class="prep-use" data-tone="dat">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
+</rect>
+<circle class="prep-icon-dot" cx="14" cy="32" r="9">
+</circle>
+<circle class="prep-icon-dot" cx="74" cy="32" r="9">
+</circle>
+<path class="prep-icon-dash" d="M23 32H65">
+</path>
+</svg>
+<span class="sr-only">
+Dative
+</span>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+DAT
+</span>
+<span class="prep-meaning">
+opposite
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Седим насупрот брату.
+</span>
+<span class="tr">
+I sit opposite my brother.
 </span>
 </div>
 </div>
@@ -380,7 +614,7 @@ Instrumental
 INS
 </span>
 <span class="prep-meaning">
-under (marked; usually ispod)
+under (place; = ispod)
 </span>
 </div>
 <div class="chart-example prep-example">
@@ -453,7 +687,7 @@ Instrumental
 INS
 </span>
 <span class="prep-meaning">
-in front of (marked; usually ispred)
+in front of (place; = ispred)
 </span>
 </div>
 <div class="chart-example prep-example">
@@ -526,7 +760,7 @@ Instrumental
 INS
 </span>
 <span class="prep-meaning">
-above (marked; usually iznad)
+above (place; = iznad)
 </span>
 </div>
 <div class="chart-example prep-example">
@@ -568,7 +802,7 @@ Accusative
 AKU
 </span>
 <span class="prep-meaning">
-to among, between
+to among
 </span>
 </div>
 <div class="chart-example prep-example">
@@ -599,7 +833,7 @@ Instrumental
 INS
 </span>
 <span class="prep-meaning">
-among (marked; usually između)
+among (place)
 </span>
 </div>
 <div class="chart-example prep-example">
@@ -732,6 +966,44 @@ through
 </span>
 <span class="tr">
 I walk through the park.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="chart-row prep-row">
+<div class="prep-name" lang="sr">
+преко
+</div>
+<div class="prep-uses">
+<div class="prep-use" data-tone="gen">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
+</rect>
+<circle class="prep-icon-dot" cx="44" cy="32" r="9">
+</circle>
+</svg>
+<span class="sr-only">
+Genitive
+</span>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+GEN
+</span>
+<span class="prep-meaning">
+across, over, via
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Идем преко моста.
+</span>
+<span class="tr">
+I cross the bridge.
 </span>
 </div>
 </div>
@@ -942,7 +1214,7 @@ Genitive
 GEN
 </span>
 <span class="prep-meaning">
-from off, down from
+off, down from
 </span>
 </div>
 <div class="chart-example prep-example">
@@ -984,7 +1256,7 @@ Genitive
 GEN
 </span>
 <span class="prep-meaning">
-up to, until
+up to, as far as
 </span>
 </div>
 <div class="chart-example prep-example">
@@ -992,7 +1264,7 @@ up to, until
 Идем до станице.
 </span>
 <span class="tr">
-I am going up to the station.
+I am going as far as the station.
 </span>
 </div>
 </div>
@@ -1083,6 +1355,44 @@ I am turned toward the sea.
 </div>
 </div>
 </article>
+<article class="chart-row prep-row">
+<div class="prep-name" lang="sr">
+по
+</div>
+<div class="prep-uses">
+<div class="prep-use" data-tone="aku">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
+</rect>
+<circle class="prep-icon-dot" cx="44" cy="32" r="9">
+</circle>
+</svg>
+<span class="sr-only">
+Accusative
+</span>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+AKU
+</span>
+<span class="prep-meaning">
+to fetch, for
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Идем по хлеб.
+</span>
+<span class="tr">
+I am going to get bread.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
 </div>
 </section>
 <section class="chart-group">
@@ -1117,7 +1427,7 @@ Genitive
 GEN
 </span>
 <span class="prep-meaning">
-before
+before; ago
 </span>
 </div>
 <div class="chart-example prep-example">
@@ -1174,6 +1484,44 @@ After class I go home.
 </article>
 <article class="chart-row prep-row">
 <div class="prep-name" lang="sr">
+током
+</div>
+<div class="prep-uses">
+<div class="prep-use" data-tone="gen">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
+</rect>
+<circle class="prep-icon-dot" cx="44" cy="32" r="9">
+</circle>
+</svg>
+<span class="sr-only">
+Genitive
+</span>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+GEN
+</span>
+<span class="prep-meaning">
+during
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Током лета радим.
+</span>
+<span class="tr">
+During the summer I work.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="chart-row prep-row">
+<div class="prep-name" lang="sr">
 за
 </div>
 <div class="prep-uses">
@@ -1201,7 +1549,7 @@ Accusative
 AKU
 </span>
 <span class="prep-meaning">
-in, for a span
+in, after a span
 </span>
 </div>
 <div class="chart-example prep-example">
@@ -1494,7 +1842,7 @@ Coffee without sugar.
 </article>
 <article class="chart-row prep-row">
 <div class="prep-name" lang="sr">
-код
+против
 </div>
 <div class="prep-uses">
 <div class="prep-use" data-tone="gen">
@@ -1502,7 +1850,7 @@ Coffee without sugar.
 <svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
 <rect class="prep-icon-object" height="28" width="28" x="30" y="18">
 </rect>
-<circle class="prep-icon-dot" cx="20" cy="32" r="9">
+<circle class="prep-icon-dot" cx="44" cy="32" r="9">
 </circle>
 </svg>
 <span class="sr-only">
@@ -1515,15 +1863,15 @@ Genitive
 GEN
 </span>
 <span class="prep-meaning">
-at someone's place
+against
 </span>
 </div>
 <div class="chart-example prep-example">
 <span class="sr" lang="sr">
-Спавам код брата.
+Играмо против њих.
 </span>
 <span class="tr">
-I sleep at my brother's place.
+We play against them.
 </span>
 </div>
 </div>
@@ -1532,7 +1880,7 @@ I sleep at my brother's place.
 </article>
 <article class="chart-row prep-row">
 <div class="prep-name" lang="sr">
-близу
+због
 </div>
 <div class="prep-uses">
 <div class="prep-use" data-tone="gen">
@@ -1540,7 +1888,7 @@ I sleep at my brother's place.
 <svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
 <rect class="prep-icon-object" height="28" width="28" x="30" y="18">
 </rect>
-<circle class="prep-icon-dot" cx="20" cy="32" r="9">
+<circle class="prep-icon-dot" cx="44" cy="32" r="9">
 </circle>
 </svg>
 <span class="sr-only">
@@ -1553,15 +1901,15 @@ Genitive
 GEN
 </span>
 <span class="prep-meaning">
-near
+because of
 </span>
 </div>
 <div class="chart-example prep-example">
 <span class="sr" lang="sr">
-Стан је близу центра.
+Касним због кише.
 </span>
 <span class="tr">
-The apartment is near the center.
+I am late because of the rain.
 </span>
 </div>
 </div>
@@ -1570,7 +1918,7 @@ The apartment is near the center.
 </article>
 <article class="chart-row prep-row">
 <div class="prep-name" lang="sr">
-око
+уместо
 </div>
 <div class="prep-uses">
 <div class="prep-use" data-tone="gen">
@@ -1578,47 +1926,7 @@ The apartment is near the center.
 <svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
 <rect class="prep-icon-object" height="28" width="28" x="30" y="18">
 </rect>
-<path class="prep-icon-arrow" d="M22 32C22 12 66 12 66 32C66 52 22 52 22 32">
-</path>
-<path class="prep-icon-arrow" d="M58 25L67 33L58 40">
-</path>
-</svg>
-<span class="sr-only">
-Genitive
-</span>
-</span>
-<div class="prep-use-text">
-<div class="prep-use-head">
-<span class="chart-label prep-case">
-GEN
-</span>
-<span class="prep-meaning">
-around
-</span>
-</div>
-<div class="chart-example prep-example">
-<span class="sr" lang="sr">
-Седимо око стола.
-</span>
-<span class="tr">
-We sit around the table.
-</span>
-</div>
-</div>
-</div>
-</div>
-</article>
-<article class="chart-row prep-row">
-<div class="prep-name" lang="sr">
-иза
-</div>
-<div class="prep-uses">
-<div class="prep-use" data-tone="gen">
-<span class="prep-icon-cell">
-<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
-<rect class="prep-icon-object" height="28" width="28" x="28" y="18">
-</rect>
-<circle class="prep-icon-dot" cx="58" cy="36" r="9">
+<circle class="prep-icon-dot" cx="44" cy="32" r="9">
 </circle>
 </svg>
 <span class="sr-only">
@@ -1631,15 +1939,15 @@ Genitive
 GEN
 </span>
 <span class="prep-meaning">
-behind
+instead of
 </span>
 </div>
 <div class="chart-example prep-example">
 <span class="sr" lang="sr">
-Ауто је иза куће.
+Пијем чај уместо кафе.
 </span>
 <span class="tr">
-The car is behind the house.
+I drink tea instead of coffee.
 </span>
 </div>
 </div>
@@ -1648,7 +1956,45 @@ The car is behind the house.
 </article>
 <article class="chart-row prep-row">
 <div class="prep-name" lang="sr">
-насупрот
+осим
+</div>
+<div class="prep-uses">
+<div class="prep-use" data-tone="gen">
+<span class="prep-icon-cell">
+<svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
+<rect class="prep-icon-object" height="28" width="28" x="30" y="18">
+</rect>
+<circle class="prep-icon-dot" cx="44" cy="32" r="9">
+</circle>
+</svg>
+<span class="sr-only">
+Genitive
+</span>
+</span>
+<div class="prep-use-text">
+<div class="prep-use-head">
+<span class="chart-label prep-case">
+GEN
+</span>
+<span class="prep-meaning">
+except
+</span>
+</div>
+<div class="chart-example prep-example">
+<span class="sr" lang="sr">
+Сви осим брата.
+</span>
+<span class="tr">
+Everyone except my brother.
+</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="chart-row prep-row">
+<div class="prep-name" lang="sr">
+упркос
 </div>
 <div class="prep-uses">
 <div class="prep-use" data-tone="dat">
@@ -1656,12 +2002,8 @@ The car is behind the house.
 <svg aria-hidden="true" class="prep-icon" viewbox="0 0 88 64">
 <rect class="prep-icon-object" height="28" width="28" x="30" y="18">
 </rect>
-<circle class="prep-icon-dot" cx="14" cy="32" r="9">
+<circle class="prep-icon-dot" cx="44" cy="32" r="9">
 </circle>
-<circle class="prep-icon-dot" cx="74" cy="32" r="9">
-</circle>
-<path class="prep-icon-dash" d="M23 32H65">
-</path>
 </svg>
 <span class="sr-only">
 Dative
@@ -1673,15 +2015,15 @@ Dative
 DAT
 </span>
 <span class="prep-meaning">
-opposite
+despite
 </span>
 </div>
 <div class="chart-example prep-example">
 <span class="sr" lang="sr">
-Седим насупрот брату.
+Идемо упркос киши.
 </span>
 <span class="tr">
-I sit opposite my brother.
+We go despite the rain.
 </span>
 </div>
 </div>
