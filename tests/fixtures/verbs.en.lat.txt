@@ -1601,26 +1601,17 @@ ići ću, doći ću
 se
 </span>
 <em>
-Clitic
+Reflexive clitic
 </em>
 </h3>
 </div>
 </header>
 <section class="card-section">
 <h4 class="card-section-label">
-Second position
-</h4>
-<p class="verb-rule">
-A clitic like
-<i lang="sr">
-se
-</i>
-stands right after the first stressed word or phrase of the clause, never first.
-</p>
-</section>
-<section class="card-section">
-<h4 class="card-section-label">
 Examples
+<button aria-expanded="false" aria-haspopup="dialog" aria-label="note" class="tip-chip" data-verb-note="se" type="button">
+?
+</button>
 </h4>
 <div class="card-items">
 <div class="card-item">
@@ -1672,6 +1663,19 @@ I did not take a walk. (m.)
 </h4>
 <p>
 The infinitive ending alone does not pick the present pattern. Use the 1sg form beside each verb.
+</p>
+</article>
+### popover [data-verb-note]|[["data-verb-note","se"]]
+<article class="chart-tip">
+<h4>
+Second position
+</h4>
+<p>
+A clitic like
+<i lang="sr">
+se
+</i>
+stands right after the first stressed word or phrase of the clause, never first.
 </p>
 </article>
 ### popover [data-verb-tip]|[["data-verb-tip","0"]]

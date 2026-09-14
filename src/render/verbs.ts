@@ -48,6 +48,10 @@ function tipChip(label: Raw, attr: string): Raw {
   return raw(`<button class="tip-chip" type="button" aria-haspopup="dialog" aria-expanded="false" aria-label="${label.value}" ${attr}>?</button>`);
 }
 
+/* Every ? note the sheet can open: the groups' cue notes plus the clitic
+   rule. Keyed verbs.<note>.title / .body. */
+const NOTES = new Set<string>([...VERB_GROUPS.flatMap(g => g.note ? [g.note] : []), 'se']);
+
 /* A group is named by its 1sg and 3pl endings: -im / -e. */
 function groupName(group: VerbGroup): string {
   return `${group.endings.ja} / ${group.endings.oni}`;
@@ -173,17 +177,13 @@ export const chart: Chart = {
     </article>
   `;
 
-    /* A rule is prose, not a specimen, so it is a labelled body-size section
-       rather than a .card-q line. */
+    /* The placement rule is an explanation, so it lives behind the ? on the
+       examples; the marked se in each example is the visible fact. */
     const clitics = html`
     <article class="card verb-clitic" data-tone="clitic">
       ${cardHead(sr('se'), t('verbs.clitics'))}
       <section class="card-section">
-        <h4 class="card-section-label">${t('verbs.position')}</h4>
-        <p class="verb-rule">${srGrammarHTML(t('verbs.position.rule').value)}</p>
-      </section>
-      <section class="card-section">
-        <h4 class="card-section-label">${t('cases.examples')}</h4>
+        <h4 class="card-section-label">${t('cases.examples')}${tipChip(t('verbs.note'), 'data-verb-note="se"')}</h4>
         <div class="card-items">${CLITICS.map(ex => html`
           <div class="card-item">
             <div class="sr" lang="sr">${srHTML(ex.sr)}</div>
@@ -221,7 +221,7 @@ export const chart: Chart = {
       render: (attrs, lang) => {
         const t = translator(lang);
         const note = attrs['data-verb-note'];
-        if (!note || !VERB_GROUPS.some(g => g.note === note)) return '';
+        if (!note || !NOTES.has(note)) return '';
         return html`
       <article class="chart-tip">
         <h4>${srGrammarHTML(t(`verbs.${note}.title`).value)}</h4>

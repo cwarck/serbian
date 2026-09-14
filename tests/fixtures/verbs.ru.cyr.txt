@@ -1601,26 +1601,17 @@
 се
 </span>
 <em>
-Клитика
+Возвратная клитика
 </em>
 </h3>
 </div>
 </header>
 <section class="card-section">
 <h4 class="card-section-label">
-Вторая позиция
-</h4>
-<p class="verb-rule">
-Клитика вроде
-<i lang="sr">
-се
-</i>
-стоит сразу после первого ударного слова или группы слов, никогда не в начале.
-</p>
-</section>
-<section class="card-section">
-<h4 class="card-section-label">
 Примеры
+<button aria-expanded="false" aria-haspopup="dialog" aria-label="примечание" class="tip-chip" data-verb-note="se" type="button">
+?
+</button>
 </h4>
 <div class="card-items">
 <div class="card-item">
@@ -1672,6 +1663,19 @@
 </h4>
 <p>
 Одно окончание инфинитива не определяет тип настоящего. Ориентируйтесь на форму 1 л. ед. ч. рядом с каждым глаголом.
+</p>
+</article>
+### popover [data-verb-note]|[["data-verb-note","se"]]
+<article class="chart-tip">
+<h4>
+Вторая позиция
+</h4>
+<p>
+Клитика вроде
+<i lang="sr">
+се
+</i>
+стоит сразу после первого ударного слова или группы слов, никогда не в начале.
 </p>
 </article>
 ### popover [data-verb-tip]|[["data-verb-tip","0"]]
