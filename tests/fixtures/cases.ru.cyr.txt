@@ -257,6 +257,9 @@ GEN
 <span lang="sr">
 -а
 </span>
+<button aria-expanded="false" aria-haspopup="dialog" class="tip-chip cell-note" data-case-idx="1" data-note-id="gen-pl" data-note-trigger type="button">
+?
+</button>
 </span>
 </span>
 <span class="ending-unit">
@@ -267,6 +270,9 @@ GEN
 <span lang="sr">
 -а
 </span>
+<button aria-expanded="false" aria-haspopup="dialog" class="tip-chip cell-note" data-case-idx="1" data-note-id="gen-pl" data-note-trigger type="button">
+?
+</button>
 </span>
 <span class="eu-source">
 <span class="sr-only">
@@ -283,6 +289,9 @@ NOM
 <span lang="sr">
 -а
 </span>
+<button aria-expanded="false" aria-haspopup="dialog" class="tip-chip cell-note" data-case-idx="1" data-note-id="gen-pl" data-note-trigger type="button">
+?
+</button>
 </span>
 </span>
 </div>
@@ -1591,97 +1600,6 @@ LOK
 <article class="extra-panel">
 <header class="extra-panel-head">
 <h3 class="extra-panel-title">
-Вставная
-<i lang="sr">
--а
-</i>
-в род. мн.
-</h3>
-</header>
-<div class="extra-panel-body">
-<ul class="wrinkle-list">
-<li>
-<span class="from" lang="sr">
-сестра
-</span>
-<span aria-hidden="true" class="arrow">
-→
-</span>
-<span class="to" lang="sr">
-сест
-<span class="lit">
-а
-</span>
-ра
-</span>
-<span class="gloss">
-сестра · сестёр (род. мн.)
-</span>
-</li>
-<li>
-<span class="from" lang="sr">
-пис
-<span class="lit">
-мо
-</span>
-</span>
-<span aria-hidden="true" class="arrow">
-→
-</span>
-<span class="to" lang="sr">
-пис
-<span class="lit">
-ама
-</span>
-</span>
-<span class="gloss">
-письмо · писем
-</span>
-</li>
-<li>
-<span class="from" lang="sr">
-виљушка
-</span>
-<span aria-hidden="true" class="arrow">
-→
-</span>
-<span class="to" lang="sr">
-виљуш
-<span class="lit">
-а
-</span>
-ка
-</span>
-<span class="gloss">
-вилка · вилок
-</span>
-</li>
-<li>
-<span class="from" lang="sr">
-стак
-<span class="lit">
-ло
-</span>
-</span>
-<span aria-hidden="true" class="arrow">
-→
-</span>
-<span class="to" lang="sr">
-стак
-<span class="lit">
-ала
-</span>
-</span>
-<span class="gloss">
-стекло · стёкол
-</span>
-</li>
-</ul>
-</div>
-</article>
-<article class="extra-panel">
-<header class="extra-panel-head">
-<h3 class="extra-panel-title">
 <i lang="sr">
 -ов-
 </i>
@@ -1768,94 +1686,6 @@ LOK
 -и
 </i>
 )
-</span>
-</li>
-</ul>
-</div>
-</article>
-<article class="extra-panel">
-<header class="extra-panel-head">
-<h3 class="extra-panel-title">
-Старое
-<i lang="sr">
--ију
-</i>
-</h3>
-</header>
-<div class="extra-panel-body">
-<ul class="wrinkle-list">
-<li>
-<span class="from" lang="sr">
-о
-<span class="lit">
-ко
-</span>
-</span>
-<span aria-hidden="true" class="arrow">
-→
-</span>
-<span class="to" lang="sr">
-о
-<span class="lit">
-чију
-</span>
-</span>
-<span class="gloss">
-глаз · глаз (род. мн.)
-</span>
-</li>
-<li>
-<span class="from" lang="sr">
-у
-<span class="lit">
-во
-</span>
-</span>
-<span aria-hidden="true" class="arrow">
-→
-</span>
-<span class="to" lang="sr">
-у
-<span class="lit">
-шију
-</span>
-</span>
-<span class="gloss">
-ухо · ушей
-</span>
-</li>
-<li>
-<span class="from" lang="sr">
-гост
-</span>
-<span aria-hidden="true" class="arrow">
-→
-</span>
-<span class="to" lang="sr">
-гост
-<span class="lit">
-ију
-</span>
-</span>
-<span class="gloss">
-гость · гостей
-</span>
-</li>
-<li>
-<span class="from" lang="sr">
-прст
-</span>
-<span aria-hidden="true" class="arrow">
-→
-</span>
-<span class="to" lang="sr">
-прст
-<span class="lit">
-ију
-</span>
-</span>
-<span class="gloss">
-палец · пальцев
 </span>
 </li>
 </ul>
@@ -2140,6 +1970,162 @@ LOK
 мона
 <span class="lit">
 си
+</span>
+</span>
+</li>
+</ul>
+</article>
+### popover [data-note-trigger]|[["data-case-idx","1"],["data-note-id","gen-pl"],["data-note-trigger",null]]
+<article class="note-pop">
+<h4 class="note-title">
+Вставная
+<i lang="sr">
+-а
+</i>
+и старое
+<i lang="sr">
+-ију
+</i>
+</h4>
+<p class="note-body">
+Основа на два согласных вставляет между ними
+<i lang="sr">
+-а
+</i>
+перед окончанием: сестра → сестёр, письмо → писем. Несколько существительных вместо
+<i lang="sr">
+-а
+</i>
+сохраняют старое
+<i lang="sr">
+-ију
+</i>
+: глаза, уши, гости, пальцы.
+</p>
+<ul class="note-pairs">
+<li>
+<span class="from" lang="sr">
+сестра
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+сест
+<span class="lit">
+а
+</span>
+ра
+</span>
+</li>
+<li>
+<span class="from" lang="sr">
+пис
+<span class="lit">
+мо
+</span>
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+пис
+<span class="lit">
+ама
+</span>
+</span>
+</li>
+<li>
+<span class="from" lang="sr">
+виљушка
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+виљуш
+<span class="lit">
+а
+</span>
+ка
+</span>
+</li>
+<li>
+<span class="from" lang="sr">
+стак
+<span class="lit">
+ло
+</span>
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+стак
+<span class="lit">
+ала
+</span>
+</span>
+</li>
+<li>
+<span class="from" lang="sr">
+о
+<span class="lit">
+ко
+</span>
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+о
+<span class="lit">
+чију
+</span>
+</span>
+</li>
+<li>
+<span class="from" lang="sr">
+у
+<span class="lit">
+во
+</span>
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+у
+<span class="lit">
+шију
+</span>
+</span>
+</li>
+<li>
+<span class="from" lang="sr">
+гост
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+гост
+<span class="lit">
+ију
+</span>
+</span>
+</li>
+<li>
+<span class="from" lang="sr">
+прст
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+прст
+<span class="lit">
+ију
 </span>
 </span>
 </li>

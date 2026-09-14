@@ -257,6 +257,9 @@ M
 <span lang="sr">
 -а
 </span>
+<button aria-expanded="false" aria-haspopup="dialog" class="tip-chip cell-note" data-case-idx="1" data-note-id="gen-pl" data-note-trigger type="button">
+?
+</button>
 </span>
 </span>
 <span class="ending-unit">
@@ -267,6 +270,9 @@ N
 <span lang="sr">
 -а
 </span>
+<button aria-expanded="false" aria-haspopup="dialog" class="tip-chip cell-note" data-case-idx="1" data-note-id="gen-pl" data-note-trigger type="button">
+?
+</button>
 </span>
 <span class="eu-source">
 <span class="sr-only">
@@ -283,6 +289,9 @@ F
 <span lang="sr">
 -а
 </span>
+<button aria-expanded="false" aria-haspopup="dialog" class="tip-chip cell-note" data-case-idx="1" data-note-id="gen-pl" data-note-trigger type="button">
+?
+</button>
 </span>
 </span>
 </div>
@@ -1594,97 +1603,6 @@ hardworking (m.sg) · m.pl
 <article class="extra-panel">
 <header class="extra-panel-head">
 <h3 class="extra-panel-title">
-Spacer
-<i lang="sr">
--а
-</i>
-in gen. pl.
-</h3>
-</header>
-<div class="extra-panel-body">
-<ul class="wrinkle-list">
-<li>
-<span class="from" lang="sr">
-сестра
-</span>
-<span aria-hidden="true" class="arrow">
-→
-</span>
-<span class="to" lang="sr">
-сест
-<span class="lit">
-а
-</span>
-ра
-</span>
-<span class="gloss">
-sister · of sisters (gen. pl.)
-</span>
-</li>
-<li>
-<span class="from" lang="sr">
-пис
-<span class="lit">
-мо
-</span>
-</span>
-<span aria-hidden="true" class="arrow">
-→
-</span>
-<span class="to" lang="sr">
-пис
-<span class="lit">
-ама
-</span>
-</span>
-<span class="gloss">
-letter · of letters
-</span>
-</li>
-<li>
-<span class="from" lang="sr">
-виљушка
-</span>
-<span aria-hidden="true" class="arrow">
-→
-</span>
-<span class="to" lang="sr">
-виљуш
-<span class="lit">
-а
-</span>
-ка
-</span>
-<span class="gloss">
-fork · of forks
-</span>
-</li>
-<li>
-<span class="from" lang="sr">
-стак
-<span class="lit">
-ло
-</span>
-</span>
-<span aria-hidden="true" class="arrow">
-→
-</span>
-<span class="to" lang="sr">
-стак
-<span class="lit">
-ала
-</span>
-</span>
-<span class="gloss">
-glass · of glasses
-</span>
-</li>
-</ul>
-</div>
-</article>
-<article class="extra-panel">
-<header class="extra-panel-head">
-<h3 class="extra-panel-title">
 <i lang="sr">
 -ов-
 </i>
@@ -1771,95 +1689,6 @@ day · days (exception, plain
 -и
 </i>
 )
-</span>
-</li>
-</ul>
-</div>
-</article>
-<article class="extra-panel">
-<header class="extra-panel-head">
-<h3 class="extra-panel-title">
-Old
-<i lang="sr">
--ију
-</i>
-plural
-</h3>
-</header>
-<div class="extra-panel-body">
-<ul class="wrinkle-list">
-<li>
-<span class="from" lang="sr">
-о
-<span class="lit">
-ко
-</span>
-</span>
-<span aria-hidden="true" class="arrow">
-→
-</span>
-<span class="to" lang="sr">
-о
-<span class="lit">
-чију
-</span>
-</span>
-<span class="gloss">
-eye · of eyes
-</span>
-</li>
-<li>
-<span class="from" lang="sr">
-у
-<span class="lit">
-во
-</span>
-</span>
-<span aria-hidden="true" class="arrow">
-→
-</span>
-<span class="to" lang="sr">
-у
-<span class="lit">
-шију
-</span>
-</span>
-<span class="gloss">
-ear · of ears
-</span>
-</li>
-<li>
-<span class="from" lang="sr">
-гост
-</span>
-<span aria-hidden="true" class="arrow">
-→
-</span>
-<span class="to" lang="sr">
-гост
-<span class="lit">
-ију
-</span>
-</span>
-<span class="gloss">
-guest · of guests
-</span>
-</li>
-<li>
-<span class="from" lang="sr">
-прст
-</span>
-<span aria-hidden="true" class="arrow">
-→
-</span>
-<span class="to" lang="sr">
-прст
-<span class="lit">
-ију
-</span>
-</span>
-<span class="gloss">
-finger · of fingers
 </span>
 </li>
 </ul>
@@ -2140,6 +1969,162 @@ These three hard consonants don't sit comfortably next to a bright
 мона
 <span class="lit">
 си
+</span>
+</span>
+</li>
+</ul>
+</article>
+### popover [data-note-trigger]|[["data-case-idx","1"],["data-note-id","gen-pl"],["data-note-trigger",null]]
+<article class="note-pop">
+<h4 class="note-title">
+Spacer
+<i lang="sr">
+-а
+</i>
+, and the old
+<i lang="sr">
+-ију
+</i>
+</h4>
+<p class="note-body">
+A stem that ends in two consonants slips an
+<i lang="sr">
+-а
+</i>
+between them before the ending: sister → of sisters, letter → of letters. A handful of nouns instead keep an old
+<i lang="sr">
+-ију
+</i>
+in place of
+<i lang="sr">
+-а
+</i>
+: eyes, ears, guests, fingers.
+</p>
+<ul class="note-pairs">
+<li>
+<span class="from" lang="sr">
+сестра
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+сест
+<span class="lit">
+а
+</span>
+ра
+</span>
+</li>
+<li>
+<span class="from" lang="sr">
+пис
+<span class="lit">
+мо
+</span>
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+пис
+<span class="lit">
+ама
+</span>
+</span>
+</li>
+<li>
+<span class="from" lang="sr">
+виљушка
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+виљуш
+<span class="lit">
+а
+</span>
+ка
+</span>
+</li>
+<li>
+<span class="from" lang="sr">
+стак
+<span class="lit">
+ло
+</span>
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+стак
+<span class="lit">
+ала
+</span>
+</span>
+</li>
+<li>
+<span class="from" lang="sr">
+о
+<span class="lit">
+ко
+</span>
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+о
+<span class="lit">
+чију
+</span>
+</span>
+</li>
+<li>
+<span class="from" lang="sr">
+у
+<span class="lit">
+во
+</span>
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+у
+<span class="lit">
+шију
+</span>
+</span>
+</li>
+<li>
+<span class="from" lang="sr">
+гост
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+гост
+<span class="lit">
+ију
+</span>
+</span>
+</li>
+<li>
+<span class="from" lang="sr">
+прст
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+прст
+<span class="lit">
+ију
 </span>
 </span>
 </li>

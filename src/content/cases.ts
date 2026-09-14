@@ -43,11 +43,19 @@ export const CASES = [
   {
     key: 'case.2', abbr: 'GEN', tone: 'gen',
     endings: {
-      m: { sg: '-a',                pl: '-a' },
-      f: { sg: '-e',                pl: '-a' },
-      n: { sg: '-a',                pl: '-a' },
+      m: { sg: '-a',                pl: { v:'-a', n:'gen-pl' } },
+      f: { sg: '-e',                pl: { v:'-a', n:'gen-pl' } },
+      n: { sg: '-a',                pl: { v:'-a', n:'gen-pl' } },
     },
-    notes: {},
+    notes: {
+      'gen-pl': {
+        titleEn: 'Spacer <i>-a</i>, and the old <i>-iju</i>',
+        titleRu: 'Вставная <i>-a</i> и старое <i>-iju</i>',
+        bodyEn: 'A stem that ends in two consonants slips an <i>-a</i> between them before the ending: sister → of sisters, letter → of letters. A handful of nouns instead keep an old <i>-iju</i> in place of <i>-a</i>: eyes, ears, guests, fingers.',
+        bodyRu: 'Основа на два согласных вставляет между ними <i>-a</i> перед окончанием: сестра → сестёр, письмо → писем. Несколько существительных вместо <i>-a</i> сохраняют старое <i>-iju</i>: глаза, уши, гости, пальцы.',
+        pairs: [['sestra','sestara'],['pismo','pisama'],['viljuška','viljušaka'],['staklo','stakala'],['oko','očiju'],['uvo','ušiju'],['gost','gostiju'],['prst','prstiju']]
+      }
+    },
     examples: [
       { sr:'Kaciga <mark>pilota</mark>.',        en:'The pilot\'s helmet.',         ru:'Шлем пилота.' },
       { sr:'Stižem iz <mark>grada</mark>.',       en:'I\'m arriving from the city.', ru:'Я приезжаю из города.' },
@@ -221,30 +229,12 @@ export const WRINKLES = [
     ],
   },
   {
-    key: 'wrinkle.a-insert',
-    examples: [
-      { from:'sestra',   to:'sestara',   en:'sister · of sisters (gen. pl.)', ru:'сестра · сестёр (род. мн.)' },
-      { from:'pismo',    to:'pisama',    en:'letter · of letters',             ru:'письмо · писем' },
-      { from:'viljuška', to:'viljušaka', en:'fork · of forks',                 ru:'вилка · вилок' },
-      { from:'staklo',   to:'stakala',   en:'glass · of glasses',              ru:'стекло · стёкол' },
-    ],
-  },
-  {
     key: 'wrinkle.ov-ev',
     examples: [
       { from:'sin',  to:'sinovi',  en:'son · sons',                  ru:'сын · сыновья' },
       { from:'grad', to:'gradovi', en:'city · cities',               ru:'город · города' },
       { from:'muž',  to:'muževi',  en:'husband · husbands (soft → <i>-ev-</i>)', ru:'муж · мужья (мягк. → <i>-ev-</i>)' },
       { from:'dan',  to:'dani',    en:'day · days (exception, plain <i>-i</i>)', ru:'день · дни (исключение, просто <i>-i</i>)' },
-    ],
-  },
-  {
-    key: 'wrinkle.iju',
-    examples: [
-      { from:'oko',  to:'očiju',   en:'eye · of eyes',     ru:'глаз · глаз (род. мн.)' },
-      { from:'uvo',  to:'ušiju',   en:'ear · of ears',     ru:'ухо · ушей' },
-      { from:'gost', to:'gostiju', en:'guest · of guests', ru:'гость · гостей' },
-      { from:'prst', to:'prstiju', en:'finger · of fingers', ru:'палец · пальцев' },
     ],
   },
   {

@@ -229,9 +229,7 @@ export const en = {
   'cases.extra.gloss': 'love',
 
   'wrinkle.fleeting.title': 'Vanishing vowel',
-  'wrinkle.a-insert.title': 'Spacer <i>-a</i> in gen. pl.',
   'wrinkle.ov-ev.title': '<i>-ov-</i> / <i>-ev-</i> plural',
-  'wrinkle.iju.title': 'Old <i>-iju</i> plural',
   'wrinkle.irregulars.title': 'Irregulars',
 
   'case.1.name': 'Nominative',
