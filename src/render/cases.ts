@@ -258,8 +258,8 @@ export function notePopoverHTML(caseIdx: number, noteId: string, lang: Lang): Ra
 
 export const chart: Chart = {
   name: 'cases',
-  /* The pre-rewrite renderer re-asserted class="case-list" on every render. */
-  mountAttrs: { caseList: { class: 'case-list' } },
+  /* The pre-rewrite renderer re-asserted the list class on every render. */
+  mountAttrs: { caseList: { class: 'card-list' } },
 
   mounts: (lang: Lang) => {
     const t = translator(lang);
@@ -273,15 +273,13 @@ export const chart: Chart = {
   `.value).join('');
 
     const headBlock = (c: CaseRow) => html`
-      <div class="case-cell case-cell-head">
-        <header class="case-head">
-          <div class="case-head-title">
-            <h3><span lang="sr">${sr(t(c.key + '.local').value)}</span><em>${t(c.key + '.name')}</em></h3>
-            <span class="case-tag">${c.abbr}</span>
-          </div>
-          <p class="q">${srStrongHTML(t(c.key + '.q').value)}</p>
-        </header>
-      </div>`;
+      <header class="card-head">
+        <div class="card-title">
+          <h3><span lang="sr">${sr(t(c.key + '.local').value)}</span><em>${t(c.key + '.name')}</em></h3>
+          <span class="case-tag">${c.abbr}</span>
+        </div>
+        <p class="card-q">${srStrongHTML(t(c.key + '.q').value)}</p>
+      </header>`;
 
     const caseList = (CASES as readonly CaseRow[]).map((c, i) => {
       /* One band per number, a wrapping run of units under it, M-N-F per
@@ -289,10 +287,8 @@ export const chart: Chart = {
          the band names the number. Genders that make the SAME STATEMENT share
          one unit — see mergeBand(). */
       const endCells = NUMBERS.map(n => html`
-      <div class="case-cell case-cell-band" data-band="${n}">
-        <span class="cell-axis">${t('band.' + n)}</span>
-      </div>
-      <div class="case-cell case-cell-end" data-band="${n}">
+      <section class="card-section" data-band="${n}">
+        <h4 class="card-section-label">${t('band.' + n)}</h4>
         <div class="gender-run">${raw(mergeBand(c, i, n, lang, t).map(group => {
           const labels = group.genders.map(g => ({ g, label: t('cases.gender.' + g) }));
           const units = group.fields
@@ -300,30 +296,28 @@ export const chart: Chart = {
           /* A syncretic split stacks two whole units — one per reused case. */
           return units.length > 1 ? `<span class="eu-stack">${units.join('')}</span>` : units.join('');
         }).join(''))}</div>
-      </div>
+      </section>
     `.value).join('');
 
       const exCell = c.examples.length === 0 ? '' : html`
-      <div class="case-cell case-cell-ex">
-        <span class="cell-axis">${t('cases.examples')}</span>
-        <div class="examples">${c.examples.map(ex => html`
-          <div class="ex">
+      <section class="card-section">
+        <h4 class="card-section-label">${t('cases.examples')}</h4>
+        <div class="card-items">${c.examples.map(ex => html`
+          <div class="card-item">
             <div class="sr" lang="sr">${srHTML(ex.sr)}</div>
             <div class="tr">${srGrammarHTML(ex[lang] || ex.en)}</div>
           </div>`)}
         </div>
-      </div>`.value;
+      </section>`.value;
 
-      const prepCell = c.preps.length === 0 ? html`
-      <div class="case-cell case-cell-preps is-empty" aria-hidden="true"></div>
-    `.value : html`
-      <div class="case-cell case-cell-preps">
-        <span class="cell-axis">${t('cases.preps')}</span>
+      const prepCell = c.preps.length === 0 ? '' : html`
+      <section class="card-section">
+        <h4 class="card-section-label">${t('cases.preps')}</h4>
         <p class="prep-list">${raw(c.preps.map(p => prepToken(p).value).join(', '))}</p>
-      </div>`.value;
+      </section>`.value;
 
       return html`
-      <article class="case-row" id="${caseAnchor(c.key)}" data-tone="${c.tone}">
+      <article class="card" id="${caseAnchor(c.key)}" data-tone="${c.tone}">
         ${headBlock(c)}
         ${raw(endCells)}
         ${raw(exCell)}

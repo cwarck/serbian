@@ -32,15 +32,11 @@ function numWord(row: Cardinal): Raw {
   return row.end ? raw(`${stem.value}<b class="num-end">${sr(row.end).value}</b>`) : stem;
 }
 
-/* The card shell every block on this sheet now uses — the cases chart's row,
-   with only the areas it fills. */
 function cardHead(title: Raw | string): Raw {
   return html`
-    <div class="case-cell case-cell-head">
-      <header class="case-head">
-        <div class="case-head-title"><h3>${title}</h3></div>
-      </header>
-    </div>`;
+    <header class="card-head">
+      <div class="card-title"><h3>${title}</h3></div>
+    </header>`;
 }
 
 /* The six cards, as a PARTITION: each range runs from its own `min` up to
@@ -70,45 +66,45 @@ export const chart: Chart = {
     const pick = (v: { en: string; ru: string }) => v[lang] || v.en;
 
     const cardinals = html`
-    <section class="num-cardinals case-list" id="cardinalList" aria-label="${t('numbers.cardinals')}">
+    <section class="num-cardinals card-list" id="cardinalList" aria-label="${t('numbers.cardinals')}">
       ${CARDINAL_RANGES.map((group, index) => html`
-        <article class="case-row num-cardinal-card" id="numbers-${group.min}">
+        <article class="card num-cardinal-card" id="numbers-${group.min}">
           ${cardHead(group.name)}
-          <div class="case-cell case-cell-ex">
-            <div class="examples">${CARDINALS.filter(row => {
+          <section class="card-section">
+            <div class="card-items">${CARDINALS.filter(row => {
               const next = CARDINAL_RANGES[index + 1];
               const value = cardinalValue(row.n);
               return value >= group.min && (!next || value < next.min);
             }).map(row => html`
-              <div class="ex">
+              <div class="card-item">
                 <div class="sr">${row.n} · <span lang="sr">${numWord(row)}</span></div>
               </div>`)}
             </div>
-          </div>
+          </section>
         </article>`)}
     </section>
   `;
 
     const builds = html`
-    <article class="case-row num-build-card">
+    <article class="card num-build-card">
       ${cardHead(t('numbers.build'))}
-      <div class="case-cell case-cell-ex">
-        <div class="examples">
+      <section class="card-section">
+        <div class="card-items">
           ${NUMBER_BUILDS.map(row => html`
-            <div class="ex">
+            <div class="card-item">
               <span class="num-value">${row.n}</span>
               <span class="sr num-built" lang="sr">${srParts(row.parts)}</span>
             </div>`)}
         </div>
-      </div>
+      </section>
     </article>
   `;
 
     const nouns = html`
-    <article class="case-row num-agreement-card">
+    <article class="card num-agreement-card">
       ${cardHead(t('numbers.agreement'))}
-      <section class="num-agreement-nouns">
-        <header class="case-cell-band"><h4 class="cell-axis">${t('numbers.nouns')}</h4></header>
+      <section class="card-section num-agreement-nouns">
+        <h4 class="card-section-label">${t('numbers.nouns')}</h4>
         <div class="chart-table">
           ${NOUN_COUNTS.map(row => html`
             <article class="chart-row num-band">
@@ -122,8 +118,8 @@ export const chart: Chart = {
             </article>`)}
         </div>
       </section>
-      <section class="num-agreement-verbs">
-        <header class="case-cell-band"><h4 class="cell-axis">${t('numbers.verbs')}</h4></header>
+      <section class="card-section num-agreement-verbs">
+        <h4 class="card-section-label">${t('numbers.verbs')}</h4>
         <div class="chart-table">
           ${NOUN_COUNTS.map(row => html`
             <article class="chart-row num-band">
@@ -139,21 +135,21 @@ export const chart: Chart = {
   `;
 
     const ordinals = html`
-    <article class="case-row num-ordinal-card">
+    <article class="card num-ordinal-card">
       ${cardHead(t('numbers.ordinals'))}
-      <div class="case-cell num-ord-rule">
+      <section class="card-section num-ord-rule">
         <div class="gender-run">${GENDERS.map((g, idx) =>
           genderUnit(g, t('cases.gender.' + g), html`<span lang="sr">${sr(ORDINAL_ENDINGS[idx] ?? '')}</span>`))}</div>
         <p class="gender-band-note">${srGrammarHTML(t('numbers.ordSoft').value)}</p>
-      </div>
-      <div class="case-cell case-cell-ex">
-        <div class="examples">
+      </section>
+      <section class="card-section">
+        <div class="card-items">
           ${ORDINALS.map(row => html`
-            <div class="ex">
+            <div class="card-item">
               <div class="sr">${row.n} · <span lang="sr">${sr(row.forms[0])}</span></div>
             </div>`)}
         </div>
-      </div>
+      </section>
     </article>
   `;
 

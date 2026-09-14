@@ -42,20 +42,18 @@
 </a>
 </li>
 ### mount numbersChart
-<section aria-label="Количественные числительные" class="num-cardinals case-list" id="cardinalList">
-<article class="case-row num-cardinal-card" id="numbers-0">
-<div class="case-cell case-cell-head">
-<header class="case-head">
-<div class="case-head-title">
+<section aria-label="Количественные числительные" class="num-cardinals card-list" id="cardinalList">
+<article class="card num-cardinal-card" id="numbers-0">
+<header class="card-head">
+<div class="card-title">
 <h3>
 0–9
 </h3>
 </div>
 </header>
-</div>
-<div class="case-cell case-cell-ex">
-<div class="examples">
-<div class="ex">
+<section class="card-section">
+<div class="card-items">
+<div class="card-item">
 <div class="sr">
 0 ·
 <span lang="sr">
@@ -63,7 +61,7 @@
 </span>
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr">
 1 ·
 <span lang="sr">
@@ -71,7 +69,7 @@
 </span>
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr">
 2 ·
 <span lang="sr">
@@ -79,7 +77,7 @@
 </span>
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr">
 3 ·
 <span lang="sr">
@@ -87,7 +85,7 @@
 </span>
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr">
 4 ·
 <span lang="sr">
@@ -95,7 +93,7 @@
 </span>
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr">
 5 ·
 <span lang="sr">
@@ -103,7 +101,7 @@
 </span>
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr">
 6 ·
 <span lang="sr">
@@ -111,7 +109,7 @@
 </span>
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr">
 7 ·
 <span lang="sr">
@@ -119,7 +117,7 @@
 </span>
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr">
 8 ·
 <span lang="sr">
@@ -127,7 +125,7 @@
 </span>
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr">
 9 ·
 <span lang="sr">
@@ -136,21 +134,19 @@
 </div>
 </div>
 </div>
-</div>
+</section>
 </article>
-<article class="case-row num-cardinal-card" id="numbers-10">
-<div class="case-cell case-cell-head">
-<header class="case-head">
-<div class="case-head-title">
+<article class="card num-cardinal-card" id="numbers-10">
+<header class="card-head">
+<div class="card-title">
 <h3>
 10–19
 </h3>
 </div>
 </header>
-</div>
-<div class="case-cell case-cell-ex">
-<div class="examples">
-<div class="ex">
+<section class="card-section">
+<div class="card-items">
+<div class="card-item">
 <div class="sr">
 10 ·
 <span lang="sr">
@@ -158,7 +154,7 @@
 </span>
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr">
 11 ·
 <span lang="sr">
@@ -166,7 +162,7 @@
 </span>
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr">
 12 ·
 <span lang="sr">
@@ -174,7 +170,7 @@
 </span>
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr">
 13 ·
 <span lang="sr">
@@ -182,7 +178,7 @@
 </span>
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr">
 14 ·
 <span lang="sr">
@@ -190,7 +186,7 @@
 </span>
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr">
 15 ·
 <span lang="sr">
@@ -198,7 +194,7 @@
 </span>
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr">
 16 ·
 <span lang="sr">
@@ -206,7 +202,7 @@
 </span>
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr">
 17 ·
 <span lang="sr">
@@ -214,7 +210,7 @@
 </span>
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr">
 18 ·
 <span lang="sr">
@@ -222,7 +218,7 @@
 </span>
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr">
 19 ·
 <span lang="sr">
@@ -231,21 +227,19 @@
 </div>
 </div>
 </div>
-</div>
+</section>
 </article>
-<article class="case-row num-cardinal-card" id="numbers-20">
-<div class="case-cell case-cell-head">
-<header class="case-head">
-<div class="case-head-title">
+<article class="card num-cardinal-card" id="numbers-20">
+<header class="card-head">
+<div class="card-title">
 <h3>
 20–29
 </h3>
 </div>
 </header>
-</div>
-<div class="case-cell case-cell-ex">
-<div class="examples">
-<div class="ex">
+<section class="card-section">
+<div class="card-items">
+<div class="card-item">
 <div class="sr">
 20 ·
 <span lang="sr">
@@ -253,7 +247,7 @@
 </span>
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr">
 21 ·
 <span lang="sr">
@@ -261,7 +255,7 @@
 </span>
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr">
 22 ·
 <span lang="sr">
@@ -269,7 +263,7 @@
 </span>
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr">
 23 ·
 <span lang="sr">
@@ -277,7 +271,7 @@
 </span>
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr">
 24 ·
 <span lang="sr">
@@ -285,7 +279,7 @@
 </span>
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr">
 25 ·
 <span lang="sr">
@@ -293,7 +287,7 @@
 </span>
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr">
 26 ·
 <span lang="sr">
@@ -301,7 +295,7 @@
 </span>
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr">
 27 ·
 <span lang="sr">
@@ -309,7 +303,7 @@
 </span>
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr">
 28 ·
 <span lang="sr">
@@ -317,7 +311,7 @@
 </span>
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr">
 29 ·
 <span lang="sr">
@@ -326,21 +320,19 @@
 </div>
 </div>
 </div>
-</div>
+</section>
 </article>
-<article class="case-row num-cardinal-card" id="numbers-30">
-<div class="case-cell case-cell-head">
-<header class="case-head">
-<div class="case-head-title">
+<article class="card num-cardinal-card" id="numbers-30">
+<header class="card-head">
+<div class="card-title">
 <h3>
 30–99
 </h3>
 </div>
 </header>
-</div>
-<div class="case-cell case-cell-ex">
-<div class="examples">
-<div class="ex">
+<section class="card-section">
+<div class="card-items">
+<div class="card-item">
 <div class="sr">
 30 ·
 <span lang="sr">
@@ -348,7 +340,7 @@
 </span>
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr">
 40 ·
 <span lang="sr">
@@ -356,7 +348,7 @@
 </span>
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr">
 50 ·
 <span lang="sr">
@@ -364,7 +356,7 @@
 </span>
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr">
 60 ·
 <span lang="sr">
@@ -372,7 +364,7 @@
 </span>
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr">
 70 ·
 <span lang="sr">
@@ -380,7 +372,7 @@
 </span>
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr">
 80 ·
 <span lang="sr">
@@ -388,7 +380,7 @@
 </span>
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr">
 90 ·
 <span lang="sr">
@@ -397,21 +389,19 @@
 </div>
 </div>
 </div>
-</div>
+</section>
 </article>
-<article class="case-row num-cardinal-card" id="numbers-100">
-<div class="case-cell case-cell-head">
-<header class="case-head">
-<div class="case-head-title">
+<article class="card num-cardinal-card" id="numbers-100">
+<header class="card-head">
+<div class="card-title">
 <h3>
 100–999
 </h3>
 </div>
 </header>
-</div>
-<div class="case-cell case-cell-ex">
-<div class="examples">
-<div class="ex">
+<section class="card-section">
+<div class="card-items">
+<div class="card-item">
 <div class="sr">
 100 ·
 <span lang="sr">
@@ -419,7 +409,7 @@
 </span>
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr">
 200 ·
 <span lang="sr">
@@ -430,7 +420,7 @@
 </span>
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr">
 300 ·
 <span lang="sr">
@@ -441,7 +431,7 @@
 </span>
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr">
 400 ·
 <span lang="sr">
@@ -449,7 +439,7 @@
 </span>
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr">
 500 ·
 <span lang="sr">
@@ -457,7 +447,7 @@
 </span>
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr">
 600 ·
 <span lang="sr">
@@ -465,7 +455,7 @@
 </span>
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr">
 700 ·
 <span lang="sr">
@@ -473,7 +463,7 @@
 </span>
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr">
 800 ·
 <span lang="sr">
@@ -481,7 +471,7 @@
 </span>
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr">
 900 ·
 <span lang="sr">
@@ -490,21 +480,19 @@
 </div>
 </div>
 </div>
-</div>
+</section>
 </article>
-<article class="case-row num-cardinal-card" id="numbers-1000">
-<div class="case-cell case-cell-head">
-<header class="case-head">
-<div class="case-head-title">
+<article class="card num-cardinal-card" id="numbers-1000">
+<header class="card-head">
+<div class="card-title">
 <h3>
 1 000+
 </h3>
 </div>
 </header>
-</div>
-<div class="case-cell case-cell-ex">
-<div class="examples">
-<div class="ex">
+<section class="card-section">
+<div class="card-items">
+<div class="card-item">
 <div class="sr">
 1 000 ·
 <span lang="sr">
@@ -515,7 +503,7 @@
 </span>
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr">
 2 000 ·
 <span lang="sr">
@@ -526,7 +514,7 @@
 </span>
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr">
 3 000 ·
 <span lang="sr">
@@ -537,7 +525,7 @@
 </span>
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr">
 4 000 ·
 <span lang="sr">
@@ -548,7 +536,7 @@
 </span>
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr">
 5 000 ·
 <span lang="sr">
@@ -556,7 +544,7 @@
 </span>
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr">
 6 000 ·
 <span lang="sr">
@@ -564,7 +552,7 @@
 </span>
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr">
 7 000 ·
 <span lang="sr">
@@ -572,7 +560,7 @@
 </span>
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr">
 8 000 ·
 <span lang="sr">
@@ -580,7 +568,7 @@
 </span>
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr">
 9 000 ·
 <span lang="sr">
@@ -589,22 +577,20 @@
 </div>
 </div>
 </div>
-</div>
+</section>
 </article>
 </section>
-<article class="case-row num-build-card">
-<div class="case-cell case-cell-head">
-<header class="case-head">
-<div class="case-head-title">
+<article class="card num-build-card">
+<header class="card-head">
+<div class="card-title">
 <h3>
 Составные числа
 </h3>
 </div>
 </header>
-</div>
-<div class="case-cell case-cell-ex">
-<div class="examples">
-<div class="ex">
+<section class="card-section">
+<div class="card-items">
+<div class="card-item">
 <span class="num-value">
 101
 </span>
@@ -620,7 +606,7 @@
 </span>
 </span>
 </div>
-<div class="ex">
+<div class="card-item">
 <span class="num-value">
 125
 </span>
@@ -642,7 +628,7 @@
 </span>
 </span>
 </div>
-<div class="ex">
+<div class="card-item">
 <span class="num-value">
 2 345
 </span>
@@ -677,24 +663,20 @@
 </span>
 </div>
 </div>
-</div>
+</section>
 </article>
-<article class="case-row num-agreement-card">
-<div class="case-cell case-cell-head">
-<header class="case-head">
-<div class="case-head-title">
+<article class="card num-agreement-card">
+<header class="card-head">
+<div class="card-title">
 <h3>
 Согласование
 </h3>
 </div>
 </header>
-</div>
-<section class="num-agreement-nouns">
-<header class="case-cell-band">
-<h4 class="cell-axis">
+<section class="card-section num-agreement-nouns">
+<h4 class="card-section-label">
 Существительные
 </h4>
-</header>
 <div class="chart-table">
 <article class="chart-row num-band">
 <h5 class="num-band-head">
@@ -849,12 +831,10 @@ GEN
 </article>
 </div>
 </section>
-<section class="num-agreement-verbs">
-<header class="case-cell-band">
-<h4 class="cell-axis">
+<section class="card-section num-agreement-verbs">
+<h4 class="card-section-label">
 Глаголы
 </h4>
-</header>
 <div class="chart-table">
 <article class="chart-row num-band">
 <h5 class="num-band-head">
@@ -932,17 +912,15 @@ GEN
 </div>
 </section>
 </article>
-<article class="case-row num-ordinal-card">
-<div class="case-cell case-cell-head">
-<header class="case-head">
-<div class="case-head-title">
+<article class="card num-ordinal-card">
+<header class="card-head">
+<div class="card-title">
 <h3>
 Порядковые
 </h3>
 </div>
 </header>
-</div>
-<div class="case-cell num-ord-rule">
+<section class="card-section num-ord-rule">
 <div class="gender-run">
 <span class="ending-unit">
 <span class="eu-gender" data-gender="m">
@@ -986,10 +964,10 @@ GEN
 </i>
 .
 </p>
-</div>
-<div class="case-cell case-cell-ex">
-<div class="examples">
-<div class="ex">
+</section>
+<section class="card-section">
+<div class="card-items">
+<div class="card-item">
 <div class="sr">
 1. ·
 <span lang="sr">
@@ -997,7 +975,7 @@ GEN
 </span>
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr">
 2. ·
 <span lang="sr">
@@ -1005,7 +983,7 @@ GEN
 </span>
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr">
 3. ·
 <span lang="sr">
@@ -1013,7 +991,7 @@ GEN
 </span>
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr">
 4. ·
 <span lang="sr">
@@ -1021,7 +999,7 @@ GEN
 </span>
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr">
 5. ·
 <span lang="sr">
@@ -1029,7 +1007,7 @@ GEN
 </span>
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr">
 6. ·
 <span lang="sr">
@@ -1037,7 +1015,7 @@ GEN
 </span>
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr">
 7. ·
 <span lang="sr">
@@ -1045,7 +1023,7 @@ GEN
 </span>
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr">
 8. ·
 <span lang="sr">
@@ -1053,7 +1031,7 @@ GEN
 </span>
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr">
 9. ·
 <span lang="sr">
@@ -1061,7 +1039,7 @@ GEN
 </span>
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr">
 10. ·
 <span lang="sr">
@@ -1069,7 +1047,7 @@ GEN
 </span>
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr">
 20. ·
 <span lang="sr">
@@ -1077,7 +1055,7 @@ GEN
 </span>
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr">
 21. ·
 <span lang="sr">
@@ -1086,5 +1064,5 @@ GEN
 </div>
 </div>
 </div>
-</div>
+</section>
 </article>

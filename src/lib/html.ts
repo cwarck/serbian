@@ -45,8 +45,8 @@ export type Script = 'lat' | 'cyr';
    which one paints. The client never rewrites text.
 
    Deliberately `class="s"`, NOT `class="sr"` — `.sr` is a live block-level
-   specimen class (styles.css: .chart-example .sr, .ex .sr), and <i> markers
-   appear INSIDE translations, so a wrapper nested in .ex would inherit the
+   specimen class (styles.css: .chart-example .sr, .card-item .sr), and <i> markers
+   appear INSIDE translations, so a wrapper nested in .card-item would inherit the
    specimen treatment. Reusing <i> for the two variants inherits the existing
    serif base rule and preserves the <i>-means-Serbian invariant the validator
    already enforces. */
