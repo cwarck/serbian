@@ -113,7 +113,7 @@ export function chartBody(chart: Chart, mounts: Record<string, string>, route: R
     ${mount('caseList', chart, mounts)}
 
     <section class="case-extra" id="extra-pack" aria-label="Off-paradigm endings">
-      ${raw(`<div class="extra-pack" id="extraPack">${mounts['extraPack'] ?? ''}</div>`)}
+      ${raw(`<div class="card-list" id="extraPack">${mounts['extraPack'] ?? ''}</div>`)}
     </section>
 
   </div>

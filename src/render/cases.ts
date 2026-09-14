@@ -334,13 +334,15 @@ export const chart: Chart = {
   `.value).join('');
 
     const idGloss = t('cases.extra.gloss').value;
+    /* The off-paradigm pack is a run of untoned cards: the same shell as a
+       case, with the ink-soft bar the numbers cards use. */
     const idPanel = html`
-    <article class="extra-panel extra-panel-idecl">
-      <header class="extra-panel-head">
-        <h3 class="extra-panel-title" id="idecl-title">${srGrammarHTML(t('cases.extra.title').value)}</h3>
-        <span class="extra-panel-sub"><em lang="sr">${sr('ljubav')}</em>${idGloss ? raw(' · ' + idGloss) : ''}</span>
+    <article class="card" id="idecl">
+      <header class="card-head">
+        <div class="card-title"><h3 id="idecl-title">${srGrammarHTML(t('cases.extra.title').value)}</h3></div>
+        <p class="card-q"><strong lang="sr">${sr('ljubav')}</strong>${idGloss ? raw(' — ' + idGloss) : ''}</p>
       </header>
-      <div class="extra-panel-body">
+      <section class="card-section">
         <div class="i-decl-wrap" role="region" aria-labelledby="idecl-title" tabindex="0">
         <table class="i-decl">
           <thead>
@@ -353,7 +355,7 @@ export const chart: Chart = {
           <tbody>${raw(idRows)}</tbody>
         </table>
         </div>
-      </div>
+      </section>
     </article>
   `.value;
 
@@ -361,22 +363,20 @@ export const chart: Chart = {
       const items = w.examples.map(ex => {
         const hl = diffPair(ex.from, ex.to);
         return html`
-        <li>
-          <span class="from" lang="sr">${hl.from}</span>
-          <span class="arrow" aria-hidden="true">→</span>
-          <span class="to" lang="sr">${hl.to}</span>
-          <span class="gloss">${srGrammarHTML(ex[lang] || ex.en)}</span>
-        </li>
+          <div class="card-item">
+            <div class="sr"><span lang="sr">${hl.from}</span> <span class="arrow" aria-hidden="true">→</span> <span lang="sr">${hl.to}</span></div>
+            <div class="tr">${srGrammarHTML(ex[lang] || ex.en)}</div>
+          </div>
       `.value;
       }).join('');
       return html`
-      <article class="extra-panel">
-        <header class="extra-panel-head">
-          <h3 class="extra-panel-title">${srGrammarHTML(t(w.key + '.title').value)}</h3>
+      <article class="card">
+        <header class="card-head">
+          <div class="card-title"><h3>${srGrammarHTML(t(w.key + '.title').value)}</h3></div>
         </header>
-        <div class="extra-panel-body">
-          <ul class="wrinkle-list">${raw(items)}</ul>
-        </div>
+        <section class="card-section">
+          <div class="card-items">${raw(items)}</div>
+        </section>
       </article>
     `.value;
     }).join('');

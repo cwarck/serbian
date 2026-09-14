@@ -1584,7 +1584,7 @@ section { position: relative; }
 }
 /* Extra-table changed letters: colored regular serif, no tint, no italic —
    the hue alone marks the change (inherits serif/normal/400 from .from/.to). */
-.wrinkle-list .lit { color: var(--tone, var(--ink-soft)); }
+.card-item .lit { color: var(--tone, var(--ink-soft)); }
 
 /* Repeated items inside a card section — example sentences, number rows. */
 .card-items {
@@ -1645,56 +1645,11 @@ section { position: relative; }
 }
 
 /* -----------------------------------------------------------
-   Off-paradigm pack — i-declension + five wrinkles, stacked.
+   Off-paradigm pack — untoned cards after the seven cases.
    ----------------------------------------------------------- */
 .case-extra {
   padding-top: 3rem;
 }
-
-.extra-pack {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0;
-  border-top: 1px solid var(--hairline);
-  border-left: 1px solid var(--hairline);
-}
-
-.extra-panel {
-  border-right: 1px solid var(--hairline);
-  border-bottom: 1px solid var(--hairline);
-  padding: 1.4rem 1.4rem 1.6rem;
-  background: var(--paper);
-  display: flex; flex-direction: column;
-  min-width: 0;
-}
-
-.extra-panel-head { margin: 0 0 1rem; }
-.extra-panel-title {
-  font-weight: 400;
-  letter-spacing: -.012em;
-  line-height: var(--lh-snug);
-}
-.extra-panel-title .lit { white-space: nowrap; }
-.extra-panel-sub {
-  display: block;
-  margin-top: .35rem;
-  font-family: var(--ff-body);
-  font-size: var(--fs-label);
-  letter-spacing: var(--track-label);
-  text-transform: uppercase;
-  color: var(--ink-muted);
-}
-.extra-panel-sub em {
-  font-family: var(--ff-display);
-  font-style: normal;
-  font-weight: 400;
-  text-transform: none;
-  letter-spacing: -.005em;
-  font-size: var(--fs-body);
-  color: var(--ink);
-  margin-right: .25em;
-}
-.extra-panel-body { min-width: 0; }
 
 /* i-declension paradigm — Sg / Pl table. Case × number is 2D, so the
    table sits in a focusable horizontal-scroll pane; the panel header stays
@@ -1751,45 +1706,12 @@ section { position: relative; }
 .i-decl tbody tr:last-child th,
 .i-decl tbody tr:last-child td { border-bottom: 0; }
 
-/* Wrinkle list — from → to · gloss */
-.wrinkle-list {
-  list-style: none;
-  padding: 0; margin: 0;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0;
-}
-.wrinkle-list li {
-  display: flex;
-  align-items: baseline;
-  flex-wrap: wrap;
-  gap: .55rem;
-  padding: .6rem 0;
-  border-bottom: 1px dashed var(--hairline-soft);
-}
-.wrinkle-list li:last-child { border-bottom: 0; }
-
-.wrinkle-list .from,
-.wrinkle-list .to {
-  font-family: var(--ff-display);
-  font-style: normal;
-  font-weight: 400;
-  font-size: var(--fs-body);
-  color: var(--ink-muted);
-  letter-spacing: -.005em;
-}
-.wrinkle-list .arrow {
+/* Sound-change pair inside a card item: from → to on the specimen line. */
+.card-item .arrow {
   font-family: var(--ff-body);
   font-size: var(--fs-caption);
   color: var(--ink-faint);
-}
-.wrinkle-list .gloss {
-  font-family: var(--ff-body);
-  font-style: italic;
-  font-size: var(--fs-caption);
-  color: var(--ink-muted);
-  line-height: var(--lh-prose);
-  width: 100%;
+  margin-inline: .1em;
 }
 
 /* -----------------------------------------------------------

@@ -1368,22 +1368,24 @@ Prepositions
 </section>
 </article>
 ### mount extraPack
-<article class="extra-panel extra-panel-idecl">
-<header class="extra-panel-head">
-<h3 class="extra-panel-title" id="idecl-title">
+<article class="card" id="idecl">
+<header class="card-head">
+<div class="card-title">
+<h3 id="idecl-title">
 Feminines without
 <i lang="sr">
 -а
 </i>
 </h3>
-<span class="extra-panel-sub">
-<em lang="sr">
+</div>
+<p class="card-q">
+<strong lang="sr">
 љубав
-</em>
-· love
-</span>
+</strong>
+— love
+</p>
 </header>
-<div class="extra-panel-body">
+<section class="card-section">
 <div aria-labelledby="idecl-title" class="i-decl-wrap" role="region" tabindex="0">
 <table class="i-decl">
 <thead>
@@ -1507,18 +1509,21 @@ LOK
 </tbody>
 </table>
 </div>
-</div>
+</section>
 </article>
-<article class="extra-panel">
-<header class="extra-panel-head">
-<h3 class="extra-panel-title">
+<article class="card">
+<header class="card-head">
+<div class="card-title">
+<h3>
 Vanishing vowel
 </h3>
+</div>
 </header>
-<div class="extra-panel-body">
-<ul class="wrinkle-list">
-<li>
-<span class="from" lang="sr">
+<section class="card-section">
+<div class="card-items">
+<div class="card-item">
+<div class="sr">
+<span lang="sr">
 п
 <span class="lit">
 ас
@@ -1527,18 +1532,20 @@ Vanishing vowel
 <span aria-hidden="true" class="arrow">
 →
 </span>
-<span class="to" lang="sr">
+<span lang="sr">
 п
 <span class="lit">
 са
 </span>
 </span>
-<span class="gloss">
+</div>
+<div class="tr">
 dog · of the dog
-</span>
-</li>
-<li>
-<span class="from" lang="sr">
+</div>
+</div>
+<div class="card-item">
+<div class="sr">
+<span lang="sr">
 пос
 <span class="lit">
 ао
@@ -1547,18 +1554,20 @@ dog · of the dog
 <span aria-hidden="true" class="arrow">
 →
 </span>
-<span class="to" lang="sr">
+<span lang="sr">
 пос
 <span class="lit">
 ла
 </span>
 </span>
-<span class="gloss">
+</div>
+<div class="tr">
 job · of the job
-</span>
-</li>
-<li>
-<span class="from" lang="sr">
+</div>
+</div>
+<div class="card-item">
+<div class="sr">
+<span lang="sr">
 о
 <span class="lit">
 тац
@@ -1567,18 +1576,20 @@ job · of the job
 <span aria-hidden="true" class="arrow">
 →
 </span>
-<span class="to" lang="sr">
+<span lang="sr">
 о
 <span class="lit">
 ца
 </span>
 </span>
-<span class="gloss">
+</div>
+<div class="tr">
 father · of the father
-</span>
-</li>
-<li>
-<span class="from" lang="sr">
+</div>
+</div>
+<div class="card-item">
+<div class="sr">
+<span lang="sr">
 вред
 <span class="lit">
 ан
@@ -1587,22 +1598,24 @@ father · of the father
 <span aria-hidden="true" class="arrow">
 →
 </span>
-<span class="to" lang="sr">
+<span lang="sr">
 вред
 <span class="lit">
 ни
 </span>
 </span>
-<span class="gloss">
-hardworking (m.sg) · m.pl
-</span>
-</li>
-</ul>
 </div>
+<div class="tr">
+hardworking (m.sg) · m.pl
+</div>
+</div>
+</div>
+</section>
 </article>
-<article class="extra-panel">
-<header class="extra-panel-head">
-<h3 class="extra-panel-title">
+<article class="card">
+<header class="card-head">
+<div class="card-title">
+<h3>
 <i lang="sr">
 -ов-
 </i>
@@ -1612,98 +1625,110 @@ hardworking (m.sg) · m.pl
 </i>
 plural
 </h3>
+</div>
 </header>
-<div class="extra-panel-body">
-<ul class="wrinkle-list">
-<li>
-<span class="from" lang="sr">
+<section class="card-section">
+<div class="card-items">
+<div class="card-item">
+<div class="sr">
+<span lang="sr">
 син
 </span>
 <span aria-hidden="true" class="arrow">
 →
 </span>
-<span class="to" lang="sr">
+<span lang="sr">
 син
 <span class="lit">
 ови
 </span>
 </span>
-<span class="gloss">
+</div>
+<div class="tr">
 son · sons
-</span>
-</li>
-<li>
-<span class="from" lang="sr">
+</div>
+</div>
+<div class="card-item">
+<div class="sr">
+<span lang="sr">
 град
 </span>
 <span aria-hidden="true" class="arrow">
 →
 </span>
-<span class="to" lang="sr">
+<span lang="sr">
 град
 <span class="lit">
 ови
 </span>
 </span>
-<span class="gloss">
+</div>
+<div class="tr">
 city · cities
-</span>
-</li>
-<li>
-<span class="from" lang="sr">
+</div>
+</div>
+<div class="card-item">
+<div class="sr">
+<span lang="sr">
 муж
 </span>
 <span aria-hidden="true" class="arrow">
 →
 </span>
-<span class="to" lang="sr">
+<span lang="sr">
 муж
 <span class="lit">
 еви
 </span>
 </span>
-<span class="gloss">
+</div>
+<div class="tr">
 husband · husbands (soft →
 <i lang="sr">
 -ев-
 </i>
 )
-</span>
-</li>
-<li>
-<span class="from" lang="sr">
+</div>
+</div>
+<div class="card-item">
+<div class="sr">
+<span lang="sr">
 дан
 </span>
 <span aria-hidden="true" class="arrow">
 →
 </span>
-<span class="to" lang="sr">
+<span lang="sr">
 дан
 <span class="lit">
 и
 </span>
 </span>
-<span class="gloss">
+</div>
+<div class="tr">
 day · days (exception, plain
 <i lang="sr">
 -и
 </i>
 )
-</span>
-</li>
-</ul>
 </div>
+</div>
+</div>
+</section>
 </article>
-<article class="extra-panel">
-<header class="extra-panel-head">
-<h3 class="extra-panel-title">
+<article class="card">
+<header class="card-head">
+<div class="card-title">
+<h3>
 Irregulars
 </h3>
+</div>
 </header>
-<div class="extra-panel-body">
-<ul class="wrinkle-list">
-<li>
-<span class="from" lang="sr">
+<section class="card-section">
+<div class="card-items">
+<div class="card-item">
+<div class="sr">
+<span lang="sr">
 бра
 <span class="lit">
 т
@@ -1712,18 +1737,20 @@ Irregulars
 <span aria-hidden="true" class="arrow">
 →
 </span>
-<span class="to" lang="sr">
+<span lang="sr">
 бра
 <span class="lit">
 ћа
 </span>
 </span>
-<span class="gloss">
+</div>
+<div class="tr">
 brother → brothers (f.sg collective)
-</span>
-</li>
-<li>
-<span class="from" lang="sr">
+</div>
+</div>
+<div class="card-item">
+<div class="sr">
+<span lang="sr">
 <span class="lit">
 човек
 </span>
@@ -1731,17 +1758,19 @@ brother → brothers (f.sg collective)
 <span aria-hidden="true" class="arrow">
 →
 </span>
-<span class="to" lang="sr">
+<span lang="sr">
 <span class="lit">
 људи
 </span>
 </span>
-<span class="gloss">
+</div>
+<div class="tr">
 person → people (whole new word)
-</span>
-</li>
-<li>
-<span class="from" lang="sr">
+</div>
+</div>
+<div class="card-item">
+<div class="sr">
+<span lang="sr">
 де
 <span class="lit">
 те
@@ -1750,18 +1779,20 @@ person → people (whole new word)
 <span aria-hidden="true" class="arrow">
 →
 </span>
-<span class="to" lang="sr">
+<span lang="sr">
 де
 <span class="lit">
 ца
 </span>
 </span>
-<span class="gloss">
+</div>
+<div class="tr">
 child → children (f.sg collective)
-</span>
-</li>
-<li>
-<span class="from" lang="sr">
+</div>
+</div>
+<div class="card-item">
+<div class="sr">
+<span lang="sr">
 дрв
 <span class="lit">
 о
@@ -1770,52 +1801,58 @@ child → children (f.sg collective)
 <span aria-hidden="true" class="arrow">
 →
 </span>
-<span class="to" lang="sr">
+<span lang="sr">
 дрв
 <span class="lit">
 ета
 </span>
 </span>
-<span class="gloss">
+</div>
+<div class="tr">
 tree → of the tree (stem extends)
-</span>
-</li>
-<li>
-<span class="from" lang="sr">
+</div>
+</div>
+<div class="card-item">
+<div class="sr">
+<span lang="sr">
 име
 </span>
 <span aria-hidden="true" class="arrow">
 →
 </span>
-<span class="to" lang="sr">
+<span lang="sr">
 име
 <span class="lit">
 на
 </span>
 </span>
-<span class="gloss">
+</div>
+<div class="tr">
 name → names (n-stem extension)
-</span>
-</li>
-<li>
-<span class="from" lang="sr">
+</div>
+</div>
+<div class="card-item">
+<div class="sr">
+<span lang="sr">
 време
 </span>
 <span aria-hidden="true" class="arrow">
 →
 </span>
-<span class="to" lang="sr">
+<span lang="sr">
 време
 <span class="lit">
 на
 </span>
 </span>
-<span class="gloss">
+</div>
+<div class="tr">
 time → times (n-stem extension)
-</span>
-</li>
-<li>
-<span class="from" lang="sr">
+</div>
+</div>
+<div class="card-item">
+<div class="sr">
+<span lang="sr">
 рук
 <span class="lit">
 а
@@ -1824,18 +1861,20 @@ time → times (n-stem extension)
 <span aria-hidden="true" class="arrow">
 →
 </span>
-<span class="to" lang="sr">
+<span lang="sr">
 рук
 <span class="lit">
 у
 </span>
 </span>
-<span class="gloss">
+</div>
+<div class="tr">
 hand → of hands (special gen. pl.)
-</span>
-</li>
-<li>
-<span class="from" lang="sr">
+</div>
+</div>
+<div class="card-item">
+<div class="sr">
+<span lang="sr">
 ног
 <span class="lit">
 а
@@ -1844,39 +1883,43 @@ hand → of hands (special gen. pl.)
 <span aria-hidden="true" class="arrow">
 →
 </span>
-<span class="to" lang="sr">
+<span lang="sr">
 ног
 <span class="lit">
 у
 </span>
 </span>
-<span class="gloss">
+</div>
+<div class="tr">
 leg → of legs (special gen. pl.)
-</span>
-</li>
-<li>
-<span class="from" lang="sr">
+</div>
+</div>
+<div class="card-item">
+<div class="sr">
+<span lang="sr">
 сат
 </span>
 <span aria-hidden="true" class="arrow">
 →
 </span>
-<span class="to" lang="sr">
+<span lang="sr">
 сат
 <span class="lit">
 и
 </span>
 </span>
-<span class="gloss">
+</div>
+<div class="tr">
 hour → hours (no
 <i lang="sr">
 -ов-
 </i>
 infix)
-</span>
-</li>
-<li>
-<span class="from" lang="sr">
+</div>
+</div>
+<div class="card-item">
+<div class="sr">
+<span lang="sr">
 неб
 <span class="lit">
 о
@@ -1885,18 +1928,19 @@ infix)
 <span aria-hidden="true" class="arrow">
 →
 </span>
-<span class="to" lang="sr">
+<span lang="sr">
 неб
 <span class="lit">
 еса
 </span>
 </span>
-<span class="gloss">
-sky → skies (s-stem extension)
-</span>
-</li>
-</ul>
 </div>
+<div class="tr">
+sky → skies (s-stem extension)
+</div>
+</div>
+</div>
+</section>
 </article>
 ### popover [data-note-trigger]|[["data-case-idx","0"],["data-note-id","sib-i"],["data-note-trigger",null]]
 <article class="note-pop">
