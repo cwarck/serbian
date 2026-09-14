@@ -663,9 +663,9 @@ function validateSerbianContentScript() {
     });
   });
   verbs.IRREGULARS.forEach((row, rowIndex) => {
-    ['title', 'forms', 'full', 'short', 'negative', 'perfective', 'emphatic'].forEach(field => eachString(row[field], value => validateSerbianLatin(value, `irregulars[${rowIndex}].${field}`)));
+    ['title', 'forms', 'full', 'short', 'negative', 'perfective', 'conditional', 'emphatic'].forEach(field => eachString(row[field], value => validateSerbianLatin(value, `irregulars[${rowIndex}].${field}`)));
   });
-  [verbs.PAST, verbs.FUTURE, verbs.FUTURE2].forEach((tense, tenseIndex) => {
+  [verbs.PAST, verbs.FUTURE, verbs.FUTURE2, verbs.POTENCIJAL].forEach((tense, tenseIndex) => {
     expectTranslation(tense.meaning, `verbs.tense[${tenseIndex}]`, 'meaning');
     tense.formula.forEach((part, partIndex) => {
       const scope = `verbs.tense[${tenseIndex}].formula[${partIndex}]`;
@@ -1043,7 +1043,7 @@ function validatePronouns() {
 }
 
 function validateVerbs() {
-  const { PRONOUNS, VERB_GROUPS, IRREGULARS, PAST, FUTURE, FUTURE2, CLITICS } = data['src/content/verbs.ts'];
+  const { PRONOUNS, VERB_GROUPS, IRREGULARS, PAST, FUTURE, FUTURE2, POTENCIJAL, CLITICS } = data['src/content/verbs.ts'];
   expectArray(PRONOUNS, 'verbs', 'PRONOUNS');
   VERB_GROUPS.forEach((group, index) => {
     const scope = `verbGroups[${index}]`;
@@ -1058,7 +1058,7 @@ function validateVerbs() {
     expectString(row.title, scope, 'title');
     expect(['forms', 'full', 'short'].some(field => Array.isArray(row[field]) && row[field].length), scope, 'needs a present paradigm');
     expect(Array.isArray(row.negative), scope, 'negative must be array');
-    ['forms', 'full', 'short', 'perfective', 'emphatic'].forEach(field => {
+    ['forms', 'full', 'short', 'perfective', 'conditional', 'emphatic'].forEach(field => {
       if (row[field] !== undefined) expect(Array.isArray(row[field]) && row[field].length === 6, scope, `${field} must hold six person forms`);
     });
   });
@@ -1070,6 +1070,9 @@ function validateVerbs() {
   expectArray(FUTURE2.formula, 'verbs.FUTURE2', 'formula');
   expectArray(FUTURE2.examples, 'verbs.FUTURE2', 'examples');
   FUTURE2.examples.forEach((row, i) => expectTranslation({ en: row.en, ru: row.ru }, `verbs.FUTURE2.examples[${i}]`, 'tr'));
+  expectArray(POTENCIJAL.formula, 'verbs.POTENCIJAL', 'formula');
+  expectArray(POTENCIJAL.examples, 'verbs.POTENCIJAL', 'examples');
+  POTENCIJAL.examples.forEach((row, i) => expectTranslation({ en: row.en, ru: row.ru }, `verbs.POTENCIJAL.examples[${i}]`, 'tr'));
   CLITICS.forEach((row, i) => {
     const scope = `verbs.CLITICS[${i}]`;
     expect(/<mark>[^<]+<\/mark>/.test(row.sr), scope, 'sr must mark the clitic it exists to show');

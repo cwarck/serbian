@@ -1164,6 +1164,91 @@ Plural
 </tbody>
 </table>
 </section>
+<section class="card-section" id="aux-biti-conditional">
+<h4 class="card-section-label">
+Conditional
+</h4>
+<table class="verb-paradigm">
+<thead>
+<tr>
+<th scope="col">
+Singular
+</th>
+<th scope="col">
+Plural
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+ја
+</span>
+<span class="verb-form" lang="sr">
+бих
+</span>
+</div>
+</td>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+ми
+</span>
+<span class="verb-form" lang="sr">
+бисмо
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+ти
+</span>
+<span class="verb-form" lang="sr">
+би
+</span>
+</div>
+</td>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+ви
+</span>
+<span class="verb-form" lang="sr">
+бисте
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+он/она/оно
+</span>
+<span class="verb-form" lang="sr">
+би
+</span>
+</div>
+</td>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+они/оне/она
+</span>
+<span class="verb-form" lang="sr">
+би
+</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
 </article>
 <article class="card" data-tone="irr">
 <header class="card-head">
@@ -1872,6 +1957,85 @@ If you have time, come.
 </div>
 <div class="tr">
 As soon as we finish the work, we will get in touch.
+</div>
+</div>
+</div>
+</section>
+</article>
+<article class="card" data-tone="potencijal">
+<header class="card-head">
+<div class="card-title">
+<h3>
+<span lang="sr">
+Потенцијал
+</span>
+<em>
+Conditional
+</em>
+</h3>
+</div>
+</header>
+<section class="card-section">
+<h4 class="card-section-label">
+Meaning
+</h4>
+<p class="verb-prose">
+What you would do, or would like.
+</p>
+</section>
+<section class="card-section">
+<h4 class="card-section-label">
+Formula
+</h4>
+<p class="verb-formula">
+<a href="#aux-biti-conditional">
+<span lang="sr">
+бити (бих)
+</span>
+</a>
+<span class="chart-sep">
++
+</span>
+<span class="verb-term">
+past participle
+</span>
+</p>
+</section>
+<section class="card-section">
+<h4 class="card-section-label">
+Examples
+</h4>
+<div class="card-items">
+<div class="card-item">
+<div class="sr" lang="sr">
+Радио бих да имам времена.
+</div>
+<div class="tr">
+I would work if I had time.
+</div>
+</div>
+<div class="card-item">
+<div class="sr" lang="sr">
+Она би желела кафу.
+</div>
+<div class="tr">
+She would like a coffee.
+</div>
+</div>
+<div class="card-item">
+<div class="sr" lang="sr">
+Да ли бисте дошли?
+</div>
+<div class="tr">
+Would you come?
+</div>
+</div>
+<div class="card-item">
+<div class="sr" lang="sr">
+Не бисмо ишли.
+</div>
+<div class="tr">
+We would not go.
 </div>
 </div>
 </div>

@@ -1,7 +1,7 @@
 import { html, raw, sr, srHTML, srGrammarHTML, type Raw } from '../lib/html.ts';
 import type { Lang } from '../lib/negotiate.ts';
 import { translator } from '../i18n/index.ts';
-import { PRONOUNS, VERB_GROUPS, IRREGULARS, PAST, FUTURE, FUTURE2, CLITICS } from '../content/verbs.ts';
+import { PRONOUNS, VERB_GROUPS, IRREGULARS, PAST, FUTURE, FUTURE2, POTENCIJAL, CLITICS } from '../content/verbs.ts';
 import { GENDERS, type PersonForms, type VerbGroup, type Irregular, type AuxField, type FormulaPart, type Gender, type Number_ } from '../lib/types.ts';
 import { gloss, genderUnit, type Chart } from './chart.ts';
 
@@ -159,6 +159,7 @@ export const chart: Chart = {
         item.emphatic ? tipChip(t('verbs.emphatic'), `data-verb-tip="${idx}"`) : '')}
       ${paradigmSection(item, 'negative', 'verbs.negative')}
       ${paradigmSection(item, 'perfective', 'verbs.perfective')}
+      ${paradigmSection(item, 'conditional', 'verbs.conditional')}
     </article>
   `;
 
@@ -226,6 +227,17 @@ export const chart: Chart = {
     </article>
   `;
 
+    const potencijal = html`
+    <article class="card" data-tone="potencijal">
+      ${cardHead(sr('Potencijal'), t('verbs.conditional'))}
+      ${tenseLead(POTENCIJAL)}
+      <section class="card-section">
+        <h4 class="card-section-label">${t('cases.examples')}</h4>
+        <div class="card-items">${examples(POTENCIJAL.examples)}</div>
+      </section>
+    </article>
+  `;
+
     /* The placement rule is an explanation, so it lives behind the ? on the
        examples; the marked se in each example is the visible fact. */
     const clitics = html`
@@ -244,7 +256,7 @@ export const chart: Chart = {
   `;
 
     return {
-      verbGrid: [...VERB_GROUPS.map(regular), ...IRREGULARS.map(irregular), past, future, future2, clitics]
+      verbGrid: [...VERB_GROUPS.map(regular), ...IRREGULARS.map(irregular), past, future, future2, potencijal, clitics]
         .map(x => x.value).join(''),
     };
   },

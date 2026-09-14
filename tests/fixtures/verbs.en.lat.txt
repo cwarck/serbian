@@ -1164,6 +1164,91 @@ budu
 </tbody>
 </table>
 </section>
+<section class="card-section" id="aux-biti-conditional">
+<h4 class="card-section-label">
+Conditional
+</h4>
+<table class="verb-paradigm">
+<thead>
+<tr>
+<th scope="col">
+Singular
+</th>
+<th scope="col">
+Plural
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+ja
+</span>
+<span class="verb-form" lang="sr">
+bih
+</span>
+</div>
+</td>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+mi
+</span>
+<span class="verb-form" lang="sr">
+bismo
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+ti
+</span>
+<span class="verb-form" lang="sr">
+bi
+</span>
+</div>
+</td>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+vi
+</span>
+<span class="verb-form" lang="sr">
+biste
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+on/ona/ono
+</span>
+<span class="verb-form" lang="sr">
+bi
+</span>
+</div>
+</td>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+oni/one/ona
+</span>
+<span class="verb-form" lang="sr">
+bi
+</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
 </article>
 <article class="card" data-tone="irr">
 <header class="card-head">
@@ -1872,6 +1957,85 @@ If you have time, come.
 </div>
 <div class="tr">
 As soon as we finish the work, we will get in touch.
+</div>
+</div>
+</div>
+</section>
+</article>
+<article class="card" data-tone="potencijal">
+<header class="card-head">
+<div class="card-title">
+<h3>
+<span lang="sr">
+Potencijal
+</span>
+<em>
+Conditional
+</em>
+</h3>
+</div>
+</header>
+<section class="card-section">
+<h4 class="card-section-label">
+Meaning
+</h4>
+<p class="verb-prose">
+What you would do, or would like.
+</p>
+</section>
+<section class="card-section">
+<h4 class="card-section-label">
+Formula
+</h4>
+<p class="verb-formula">
+<a href="#aux-biti-conditional">
+<span lang="sr">
+biti (bih)
+</span>
+</a>
+<span class="chart-sep">
++
+</span>
+<span class="verb-term">
+past participle
+</span>
+</p>
+</section>
+<section class="card-section">
+<h4 class="card-section-label">
+Examples
+</h4>
+<div class="card-items">
+<div class="card-item">
+<div class="sr" lang="sr">
+Radio bih da imam vremena.
+</div>
+<div class="tr">
+I would work if I had time.
+</div>
+</div>
+<div class="card-item">
+<div class="sr" lang="sr">
+Ona bi želela kafu.
+</div>
+<div class="tr">
+She would like a coffee.
+</div>
+</div>
+<div class="card-item">
+<div class="sr" lang="sr">
+Da li biste došli?
+</div>
+<div class="tr">
+Would you come?
+</div>
+</div>
+<div class="card-item">
+<div class="sr" lang="sr">
+Ne bismo išli.
+</div>
+<div class="tr">
+We would not go.
 </div>
 </div>
 </div>

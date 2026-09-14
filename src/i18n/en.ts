@@ -101,6 +101,7 @@ export const en = {
   'verbs.past': 'Past',
   'verbs.future': 'Future I',
   'verbs.future2': 'Future II',
+  'verbs.conditional': 'Conditional',
   'verbs.fut2.title': 'Subordinate clauses',
   'verbs.fut2.body': 'The main clause often uses Futur I, but other forms are possible. A perfective verb in the subordinate clause can use its present form instead of Futur II.',
   'verbs.formula': 'Formula',

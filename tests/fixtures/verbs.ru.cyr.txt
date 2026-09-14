@@ -1164,6 +1164,91 @@
 </tbody>
 </table>
 </section>
+<section class="card-section" id="aux-biti-conditional">
+<h4 class="card-section-label">
+Условное наклонение
+</h4>
+<table class="verb-paradigm">
+<thead>
+<tr>
+<th scope="col">
+Ед. число
+</th>
+<th scope="col">
+Мн. число
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+ја
+</span>
+<span class="verb-form" lang="sr">
+бих
+</span>
+</div>
+</td>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+ми
+</span>
+<span class="verb-form" lang="sr">
+бисмо
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+ти
+</span>
+<span class="verb-form" lang="sr">
+би
+</span>
+</div>
+</td>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+ви
+</span>
+<span class="verb-form" lang="sr">
+бисте
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+он/она/оно
+</span>
+<span class="verb-form" lang="sr">
+би
+</span>
+</div>
+</td>
+<td>
+<div class="verb-cell">
+<span class="verb-pron" lang="sr">
+они/оне/она
+</span>
+<span class="verb-form" lang="sr">
+би
+</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
 </article>
 <article class="card" data-tone="irr">
 <header class="card-head">
@@ -1872,6 +1957,85 @@
 </div>
 <div class="tr">
 Как только закончим работу, мы свяжемся.
+</div>
+</div>
+</div>
+</section>
+</article>
+<article class="card" data-tone="potencijal">
+<header class="card-head">
+<div class="card-title">
+<h3>
+<span lang="sr">
+Потенцијал
+</span>
+<em>
+Условное наклонение
+</em>
+</h3>
+</div>
+</header>
+<section class="card-section">
+<h4 class="card-section-label">
+Значение
+</h4>
+<p class="verb-prose">
+Что сделали бы или хотели бы.
+</p>
+</section>
+<section class="card-section">
+<h4 class="card-section-label">
+Формула
+</h4>
+<p class="verb-formula">
+<a href="#aux-biti-conditional">
+<span lang="sr">
+бити (бих)
+</span>
+</a>
+<span class="chart-sep">
++
+</span>
+<span class="verb-term">
+причастие прошедшего времени
+</span>
+</p>
+</section>
+<section class="card-section">
+<h4 class="card-section-label">
+Примеры
+</h4>
+<div class="card-items">
+<div class="card-item">
+<div class="sr" lang="sr">
+Радио бих да имам времена.
+</div>
+<div class="tr">
+Я бы работал, если бы было время.
+</div>
+</div>
+<div class="card-item">
+<div class="sr" lang="sr">
+Она би желела кафу.
+</div>
+<div class="tr">
+Она бы хотела кофе.
+</div>
+</div>
+<div class="card-item">
+<div class="sr" lang="sr">
+Да ли бисте дошли?
+</div>
+<div class="tr">
+Вы бы пришли?
+</div>
+</div>
+<div class="card-item">
+<div class="sr" lang="sr">
+Не бисмо ишли.
+</div>
+<div class="tr">
+Мы бы не пошли.
 </div>
 </div>
 </div>

@@ -176,9 +176,12 @@ export interface Irregular {
   readonly perfective?: readonly string[];
   /* The stressed long forms (biti: jesam…), rare enough for a ? reveal. */
   readonly emphatic?: readonly string[];
+  /* The conditional clitics (biti: bih…), the Potencijal auxiliary. Not the
+     aorist: 3pl is bi, not biše. */
+  readonly conditional?: readonly string[];
 }
 
-export type AuxField = 'forms' | 'full' | 'short' | 'perfective';
+export type AuxField = 'forms' | 'full' | 'short' | 'perfective' | 'conditional';
 
 /* One token of a tense formula: a Serbian run, a translated term, a connector,
    or the auxiliary named by lemma plus the paradigm to use — rendered as

@@ -79,6 +79,7 @@ export const IRREGULARS = [
     short: ['sam', 'si', 'je', 'smo', 'ste', 'su'],
     negative: ['nisam', 'nisi', 'nije', 'nismo', 'niste', 'nisu'],
     perfective: ['budem', 'budeš', 'bude', 'budemo', 'budete', 'budu'],
+    conditional: ['bih', 'bi', 'bi', 'bismo', 'biste', 'bi'],
     emphatic: ['jesam', 'jesi', 'jeste', 'jesmo', 'jeste', 'jesu']
   },
   {
@@ -137,6 +138,20 @@ export const FUTURE2 = {
     { sr:'Kad budem imao vremena, doći ću.', en:'When I have time, I will come.', ru:'Когда у меня будет время, я приду.' },
     { sr:'Ako budeš imala vremena, dođi.', en:'If you have time, come.', ru:'Если у тебя будет время, приходи.' },
     { sr:'Čim budemo završili posao, javićemo se.', en:'As soon as we finish the work, we will get in touch.', ru:'Как только закончим работу, мы свяжемся.' },
+  ],
+};
+
+/* Potencijal is a mood: conditions, wishes, polite requests. Its auxiliary is
+   a clitic, so the examples double as placement facts; ne bih stays two words,
+   so no negated paradigm. */
+export const POTENCIJAL = {
+  meaning: { en:'What you would do, or would like.', ru:'Что сделали бы или хотели бы.' },
+  formula: [{ aux: { lemma:'biti', field:'conditional' } }, { text:'+' }, { key:'verbs.term.pastParticiple' }] satisfies readonly FormulaPart[],
+  examples: [
+    { sr:'Radio bih da imam vremena.', en:'I would work if I had time.', ru:'Я бы работал, если бы было время.' },
+    { sr:'Ona bi želela kafu.', en:'She would like a coffee.', ru:'Она бы хотела кофе.' },
+    { sr:'Da li biste došli?', en:'Would you come?', ru:'Вы бы пришли?' },
+    { sr:'Ne bismo išli.', en:'We would not go.', ru:'Мы бы не пошли.' },
   ],
 };
 

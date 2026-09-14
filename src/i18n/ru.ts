@@ -103,6 +103,7 @@ export const ru: Record<Key, string> = {
   'verbs.past': 'Прошедшее',
   'verbs.future': 'Будущее I',
   'verbs.future2': 'Будущее II',
+  'verbs.conditional': 'Условное наклонение',
   'verbs.fut2.title': 'Придаточные части',
   'verbs.fut2.body': 'В главной части часто стоит будущее время, но возможны и другие формы. Глагол совершенного вида в придаточной части может стоять в настоящем времени вместо Futur II.',
   'verbs.formula': 'Формула',
