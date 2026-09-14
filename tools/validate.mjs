@@ -661,8 +661,6 @@ function validateSerbianContentScript() {
       validateSerbianLatin(verb.lemma, `verbGroups[${groupIndex}].verbs[${i}].lemma`);
       validateSerbianLatin(verb.present, `verbGroups[${groupIndex}].verbs[${i}].present`);
     });
-    validateSerbianLatin(group.example.infinitive, `verbGroups[${groupIndex}].example.infinitive`);
-    eachString(group.example.forms, value => validateSerbianLatin(value, `verbGroups[${groupIndex}].example.forms`));
   });
   verbs.IRREGULARS.forEach((row, rowIndex) => {
     ['title', 'forms', 'negative', 'full'].forEach(field => eachString(row[field], value => validateSerbianLatin(value, `irregulars[${rowIndex}].${field}`)));
@@ -1042,12 +1040,11 @@ function validateVerbs() {
   expectArray(PRONOUNS, 'verbs', 'PRONOUNS');
   VERB_GROUPS.forEach((group, index) => {
     const scope = `verbGroups[${index}]`;
-    ['key', 'tone', 'title'].forEach(field => expectString(group[field], scope, field));
+    ['key', 'tone'].forEach(field => expectString(group[field], scope, field));
     expect(isObject(group.endings), scope, 'endings must be object');
     PRONOUNS.forEach(pronoun => expectString(group.endings[pronoun.key], scope, `endings.${pronoun.key}`));
     expectArray(group.patterns, scope, 'patterns');
     expectArray(group.verbs, scope, 'verbs');
-    expectString(group.example?.infinitive, scope, 'example.infinitive');
   });
   IRREGULARS.forEach((row, index) => {
     const scope = `irregulars[${index}]`;
@@ -1149,7 +1146,6 @@ function chartLemmas() {
   const verbs = data['src/content/verbs.ts'];
   verbs.VERB_GROUPS.forEach((group, gi) => {
     group.verbs.forEach((v, i) => add(v.lemma, `verbGroups[${gi}].verbs[${i}].lemma`));
-    add(group.example.infinitive, `verbGroups[${gi}].example.infinitive`);
   });
   verbs.IRREGULARS.forEach((row, i) => add(row.title, `irregulars[${i}].title`));
 

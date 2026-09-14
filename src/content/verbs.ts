@@ -13,7 +13,6 @@ export const VERB_GROUPS = [
   {
     key: 'verbs.group.im',
     tone: 'im',
-    title: 'IM | E',
     endings: { ja:'-im', ti:'-iš', on:'-i', mi:'-imo', vi:'-ite', oni:'-e' },
     patterns: ['-iti', '-eti'],
     verbs: [
@@ -24,16 +23,12 @@ export const VERB_GROUPS = [
       { lemma: 'voleti', present: 'volim' },
       { lemma: 'živeti', present: 'živim' },
       { lemma: 'sedeti', present: 'sedim' },
-    ],
-    example: {
-      infinitive: 'raditi',
-      forms: { ja:'radim', ti:'radiš', on:'radi', mi:'radimo', vi:'radite', oni:'rade' }
-    }
+    ]
   },
   {
     key: 'verbs.group.am',
     tone: 'am',
-    title: 'AM | AJU',
+    note: 'ati',
     endings: { ja:'-am', ti:'-aš', on:'-a', mi:'-amo', vi:'-ate', oni:'-aju' },
     patterns: ['-ati'],
     verbs: [
@@ -44,16 +39,12 @@ export const VERB_GROUPS = [
       { lemma: 'slušati', present: 'slušam' },
       { lemma: 'čekati', present: 'čekam' },
       { lemma: 'igrati', present: 'igram' },
-    ],
-    example: {
-      infinitive: 'čitati',
-      forms: { ja:'čitam', ti:'čitaš', on:'čita', mi:'čitamo', vi:'čitate', oni:'čitaju' }
-    }
+    ]
   },
   {
     key: 'verbs.group.em',
     tone: 'em',
-    title: 'EM | U',
+    note: 'ati',
     endings: { ja:'-em', ti:'-eš', on:'-e', mi:'-emo', vi:'-ete', oni:'-u' },
     patterns: ['-ati', '-ći'],
     verbs: [
@@ -64,16 +55,11 @@ export const VERB_GROUPS = [
       { lemma: 'prati', present: 'perem' },
       { lemma: 'kazati', present: 'kažem' },
       { lemma: 'plakati', present: 'plačem' },
-    ],
-    example: {
-      infinitive: 'lagati',
-      forms: { ja:'lažem', ti:'lažeš', on:'laže', mi:'lažemo', vi:'lažete', oni:'lažu' }
-    }
+    ]
   },
   {
     key: 'verbs.group.jem',
     tone: 'jem',
-    title: 'JEM | JU',
     endings: { ja:'-jem', ti:'-ješ', on:'-je', mi:'-jemo', vi:'-jete', oni:'-ju' },
     patterns: ['-ovati', '-ivati', '-avati'],
     verbs: [
@@ -83,11 +69,7 @@ export const VERB_GROUPS = [
       { lemma: 'verovati', present: 'verujem' },
       { lemma: 'pokazivati', present: 'pokazujem' },
       { lemma: 'prodavati', present: 'prodajem' },
-    ],
-    example: {
-      infinitive: 'kupovati',
-      forms: { ja:'kupujem', ti:'kupuješ', on:'kupuje', mi:'kupujemo', vi:'kupujete', oni:'kupuju' }
-    }
+    ]
   },
 ] satisfies readonly VerbGroup[];
 

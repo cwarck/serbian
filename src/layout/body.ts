@@ -186,6 +186,5 @@ const SIMPLE: Record<string, [string, string, string, string] | undefined> = {
   numbers: ['numbersChart', 'chart-layout num-layout', 'Serbian numbers and counting', 'page.numbers.h1'],
   'pitch-stress': ['pitchChart', 'chart-layout pitch-layout', 'Serbian pitch and stress', 'page.pitch.h1'],
   prepositions: ['prepChart', 'chart-layout prep-layout', 'Serbian prepositions', 'page.prepositions.h1'],
-  /* verbs is a panel grid, not a chart-layout. */
-  verbs: ['verbGrid', 'chart-panel-grid', 'Serbian verbs and conjugation', 'page.verbs.h1'],
+  verbs: ['verbGrid', 'card-list', 'Serbian verbs and conjugation', 'page.verbs.h1'],
 };

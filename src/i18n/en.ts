@@ -86,14 +86,14 @@ export const en = {
 
   /* Verbs page */
   'verbs.present': 'Present',
-  'verbs.tense': 'Tense',
   'verbs.endings': 'Endings',
-  'verbs.inf.cues': 'Inf cues',
+  'verbs.infinitive': 'Infinitive',
   'verbs.common': 'Common verbs',
-  'verbs.example': 'Example',
-  'verbs.irregulars': 'Irregular',
   'verbs.negative': 'Negative',
   'verbs.full.forms': 'full forms',
+  'verbs.note': 'note',
+  'verbs.ati.title': '<i>-ati</i>: check the present',
+  'verbs.ati.body': 'The infinitive ending alone does not pick the present pattern. Use the 1sg form beside each verb.',
   'verbs.past': 'Past',
   'verbs.future': 'Future',
   'verbs.formula': 'Formula',

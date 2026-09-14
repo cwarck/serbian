@@ -88,14 +88,14 @@ export const ru: Record<Key, string> = {
 
   /* Verbs */
   'verbs.present': 'Настоящее',
-  'verbs.tense': 'Время',
   'verbs.endings': 'Окончания',
-  'verbs.inf.cues': 'Инф. подсказки',
+  'verbs.infinitive': 'Инфинитив',
   'verbs.common': 'Частые глаголы',
-  'verbs.example': 'Пример',
-  'verbs.irregulars': 'Исключения',
   'verbs.negative': 'Отрицание',
   'verbs.full.forms': 'полные формы',
+  'verbs.note': 'примечание',
+  'verbs.ati.title': '<i>-ati</i>: смотрите на настоящее',
+  'verbs.ati.body': 'Одно окончание инфинитива не определяет тип настоящего. Ориентируйтесь на форму 1 л. ед. ч. рядом с каждым глаголом.',
   'verbs.past': 'Прошедшее',
   'verbs.future': 'Будущее',
   'verbs.formula': 'Формула',

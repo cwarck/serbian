@@ -30,7 +30,7 @@ Mobile-first Serbian cheat sheets. Legible at any resolution; no tiny elements.
 
 ### Card
 
-The universal chart block (`.card`, cases and numbers). New charts adopt it instead of inventing a shell.
+The universal chart block (`.card`: cases, numbers, verbs). New charts adopt it instead of inventing a shell.
 
 - Anatomy: `.card-head` (`.card-title` h3 + optional `.case-tag`, optional `.card-q`), then `.card-section`s. Cards stack in a `.card-list`.
 - A card's only boundary is its opening 3px tone bar (`.card::before`); it draws no closing rule. The next bar or the footer closes it. Card lists and `.num-layout` use gap 0.

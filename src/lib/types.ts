@@ -153,14 +153,15 @@ export interface VerbGroup {
   /* Present-tense buckets all carry the brand orange via [data-tone] — marker
      ink ("here's the live paradigm"), not a grammatical hue. */
   readonly tone: 'im' | 'am' | 'em' | 'jem';
-  readonly title: string;
   readonly endings: PersonForms;
   readonly patterns: readonly string[];
+  /* A `?` note on the cues, keyed verbs.<note>.title/body — set where a cue
+     does not pick the group by itself (-ati lands in both -am and -em). */
+  readonly note?: string;
   /* The 1sg present beside the lemma. Without it a learner reads the -em
      bucket and produces *pisem, *zvem, *brem — the stem mutations are the
      only hard part of the group and they were not on the chart. */
   readonly verbs: readonly { readonly lemma: string; readonly present: string }[];
-  readonly example: { readonly infinitive: string; readonly forms: PersonForms };
 }
 
 export interface Irregular {
