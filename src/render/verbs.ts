@@ -1,7 +1,7 @@
 import { html, raw, sr, srHTML, srGrammarHTML, type Raw } from '../lib/html.ts';
 import type { Lang } from '../lib/negotiate.ts';
 import { translator } from '../i18n/index.ts';
-import { PRONOUNS, VERB_GROUPS, IRREGULARS, PAST, FUTURE, CLITICS } from '../content/verbs.ts';
+import { PRONOUNS, VERB_GROUPS, IRREGULARS, PAST, FUTURE, FUTURE2, CLITICS } from '../content/verbs.ts';
 import { GENDERS, type PersonForms, type VerbGroup, type Irregular, type Gender, type Number_ } from '../lib/types.ts';
 import { gloss, genderUnit, type Chart } from './chart.ts';
 
@@ -48,9 +48,9 @@ function tipChip(label: Raw, attr: string): Raw {
   return raw(`<button class="tip-chip" type="button" aria-haspopup="dialog" aria-expanded="false" aria-label="${label.value}" ${attr}>?</button>`);
 }
 
-/* Every ? note the sheet can open: the groups' cue notes plus the clitic
-   rule. Keyed verbs.<note>.title / .body. */
-const NOTES = new Set<string>([...VERB_GROUPS.flatMap(g => g.note ? [g.note] : []), 'se']);
+/* Every ? note the sheet can open: the groups' cue notes, the clitic rule
+   and the Futur II usage note. Keyed verbs.<note>.title / .body. */
+const NOTES = new Set<string>([...VERB_GROUPS.flatMap(g => g.note ? [g.note] : []), 'se', 'fut2']);
 
 /* A group is named by its 1sg and 3pl endings: -im / -e. */
 function groupName(group: VerbGroup): string {
@@ -82,7 +82,10 @@ export const chart: Chart = {
        participle") is apparatus and the "+" a connector, so both speak sans. */
     const formula = (parts: readonly { sr?: string; key?: string; text?: string }[]) =>
       raw(parts.map(part => {
-        if (part.sr) return `<span lang="sr">${sr(part.sr).value}</span>`;
+        /* A six-form run (budem/budeš/…/budu) is one token to the line
+           breaker; a <wbr> after each slash lets it wrap between forms
+           instead of inside one. */
+        if (part.sr) return `<span lang="sr">${part.sr.split('/').map(f => sr(f).value).join('/<wbr>')}</span>`;
         if (part.key) return `<span class="verb-term">${t(part.key).value}</span>`;
         return part.text ? `<span class="chart-sep">${part.text}</span>` : '';
       }).join(' '));
@@ -157,7 +160,7 @@ export const chart: Chart = {
 
     const future = html`
     <article class="card" data-tone="future">
-      ${cardHead(sr('Futur'), t('verbs.future'))}
+      ${cardHead(sr('Futur I'), t('verbs.future'))}
       <section class="card-section">
         <h4 class="card-section-label">${t('verbs.formula')}</h4>
         <p class="verb-formula">${formula(FUTURE.formula)}</p>
@@ -173,6 +176,20 @@ export const chart: Chart = {
       <section class="card-section">
         <h4 class="card-section-label">${t('verbs.ici.exception')}</h4>
         <p class="verb-list" lang="sr">${srList(FUTURE.exceptions)}</p>
+      </section>
+    </article>
+  `;
+
+    const future2 = html`
+    <article class="card" data-tone="future">
+      ${cardHead(sr('Futur II'), t('verbs.future2'))}
+      <section class="card-section">
+        <h4 class="card-section-label">${t('verbs.formula')}</h4>
+        <p class="verb-formula">${formula(FUTURE2.formula)}</p>
+      </section>
+      <section class="card-section">
+        <h4 class="card-section-label">${t('cases.examples')}${tipChip(t('verbs.note'), 'data-verb-note="fut2"')}</h4>
+        <div class="card-items">${examples(FUTURE2.examples)}</div>
       </section>
     </article>
   `;
@@ -195,7 +212,7 @@ export const chart: Chart = {
   `;
 
     return {
-      verbGrid: [...VERB_GROUPS.map(regular), ...IRREGULARS.map(irregular), past, future, clitics]
+      verbGrid: [...VERB_GROUPS.map(regular), ...IRREGULARS.map(irregular), past, future, future2, clitics]
         .map(x => x.value).join(''),
     };
   },

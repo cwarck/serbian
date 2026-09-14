@@ -1382,7 +1382,22 @@ Perfekat
 </h4>
 <p class="verb-formula">
 <span lang="sr">
-sam/si/je/smo/ste/su
+sam/
+<wbr>
+</wbr>
+si/
+<wbr>
+</wbr>
+je/
+<wbr>
+</wbr>
+smo/
+<wbr>
+</wbr>
+ste/
+<wbr>
+</wbr>
+su
 </span>
 <span class="chart-sep">
 +
@@ -1486,7 +1501,7 @@ sam/si/je/smo/ste/su
 Gledao sam film.
 </div>
 <div class="tr">
-Я смотрел фильм. (м.)
+Я смотрел фильм.
 </div>
 </div>
 <div class="card-item">
@@ -1502,7 +1517,7 @@ Ja sam gledao film.
 Nisam gledao film.
 </div>
 <div class="tr">
-Я не смотрел фильм. (м.)
+Я не смотрел фильм.
 </div>
 </div>
 <div class="card-item">
@@ -1521,10 +1536,10 @@ Juče sam gledao film.
 <div class="card-title">
 <h3>
 <span lang="sr">
-Futur
+Futur I
 </span>
 <em>
-Будущее
+Будущее I
 </em>
 </h3>
 </div>
@@ -1535,7 +1550,22 @@ Futur
 </h4>
 <p class="verb-formula">
 <span lang="sr">
-ću/ćeš/će/ćemo/ćete/će
+ću/
+<wbr>
+</wbr>
+ćeš/
+<wbr>
+</wbr>
+će/
+<wbr>
+</wbr>
+ćemo/
+<wbr>
+</wbr>
+ćete/
+<wbr>
+</wbr>
+će
 </span>
 <span class="chart-sep">
 +
@@ -1593,6 +1623,85 @@ ići ću, doći ću
 </p>
 </section>
 </article>
+<article class="card" data-tone="future">
+<header class="card-head">
+<div class="card-title">
+<h3>
+<span lang="sr">
+Futur II
+</span>
+<em>
+Будущее II
+</em>
+</h3>
+</div>
+</header>
+<section class="card-section">
+<h4 class="card-section-label">
+Формула
+</h4>
+<p class="verb-formula">
+<span lang="sr">
+budem/
+<wbr>
+</wbr>
+budeš/
+<wbr>
+</wbr>
+bude/
+<wbr>
+</wbr>
+budemo/
+<wbr>
+</wbr>
+budete/
+<wbr>
+</wbr>
+budu
+</span>
+<span class="chart-sep">
++
+</span>
+<span class="verb-term">
+причастие прошедшего времени
+</span>
+</p>
+</section>
+<section class="card-section">
+<h4 class="card-section-label">
+Примеры
+<button aria-expanded="false" aria-haspopup="dialog" aria-label="примечание" class="tip-chip" data-verb-note="fut2" type="button">
+?
+</button>
+</h4>
+<div class="card-items">
+<div class="card-item">
+<div class="sr" lang="sr">
+Kad budem imao vremena, doći ću.
+</div>
+<div class="tr">
+Когда у меня будет время, я приду.
+</div>
+</div>
+<div class="card-item">
+<div class="sr" lang="sr">
+Ako budeš imala vremena, dođi.
+</div>
+<div class="tr">
+Если у тебя будет время, приходи.
+</div>
+</div>
+<div class="card-item">
+<div class="sr" lang="sr">
+Čim budemo završili posao, javićemo se.
+</div>
+<div class="tr">
+Как только закончим работу, мы свяжемся.
+</div>
+</div>
+</div>
+</section>
+</article>
 <article class="card verb-clitic" data-tone="clitic">
 <header class="card-head">
 <div class="card-title">
@@ -1601,7 +1710,7 @@ ići ću, doći ću
 se
 </span>
 <em>
-Возвратная клитика
+Возвратная частица
 </em>
 </h3>
 </div>
@@ -1635,7 +1744,7 @@ sam se
 šetao.
 </div>
 <div class="tr">
-Я гулял. (м.)
+Я гулял.
 </div>
 </div>
 <div class="card-item">
@@ -1647,7 +1756,7 @@ se
 šetao.
 </div>
 <div class="tr">
-Я не гулял. (м.)
+Я не гулял.
 </div>
 </div>
 </div>
@@ -1659,10 +1768,19 @@ se
 <i lang="sr">
 -ati
 </i>
-: смотрите на настоящее
+: форма настоящего
 </h4>
 <p>
-Одно окончание инфинитива не определяет тип настоящего. Ориентируйтесь на форму 1 л. ед. ч. рядом с каждым глаголом.
+По окончанию инфинитива группу не определить. Смотрите на форму 1-го лица единственного числа настоящего времени рядом с глаголом.
+</p>
+</article>
+### popover [data-verb-note]|[["data-verb-note","fut2"]]
+<article class="chart-tip">
+<h4>
+Придаточные части
+</h4>
+<p>
+Обозначает будущее условие или время действия в придаточной части. В главной части часто стоит Futur I, но возможны и другие формы; в придаточной может стоять и настоящее совершенного вида.
 </p>
 </article>
 ### popover [data-verb-note]|[["data-verb-note","se"]]
@@ -1671,15 +1789,15 @@ se
 Вторая позиция
 </h4>
 <p>
-Клитики образуют одну группу сразу после первого слова или группы слов предложения. Внутри неё вспомогательный глагол стоит перед
+Короткие безударные слова — клитики — обычно стоят одной группой после первого слова или словосочетания в своей части предложения. Перед
 <i lang="sr">
 se
 </i>
-;
+могут стоять другие клитики. С
 <i lang="sr">
 se
 </i>
-никогда не открывает предложение.
+эту часть предложения не начинают.
 </p>
 </article>
 ### popover [data-verb-tip]|[["data-verb-tip","0"]]

@@ -1382,7 +1382,22 @@ Formula
 </h4>
 <p class="verb-formula">
 <span lang="sr">
-сам/си/је/смо/сте/су
+сам/
+<wbr>
+</wbr>
+си/
+<wbr>
+</wbr>
+је/
+<wbr>
+</wbr>
+смо/
+<wbr>
+</wbr>
+сте/
+<wbr>
+</wbr>
+су
 </span>
 <span class="chart-sep">
 +
@@ -1486,7 +1501,7 @@ Placement
 Гледао сам филм.
 </div>
 <div class="tr">
-I watched a film. (m.)
+I watched a film.
 </div>
 </div>
 <div class="card-item">
@@ -1502,7 +1517,7 @@ I watched a film.
 Нисам гледао филм.
 </div>
 <div class="tr">
-I did not watch a film. (m.)
+I did not watch a film.
 </div>
 </div>
 <div class="card-item">
@@ -1521,10 +1536,10 @@ Yesterday I watched a film.
 <div class="card-title">
 <h3>
 <span lang="sr">
-Футур
+Футур И
 </span>
 <em>
-Future
+Future I
 </em>
 </h3>
 </div>
@@ -1535,7 +1550,22 @@ Formula
 </h4>
 <p class="verb-formula">
 <span lang="sr">
-ћу/ћеш/ће/ћемо/ћете/ће
+ћу/
+<wbr>
+</wbr>
+ћеш/
+<wbr>
+</wbr>
+ће/
+<wbr>
+</wbr>
+ћемо/
+<wbr>
+</wbr>
+ћете/
+<wbr>
+</wbr>
+ће
 </span>
 <span class="chart-sep">
 +
@@ -1593,6 +1623,85 @@ Merged forms
 </p>
 </section>
 </article>
+<article class="card" data-tone="future">
+<header class="card-head">
+<div class="card-title">
+<h3>
+<span lang="sr">
+Футур ИИ
+</span>
+<em>
+Future II
+</em>
+</h3>
+</div>
+</header>
+<section class="card-section">
+<h4 class="card-section-label">
+Formula
+</h4>
+<p class="verb-formula">
+<span lang="sr">
+будем/
+<wbr>
+</wbr>
+будеш/
+<wbr>
+</wbr>
+буде/
+<wbr>
+</wbr>
+будемо/
+<wbr>
+</wbr>
+будете/
+<wbr>
+</wbr>
+буду
+</span>
+<span class="chart-sep">
++
+</span>
+<span class="verb-term">
+past participle
+</span>
+</p>
+</section>
+<section class="card-section">
+<h4 class="card-section-label">
+Examples
+<button aria-expanded="false" aria-haspopup="dialog" aria-label="note" class="tip-chip" data-verb-note="fut2" type="button">
+?
+</button>
+</h4>
+<div class="card-items">
+<div class="card-item">
+<div class="sr" lang="sr">
+Кад будем имао времена, доћи ћу.
+</div>
+<div class="tr">
+When I have time, I will come.
+</div>
+</div>
+<div class="card-item">
+<div class="sr" lang="sr">
+Ако будеш имала времена, дођи.
+</div>
+<div class="tr">
+If you have time, come.
+</div>
+</div>
+<div class="card-item">
+<div class="sr" lang="sr">
+Чим будемо завршили посао, јавићемо се.
+</div>
+<div class="tr">
+As soon as we finish the work, we will get in touch.
+</div>
+</div>
+</div>
+</section>
+</article>
 <article class="card verb-clitic" data-tone="clitic">
 <header class="card-head">
 <div class="card-title">
@@ -1635,7 +1744,7 @@ I take a walk.
 шетао.
 </div>
 <div class="tr">
-I took a walk. (m.)
+I took a walk.
 </div>
 </div>
 <div class="card-item">
@@ -1647,7 +1756,7 @@ I took a walk. (m.)
 шетао.
 </div>
 <div class="tr">
-I did not take a walk. (m.)
+I did not take a walk.
 </div>
 </div>
 </div>
@@ -1665,21 +1774,30 @@ I did not take a walk. (m.)
 The infinitive ending alone does not pick the present pattern. Use the 1sg form beside each verb.
 </p>
 </article>
+### popover [data-verb-note]|[["data-verb-note","fut2"]]
+<article class="chart-tip">
+<h4>
+Subordinate clauses
+</h4>
+<p>
+Marks a future condition or time in a subordinate clause. The main clause often takes Futur I, but other forms are possible, and a perfective present can stand in the subordinate clause too.
+</p>
+</article>
 ### popover [data-verb-note]|[["data-verb-note","se"]]
 <article class="chart-tip">
 <h4>
 Second position
 </h4>
 <p>
-Clitics form one group right after the first word or phrase of the clause. Inside the group an auxiliary comes before
+Clitics, the short unstressed words, normally stand as one group after the first word or phrase of their clause. Other clitics may come before
 <i lang="sr">
 се
 </i>
-;
+. A clause never opens with
 <i lang="sr">
 се
 </i>
-never opens the clause.
+.
 </p>
 </article>
 ### popover [data-verb-tip]|[["data-verb-tip","0"]]

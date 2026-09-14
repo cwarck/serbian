@@ -95,9 +95,9 @@ export const IRREGULARS = [
 export const PAST = {
   formula: [{ sr:'sam/si/je/smo/ste/su' }, { text:'+' }, { key:'verbs.term.pastParticiple' }],
   examples: [
-    { sr:'Gledao sam film.', en:'I watched a film. (m.)', ru:'Я смотрел фильм. (м.)' },
+    { sr:'Gledao sam film.', en:'I watched a film.', ru:'Я смотрел фильм.' },
     { sr:'Ja sam gledao film.', en:'I watched a film.', ru:'Я смотрел фильм.' },
-    { sr:'Nisam gledao film.', en:'I did not watch a film. (m.)', ru:'Я не смотрел фильм. (м.)' },
+    { sr:'Nisam gledao film.', en:'I did not watch a film.', ru:'Я не смотрел фильм.' },
     { sr:'Juče sam gledao film.', en:'Yesterday I watched a film.', ru:'Вчера я смотрел фильм.' },
   ],
   endings: [
@@ -121,12 +121,24 @@ export const FUTURE = {
   exceptions: ['ići ću', 'doći ću'],
 };
 
+/* Futur II: the same agreeing participle as the Perfekat, so its endings are
+   not repeated here — the formula names the participle and the Perfekat bands
+   hold the six forms. */
+export const FUTURE2 = {
+  formula: [{ sr:'budem/budeš/bude/budemo/budete/budu' }, { text:'+' }, { key:'verbs.term.pastParticiple' }],
+  examples: [
+    { sr:'Kad budem imao vremena, doći ću.', en:'When I have time, I will come.', ru:'Когда у меня будет время, я приду.' },
+    { sr:'Ako budeš imala vremena, dođi.', en:'If you have time, come.', ru:'Если у тебя будет время, приходи.' },
+    { sr:'Čim budemo završili posao, javićemo se.', en:'As soon as we finish the work, we will get in touch.', ru:'Как только закончим работу, мы свяжемся.' },
+  ],
+};
+
 /* Clitic placement is not a tense fact — these examples are present and past,
    so they get their own card instead of riding inside FUTURE. <mark> isolates
    the clitic group; the word before it is whatever came first, and inside
    the group the auxiliary precedes se. */
 export const CLITICS = [
   { sr:'Šetam <mark>se</mark>.', en:'I take a walk.', ru:'Я гуляю.' },
-  { sr:'Ja <mark>sam se</mark> šetao.', en:'I took a walk. (m.)', ru:'Я гулял. (м.)' },
-  { sr:'Nisam <mark>se</mark> šetao.', en:'I did not take a walk. (m.)', ru:'Я не гулял. (м.)' },
+  { sr:'Ja <mark>sam se</mark> šetao.', en:'I took a walk.', ru:'Я гулял.' },
+  { sr:'Nisam <mark>se</mark> šetao.', en:'I did not take a walk.', ru:'Я не гулял.' },
 ];

@@ -121,7 +121,7 @@ function collectDataI18nKeys() {
   pronouns.QUESTIONS.whoWhat.forEach(row => add(row.key));
 
   const verbs = data['src/content/verbs.ts'];
-  for (const part of [...verbs.PAST.formula, ...verbs.FUTURE.formula]) {
+  for (const part of [...verbs.PAST.formula, ...verbs.FUTURE.formula, ...verbs.FUTURE2.formula]) {
     if (part.key) add(part.key);
   }
   verbs.PAST.endings.forEach(row => add(row.key));
@@ -665,7 +665,7 @@ function validateSerbianContentScript() {
   verbs.IRREGULARS.forEach((row, rowIndex) => {
     ['title', 'forms', 'negative', 'full'].forEach(field => eachString(row[field], value => validateSerbianLatin(value, `irregulars[${rowIndex}].${field}`)));
   });
-  [verbs.PAST, verbs.FUTURE].forEach((tense, tenseIndex) => {
+  [verbs.PAST, verbs.FUTURE, verbs.FUTURE2].forEach((tense, tenseIndex) => {
     tense.formula.forEach((part, partIndex) => {
       if (part.sr) validateSerbianLatin(part.sr, `verbs.tense[${tenseIndex}].formula[${partIndex}].sr`);
     });
@@ -1036,7 +1036,7 @@ function validatePronouns() {
 }
 
 function validateVerbs() {
-  const { PRONOUNS, VERB_GROUPS, IRREGULARS, PAST, FUTURE, CLITICS } = data['src/content/verbs.ts'];
+  const { PRONOUNS, VERB_GROUPS, IRREGULARS, PAST, FUTURE, FUTURE2, CLITICS } = data['src/content/verbs.ts'];
   expectArray(PRONOUNS, 'verbs', 'PRONOUNS');
   VERB_GROUPS.forEach((group, index) => {
     const scope = `verbGroups[${index}]`;
@@ -1057,6 +1057,9 @@ function validateVerbs() {
   expectArray(PAST.endings, 'verbs.PAST', 'endings');
   expectArray(FUTURE.formula, 'verbs.FUTURE', 'formula');
   expectArray(FUTURE.examples, 'verbs.FUTURE', 'examples');
+  expectArray(FUTURE2.formula, 'verbs.FUTURE2', 'formula');
+  expectArray(FUTURE2.examples, 'verbs.FUTURE2', 'examples');
+  FUTURE2.examples.forEach((row, i) => expectTranslation({ en: row.en, ru: row.ru }, `verbs.FUTURE2.examples[${i}]`, 'tr'));
   CLITICS.forEach((row, i) => {
     const scope = `verbs.CLITICS[${i}]`;
     expect(/<mark>[^<]+<\/mark>/.test(row.sr), scope, 'sr must mark the clitic it exists to show');
