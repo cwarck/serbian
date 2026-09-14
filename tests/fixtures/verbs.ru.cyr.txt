@@ -1663,34 +1663,34 @@
 <div class="card-items">
 <div class="card-item">
 <div class="sr" lang="sr">
-Гледао сам филм.
+Гледао си филм.
 </div>
 <div class="tr">
-Я смотрел фильм.
+Ты смотрел фильм.
 </div>
 </div>
 <div class="card-item">
 <div class="sr" lang="sr">
-Ја сам гледао филм.
+Она је гледала филм.
 </div>
 <div class="tr">
-Я смотрел фильм.
+Она смотрела фильм.
 </div>
 </div>
 <div class="card-item">
 <div class="sr" lang="sr">
-Нисам гледао филм.
+Нисмо гледали филм.
 </div>
 <div class="tr">
-Я не смотрел фильм.
+Мы не смотрели фильм.
 </div>
 </div>
 <div class="card-item">
 <div class="sr" lang="sr">
-Јуче сам гледао филм.
+Јуче су гледали филм.
 </div>
 <div class="tr">
-Вчера я смотрел фильм.
+Вчера они смотрели фильм.
 </div>
 </div>
 </div>
@@ -1742,26 +1742,26 @@
 <div class="card-items">
 <div class="card-item">
 <div class="sr" lang="sr">
-Ја ћу радити.
+Они ће радити.
 </div>
 <div class="tr">
-Я буду работать.
+Они будут работать.
 </div>
 </div>
 <div class="card-item">
 <div class="sr" lang="sr">
-Радићу.
+Радићеш.
 </div>
 <div class="tr">
-Я буду работать.
+Ты будешь работать.
 </div>
 </div>
 <div class="card-item">
 <div class="sr" lang="sr">
-Нећу радити.
+Нећемо радити.
 </div>
 <div class="tr">
-Я не буду работать.
+Мы не будем работать.
 </div>
 </div>
 </div>

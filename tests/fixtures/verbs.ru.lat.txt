@@ -1663,34 +1663,34 @@ biti (sam)
 <div class="card-items">
 <div class="card-item">
 <div class="sr" lang="sr">
-Gledao sam film.
+Gledao si film.
 </div>
 <div class="tr">
-Я смотрел фильм.
+Ты смотрел фильм.
 </div>
 </div>
 <div class="card-item">
 <div class="sr" lang="sr">
-Ja sam gledao film.
+Ona je gledala film.
 </div>
 <div class="tr">
-Я смотрел фильм.
+Она смотрела фильм.
 </div>
 </div>
 <div class="card-item">
 <div class="sr" lang="sr">
-Nisam gledao film.
+Nismo gledali film.
 </div>
 <div class="tr">
-Я не смотрел фильм.
+Мы не смотрели фильм.
 </div>
 </div>
 <div class="card-item">
 <div class="sr" lang="sr">
-Juče sam gledao film.
+Juče su gledali film.
 </div>
 <div class="tr">
-Вчера я смотрел фильм.
+Вчера они смотрели фильм.
 </div>
 </div>
 </div>
@@ -1742,26 +1742,26 @@ hteti (ću)
 <div class="card-items">
 <div class="card-item">
 <div class="sr" lang="sr">
-Ja ću raditi.
+Oni će raditi.
 </div>
 <div class="tr">
-Я буду работать.
+Они будут работать.
 </div>
 </div>
 <div class="card-item">
 <div class="sr" lang="sr">
-Radiću.
+Radićeš.
 </div>
 <div class="tr">
-Я буду работать.
+Ты будешь работать.
 </div>
 </div>
 <div class="card-item">
 <div class="sr" lang="sr">
-Neću raditi.
+Nećemo raditi.
 </div>
 <div class="tr">
-Я не буду работать.
+Мы не будем работать.
 </div>
 </div>
 </div>

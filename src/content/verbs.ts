@@ -100,10 +100,10 @@ export const PAST = {
   meaning: { en:'The usual tense for past actions and states.', ru:'Основное время для действий и состояний в прошлом.' },
   formula: [{ aux: { lemma:'biti', field:'short' } }, { text:'+' }, { key:'verbs.term.pastParticiple' }] satisfies readonly FormulaPart[],
   examples: [
-    { sr:'Gledao sam film.', en:'I watched a film.', ru:'Я смотрел фильм.' },
-    { sr:'Ja sam gledao film.', en:'I watched a film.', ru:'Я смотрел фильм.' },
-    { sr:'Nisam gledao film.', en:'I did not watch a film.', ru:'Я не смотрел фильм.' },
-    { sr:'Juče sam gledao film.', en:'Yesterday I watched a film.', ru:'Вчера я смотрел фильм.' },
+    { sr:'Gledao si film.', en:'You watched a film.', ru:'Ты смотрел фильм.' },
+    { sr:'Ona je gledala film.', en:'She watched a film.', ru:'Она смотрела фильм.' },
+    { sr:'Nismo gledali film.', en:'We did not watch a film.', ru:'Мы не смотрели фильм.' },
+    { sr:'Juče su gledali film.', en:'Yesterday they watched a film.', ru:'Вчера они смотрели фильм.' },
   ],
   endings: [
     { key:'past.msg', ending:'-o' },
@@ -119,9 +119,9 @@ export const FUTURE = {
   meaning: { en:'The usual tense for future actions and states.', ru:'Основное время для будущих действий и состояний.' },
   formula: [{ aux: { lemma:'hteti', field:'short' } }, { text:'+' }, { key:'verbs.term.infinitive' }] satisfies readonly FormulaPart[],
   examples: [
-    { sr:'Ja ću raditi.', en:'I will work.', ru:'Я буду работать.' },
-    { sr:'Radiću.', en:'I will work.', ru:'Я буду работать.' },
-    { sr:'Neću raditi.', en:'I will not work.', ru:'Я не буду работать.' },
+    { sr:'Oni će raditi.', en:'They will work.', ru:'Они будут работать.' },
+    { sr:'Radićeš.', en:'You will work.', ru:'Ты будешь работать.' },
+    { sr:'Nećemo raditi.', en:'We will not work.', ru:'Мы не будем работать.' },
   ],
   merged: { from:'raditi', to:['radiću', 'radićeš', 'radiće'] },
   exceptions: ['ići ću', 'doći ću'],

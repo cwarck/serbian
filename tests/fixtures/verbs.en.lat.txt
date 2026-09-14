@@ -1663,34 +1663,34 @@ Placement
 <div class="card-items">
 <div class="card-item">
 <div class="sr" lang="sr">
-Gledao sam film.
+Gledao si film.
 </div>
 <div class="tr">
-I watched a film.
+You watched a film.
 </div>
 </div>
 <div class="card-item">
 <div class="sr" lang="sr">
-Ja sam gledao film.
+Ona je gledala film.
 </div>
 <div class="tr">
-I watched a film.
+She watched a film.
 </div>
 </div>
 <div class="card-item">
 <div class="sr" lang="sr">
-Nisam gledao film.
+Nismo gledali film.
 </div>
 <div class="tr">
-I did not watch a film.
+We did not watch a film.
 </div>
 </div>
 <div class="card-item">
 <div class="sr" lang="sr">
-Juče sam gledao film.
+Juče su gledali film.
 </div>
 <div class="tr">
-Yesterday I watched a film.
+Yesterday they watched a film.
 </div>
 </div>
 </div>
@@ -1742,26 +1742,26 @@ Placement / spelling
 <div class="card-items">
 <div class="card-item">
 <div class="sr" lang="sr">
-Ja ću raditi.
+Oni će raditi.
 </div>
 <div class="tr">
-I will work.
+They will work.
 </div>
 </div>
 <div class="card-item">
 <div class="sr" lang="sr">
-Radiću.
+Radićeš.
 </div>
 <div class="tr">
-I will work.
+You will work.
 </div>
 </div>
 <div class="card-item">
 <div class="sr" lang="sr">
-Neću raditi.
+Nećemo raditi.
 </div>
 <div class="tr">
-I will not work.
+We will not work.
 </div>
 </div>
 </div>
