@@ -49,10 +49,9 @@ LOK
 </a>
 </li>
 ### mount caseList
-<article class="case-row" data-tone="nom" id="case-1">
-<div class="case-cell case-cell-head">
-<header class="case-head">
-<div class="case-head-title">
+<article class="card" data-tone="nom" id="case-1">
+<header class="card-head">
+<div class="card-title">
 <h3>
 <span lang="sr">
 Nominativ
@@ -65,20 +64,17 @@ Nominativ
 NOM
 </span>
 </div>
-<p class="q">
+<p class="card-q">
 <strong lang="sr">
 ko? / šta?
 </strong>
 — кто, что.
 </p>
 </header>
-</div>
-<div class="case-cell case-cell-band" data-band="sg">
-<span class="cell-axis">
+<section class="card-section" data-band="sg">
+<h4 class="card-section-label">
 Ед. число
-</span>
-</div>
-<div class="case-cell case-cell-end" data-band="sg">
+</h4>
 <div class="gender-run">
 <span class="ending-unit">
 <span class="eu-gender" data-gender="m">
@@ -111,13 +107,11 @@ ko? / šta?
 </span>
 </span>
 </div>
-</div>
-<div class="case-cell case-cell-band" data-band="pl">
-<span class="cell-axis">
+</section>
+<section class="card-section" data-band="pl">
+<h4 class="card-section-label">
 Мн. число
-</span>
-</div>
-<div class="case-cell case-cell-end" data-band="pl">
+</h4>
 <div class="gender-run">
 <span class="ending-unit">
 <span class="eu-gender" data-gender="m">
@@ -153,13 +147,13 @@ ko? / šta?
 </span>
 </span>
 </div>
-</div>
-<div class="case-cell case-cell-ex">
-<span class="cell-axis">
+</section>
+<section class="card-section">
+<h4 class="card-section-label">
 Примеры
-</span>
-<div class="examples">
-<div class="ex">
+</h4>
+<div class="card-items">
+<div class="card-item">
 <div class="sr" lang="sr">
 <mark>
 Dobar pilot
@@ -170,7 +164,7 @@ proverava instrumente.
 Хороший пилот проверяет приборы.
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr" lang="sr">
 <mark>
 Žena
@@ -181,7 +175,7 @@ peva.
 Женщина поёт.
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr" lang="sr">
 <mark>
 Selo
@@ -193,14 +187,11 @@ je tiho.
 </div>
 </div>
 </div>
-</div>
-<div aria-hidden="true" class="case-cell case-cell-preps is-empty">
-</div>
+</section>
 </article>
-<article class="case-row" data-tone="gen" id="case-2">
-<div class="case-cell case-cell-head">
-<header class="case-head">
-<div class="case-head-title">
+<article class="card" data-tone="gen" id="case-2">
+<header class="card-head">
+<div class="card-title">
 <h3>
 <span lang="sr">
 Genitiv
@@ -213,20 +204,17 @@ Genitiv
 GEN
 </span>
 </div>
-<p class="q">
+<p class="card-q">
 <strong lang="sr">
 koga? / čega?
 </strong>
 — кого, чего.
 </p>
 </header>
-</div>
-<div class="case-cell case-cell-band" data-band="sg">
-<span class="cell-axis">
+<section class="card-section" data-band="sg">
+<h4 class="card-section-label">
 Ед. число
-</span>
-</div>
-<div class="case-cell case-cell-end" data-band="sg">
+</h4>
 <div class="gender-run">
 <span class="ending-unit">
 <span class="eu-gender" data-gender="m">
@@ -255,13 +243,11 @@ koga? / čega?
 </span>
 </span>
 </div>
-</div>
-<div class="case-cell case-cell-band" data-band="pl">
-<span class="cell-axis">
+</section>
+<section class="card-section" data-band="pl">
+<h4 class="card-section-label">
 Мн. число
-</span>
-</div>
-<div class="case-cell case-cell-end" data-band="pl">
+</h4>
 <div class="gender-run">
 <span class="ending-unit">
 <span class="eu-gender" data-gender="m">
@@ -271,6 +257,9 @@ koga? / čega?
 <span lang="sr">
 -a
 </span>
+<button aria-expanded="false" aria-haspopup="dialog" aria-label="Вставная -a и старое -iju" class="tip-chip cell-note" data-case-idx="1" data-note-id="gen-pl" data-note-trigger type="button">
+?
+</button>
 </span>
 </span>
 <span class="ending-unit">
@@ -281,6 +270,9 @@ koga? / čega?
 <span lang="sr">
 -a
 </span>
+<button aria-expanded="false" aria-haspopup="dialog" aria-label="Вставная -a и старое -iju" class="tip-chip cell-note" data-case-idx="1" data-note-id="gen-pl" data-note-trigger type="button">
+?
+</button>
 </span>
 <span class="eu-source">
 <span class="sr-only">
@@ -297,16 +289,19 @@ NOM
 <span lang="sr">
 -a
 </span>
+<button aria-expanded="false" aria-haspopup="dialog" aria-label="Вставная -a и старое -iju" class="tip-chip cell-note" data-case-idx="1" data-note-id="gen-pl" data-note-trigger type="button">
+?
+</button>
 </span>
 </span>
 </div>
-</div>
-<div class="case-cell case-cell-ex">
-<span class="cell-axis">
+</section>
+<section class="card-section">
+<h4 class="card-section-label">
 Примеры
-</span>
-<div class="examples">
-<div class="ex">
+</h4>
+<div class="card-items">
+<div class="card-item">
 <div class="sr" lang="sr">
 Kaciga
 <mark>
@@ -318,7 +313,7 @@ pilota
 Шлем пилота.
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr" lang="sr">
 Stižem iz
 <mark>
@@ -330,7 +325,7 @@ grada
 Я приезжаю из города.
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr" lang="sr">
 Nemam
 <mark>
@@ -342,7 +337,7 @@ vremena
 У меня нет времени.
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr" lang="sr">
 Ovde nema
 <mark>
@@ -362,11 +357,11 @@ Ovde nema
 </div>
 </div>
 </div>
-</div>
-<div class="case-cell case-cell-preps">
-<span class="cell-axis">
+</section>
+<section class="card-section">
+<h4 class="card-section-label">
 Предлоги
-</span>
+</h4>
 <p class="prep-list">
 <button aria-expanded="false" class="prep-trigger" data-prep="od" type="button">
 od
@@ -408,12 +403,11 @@ pre
 posle
 </button>
 </p>
-</div>
+</section>
 </article>
-<article class="case-row" data-tone="dat" id="case-3">
-<div class="case-cell case-cell-head">
-<header class="case-head">
-<div class="case-head-title">
+<article class="card" data-tone="dat" id="case-3">
+<header class="card-head">
+<div class="card-title">
 <h3>
 <span lang="sr">
 Dativ
@@ -426,20 +420,17 @@ Dativ
 DAT
 </span>
 </div>
-<p class="q">
+<p class="card-q">
 <strong lang="sr">
 kome? / čemu?
 </strong>
 — кому, чему.
 </p>
 </header>
-</div>
-<div class="case-cell case-cell-band" data-band="sg">
-<span class="cell-axis">
+<section class="card-section" data-band="sg">
+<h4 class="card-section-label">
 Ед. число
-</span>
-</div>
-<div class="case-cell case-cell-end" data-band="sg">
+</h4>
 <div class="gender-run">
 <span class="ending-unit">
 <span class="eu-gender" data-gender="m">
@@ -471,13 +462,11 @@ kome? / čemu?
 </span>
 </span>
 </div>
-</div>
-<div class="case-cell case-cell-band" data-band="pl">
-<span class="cell-axis">
+</section>
+<section class="card-section" data-band="pl">
+<h4 class="card-section-label">
 Мн. число
-</span>
-</div>
-<div class="case-cell case-cell-end" data-band="pl">
+</h4>
 <div class="gender-run">
 <span class="ending-unit">
 <span class="eu-gender" data-gender="m">
@@ -506,13 +495,13 @@ kome? / čemu?
 </span>
 </span>
 </div>
-</div>
-<div class="case-cell case-cell-ex">
-<span class="cell-axis">
+</section>
+<section class="card-section">
+<h4 class="card-section-label">
 Примеры
-</span>
-<div class="examples">
-<div class="ex">
+</h4>
+<div class="card-items">
+<div class="card-item">
 <div class="sr" lang="sr">
 Pokazujem kartu
 <mark>
@@ -524,7 +513,7 @@ pilotu
 Я показываю карту пилоту.
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr" lang="sr">
 Idem ka
 <mark>
@@ -536,7 +525,7 @@ moru
 Я еду к морю.
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr" lang="sr">
 Pomažem
 <mark>
@@ -549,11 +538,11 @@ prijateljici
 </div>
 </div>
 </div>
-</div>
-<div class="case-cell case-cell-preps">
-<span class="cell-axis">
+</section>
+<section class="card-section">
+<h4 class="card-section-label">
 Предлоги
-</span>
+</h4>
 <p class="prep-list">
 <button aria-expanded="false" class="prep-trigger" data-prep="k/ka" type="button">
 k/ka
@@ -567,12 +556,11 @@ prema
 nasuprot
 </button>
 </p>
-</div>
+</section>
 </article>
-<article class="case-row" data-tone="aku" id="case-4">
-<div class="case-cell case-cell-head">
-<header class="case-head">
-<div class="case-head-title">
+<article class="card" data-tone="aku" id="case-4">
+<header class="card-head">
+<div class="card-title">
 <h3>
 <span lang="sr">
 Akuzativ
@@ -585,20 +573,17 @@ Akuzativ
 AKU
 </span>
 </div>
-<p class="q">
+<p class="card-q">
 <strong lang="sr">
 koga? / šta?
 </strong>
 — кого, что.
 </p>
 </header>
-</div>
-<div class="case-cell case-cell-band" data-band="sg">
-<span class="cell-axis">
+<section class="card-section" data-band="sg">
+<h4 class="card-section-label">
 Ед. число
-</span>
-</div>
-<div class="case-cell case-cell-end" data-band="sg">
+</h4>
 <div class="gender-run">
 <span class="eu-stack">
 <span class="ending-unit">
@@ -664,13 +649,11 @@ NOM
 </span>
 </span>
 </div>
-</div>
-<div class="case-cell case-cell-band" data-band="pl">
-<span class="cell-axis">
+</section>
+<section class="card-section" data-band="pl">
+<h4 class="card-section-label">
 Мн. число
-</span>
-</div>
-<div class="case-cell case-cell-end" data-band="pl">
+</h4>
 <div class="gender-run">
 <span class="ending-unit">
 <span class="eu-gender" data-gender="m">
@@ -715,13 +698,13 @@ NOM
 </span>
 </span>
 </div>
-</div>
-<div class="case-cell case-cell-ex">
-<span class="cell-axis">
+</section>
+<section class="card-section">
+<h4 class="card-section-label">
 Примеры
-</span>
-<div class="examples">
-<div class="ex">
+</h4>
+<div class="card-items">
+<div class="card-item">
 <div class="sr" lang="sr">
 Vidim
 <mark>
@@ -740,7 +723,7 @@ pilota
 </em>
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr" lang="sr">
 Vidim
 <mark>
@@ -759,7 +742,7 @@ grad
 </em>
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr" lang="sr">
 Idem u
 <mark>
@@ -779,11 +762,11 @@ u
 </div>
 </div>
 </div>
-</div>
-<div class="case-cell case-cell-preps">
-<span class="cell-axis">
+</section>
+<section class="card-section">
+<h4 class="card-section-label">
 Предлоги
-</span>
+</h4>
 <p class="prep-list">
 <button aria-expanded="false" class="prep-trigger" data-prep="u" type="button">
 u
@@ -825,12 +808,11 @@ među
 za
 </button>
 </p>
-</div>
+</section>
 </article>
-<article class="case-row" data-tone="vok" id="case-5">
-<div class="case-cell case-cell-head">
-<header class="case-head">
-<div class="case-head-title">
+<article class="card" data-tone="vok" id="case-5">
+<header class="card-head">
+<div class="card-title">
 <h3>
 <span lang="sr">
 Vokativ
@@ -843,20 +825,17 @@ Vokativ
 VOK
 </span>
 </div>
-<p class="q">
+<p class="card-q">
 <strong lang="sr">
 O, Marija!
 </strong>
 — падеж, которым окликают.
 </p>
 </header>
-</div>
-<div class="case-cell case-cell-band" data-band="sg">
-<span class="cell-axis">
+<section class="card-section" data-band="sg">
+<h4 class="card-section-label">
 Ед. число
-</span>
-</div>
-<div class="case-cell case-cell-end" data-band="sg">
+</h4>
 <div class="gender-run">
 <span class="ending-unit">
 <span class="eu-gender" data-gender="m">
@@ -910,13 +889,11 @@ NOM
 </span>
 </span>
 </div>
-</div>
-<div class="case-cell case-cell-band" data-band="pl">
-<span class="cell-axis">
+</section>
+<section class="card-section" data-band="pl">
+<h4 class="card-section-label">
 Мн. число
-</span>
-</div>
-<div class="case-cell case-cell-end" data-band="pl">
+</h4>
 <div class="gender-run">
 <span class="ending-unit">
 <span class="eu-gender" data-gender="m">
@@ -967,13 +944,13 @@ NOM
 </span>
 </span>
 </div>
-</div>
-<div class="case-cell case-cell-ex">
-<span class="cell-axis">
+</section>
+<section class="card-section">
+<h4 class="card-section-label">
 Примеры
-</span>
-<div class="examples">
-<div class="ex">
+</h4>
+<div class="card-items">
+<div class="card-item">
 <div class="sr" lang="sr">
 <mark>
 Pilote
@@ -984,7 +961,7 @@ Pilote
 Пилот, добрый день!
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr" lang="sr">
 <mark>
 Marija
@@ -995,7 +972,7 @@ Marija
 Мария, ты где?
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr" lang="sr">
 O,
 <mark>
@@ -1008,14 +985,11 @@ prijatelju
 </div>
 </div>
 </div>
-</div>
-<div aria-hidden="true" class="case-cell case-cell-preps is-empty">
-</div>
+</section>
 </article>
-<article class="case-row" data-tone="ins" id="case-6">
-<div class="case-cell case-cell-head">
-<header class="case-head">
-<div class="case-head-title">
+<article class="card" data-tone="ins" id="case-6">
+<header class="card-head">
+<div class="card-title">
 <h3>
 <span lang="sr">
 Instrumental
@@ -1028,20 +1002,17 @@ Instrumental
 INS
 </span>
 </div>
-<p class="q">
+<p class="card-q">
 <strong lang="sr">
 (s) kim? / čim?
 </strong>
 — с кем, чем.
 </p>
 </header>
-</div>
-<div class="case-cell case-cell-band" data-band="sg">
-<span class="cell-axis">
+<section class="card-section" data-band="sg">
+<h4 class="card-section-label">
 Ед. число
-</span>
-</div>
-<div class="case-cell case-cell-end" data-band="sg">
+</h4>
 <div class="gender-run">
 <span class="ending-unit">
 <span class="eu-gender" data-gender="m">
@@ -1073,13 +1044,11 @@ INS
 </span>
 </span>
 </div>
-</div>
-<div class="case-cell case-cell-band" data-band="pl">
-<span class="cell-axis">
+</section>
+<section class="card-section" data-band="pl">
+<h4 class="card-section-label">
 Мн. число
-</span>
-</div>
-<div class="case-cell case-cell-end" data-band="pl">
+</h4>
 <div class="gender-run">
 <span class="ending-unit">
 <span class="eu-gender" data-gender="m">
@@ -1120,13 +1089,13 @@ DAT
 </span>
 </span>
 </div>
-</div>
-<div class="case-cell case-cell-ex">
-<span class="cell-axis">
+</section>
+<section class="card-section">
+<h4 class="card-section-label">
 Примеры
-</span>
-<div class="examples">
-<div class="ex">
+</h4>
+<div class="card-items">
+<div class="card-item">
 <div class="sr" lang="sr">
 Putujem
 <mark>
@@ -1138,7 +1107,7 @@ autobusom
 Я еду на автобусе.
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr" lang="sr">
 Letim sa
 <mark>
@@ -1150,7 +1119,7 @@ pilotom
 Я лечу с пилотом.
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr" lang="sr">
 <mark>
 Ponedeljkom
@@ -1165,11 +1134,11 @@ radim.
 </div>
 </div>
 </div>
-</div>
-<div class="case-cell case-cell-preps">
-<span class="cell-axis">
+</section>
+<section class="card-section">
+<h4 class="card-section-label">
 Предлоги
-</span>
+</h4>
 <p class="prep-list">
 <button aria-expanded="false" class="prep-trigger" data-prep="s/sa" type="button">
 s/sa
@@ -1195,12 +1164,11 @@ među
 za
 </button>
 </p>
-</div>
+</section>
 </article>
-<article class="case-row" data-tone="lok" id="case-7">
-<div class="case-cell case-cell-head">
-<header class="case-head">
-<div class="case-head-title">
+<article class="card" data-tone="lok" id="case-7">
+<header class="card-head">
+<div class="card-title">
 <h3>
 <span lang="sr">
 Lokativ
@@ -1213,20 +1181,17 @@ Lokativ
 LOK
 </span>
 </div>
-<p class="q">
+<p class="card-q">
 <strong lang="sr">
 o kome? / o čemu?
 </strong>
 — о ком, о чём.
 </p>
 </header>
-</div>
-<div class="case-cell case-cell-band" data-band="sg">
-<span class="cell-axis">
+<section class="card-section" data-band="sg">
+<h4 class="card-section-label">
 Ед. число
-</span>
-</div>
-<div class="case-cell case-cell-end" data-band="sg">
+</h4>
 <div class="gender-run">
 <span class="ending-unit">
 <span class="eu-gender" data-gender="m">
@@ -1270,13 +1235,11 @@ DAT
 </span>
 </span>
 </div>
-</div>
-<div class="case-cell case-cell-band" data-band="pl">
-<span class="cell-axis">
+</section>
+<section class="card-section" data-band="pl">
+<h4 class="card-section-label">
 Мн. число
-</span>
-</div>
-<div class="case-cell case-cell-end" data-band="pl">
+</h4>
 <div class="gender-run">
 <span class="ending-unit">
 <span class="eu-gender" data-gender="m">
@@ -1317,13 +1280,13 @@ DAT
 </span>
 </span>
 </div>
-</div>
-<div class="case-cell case-cell-ex">
-<span class="cell-axis">
+</section>
+<section class="card-section">
+<h4 class="card-section-label">
 Примеры
-</span>
-<div class="examples">
-<div class="ex">
+</h4>
+<div class="card-items">
+<div class="card-item">
 <div class="sr" lang="sr">
 Knjiga je na
 <mark>
@@ -1338,7 +1301,7 @@ stolu
 </em>
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr" lang="sr">
 Govorim o
 <mark>
@@ -1353,7 +1316,7 @@ pilotu
 </em>
 </div>
 </div>
-<div class="ex">
+<div class="card-item">
 <div class="sr" lang="sr">
 Živim u
 <mark>
@@ -1373,11 +1336,11 @@ u
 </div>
 </div>
 </div>
-</div>
-<div class="case-cell case-cell-preps">
-<span class="cell-axis">
+</section>
+<section class="card-section">
+<h4 class="card-section-label">
 Предлоги
-</span>
+</h4>
 <p class="prep-list">
 <button aria-expanded="false" class="prep-trigger" data-prep="u" type="button">
 u
@@ -1399,25 +1362,27 @@ po
 pri
 </button>
 </p>
-</div>
+</section>
 </article>
 ### mount extraPack
-<article class="extra-panel extra-panel-idecl">
-<header class="extra-panel-head">
-<h3 class="extra-panel-title" id="idecl-title">
+<article class="card" id="idecl">
+<header class="card-head">
+<div class="card-title">
+<h3 id="idecl-title">
 Женский род без
 <i lang="sr">
 -a
 </i>
 </h3>
-<span class="extra-panel-sub">
-<em lang="sr">
+</div>
+<p class="card-q">
+<strong lang="sr">
 ljubav
-</em>
-· любовь
-</span>
+</strong>
+— любовь
+</p>
 </header>
-<div class="extra-panel-body">
+<section class="card-section">
 <div aria-labelledby="idecl-title" class="i-decl-wrap" role="region" tabindex="0">
 <table class="i-decl">
 <thead>
@@ -1434,8 +1399,10 @@ ljubav
 </thead>
 <tbody>
 <tr>
-<th class="num" scope="row">
+<th scope="row">
+<span class="case-tag" data-tone="nom">
 NOM
+</span>
 </th>
 <td>
 <span class="end" lang="sr">
@@ -1449,8 +1416,10 @@ ljubavi
 </td>
 </tr>
 <tr>
-<th class="num" scope="row">
+<th scope="row">
+<span class="case-tag" data-tone="gen">
 GEN
+</span>
 </th>
 <td>
 <span class="end" lang="sr">
@@ -1464,8 +1433,10 @@ ljubavi
 </td>
 </tr>
 <tr>
-<th class="num" scope="row">
+<th scope="row">
+<span class="case-tag" data-tone="dat">
 DAT
+</span>
 </th>
 <td>
 <span class="end" lang="sr">
@@ -1479,8 +1450,10 @@ ljubavima
 </td>
 </tr>
 <tr>
-<th class="num" scope="row">
+<th scope="row">
+<span class="case-tag" data-tone="aku">
 AKU
+</span>
 </th>
 <td>
 <span class="end" lang="sr">
@@ -1494,8 +1467,10 @@ ljubavi
 </td>
 </tr>
 <tr>
-<th class="num" scope="row">
+<th scope="row">
+<span class="case-tag" data-tone="vok">
 VOK
+</span>
 </th>
 <td>
 <span class="end" lang="sr">
@@ -1509,8 +1484,10 @@ ljubavi
 </td>
 </tr>
 <tr>
-<th class="num" scope="row">
+<th scope="row">
+<span class="case-tag" data-tone="ins">
 INS
+</span>
 </th>
 <td>
 <span class="end" lang="sr">
@@ -1524,8 +1501,10 @@ ljubavima
 </td>
 </tr>
 <tr>
-<th class="num" scope="row">
+<th scope="row">
+<span class="case-tag" data-tone="lok">
 LOK
+</span>
 </th>
 <td>
 <span class="end" lang="sr">
@@ -1541,18 +1520,21 @@ ljubavima
 </tbody>
 </table>
 </div>
-</div>
+</section>
 </article>
-<article class="extra-panel">
-<header class="extra-panel-head">
-<h3 class="extra-panel-title">
+<article class="card">
+<header class="card-head">
+<div class="card-title">
+<h3>
 Беглая гласная
 </h3>
+</div>
 </header>
-<div class="extra-panel-body">
-<ul class="wrinkle-list">
-<li>
-<span class="from" lang="sr">
+<section class="card-section">
+<div class="card-items">
+<div class="card-item">
+<div class="sr">
+<span lang="sr">
 p
 <span class="lit">
 as
@@ -1561,18 +1543,20 @@ as
 <span aria-hidden="true" class="arrow">
 →
 </span>
-<span class="to" lang="sr">
+<span lang="sr">
 p
 <span class="lit">
 sa
 </span>
 </span>
-<span class="gloss">
+</div>
+<div class="tr">
 пёс · собаки
-</span>
-</li>
-<li>
-<span class="from" lang="sr">
+</div>
+</div>
+<div class="card-item">
+<div class="sr">
+<span lang="sr">
 pos
 <span class="lit">
 ao
@@ -1581,18 +1565,20 @@ ao
 <span aria-hidden="true" class="arrow">
 →
 </span>
-<span class="to" lang="sr">
+<span lang="sr">
 pos
 <span class="lit">
 la
 </span>
 </span>
-<span class="gloss">
+</div>
+<div class="tr">
 дело · дела
-</span>
-</li>
-<li>
-<span class="from" lang="sr">
+</div>
+</div>
+<div class="card-item">
+<div class="sr">
+<span lang="sr">
 o
 <span class="lit">
 tac
@@ -1601,18 +1587,20 @@ tac
 <span aria-hidden="true" class="arrow">
 →
 </span>
-<span class="to" lang="sr">
+<span lang="sr">
 o
 <span class="lit">
 ca
 </span>
 </span>
-<span class="gloss">
+</div>
+<div class="tr">
 отец · отца
-</span>
-</li>
-<li>
-<span class="from" lang="sr">
+</div>
+</div>
+<div class="card-item">
+<div class="sr">
+<span lang="sr">
 vred
 <span class="lit">
 an
@@ -1621,113 +1609,24 @@ an
 <span aria-hidden="true" class="arrow">
 →
 </span>
-<span class="to" lang="sr">
+<span lang="sr">
 vred
 <span class="lit">
 ni
 </span>
 </span>
-<span class="gloss">
+</div>
+<div class="tr">
 усердный (м.р., ед.) · мн.ч.
-</span>
-</li>
-</ul>
 </div>
-</article>
-<article class="extra-panel">
-<header class="extra-panel-head">
-<h3 class="extra-panel-title">
-Вставная
-<i lang="sr">
--a
-</i>
-в род. мн.
-</h3>
-</header>
-<div class="extra-panel-body">
-<ul class="wrinkle-list">
-<li>
-<span class="from" lang="sr">
-sestra
-</span>
-<span aria-hidden="true" class="arrow">
-→
-</span>
-<span class="to" lang="sr">
-sest
-<span class="lit">
-a
-</span>
-ra
-</span>
-<span class="gloss">
-сестра · сестёр (род. мн.)
-</span>
-</li>
-<li>
-<span class="from" lang="sr">
-pis
-<span class="lit">
-mo
-</span>
-</span>
-<span aria-hidden="true" class="arrow">
-→
-</span>
-<span class="to" lang="sr">
-pis
-<span class="lit">
-ama
-</span>
-</span>
-<span class="gloss">
-письмо · писем
-</span>
-</li>
-<li>
-<span class="from" lang="sr">
-viljuška
-</span>
-<span aria-hidden="true" class="arrow">
-→
-</span>
-<span class="to" lang="sr">
-viljuš
-<span class="lit">
-a
-</span>
-ka
-</span>
-<span class="gloss">
-вилка · вилок
-</span>
-</li>
-<li>
-<span class="from" lang="sr">
-stak
-<span class="lit">
-lo
-</span>
-</span>
-<span aria-hidden="true" class="arrow">
-→
-</span>
-<span class="to" lang="sr">
-stak
-<span class="lit">
-ala
-</span>
-</span>
-<span class="gloss">
-стекло · стёкол
-</span>
-</li>
-</ul>
 </div>
+</div>
+</section>
 </article>
-<article class="extra-panel">
-<header class="extra-panel-head">
-<h3 class="extra-panel-title">
+<article class="card">
+<header class="card-head">
+<div class="card-title">
+<h3>
 <i lang="sr">
 -ov-
 </i>
@@ -1737,186 +1636,133 @@ ala
 </i>
 во мн. ч.
 </h3>
+</div>
 </header>
-<div class="extra-panel-body">
-<ul class="wrinkle-list">
-<li>
-<span class="from" lang="sr">
+<section class="card-section">
+<div class="card-items">
+<div class="card-item">
+<div class="sr">
+<span lang="sr">
 sin
 </span>
 <span aria-hidden="true" class="arrow">
 →
 </span>
-<span class="to" lang="sr">
+<span lang="sr">
 sin
 <span class="lit">
 ovi
 </span>
 </span>
-<span class="gloss">
+</div>
+<div class="tr">
 сын · сыновья
-</span>
-</li>
-<li>
-<span class="from" lang="sr">
+</div>
+</div>
+<div class="card-item">
+<div class="sr">
+<span lang="sr">
 grad
 </span>
 <span aria-hidden="true" class="arrow">
 →
 </span>
-<span class="to" lang="sr">
+<span lang="sr">
 grad
 <span class="lit">
 ovi
 </span>
 </span>
-<span class="gloss">
+</div>
+<div class="tr">
 город · города
-</span>
-</li>
-<li>
-<span class="from" lang="sr">
+</div>
+</div>
+<div class="card-item">
+<div class="sr">
+<span lang="sr">
 muž
 </span>
 <span aria-hidden="true" class="arrow">
 →
 </span>
-<span class="to" lang="sr">
+<span lang="sr">
 muž
 <span class="lit">
 evi
 </span>
 </span>
-<span class="gloss">
+</div>
+<div class="tr">
 муж · мужья (мягк. →
 <i lang="sr">
 -ev-
 </i>
 )
-</span>
-</li>
-<li>
-<span class="from" lang="sr">
+</div>
+</div>
+<div class="card-item">
+<div class="sr">
+<span lang="sr">
 dan
 </span>
 <span aria-hidden="true" class="arrow">
 →
 </span>
-<span class="to" lang="sr">
+<span lang="sr">
 dan
 <span class="lit">
 i
 </span>
 </span>
-<span class="gloss">
+</div>
+<div class="tr">
 день · дни (исключение, просто
 <i lang="sr">
 -i
 </i>
 )
-</span>
-</li>
-</ul>
 </div>
-</article>
-<article class="extra-panel">
-<header class="extra-panel-head">
-<h3 class="extra-panel-title">
-Старое
+</div>
+<div class="card-item">
+<div class="sr">
+<span lang="sr">
+sat
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span lang="sr">
+sat
+<span class="lit">
+i
+</span>
+</span>
+</div>
+<div class="tr">
+час · часы (исключение, просто
 <i lang="sr">
--iju
+-i
 </i>
-</h3>
-</header>
-<div class="extra-panel-body">
-<ul class="wrinkle-list">
-<li>
-<span class="from" lang="sr">
-o
-<span class="lit">
-ko
-</span>
-</span>
-<span aria-hidden="true" class="arrow">
-→
-</span>
-<span class="to" lang="sr">
-o
-<span class="lit">
-čiju
-</span>
-</span>
-<span class="gloss">
-глаз · глаз (род. мн.)
-</span>
-</li>
-<li>
-<span class="from" lang="sr">
-u
-<span class="lit">
-vo
-</span>
-</span>
-<span aria-hidden="true" class="arrow">
-→
-</span>
-<span class="to" lang="sr">
-u
-<span class="lit">
-šiju
-</span>
-</span>
-<span class="gloss">
-ухо · ушей
-</span>
-</li>
-<li>
-<span class="from" lang="sr">
-gost
-</span>
-<span aria-hidden="true" class="arrow">
-→
-</span>
-<span class="to" lang="sr">
-gost
-<span class="lit">
-iju
-</span>
-</span>
-<span class="gloss">
-гость · гостей
-</span>
-</li>
-<li>
-<span class="from" lang="sr">
-prst
-</span>
-<span aria-hidden="true" class="arrow">
-→
-</span>
-<span class="to" lang="sr">
-prst
-<span class="lit">
-iju
-</span>
-</span>
-<span class="gloss">
-палец · пальцев
-</span>
-</li>
-</ul>
+)
 </div>
+</div>
+</div>
+</section>
 </article>
-<article class="extra-panel">
-<header class="extra-panel-head">
-<h3 class="extra-panel-title">
+<article class="card">
+<header class="card-head">
+<div class="card-title">
+<h3>
 Исключения
 </h3>
+</div>
 </header>
-<div class="extra-panel-body">
-<ul class="wrinkle-list">
-<li>
-<span class="from" lang="sr">
+<section class="card-section">
+<div class="card-items">
+<div class="card-item">
+<div class="sr">
+<span lang="sr">
 bra
 <span class="lit">
 t
@@ -1925,18 +1771,20 @@ t
 <span aria-hidden="true" class="arrow">
 →
 </span>
-<span class="to" lang="sr">
+<span lang="sr">
 bra
 <span class="lit">
 ća
 </span>
 </span>
-<span class="gloss">
+</div>
+<div class="tr">
 брат → братья (соб., ж.р., ед.)
-</span>
-</li>
-<li>
-<span class="from" lang="sr">
+</div>
+</div>
+<div class="card-item">
+<div class="sr">
+<span lang="sr">
 <span class="lit">
 čovek
 </span>
@@ -1944,17 +1792,19 @@ bra
 <span aria-hidden="true" class="arrow">
 →
 </span>
-<span class="to" lang="sr">
+<span lang="sr">
 <span class="lit">
 ljudi
 </span>
 </span>
-<span class="gloss">
+</div>
+<div class="tr">
 человек → люди (новое слово)
-</span>
-</li>
-<li>
-<span class="from" lang="sr">
+</div>
+</div>
+<div class="card-item">
+<div class="sr">
+<span lang="sr">
 de
 <span class="lit">
 te
@@ -1963,18 +1813,20 @@ te
 <span aria-hidden="true" class="arrow">
 →
 </span>
-<span class="to" lang="sr">
+<span lang="sr">
 de
 <span class="lit">
 ca
 </span>
 </span>
-<span class="gloss">
+</div>
+<div class="tr">
 ребёнок → дети (соб., ж.р., ед.)
-</span>
-</li>
-<li>
-<span class="from" lang="sr">
+</div>
+</div>
+<div class="card-item">
+<div class="sr">
+<span lang="sr">
 drv
 <span class="lit">
 o
@@ -1983,52 +1835,58 @@ o
 <span aria-hidden="true" class="arrow">
 →
 </span>
-<span class="to" lang="sr">
+<span lang="sr">
 drv
 <span class="lit">
 eta
 </span>
 </span>
-<span class="gloss">
+</div>
+<div class="tr">
 дерево → дерева (основа удлиняется)
-</span>
-</li>
-<li>
-<span class="from" lang="sr">
+</div>
+</div>
+<div class="card-item">
+<div class="sr">
+<span lang="sr">
 ime
 </span>
 <span aria-hidden="true" class="arrow">
 →
 </span>
-<span class="to" lang="sr">
+<span lang="sr">
 ime
 <span class="lit">
 na
 </span>
 </span>
-<span class="gloss">
+</div>
+<div class="tr">
 имя → имена (наращение -n-)
-</span>
-</li>
-<li>
-<span class="from" lang="sr">
+</div>
+</div>
+<div class="card-item">
+<div class="sr">
+<span lang="sr">
 vreme
 </span>
 <span aria-hidden="true" class="arrow">
 →
 </span>
-<span class="to" lang="sr">
+<span lang="sr">
 vreme
 <span class="lit">
 na
 </span>
 </span>
-<span class="gloss">
+</div>
+<div class="tr">
 время → времена (наращение -n-)
-</span>
-</li>
-<li>
-<span class="from" lang="sr">
+</div>
+</div>
+<div class="card-item">
+<div class="sr">
+<span lang="sr">
 ruk
 <span class="lit">
 a
@@ -2037,18 +1895,20 @@ a
 <span aria-hidden="true" class="arrow">
 →
 </span>
-<span class="to" lang="sr">
+<span lang="sr">
 ruk
 <span class="lit">
 u
 </span>
 </span>
-<span class="gloss">
+</div>
+<div class="tr">
 рука → рук (особый род. мн.)
-</span>
-</li>
-<li>
-<span class="from" lang="sr">
+</div>
+</div>
+<div class="card-item">
+<div class="sr">
+<span lang="sr">
 nog
 <span class="lit">
 a
@@ -2057,39 +1917,20 @@ a
 <span aria-hidden="true" class="arrow">
 →
 </span>
-<span class="to" lang="sr">
+<span lang="sr">
 nog
 <span class="lit">
 u
 </span>
 </span>
-<span class="gloss">
+</div>
+<div class="tr">
 нога → ног (особый род. мн.)
-</span>
-</li>
-<li>
-<span class="from" lang="sr">
-sat
-</span>
-<span aria-hidden="true" class="arrow">
-→
-</span>
-<span class="to" lang="sr">
-sat
-<span class="lit">
-i
-</span>
-</span>
-<span class="gloss">
-час → часы (без
-<i lang="sr">
--ov-
-</i>
-)
-</span>
-</li>
-<li>
-<span class="from" lang="sr">
+</div>
+</div>
+<div class="card-item">
+<div class="sr">
+<span lang="sr">
 neb
 <span class="lit">
 o
@@ -2098,18 +1939,19 @@ o
 <span aria-hidden="true" class="arrow">
 →
 </span>
-<span class="to" lang="sr">
+<span lang="sr">
 neb
 <span class="lit">
 esa
 </span>
 </span>
-<span class="gloss">
-небо → небеса (наращение -s-)
-</span>
-</li>
-</ul>
 </div>
+<div class="tr">
+небо → небеса (наращение -s-)
+</div>
+</div>
+</div>
+</section>
 </article>
 ### popover [data-note-trigger]|[["data-case-idx","0"],["data-note-id","sib-i"],["data-note-trigger",null]]
 <article class="note-pop">
@@ -2186,6 +2028,162 @@ h
 mona
 <span class="lit">
 si
+</span>
+</span>
+</li>
+</ul>
+</article>
+### popover [data-note-trigger]|[["data-case-idx","1"],["data-note-id","gen-pl"],["data-note-trigger",null]]
+<article class="note-pop">
+<h4 class="note-title">
+Вставная
+<i lang="sr">
+-a
+</i>
+и старое
+<i lang="sr">
+-iju
+</i>
+</h4>
+<p class="note-body">
+Основа на два согласных вставляет между ними
+<i lang="sr">
+-a
+</i>
+перед окончанием: сестра → сестёр, письмо → писем. Несколько существительных вместо
+<i lang="sr">
+-a
+</i>
+сохраняют старое
+<i lang="sr">
+-iju
+</i>
+: глаза, уши, гости, пальцы.
+</p>
+<ul class="note-pairs">
+<li>
+<span class="from" lang="sr">
+sestra
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+sest
+<span class="lit">
+a
+</span>
+ra
+</span>
+</li>
+<li>
+<span class="from" lang="sr">
+pis
+<span class="lit">
+mo
+</span>
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+pis
+<span class="lit">
+ama
+</span>
+</span>
+</li>
+<li>
+<span class="from" lang="sr">
+viljuška
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+viljuš
+<span class="lit">
+a
+</span>
+ka
+</span>
+</li>
+<li>
+<span class="from" lang="sr">
+stak
+<span class="lit">
+lo
+</span>
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+stak
+<span class="lit">
+ala
+</span>
+</span>
+</li>
+<li>
+<span class="from" lang="sr">
+o
+<span class="lit">
+ko
+</span>
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+o
+<span class="lit">
+čiju
+</span>
+</span>
+</li>
+<li>
+<span class="from" lang="sr">
+u
+<span class="lit">
+vo
+</span>
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+u
+<span class="lit">
+šiju
+</span>
+</span>
+</li>
+<li>
+<span class="from" lang="sr">
+gost
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+gost
+<span class="lit">
+iju
+</span>
+</span>
+</li>
+<li>
+<span class="from" lang="sr">
+prst
+</span>
+<span aria-hidden="true" class="arrow">
+→
+</span>
+<span class="to" lang="sr">
+prst
+<span class="lit">
+iju
 </span>
 </span>
 </li>

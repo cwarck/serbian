@@ -5,7 +5,7 @@ import { translator } from '../i18n/index.ts';
 import { CASES, IDECL, WRINKLES, ENDING_AXES } from '../content/cases.ts';
 import { GENDERS, type CaseRow, type CaseNote, type Ending, type EndingAxis, type Gender, type Number_ } from '../lib/types.ts';
 import { lookupPrep, renderPrepCard } from './prep-shared.ts';
-import { endingUnit, type Chart } from './chart.ts';
+import { caseTag, endingUnit, type Chart } from './chart.ts';
 
 /* The two ending bands. Number is a band heading, never a chip: a chip says
    which gender, the band it sits in says which number. */
@@ -258,8 +258,8 @@ export function notePopoverHTML(caseIdx: number, noteId: string, lang: Lang): Ra
 
 export const chart: Chart = {
   name: 'cases',
-  /* The pre-rewrite renderer re-asserted class="case-list" on every render. */
-  mountAttrs: { caseList: { class: 'case-list' } },
+  /* The pre-rewrite renderer re-asserted the list class on every render. */
+  mountAttrs: { caseList: { class: 'card-list' } },
 
   mounts: (lang: Lang) => {
     const t = translator(lang);
@@ -273,15 +273,13 @@ export const chart: Chart = {
   `.value).join('');
 
     const headBlock = (c: CaseRow) => html`
-      <div class="case-cell case-cell-head">
-        <header class="case-head">
-          <div class="case-head-title">
-            <h3><span lang="sr">${sr(t(c.key + '.local').value)}</span><em>${t(c.key + '.name')}</em></h3>
-            <span class="case-tag">${c.abbr}</span>
-          </div>
-          <p class="q">${srStrongHTML(t(c.key + '.q').value)}</p>
-        </header>
-      </div>`;
+      <header class="card-head">
+        <div class="card-title">
+          <h3><span lang="sr">${sr(t(c.key + '.local').value)}</span><em>${t(c.key + '.name')}</em></h3>
+          <span class="case-tag">${c.abbr}</span>
+        </div>
+        <p class="card-q">${srStrongHTML(t(c.key + '.q').value)}</p>
+      </header>`;
 
     const caseList = (CASES as readonly CaseRow[]).map((c, i) => {
       /* One band per number, a wrapping run of units under it, M-N-F per
@@ -289,10 +287,8 @@ export const chart: Chart = {
          the band names the number. Genders that make the SAME STATEMENT share
          one unit — see mergeBand(). */
       const endCells = NUMBERS.map(n => html`
-      <div class="case-cell case-cell-band" data-band="${n}">
-        <span class="cell-axis">${t('band.' + n)}</span>
-      </div>
-      <div class="case-cell case-cell-end" data-band="${n}">
+      <section class="card-section" data-band="${n}">
+        <h4 class="card-section-label">${t('band.' + n)}</h4>
         <div class="gender-run">${raw(mergeBand(c, i, n, lang, t).map(group => {
           const labels = group.genders.map(g => ({ g, label: t('cases.gender.' + g) }));
           const units = group.fields
@@ -300,30 +296,28 @@ export const chart: Chart = {
           /* A syncretic split stacks two whole units — one per reused case. */
           return units.length > 1 ? `<span class="eu-stack">${units.join('')}</span>` : units.join('');
         }).join(''))}</div>
-      </div>
+      </section>
     `.value).join('');
 
       const exCell = c.examples.length === 0 ? '' : html`
-      <div class="case-cell case-cell-ex">
-        <span class="cell-axis">${t('cases.examples')}</span>
-        <div class="examples">${c.examples.map(ex => html`
-          <div class="ex">
+      <section class="card-section">
+        <h4 class="card-section-label">${t('cases.examples')}</h4>
+        <div class="card-items">${c.examples.map(ex => html`
+          <div class="card-item">
             <div class="sr" lang="sr">${srHTML(ex.sr)}</div>
             <div class="tr">${srGrammarHTML(ex[lang] || ex.en)}</div>
           </div>`)}
         </div>
-      </div>`.value;
+      </section>`.value;
 
-      const prepCell = c.preps.length === 0 ? html`
-      <div class="case-cell case-cell-preps is-empty" aria-hidden="true"></div>
-    `.value : html`
-      <div class="case-cell case-cell-preps">
-        <span class="cell-axis">${t('cases.preps')}</span>
+      const prepCell = c.preps.length === 0 ? '' : html`
+      <section class="card-section">
+        <h4 class="card-section-label">${t('cases.preps')}</h4>
         <p class="prep-list">${raw(c.preps.map(p => prepToken(p).value).join(', '))}</p>
-      </div>`.value;
+      </section>`.value;
 
       return html`
-      <article class="case-row" id="${caseAnchor(c.key)}" data-tone="${c.tone}">
+      <article class="card" id="${caseAnchor(c.key)}" data-tone="${c.tone}">
         ${headBlock(c)}
         ${raw(endCells)}
         ${raw(exCell)}
@@ -331,22 +325,28 @@ export const chart: Chart = {
       </article>`.value;
     }).join('');
 
-    const idRows = IDECL.cases.map((abbr, i) => html`
+    const idRows = IDECL.cases.map((abbr, i) => {
+      const tone = (CASES as readonly CaseRow[]).find(c => c.abbr === abbr)?.tone;
+      if (!tone) throw new Error(`cases: IDECL names unknown case ${abbr}`);
+      return html`
     <tr>
-      <th scope="row" class="num">${abbr}</th>
+      <th scope="row">${caseTag(tone)}</th>
       <td><span class="end" lang="sr">${sr(IDECL.sg[i]!)}</span></td>
       <td><span class="end" lang="sr">${sr(IDECL.pl[i]!)}</span></td>
     </tr>
-  `.value).join('');
+  `.value;
+    }).join('');
 
     const idGloss = t('cases.extra.gloss').value;
+    /* The off-paradigm pack is a run of untoned cards: the same shell as a
+       case, with the ink-soft bar the numbers cards use. */
     const idPanel = html`
-    <article class="extra-panel extra-panel-idecl">
-      <header class="extra-panel-head">
-        <h3 class="extra-panel-title" id="idecl-title">${srGrammarHTML(t('cases.extra.title').value)}</h3>
-        <span class="extra-panel-sub"><em lang="sr">${sr('ljubav')}</em>${idGloss ? raw(' · ' + idGloss) : ''}</span>
+    <article class="card" id="idecl">
+      <header class="card-head">
+        <div class="card-title"><h3 id="idecl-title">${srGrammarHTML(t('cases.extra.title').value)}</h3></div>
+        <p class="card-q"><strong lang="sr">${sr('ljubav')}</strong>${idGloss ? raw(' — ' + idGloss) : ''}</p>
       </header>
-      <div class="extra-panel-body">
+      <section class="card-section">
         <div class="i-decl-wrap" role="region" aria-labelledby="idecl-title" tabindex="0">
         <table class="i-decl">
           <thead>
@@ -359,7 +359,7 @@ export const chart: Chart = {
           <tbody>${raw(idRows)}</tbody>
         </table>
         </div>
-      </div>
+      </section>
     </article>
   `.value;
 
@@ -367,22 +367,20 @@ export const chart: Chart = {
       const items = w.examples.map(ex => {
         const hl = diffPair(ex.from, ex.to);
         return html`
-        <li>
-          <span class="from" lang="sr">${hl.from}</span>
-          <span class="arrow" aria-hidden="true">→</span>
-          <span class="to" lang="sr">${hl.to}</span>
-          <span class="gloss">${srGrammarHTML(ex[lang] || ex.en)}</span>
-        </li>
+          <div class="card-item">
+            <div class="sr"><span lang="sr">${hl.from}</span> <span class="arrow" aria-hidden="true">→</span> <span lang="sr">${hl.to}</span></div>
+            <div class="tr">${srGrammarHTML(ex[lang] || ex.en)}</div>
+          </div>
       `.value;
       }).join('');
       return html`
-      <article class="extra-panel">
-        <header class="extra-panel-head">
-          <h3 class="extra-panel-title">${srGrammarHTML(t(w.key + '.title').value)}</h3>
+      <article class="card">
+        <header class="card-head">
+          <div class="card-title"><h3>${srGrammarHTML(t(w.key + '.title').value)}</h3></div>
         </header>
-        <div class="extra-panel-body">
-          <ul class="wrinkle-list">${raw(items)}</ul>
-        </div>
+        <section class="card-section">
+          <div class="card-items">${raw(items)}</div>
+        </section>
       </article>
     `.value;
     }).join('');

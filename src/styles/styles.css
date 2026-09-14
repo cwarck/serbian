@@ -295,7 +295,7 @@ i { font-style: inherit; font-family: var(--ff-display); }
    readers stay correct (display:none removes the hidden twin from both).
 
    Deliberately `.s`, not `.sr` — `.sr` is a live block-level specimen class
-   (.chart-example .sr, .ex .sr), and these wrappers nest inside translations.
+   (.chart-example .sr, .card-item .sr), and these wrappers nest inside translations.
 
    The rules are ASYMMETRIC on purpose: a symmetric pair would render
    `žena жена` on any document without data-script. Latin wins by default,
@@ -1100,39 +1100,28 @@ section { position: relative; }
 
 
 /* -----------------------------------------------------------
-   Case list — one row per case; endings pair SG | PL per gender.
+   Card — the universal chart block (cases, numbers).
+
+   One column: a head, then sections. The 3px tone bar that opens a card is
+   its only boundary — a card draws no closing rule; the next bar, or the
+   footer's rule, closes it. Every section opens with a solid hairline above
+   its label, so band sections (SINGULAR) and text sections (EXAMPLES) read as
+   one kind. Repeated items inside a section part with a DASHED rule, one tier
+   below the section hairline.
    ----------------------------------------------------------- */
-.case-list {
+.card-list {
   display: grid;
-  grid-template-columns: 1fr;
   gap: 0;
 }
-
-/* Two bands of ending units — SINGULAR, then PLURAL. Number is a band
-   heading; gender is a field inside the unit. Each band is a WRAPPING run,
-   not three fixed tracks: a merged unit covers two genders and has no
-   per-gender column to sit in. The grid still spans three columns for the
-   head, example and preposition rows. */
-.case-row {
+.card {
   scroll-margin-top: calc(var(--sticky-offset, 120px) + .5rem);
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  grid-template-areas:
-    "head  head  head"
-    "sg-l  sg-l  sg-l"
-    "sg    sg    sg"
-    "pl-l  pl-l  pl-l"
-    "pl    pl    pl"
-    "ex    ex    ex"
-    "preps preps preps";
-  gap: .55rem;
-  padding: 2.2rem 0;
-  border-bottom: 1px solid var(--hairline);
   position: relative;
+  display: grid;
+  gap: 0;
+  padding: 2.2rem 0;
 }
-.case-row .case-cell-head { margin-bottom: .65rem; }
-.case-row .case-cell-preps { margin-top: .65rem; }
-.case-row::before {
+.card > * { min-width: 0; }
+.card::before {
   content: "";
   position: absolute;
   top: 0; left: calc(-1 * var(--pad-x));
@@ -1142,34 +1131,37 @@ section { position: relative; }
   opacity: .85;
 }
 
-.case-row-head { display: none; }
-
-.case-cell { min-width: 0; }
-.case-cell-preps.is-empty { display: none; }
-
-.case-cell-head    { grid-area: head; }
-.case-cell-band[data-band="sg"] { grid-area: sg-l; }
-.case-cell-band[data-band="pl"] { grid-area: pl-l; }
-/* A band is one run now, not three fixed columns: a merged unit spans two
-   genders, so there is no per-gender track for it to sit in. */
-.case-cell-end[data-band="sg"] { grid-area: sg; }
-.case-cell-end[data-band="pl"] { grid-area: pl; }
-.case-cell-ex      { grid-area: ex; }
-.case-cell-preps   { grid-area: preps; }
-.case-row .case-cell-ex { margin-top: .65rem; }
-
-.case-cell-head { position: relative; }
-.case-cell-head .case-head { display: block; }
-/* Case name (Serbian) leads as the h3; the chip rides at its top-right. */
-.case-head-title {
+.card-head { padding-bottom: 1.4rem; }
+/* Serbian title leads as the h3; the chip rides at its top-right. */
+.card-title {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: .5rem .75rem;
 }
-.case-head-title h3 { flex: 1 1 auto; min-width: 0; }
-.case-head-title .case-tag { flex: 0 0 auto; }
+.card-title h3 { flex: 1 1 auto; min-width: 0; }
+.card-title .case-tag { flex: 0 0 auto; }
+
+.card-section {
+  border-top: 1px solid var(--hairline);
+  padding-block: .95rem 1.4rem;
+}
+.card-section:last-child { padding-bottom: 0; }
+.card-section-label {
+  display: block;
+  margin: 0 0 .85rem;
+  font-family: var(--ff-body);
+  font-size: var(--fs-label);
+  font-weight: 500;
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  line-height: 1;
+}
+.card-section > .card-items,
+.card-section > .prep-list { max-width: 60ch; }
+
 /* Case badge chip — the abbr KNOCKED OUT of a solid tone fill, the same
    recipe .eu-gender uses one tier down. It used to be tone text on a 10% tint
    of its own tone, which is the construction the ending-unit block below
@@ -1346,7 +1338,7 @@ section { position: relative; }
 .eu-gender[data-gender="n"] { --facet: var(--facet-n); }
 .eu-gender[data-gender="f"] { --facet: var(--facet-f); }
 
-.case-head-title h3 {
+.card-title h3 {
   font-family: var(--ff-display);
   font-weight: 300;
   text-transform: none;
@@ -1357,7 +1349,7 @@ section { position: relative; }
 }
 /* The i18n case name is a gloss of the Serbian h3 — apparatus, so it takes
    the sans voice, not the serif it would inherit from the heading. */
-.case-head-title h3 em {
+.card-title h3 em {
   font-family: var(--ff-body);
   font-style: italic;
   font-weight: 400;
@@ -1369,7 +1361,7 @@ section { position: relative; }
 }
 /* The question line pairs a Serbian specimen with its gloss: the <strong>
    question words keep the serif voice, the "— meaning" gloss is apparatus sans. */
-.case-cell-head .q {
+.card-q {
   font-family: var(--ff-body);
   font-style: italic;
   color: var(--ink-soft);
@@ -1378,35 +1370,7 @@ section { position: relative; }
   line-height: var(--lh-prose);
   max-width: 34ch;
 }
-.case-cell-head .q strong { font-family: var(--ff-display); font-style: normal; font-weight: 500; color: var(--tone, var(--ink-soft)); }
-
-/* The cell is a grid slot, nothing more: the units inside carry the frame,
-   and a framed cell around a framed unit is a box in a box. */
-.case-cell-end { min-width: 0; }
-/* Band heading over its run of units. */
-.case-cell-band {
-  margin-top: .35rem;
-  padding-bottom: .15rem;
-}
-.cell-axis {
-  font-family: var(--ff-body);
-  font-size: var(--fs-label);
-  font-weight: 500;
-  letter-spacing: var(--track-label);
-  text-transform: uppercase;
-  color: var(--ink-faint);
-  line-height: 1;
-}
-.case-cell-ex .cell-axis,
-.case-cell-preps .cell-axis {
-  display: block;
-  padding-bottom: .7rem;
-  margin-bottom: 1rem;
-  border-bottom: 1px solid var(--hairline);
-  color: var(--ink-muted);
-}
-.case-cell-ex .examples,
-.case-cell-preps .prep-list { max-width: 60ch; }
+.card-q strong { font-family: var(--ff-display); font-style: normal; font-weight: 500; color: var(--tone, var(--ink-soft)); }
 
 .cell-note {
   margin-left: .22rem;
@@ -1620,24 +1584,24 @@ section { position: relative; }
 }
 /* Extra-table changed letters: colored regular serif, no tint, no italic —
    the hue alone marks the change (inherits serif/normal/400 from .from/.to). */
-.wrinkle-list .lit { color: var(--tone, var(--ink-soft)); }
+.card-item .lit { color: var(--tone, var(--ink-soft)); }
 
-/* Examples + prepositions — used inside per-case cells */
-.examples {
+/* Repeated items inside a card section — example sentences, number rows. */
+.card-items {
   display: grid;
   grid-template-columns: 1fr;
   gap: 0;
 }
-.ex {
+.card-item {
   display: grid;
   grid-template-columns: 1fr;
   gap: .2rem;
   padding: 1rem 0;
-  border-bottom: 1px solid var(--hairline-soft);
+  border-bottom: 1px dashed var(--hairline);
 }
-.ex:first-child { padding-top: 0; }
-.ex:last-child { border-bottom: 0; }
-.ex .sr {
+.card-item:first-child { padding-top: 0; }
+.card-item:last-child { border-bottom: 0; padding-bottom: 0; }
+.card-item .sr {
   font-family: var(--ff-display);
   font-size: var(--fs-lead);
   font-weight: 400;
@@ -1646,11 +1610,11 @@ section { position: relative; }
 }
 /* Example focus word: colored regular serif, no highlight box, no italic —
    the hue alone lifts it from the sentence (overrides the UA mark default). */
-.ex .sr mark {
+.card-item .sr mark {
   background: transparent;
   color: var(--tone, var(--ink-soft));
 }
-.ex .tr {
+.card-item .tr {
   font-family: var(--ff-body);
   font-style: italic;
   font-weight: 500;
@@ -1658,7 +1622,7 @@ section { position: relative; }
   font-size: var(--fs-caption);
   line-height: var(--lh-prose);
 }
-.ex .tr em {
+.card-item .tr em {
   font-style: normal;
   font-family: var(--ff-body);
   font-size: var(--fs-label);
@@ -1681,56 +1645,11 @@ section { position: relative; }
 }
 
 /* -----------------------------------------------------------
-   Off-paradigm pack — i-declension + five wrinkles, stacked.
+   Off-paradigm pack — untoned cards after the seven cases.
    ----------------------------------------------------------- */
 .case-extra {
   padding-top: 3rem;
 }
-
-.extra-pack {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0;
-  border-top: 1px solid var(--hairline);
-  border-left: 1px solid var(--hairline);
-}
-
-.extra-panel {
-  border-right: 1px solid var(--hairline);
-  border-bottom: 1px solid var(--hairline);
-  padding: 1.4rem 1.4rem 1.6rem;
-  background: var(--paper);
-  display: flex; flex-direction: column;
-  min-width: 0;
-}
-
-.extra-panel-head { margin: 0 0 1rem; }
-.extra-panel-title {
-  font-weight: 400;
-  letter-spacing: -.012em;
-  line-height: var(--lh-snug);
-}
-.extra-panel-title .lit { white-space: nowrap; }
-.extra-panel-sub {
-  display: block;
-  margin-top: .35rem;
-  font-family: var(--ff-body);
-  font-size: var(--fs-label);
-  letter-spacing: var(--track-label);
-  text-transform: uppercase;
-  color: var(--ink-muted);
-}
-.extra-panel-sub em {
-  font-family: var(--ff-display);
-  font-style: normal;
-  font-weight: 400;
-  text-transform: none;
-  letter-spacing: -.005em;
-  font-size: var(--fs-body);
-  color: var(--ink);
-  margin-right: .25em;
-}
-.extra-panel-body { min-width: 0; }
 
 /* i-declension paradigm — Sg / Pl table. Case × number is 2D, so the
    table sits in a focusable horizontal-scroll pane; the panel header stays
@@ -1759,22 +1678,16 @@ section { position: relative; }
   padding: .2rem .6rem .6rem 0;
   border-bottom: 1px solid var(--hairline);
 }
-.i-decl tbody th.num {
-  font-family: var(--ff-body);
-  font-size: var(--fs-label);
-  letter-spacing: var(--track-label);
-  text-transform: uppercase;
-  color: var(--ink-faint);
-  font-weight: 400;
+.i-decl tbody th {
   text-align: left;
   width: 1%;
   white-space: nowrap;
   padding: .7rem 1rem .7rem 0;
-  border-bottom: 1px dashed var(--hairline-soft);
+  border-bottom: 1px dashed var(--hairline);
 }
 .i-decl tbody td {
   padding: .7rem .6rem .7rem 0;
-  border-bottom: 1px dashed var(--hairline-soft);
+  border-bottom: 1px dashed var(--hairline);
 }
 .i-decl tbody td .end {
   font-family: var(--ff-display);
@@ -1787,45 +1700,12 @@ section { position: relative; }
 .i-decl tbody tr:last-child th,
 .i-decl tbody tr:last-child td { border-bottom: 0; }
 
-/* Wrinkle list — from → to · gloss */
-.wrinkle-list {
-  list-style: none;
-  padding: 0; margin: 0;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0;
-}
-.wrinkle-list li {
-  display: flex;
-  align-items: baseline;
-  flex-wrap: wrap;
-  gap: .55rem;
-  padding: .6rem 0;
-  border-bottom: 1px dashed var(--hairline-soft);
-}
-.wrinkle-list li:last-child { border-bottom: 0; }
-
-.wrinkle-list .from,
-.wrinkle-list .to {
-  font-family: var(--ff-display);
-  font-style: normal;
-  font-weight: 400;
-  font-size: var(--fs-body);
-  color: var(--ink-muted);
-  letter-spacing: -.005em;
-}
-.wrinkle-list .arrow {
+/* Sound-change pair inside a card item: from → to on the specimen line. */
+.card-item .arrow {
   font-family: var(--ff-body);
   font-size: var(--fs-caption);
   color: var(--ink-faint);
-}
-.wrinkle-list .gloss {
-  font-family: var(--ff-body);
-  font-style: italic;
-  font-size: var(--fs-caption);
-  color: var(--ink-muted);
-  line-height: var(--lh-prose);
-  width: 100%;
+  margin-inline: .1em;
 }
 
 /* -----------------------------------------------------------
@@ -2144,28 +2024,13 @@ section { position: relative; }
    Numbers
    ----------------------------------------------------------- */
 
-/* Every block on this sheet is one card: the cases chart's row with only the
-   areas it fills. Cardinals and builds are head + examples; ordinals slot the
-   ending rule between the two. Numeric values keep tabular figures. */
-.num-cardinal-card,
-.num-build-card {
-  grid-template-areas: "head head head" "ex ex ex";
-}
-.num-ordinal-card {
-  grid-template-areas: "head head head" "rule rule rule" "ex ex ex";
-}
+/* Every block on this sheet is a .card. Numeric values keep tabular figures.
+   The layout gap is 0: a card owns no closing rule, so the next card's bar
+   must land where the card's own bottom padding ends. */
+.num-layout { gap: 0; }
 .num-cardinal-card .sr,
 .num-ordinal-card .sr {
   font-feature-settings: "tnum";
-}
-/* A card opens with its own 3px bar, so its closing hairline is only ever a
-   divider when the next bar lands on it. Inside the cardinal list it does —
-   the list's gap is 0. Between the top-level cards `.chart-layout` holds a
-   1.6rem gap, and the hairline draws a second, weaker rule floating above the
-   real one. */
-.num-layout > .case-row,
-.num-cardinals .case-row:last-child {
-  border-bottom: 0;
 }
 
 /* Notable endings — the trailing -a of dvesta/trista, the count-driven
@@ -2200,10 +2065,10 @@ section { position: relative; }
    every chain at a different x. One shared column is what makes the repeated
    first part (sto + jedan / sto + dvadeset + pet) line up as a column, and the
    widest number sets the width without a magic rem. */
-.num-build-card .examples {
+.num-build-card .card-items {
   grid-template-columns: max-content minmax(0, 1fr);
 }
-.num-build-card .ex {
+.num-build-card .card-item {
   grid-column: 1 / -1;
   grid-template-columns: subgrid;
   align-items: baseline;
@@ -2254,7 +2119,7 @@ section { position: relative; }
 
 /* Verb agreement — the marked run isolates radi/rade. Marker ink on an
    underline, the recipe .num-end already uses: the letters stay ink, so
-   contrast never depends on the orange. Not the .ex recipe (mark takes the
+   contrast never depends on the orange. Not the .card-item recipe (mark takes the
    section tone) — this section has no case, so its tone falls to --ink-soft
    and a "highlight" would come out dimmer than the words around it.
 
@@ -2276,10 +2141,8 @@ section { position: relative; }
    of three, and the rule is what tells a reader that. Its own band, not a
    headed one: three ending units and a caveat need no label above them. */
 .num-ord-rule {
-  grid-area: rule;
   display: grid;
   gap: .5rem;
-  margin-top: .65rem;
 }
 
 /* -----------------------------------------------------------
@@ -2713,14 +2576,14 @@ section { position: relative; }
    ----------------------------------------------------------- */
 @media (forced-colors: active) {
   /* Case tones. The per-case accent lives in two decorative 3px marker
-     bars — .case-strip-cell::before (nav) and .case-row::before (row).
+     bars — .case-strip-cell::before (nav) and .card::before (card).
      These are the pure colour code; opt them out of the forced-colors
      override so the six hues (and NOM's neutral --ink-soft) stay apart.
      Scoped to these tiny decorative bars only — text keeps system colors
      for legibility, and the NOM/GEN/… abbreviations already label each
      case, so meaning is never on color alone. */
   .case-strip-cell::before,
-  .case-row::before {
+  .card::before {
     forced-color-adjust: none;
   }
 }
@@ -2734,10 +2597,7 @@ section { position: relative; }
   overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
 }
 
-/* Agreement uses the case card's heading and band labels. */
-.num-agreement-card {
-  grid-template-areas: "head head head" "nouns nouns nouns" "verbs verbs verbs";
-}
-.num-agreement-nouns { grid-area: nouns; }
-.num-agreement-verbs { grid-area: verbs; }
-.num-agreement-card .chart-row:last-child { border-bottom: 0; }
+/* Agreement rows are repeated items of their section: dashed, like .card-item. */
+.num-agreement-card .chart-row { border-bottom: 1px dashed var(--hairline); }
+.num-agreement-card .chart-row:first-child { padding-top: 0; }
+.num-agreement-card .chart-row:last-child { border-bottom: 0; padding-bottom: 0; }

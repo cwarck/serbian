@@ -28,6 +28,15 @@ Mobile-first Serbian cheat sheets. Legible at any resolution; no tiny elements.
 - No per-rule clamps or `vw` outside the root clamp, except viewport-safety caps on fixed overlays (`calc(100vw - …)`).
 - Put genuinely two-dimensional data in a horizontal-scroll pane inside the column.
 
+### Card
+
+The universal chart block (`.card`, cases and numbers). New charts adopt it instead of inventing a shell.
+
+- Anatomy: `.card-head` (`.card-title` h3 + optional `.case-tag`, optional `.card-q`), then `.card-section`s. Cards stack in a `.card-list`.
+- A card's only boundary is its opening 3px tone bar (`.card::before`); it draws no closing rule. The next bar or the footer closes it. Card lists and `.num-layout` use gap 0.
+- Every section opens with a solid hairline above its `.card-section-label` (h4). Band and text sections share this one style.
+- Repeated items (`.card-items` > `.card-item`) part with a dashed `--hairline` rule; the first has no top padding, the last no bottom rule. Data that needs its own grid nests inside `.card-items`.
+
 ## Typography
 
 Tokens live in `src/styles/styles.css` `:root`.

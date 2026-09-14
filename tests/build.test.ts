@@ -90,12 +90,12 @@ test('every page can reach every other chart', () => {
   }
 });
 
-/* data-tone on a case row IS the colour system. A build that dropped it would
+/* data-tone on a case card IS the colour system. A build that dropped it would
    pass a text-only diff while all seven cases rendered in undifferentiated ink. */
 test('every case row carries a tone from the seven-value set', () => {
   for (const route of ['/charts/cases.html', '/ru/charts/cases.html']) {
     const html = pages.get(route)!;
-    const rows = [...html.matchAll(/<article class="case-row" id="([^"]+)" data-tone="([^"]+)">/g)];
+    const rows = [...html.matchAll(/<article class="card" id="([^"]+)" data-tone="([^"]+)">/g)];
     expect(rows.length, route).toBe(7);
     for (const [, , tone] of rows) expect(CASE_TONES).toContain(tone as never);
   }

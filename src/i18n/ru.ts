@@ -228,9 +228,7 @@ export const ru: Record<Key, string> = {
   'cases.extra.gloss': 'любовь',
 
   'wrinkle.fleeting.title': 'Беглая гласная',
-  'wrinkle.a-insert.title': 'Вставная <i>-a</i> в род. мн.',
   'wrinkle.ov-ev.title': '<i>-ov-</i> / <i>-ev-</i> во мн. ч.',
-  'wrinkle.iju.title': 'Старое <i>-iju</i>',
   'wrinkle.irregulars.title': 'Исключения',
 
   'case.1.name': 'Именительный',

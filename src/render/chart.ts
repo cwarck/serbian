@@ -6,8 +6,9 @@
 
 import { html, raw, type Raw } from '../lib/html.ts';
 import type { Lang } from '../lib/negotiate.ts';
-import type { Gender } from '../lib/types.ts';
+import type { CaseRow, CaseTone, Gender } from '../lib/types.ts';
 import { GLOSSARY } from '../glossary/glossary.ts';
+import { CASES } from '../content/cases.ts';
 
 export interface PopoverReg {
   /* The selector the client shell delegates on — also how the snapshot gate
@@ -63,6 +64,15 @@ export interface UnitOpts {
      across the whole form field by construction: a conditioned alternation is
      never an echo, and a syncretic split gets one unit per branch. */
   readonly echo?: boolean;
+}
+
+/* The case chip — the abbreviation knocked out of its tone fill. Every case
+   reference outside the case card goes through here, so abbreviation and hue
+   are resolved from CASES, never retyped. */
+export function caseTag(tone: CaseTone): Raw {
+  const row = (CASES as readonly CaseRow[]).find(c => c.tone === tone);
+  if (!row) throw new Error(`no case carries tone ${tone}`);
+  return html`<span class="case-tag" data-tone="${tone}">${row.abbr}</span>`;
 }
 
 export function endingUnit(genders: readonly UnitGender[], form: Raw | string, opts: UnitOpts = {}): Raw {
