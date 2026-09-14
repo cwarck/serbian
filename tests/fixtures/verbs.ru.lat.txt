@@ -1551,7 +1551,7 @@ Perfekat
 Значение
 </h4>
 <p class="verb-prose">
-То, что было.
+Основное прошедшее: то, что было.
 </p>
 </section>
 <section class="card-section">
@@ -1809,7 +1809,19 @@ Futur II
 Значение
 </h4>
 <p class="verb-prose">
-Будущее в частях с «когда», «если», «как только».
+Будущее в частях с
+<i lang="sr">
+kad
+</i>
+(когда),
+<i lang="sr">
+ako
+</i>
+(если),
+<i lang="sr">
+čim
+</i>
+(как только).
 </p>
 </section>
 <section class="card-section">

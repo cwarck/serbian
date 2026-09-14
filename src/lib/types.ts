@@ -250,7 +250,7 @@ export interface FalseFriendGroup {
 
 /* ---------- glossary ---------- */
 
-export const POS = ['verb', 'noun', 'adj', 'adv', 'prep', 'pron', 'num'] as const;
+export const POS = ['verb', 'noun', 'adj', 'adv', 'prep', 'pron', 'num', 'conj'] as const;
 export type Pos = (typeof POS)[number];
 
 export interface GlossaryEntry {

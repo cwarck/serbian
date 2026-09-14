@@ -1094,7 +1094,7 @@ function validateFalseFriends() {
   });
 }
 
-const VALID_POS = new Set(['verb', 'noun', 'adj', 'adv', 'prep', 'pron', 'num']);
+const VALID_POS = new Set(['verb', 'noun', 'adj', 'adv', 'prep', 'pron', 'num', 'conj']);
 const VALID_LEVELS = new Set(['A0', 'A1', 'A2', 'B1', 'B2']);
 const VALID_ASPECTS = new Set(['ipf', 'pf']);
 const VALID_GENDERS = new Set(['m', 'f', 'n']);

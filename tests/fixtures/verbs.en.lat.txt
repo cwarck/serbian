@@ -1551,7 +1551,7 @@ Past
 Meaning
 </h4>
 <p class="verb-prose">
-What happened or how things were.
+The everyday past: what happened or how things were.
 </p>
 </section>
 <section class="card-section">
@@ -1809,7 +1809,19 @@ Future II
 Meaning
 </h4>
 <p class="verb-prose">
-The future in “when…”, “if…” and “as soon as…” clauses.
+The future in
+<i lang="sr">
+kad
+</i>
+(when),
+<i lang="sr">
+ako
+</i>
+(if),
+<i lang="sr">
+čim
+</i>
+(as soon as) clauses.
 </p>
 </section>
 <section class="card-section">
